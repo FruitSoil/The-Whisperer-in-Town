@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c080abaxc8x5d"]
+
+[ext_resource type="PackedScene" uid="uid://di7x7sgbxlovx" path="res://FBX/Monolith.fbx" id="1_pdtgr"]
+[ext_resource type="Material" uid="uid://xjmugb2kge00" path="res://FBX/Monolith1.tres" id="2_xlerp"]
+[ext_resource type="Material" uid="uid://beb7bcggnabw2" path="res://FBX/Monolith2.tres" id="3_fw8jc"]
+
+[node name="Monolith" unique_id=1656646855 instance=ExtResource("1_pdtgr")]
+
+[node name="Plane" parent="." index="0" unique_id=876287936]
+material_override = ExtResource("2_xlerp")
+
+[node name="Plane_012" parent="." index="1" unique_id=773762695]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.3711385e-08, 1, 0, -0.9999999, -4.371139e-08, 0.42738277, 7.463374, -0.3172648)
+material_override = ExtResource("3_fw8jc")
