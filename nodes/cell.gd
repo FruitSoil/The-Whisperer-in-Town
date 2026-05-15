@@ -77,11 +77,11 @@ func _mouse_enter():
 			if !has_building:
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(0.0, 2.249, 0.692, 0.561), 0.5)
+				twac.tween_property(mat, "albedo_color", Color(0.0, 1.0, 0.286, 0.561), 0.5)
 			else:
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(1.825, 0.0, 0.0, 0.561), 0.5)
+				twac.tween_property(mat, "albedo_color", Color(1.0, 0.0, 0.0, 0.561), 0.5)
 		elif %BaseUI.building_state == false and %BaseUI.worker_state == true:
 			if !has_building:
 				$MeshInstance3D.set_surface_override_material(0, mat)
