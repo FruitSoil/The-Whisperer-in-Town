@@ -56,4 +56,4 @@ func check_zone_open_status():
 
 func check(resource: Zone):
 	if res == resource:
-		icon = load("res://materials/Worker_res_icon.png")
+		icon = load("res://Images/Worker_res_icon.png")

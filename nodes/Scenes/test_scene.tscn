@@ -293,10 +293,12 @@ fog_sun_scatter = 0.22
 fog_depth_curve = 0.48296744
 fog_depth_begin = 0.0
 fog_depth_end = 239.2
-volumetric_fog_density = 0.01
-volumetric_fog_anisotropy = -0.73
-volumetric_fog_ambient_inject = 3.69
+volumetric_fog_density = 0.006
 adjustment_brightness = 1.32
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_rpk0c"]
+auto_exposure_enabled = true
+auto_exposure_scale = 7.93
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58prt"]
 albedo_color = Color(0.69803923, 0.80784315, 0.7607843, 1)
@@ -531,7 +533,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Build_scroll_list" type="ScrollContainer" parent="HUD/BaseUI/Store_UI" unique_id=1470075176]
-visible = false
 layout_direction = 3
 layout_mode = 1
 anchors_preset = -1
@@ -808,6 +809,7 @@ layout_mode = 2
 res = ExtResource("23_4a5cs")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1571,11 +1573,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.9802322e-08, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_m2kq4")
 
 [node name="Camera" type="Camera3D" parent="Camera" unique_id=707794150]
-transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372773, 0, -0.7372773, 0.6755902, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372774, 0, -0.7372773, 0.6755902, -4.454771, 0, 35.28463)
 environment = SubResource("Environment_58prt")
+attributes = SubResource("CameraAttributesPhysical_rpk0c")
+doppler_tracking = 2
 projection = 1
 current = true
-fov = 37.849285
 size = 14.0
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]

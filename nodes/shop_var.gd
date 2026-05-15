@@ -12,11 +12,11 @@ func update():
 	if is_open == false:
 		$Name.text = "?????????"
 		$Description.text = "?????????????????? ???????????????"
-		$Image.texture = load("res://materials/Lock_build.png")
+		$Image.texture = load("res://Images/LockIcon.png")
 		$buy/Res_label.text = "????"
-		$buy/Res_icon.texture = load("res://materials/Lock_build.png")
+		$buy/Res_icon.texture = load("res://Images/LockIcon.png")
 		$buy/Res_label2.text = "????"
-		$buy/Res_icon2.texture = load("res://materials/Lock_build.png")
+		$buy/Res_icon2.texture = load("res://Images/LockIcon.png")
 		$BG/MC/VBC/Star_1.hide()
 		$BG/MC/VBC/Star_2.hide()
 		$BG/MC/VBC/Star_3.hide()
