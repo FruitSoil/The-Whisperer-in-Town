@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xjmugb2kge00"]
+
+[ext_resource type="Texture2D" uid="uid://8ttiytaqfc1q" path="res://Images/UV/Monolit/Monolith_Base_color.png" id="1_f8ueo"]
+[ext_resource type="Texture2D" uid="uid://3ji88cu2cqo2" path="res://Images/UV/Monolit/Monolith_Emissive.png" id="2_k8cn1"]
+[ext_resource type="Texture2D" uid="uid://dtewrb33ujgfr" path="res://Images/UV/Monolit/Monolith_Height.png" id="3_xkcye"]
+
+[resource]
+albedo_texture = ExtResource("1_f8ueo")
+emission_enabled = true
+emission_texture = ExtResource("2_k8cn1")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("3_xkcye")

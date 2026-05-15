@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://beb7bcggnabw2"]
+
+[ext_resource type="Texture2D" uid="uid://dli36t1mho8ir" path="res://Images/UV/Monolit/Portals_Base_color.png" id="1_qps4s"]
+[ext_resource type="Texture2D" uid="uid://ojmspfk5bmkv" path="res://Images/UV/Monolit/Portals_Emissive.png" id="2_e5ld7"]
+
+[resource]
+albedo_texture = ExtResource("1_qps4s")
+emission_enabled = true
+emission_texture = ExtResource("2_e5ld7")
