@@ -1,0 +1,5 @@
+# Godot 4+ specific ignores
+.godot/
+EDITOR_clips/
+/android/
+Windows_export/

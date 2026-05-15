@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bxmntp2n5arku"]
+
+[ext_resource type="Script" uid="uid://bqldqhhqm7mmu" path="res://nodes/cell.gd" id="1_51tdh"]
+[ext_resource type="Texture2D" uid="uid://qeiuehgc0q1c" path="res://icon.svg" id="2_afgo3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
+size = Vector3(4.5, 0.1, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51tdh"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_afgo3"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_51tdh")
+size = Vector2(4.5, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afgo3"]
+transparency = 1
+albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 0.38431373)
+
+[sub_resource type="BoxMesh" id="BoxMesh_afgo3"]
+material = SubResource("StandardMaterial3D_afgo3")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_hy5qt"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26415095, 2.3713233), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Cell" type="Area3D" unique_id=763399822]
+disable_mode = 1
+script = ExtResource("1_51tdh")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1025038257 groups=["cell"]]
+shape = SubResource("BoxShape3D_e4sgp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=65210564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007768035, 0)
+mesh = SubResource("PlaneMesh_afgo3")
+
+[node name="Time_to_res" type="Timer" parent="." unique_id=271335964]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1871169537]
+transform = Transform3D(0.992027, 0.06301296, 0.10914155, 0.028641041, 0.7306388, -0.6821632, -0.12272819, 0.6798502, 0.72300863, -1.5417147, 1.8640169, -1.3089657)
+layers = 2
+gi_mode = 0
+billboard = 1
+texture = ExtResource("2_afgo3")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D" unique_id=556721993]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08, 1, -0.01, 0.017024279, -0.02560252)
+cast_shadow = 0
+gi_mode = 0
+modulate = Color(0, 0, 0, 1)
+pixel_size = 0.008
+billboard = 1
+texture = ExtResource("2_afgo3")
+
+[node name="Portair" type="Sprite3D" parent="Sprite3D" unique_id=1336147538]
+transform = Transform3D(1, 0, 4.4703484e-08, 1.8626451e-07, 1, -9.536743e-07, -2.2351742e-08, 5.9604645e-08, 1, -0.30480862, 0.062838376, -0.618947)
+cast_shadow = 0
+gi_mode = 0
+pixel_size = 0.0007
+billboard = 1
+
+[node name="corner" type="Sprite3D" parent="Sprite3D" unique_id=845167765]
+transform = Transform3D(0.7706691, -0.58136547, 0.2609275, 0.62732035, 0.6202044, -0.47097588, 0.111981064, 0.52665067, 0.8426752, 0.30926585, -0.14757842, 0.74981177)
+layers = 2
+gi_mode = 0
+offset = Vector2(-0.455, 0)
+modulate = Color(18.892157, 18.892157, 0, 1)
+pixel_size = 0.0115
+billboard = 1
+texture = ExtResource("2_afgo3")
+
+[node name="Build_part" type="CPUParticles3D" parent="." unique_id=319671702]
+emitting = false
+amount = 16
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.48
+mesh = SubResource("BoxMesh_afgo3")
+emission_shape = 3
+emission_box_extents = Vector3(2, 0.1, 2)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, -4.9, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+linear_accel_min = -5.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_hy5qt")
+
+[connection signal="timeout" from="Time_to_res" to="." method="_on_time_to_res_timeout"]

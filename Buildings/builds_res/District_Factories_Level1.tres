@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://dmike738d07w7"]
+
+[ext_resource type="PackedScene" uid="uid://hyndwh2slbpv" path="res://Buildings/district_factories_level_1.tscn" id="1_smcd0"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Resources/building.gd" id="2_a6uvc"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://materials/Zones/District_Factories_Concept.PNG" id="3_smcd0"]
+
+[resource]
+script = ExtResource("2_a6uvc")
+res_count_per_timer = 12
+res_count_per_click = Vector2i(4, 4)
+model = ExtResource("1_smcd0")
+tier = 1
+buy_cost = 120
+name = "Заводские общежития"
+description = "Занесённые снегом общежития, меж них стоит величественный старый завод - вырабатывает N Ржавой Жести."
+shop_icon = ExtResource("3_smcd0")
+metadata/_custom_type_script = "uid://drmedwnjvcpqm"

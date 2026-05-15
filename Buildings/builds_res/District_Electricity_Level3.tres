@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://cnbddl4hiqj3x"]
+
+[ext_resource type="PackedScene" uid="uid://b110ten4d3cbl" path="res://Buildings/district_electricity_level_3.tscn" id="1_rj7ue"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Resources/building.gd" id="2_i3tf2"]
+[ext_resource type="Texture2D" uid="uid://ssxtsld20kep" path="res://materials/Zones/District_Electricity_Concept.PNG" id="3_8hivw"]
+
+[resource]
+script = ExtResource("2_i3tf2")
+res_type = 1
+res_count_per_timer = 72
+res_count_per_click = Vector2i(16, 16)
+model = ExtResource("1_rj7ue")
+second_res_type = 3
+second_res_count_per_timer = 8
+tier = 3
+buy_cost = 960
+buy_cost_type = 1
+name = "Покоритель вьюг"
+description = "Величайшее творение в сфере электротехнологий, созданных \"О.Ф.\", массивное сооружение, способное запитать электричеством целые районы - вырабатывает N Электроснега + бонусом N Высококачественных Электросхем!"
+shop_icon = ExtResource("3_8hivw")
+metadata/_custom_type_script = "uid://drmedwnjvcpqm"

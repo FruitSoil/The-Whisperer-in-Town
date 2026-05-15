@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wynjxpp3nqj0"]
+
+[ext_resource type="Texture2D" uid="uid://cm43klavrx1v8" path="res://materials/UV/Factories/District_Factories_Level2_Base_color.png" id="1_8rdmc"]
+[ext_resource type="Texture2D" uid="uid://b87iyn3y7kogw" path="res://materials/UV/Factories/District_Factories_Level2_Emissive.png" id="2_i2a0m"]
+[ext_resource type="Texture2D" uid="uid://clwbmpu7co7uu" path="res://materials/UV/Factories/District_Factories_Level2_Height.png" id="3_fbwp4"]
+
+[resource]
+albedo_texture = ExtResource("1_8rdmc")
+emission_enabled = true
+emission_energy_multiplier = 10.0
+emission_texture = ExtResource("2_i2a0m")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("3_fbwp4")

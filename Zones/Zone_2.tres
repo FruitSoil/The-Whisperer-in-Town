@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Zone" format=3 uid="uid://cvcjepeb83vim"]
+
+[ext_resource type="Texture2D" uid="uid://ssxtsld20kep" path="res://materials/Zones/District_Electricity_Concept.PNG" id="1_cf12v"]
+[ext_resource type="Script" uid="uid://bdeyfvnnqhwy5" path="res://other/Resources/Zone.gd" id="2_b1rrv"]
+
+[resource]
+script = ExtResource("2_b1rrv")
+number = 2
+name = "Снегонаука"
+description = "Внушительные градирни и компактные дома-контейнеры. Новые технологии в купе с вечноснежной погодой дают невиданный ранее эффект в сфере электроэнергии  - Открытие даёт возможность строить \"районы\" 2-й зоны."
+icon = ExtResource("1_cf12v")
+first_res_count = 5760
+second_res_type = 1
+second_res_count = 720
+bonus_res_type = 1
+bonus_res_count = 5
+metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

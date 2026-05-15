@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b110ten4d3cbl"]
+
+[ext_resource type="PackedScene" uid="uid://dq1n2qfdstvvb" path="res://FBX/District_Electricity_Level3.fbx" id="1_v66nx"]
+[ext_resource type="Material" uid="uid://dpyfxaegrxefc" path="res://FBX/M_District_Electricity_lvl3.tres" id="2_1qret"]
+
+[node name="District_Electricity_Level3" unique_id=2025256013 instance=ExtResource("1_v66nx")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="Plane_001" parent="." index="0" unique_id=2087367893]
+material_override = ExtResource("2_1qret")
+
+[node name="Light5" type="OmniLight3D" parent="." index="1" unique_id=44314975]
+transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0.23058529, 2.8368313, -0.7261015)
+light_color = Color(1, 0.52156866, 0.14117648, 1)
+light_energy = 2.495
+light_volumetric_fog_energy = 5.118
+shadow_enabled = true
+shadow_bias = 0.138
+shadow_opacity = 0.95
+omni_range = 4.004

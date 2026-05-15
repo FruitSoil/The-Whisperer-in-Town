@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Zone" format=3 uid="uid://c0vqv32f6jgr5"]
+
+[ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://materials/Resources_icons/no_res_icon.png" id="1_dsbkp"]
+[ext_resource type="Script" uid="uid://bdeyfvnnqhwy5" path="res://other/Resources/Zone.gd" id="2_5datu"]
+
+[resource]
+script = ExtResource("2_5datu")
+number = 5
+name = "Монолит"
+description = "Финальная цель всей вашей миссии по постройке города. Таинственный объект стал главной угрозой Великой Астурской Империи, с ним надо что-то сделать -  Открытие даёт возможность начать \"финальный акт\"."
+icon = ExtResource("1_dsbkp")
+first_res_type = 4
+first_res_count = 11520
+second_res_count = 130000
+metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

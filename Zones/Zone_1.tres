@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Zone" format=3 uid="uid://cbuw5ql3k2x6k"]
+
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://materials/Zones/District_Factories_Concept.PNG" id="1_5b6rl"]
+[ext_resource type="Script" uid="uid://bdeyfvnnqhwy5" path="res://other/Resources/Zone.gd" id="1_adxle"]
+
+[resource]
+script = ExtResource("1_adxle")
+number = 1
+name = "Старые Заводы"
+description = "Покрытые снегом кирпичные сооружения, небольшие заводы и предприятия. Самая целесообразная зона для старта своего города - Открытие даёт возможность строить \"районы\" 1-й зоны."
+icon = ExtResource("1_5b6rl")
+bonus_res_count = 5
+metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"
