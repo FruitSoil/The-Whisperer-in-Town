@@ -296,10 +296,6 @@ fog_depth_end = 239.2
 volumetric_fog_density = 0.006
 adjustment_brightness = 1.32
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_rpk0c"]
-auto_exposure_enabled = true
-auto_exposure_scale = 7.93
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58prt"]
 albedo_color = Color(0.69803923, 0.80784315, 0.7607843, 1)
 albedo_texture = ExtResource("2_4tceg")
@@ -334,10 +330,10 @@ material = SubResource("StandardMaterial3D_nbuuu")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlsf6"]
 size = Vector3(100.200005, 30.300001, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbuuu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpk0c"]
 shader = ExtResource("52_pqm0w")
-shader_parameter/pixel_size = 2.0000000475
-shader_parameter/color_levels = 17.0
+shader_parameter/pixel_size = 1.400000019
+shader_parameter/color_levels = 20.0
 
 [node name="Test_scene" type="Node3D" unique_id=913157555]
 
@@ -1575,10 +1571,10 @@ shape = SubResource("BoxShape3D_m2kq4")
 [node name="Camera" type="Camera3D" parent="Camera" unique_id=707794150]
 transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372774, 0, -0.7372773, 0.6755902, -4.454771, 0, 35.28463)
 environment = SubResource("Environment_58prt")
-attributes = SubResource("CameraAttributesPhysical_rpk0c")
 doppler_tracking = 2
 projection = 1
 current = true
+fov = 37.849285
 size = 14.0
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]
@@ -1589,6 +1585,8 @@ mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
 transform = Transform3D(0.95579314, 0.1802194, -0.23233745, 0, 0.7901552, 0.61290705, 0.29404035, -0.58581233, 0.7552247, 0, 14.49, 0)
+light_color = Color(1, 0.98039216, 0.95686275, 1)
+light_energy = 1.2
 light_bake_mode = 1
 
 [node name="Grid" type="Node3D" parent="." unique_id=451173554]
@@ -2035,18 +2033,13 @@ debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 layer = -1
 
 [node name="ColorRect2" type="ColorRect" parent="Pixel" unique_id=507914144]
-material = SubResource("ShaderMaterial_nbuuu")
+material = SubResource("ShaderMaterial_rpk0c")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=933494643]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3, 0)
-directional_shadow_mode = 0
-sky_mode = 1
 
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]

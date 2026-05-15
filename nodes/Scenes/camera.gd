@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var speed = 10.0
+var speed = 7.0
 var sprint = 1
 var y = 14.0
 const y_max = 20
@@ -11,16 +11,16 @@ func _physics_process(delta: float) -> void:
 	if get_viewport().gui_get_hovered_control() == null:
 		if Input.is_action_just_pressed("zoom-"):
 			if y < y_max:
-				y += 1
+				y += 0.5
 		if Input.is_action_just_pressed("zoom+"):
 			if y > y_min:
-				y -= 1
+				y -= 0.5
 	camera.size = lerpf(camera.size,y, 0.2)
 	
 	var input_dir = Input.get_vector("D", "A", "S", "W")
 	var direction = Vector3(input_dir.x, 0, input_dir.y)
 	if Input.is_action_pressed("Sprint"):
-		sprint = 2
+		sprint = 1.5
 	else:
 		sprint = 1
 	if direction != Vector3.ZERO:

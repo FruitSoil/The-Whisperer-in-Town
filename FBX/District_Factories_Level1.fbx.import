@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://obj/Distric_Factories_Level1/District_Factories_lvl1.tres",
+"use_external/fallback_path": "res://FBX/M_District_Factories_lvl1.tres",
 "use_external/path": "uid://bqmgbaptjx0k1"
 }
 }
