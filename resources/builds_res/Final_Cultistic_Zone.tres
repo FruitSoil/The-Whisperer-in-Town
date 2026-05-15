@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://cu8m5y72r0kuv"]
+
+[ext_resource type="PackedScene" uid="uid://ci2pc635icqq7" path="res://Buildings/high_technology_level_1.tscn" id="1_onf50"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3vkwe"]
+[ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://Images/Resources_icons/cultistic_res_icon.png" id="3_0n346"]
+
+[resource]
+script = ExtResource("2_3vkwe")
+res_type = 6
+res_count_per_timer = 10
+model = ExtResource("1_onf50")
+tier = 3
+buy_cost = 1440
+buy_cost_type = 4
+name = "Нъхорфаадская сила"
+description = "Время тает у нас на руках, прошлые порядки должны сгинуть в огне новшеств и открытий. Ну же, помоги нам свергнуть прошлый мировой порядок, вызволить из заточения истинного бога \"Нъхорфаада\" - нужно поставить N районов, чтобы сотворить ритуал Нового Порядка."
+shop_icon = ExtResource("3_0n346")
+metadata/_custom_type_script = "uid://drmedwnjvcpqm"

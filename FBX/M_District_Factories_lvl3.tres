@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://04mprnvfbus4"]
 
-[ext_resource type="Texture2D" uid="uid://brahheokkvhbd" path="res://materials/UV/Factories/District_Factories_Level3_Base_color.png" id="1_r7onx"]
-[ext_resource type="Texture2D" uid="uid://bhsuvfbdlxqp1" path="res://materials/UV/Factories/District_Factories_Level3_Emissive.png" id="2_3xeqw"]
-[ext_resource type="Texture2D" uid="uid://dq7jifx4gld5b" path="res://materials/UV/Factories/District_Factories_Level3_Height.png" id="3_rpau5"]
+[ext_resource type="Texture2D" uid="uid://brahheokkvhbd" path="res://Images/UV/Factories/District_Factories_Level3_Base_color.png" id="1_r7onx"]
+[ext_resource type="Texture2D" uid="uid://bhsuvfbdlxqp1" path="res://Images/UV/Factories/District_Factories_Level3_Emissive.png" id="2_3xeqw"]
+[ext_resource type="Texture2D" uid="uid://dq7jifx4gld5b" path="res://Images/UV/Factories/District_Factories_Level3_Height.png" id="3_rpau5"]
 
 [resource]
 albedo_texture = ExtResource("1_r7onx")

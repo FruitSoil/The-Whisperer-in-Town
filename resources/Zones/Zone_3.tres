@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Zone" format=3 uid="uid://bw18vnnfqwbut"]
+
+[ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="1_wdqtl"]
+[ext_resource type="Script" uid="uid://bdeyfvnnqhwy5" path="res://other/Scripts/Zone.gd" id="2_ndtba"]
+
+[resource]
+script = ExtResource("2_ndtba")
+number = 3
+name = "Высокие Технологии"
+description = "Колоссальные тёмностальные цитадели и крохотные, по сравнению с ними, трёхэтажные дома. Прогрессивные методы по слежке и контролю позволили создавать высококачественную технику  - Открытие даёт возможность строить \"районы\" 3-й зоны."
+icon = ExtResource("1_wdqtl")
+first_res_type = 1
+first_res_count = 5760
+second_res_type = 3
+second_res_count = 720
+metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

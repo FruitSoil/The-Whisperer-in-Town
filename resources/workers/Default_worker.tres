@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Worker" format=3 uid="uid://carclodqgs38r"]
+
+[ext_resource type="Script" uid="uid://bduhpc67rk1k2" path="res://other/Scripts/worker.gd" id="1_hnxxq"]
+[ext_resource type="Texture2D" uid="uid://brnjualrrs582" path="res://Images/portairs/Default_worker.png" id="1_x12rf"]
+
+[resource]
+resource_name = "Default"
+script = ExtResource("1_hnxxq")
+name = "Обычный работник"
+icon = ExtResource("1_x12rf")
+Description = "Без бонусов"
+narrative_description = "Если ты это читаешь то это баг! Скорее покажи его нам.
+- Разработчики"
+metadata/_custom_type_script = "uid://bduhpc67rk1k2"

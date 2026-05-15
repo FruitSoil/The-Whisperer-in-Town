@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ce4xbmapjypjn" path="res://nodes/shop_var.gd" id="1_d4q41"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
-[ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://materials/Zones/High_Technology_Concept.PNG" id="4_d4q41"]
-[ext_resource type="Texture2D" uid="uid://d164dqcpqslcj" path="res://materials/Tier.png" id="4_nmk4s"]
+[ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="4_d4q41"]
+[ext_resource type="Texture2D" uid="uid://d164dqcpqslcj" path="res://Images/Tier.png" id="4_nmk4s"]
 
 [sub_resource type="Gradient" id="Gradient_0n13w"]
 colors = PackedColorArray(0.99946433, 0.6896107, 1.1551381e-06, 1, 1, 0.36078432, 0, 1)

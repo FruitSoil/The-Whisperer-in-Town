@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Zone" format=3 uid="uid://cjdimaecst2p7"]
+
+[ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://Images/Resources_icons/no_res_icon.png" id="1_cxg4b"]
+[ext_resource type="Script" uid="uid://bdeyfvnnqhwy5" path="res://other/Scripts/Zone.gd" id="2_7uj0g"]
+
+[resource]
+script = ExtResource("2_7uj0g")
+number = 4
+name = "Военная Мощь"
+description = "Громадные тёмностальные пушки нависают над цехами. Крупномасштабное, тяжёлое производство. Великая Астурская Империя имеет множество врагов. Создание оружия и боеприпасов - это первый шаг к спокойствию и процветанию -  Открытие даёт возможность строить \"районы\" 4-й зоны."
+icon = ExtResource("1_cxg4b")
+first_res_type = 3
+first_res_count = 5760
+second_res_type = 4
+second_res_count = 720
+metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

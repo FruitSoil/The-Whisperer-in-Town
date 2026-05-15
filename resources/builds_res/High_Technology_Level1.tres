@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://3tvaqcrk8ghg"]
+
+[ext_resource type="PackedScene" uid="uid://ci2pc635icqq7" path="res://Buildings/high_technology_level_1.tscn" id="1_n266h"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_12mr6"]
+[ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="3_n266h"]
+
+[resource]
+script = ExtResource("2_12mr6")
+res_type = 3
+res_count_per_timer = 12
+res_count_per_click = Vector2i(4, 4)
+model = ExtResource("1_n266h")
+tier = 1
+buy_cost = 120
+buy_cost_type = 3
+name = "Аналитический Двор"
+description = "Квартал из трёхэтажных зданий, меж которых стоит высоченная тёмностальная башня, надзор и работа сплелись здесь воедино - вырабатывает N Электросхем"
+shop_icon = ExtResource("3_n266h")
+metadata/_custom_type_script = "uid://drmedwnjvcpqm"

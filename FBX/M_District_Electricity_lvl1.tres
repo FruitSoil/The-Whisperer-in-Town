@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ba2obenou4wnj"]
 
-[ext_resource type="Texture2D" uid="uid://ctavid06eglid" path="res://materials/UV/Electricity/District_Electricity_Level1_Base_color.png" id="1_7twnt"]
-[ext_resource type="Texture2D" uid="uid://dhkkh2n174dqn" path="res://materials/UV/Electricity/District_Electricity_Level1_Emissive.png" id="2_k30q8"]
-[ext_resource type="Texture2D" uid="uid://dln0nc7tfumtk" path="res://materials/UV/Electricity/District_Electricity_Level1_Height.png" id="3_33hjn"]
+[ext_resource type="Texture2D" uid="uid://ctavid06eglid" path="res://Images/UV/Electricity/District_Electricity_Level1_Base_color.png" id="1_7twnt"]
+[ext_resource type="Texture2D" uid="uid://dhkkh2n174dqn" path="res://Images/UV/Electricity/District_Electricity_Level1_Emissive.png" id="2_k30q8"]
+[ext_resource type="Texture2D" uid="uid://dln0nc7tfumtk" path="res://Images/UV/Electricity/District_Electricity_Level1_Height.png" id="3_33hjn"]
 
 [resource]
 albedo_texture = ExtResource("1_7twnt")

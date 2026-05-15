@@ -1,12 +1,12 @@
 extends Node
 
-var rusted: int = 99999999999
-var electrosnow: int = 99999999999
-var money: int = 99999999999
-var highqualityelectrical: int = 99999999999
-var heavycomponents: int = 99999999999
-var imperial_might: int = 99999999999
-var cultist_might: int = 99999999999
+var rusted: int = 9999999
+var electrosnow: int = 9999999
+var money: int = 9999999
+var highqualityelectrical: int = 9999999
+var heavycomponents: int = 9999999
+var imperial_might: int = 9999999
+var cultist_might: int = 9999999
 
 var is_zone_1_open:bool = true
 var is_zone_2_open:bool = false
@@ -50,21 +50,21 @@ func add_to_integer_res_type(res_type: int, add_value: int):
 func get_res_icon(res_type: int) -> Texture:
 	match res_type:
 		0:
-			return load("res://materials/Resources_icons/actual/Rusted_res_icon.png")
+			return load("res://Images/Resources_icons/actual/Rusted_res_icon.png")
 		1:
-			return load("res://materials/Resources_icons/actual/Electrosnow_res_icon.png")
+			return load("res://Images/Resources_icons/actual/Electrosnow_res_icon.png")
 		2:
-			return load("res://materials/Resources_icons/actual/money_res_icon.png")
+			return load("res://Images/Resources_icons/actual/money_res_icon.png")
 		3:
-			return load("res://materials/Resources_icons/actual/highqualityelectronic_res_icon.png")
+			return load("res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png")
 		4:
-			return load("res://materials/Resources_icons/heavycomponent_res_icon.png")
+			return load("res://Images/Resources_icons/heavycomponent_res_icon.png")
 		5:
-			return load("res://materials/Resources_icons/imperial_res_icon.png")
+			return load("res://Images/Resources_icons/imperial_res_icon.png")
 		6:
-			return load("res://materials/Resources_icons/cultistic_res_icon.png")
+			return load("res://Images/Resources_icons/cultistic_res_icon.png")
 		_:
-			return load("res://materials/Resources_icons/no_res_icon.png")
+			return load("res://Images/Resources_icons/no_res_icon.png")
 
 func get_res_name(res_type: int) -> String:
 	match res_type:

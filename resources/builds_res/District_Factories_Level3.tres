@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://cyux8obrlxor8"]
+
+[ext_resource type="PackedScene" uid="uid://d2r57lasth832" path="res://Buildings/district_factories_level_3.tscn" id="1_aixtf"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_1n53p"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="3_aixtf"]
+
+[resource]
+script = ExtResource("2_1n53p")
+res_count_per_timer = 72
+res_count_per_click = Vector2i(16, 16)
+model = ExtResource("1_aixtf")
+second_res_type = 1
+second_res_count_per_timer = 8
+tier = 3
+buy_cost = 1440
+name = "Конвейерный сектор"
+description = "Громадный завод, символ труда и мануфактуры, из него змеями вылезают конвейеры, приглашая всех внутрь - вырабатывает N Ржавой Жести + бонусом N Электроснега!"
+shop_icon = ExtResource("3_aixtf")
+metadata/_custom_type_script = "uid://drmedwnjvcpqm"

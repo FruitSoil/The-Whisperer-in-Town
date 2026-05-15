@@ -39,8 +39,13 @@ movie_writer/movie_file="C:/Users/Максим/Documents/Godot/TWiT/EDITOR_clips
 
 folder_colors={
 "res://Buildings/": "pink",
-"res://Zones/": "pink",
-"res://workers/": "pink"
+"res://FBX/": "teal",
+"res://Images/": "blue",
+"res://nodes/": "orange",
+"res://other/": "gray",
+"res://resources/": "green",
+"res://resources/Zones/": "pink",
+"res://resources/workers/": "pink"
 }
 
 [global_group]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Worker" format=3 uid="uid://bnv74ywoxcmfu"]
+
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="1_188rh"]
+[ext_resource type="Script" uid="uid://bduhpc67rk1k2" path="res://other/Scripts/worker.gd" id="2_p2fvp"]
+
+[resource]
+script = ExtResource("2_p2fvp")
+name = "Говард Ист"
+is_unique = true
+icon = ExtResource("1_188rh")
+Description = "Район дополнительно производит 2 единицы Электроснега"
+new_res_type = 1
+new_res_count = 2
+nickname = "Ученый"
+narrative_description = "Умный малый. Восхищён нами настолько, что придумал систему, позволяющую вырабатывать полезным нам Электроснег. Сложная правда эта система до ужаса, только с ним она сможет нормально функционировать."
+metadata/_custom_type_script = "uid://bduhpc67rk1k2"

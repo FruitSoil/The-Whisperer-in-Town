@@ -2,54 +2,54 @@
 
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
-[ext_resource type="Texture2D" uid="uid://difh2t8mnmmnj" path="res://materials/T_tile_beton.png" id="2_4tceg"]
-[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://materials/circle.png" id="2_273he"]
+[ext_resource type="Texture2D" uid="uid://difh2t8mnmmnj" path="res://Images/T_tile_beton.png" id="2_4tceg"]
+[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="2_273he"]
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
-[ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://materials/UI/ui4.png" id="4_as673"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://materials/portairs/worker.PNG" id="4_igchu"]
-[ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://materials/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
-[ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://materials/UI/ui4_button2_idle.png" id="5_stlvl"]
-[ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://materials/UI/ui4_button2_pressed.png" id="6_4a5cs"]
+[ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="4_igchu"]
+[ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
+[ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
+[ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="6_4a5cs"]
 [ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="6_as673"]
-[ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://Buildings/builds_res/District_Factories_Level1.tres" id="6_wlw1d"]
-[ext_resource type="Texture2D" uid="uid://dnlwtnb54ban3" path="res://materials/UI/icons/IMG_20260512_194322_295.png" id="7_0i35y"]
-[ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://materials/UI/ui4_button3_idle.png" id="7_3s7qo"]
-[ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://Buildings/builds_res/District_Factories_Level2.tres" id="7_273he"]
-[ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://materials/UI/ui4_button3_pressed.png" id="8_0i35y"]
-[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://Buildings/builds_res/District_Factories_Level3.tres" id="8_sbivs"]
-[ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://materials/UI/icons/IMG_20260512_194321_716.png" id="10_rpk0c"]
+[ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="6_wlw1d"]
+[ext_resource type="Texture2D" uid="uid://dnlwtnb54ban3" path="res://Images/UI/icons/IMG_20260512_194322_295.png" id="7_0i35y"]
+[ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://Images/UI/ui4_button3_idle.png" id="7_3s7qo"]
+[ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://resources/builds_res/District_Factories_Level2.tres" id="7_273he"]
+[ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://Images/UI/ui4_button3_pressed.png" id="8_0i35y"]
+[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="8_sbivs"]
+[ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://Images/UI/icons/IMG_20260512_194321_716.png" id="10_rpk0c"]
 [ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="10_sbivs"]
-[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://materials/Zones/District_Factories_Concept.PNG" id="10_vlsf6"]
-[ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://workers/Default_worker.tres" id="11_3we6r"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="10_vlsf6"]
+[ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="11_3we6r"]
 [ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="11_7yne8"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="11_22wmr"]
-[ext_resource type="Texture2D" uid="uid://htqj6ts6031h" path="res://materials/Resources_icons/Electrosnow_res_icon.png" id="12_e4tj1"]
-[ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://Zones/Zone_3.tres" id="12_owdam"]
-[ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://materials/Building_res_icon.png" id="13_273he"]
-[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://Buildings/builds_res/District_Electricity_Level1.tres" id="13_rwusp"]
-[ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://Zones/Zone_2.tres" id="14_22wmr"]
-[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://Buildings/builds_res/District_Electricity_Level2.tres" id="14_hrruv"]
-[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://workers/U_worker.tres" id="14_m2kq4"]
-[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://Buildings/builds_res/District_Electricity_Level3.tres" id="15_56f6p"]
-[ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://Zones/Zone_1.tres" id="15_vehi4"]
-[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://workers/U_Scientist.tres" id="15_vlsf6"]
-[ext_resource type="Resource" uid="uid://6x0mbyqrhu7v" path="res://workers/U_Radiohost.tres" id="16_7yne8"]
-[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://Buildings/builds_res/High_Technology_Level2.tres" id="16_c16sm"]
-[ext_resource type="Texture2D" uid="uid://bq4tc1eh0jj47" path="res://materials/Worker_res_icon.png" id="16_vehi4"]
-[ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://workers/U_Agent.tres" id="17_6p561"]
-[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://Buildings/builds_res/High_Technology_Level3.tres" id="17_f1g04"]
-[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://Buildings/builds_res/High_Technology_Level1.tres" id="17_tyf2g"]
-[ext_resource type="Texture2D" uid="uid://br8skxdq34hb" path="res://materials/Resources_icons/highqualityelectronic_res_icon.png" id="17_wxunm"]
-[ext_resource type="Texture2D" uid="uid://yjc8gsut50gx" path="res://materials/Resources_icons/heavycomponent_res_icon.png" id="19_6w1jj"]
-[ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://Buildings/builds_res/Military_Zone_Level3.tres" id="19_ejh24"]
-[ext_resource type="Texture2D" uid="uid://cqgut8phwy2yn" path="res://materials/Resources_icons/imperial_res_icon.png" id="20_7vd3e"]
-[ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://materials/Resources_icons/cultistic_res_icon.png" id="21_7aymr"]
-[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://Buildings/builds_res/Final_Imperial_Zone.tres" id="21_stlvl"]
-[ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://Buildings/builds_res/Final_Cultistic_Zone.tres" id="23_4a5cs"]
-[ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://Zones/Zone_5.tres" id="24_7vd3e"]
-[ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://Zones/Zone_4.tres" id="26_7aymr"]
-[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://materials/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
+[ext_resource type="Texture2D" uid="uid://htqj6ts6031h" path="res://Images/Resources_icons/Electrosnow_res_icon.png" id="12_e4tj1"]
+[ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="12_owdam"]
+[ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://Images/Building_res_icon.png" id="13_273he"]
+[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="13_rwusp"]
+[ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="14_22wmr"]
+[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="14_hrruv"]
+[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="14_m2kq4"]
+[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="15_56f6p"]
+[ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://resources/Zones/Zone_1.tres" id="15_vehi4"]
+[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="15_vlsf6"]
+[ext_resource type="Resource" uid="uid://6x0mbyqrhu7v" path="res://resources/workers/U_Radiohost.tres" id="16_7yne8"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="16_c16sm"]
+[ext_resource type="Texture2D" uid="uid://bq4tc1eh0jj47" path="res://Images/Worker_res_icon.png" id="16_vehi4"]
+[ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="17_6p561"]
+[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="17_f1g04"]
+[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="17_tyf2g"]
+[ext_resource type="Texture2D" uid="uid://br8skxdq34hb" path="res://Images/Resources_icons/highqualityelectronic_res_icon.png" id="17_wxunm"]
+[ext_resource type="Texture2D" uid="uid://yjc8gsut50gx" path="res://Images/Resources_icons/heavycomponent_res_icon.png" id="19_6w1jj"]
+[ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="19_ejh24"]
+[ext_resource type="Texture2D" uid="uid://cqgut8phwy2yn" path="res://Images/Resources_icons/imperial_res_icon.png" id="20_7vd3e"]
+[ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://Images/Resources_icons/cultistic_res_icon.png" id="21_7aymr"]
+[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="21_stlvl"]
+[ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="23_4a5cs"]
+[ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="24_7vd3e"]
+[ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="26_7aymr"]
+[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="52_pqm0w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
@@ -273,16 +273,7 @@ _data = {
 size = Vector3(2, 2, 2)
 
 [sub_resource type="Environment" id="Environment_58prt"]
-background_mode = 1
-background_color = Color(0.078431375, 0, 0.1764706, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.37254903, 0.48235294, 0.6117647, 1)
-ambient_light_energy = 0.39
-tonemap_mode = 4
-tonemap_exposure = 1.58
 tonemap_white = 13.65
-tonemap_agx_white = 16.5
-tonemap_agx_contrast = 1.47
 ssao_radius = 4.08
 ssao_intensity = 16.0
 ssao_power = 0.16898446
@@ -296,17 +287,16 @@ glow_intensity = 1.27
 glow_strength = 0.78
 glow_blend_mode = 0
 glow_hdr_threshold = 0.44
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.027895767, 0.001401008, 0.062498547, 1)
-fog_light_energy = 7.67
-fog_density = 1.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.29
+fog_sun_scatter = 0.22
 fog_depth_curve = 0.48296744
 fog_depth_begin = 0.0
 fog_depth_end = 239.2
-volumetric_fog_density = 0.0059
-volumetric_fog_albedo = Color(0, 0, 0, 1)
-volumetric_fog_emission = Color(0, 0, 0.3254902, 1)
+volumetric_fog_density = 0.01
+volumetric_fog_anisotropy = -0.73
+volumetric_fog_ambient_inject = 3.69
+adjustment_brightness = 1.32
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58prt"]
 albedo_color = Color(0.69803923, 0.80784315, 0.7607843, 1)
@@ -1572,7 +1562,7 @@ stretch_mode = 5
 libraries/ = SubResource("AnimationLibrary_6p561")
 
 [node name="Camera" type="RigidBody3D" parent="." unique_id=308092841]
-transform = Transform3D(-0.70710677, 0, -0.7071068, 0, 1, 0, 0.70710677, 0, -0.7071068, -5, 20, -5)
+transform = Transform3D(-0.7071067, 0, -0.70710677, 0, 1, 0, 0.7071067, 0, -0.70710677, -5, 20, -5)
 gravity_scale = 0.0
 script = ExtResource("1_yfilh")
 
@@ -1585,7 +1575,7 @@ transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372773, 0, -0.7372773, 0.67559
 environment = SubResource("Environment_58prt")
 projection = 1
 current = true
-fov = 47.5
+fov = 37.849285
 size = 14.0
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]
@@ -1595,8 +1585,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.3
 mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
-transform = Transform3D(-0.88042665, -0.26470196, 0.39342353, 0.42698282, -0.081694946, 0.9005619, -0.20623983, 0.9608637, 0.1849495, 0, 14.49, 0)
-light_energy = 0.0
+transform = Transform3D(0.95579314, 0.1802194, -0.23233745, 0, 0.7901552, 0.61290705, 0.29404035, -0.58581233, 0.7552247, 0, 14.49, 0)
 light_bake_mode = 1
 
 [node name="Grid" type="Node3D" parent="." unique_id=451173554]
@@ -2050,6 +2039,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=933494643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3, 0)
+directional_shadow_mode = 0
+sky_mode = 1
 
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]
