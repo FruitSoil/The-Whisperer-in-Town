@@ -6,7 +6,7 @@
 [node name="High_technology_Level1" unique_id=965145001 instance=ExtResource("1_new2u")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane" parent="." index="0" unique_id=2135875693]
+[node name="Plane" parent="." index="0" unique_id=78178460]
 material_override = ExtResource("2_bthqq")
 
 [node name="Light5" type="OmniLight3D" parent="." index="1" unique_id=1855421844]

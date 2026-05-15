@@ -45,7 +45,9 @@ mesh = SubResource("PlaneMesh_afgo3")
 transform = Transform3D(0.992027, 0.06301296, 0.10914155, 0.028641041, 0.7306388, -0.6821632, -0.12272819, 0.6798502, 0.72300863, -1.5417147, 1.8640169, -1.3089657)
 layers = 2
 gi_mode = 0
+pixel_size = 0.0025
 billboard = 1
+fixed_size = true
 texture = ExtResource("2_afgo3")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sprite3D" unique_id=556721993]
@@ -53,16 +55,18 @@ transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08, 1, -0.0
 cast_shadow = 0
 gi_mode = 0
 modulate = Color(0, 0, 0, 1)
-pixel_size = 0.008
+pixel_size = 0.0025
 billboard = 1
+fixed_size = true
 texture = ExtResource("2_afgo3")
 
 [node name="Portair" type="Sprite3D" parent="Sprite3D" unique_id=1336147538]
 transform = Transform3D(1, 0, 4.4703484e-08, 1.8626451e-07, 1, -9.536743e-07, -2.2351742e-08, 5.9604645e-08, 1, -0.30480862, 0.062838376, -0.618947)
 cast_shadow = 0
 gi_mode = 0
-pixel_size = 0.0007
+pixel_size = 0.0025
 billboard = 1
+fixed_size = true
 
 [node name="corner" type="Sprite3D" parent="Sprite3D" unique_id=845167765]
 transform = Transform3D(0.7706691, -0.58136547, 0.2609275, 0.62732035, 0.6202044, -0.47097588, 0.111981064, 0.52665067, 0.8426752, 0.30926585, -0.14757842, 0.74981177)
@@ -70,8 +74,9 @@ layers = 2
 gi_mode = 0
 offset = Vector2(-0.455, 0)
 modulate = Color(18.892157, 18.892157, 0, 1)
-pixel_size = 0.0115
+pixel_size = 0.0025
 billboard = 1
+fixed_size = true
 texture = ExtResource("2_afgo3")
 
 [node name="Build_part" type="CPUParticles3D" parent="." unique_id=319671702]
