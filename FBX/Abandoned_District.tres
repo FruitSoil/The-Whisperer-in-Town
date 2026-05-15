@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cuihkdsio5mek"]
+
+[ext_resource type="Texture2D" uid="uid://bchg4645nwmho" path="res://Images/UV/Ruined (zone 0)/Abandoned_District_Base_color.png" id="1_b0ryg"]
+[ext_resource type="Texture2D" uid="uid://wombronnsfgb" path="res://Images/UV/Ruined (zone 0)/Abandoned_District_Height.png" id="2_fqlw1"]
+
+[resource]
+albedo_texture = ExtResource("1_b0ryg")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("2_fqlw1")

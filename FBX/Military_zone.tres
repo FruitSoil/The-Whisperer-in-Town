@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1rcbtlqiyf5f"]
+
+[ext_resource type="Texture2D" uid="uid://ddh7rverpccw5" path="res://Images/UV/Military_zone/Military_zone_Base_color.png" id="1_0hiaa"]
+[ext_resource type="Texture2D" uid="uid://bl1q1ni6opj8s" path="res://Images/UV/Military_zone/Military_zone_Emissive.png" id="2_fdfyt"]
+[ext_resource type="Texture2D" uid="uid://xtqvndwwvopn" path="res://Images/UV/Military_zone/Military_zone_Height.png" id="3_cc28s"]
+[ext_resource type="Texture2D" uid="uid://d1e5li5oeyxrq" path="res://Images/UV/Military_zone/Military_zone_Metallic.png" id="4_kjup0"]
+
+[resource]
+albedo_texture = ExtResource("1_0hiaa")
+metallic = 1.0
+metallic_texture = ExtResource("4_kjup0")
+emission_enabled = true
+emission_texture = ExtResource("2_fdfyt")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_cc28s")

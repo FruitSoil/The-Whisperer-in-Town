@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3ctx4vp06m85"]
+
+[ext_resource type="Texture2D" uid="uid://dvtf5lp1obesp" path="res://Images/UV/high_technology/High_Technology_Level3_Base_color.png" id="1_odirq"]
+[ext_resource type="Texture2D" uid="uid://2fsetoavru2a" path="res://Images/UV/high_technology/High_Technology_Level3_Emissive.png" id="2_ldym1"]
+[ext_resource type="Texture2D" uid="uid://c1s5861ax3uqe" path="res://Images/UV/high_technology/High_Technology_Level3_Height.png" id="3_8ywpp"]
+
+[resource]
+albedo_texture = ExtResource("1_odirq")
+emission_enabled = true
+emission_texture = ExtResource("2_ldym1")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("3_8ywpp")

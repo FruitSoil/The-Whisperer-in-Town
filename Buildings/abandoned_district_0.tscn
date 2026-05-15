@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://du3duu6jgnq1r"]
+
+[ext_resource type="PackedScene" uid="uid://bhb7yg51ujx1t" path="res://FBX/Abandoned_District.fbx" id="1_7yjoy"]
+[ext_resource type="Material" uid="uid://cuihkdsio5mek" path="res://FBX/Abandoned_District.tres" id="2_50ep8"]
+
+[node name="Abandoned_District" unique_id=1354451277 instance=ExtResource("1_7yjoy")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="Plane_002" parent="." index="0" unique_id=1974735882]
+material_override = ExtResource("2_50ep8")

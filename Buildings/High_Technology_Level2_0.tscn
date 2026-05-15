@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cen5cwpgvpjft"]
+
+[ext_resource type="PackedScene" uid="uid://dpx0ymebi3ov7" path="res://FBX/High_Technology_Level2.fbx" id="1_o43hk"]
+[ext_resource type="Material" uid="uid://dj4cf5882gig3" path="res://FBX/M_High_Technology_Level2.tres" id="2_f6n1s"]
+
+[node name="High_Technology_Level2" unique_id=1737985389 instance=ExtResource("1_o43hk")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="UKFDPLFYBT" parent="." index="0" unique_id=1049544555]
+material_override = ExtResource("2_f6n1s")

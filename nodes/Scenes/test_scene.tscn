@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
-[ext_resource type="Texture2D" uid="uid://difh2t8mnmmnj" path="res://Images/T_tile_beton.png" id="2_4tceg"]
 [ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="2_273he"]
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
@@ -50,6 +49,7 @@
 [ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="24_7vd3e"]
 [ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="26_7aymr"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
+[ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="52_pqm0w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
@@ -296,13 +296,8 @@ fog_depth_end = 239.2
 volumetric_fog_density = 0.006
 adjustment_brightness = 1.32
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58prt"]
-albedo_color = Color(0.69803923, 0.80784315, 0.7607843, 1)
-albedo_texture = ExtResource("2_4tceg")
-uv1_scale = Vector3(3.645, 3.645, 3.645)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_6adnx"]
-material = SubResource("StandardMaterial3D_58prt")
+material = ExtResource("49_rpk0c")
 size = Vector2(100, 100)
 
 [sub_resource type="Gradient" id="Gradient_rpk0c"]
@@ -1579,7 +1574,7 @@ size = 14.0
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enviroment" unique_id=807932585]
+[node name="FloorPlane" type="MeshInstance3D" parent="Enviroment" unique_id=807932585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.33214593)
 mesh = SubResource("PlaneMesh_6adnx")
 
@@ -1588,6 +1583,7 @@ transform = Transform3D(0.95579314, 0.1802194, -0.23233745, 0, 0.7901552, 0.6129
 light_color = Color(1, 0.98039216, 0.95686275, 1)
 light_energy = 1.2
 light_bake_mode = 1
+shadow_enabled = true
 
 [node name="Grid" type="Node3D" parent="." unique_id=451173554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -18.39)

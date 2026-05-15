@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://667id5y5vk2q"]
+
+[ext_resource type="PackedScene" uid="uid://dxybw55djxv6v" path="res://FBX/Military_zone.fbx" id="1_mlp4t"]
+[ext_resource type="Material" uid="uid://c1rcbtlqiyf5f" path="res://FBX/Military_zone.tres" id="2_b7wqp"]
+
+[node name="Military_zone" unique_id=126681995 instance=ExtResource("1_mlp4t")]
+
+[node name="Plane" parent="." index="0" unique_id=965541116]
+material_override = ExtResource("2_b7wqp")
