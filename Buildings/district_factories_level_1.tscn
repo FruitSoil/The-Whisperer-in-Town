@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://m1g2d6m1urb6" path="res://FBX/District_Factories_Level1.fbx" id="1_c7iju"]
 
-[node name="District_Factories_Level1" unique_id=554933072 instance=ExtResource("1_c7iju")]
+[node name="District_Factories_Level1" unique_id=318691707 instance=ExtResource("1_c7iju")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
 [node name="Light" type="OmniLight3D" parent="." index="1" unique_id=1710070899]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0083630085, 0.33683044, 0.051676333)
+transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0.0083630085, 0.33683044, 0.05294103)
 light_color = Color(1, 1, 0.8039216, 1)
 light_energy = 0.647
 light_volumetric_fog_energy = 5.118

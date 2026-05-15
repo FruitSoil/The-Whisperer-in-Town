@@ -48,9 +48,16 @@
 [ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="23_4a5cs"]
 [ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="24_7vd3e"]
 [ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="26_7aymr"]
+[ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="40_pqm0w"]
+[ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="42_pem7d"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="52_pqm0w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpk0c"]
+shader = ExtResource("52_pqm0w")
+shader_parameter/pixel_size = 1.400000019
+shader_parameter/color_levels = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
 texture = ExtResource("5_stlvl")
@@ -63,6 +70,12 @@ texture = ExtResource("7_3s7qo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbuuu"]
 texture = ExtResource("8_0i35y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbuuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb2hi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vcfif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwgbc"]
 bg_color = Color(0, 0.078431375, 0.07058824, 0.6431373)
@@ -325,12 +338,23 @@ material = SubResource("StandardMaterial3D_nbuuu")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlsf6"]
 size = Vector3(100.200005, 30.300001, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpk0c"]
-shader = ExtResource("52_pqm0w")
-shader_parameter/pixel_size = 1.400000019
-shader_parameter/color_levels = 20.0
-
 [node name="Test_scene" type="Node3D" unique_id=913157555]
+
+[node name="Pixel" type="CanvasLayer" parent="." unique_id=11253032]
+layer = -1
+
+[node name="ColorRect2" type="ColorRect" parent="Pixel" unique_id=507914144]
+material = SubResource("ShaderMaterial_rpk0c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 18.0
+offset_right = -72.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 
@@ -385,8 +409,25 @@ mouse_filter = 2
 texture = ExtResource("4_as673")
 metadata/_edit_lock_ = true
 
+[node name="Demolition" type="Button" parent="HUD/BaseUI" unique_id=1504075912]
+z_index = 101
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -908.0
+offset_top = -84.0
+offset_right = -743.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Demoliotion"
+icon = ExtResource("10_rpk0c")
+
 [node name="Quest" type="Button" parent="HUD/BaseUI" unique_id=429896246]
-z_index = 50
+z_index = 99
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -406,7 +447,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 
 [node name="Store" type="Button" parent="HUD/BaseUI" unique_id=1798564092]
-z_index = 50
+z_index = 99
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -428,15 +469,16 @@ icon = ExtResource("10_rpk0c")
 icon_alignment = 1
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI" unique_id=1081556581]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 80.0
-offset_top = -578.0
+offset_top = 502.0
 offset_right = 678.0
 offset_bottom = -516.99976
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Heading" type="Label" parent="HUD/BaseUI/Panel" unique_id=2029948031]
 layout_mode = 0
@@ -447,17 +489,18 @@ theme_override_font_sizes/font_size = 48
 text = "Квесты"
 
 [node name="Exit" type="Button" parent="HUD/BaseUI/Panel" unique_id=2110033357]
+modulate = Color(1, 1, 1, 0)
+z_index = 300
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -74.0
-offset_bottom = 61.0
+offset_left = -91.0
+offset_bottom = 98.0
 grow_horizontal = 0
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -467,21 +510,37 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Quest_scroll_list" type="ScrollContainer" parent="HUD/BaseUI/Quest_UI" unique_id=1617494955]
+[node name="Window" type="TextureRect" parent="HUD/BaseUI/Quest_UI" unique_id=2008704965]
+z_index = 98
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -371.99997
+offset_right = 1880.0
+offset_bottom = -102.0
+grow_vertical = 0
+scale = Vector2(0.332, 0.352)
+pivot_offset_ratio = Vector2(0, 1)
+mouse_filter = 2
+texture = ExtResource("40_pqm0w")
+
+[node name="Quest_scroll_list" type="Control" parent="HUD/BaseUI/Quest_UI" unique_id=768326260]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 79.0
-offset_top = -517.0
+offset_left = 119.0
+offset_top = -480.0
 offset_right = 677.0
-offset_bottom = -103.0
+offset_bottom = -119.0
 grow_vertical = 0
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list" unique_id=1855781799]
-layout_mode = 2
+layout_mode = 0
+offset_right = 580.0
+offset_bottom = 724.0
 alignment = 2
 
 [node name="Button" type="Button" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBoxContainer" unique_id=487508618]
@@ -512,6 +571,25 @@ layout_mode = 2
 custom_minimum_size = Vector2(580, 100)
 layout_mode = 2
 
+[node name="Slider" type="VSlider" parent="HUD/BaseUI/Quest_UI" unique_id=1593717675]
+z_index = 99
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 977.21936
+offset_right = 317.5714
+offset_bottom = 1377.231
+grow_vertical = 2
+rotation = 3.1415927
+scale = Vector2(0.28, 0.28)
+theme_override_icons/grabber = ExtResource("42_pem7d")
+theme_override_icons/grabber_highlight = ExtResource("42_pem7d")
+theme_override_icons/grabber_disabled = ExtResource("42_pem7d")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
+
 [node name="Store_UI" type="Control" parent="HUD/BaseUI" unique_id=626397403]
 layout_mode = 1
 anchors_preset = 15
@@ -523,26 +601,43 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Build_scroll_list" type="ScrollContainer" parent="HUD/BaseUI/Store_UI" unique_id=1470075176]
-layout_direction = 3
+[node name="Window" type="TextureRect" parent="HUD/BaseUI/Store_UI" unique_id=1534641729]
+z_index = 98
 layout_mode = 1
 anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -370.0
+offset_right = 1880.0
+offset_bottom = -100.0
+grow_vertical = 0
+scale = Vector2(0.332, 0.352)
+pivot_offset_ratio = Vector2(0, 1)
+mouse_filter = 2
+texture = ExtResource("40_pqm0w")
+
+[node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+clip_contents = true
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -674.0
 offset_top = -474.0
-offset_right = -80.0
-offset_bottom = -102.0
-grow_vertical = 0
-scroll_vertical_custom_step = 10.0
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+offset_right = -122.0
+offset_bottom = -116.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="VBС" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Build_scroll_list" unique_id=2097689489]
 layout_direction = 1
-layout_mode = 2
+layout_mode = 0
+offset_left = 8.0
+offset_right = 548.0
+offset_bottom = 1808.0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=635410058]
 custom_minimum_size = Vector2(540, 50)
@@ -816,7 +911,8 @@ layout_mode = 0
 offset_left = 453.0
 offset_top = 605.0
 offset_right = 636.0
-offset_bottom = 979.0
+offset_bottom = 963.0
+theme_override_constants/separation = 0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=930143145]
 custom_minimum_size = Vector2(0, 118.415)
@@ -947,7 +1043,7 @@ stretch_mode = 5
 
 [node name="Zones" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1445002185]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 85.0
 offset_top = 605.0
 offset_right = 451.0
 offset_bottom = 977.0
@@ -964,9 +1060,12 @@ res = ExtResource("24_7vd3e")
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=617297931]
 modulate = Color(0.96843547, 1.92523e-07, 0.56931674, 1)
 show_behind_parent = true
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
@@ -981,9 +1080,12 @@ res = ExtResource("26_7aymr")
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=1713579509]
 modulate = Color(0.3372549, 0.27450982, 0.40784314, 1)
 show_behind_parent = true
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
@@ -998,9 +1100,12 @@ res = ExtResource("12_owdam")
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=833025531]
 modulate = Color(0.3652631, 1, 0.33595186, 1)
 show_behind_parent = true
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
@@ -1014,9 +1119,12 @@ res = ExtResource("14_22wmr")
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=334025384]
 modulate = Color(0.41960785, 1, 1, 1)
 show_behind_parent = true
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
@@ -1031,37 +1139,57 @@ res = ExtResource("15_vehi4")
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1562671029]
 modulate = Color(1, 0.56078434, 0.40392157, 1)
 show_behind_parent = true
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
-[node name="Buildings" type="Button" parent="HUD/BaseUI/Store_UI" unique_id=77504573]
+[node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/Store_UI" unique_id=575475949]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.5
 anchor_bottom = 1.0
-offset_left = 81.0
-offset_top = -515.0
-offset_right = 365.0
-offset_bottom = -473.0
-grow_vertical = 0
+offset_left = 124.0
+offset_top = 26.0
+offset_right = 527.0
+offset_bottom = -478.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Buildings" type="Button" parent="HUD/BaseUI/Store_UI/HBC" unique_id=77504573]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 text = "Районы"
 
-[node name="Zones" type="Button" parent="HUD/BaseUI/Store_UI" unique_id=395839834]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 365.0
-offset_top = -515.0
-offset_right = 677.0
-offset_bottom = -473.0
-grow_vertical = 0
+[node name="Zones" type="Button" parent="HUD/BaseUI/Store_UI/HBC" unique_id=395839834]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 text = "Зоны"
+
+[node name="Slider" type="VSlider" parent="HUD/BaseUI/Store_UI" unique_id=388494478]
+z_index = 101
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 979.0
+offset_right = 317.5714
+offset_bottom = 1379.1118
+grow_vertical = 2
+rotation = 3.1415927
+scale = Vector2(0.28, 0.28)
+theme_override_icons/grabber = ExtResource("42_pem7d")
+theme_override_icons/grabber_highlight = ExtResource("42_pem7d")
+theme_override_icons/grabber_disabled = ExtResource("42_pem7d")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
 
 [node name="res_panel" type="TextureRect" parent="HUD/BaseUI" unique_id=1428844195]
 layout_mode = 1
@@ -1991,6 +2119,7 @@ transform = Transform3D(-4.3711392e-08, 0, 18.661104, 0, 2.8, 0, -0.99999994, 0,
 mesh = SubResource("BoxMesh_m2kq4")
 
 [node name="Borders" type="Node3D" parent="." unique_id=1743003758]
+transform = Transform3D(0.805, 0, 0, 0, 1, 0, 0, 0, 0.805, 0.7, 0, 1.0999999)
 metadata/_edit_group_ = true
 
 [node name="border" type="StaticBody3D" parent="Borders" unique_id=1816403822]
@@ -2025,22 +2154,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.650001, 0)
 shape = SubResource("BoxShape3D_vlsf6")
 debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 
-[node name="Pixel" type="CanvasLayer" parent="." unique_id=11253032]
-layer = -1
-
-[node name="ColorRect2" type="ColorRect" parent="Pixel" unique_id=507914144]
-material = SubResource("ShaderMaterial_rpk0c")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Panel/Exit" to="HUD/BaseUI" method="_on_exit_pressed"]
+[connection signal="gui_input" from="HUD/BaseUI/Quest_UI/Quest_scroll_list" to="HUD/BaseUI" method="_on_quest_gui_input"]
+[connection signal="value_changed" from="HUD/BaseUI/Quest_UI/Slider" to="HUD/BaseUI" method="slider_quest_changed"]
+[connection signal="gui_input" from="HUD/BaseUI/Store_UI/Build_scroll_list" to="HUD/BaseUI" method="_on_store_gui_input"]
 [connection signal="pressed" from="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" to="HUD/BaseUI" method="_on_zone_buy"]
-[connection signal="pressed" from="HUD/BaseUI/Store_UI/Buildings" to="HUD/BaseUI" method="_on_buildings_pressed"]
-[connection signal="pressed" from="HUD/BaseUI/Store_UI/Zones" to="HUD/BaseUI" method="_on_zones_pressed"]
+[connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Buildings" to="HUD/BaseUI" method="_on_buildings_pressed"]
+[connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Zones" to="HUD/BaseUI" method="_on_zones_pressed"]
+[connection signal="value_changed" from="HUD/BaseUI/Store_UI/Slider" to="HUD/BaseUI" method="slider_changed"]
 [connection signal="animation_finished" from="HUD/UI_animator" to="HUD/BaseUI" method="anim_finish"]

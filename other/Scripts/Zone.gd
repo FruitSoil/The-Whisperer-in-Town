@@ -1,5 +1,5 @@
 ## Данные зоны
-@icon("res://materials/Zone_res_icon.png")
+@icon("res://Images/Zone_res_icon.png")
 extends Resource
 class_name Zone
 

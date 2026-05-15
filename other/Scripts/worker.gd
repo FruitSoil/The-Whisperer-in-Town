@@ -1,5 +1,5 @@
 ## Имеет данные работника, имя, описание и прочее
-@icon("res://materials/Worker_res_icon.png")
+@icon("res://Images/Worker_res_icon.png")
 extends Resource
 class_name Worker
 

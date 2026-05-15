@@ -7,6 +7,9 @@ var selected_worker: Worker = null
 var chance: int = 0
 var selected_zone: Zone
 
+var store_scroll_max: float = -1450.0 
+var quest_scroll_max: float = -350.0 
+
 func _ready() -> void:
 	change_all_label(false)
 	_on_exit_pressed()
@@ -203,3 +206,28 @@ func no_res():
 	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(108 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(108,0))
 	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(108,0), 0.5).set_ease(Tween.EASE_OUT)
 	twm.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))
+
+func slider_changed(value: float) -> void:
+	$"Store_UI/Build_scroll_list/VBС".position.y = store_scroll_max / 100 * value
+
+func slider_quest_changed(value: float) -> void:
+	$Quest_UI/Quest_scroll_list/VBoxContainer.position.y = quest_scroll_max / 100 * value
+
+func _on_store_gui_input(event: InputEvent) -> void:
+	slider_mouse(true, event)
+
+func _on_quest_gui_input(event: InputEvent) -> void:
+	slider_mouse(false, event)
+
+func slider_mouse(is_store: bool, event: InputEvent):
+	var speed: float = 5
+	var slider: Node
+	if is_store:
+		slider = $Store_UI/Slider
+	else:
+		slider = $Quest_UI/Slider
+	
+	if event.is_action_pressed("zoom-"):
+		slider.value += speed
+	elif event.is_action_pressed("zoom+"):
+		slider.value -= speed

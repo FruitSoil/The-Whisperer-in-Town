@@ -1,5 +1,5 @@
 ## Имеет все данные о здании, которые автоматически используются в UI и в объектах cell 
-@icon("res://materials/Building_res_icon.png")
+@icon("res://Images/Building_res_icon.png")
 extends Resource
 class_name Building 
 
