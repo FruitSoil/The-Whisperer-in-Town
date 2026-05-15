@@ -1,8 +1,9 @@
 [gd_resource type="Resource" script_class="Building" format=3 uid="uid://d8g5ar8m6y02"]
 
-[ext_resource type="PackedScene" uid="uid://cen5cwpgvpjft" path="res://Buildings/High_Technology_Level2_0.tscn" id="1_n5v2s"]
+[ext_resource type="PackedScene" uid="uid://cen5cwpgvpjft" path="res://Buildings/High_Technology_Level2.tscn" id="1_n5v2s"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_c4obe"]
 [ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="3_tmcfa"]
+
 
 [resource]
 script = ExtResource("2_c4obe")

@@ -4,6 +4,7 @@ var building_state: bool = false
 var selected_build: Building = null
 var worker_state: bool = false 
 var selected_worker: Worker = null
+var demolition_state: bool = false
 var chance: int = 0
 var selected_zone: Zone
 
@@ -34,7 +35,6 @@ func _on_quest_pressed() -> void:
 			$"../UI_animator".play("From")
 		$Store_UI.visible = false
 		$Panel.visible = true
-		$Panel/Heading.text = "Квесты"
 	else:
 		_on_exit_pressed()
 
@@ -45,7 +45,6 @@ func _on_store_pressed() -> void:
 			$"../UI_animator".play("From")
 		$Quest_UI.visible = false
 		$Panel.visible = true
-		$Panel/Heading.text = "Магазин"
 	else:
 		_on_exit_pressed()
 
@@ -159,7 +158,7 @@ func _on_zone_buy() -> void:
 			change_label(selected_zone.second_res_type, false)
 			print(selected_zone.name, " разблокирован!")
 			_on_buildings_pressed()
-			$Store_UI/Build_scroll_list.scroll_vertical = 99999
+			$Store_UI/Slider.value = 100
 			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
 			get_tree().call_group("zone_button", "check", selected_zone)
 			match selected_zone.number:
@@ -231,3 +230,8 @@ func slider_mouse(is_store: bool, event: InputEvent):
 		slider.value += speed
 	elif event.is_action_pressed("zoom+"):
 		slider.value -= speed
+
+func _on_demolition_toggled() -> void:
+	demolition_state = true
+	building_state = false
+	worker_state = false

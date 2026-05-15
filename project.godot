@@ -53,6 +53,10 @@ folder_colors={
 cell=""
 Work_panels=""
 
+[gui]
+
+theme/custom_font="uid://b3ivgio20en0k"
+
 [input]
 
 displace={

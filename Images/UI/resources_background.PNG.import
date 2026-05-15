@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cevynlr1ejqmk"
-path="res://.godot/imported/days_background.PNG-797daf0fa836f18c7810a1874237be5e.ctex"
+uid="uid://edo12colapox"
+path="res://.godot/imported/resources_background.PNG-d87e266774350abb138294f268260699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/UI/icons/days_background.PNG"
-dest_files=["res://.godot/imported/days_background.PNG-797daf0fa836f18c7810a1874237be5e.ctex"]
+source_file="res://Images/UI/resources_background.PNG"
+dest_files=["res://.godot/imported/resources_background.PNG-d87e266774350abb138294f268260699.ctex"]
 
 [params]
 

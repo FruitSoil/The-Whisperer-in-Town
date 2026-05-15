@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqldqhhqm7mmu" path="res://nodes/cell.gd" id="1_51tdh"]
 [ext_resource type="Texture2D" uid="uid://qeiuehgc0q1c" path="res://icon.svg" id="2_afgo3"]
+[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="4_ymfr8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
@@ -29,7 +30,6 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26415095, 2.3713233), 0.0, 0.0
 point_count = 3
 
 [node name="Cell" type="Area3D" unique_id=763399822]
-disable_mode = 1
 script = ExtResource("1_51tdh")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1025038257 groups=["cell"]]
@@ -42,16 +42,16 @@ mesh = SubResource("PlaneMesh_afgo3")
 [node name="Time_to_res" type="Timer" parent="." unique_id=271335964]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1871169537]
-transform = Transform3D(0.992027, 0.06301296, 0.10914155, 0.028641041, 0.7306388, -0.6821632, -0.12272819, 0.6798502, 0.72300863, -1.5417147, 1.8640169, -1.3089657)
+transform = Transform3D(0.4265716, 0.027095566, 0.04693089, 0.012315648, 0.3141747, -0.29333016, -0.052773125, 0.2923356, 0.3108937, -1.5417147, 1.8640169, -1.3089657)
 layers = 2
 gi_mode = 0
 pixel_size = 0.0025
 billboard = 1
 fixed_size = true
-texture = ExtResource("2_afgo3")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sprite3D" unique_id=556721993]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 5.9604645e-08, 1, -0.01, 0.017024279, -0.02560252)
+transform = Transform3D(1, 0, 7.450581e-09, 4.4703484e-08, 1, -2.3841858e-07, -7.450581e-09, 5.9604645e-08, 1, 0.013537407, -0.0023972988, 0.033358097)
+layers = 2
 cast_shadow = 0
 gi_mode = 0
 modulate = Color(0, 0, 0, 1)
@@ -61,23 +61,24 @@ fixed_size = true
 texture = ExtResource("2_afgo3")
 
 [node name="Portair" type="Sprite3D" parent="Sprite3D" unique_id=1336147538]
-transform = Transform3D(1, 0, 4.4703484e-08, 1.8626451e-07, 1, -9.536743e-07, -2.2351742e-08, 5.9604645e-08, 1, -0.30480862, 0.062838376, -0.618947)
+transform = Transform3D(1, 0, 5.9604645e-08, 2.0861626e-07, 1, -1.0728836e-06, -3.7252903e-08, 5.9604645e-08, 1, -0.25313163, 0.12053937, -0.5549762)
+layers = 2
 cast_shadow = 0
 gi_mode = 0
-pixel_size = 0.0025
+pixel_size = 0.0002
 billboard = 1
 fixed_size = true
 
 [node name="corner" type="Sprite3D" parent="Sprite3D" unique_id=845167765]
-transform = Transform3D(0.7706691, -0.58136547, 0.2609275, 0.62732035, 0.6202044, -0.47097588, 0.111981064, 0.52665067, 0.8426752, 0.30926585, -0.14757842, 0.74981177)
+transform = Transform3D(0.7706691, -0.58136547, 0.2609275, 0.62732035, 0.6202044, -0.47097588, 0.111981064, 0.52665067, 0.8426752, 0.32771742, -0.15167719, 0.7461958)
 layers = 2
 gi_mode = 0
 offset = Vector2(-0.455, 0)
-modulate = Color(18.892157, 18.892157, 0, 1)
-pixel_size = 0.0025
+modulate = Color(0.99217445, 1, 0.6756697, 1)
+pixel_size = 0.003
 billboard = 1
 fixed_size = true
-texture = ExtResource("2_afgo3")
+texture = ExtResource("4_ymfr8")
 
 [node name="Build_part" type="CPUParticles3D" parent="." unique_id=319671702]
 emitting = false

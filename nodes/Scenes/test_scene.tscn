@@ -51,13 +51,65 @@
 [ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="40_pqm0w"]
 [ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="42_pem7d"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
+[ext_resource type="Texture2D" uid="uid://edo12colapox" path="res://Images/UI/resources_background.PNG" id="43_vcfif"]
+[ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/AireExterior.ttf" id="44_71vvp"]
+[ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="44_pxd2t"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="52_pqm0w"]
+[ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rpk0c"]
 shader = ExtResource("52_pqm0w")
 shader_parameter/pixel_size = 1.400000019
 shader_parameter/color_levels = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbuuu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.09457057, 0.011652785, 0.011672433, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb2hi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfif"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
 texture = ExtResource("5_stlvl")
@@ -132,16 +184,6 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="Gradient" id="Gradient_0i35y"]
-offsets = PackedFloat32Array(0.655, 0.7525, 0.81, 0.91)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.082301766, 0.0810347, 1, 0, 0.26856363, 0.26442897, 1, 0, 0.79607844, 0.011764706, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rpk0c"]
-gradient = SubResource("Gradient_0i35y")
-width = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="Gradient" id="Gradient_igchu"]
 offsets = PackedFloat32Array(0.37988827, 0.82122904, 1)
 colors = PackedColorArray(1.6364455e-06, 0.7160926, 0.4147328, 1, 0.17447907, 0.51625013, 2.8878452e-07, 1, 0.33267987, 0.9100657, 3.85046e-07, 1)
@@ -156,6 +198,13 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5yd0p"]
 gradient = SubResource("Gradient_k4jtg")
 width = 2
+
+[sub_resource type="Gradient" id="Gradient_vcfif"]
+offsets = PackedFloat32Array(0, 0.46397695, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0.078431375, 1, 0.021998512, 0.13805932, 0.07209382, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pxd2t"]
+gradient = SubResource("Gradient_vcfif")
 
 [sub_resource type="Animation" id="Animation_m2kq4"]
 resource_name = "From"
@@ -286,12 +335,13 @@ _data = {
 size = Vector3(2, 2, 2)
 
 [sub_resource type="Environment" id="Environment_58prt"]
+background_energy_multiplier = 4.59
 tonemap_white = 13.65
+ssao_enabled = true
 ssao_radius = 4.08
 ssao_intensity = 16.0
 ssao_power = 0.16898446
 ssao_detail = 2.66
-glow_enabled = true
 glow_levels/1 = 4.73
 glow_levels/2 = 3.47
 glow_levels/3 = 1.8
@@ -301,7 +351,7 @@ glow_strength = 0.78
 glow_blend_mode = 0
 glow_hdr_threshold = 0.44
 fog_light_color = Color(0, 0, 0, 1)
-fog_light_energy = 0.29
+fog_light_energy = 2.44
 fog_sun_scatter = 0.22
 fog_depth_curve = 0.48296744
 fog_depth_begin = 0.0
@@ -348,10 +398,6 @@ material = SubResource("ShaderMaterial_rpk0c")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = 18.0
-offset_right = -72.0
-offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -404,6 +450,8 @@ anchor_right = 1.0
 anchor_bottom = 1.001
 offset_right = 2176.0
 offset_bottom = 1222.9199
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.469, 0.469)
 mouse_filter = 2
 texture = ExtResource("4_as673")
@@ -423,8 +471,14 @@ offset_right = -743.0
 offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Demoliotion"
+theme_override_styles/normal = SubResource("StyleBoxFlat_pem7d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nbuuu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wb2hi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vcfif")
+text = "Build
+Demolition"
 icon = ExtResource("10_rpk0c")
+alignment = 0
 
 [node name="Quest" type="Button" parent="HUD/BaseUI" unique_id=429896246]
 z_index = 99
@@ -442,9 +496,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pqm0w")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rpk0c")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rpk0c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rpk0c")
+text = "Квесты"
 icon = ExtResource("7_0i35y")
-icon_alignment = 1
-vertical_icon_alignment = 0
+icon_alignment = 2
 
 [node name="Store" type="Button" parent="HUD/BaseUI" unique_id=1798564092]
 z_index = 99
@@ -463,10 +517,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pem7d")
-text = "
-"
+text = "Магазин"
 icon = ExtResource("10_rpk0c")
-icon_alignment = 1
+autowrap_trim_flags = 0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI" unique_id=1081556581]
 modulate = Color(1, 1, 1, 0)
@@ -479,14 +532,6 @@ offset_right = 678.0
 offset_bottom = -516.99976
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Heading" type="Label" parent="HUD/BaseUI/Panel" unique_id=2029948031]
-layout_mode = 0
-offset_top = -6.0
-offset_right = 233.0
-offset_bottom = 61.0
-theme_override_font_sizes/font_size = 48
-text = "Квесты"
 
 [node name="Exit" type="Button" parent="HUD/BaseUI/Panel" unique_id=2110033357]
 modulate = Color(1, 1, 1, 0)
@@ -1191,28 +1236,42 @@ theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
 
-[node name="res_panel" type="TextureRect" parent="HUD/BaseUI" unique_id=1428844195]
+[node name="res_panel" type="Control" parent="HUD/BaseUI" unique_id=1458037563]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -376.0
-offset_top = 8.0
-offset_right = 381.0
-offset_bottom = 72.0
+offset_left = -371.0
+offset_top = 14.0
+offset_right = 487.13953
+offset_bottom = 71.023254
 grow_horizontal = 2
-texture = SubResource("GradientTexture2D_rpk0c")
+scale = Vector2(1.005, 0.86)
+
+[node name="BG" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=855751978]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43500003
+anchor_top = -0.303
+anchor_right = 0.43500003
+anchor_bottom = -0.303
+offset_left = -373.2907
+offset_top = 17.278046
+offset_right = 710.7093
+offset_bottom = 62.278046
+scale = Vector2(0.689458, 1.4746488)
+texture = ExtResource("43_vcfif")
 
 [node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/res_panel" unique_id=540309098]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 37.0
-offset_right = -37.0
-offset_bottom = 10.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -397.22894
+offset_right = 289.33826
+offset_bottom = 66.27907
 grow_horizontal = 2
-grow_vertical = 2
+scale = Vector2(1, 1.055)
 alignment = 1
 
 [node name="res3" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=2095510914]
@@ -1230,7 +1289,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res3" unique_id=853807257]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res1" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1849715890]
@@ -1248,7 +1308,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res1" unique_id=207398198]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res2" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=400229681]
@@ -1266,7 +1327,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res2" unique_id=155942403]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res4" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=794772507]
@@ -1284,7 +1346,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res4" unique_id=954107880]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res5" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1410783975]
@@ -1302,7 +1365,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res5" unique_id=1136303719]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res6" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=290253549]
@@ -1320,7 +1384,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res6" unique_id=1168799679]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
 [node name="res7" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=136023260]
@@ -1338,12 +1403,26 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res7" unique_id=989969169]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_font_sizes/font_size = 20
 text = "999999"
 
-[node name="workers_panel" type="TextureRect" parent="HUD/BaseUI" unique_id=1125459051]
+[node name="BG_days" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1767850085]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.43
+anchor_right = 0.43
+offset_left = -57.55725
+offset_top = 159.30232
+offset_right = 130.2146
+offset_bottom = 212.30232
+grow_horizontal = 2
+scale = Vector2(0.6146977, 0.8602525)
+texture = ExtResource("44_pxd2t")
+
+[node name="workers_panel" type="Control" parent="HUD/BaseUI" unique_id=2111873349]
+layout_mode = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1353,7 +1432,21 @@ offset_right = -36.0
 offset_bottom = -157.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_rpk0c")
+
+[node name="BG" type="TextureRect" parent="HUD/BaseUI/workers_panel" unique_id=547258055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.3390001
+anchor_top = 0.523
+anchor_right = 1.3390001
+anchor_bottom = 0.523
+offset_left = -39.40901
+offset_top = -382.802
+offset_right = 1044.591
+offset_bottom = -337.802
+rotation = 1.5707964
+scale = Vector2(0.70590204, 2.557732)
+texture = SubResource("GradientTexture1D_pxd2t")
 
 [node name="Default_worker" type="Button" parent="HUD/BaseUI/workers_panel" unique_id=1182929519 groups=["Work_panels"]]
 custom_minimum_size = Vector2(75, 75)
@@ -1707,11 +1800,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.3
 mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
-transform = Transform3D(0.95579314, 0.1802194, -0.23233745, 0, 0.7901552, 0.61290705, 0.29404035, -0.58581233, 0.7552247, 0, 14.49, 0)
+transform = Transform3D(0.7901552, -0.3756551, 0.4842916, 0, 0.7901552, 0.61290705, -0.6129071, -0.48429167, 0.624345, 0, 14.49, 0)
 light_color = Color(1, 0.98039216, 0.95686275, 1)
-light_energy = 1.2
+light_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
+sky_mode = 1
 
 [node name="Grid" type="Node3D" parent="." unique_id=451173554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -18.39)
@@ -1725,12 +1819,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 
 [node name="Cell3" parent="Grid" unique_id=1935726789 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
+has_building = true
+current_build = ExtResource("54_nbuuu")
 
 [node name="Cell4" parent="Grid" unique_id=494276039 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 
 [node name="Cell5" parent="Grid" unique_id=1404528750 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
+has_building = true
+current_build = ExtResource("54_nbuuu")
 
 [node name="Cell6" parent="Grid" unique_id=1518727180 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
@@ -1743,12 +1841,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-0
 
 [node name="Cell9" parent="Grid" unique_id=1178797336 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
+has_building = true
+current_build = ExtResource("54_nbuuu")
 
 [node name="Cell10" parent="Grid" unique_id=947708363 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
+has_building = true
+current_build = ExtResource("54_nbuuu")
 
 [node name="Cell11" parent="Grid" unique_id=981151440 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
+has_building = true
+current_build = ExtResource("54_nbuuu")
 
 [node name="Cell12" parent="Grid" unique_id=1113313182 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
@@ -2154,6 +2258,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.650001, 0)
 shape = SubResource("BoxShape3D_vlsf6")
 debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 
+[connection signal="pressed" from="HUD/BaseUI/Demolition" to="HUD/BaseUI" method="_on_demolition_toggled"]
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Panel/Exit" to="HUD/BaseUI" method="_on_exit_pressed"]

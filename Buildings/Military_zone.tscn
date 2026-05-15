@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://c1rcbtlqiyf5f" path="res://FBX/Military_zone.tres" id="2_b7wqp"]
 
 [node name="Military_zone" unique_id=126681995 instance=ExtResource("1_mlp4t")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane" parent="." index="0" unique_id=965541116]
+[node name="Plane" parent="." index="0" unique_id=1968111771]
 material_override = ExtResource("2_b7wqp")

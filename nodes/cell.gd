@@ -1,13 +1,17 @@
 extends Area3D 
 
 @export var zone = 1
-var has_building: bool = false
-var current_build: Building
-var has_worker: bool = false
-var current_worker: Worker
+@export var has_building: bool = false
+@export var current_build: Building
+@export var has_worker: bool = false
+@export var current_worker: Worker
 
 func _ready() -> void:
 	$Sprite3D.hide()
+	if has_building and current_build:
+		place(current_build)
+	if has_worker and current_worker:
+		appoint(current_worker)
 
 func _input_event(camera, event, click_position, click_normal, shape_idx):
 	if check_zone_status() and event.is_action_pressed("place"):
@@ -15,16 +19,18 @@ func _input_event(camera, event, click_position, click_normal, shape_idx):
 			place()
 		elif %BaseUI.worker_state and has_building and has_worker == false:
 			appoint()
+		elif %BaseUI.demolition_state:
+			displace()
 		elif has_building:
 			click_res()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
 
-func place():
+func place(building: Building = %BaseUI.selected_build):
 	$Build_part.emitting = true
 	%BaseUI.building_state = false
 	has_building = true
-	current_build = %BaseUI.selected_build
+	current_build = building
 	%BaseUI.selected_build = null
 	_mouse_exit()
 	print(current_build.name, " поставлено на ", name)
@@ -42,10 +48,34 @@ func place():
 			inst.rotation_degrees.y = 270
 	add_child(inst)
 
-func appoint():
+func displace():
+	if has_building:
+		if has_worker:
+			if current_worker.is_unique == false:
+				Global.add_to_integer_res_type(2, 10)
+				%BaseUI.change_label(2, true)
+		get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
+		$Sprite3D/Portair.texture = null
+		current_worker = null
+		has_worker = false
+		print("Работник убран с клетки ", name, " из-за сноса района")
+		$Time_to_res.stop()
+		
+		$Build_part.emitting = true
+		%BaseUI.demolition_state = false
+		Global.add_to_integer_res_type(current_build.buy_cost_type, current_build.buy_cost)
+		%BaseUI.change_label(current_build.buy_cost_type, true)
+		has_building = false
+		current_build = null
+		_mouse_exit()
+		print("район ", name," снесён")
+		$Sprite3D.visible = false
+		get_child(-1).queue_free()
+
+func appoint(work: Worker = %BaseUI.selected_worker):
 	%BaseUI.worker_state = false
 	has_worker = true
-	current_worker = %BaseUI.selected_worker
+	current_worker = work
 	get_tree().call_group("Work_panels", "change_work_icon", true, current_worker)
 	%BaseUI.selected_worker = null
 	_mouse_exit()
@@ -68,12 +98,11 @@ func disappoint():
 	print("Работник убран с клетки ", name)
 	$Time_to_res.stop()
 	$Sprite3D/Portair.texture = null
-	
 
 func _mouse_enter():
 	if check_zone_status():
 		var mat = $MeshInstance3D.get_active_material(0).duplicate()
-		if %BaseUI.building_state == true and %BaseUI.worker_state == false:
+		if %BaseUI.building_state == true and %BaseUI.worker_state == false and %BaseUI.demolition_state == false:
 			if !has_building:
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -82,7 +111,7 @@ func _mouse_enter():
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 				twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
-		elif %BaseUI.building_state == false and %BaseUI.worker_state == true:
+		elif %BaseUI.building_state == false and %BaseUI.worker_state == true and %BaseUI.demolition_state == false:
 			if !has_building:
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -92,6 +121,17 @@ func _mouse_enter():
 				$MeshInstance3D.set_surface_override_material(0, mat)
 				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 				twac.tween_property(mat, "albedo_color", Color(0.0, 1.164, 0.339, 0.561), 0.5)
+		elif %BaseUI.building_state == false and %BaseUI.worker_state == false and %BaseUI.demolition_state == true:
+			if !has_building:
+				$MeshInstance3D.set_surface_override_material(0, mat)
+				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+				twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
+			else:
+				$Sprite3D/corner.visible = true
+				$MeshInstance3D.set_surface_override_material(0, mat)
+				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+				twac.tween_property(mat, "albedo_color", Color(1.164, 1.164, 0.339, 0.561), 0.5)
+
 
 func _mouse_exit():
 	var mat = $MeshInstance3D.get_active_material(0).duplicate()
