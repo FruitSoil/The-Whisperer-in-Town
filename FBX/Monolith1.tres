@@ -5,8 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://dtewrb33ujgfr" path="res://Images/UV/Monolit/Monolith_Height.png" id="3_xkcye"]
 
 [resource]
+specular_mode = 1
 albedo_texture = ExtResource("1_f8ueo")
+metallic_specular = 1.0
+roughness = 0.41
+roughness_texture = ExtResource("3_xkcye")
 emission_enabled = true
+emission_energy_multiplier = 16.0
 emission_texture = ExtResource("2_k8cn1")
 heightmap_enabled = true
 heightmap_scale = 0.0

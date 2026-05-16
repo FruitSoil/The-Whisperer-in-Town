@@ -2,15 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://c0ig0g0yvk2h0" path="res://FBX/District_Factories_Level3.fbx" id="1_2kvtk"]
 [ext_resource type="Material" uid="uid://04mprnvfbus4" path="res://FBX/M_District_Factories_lvl3.tres" id="2_bgdfi"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="3_eu5ip"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu5ip"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymfr8"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.3882353)
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_eu5ip")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_bgdfi"]
-material = SubResource("StandardMaterial3D_eu5ip")
-radius = 0.05
-height = 0.1
+[sub_resource type="PlaneMesh" id="PlaneMesh_lhsyg"]
+material = SubResource("StandardMaterial3D_ymfr8")
+size = Vector2(0.1, 0.1)
+orientation = 2
 
 [sub_resource type="Curve" id="Curve_bgdfi"]
 _limits = [0.0, 100.0, 0.0, 1.0]
@@ -60,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73061126, 1.4376336, -0.878
 amount = 32
 lifetime = 3.0
 speed_scale = 0.1
-mesh = SubResource("SphereMesh_bgdfi")
+mesh = SubResource("PlaneMesh_lhsyg")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -74,7 +81,7 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_bgdfi")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_eu5ip")
 
 [node name="Build_part2" type="CPUParticles3D" parent="." index="4" unique_id=884920861]
@@ -82,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06394446, 1.4376336, -0.878
 amount = 32
 lifetime = 3.0
 speed_scale = 0.1
-mesh = SubResource("SphereMesh_bgdfi")
+mesh = SubResource("PlaneMesh_lhsyg")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -96,7 +103,7 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_bgdfi")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_eu5ip")
 
 [node name="Build_part3" type="CPUParticles3D" parent="." index="5" unique_id=1909005260]
@@ -104,7 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60272235, 1.4376336, -0.87
 amount = 32
 lifetime = 3.0
 speed_scale = 0.1
-mesh = SubResource("SphereMesh_bgdfi")
+mesh = SubResource("PlaneMesh_lhsyg")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -118,5 +125,5 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_bgdfi")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_eu5ip")

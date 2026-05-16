@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byl43gddafpp7"
-path.s3tc="res://.godot/imported/money_res_icon.png-c81f92c34a98729672f2874401a98f22.s3tc.ctex"
+uid="uid://cpcv6mhyomic3"
+path.s3tc="res://.godot/imported/Background_Character.png-05e7e842b4c68c05256a7ad98894a0bc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Resources_icons/money_res_icon.png"
-dest_files=["res://.godot/imported/money_res_icon.png-c81f92c34a98729672f2874401a98f22.s3tc.ctex"]
+source_file="res://Images/UI/Background_Character.png"
+dest_files=["res://.godot/imported/Background_Character.png-05e7e842b4c68c05256a7ad98894a0bc.s3tc.ctex"]
 
 [params]
 

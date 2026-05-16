@@ -154,8 +154,8 @@ func _on_time_to_res_timeout() -> void:
 		%BaseUI.change_label(current_worker.new_res_type,true)
 	%BaseUI.change_label(current_build.res_type,true)
 	var tws = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	tws.tween_property($Sprite3D,"pixel_size",0.011,0.3)
-	tws.tween_property($Sprite3D,"pixel_size",0.01,0.3)
+	tws.tween_property($Sprite3D,"pixel_size",0.0065,0.3)
+	tws.tween_property($Sprite3D,"pixel_size",0.006,0.3)
 
 func click_res():
 	var rand = randi_range(0,100)

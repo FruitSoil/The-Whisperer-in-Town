@@ -55,13 +55,12 @@
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/AireExterior.ttf" id="44_71vvp"]
 [ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="44_pxd2t"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
-[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="52_pqm0w"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpk0c"]
-shader = ExtResource("52_pqm0w")
-shader_parameter/pixel_size = 1.400000019
-shader_parameter/color_levels = 20.0
+[ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
+[ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Outline.gdshader" id="56_yiww8"]
+[ext_resource type="Texture2D" uid="uid://bssjlyej2swic" path="res://Images/Particles/free-png.ru-276-370x322.png" id="57_ha1fh"]
+[ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
+[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="59_yiww8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
@@ -331,33 +330,124 @@ _data = {
 &"To": SubResource("Animation_7yne8")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha1fh"]
+shader = ExtResource("59_yiww8")
+shader_parameter/pixel_size = 2.0000000475
+shader_parameter/color_levels = 20.0
+shader_parameter/blur_dir = Vector2(0, 0)
+shader_parameter/zoom_blur_amount = 1.0
+shader_parameter/blur_iterations = 4
+shader_parameter/blur_intensity = 0.0400000019
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2kq4"]
 size = Vector3(2, 2, 2)
 
 [sub_resource type="Environment" id="Environment_58prt"]
-background_energy_multiplier = 4.59
-tonemap_white = 13.65
+ambient_light_source = 2
+ambient_light_color = Color(0.68958807, 0.80019635, 0.9999997, 1)
+ambient_light_energy = 0.46
 ssao_enabled = true
-ssao_radius = 4.08
+ssao_radius = 16.0
 ssao_intensity = 16.0
-ssao_power = 0.16898446
-ssao_detail = 2.66
+ssao_power = 38.988014
+ssao_horizon = 0.75
+ssao_sharpness = 0.0
+ssil_sharpness = 1.0
+ssil_normal_rejection = 0.0
+sdfgi_bounce_feedback = 0.84
+sdfgi_cascades = 1
+sdfgi_min_cell_size = 1.6
+sdfgi_energy = 3.67
+glow_enabled = true
 glow_levels/1 = 4.73
 glow_levels/2 = 3.47
 glow_levels/3 = 1.8
 glow_levels/4 = 1.05
-glow_intensity = 1.27
-glow_strength = 0.78
-glow_blend_mode = 0
-glow_hdr_threshold = 0.44
+glow_intensity = 0.97
+glow_hdr_threshold = 0.9
+glow_hdr_scale = 1.75
 fog_light_color = Color(0, 0, 0, 1)
 fog_light_energy = 2.44
 fog_sun_scatter = 0.22
 fog_depth_curve = 0.48296744
 fog_depth_begin = 0.0
 fog_depth_end = 239.2
-volumetric_fog_density = 0.006
+volumetric_fog_density = 0.0141
+volumetric_fog_albedo = Color(0.8039216, 1, 1, 1)
+volumetric_fog_detail_spread = 6.0
 adjustment_brightness = 1.32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yiww8"]
+render_priority = -1
+shader = ExtResource("56_yiww8")
+shader_parameter/depth_threshold = 0.010000000475
+shader_parameter/reverse_depth_threshold = 1.0
+shader_parameter/normal_threshold = 0.5490000260775
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 0.0
+shader_parameter/normal_edge_bias = Vector3(6.36, 1, 1)
+shader_parameter/light_direction = Vector3(-17.77, -45.235, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_71vvp"]
+material = SubResource("ShaderMaterial_yiww8")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_ha1fh"]
+offsets = PackedFloat32Array(0, 0.5572139)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bg06i"]
+gradient = SubResource("Gradient_ha1fh")
+
+[sub_resource type="Gradient" id="Gradient_71vvp"]
+offsets = PackedFloat32Array(0, 0.3, 0.79, 1)
+colors = PackedColorArray(0.5921569, 0.7647059, 1, 0, 0.5911117, 0.7660763, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f6pby"]
+gradient = SubResource("Gradient_71vvp")
+
+[sub_resource type="Curve" id="Curve_bg06i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6bc7i"]
+curve = SubResource("Curve_bg06i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3c4k5"]
+emission_shape_scale = Vector3(8.025, 8.025, 8.025)
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 0.113
+direction = Vector3(0, -1, 0)
+spread = 24.677
+initial_velocity_max = 2.0
+gravity = Vector3(0, -1, 0)
+scale_min = 0.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_6bc7i")
+scale_over_velocity_min = 149.34999
+scale_over_velocity_max = 149.34999
+color = Color(1, 1, 1, 0.22745098)
+color_ramp = SubResource("GradientTexture1D_f6pby")
+color_initial_ramp = SubResource("GradientTexture1D_bg06i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg06i"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("57_ha1fh")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6bc7i"]
+material = SubResource("StandardMaterial3D_bg06i")
+size = Vector2(0.1, 0.1)
+orientation = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6adnx"]
 material = ExtResource("49_rpk0c")
@@ -389,18 +479,6 @@ material = SubResource("StandardMaterial3D_nbuuu")
 size = Vector3(100.200005, 30.300001, 1)
 
 [node name="Test_scene" type="Node3D" unique_id=913157555]
-
-[node name="Pixel" type="CanvasLayer" parent="." unique_id=11253032]
-layer = -1
-
-[node name="ColorRect2" type="ColorRect" parent="Pixel" unique_id=507914144]
-material = SubResource("ShaderMaterial_rpk0c")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 
@@ -1775,6 +1853,21 @@ stretch_mode = 5
 [node name="UI_animator" type="AnimationPlayer" parent="HUD" unique_id=735371404]
 libraries/ = SubResource("AnimationLibrary_6p561")
 
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1063996079 node_paths=PackedStringArray("camera")]
+material = SubResource("ShaderMaterial_ha1fh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("54_yiww8")
+camera = NodePath("../../Camera/Camera")
+sensitivity = 10.0
+
 [node name="Camera" type="RigidBody3D" parent="." unique_id=308092841]
 transform = Transform3D(-0.7071067, 0, -0.70710677, 0, 1, 0, 0.7071067, 0, -0.70710677, -5, 20, -5)
 gravity_scale = 0.0
@@ -1785,13 +1878,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.9802322e-08, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_m2kq4")
 
 [node name="Camera" type="Camera3D" parent="Camera" unique_id=707794150]
-transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372774, 0, -0.7372773, 0.6755902, -4.454771, 0, 35.28463)
+transform = Transform3D(1, 0, 0, 0, 0.6755902, 0.7372773, 0, -0.7372773, 0.6755902, -4.454771, 0, 35.28463)
 environment = SubResource("Environment_58prt")
-doppler_tracking = 2
 projection = 1
 current = true
 fov = 37.849285
 size = 14.0
+
+[node name="PostProcessing" type="MeshInstance3D" parent="Camera/Camera" unique_id=1123537167]
+transform = Transform3D(-0.70710677, -0.5213338, 0.4777144, 0.52133375, 0.072054565, 0.8503054, -0.47771436, 0.8503053, 0.2208387, 0, 0, 0)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_71vvp")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera/Camera" unique_id=1566402554]
+transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
+amount = 500
+lifetime = 2.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_3c4k5")
+draw_pass_1 = SubResource("PlaneMesh_6bc7i")
+
+[node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="." unique_id=1347226012]
+strength = -0.5
+size = Vector3(212.40001, 87.8, 164.2)
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]
 
@@ -1800,9 +1909,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.3
 mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
-transform = Transform3D(0.7901552, -0.3756551, 0.4842916, 0, 0.7901552, 0.61290705, -0.6129071, -0.48429167, 0.624345, 0, 14.49, 0)
+transform = Transform3D(0.20278737, 0.65395695, 0.7288468, 0, -0.7443116, 0.6678326, 0.9792229, -0.13542801, -0.15093695, 0, 14.49, 0)
 light_color = Color(1, 0.98039216, 0.95686275, 1)
-light_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 sky_mode = 1
@@ -2077,22 +2185,6 @@ zone = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.54, 0, 17.59)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid5" unique_id=64203254 groups=["cell"] instance=ExtResource("4_4tceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
-zone = 2
-
-[node name="Cell2" parent="Grid5" unique_id=396358887 groups=["cell"] instance=ExtResource("4_4tceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
-zone = 2
-
-[node name="Cell3" parent="Grid5" unique_id=695479614 groups=["cell"] instance=ExtResource("4_4tceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
-zone = 2
-
-[node name="Cell4" parent="Grid5" unique_id=2000543824 groups=["cell"] instance=ExtResource("4_4tceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
-zone = 2
-
 [node name="Cell5" parent="Grid5" unique_id=1126394595 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 2
@@ -2140,6 +2232,9 @@ zone = 2
 [node name="Cell16" parent="Grid5" unique_id=620340937 groups=["cell"] instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 2
+
+[node name="Monolith" parent="Grid5" unique_id=1656646855 instance=ExtResource("58_71vvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39999962, -0.1, -2.3000002)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1585884179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, -18.5)
@@ -2223,7 +2318,7 @@ transform = Transform3D(-4.3711392e-08, 0, 18.661104, 0, 2.8, 0, -0.99999994, 0,
 mesh = SubResource("BoxMesh_m2kq4")
 
 [node name="Borders" type="Node3D" parent="." unique_id=1743003758]
-transform = Transform3D(0.805, 0, 0, 0, 1, 0, 0, 0, 0.805, 0.7, 0, 1.0999999)
+transform = Transform3D(0.9, 0, 0, 0, 1.118, 0, 0, 0, 0.9, 0.7, 0, 1.0999999)
 metadata/_edit_group_ = true
 
 [node name="border" type="StaticBody3D" parent="Borders" unique_id=1816403822]

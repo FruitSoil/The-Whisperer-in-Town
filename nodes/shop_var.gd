@@ -64,6 +64,6 @@ func no_res():
 	var twp = create_tween().set_trans(Tween.TRANS_ELASTIC)
 	var rnd = randf_range(-6,6)
 	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	twp.tween_property($buy, "position", Vector2(430.0 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(427,0))
-	twp.tween_property($buy, "position", Vector2(430.0,0), 0.5).set_ease(Tween.EASE_OUT)
+	twp.tween_property($buy, "position", Vector2(442.0 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(442,0))
+	twp.tween_property($buy, "position", Vector2(442.0,0), 0.5).set_ease(Tween.EASE_OUT)
 	twm.tween_property($buy, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))

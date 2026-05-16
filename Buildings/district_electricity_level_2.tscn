@@ -2,15 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://bulucj54lajet" path="res://FBX/District_Electricity_Level2.fbx" id="1_qh7fn"]
 [ext_resource type="Material" uid="uid://dgtk12xvsls3v" path="res://FBX/M_District_Electricity_lvl2.tres" id="2_p0yfm"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="3_p0yfm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epwqr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymfr8"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.3882353)
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_p0yfm")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_p0yfm"]
-material = SubResource("StandardMaterial3D_epwqr")
-radius = 0.075
-height = 0.15
+[sub_resource type="PlaneMesh" id="PlaneMesh_d6y37"]
+material = SubResource("StandardMaterial3D_ymfr8")
+size = Vector2(0.1, 0.1)
+orientation = 2
 
 [sub_resource type="Curve" id="Curve_d6y37"]
 _limits = [0.0, 100.0, 0.0, 1.0]
@@ -21,6 +28,10 @@ point_count = 2
 _limits = [0.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 2.9775283), 0.0, 0.0, 0, 0, Vector2(0.3463415, 2.6966295), -6.201386, -6.201386, 0, 0, Vector2(0.65853655, 0), -0.33382314, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_p0yfm"]
+offsets = PackedFloat32Array(0.16182573, 1)
+colors = PackedColorArray(0.029045643, 0.029045643, 0.029045643, 1, 1, 1, 1, 1)
 
 [node name="District_Electricity_Level2" unique_id=1714084196 instance=ExtResource("1_qh7fn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
@@ -77,11 +88,11 @@ omni_range = 1.506
 omni_shadow_mode = 0
 
 [node name="Build_part2" type="CPUParticles3D" parent="." index="5" unique_id=1117688546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0639446, 0.4376336, 0.010327102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1750557, 0.4376336, 0.12143822)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
-mesh = SubResource("SphereMesh_p0yfm")
+mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -94,15 +105,17 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_w2muw")
+color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part3" type="CPUParticles3D" parent="." index="6" unique_id=1441532355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063944526, 0.4376336, -1.1007841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17505564, 0.4376336, -0.9896729)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
-mesh = SubResource("SphereMesh_p0yfm")
+mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -115,15 +128,17 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_w2muw")
+color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part4" type="CPUParticles3D" parent="." index="7" unique_id=1760295314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04716655, 0.4376336, 1.1214383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06394457, 0.4376336, 1.2325494)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
-mesh = SubResource("SphereMesh_p0yfm")
+mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -136,15 +151,17 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_w2muw")
+color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part5" type="CPUParticles3D" parent="." index="8" unique_id=460242368]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0471666, 0.4376336, 0.010327102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9360555, 0.4376336, 0.12143822)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
-mesh = SubResource("SphereMesh_p0yfm")
+mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 0.1, 0.06)
 direction = Vector3(0, 1, 0)
@@ -157,5 +174,7 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.3
+scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_w2muw")
+color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color_ramp = SubResource("Gradient_p0yfm")
