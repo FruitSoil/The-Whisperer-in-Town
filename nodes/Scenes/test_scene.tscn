@@ -55,6 +55,7 @@
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/AireExterior.ttf" id="44_71vvp"]
 [ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="44_pxd2t"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
+[ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="53_bg06i"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Outline.gdshader" id="56_yiww8"]
@@ -624,6 +625,7 @@ offset_bottom = 98.0
 grow_horizontal = 0
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -740,6 +742,7 @@ mouse_filter = 2
 texture = ExtResource("40_pqm0w")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -1018,7 +1021,6 @@ layout_mode = 2
 res = ExtResource("23_4a5cs")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1169,7 +1171,7 @@ layout_mode = 0
 offset_left = 85.0
 offset_top = 605.0
 offset_right = 451.0
-offset_bottom = 977.0
+offset_bottom = 964.0
 alignment = 2
 
 [node name="Zone_5" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1313090396 groups=["zone_button"]]
@@ -1853,6 +1855,28 @@ stretch_mode = 5
 [node name="UI_animator" type="AnimationPlayer" parent="HUD" unique_id=735371404]
 libraries/ = SubResource("AnimationLibrary_6p561")
 
+[node name="PortairDrag" type="TextureRect" parent="HUD" unique_id=208095606]
+z_index = 200
+offset_left = -105.0
+offset_top = -117.0
+offset_right = -30.0
+offset_bottom = -42.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("4_igchu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BG" type="TextureRect" parent="HUD/PortairDrag" unique_id=1803953929]
+modulate = Color(0.46229059, 0.46229059, 0.46229059, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -9.033333
+offset_top = -8.0
+offset_right = 88.03333
+offset_bottom = 88.0
+texture = ExtResource("53_bg06i")
+
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
 layer = -1
 
@@ -1867,6 +1891,7 @@ mouse_filter = 2
 script = ExtResource("54_yiww8")
 camera = NodePath("../../Camera/Camera")
 sensitivity = 10.0
+metadata/_edit_lock_ = true
 
 [node name="Camera" type="RigidBody3D" parent="." unique_id=308092841]
 transform = Transform3D(-0.7071067, 0, -0.70710677, 0, 1, 0, 0.7071067, 0, -0.70710677, -5, 20, -5)

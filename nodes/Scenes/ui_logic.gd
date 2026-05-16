@@ -1,5 +1,8 @@
 extends Control
 
+@onready var desc: RichTextLabel = $Store_UI/Zones_View/Desc/Desc
+@onready var drag: TextureRect = $"../PortairDrag"
+
 var building_state: bool = false 
 var selected_build: Building = null
 var worker_state: bool = false 
@@ -12,8 +15,15 @@ var store_scroll_max: float = -1450.0
 var quest_scroll_max: float = -350.0 
 
 func _ready() -> void:
+	desc.mouse_entered.connect(desc_quest_enter)
+	desc.mouse_exited.connect(desc_quest_exited)
 	change_all_label(false)
+	$"../PortairDrag".hide()
 	_on_exit_pressed()
+
+func _process(delta: float) -> void:
+	if drag.visible:
+		drag.position = get_viewport().get_mouse_position() - drag.size/2
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("displace") and building_state:
@@ -22,6 +32,7 @@ func _input(event: InputEvent) -> void:
 		Global.add_to_integer_res_type(selected_build.buy_cost_type,selected_build.buy_cost)
 		change_all_label(true)
 	if event.is_action_released("displace") and worker_state:
+		drag.hide()
 		get_tree().call_group("cell", "_mouse_exit")
 		if selected_worker.resource_name == "Default":
 			Global.add_to_integer_res_type(2,10)
@@ -64,10 +75,19 @@ func switch_to_build(selected: Building):
 	worker_state = false
 
 func switch_to_worker(selected: Worker):
+	drag.show()
+	drag.texture = selected.icon
 	selected_worker = selected
 	_on_exit_pressed()
 	worker_state = true
 	building_state = false
+
+func jigle():
+	var twp = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	var twr = create_tween().set_trans(Tween.TRANS_SPRING)
+	twp.tween_property(drag,"modulate", Color(1.0, 1.0, 1.0, 1.0), 1.5).from(Color(1.0, 0.564, 0.501, 1.0))
+	twr.tween_property(drag,"rotation_degrees", -10, 0.1).from(0)
+	twr.tween_property(drag,"rotation_degrees", 0,  0.1)
 
 func change_all_label(is_added: bool):
 	for i in 7:
@@ -208,16 +228,13 @@ func no_res():
 
 func slider_changed(value: float) -> void:
 	$"Store_UI/Build_scroll_list/VBС".position.y = store_scroll_max / 100 * value
-
 func slider_quest_changed(value: float) -> void:
 	$Quest_UI/Quest_scroll_list/VBoxContainer.position.y = quest_scroll_max / 100 * value
 
 func _on_store_gui_input(event: InputEvent) -> void:
 	slider_mouse(true, event)
-
 func _on_quest_gui_input(event: InputEvent) -> void:
 	slider_mouse(false, event)
-
 func slider_mouse(is_store: bool, event: InputEvent):
 	var speed: float = 5
 	var slider: Node
@@ -235,3 +252,8 @@ func _on_demolition_toggled() -> void:
 	demolition_state = true
 	building_state = false
 	worker_state = false
+
+func desc_quest_exited():
+	desc.add_theme_color_override("default_color",Color("b5d4b5"))
+func desc_quest_enter():
+	desc.add_theme_color_override("default_color",Color(1.0, 1.0, 1.0, 1.0))

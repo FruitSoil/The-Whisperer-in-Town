@@ -19,10 +19,14 @@ func _input_event(camera, event, click_position, click_normal, shape_idx):
 			place()
 		elif %BaseUI.worker_state and has_building and has_worker == false:
 			appoint()
-		elif %BaseUI.demolition_state:
+			$"../../HUD/PortairDrag".hide()
+		elif %BaseUI.demolition_state and has_building:
 			displace()
 		elif has_building:
 			click_res()
+			%BaseUI.jigle()
+		else:
+			%BaseUI.jigle()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
 
@@ -37,6 +41,8 @@ func place(building: Building = %BaseUI.selected_build):
 	$Sprite3D.visible = true
 	var inst = current_build.model.instantiate()
 	var rot = randi_range(0,3)
+	var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-1.5,0))
 	match rot:
 		0:
 			inst.rotation_degrees.y = 0
@@ -47,30 +53,33 @@ func place(building: Building = %BaseUI.selected_build):
 		3:
 			inst.rotation_degrees.y = 270
 	add_child(inst)
+	
 
 func displace():
-	if has_building:
-		if has_worker:
-			if current_worker.is_unique == false:
-				Global.add_to_integer_res_type(2, 10)
-				%BaseUI.change_label(2, true)
-		get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
-		$Sprite3D/Portair.texture = null
-		current_worker = null
-		has_worker = false
-		print("Работник убран с клетки ", name, " из-за сноса района")
-		$Time_to_res.stop()
-		
-		$Build_part.emitting = true
-		%BaseUI.demolition_state = false
-		Global.add_to_integer_res_type(current_build.buy_cost_type, current_build.buy_cost)
-		%BaseUI.change_label(current_build.buy_cost_type, true)
-		has_building = false
-		current_build = null
-		_mouse_exit()
-		print("район ", name," снесён")
-		$Sprite3D.visible = false
-		get_child(-1).queue_free()
+	if has_worker:
+		if current_worker.is_unique == false:
+			Global.add_to_integer_res_type(2, 10)
+			%BaseUI.change_label(2, true)
+	get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
+	$Sprite3D/Portair.texture = null
+	current_worker = null
+	has_worker = false
+	print("Работник убран с клетки ", name, " из-за сноса района")
+	$Time_to_res.stop()
+	
+	$Build_part.emitting = true
+	%BaseUI.demolition_state = false
+	Global.add_to_integer_res_type(current_build.buy_cost_type, current_build.buy_cost)
+	%BaseUI.change_label(current_build.buy_cost_type, true)
+	has_building = false
+	current_build = null
+	_mouse_exit()
+	print("район ", name," снесён")
+	$Sprite3D.visible = false
+	var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	twap.tween_property(get_child(-1), "position", Vector3(0,-1.5,0), 0.5).from(Vector3(0,0,0))
+	await get_tree().create_timer(0.5).timeout
+	get_child(-1).queue_free()
 
 func appoint(work: Worker = %BaseUI.selected_worker):
 	%BaseUI.worker_state = false

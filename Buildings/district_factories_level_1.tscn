@@ -6,11 +6,11 @@
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
 [node name="Light" type="OmniLight3D" parent="." index="1" unique_id=1710070899]
-transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0.0083630085, 0.33683044, 0.05294103)
+transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0.0083630085, 0.8361484, 0.052941035)
 light_color = Color(1, 1, 0.8039216, 1)
-light_energy = 0.647
-light_volumetric_fog_energy = 5.118
-light_size = 0.125
+light_energy = 0.304
+light_specular = 0.0
+light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.026
 shadow_blur = 0.632

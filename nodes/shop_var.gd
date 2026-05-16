@@ -3,8 +3,11 @@ extends Panel
 @export var res: Building 
 @export var is_open: bool = false
 @onready var condition: Label = $Condition
+@onready var description: RichTextLabel = $Description
 
 func _ready() -> void:
+	description.mouse_entered.connect(desc_enter)
+	description.mouse_exited.connect(desc_exit)
 	$buy.pressed.connect(_on_buy_pressed)
 	update()
 
@@ -67,3 +70,9 @@ func no_res():
 	twp.tween_property($buy, "position", Vector2(442.0 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(442,0))
 	twp.tween_property($buy, "position", Vector2(442.0,0), 0.5).set_ease(Tween.EASE_OUT)
 	twm.tween_property($buy, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))
+
+func desc_exit():
+	description.add_theme_color_override("default_color",Color(1.0, 1.0, 1.0, 1.0))
+
+func desc_enter():
+	description.add_theme_color_override("default_color",Color(0.528, 0.784, 0.775, 1.0))

@@ -99,15 +99,19 @@ texture = ExtResource("2_hy5qt")
 
 [node name="Build_part" type="CPUParticles3D" parent="." unique_id=319671702]
 emitting = false
-amount = 32
+amount = 128
 lifetime = 1.5
 one_shot = true
-explosiveness = 1.0
+explosiveness = 0.88
 randomness = 1.0
 lifetime_randomness = 0.48
 mesh = SubResource("PlaneMesh_1nuhy")
-emission_shape = 3
-emission_box_extents = Vector3(2, 0.1, 2)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 10, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 2.5
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 1, 0)
 spread = 0.0
 initial_velocity_min = 4.0
