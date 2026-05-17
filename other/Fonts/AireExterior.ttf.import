@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b3ivgio20en0k"
-path="res://.godot/imported/Kreadon-Demi.ttf-780823ea919084acfb1f55906176087a.fontdata"
+uid="uid://hylwom3w08c3"
+path="res://.godot/imported/AireExterior.ttf-5bc3c72b5639a0a898b22320acb727f0.fontdata"
 
 [deps]
 
-source_file="res://other/Kreadon-Demi.ttf"
-dest_files=["res://.godot/imported/Kreadon-Demi.ttf-780823ea919084acfb1f55906176087a.fontdata"]
+source_file="res://other/Fonts/AireExterior.ttf"
+dest_files=["res://.godot/imported/AireExterior.ttf-5bc3c72b5639a0a898b22320acb727f0.fontdata"]
 
 [params]
 

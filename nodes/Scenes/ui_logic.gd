@@ -15,6 +15,14 @@ var store_scroll_max: float = -1450.0
 var quest_scroll_max: float = -350.0 
 
 func _ready() -> void:
+	$res_panel/HBC/res1.hide()
+	$res_panel/HBC/res2.hide()
+	$res_panel/HBC/res3.hide()
+	$res_panel/HBC/res4.hide()
+	$res_panel/HBC/res5.hide()
+	$res_panel/HBC/res6.hide()
+	$res_panel/HBC/res7.hide()
+	
 	$"../../PostProcess".show()
 	$"..".show()
 	
@@ -32,18 +40,21 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("displace") and building_state:
+		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		building_state = false
 		Global.add_to_integer_res_type(selected_build.buy_cost_type,selected_build.buy_cost)
 		change_all_label(true)
 	if event.is_action_released("displace") and worker_state:
 		drag.hide()
+		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		if selected_worker.resource_name == "Default":
 			Global.add_to_integer_res_type(2,10)
 			change_label(2,true)
 		worker_state = false
 	if event.is_action_released("displace") and demolition_state:
+		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		demolition_state = false
 
@@ -77,12 +88,14 @@ func anim_finish(anim_name: StringName) -> void:
 		$Panel.visible = false
 
 func switch_to_build(selected: Building):
+	get_tree().call_group("cell","toggle_lines", true)
 	selected_build = selected
 	_on_exit_pressed()
 	building_state = true
 	worker_state = false
 
 func switch_to_worker(selected: Worker):
+	get_tree().call_group("cell","toggle_lines", true)
 	drag.show()
 	drag.texture = selected.icon
 	selected_worker = selected
@@ -104,54 +117,82 @@ func change_all_label(is_added: bool):
 func change_label(type: int, is_added: bool):
 	match type:
 		0:
-			$res_panel/HBC/res1/Label.text = str(Global.rusted)
-			$res_panel/HBC/res1/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res1/Label)
+			if Global.rusted > 0:
+				$res_panel/HBC/res1.show()
+				$res_panel/HBC/res1/Label.text = str(Global.rusted)
+				$res_panel/HBC/res1/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res1/Label)
+				else:
+					anim_decr($res_panel/HBC/res1/Label)
 			else:
-				anim_decr($res_panel/HBC/res1/Label)
+				$res_panel/HBC/res1/Label.text = "-"
 		1:
-			$res_panel/HBC/res2/Label.text = str(Global.electrosnow)
-			$res_panel/HBC/res2/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res2/Label)
+			if Global.electrosnow > 0:
+				$res_panel/HBC/res2.show()
+				$res_panel/HBC/res2/Label.text = str(Global.electrosnow)
+				$res_panel/HBC/res2/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res2/Label)
+				else:
+					anim_decr($res_panel/HBC/res2/Label)
 			else:
-				anim_decr($res_panel/HBC/res2/Label)
+				$res_panel/HBC/res2/Label.text = "-"
 		2:
-			$res_panel/HBC/res3/Label.text = str(Global.money)
-			$res_panel/HBC/res3/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res3/Label)
+			if Global.money > 0:
+				$res_panel/HBC/res3.show()
+				$res_panel/HBC/res3/Label.text = str(Global.money)
+				$res_panel/HBC/res3/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res3/Label)
+				else:
+					anim_decr($res_panel/HBC/res3/Label)
 			else:
-				anim_decr($res_panel/HBC/res3/Label)
+				$res_panel/HBC/res3/Label.text = "-"
 		3:
-			$res_panel/HBC/res4/Label.text = str(Global.highqualityelectrical)
-			$res_panel/HBC/res4/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res4/Label)
+			if Global.highqualityelectrical > 0:
+				$res_panel/HBC/res4.show()
+				$res_panel/HBC/res4/Label.text = str(Global.highqualityelectrical)
+				$res_panel/HBC/res4/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res4/Label)
+				else:
+					anim_decr($res_panel/HBC/res4/Label)
 			else:
-				anim_decr($res_panel/HBC/res4/Label)
+				$res_panel/HBC/res4/Label.text = "-"
 		4:
-			$res_panel/HBC/res5/Label.text = str(Global.heavycomponents)
-			$res_panel/HBC/res5/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res5/Label)
+			if Global.heavycomponents > 0:
+				$res_panel/HBC/res5.show()
+				$res_panel/HBC/res5/Label.text = str(Global.heavycomponents)
+				$res_panel/HBC/res5/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res5/Label)
+				else:
+					anim_decr($res_panel/HBC/res5/Label)
 			else:
-				anim_decr($res_panel/HBC/res5/Label)
+				$res_panel/HBC/res5/Label.text = "-"
 		5:
-			$res_panel/HBC/res6/Label.text = str(Global.imperial_might)
-			$res_panel/HBC/res6/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res6/Label)
+			if Global.imperial_might > 0:
+				$res_panel/HBC/res6.show()
+				$res_panel/HBC/res6/Label.text = str(Global.imperial_might)
+				$res_panel/HBC/res6/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res6/Label)
+				else:
+					anim_decr($res_panel/HBC/res6/Label)
 			else:
-				anim_decr($res_panel/HBC/res6/Label)
+				$res_panel/HBC/res6/Label.text = "-"
 		6:
-			$res_panel/HBC/res7/Label.text = str(Global.cultist_might)
-			$res_panel/HBC/res7/TextureRect.texture = Global.get_res_icon(type)
-			if is_added:
-				anim_add($res_panel/HBC/res7/Label)
+			if Global.cultist_might > 0:
+				$res_panel/HBC/res7.show()
+				$res_panel/HBC/res7/Label.text = str(Global.cultist_might)
+				$res_panel/HBC/res7/TextureRect.texture = Global.get_res_icon(type)
+				if is_added:
+					anim_add($res_panel/HBC/res7/Label)
+				else:
+					anim_decr($res_panel/HBC/res7/Label)
 			else:
-				anim_decr($res_panel/HBC/res7/Label)
+				$res_panel/HBC/res7/Label.text = "-"
 
 func anim_add(label: Node):
 	var tws = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT).set_parallel(true)
@@ -221,6 +262,7 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl12".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl12".update()
 			get_tree().call_group("zone_button", "check", selected_zone)
+			get_tree().call_group("cell", "lines_update")
 		else:
 			no_res()
 	else:
@@ -258,6 +300,7 @@ func slider_mouse(is_store: bool, event: InputEvent):
 		slider.value -= speed
 
 func _on_demolition_toggled() -> void:
+	get_tree().call_group("cell","toggle_lines", true)
 	demolition_state = true
 	building_state = false
 	worker_state = false

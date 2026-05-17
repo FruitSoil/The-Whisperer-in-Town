@@ -1,12 +1,12 @@
 extends Node
 
-var rusted: int = 9999999
-var electrosnow: int = 9999999
-var money: int = 9999999
-var highqualityelectrical: int = 9999999
-var heavycomponents: int = 9999999
-var imperial_might: int = 9999999
-var cultist_might: int = 9999999
+var rusted: int = 120
+var electrosnow: int = 0
+var money: int = 0
+var highqualityelectrical: int = 0
+var heavycomponents: int = 0
+var imperial_might: int = 0
+var cultist_might: int = 0
 
 var is_zone_1_open:bool = true
 var is_zone_2_open:bool = false

@@ -9,14 +9,54 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51tdh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi0yh"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_afgo3"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_51tdh")
+material = SubResource("StandardMaterial3D_mi0yh")
 size = Vector2(4.5, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nv4cr"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.05882353)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nv4cr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nv4cr")
+size = Vector2(4.5, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csgmv"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.05882353)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_csgmv"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_csgmv")
+size = Vector2(4.5, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28afk"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.05882353)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_28afk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_28afk")
+size = Vector2(4.5, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51tdh"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.05882353)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ncfsq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_51tdh")
+size = Vector2(4.5, 0.05)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymfr8"]
 transparency = 1
@@ -87,7 +127,7 @@ fill_to = Vector2(1, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_6bc7i"]
 offsets = PackedFloat32Array(0.54485774, 0.54923415, 0.9059081, 0.91247267)
-colors = PackedColorArray(0.69803923, 0.2627451, 0, 0, 0.69803923, 0.2627451, 0, 1, 0.69659454, 0.2618194, 2.8878452e-07, 1, 0.69803923, 0.2627451, 0, 0)
+colors = PackedColorArray(0.41568628, 0.42352942, 0.4, 0, 0.7058824, 0.7176471, 0.69411767, 1, 0.707521, 0.7166433, 0.6926691, 1, 0.41568628, 0.42352942, 0.4, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1nuhy"]
 gradient = SubResource("Gradient_6bc7i")
@@ -98,7 +138,7 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="ViewportTexture" id="ViewportTexture_ymfr8"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Cell" type="Area3D" unique_id=763399822]
+[node name="Cell" type="Area3D" unique_id=763399822 groups=["cell"]]
 script = ExtResource("1_51tdh")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1025038257 groups=["cell"]]
@@ -108,10 +148,30 @@ shape = SubResource("BoxShape3D_e4sgp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007768035, 0)
 mesh = SubResource("PlaneMesh_afgo3")
 
+[node name="grid" type="Node3D" parent="." unique_id=1053098717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+visible = false
+
+[node name="Line" type="MeshInstance3D" parent="grid" unique_id=1407440367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008, 2.25)
+mesh = SubResource("PlaneMesh_nv4cr")
+
+[node name="Line2" type="MeshInstance3D" parent="grid" unique_id=1087121085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008, -2.25)
+mesh = SubResource("PlaneMesh_csgmv")
+
+[node name="Line3" type="MeshInstance3D" parent="grid" unique_id=508127123]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.25, 0, 0)
+mesh = SubResource("PlaneMesh_28afk")
+
+[node name="Line4" type="MeshInstance3D" parent="grid" unique_id=1774680575]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.25, 0, 0)
+mesh = SubResource("PlaneMesh_ncfsq")
+
 [node name="Time_to_res" type="Timer" parent="." unique_id=271335964]
 
 [node name="Charge_time" type="Timer" parent="." unique_id=1575833834]
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1871169537]

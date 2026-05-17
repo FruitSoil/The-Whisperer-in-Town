@@ -17,6 +17,28 @@ func _ready() -> void:
 		appoint(current_worker)
 	await RenderingServer.frame_post_draw
 	$Res_progress.texture = $SubViewport.get_texture()
+	await RenderingServer.frame_post_draw
+	lines_update()
+
+func toggle_lines(is_show: bool):
+	if is_show:
+		$grid.show()
+	else:
+		$grid.hide()
+
+func lines_update():
+	var open_color = Color("e1ffe015")
+	var close_color =Color("5b000000")
+	if check_zone_status():
+		$grid/Line.mesh.material.albedo_color = open_color
+		$grid/Line2.mesh.material.albedo_color = open_color
+		$grid/Line3.mesh.material.albedo_color = open_color
+		$grid/Line4.mesh.material.albedo_color = open_color
+	else:
+		$grid/Line.mesh.material.albedo_color = close_color
+		$grid/Line2.mesh.material.albedo_color = close_color
+		$grid/Line3.mesh.material.albedo_color = close_color
+		$grid/Line4.mesh.material.albedo_color = close_color
 
 func _process(delta: float) -> void:
 	if $Time_to_res.time_left > 0:
@@ -28,11 +50,14 @@ func _input_event(camera, event, click_position, click_normal, shape_idx):
 	if check_zone_status() and event.is_action_pressed("place"):
 		if %BaseUI.building_state and has_building == false:
 			place()
+			get_tree().call_group("cell","toggle_lines", false)
 		elif %BaseUI.worker_state and has_building and has_worker == false and  current_build != load("uid://cm6r5ofrc0a8"):
 			appoint()
 			$"../../HUD/PortairDrag".hide()
+			get_tree().call_group("cell","toggle_lines", false)
 		elif %BaseUI.demolition_state and has_building:
 			displace()
+			get_tree().call_group("cell","toggle_lines", false)
 		elif has_building and is_charged:
 			click_res()
 			if $"../../HUD/PortairDrag".visible:
@@ -41,6 +66,7 @@ func _input_event(camera, event, click_position, click_normal, shape_idx):
 			%BaseUI.jigle()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
+		get_tree().call_group("cell","toggle_lines", false)
 
 func place(building: Building = %BaseUI.selected_build):
 	%BaseUI.building_state = false
@@ -56,7 +82,7 @@ func place(building: Building = %BaseUI.selected_build):
 		$Sprite3D.visible = true
 		$Build_part.emitting = true
 		var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-1.5,0))
+		twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-2,0))
 	match rot:
 		0:
 			inst.rotation_degrees.y = 0
@@ -94,7 +120,7 @@ func displace():
 	print("район ", name," снесён")
 	$Sprite3D.visible = false
 	var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-	twap.tween_property(get_child(-1), "position", Vector3(0,-1.5,0), 0.5).from(Vector3(0,0,0))
+	twap.tween_property(get_child(-1), "position", Vector3(0,-4,0), 0.5).from(Vector3(0,0,0))
 	await get_tree().create_timer(0.5).timeout
 	get_child(-1).queue_free()
 
@@ -203,7 +229,7 @@ func click_res():
 	$Charge_part.emitting = true
 	$Charge_sprite.hide()
 	is_charged = false
-	$Charge_time.start()
+	$Charge_time.start(15 + randf_range(-5,5))
 	var rand = randi_range(0,100)
 	if rand <= %BaseUI.chance:
 		%BaseUI.chance = 25
@@ -218,7 +244,15 @@ func click_res():
 	%BaseUI.change_label(current_build.res_type,true)
 
 func check_zone_status() ->bool:
-	if zone == 1 and Global.is_zone_1_open or zone == 2 and Global.is_zone_2_open or zone == 3 and Global.is_zone_3_open: 
+	if zone == 1 and Global.is_zone_1_open == true:
+		return true
+	elif zone == 2 and Global.is_zone_2_open == true:
+		return true
+	elif zone == 3 and Global.is_zone_3_open == true: 
+		return true
+	elif zone == 4 and Global.is_zone_4_open == true: 
+		return true
+	elif zone == 5 and Global.is_zone_5_open == true:
 		return true
 	else:
 		return false

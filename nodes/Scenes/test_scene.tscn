@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="1_6bc7i"]
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
+[ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="2_3c4k5"]
 [ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="2_273he"]
+[ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="2_wmpv0"]
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
 [ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="4_igchu"]
+[ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_yi5b6"]
 [ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
+[ext_resource type="Texture2D" uid="uid://cucf1b2i6waim" path="res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png" id="5_xdeo5"]
 [ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="6_4a5cs"]
 [ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="6_as673"]
 [ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="6_wlw1d"]
@@ -24,6 +28,7 @@
 [ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="11_3we6r"]
 [ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="11_7yne8"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="11_22wmr"]
+[ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="11_yi5b6"]
 [ext_resource type="Texture2D" uid="uid://htqj6ts6031h" path="res://Images/Resources_icons/Electrosnow_res_icon.png" id="12_e4tj1"]
 [ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="12_owdam"]
 [ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://Images/Building_res_icon.png" id="13_273he"]
@@ -53,16 +58,23 @@
 [ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="42_pem7d"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
 [ext_resource type="Texture2D" uid="uid://edo12colapox" path="res://Images/UI/resources_background.PNG" id="43_vcfif"]
-[ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/AireExterior.ttf" id="44_71vvp"]
+[ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="44_71vvp"]
 [ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="44_pxd2t"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="53_bg06i"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
-[ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Outline.gdshader" id="56_yiww8"]
+[ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="56_yiww8"]
 [ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="58_bg06i"]
-[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="59_yiww8"]
+[ext_resource type="Texture2D" uid="uid://brk7a3rn64jgw" path="res://Images/UI/ui4_button1_idle.png" id="59_8w520"]
+[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="59_yiww8"]
+[ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="60_2x4qu"]
+[ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="62_xdeo5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeo5"]
+shader = ExtResource("11_yi5b6")
+shader_parameter/blur = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
@@ -502,6 +514,18 @@ uv1_scale = Vector3(0.3, 0.3, 0.3)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
+[sub_resource type="PrismMesh" id="PrismMesh_6bc7i"]
+material = SubResource("StandardMaterial3D_nbuuu")
+size = Vector3(34.2, 10.695, 15.21)
+
+[sub_resource type="PrismMesh" id="PrismMesh_w47nb"]
+material = SubResource("StandardMaterial3D_nbuuu")
+size = Vector3(34.2, 10.695, 28.365)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3c4k5"]
+material = SubResource("StandardMaterial3D_nbuuu")
+size = Vector3(34.2, 10.695, 36.58)
+
 [sub_resource type="BoxMesh" id="BoxMesh_m2kq4"]
 material = SubResource("StandardMaterial3D_nbuuu")
 
@@ -511,7 +535,64 @@ size = Vector3(100.200005, 30.300001, 1)
 [node name="Test_scene" type="Node3D" unique_id=913157555]
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
+layer = 2
 script = ExtResource("1_6bc7i")
+
+[node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1832.0
+offset_top = 125.0
+offset_right = -1268.0
+offset_bottom = 479.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="MenuButton" type="OptionButton" parent="DEBUG" unique_id=200167587]
+offset_left = 122.0
+offset_top = 191.0
+offset_right = 494.0
+offset_bottom = 256.0
+item_count = 7
+popup/item_0/text = "Rusted 1000"
+popup/item_0/icon = ExtResource("2_3c4k5")
+popup/item_0/id = 0
+popup/item_1/text = "Electrosnow 1000"
+popup/item_1/icon = ExtResource("4_yi5b6")
+popup/item_1/id = 1
+popup/item_2/text = "Money 10"
+popup/item_2/icon = ExtResource("2_wmpv0")
+popup/item_2/id = 2
+popup/item_3/text = "highquality electronic 1000"
+popup/item_3/icon = ExtResource("5_xdeo5")
+popup/item_3/id = 3
+popup/item_4/text = "Heavy Components 1000"
+popup/item_4/icon = ExtResource("19_6w1jj")
+popup/item_4/id = 4
+popup/item_5/text = "Imperial Power 1"
+popup/item_5/icon = ExtResource("20_7vd3e")
+popup/item_5/id = 5
+popup/item_6/text = "Cultistic Power 1"
+popup/item_6/icon = ExtResource("21_7aymr")
+popup/item_6/id = 6
+
+[node name="add" type="Button" parent="DEBUG" unique_id=182118553]
+offset_left = 123.0
+offset_top = 149.0
+offset_right = 286.0
+offset_bottom = 186.0
+text = "Add selected res"
+icon = ExtResource("5_n6sj7")
+
+[node name="Full" type="Button" parent="DEBUG" unique_id=1232582986]
+offset_left = 299.0
+offset_top = 135.0
+offset_right = 445.0
+offset_bottom = 184.0
+text = "All to 99999"
+icon = ExtResource("16_vehi4")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 
@@ -1484,7 +1565,7 @@ alignment = 1
 [node name="res3" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=2095510914]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res3" unique_id=1394959874]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1503,7 +1584,7 @@ text = "999999"
 [node name="res1" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1849715890]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res1" unique_id=335007000]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1522,7 +1603,7 @@ text = "999999"
 [node name="res2" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=400229681]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res2" unique_id=1231804200]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1541,7 +1622,7 @@ text = "999999"
 [node name="res4" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=794772507]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res4" unique_id=1883478541]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1560,7 +1641,7 @@ text = "999999"
 [node name="res5" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1410783975]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res5" unique_id=574833164]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1579,7 +1660,7 @@ text = "999999"
 [node name="res6" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=290253549]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res6" unique_id=1092518357]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1598,7 +1679,7 @@ text = "999999"
 [node name="res7" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=136023260]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
-size_flags_horizontal = 7
+size_flags_horizontal = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res7" unique_id=455937707]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -1979,6 +2060,47 @@ texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Button" type="TextureButton" parent="HUD/BaseUI" unique_id=2120240316]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 44.0
+offset_right = 232.0
+offset_bottom = 196.0
+scale = Vector2(0.461, 0.469)
+texture_normal = ExtResource("59_8w520")
+texture_pressed = ExtResource("60_2x4qu")
+texture_hover = ExtResource("59_8w520")
+texture_disabled = ExtResource("60_2x4qu")
+texture_focused = ExtResource("60_2x4qu")
+
+[node name="line" type="ColorRect" parent="HUD/BaseUI/Button" unique_id=1658223777]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 54.229927
+offset_top = -46.149254
+offset_right = 69.41432
+offset_bottom = 16.43898
+grow_vertical = 2
+scale = Vector2(1.5822119, 1.2595134)
+mouse_filter = 2
+color = Color(0, 0.12156863, 0.13725491, 0.40784314)
+
+[node name="line2" type="ColorRect" parent="HUD/BaseUI/Button" unique_id=137766398]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 104.12147
+offset_top = -46.149254
+offset_right = 119.30585
+offset_bottom = 16.43898
+grow_vertical = 2
+scale = Vector2(1.5822114, 1.2595131)
+mouse_filter = 2
+color = Color(0, 0.12156863, 0.13725491, 0.40784314)
+
 [node name="UI_animator" type="AnimationPlayer" parent="HUD" unique_id=735371404]
 libraries/ = SubResource("AnimationLibrary_6p561")
 
@@ -2019,6 +2141,120 @@ script = ExtResource("54_yiww8")
 camera = NodePath("../../Camera/Camera")
 sensitivity = 10.0
 metadata/_edit_lock_ = true
+
+[node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
+process_mode = 3
+layer = 5
+visible = false
+script = ExtResource("62_xdeo5")
+
+[node name="TextureRect" type="ColorRect" parent="Pause" unique_id=495866217]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBC" type="VBoxContainer" parent="Pause" unique_id=1062980811]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -186.0
+offset_right = 272.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Continue" type="Button" parent="Pause/VBC" unique_id=1613825456]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 48
+text = "Продолжить"
+
+[node name="Settings" type="Button" parent="Pause/VBC" unique_id=1268179501]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 48
+text = "Настройки"
+
+[node name="Exit_to main" type="Button" parent="Pause/VBC" unique_id=803098841]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Выйти в меню"
+
+[node name="Label" type="Label" parent="Pause" unique_id=79810283]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -314.73682
+offset_top = 170.0
+offset_right = 314.73682
+offset_bottom = 337.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "ПАУЗА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Pause" unique_id=135923403]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Pause/Control" unique_id=161444745]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -824.0
+offset_top = -461.0
+offset_right = 824.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Pause/Control" unique_id=844853206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -445.0
+offset_right = 393.5
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 84
+text = "Настройки (WIP)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Pause/Control" unique_id=1081046332]
+layout_mode = 0
+offset_left = 1631.0
+offset_top = 83.0
+offset_right = 1781.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 48
+text = "Выйти"
 
 [node name="Camera" type="RigidBody3D" parent="." unique_id=308092841]
 transform = Transform3D(-0.7071067, 0, -0.70710677, 0, 1, 0, 0.7071067, 0, -0.70710677, -5, 20, -5)
@@ -2068,6 +2304,52 @@ size = Vector3(212.40001, 87.8, 164.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.33214593)
 mesh = SubResource("PlaneMesh_6adnx")
 
+[node name="Node3D" type="Node3D" parent="Enviroment" unique_id=615693890]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1784388268]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 5.2000003, 0, -21.5)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1001968813]
+transform = Transform3D(0.258819, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.258819, -4.7999997, -0.4613266, -37.82965)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=754131091]
+transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, -34.399998, 0, -11.900001)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=42491836]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, -29.200003, 0, -36.2)
+mesh = SubResource("PrismMesh_w47nb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=2114133108]
+transform = Transform3D(0.9975458, 0, 0.07001761, 0.009197286, 0.99133515, -0.13103437, -0.06941092, 0.13135675, 0.9889022, -34.1, -1.513977, 4.4000006)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=441241695]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, -16.010765, -1.2294292, 16.003609)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=404112539]
+transform = Transform3D(-0.26426026, 0, -0.96445143, 0, 1, 0, 0.96445143, 0, -0.26426026, 6.817871, -1.2294292, 33.675194)
+mesh = SubResource("PrismMesh_3c4k5")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1402356133]
+transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, 23.18304, -1.2294292, -4.011042)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1200678664]
+transform = Transform3D(0.9936546, 0, 0.11247486, 0, 1, 0, -0.11247486, 0, 0.9936546, 38.857742, -1.1704931, 14.378576)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=820687478]
+transform = Transform3D(0.7793489, 0, 0.62659025, 0, 1, 0, -0.62659025, 0, 0.7793489, 36.777245, -1.170495, 1.6501017)
+mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1609361661]
+transform = Transform3D(-0.6155652, 0, 0.788086, 0, 1, 0, -0.788086, 0, -0.6155652, 33.287422, -1.170495, 29.713284)
+mesh = SubResource("PrismMesh_6bc7i")
+
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
 transform = Transform3D(0.20278737, 0.65395695, 0.7288468, 0, -0.7443116, 0.6678326, 0.9792229, -0.13542801, -0.15093695, 0, 14.49, 0)
 light_color = Color(1, 0.98039216, 0.95686275, 1)
@@ -2079,129 +2361,129 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -18.39)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid" unique_id=763399822 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid" unique_id=763399822 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 
-[node name="Cell2" parent="Grid" unique_id=1596936030 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid" unique_id=1596936030 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 
-[node name="Cell3" parent="Grid" unique_id=1935726789 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid" unique_id=1935726789 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 has_building = true
 current_build = ExtResource("54_nbuuu")
 
-[node name="Cell4" parent="Grid" unique_id=494276039 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid" unique_id=494276039 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 
-[node name="Cell5" parent="Grid" unique_id=1404528750 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid" unique_id=1404528750 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 has_building = true
 current_build = ExtResource("54_nbuuu")
 
-[node name="Cell6" parent="Grid" unique_id=1518727180 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid" unique_id=1518727180 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 
-[node name="Cell7" parent="Grid" unique_id=1395101552 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid" unique_id=1395101552 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 
-[node name="Cell8" parent="Grid" unique_id=232065880 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid" unique_id=232065880 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 
-[node name="Cell9" parent="Grid" unique_id=1178797336 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid" unique_id=1178797336 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 has_building = true
 current_build = ExtResource("54_nbuuu")
 
-[node name="Cell10" parent="Grid" unique_id=947708363 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid" unique_id=947708363 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 has_building = true
 current_build = ExtResource("54_nbuuu")
 
-[node name="Cell11" parent="Grid" unique_id=981151440 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid" unique_id=981151440 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 has_building = true
 current_build = ExtResource("54_nbuuu")
 
-[node name="Cell12" parent="Grid" unique_id=1113313182 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid" unique_id=1113313182 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 
-[node name="Cell13" parent="Grid" unique_id=1780596471 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid" unique_id=1780596471 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 
-[node name="Cell14" parent="Grid" unique_id=341425723 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid" unique_id=341425723 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 
-[node name="Cell15" parent="Grid" unique_id=978627363 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid" unique_id=978627363 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 
-[node name="Cell16" parent="Grid" unique_id=1710761494 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid" unique_id=1710761494 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 
 [node name="Grid2" type="Node3D" parent="." unique_id=1482840738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -0.40999985)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid2" unique_id=1547950247 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid2" unique_id=1547950247 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 zone = 2
 
-[node name="Cell2" parent="Grid2" unique_id=1033658119 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid2" unique_id=1033658119 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 zone = 2
 
-[node name="Cell3" parent="Grid2" unique_id=1852605408 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid2" unique_id=1852605408 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell4" parent="Grid2" unique_id=251225972 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid2" unique_id=251225972 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell5" parent="Grid2" unique_id=889548328 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid2" unique_id=889548328 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell6" parent="Grid2" unique_id=406917915 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid2" unique_id=406917915 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell7" parent="Grid2" unique_id=1587934164 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid2" unique_id=1587934164 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell8" parent="Grid2" unique_id=207814654 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid2" unique_id=207814654 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 zone = 2
 
-[node name="Cell9" parent="Grid2" unique_id=1344611166 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid2" unique_id=1344611166 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell10" parent="Grid2" unique_id=1366692966 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid2" unique_id=1366692966 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 zone = 2
 
-[node name="Cell11" parent="Grid2" unique_id=1150566900 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid2" unique_id=1150566900 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 zone = 2
 
-[node name="Cell12" parent="Grid2" unique_id=941778615 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid2" unique_id=941778615 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 zone = 2
 
-[node name="Cell13" parent="Grid2" unique_id=1002099251 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid2" unique_id=1002099251 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 zone = 2
 
-[node name="Cell14" parent="Grid2" unique_id=842100619 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid2" unique_id=842100619 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell15" parent="Grid2" unique_id=1793316050 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid2" unique_id=1793316050 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 zone = 2
 
-[node name="Cell16" parent="Grid2" unique_id=452830431 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid2" unique_id=452830431 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 2
 
@@ -2209,195 +2491,196 @@ zone = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.040001, 0, -0.40999985)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid3" unique_id=964715096 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid3" unique_id=964715096 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
-zone = 2
+zone = 3
 
-[node name="Cell2" parent="Grid3" unique_id=562415011 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid3" unique_id=562415011 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
-zone = 2
+zone = 3
 
-[node name="Cell3" parent="Grid3" unique_id=369974978 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid3" unique_id=369974978 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
-zone = 2
+zone = 3
 
-[node name="Cell4" parent="Grid3" unique_id=1427230509 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid3" unique_id=1427230509 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
-zone = 2
+zone = 3
 
-[node name="Cell5" parent="Grid3" unique_id=1436562496 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid3" unique_id=1436562496 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
-zone = 2
+zone = 3
 
-[node name="Cell6" parent="Grid3" unique_id=731291441 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid3" unique_id=731291441 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
-zone = 2
+zone = 3
 
-[node name="Cell7" parent="Grid3" unique_id=1588297823 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid3" unique_id=1588297823 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
-zone = 2
+zone = 3
 
-[node name="Cell8" parent="Grid3" unique_id=1149012687 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid3" unique_id=1149012687 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
-zone = 2
+zone = 3
 
-[node name="Cell9" parent="Grid3" unique_id=1445482231 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid3" unique_id=1445482231 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
-zone = 2
+zone = 3
 
-[node name="Cell10" parent="Grid3" unique_id=2105892287 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid3" unique_id=2105892287 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
-zone = 2
+zone = 3
 
-[node name="Cell11" parent="Grid3" unique_id=1409723946 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid3" unique_id=1409723946 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
-zone = 2
+zone = 3
 
-[node name="Cell12" parent="Grid3" unique_id=1734270130 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid3" unique_id=1734270130 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
-zone = 2
+zone = 3
 
-[node name="Cell13" parent="Grid3" unique_id=2146096571 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid3" unique_id=2146096571 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
-zone = 2
+zone = 3
 
-[node name="Cell14" parent="Grid3" unique_id=1099743478 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid3" unique_id=1099743478 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
-zone = 2
+zone = 3
 
-[node name="Cell15" parent="Grid3" unique_id=638685586 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid3" unique_id=638685586 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
-zone = 2
+zone = 3
 
-[node name="Cell16" parent="Grid3" unique_id=745983413 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid3" unique_id=745983413 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
-zone = 2
+zone = 3
 
 [node name="Grid4" type="Node3D" parent="." unique_id=1777126209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.040001, 0, 17.59)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid4" unique_id=471799587 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid4" unique_id=471799587 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
-zone = 2
+zone = 4
 
-[node name="Cell2" parent="Grid4" unique_id=909856618 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid4" unique_id=909856618 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
-zone = 2
+zone = 4
 
-[node name="Cell3" parent="Grid4" unique_id=2015559034 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid4" unique_id=2015559034 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
-zone = 2
+zone = 4
 
-[node name="Cell4" parent="Grid4" unique_id=1543251768 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid4" unique_id=1543251768 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
-zone = 2
+zone = 4
 
-[node name="Cell5" parent="Grid4" unique_id=575643590 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid4" unique_id=575643590 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
-zone = 2
+zone = 4
 
-[node name="Cell6" parent="Grid4" unique_id=1123210531 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid4" unique_id=1123210531 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
-zone = 2
+zone = 4
 
-[node name="Cell7" parent="Grid4" unique_id=1744037515 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid4" unique_id=1744037515 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
-zone = 2
+zone = 4
 
-[node name="Cell8" parent="Grid4" unique_id=486580992 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid4" unique_id=486580992 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
-zone = 2
+zone = 4
 
-[node name="Cell9" parent="Grid4" unique_id=1300801454 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid4" unique_id=1300801454 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
-zone = 2
+zone = 4
 
-[node name="Cell10" parent="Grid4" unique_id=1623846510 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid4" unique_id=1623846510 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
-zone = 2
+zone = 4
 
-[node name="Cell11" parent="Grid4" unique_id=1412152619 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid4" unique_id=1412152619 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
-zone = 2
+zone = 4
 
-[node name="Cell12" parent="Grid4" unique_id=501931514 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid4" unique_id=501931514 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
-zone = 2
+zone = 4
 
-[node name="Cell13" parent="Grid4" unique_id=1169275526 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid4" unique_id=1169275526 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
-zone = 2
+zone = 4
 
-[node name="Cell14" parent="Grid4" unique_id=562340398 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid4" unique_id=562340398 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
-zone = 2
+zone = 4
 
-[node name="Cell15" parent="Grid4" unique_id=1382266992 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid4" unique_id=1382266992 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
-zone = 2
+zone = 4
 
-[node name="Cell16" parent="Grid4" unique_id=263974003 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid4" unique_id=263974003 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
-zone = 2
+zone = 4
 
 [node name="Grid5" type="Node3D" parent="." unique_id=608295801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.54, 0, 17.59)
 metadata/_edit_group_ = true
 
-[node name="Cell5" parent="Grid5" unique_id=1126394595 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid5" unique_id=1126394595 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
-zone = 2
+zone = 5
 
-[node name="Cell6" parent="Grid5" unique_id=131664162 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid5" unique_id=131664162 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
-zone = 2
+zone = 5
 
-[node name="Cell7" parent="Grid5" unique_id=1551920816 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid5" unique_id=1551920816 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
-zone = 2
+zone = 5
 
-[node name="Cell8" parent="Grid5" unique_id=1242235096 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid5" unique_id=1242235096 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
-zone = 2
+zone = 5
 
-[node name="Cell9" parent="Grid5" unique_id=633287237 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid5" unique_id=633287237 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
-zone = 2
+zone = 5
 
-[node name="Cell10" parent="Grid5" unique_id=793175713 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid5" unique_id=793175713 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
-zone = 2
+zone = 5
 
-[node name="Cell11" parent="Grid5" unique_id=1939865009 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid5" unique_id=1939865009 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
-zone = 2
+zone = 5
 
-[node name="Cell12" parent="Grid5" unique_id=1525904532 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid5" unique_id=1525904532 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
-zone = 2
+zone = 5
 
-[node name="Cell13" parent="Grid5" unique_id=1138572093 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid5" unique_id=1138572093 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
-zone = 2
+zone = 5
 
-[node name="Cell14" parent="Grid5" unique_id=391815693 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid5" unique_id=391815693 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
-zone = 2
+zone = 5
 
-[node name="Cell15" parent="Grid5" unique_id=1717934108 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid5" unique_id=1717934108 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
-zone = 2
+zone = 5
 
-[node name="Cell16" parent="Grid5" unique_id=620340937 groups=["cell"] instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid5" unique_id=620340937 instance=ExtResource("4_4tceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
-zone = 2
+zone = 5
 
 [node name="Monolith" parent="Grid5" unique_id=1656646855 instance=ExtResource("58_71vvp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39999962, -0.1, -2.3000002)
+transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0.706419, 0.11864605, -2.2798119)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1585884179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, -18.5)
+visible = false
 
 [node name="Zone_1" type="Node3D" parent="Walls" unique_id=710371833]
 
@@ -2513,6 +2796,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.650001, 0)
 shape = SubResource("BoxShape3D_vlsf6")
 debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 
+[connection signal="button_down" from="DEBUG/MenuButton" to="DEBUG" method="menu_button_button_down"]
+[connection signal="pressed" from="DEBUG/add" to="DEBUG" method="_pressed"]
+[connection signal="pressed" from="DEBUG/Full" to="DEBUG" method="_on_full_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Demolition" to="HUD/BaseUI" method="_on_demolition_toggled"]
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]
@@ -2524,4 +2810,9 @@ debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 [connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Buildings" to="HUD/BaseUI" method="_on_buildings_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Zones" to="HUD/BaseUI" method="_on_zones_pressed"]
 [connection signal="value_changed" from="HUD/BaseUI/Store_UI/Slider" to="HUD/BaseUI" method="slider_changed"]
+[connection signal="pressed" from="HUD/BaseUI/Button" to="Pause" method="_on_button_base_ui_pressed"]
 [connection signal="animation_finished" from="HUD/UI_animator" to="HUD/BaseUI" method="anim_finish"]
+[connection signal="pressed" from="Pause/VBC/Continue" to="Pause" method="_on_continue_pressed"]
+[connection signal="pressed" from="Pause/VBC/Settings" to="Pause" method="_on_settings_pressed"]
+[connection signal="pressed" from="Pause/VBC/Exit_to main" to="Pause" method="_on_exit_to_main_pressed"]
+[connection signal="pressed" from="Pause/Control/Button" to="Pause" method="_on_button_pressed"]

@@ -6,14 +6,14 @@
 [ext_resource type="Material" uid="uid://beb7bcggnabw2" path="res://FBX/Monolith2.tres" id="3_fw8jc"]
 
 [node name="Monolith" unique_id=1656646855 instance=ExtResource("1_pdtgr")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0, 0, 0)
 script = ExtResource("2_fw8jc")
 
 [node name="Plane" parent="." index="0" unique_id=1575370518]
 material_override = ExtResource("2_xlerp")
 
 [node name="Plane_012" parent="." index="1" unique_id=673369580]
-transform = Transform3D(0.9999999, 0, 0, 0, -4.3711385e-08, 1, 0, -0.9999999, -4.371139e-08, 0.42738277, 7.463374, -0.3172648)
+transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 7.0000005, 0)
 material_override = ExtResource("3_fw8jc")
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=241777397]
