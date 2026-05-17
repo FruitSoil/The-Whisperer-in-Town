@@ -22,6 +22,7 @@ func _ready() -> void:
 	$res_panel/HBC/res5.hide()
 	$res_panel/HBC/res6.hide()
 	$res_panel/HBC/res7.hide()
+	$"../../Dialogue".show()
 	
 	$"../../PostProcess".show()
 	$"..".show()

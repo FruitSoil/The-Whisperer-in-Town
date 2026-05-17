@@ -45,6 +45,11 @@ func _process(delta: float) -> void:
 		$SubViewport/TextureProgressBar.value = $Time_to_res.wait_time - $Time_to_res.time_left
 	else:
 		$SubViewport/TextureProgressBar.value = 0
+	
+	if $Charge_time.time_left > 0:
+		$SubViewport2/TextureProgressBar2.value = $Charge_time.wait_time - $Charge_time.time_left
+	else:
+		$SubViewport2/TextureProgressBar2.value = 0
 
 func _input_event(camera, event, click_position, click_normal, shape_idx):
 	if check_zone_status() and event.is_action_pressed("place"):
@@ -79,6 +84,9 @@ func place(building: Building = %BaseUI.selected_build):
 	var rot = randi_range(0,3)
 	if current_build != load("uid://cm6r5ofrc0a8"):
 		$Charge_time.start()
+		$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
+		$Charge_sprite.show()
+		$Charge_sprite/MoneyIcon.hide()
 		$Sprite3D.visible = true
 		$Build_part.emitting = true
 		var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
@@ -221,22 +229,26 @@ func _on_time_to_res_timeout() -> void:
 
 func charge_timeout() -> void:
 	print(self.name, " зарядился")
-	$Charge_sprite.show()
-	$SubViewport/TextureProgressBar.max_value = $Time_to_res.wait_time
+	$Charge_sprite/MoneyIcon.show()
 	is_charged = true
 
 func click_res():
 	$Charge_part.emitting = true
-	$Charge_sprite.hide()
 	is_charged = false
-	$Charge_time.start(15 + randf_range(-5,5))
+	
+	$Charge_time.wait_time = 15 + randf_range(-5,5)
+	$Charge_sprite/MoneyIcon.hide()
+	$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
+	$Charge_time.start()
 	var rand = randi_range(0,100)
 	if rand <= %BaseUI.chance:
-		%BaseUI.chance = 25
-		Global.add_to_integer_res_type(2, randi_range(1,2))
+		%BaseUI.chance = 10
+		Global.add_to_integer_res_type(2, 2)
 		%BaseUI.change_label(2,true)
 	else: 
-		%BaseUI.chance += 75
+		%BaseUI.chance = 10
+		Global.add_to_integer_res_type(2, 1)
+		%BaseUI.change_label(2,true)
 	
 	%BaseUI.anim_click(get_viewport().get_mouse_position())
 	var added_number = randi_range(current_build.res_count_per_click.x,current_build.res_count_per_click.y)

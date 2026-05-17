@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Worker" format=3 uid="uid://4h6jpjw3ymbn"]
+
+[ext_resource type="Texture2D" uid="uid://le6xrsuvujhs" path="res://Images/portairs/Soldier.png" id="1_1hr4b"]
+[ext_resource type="Script" uid="uid://bduhpc67rk1k2" path="res://other/Scripts/worker.gd" id="2_xlmoh"]
+
+[resource]
+script = ExtResource("2_xlmoh")
+name = "Тони Вайсо"
+is_unique = true
+icon = ExtResource("1_1hr4b")
+metadata/_custom_type_script = "uid://bduhpc67rk1k2"

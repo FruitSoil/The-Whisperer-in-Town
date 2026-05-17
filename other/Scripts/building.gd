@@ -7,7 +7,7 @@ class_name Building
 @export var res_type: Global.res_types ## Тип ресурса
 @export var res_count_per_timer: int ##Количество ресурсов за выработку по таймеру
 @export var res_count_per_click: Vector2i ##Количество ресурсов за клик X-минимум, Y-максимум
-@export var res_timer: float = 3.0 ##Время выработки ресурса
+@export var res_timer: float = 6.0 ##Время выработки ресурса 
 @export var model: PackedScene ##Модель что используется зданием
 @export_category("Дополнительная выработка")
 @export var second_res_type: Global.res_types ## Дополнительный тип ресурса

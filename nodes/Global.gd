@@ -1,6 +1,6 @@
 extends Node
 
-var rusted: int = 120
+var rusted: int = 0
 var electrosnow: int = 0
 var money: int = 0
 var highqualityelectrical: int = 0

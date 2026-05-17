@@ -9,6 +9,8 @@ var icons_pool: Array[Texture] = [
 ]
 
 func _ready() -> void:
+	if res.is_unique == false:
+		$Res_icon.texture = Global.get_res_icon(2)
 	pressed.connect(touch)
 	$TextureRect.texture = res.icon
 

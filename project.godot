@@ -44,7 +44,9 @@ folder_colors={
 "res://nodes/": "orange",
 "res://other/": "gray",
 "res://resources/": "green",
+"res://resources/Quests/": "pink",
 "res://resources/Zones/": "pink",
+"res://resources/builds_res/": "pink",
 "res://resources/workers/": "pink"
 }
 

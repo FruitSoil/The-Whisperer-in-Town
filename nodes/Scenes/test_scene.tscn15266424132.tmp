@@ -69,7 +69,6 @@
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="53_bg06i"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
-[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="56_ps3nt"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="56_yiww8"]
 [ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="58_bg06i"]
@@ -77,60 +76,10 @@
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="59_yiww8"]
 [ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="60_2x4qu"]
 [ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="62_xdeo5"]
-[ext_resource type="Resource" uid="uid://4h6jpjw3ymbn" path="res://resources/workers/U_General.tres" id="65_h4qp7"]
-[ext_resource type="Resource" uid="uid://b468hhcbqb8k5" path="res://resources/workers/U_Traitor.tres" id="66_vxr4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeo5"]
 shader = ExtResource("11_yi5b6")
 shader_parameter/blur = 3.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n00c2"]
-shader = ExtResource("56_ps3nt")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0
-shader_parameter/scanlines_width = 0.1470000069825
-shader_parameter/grille_opacity = 0.1410000066975
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 0.5
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 5.0
-shader_parameter/distort_intensity = 0.014000000665
-shader_parameter/noise_opacity = 0.07600000361
-shader_parameter/noise_speed = 1.0
-shader_parameter/static_noise_intensity = 0.078000003705
-shader_parameter/aberration = 0.0050000477375000685
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.2590000123025
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps3nt"]
-shader = ExtResource("56_ps3nt")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.4870000231325
-shader_parameter/scanlines_width = 0.1470000069825
-shader_parameter/grille_opacity = 0.1410000066975
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 3.0
-shader_parameter/roll_size = 65.190003096525
-shader_parameter/roll_variation = 2.24300010328262
-shader_parameter/distort_intensity = 0.086000004085
-shader_parameter/noise_opacity = 0.194000009215
-shader_parameter/noise_speed = 1.0
-shader_parameter/static_noise_intensity = 0.078000003705
-shader_parameter/aberration = 0.0050000477375000685
-shader_parameter/brightness = 1.5
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs4x5"]
 content_margin_left = 4.0
@@ -155,60 +104,6 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
-
-[sub_resource type="Animation" id="Animation_mlsg3"]
-resource_name = "Hide"
-length = 0.31
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(3.1383357, 0.933033),
-"update": 0,
-"values": [Vector2(1177, 215), Vector2(1983.43, 215)]
-}
-
-[sub_resource type="Animation" id="Animation_ps3nt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1177, 215)]
-}
-
-[sub_resource type="Animation" id="Animation_n00c2"]
-resource_name = "Show"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.29730183, 1),
-"update": 0,
-"values": [Vector2(2000, 215.11), Vector2(1177, 215)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n00c2"]
-_data = {
-&"Hide": SubResource("Animation_mlsg3"),
-&"RESET": SubResource("Animation_ps3nt"),
-&"Show": SubResource("Animation_n00c2")
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
@@ -678,10 +573,10 @@ material = SubResource("ShaderMaterial_xdeo5")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1839.0
-offset_top = 44.0
-offset_right = -1366.0
-offset_bottom = 493.0
+offset_left = -1832.0
+offset_top = 125.0
+offset_right = -1268.0
+offset_bottom = 479.0
 grow_horizontal = 0
 color = Color(0, 0, 0, 1)
 
@@ -690,7 +585,6 @@ offset_left = 122.0
 offset_top = 191.0
 offset_right = 494.0
 offset_bottom = 256.0
-selected = 0
 item_count = 7
 popup/item_0/text = "Rusted 1000"
 popup/item_0/icon = ExtResource("2_3c4k5")
@@ -731,7 +625,7 @@ text = "All to 99999"
 icon = ExtResource("16_vehi4")
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
-visible = false
+layer = 2
 script = ExtResource("12_opxjv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -740,11 +634,10 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -743.0
-offset_top = 215.0
-offset_right = -176.99951
-offset_bottom = 866.8114
+offset_top = 213.0
+offset_right = -177.0
+offset_bottom = 864.81146
 grow_horizontal = 0
-mouse_filter = 2
 
 [node name="BG" type="ColorRect" parent="Dialogue/Panel" unique_id=279437657]
 layout_mode = 0
@@ -752,7 +645,7 @@ offset_left = -26.0
 offset_top = 366.0
 offset_right = 545.0
 offset_bottom = 570.0
-color = Color(0, 0.047058824, 0, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="BG2" type="ColorRect" parent="Dialogue/Panel" unique_id=55709613]
 layout_mode = 0
@@ -760,7 +653,7 @@ offset_left = -24.0
 offset_top = 569.0
 offset_right = 495.0
 offset_bottom = 739.0
-color = Color(0, 0.047058824, 0, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Fon" type="TextureRect" parent="Dialogue/Panel" unique_id=327405622]
 self_modulate = Color(0.18359044, 0.18359044, 0.18359044, 1)
@@ -801,39 +694,6 @@ texture = ExtResource("16_vehi4")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VHS" type="ColorRect" parent="Dialogue/Panel/Fon" unique_id=517371497]
-material = SubResource("ShaderMaterial_n00c2")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = -4.0
-offset_bottom = -43.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VHS2" type="ColorRect" parent="Dialogue/Panel" unique_id=1545775338]
-material = SubResource("ShaderMaterial_ps3nt")
-layout_mode = 0
-offset_left = -21.0
-offset_top = 371.0
-offset_right = 539.0
-offset_bottom = 561.0
-
-[node name="VHS" type="ColorRect" parent="Dialogue/Panel" unique_id=817321121]
-material = SubResource("ShaderMaterial_ps3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43400002
-anchor_right = 0.43400002
-offset_left = -268.64423
-offset_top = 577.0
-offset_right = 249.35577
-offset_bottom = 724.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="MC" type="MarginContainer" parent="Dialogue/Panel" unique_id=812259215]
 layout_mode = 0
 offset_left = -27.0
@@ -846,7 +706,6 @@ theme_override_constants/margin_right = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
 custom_minimum_size = Vector2(0, 184.82)
 layout_mode = 2
-theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
 text = "Тут диалог должен быть, в зависимости от стадии принятия судьбы мифоза"
 
 [node name="VBC" type="VBoxContainer" parent="Dialogue/Panel" unique_id=1889069569]
@@ -860,7 +719,6 @@ theme_override_constants/separation = 1
 [node name="Variant_yes" type="Button" parent="Dialogue/Panel/VBC" unique_id=1379833529]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_bs4x5")
 text = "Рил треп щит мэн"
@@ -870,7 +728,6 @@ autowrap_mode = 3
 [node name="Variant_later" type="Button" parent="Dialogue/Panel/VBC" unique_id=433782950]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
 theme_override_font_sizes/font_size = 14
 text = "Че, не"
 icon = ExtResource("14_opxjv")
@@ -879,7 +736,6 @@ autowrap_mode = 3
 [node name="Variant_no" type="Button" parent="Dialogue/Panel/VBC" unique_id=1325992162]
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_opxjv")
 text = "Уволен"
@@ -899,19 +755,13 @@ texture = ExtResource("13_mlsg3")
 
 [node name="Quest_name" type="Label" parent="Dialogue/Panel" unique_id=9789844]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 58.0
-offset_right = 482.0
-offset_bottom = 88.0
-theme_override_colors/font_color = Color(0.69455916, 0.86985093, 0.6873295, 1)
-theme_override_colors/font_shadow_color = Color(0.10393793, 0.12445598, 0.114203624, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = -2
-theme_override_font_sizes/font_size = 18
+offset_left = 23.0
+offset_top = 71.0
+offset_right = 541.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Война интерфейса редактора, часть 777"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Character_name" type="Label" parent="Dialogue/Panel" unique_id=1421999180]
 layout_mode = 0
@@ -919,11 +769,7 @@ offset_left = 31.0
 offset_top = 341.0
 offset_right = 549.0
 offset_bottom = 360.0
-theme_override_colors/font_color = Color(0.69455916, 0.86985093, 0.6873295, 1)
-theme_override_colors/font_shadow_color = Color(0.10393793, 0.12445598, 0.114203624, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = -2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Мармок личной персоной типо реально мармок брат"
 horizontal_alignment = 1
 
@@ -936,11 +782,7 @@ offset_right = 564.0
 offset_bottom = 77.0
 text = "exit"
 
-[node name="Dialogue_animation" type="AnimationPlayer" parent="Dialogue" unique_id=1953052335]
-libraries/ = SubResource("AnimationLibrary_n00c2")
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
-layer = 2
 
 [node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1521205097]
 visible = false
@@ -1893,9 +1735,9 @@ anchor_top = -0.303
 anchor_right = 0.43500003
 anchor_bottom = -0.303
 offset_left = -373.2907
-offset_top = 12.626883
+offset_top = 17.278046
 offset_right = 710.7093
-offset_bottom = 60.780968
+offset_bottom = 62.278046
 scale = Vector2(0.689458, 1.4746488)
 texture = ExtResource("43_vcfif")
 
@@ -2064,40 +1906,12 @@ anchors_preset = -1
 anchor_left = 0.43
 anchor_right = 0.43
 offset_left = -57.55725
-offset_top = 153.48837
+offset_top = 159.30232
 offset_right = 130.2146
-offset_bottom = 213.2468
+offset_bottom = 212.30232
 grow_horizontal = 2
 scale = Vector2(0.6146977, 0.8602525)
 texture = ExtResource("44_pxd2t")
-
-[node name="VHS" type="ColorRect" parent="HUD/BaseUI/res_panel" unique_id=280231640]
-material = SubResource("ShaderMaterial_n00c2")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43400002
-anchor_right = 0.43400002
-offset_left = -368.45245
-offset_top = 2.3255806
-offset_right = 368.86102
-offset_bottom = 67.44185
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
-
-[node name="VHS2" type="ColorRect" parent="HUD/BaseUI/res_panel" unique_id=191162621]
-material = SubResource("ShaderMaterial_n00c2")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43400002
-anchor_right = 0.43400002
-offset_left = -63.974854
-offset_top = 155.81395
-offset_right = 55.42816
-offset_bottom = 206.97673
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
 
 [node name="workers_panel" type="Control" parent="HUD/BaseUI" unique_id=2111873349]
 layout_mode = 1
@@ -2213,13 +2027,12 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ScrollContainer" type="VBoxContainer" parent="HUD/BaseUI/workers_panel" unique_id=1065811094]
-z_index = 200
 layout_direction = 3
 layout_mode = 0
-offset_left = 16.0
-offset_top = 76.0
-offset_right = 91.0
-offset_bottom = 596.0
+offset_left = 8.0
+offset_top = 99.0
+offset_right = 105.0
+offset_bottom = 588.0
 
 [node name="VBC" type="VBoxContainer" parent="HUD/BaseUI/workers_panel/ScrollContainer" unique_id=1491514419]
 layout_direction = 2
@@ -2272,15 +2085,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
+offset_left = -58.0
+offset_top = -103.0
+offset_right = -17.0
+offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2322,7 +2133,7 @@ texture = ExtResource("10_rpk0c")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=195436306]
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1445799831]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -2330,15 +2141,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
+offset_left = -58.0
+offset_top = -103.0
+offset_right = -17.0
+offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2380,7 +2189,7 @@ texture = ExtResource("10_rpk0c")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=728335154]
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=1128274595]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -2388,15 +2197,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
+offset_left = -58.0
+offset_top = -103.0
+offset_right = -17.0
+offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2438,7 +2245,7 @@ texture = ExtResource("10_rpk0c")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1296138635]
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=641921654]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -2446,131 +2253,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
+offset_left = -58.0
+offset_top = -103.0
+offset_right = -17.0
+offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="worker5" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1299633202 groups=["Work_panels"]]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-size_flags_horizontal = 4
-script = ExtResource("10_sbivs")
-res = ExtResource("65_h4qp7")
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=7811691]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_igchu")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=1937976158]
-visible = false
-modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
-z_index = 5
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -26.00003
-offset_top = -21.0
-offset_right = 6.094307
-offset_bottom = 6.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("10_rpk0c")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=610191039]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="worker6" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1925406363 groups=["Work_panels"]]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-size_flags_horizontal = 4
-script = ExtResource("10_sbivs")
-res = ExtResource("66_vxr4q")
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=340807096]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_igchu")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1317240521]
-visible = false
-modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
-z_index = 5
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -26.00003
-offset_top = -21.0
-offset_right = 6.094307
-offset_bottom = 6.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("10_rpk0c")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1168398516]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3313,6 +3002,7 @@ debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 [connection signal="button_down" from="DEBUG/MenuButton" to="DEBUG" method="menu_button_button_down"]
 [connection signal="pressed" from="DEBUG/add" to="DEBUG" method="_pressed"]
 [connection signal="pressed" from="DEBUG/Full" to="DEBUG" method="_on_full_pressed"]
+[connection signal="pressed" from="Dialogue/Panel/VBC/Variant_yes" to="Dialogue" method="_on_variant_yes_pressed"]
 [connection signal="pressed" from="Dialogue/Panel/Exit_button" to="Dialogue" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Demolition" to="HUD/BaseUI" method="_on_demolition_toggled"]
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
