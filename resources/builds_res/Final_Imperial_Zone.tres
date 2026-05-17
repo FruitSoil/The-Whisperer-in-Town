@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Building" format=3 uid="uid://c753qi6g58b5y"]
 
-[ext_resource type="PackedScene" uid="uid://ci2pc635icqq7" path="res://Buildings/high_technology_level_1.tscn" id="1_tdcc0"]
+[ext_resource type="PackedScene" uid="uid://ci2pc635icqq7" path="res://Buildings/High_Technology_level_1.tscn" id="1_tdcc0"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_7u6gr"]
 [ext_resource type="Texture2D" uid="uid://cqgut8phwy2yn" path="res://Images/Resources_icons/imperial_res_icon.png" id="3_l45kp"]
 

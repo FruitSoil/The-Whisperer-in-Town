@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bqldqhhqm7mmu" path="res://nodes/cell.gd" id="1_51tdh"]
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="2_hy5qt"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_1nuhy"]
+[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="4_ymfr8"]
+[ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="5_1nuhy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
@@ -37,12 +39,64 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14480875, 2.8148348), 0.0, 0.0
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_ymfr8"]
-offsets = PackedFloat32Array(0.020588236, 0.15882353, 0.5235294, 1)
-colors = PackedColorArray(0.15000002, 0.15000002, 0.15000002, 1, 0.39457542, 0.39457542, 0.39457542, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.7784946, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_1nuhy"]
 offsets = PackedFloat32Array(0.21176471, 0.7588235, 1)
 colors = PackedColorArray(0.37119645, 0.35650304, 0.29690287, 1, 0.99999976, 0.9738641, 0.96940875, 1, 0.63541526, 0.5256818, 0.48749155, 1)
+
+[sub_resource type="Gradient" id="Gradient_nv4cr"]
+offsets = PackedFloat32Array(0.8181818, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_csgmv"]
+gradient = SubResource("Gradient_nv4cr")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nuhy"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_csgmv")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mi0yh"]
+material = SubResource("StandardMaterial3D_1nuhy")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_mi0yh"]
+offsets = PackedFloat32Array(0, 0.9655914)
+colors = PackedColorArray(0, 1, 0, 1, 0.7806912, 1, 0.75936764, 1)
+
+[sub_resource type="Gradient" id="Gradient_3c4k5"]
+offsets = PackedFloat32Array(0.54485774, 0.54923415, 0.9059081, 0.91247267)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ymfr8"]
+gradient = SubResource("Gradient_3c4k5")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_6bc7i"]
+offsets = PackedFloat32Array(0.54485774, 0.54923415, 0.9059081, 0.91247267)
+colors = PackedColorArray(0.69803923, 0.2627451, 0, 0, 0.69803923, 0.2627451, 0, 1, 0.69659454, 0.2618194, 2.8878452e-07, 1, 0.69803923, 0.2627451, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1nuhy"]
+gradient = SubResource("Gradient_6bc7i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ymfr8"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Cell" type="Area3D" unique_id=763399822]
 script = ExtResource("1_51tdh")
@@ -56,8 +110,12 @@ mesh = SubResource("PlaneMesh_afgo3")
 
 [node name="Time_to_res" type="Timer" parent="." unique_id=271335964]
 
+[node name="Charge_time" type="Timer" parent="." unique_id=1575833834]
+wait_time = 10.0
+one_shot = true
+
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1871169537]
-transform = Transform3D(0.4265716, 0.027095566, 0.04693089, 0.012315648, 0.3141747, -0.29333016, -0.052773125, 0.2923356, 0.3108937, -2.2854397, 1.8640169, -0.004734397)
+transform = Transform3D(0.25296688, 0.0160683, 0.027831107, 0.0073034647, 0.1863129, -0.17395161, -0.03129569, 0.17336181, 0.1843672, -2.2854397, 1.8640169, -0.004734397)
 layers = 4
 cast_shadow = 0
 gi_mode = 0
@@ -82,7 +140,7 @@ transform = Transform3D(1, -6.7055225e-08, -2.2351742e-08, 2.0861626e-07, 0.9999
 layers = 2
 cast_shadow = 0
 gi_mode = 0
-pixel_size = 0.0002
+pixel_size = 0.00025
 billboard = 1
 fixed_size = true
 
@@ -127,4 +185,79 @@ color_ramp = SubResource("Gradient_ymfr8")
 color_initial_ramp = SubResource("Gradient_1nuhy")
 hue_variation_min = -0.86
 
+[node name="Charge_sprite" type="Sprite3D" parent="." unique_id=1913938917]
+transform = Transform3D(1, -6.7055225e-08, -7.450581e-09, 5.2154064e-08, 0.9999999, -3.2782555e-07, 0, 3.2782555e-07, 1.0000001, -3.027, 2.321, 0.187)
+layers = 2
+cast_shadow = 0
+gi_mode = 0
+modulate = Color(0.62322366, 0.9999997, 0.59567535, 1)
+pixel_size = 0.0005
+billboard = 1
+fixed_size = true
+texture = ExtResource("4_ymfr8")
+
+[node name="MoneyIcon" type="Sprite3D" parent="Charge_sprite" unique_id=1461922140]
+transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.04410577, 0.039098978, -0.030696258)
+layers = 2
+cast_shadow = 0
+gi_mode = 0
+modulate = Color(0.455719, 0.9020164, 0.45502263, 1)
+pixel_size = 0.001
+billboard = 1
+fixed_size = true
+texture = ExtResource("5_1nuhy")
+
+[node name="Charge_part" type="CPUParticles3D" parent="." unique_id=1752209562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3649762, 0, -1.1982299)
+emitting = false
+lifetime = 1.25
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.88
+randomness = 1.0
+lifetime_randomness = 0.48
+mesh = SubResource("PlaneMesh_mi0yh")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 10, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, -40, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 15.0
+angle_min = -538.1
+scale_amount_min = 0.4
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_hy5qt")
+color_ramp = SubResource("Gradient_ymfr8")
+color_initial_ramp = SubResource("Gradient_mi0yh")
+hue_variation_min = -0.86
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1544035627]
+transparent_bg = true
+size = Vector2i(64, 64)
+render_target_update_mode = 4
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport" unique_id=1964603259]
+offset_right = 64.0
+offset_bottom = 64.0
+step = 0.001
+fill_mode = 5
+texture_under = SubResource("GradientTexture2D_ymfr8")
+texture_progress = SubResource("GradientTexture2D_1nuhy")
+
+[node name="Res_progress" type="Sprite3D" parent="." unique_id=1122095657]
+transform = Transform3D(1, -6.7055225e-08, -7.450581e-09, 5.2154064e-08, 0.9999999, -3.2782555e-07, 0, 3.2782555e-07, 1.0000001, -3.0269866, 2.3214989, 0.18738842)
+layers = 2
+cast_shadow = 0
+gi_mode = 0
+pixel_size = 0.0015
+billboard = 1
+fixed_size = true
+texture = SubResource("ViewportTexture_ymfr8")
+
 [connection signal="timeout" from="Time_to_res" to="." method="_on_time_to_res_timeout"]
+[connection signal="timeout" from="Charge_time" to="." method="charge_timeout"]

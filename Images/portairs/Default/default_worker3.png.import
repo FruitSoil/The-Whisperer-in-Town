@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy66iye7go8bw"
-path.s3tc="res://.godot/imported/money_res_icon.png-37812d74dc15ca858816eb1816eb14fb.s3tc.ctex"
+uid="uid://l27gapd08r5i"
+path.s3tc="res://.godot/imported/default_worker3.png-6aff82770d2c369feaa9f11fe6749a06.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Resources_icons/actual/money_res_icon.png"
-dest_files=["res://.godot/imported/money_res_icon.png-37812d74dc15ca858816eb1816eb14fb.s3tc.ctex"]
+source_file="res://Images/portairs/Default/default_worker3.png"
+dest_files=["res://.godot/imported/default_worker3.png-6aff82770d2c369feaa9f11fe6749a06.s3tc.ctex"]
 
 [params]
 

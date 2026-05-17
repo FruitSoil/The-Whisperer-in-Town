@@ -16,7 +16,7 @@ gradient = SubResource("Gradient_4tceg")
 width = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4p40"]
-bg_color = Color(0, 0, 0, 0.7019608)
+bg_color = Color(0, 0, 0, 1)
 skew = Vector2(-0.085, 0)
 shadow_color = Color(0, 0, 0, 0.80784315)
 shadow_size = 10
@@ -165,12 +165,11 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Condition" type="Label" parent="." unique_id=2056687201]
-visible = false
 layout_mode = 0
 offset_left = 71.0
-offset_top = 32.0
+offset_top = 40.0
 offset_right = 422.0
-offset_bottom = 55.0
+offset_bottom = 93.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4p40")
 text = "Разблокируется после открытия 2 зоны"
 horizontal_alignment = 1

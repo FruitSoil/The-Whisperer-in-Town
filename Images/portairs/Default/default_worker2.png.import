@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bssjlyej2swic"
-path.s3tc="res://.godot/imported/free-png.ru-276-370x322.png-5c073100489cb0cb5c0976b7cf660a70.s3tc.ctex"
+uid="uid://b5wwg87a7cxqw"
+path.s3tc="res://.godot/imported/default_worker2.png-6ebef66c4e961d354c35e249e71ab57f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Particles/free-png.ru-276-370x322.png"
-dest_files=["res://.godot/imported/free-png.ru-276-370x322.png-5c073100489cb0cb5c0976b7cf660a70.s3tc.ctex"]
+source_file="res://Images/portairs/Default/default_worker2.png"
+dest_files=["res://.godot/imported/default_worker2.png-6ebef66c4e961d354c35e249e71ab57f.s3tc.ctex"]
 
 [params]
 

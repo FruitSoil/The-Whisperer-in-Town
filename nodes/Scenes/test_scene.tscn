@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://c2hucdshe8xtu"]
 
+[ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="1_6bc7i"]
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
 [ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="2_273he"]
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
 [ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="4_igchu"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="4_igchu"]
 [ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
 [ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="6_4a5cs"]
@@ -59,8 +60,8 @@
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Outline.gdshader" id="56_yiww8"]
-[ext_resource type="Texture2D" uid="uid://bssjlyej2swic" path="res://Images/Particles/free-png.ru-276-370x322.png" id="57_ha1fh"]
 [ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="58_bg06i"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/pixelization.gdshader" id="59_yiww8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
@@ -184,6 +185,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg06i"]
+bg_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.80784315)
+shadow_size = 10
+
 [sub_resource type="Gradient" id="Gradient_igchu"]
 offsets = PackedFloat32Array(0.37988827, 0.82122904, 1)
 colors = PackedColorArray(1.6364455e-06, 0.7160926, 0.4147328, 1, 0.17447907, 0.51625013, 2.8878452e-07, 1, 0.33267987, 0.9100657, 3.85046e-07, 1)
@@ -286,7 +292,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_7yne8"]
 resource_name = "To"
-length = 0.55
+length = 0.21
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -294,8 +300,8 @@ tracks/0/path = NodePath("%BaseUI/Panel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(0.3922928, 0.15932015),
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1.8025005, 0.15932015),
 "update": 0,
 "values": [Vector2(80, 502), Vector2(80, 1252)]
 }
@@ -306,8 +312,8 @@ tracks/1/path = NodePath("%BaseUI/Quest_UI:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(0.3922928, 0.15932015),
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1.8025005, 0.15932015),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 750)]
 }
@@ -318,8 +324,8 @@ tracks/2/path = NodePath("BaseUI/Store_UI:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(0.3922928, 0.15932015),
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1.8025005, 0.15932015),
 "update": 0,
 "values": [Vector2(0, -2), Vector2(0, 748)]
 }
@@ -367,9 +373,7 @@ glow_levels/4 = 1.05
 glow_intensity = 0.97
 glow_hdr_threshold = 0.9
 glow_hdr_scale = 1.75
-fog_light_color = Color(0, 0, 0, 1)
-fog_light_energy = 2.44
-fog_sun_scatter = 0.22
+fog_density = 0.014
 fog_depth_curve = 0.48296744
 fog_depth_begin = 0.0
 fog_depth_end = 239.2
@@ -426,19 +430,29 @@ direction = Vector3(0, -1, 0)
 spread = 24.677
 initial_velocity_max = 2.0
 gravity = Vector3(0, -1, 0)
-scale_min = 0.0
-scale_max = 5.0
+scale_min = 4.6
+scale_max = 6.45
 scale_curve = SubResource("CurveTexture_6bc7i")
 scale_over_velocity_min = 149.34999
 scale_over_velocity_max = 149.34999
-color = Color(1, 1, 1, 0.22745098)
+color = Color(1, 1, 1, 0.19215687)
 color_ramp = SubResource("GradientTexture1D_f6pby")
 color_initial_ramp = SubResource("GradientTexture1D_bg06i")
+
+[sub_resource type="Gradient" id="Gradient_bg06i"]
+offsets = PackedFloat32Array(0.35897437, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6bc7i"]
+gradient = SubResource("Gradient_bg06i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg06i"]
 transparency = 1
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("57_ha1fh")
+albedo_texture = SubResource("GradientTexture2D_6bc7i")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -447,6 +461,21 @@ particles_anim_loop = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6bc7i"]
 material = SubResource("StandardMaterial3D_bg06i")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bc7i"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("58_bg06i")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3c4k5"]
+material = SubResource("StandardMaterial3D_6bc7i")
 size = Vector2(0.1, 0.1)
 orientation = 2
 
@@ -480,6 +509,9 @@ material = SubResource("StandardMaterial3D_nbuuu")
 size = Vector3(100.200005, 30.300001, 1)
 
 [node name="Test_scene" type="Node3D" unique_id=913157555]
+
+[node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
+script = ExtResource("1_6bc7i")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 
@@ -608,7 +640,7 @@ anchor_bottom = 1.0
 offset_left = 80.0
 offset_top = 502.0
 offset_right = 678.0
-offset_bottom = -516.99976
+offset_bottom = -517.0
 grow_vertical = 2
 mouse_filter = 2
 
@@ -1183,7 +1215,7 @@ script = ExtResource("11_7yne8")
 res = ExtResource("24_7vd3e")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=617297931]
-modulate = Color(0.96843547, 1.92523e-07, 0.56931674, 1)
+modulate = Color(1, 0.16756281, 0.17874402, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -1193,6 +1225,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=1746457429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -11.5
+offset_right = 175.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Zone_4" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1821832837 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
@@ -1203,7 +1254,7 @@ script = ExtResource("11_7yne8")
 res = ExtResource("26_7aymr")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=1713579509]
-modulate = Color(0.3372549, 0.27450982, 0.40784314, 1)
+modulate = Color(0.7421417, 0.9999997, 0.7442735, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -1213,6 +1264,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=1991095441]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -11.5
+offset_right = 175.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Zone_3" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1321977965 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
@@ -1223,7 +1293,7 @@ script = ExtResource("11_7yne8")
 res = ExtResource("12_owdam")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=833025531]
-modulate = Color(0.3652631, 1, 0.33595186, 1)
+modulate = Color(1, 0.6484574, 0.9490469, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -1233,6 +1303,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=1601648530]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -11.5
+offset_right = 175.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Zone_2" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1648467224 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
@@ -1253,6 +1342,25 @@ grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
 
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=955375909]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -11.5
+offset_right = 175.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Zone_1" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=315991884 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
@@ -1262,7 +1370,7 @@ script = ExtResource("11_7yne8")
 res = ExtResource("15_vehi4")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1562671029]
-modulate = Color(1, 0.56078434, 0.40392157, 1)
+modulate = Color(1, 0.76452816, 0.68193036, 1)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -1272,6 +1380,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_273he")
 expand_mode = 3
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=374099641]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -11.5
+offset_right = 175.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/Store_UI" unique_id=575475949]
 layout_mode = 1
@@ -1917,11 +2044,19 @@ mesh = SubResource("QuadMesh_71vvp")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera/Camera" unique_id=1566402554]
 transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
-amount = 500
+amount = 250
 lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_3c4k5")
 draw_pass_1 = SubResource("PlaneMesh_6bc7i")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Camera/Camera" unique_id=1901199325]
+transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
+amount = 250
+lifetime = 2.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_3c4k5")
+draw_pass_1 = SubResource("PlaneMesh_3c4k5")
 
 [node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="." unique_id=1347226012]
 strength = -0.5

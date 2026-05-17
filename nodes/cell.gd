@@ -5,44 +5,58 @@ extends Area3D
 @export var current_build: Building
 @export var has_worker: bool = false
 @export var current_worker: Worker
+var is_charged: bool = false
 
 func _ready() -> void:
+	$Charge_sprite.hide()
 	$Sprite3D.hide()
+	$Res_progress.hide()
 	if has_building and current_build:
 		place(current_build)
 	if has_worker and current_worker:
 		appoint(current_worker)
+	await RenderingServer.frame_post_draw
+	$Res_progress.texture = $SubViewport.get_texture()
+
+func _process(delta: float) -> void:
+	if $Time_to_res.time_left > 0:
+		$SubViewport/TextureProgressBar.value = $Time_to_res.wait_time - $Time_to_res.time_left
+	else:
+		$SubViewport/TextureProgressBar.value = 0
 
 func _input_event(camera, event, click_position, click_normal, shape_idx):
 	if check_zone_status() and event.is_action_pressed("place"):
 		if %BaseUI.building_state and has_building == false:
 			place()
-		elif %BaseUI.worker_state and has_building and has_worker == false:
+		elif %BaseUI.worker_state and has_building and has_worker == false and  current_build != load("uid://cm6r5ofrc0a8"):
 			appoint()
 			$"../../HUD/PortairDrag".hide()
 		elif %BaseUI.demolition_state and has_building:
 			displace()
-		elif has_building:
+		elif has_building and is_charged:
 			click_res()
-			%BaseUI.jigle()
+			if $"../../HUD/PortairDrag".visible:
+				%BaseUI.jigle()
 		else:
 			%BaseUI.jigle()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
 
 func place(building: Building = %BaseUI.selected_build):
-	$Build_part.emitting = true
 	%BaseUI.building_state = false
 	has_building = true
 	current_build = building
 	%BaseUI.selected_build = null
 	_mouse_exit()
 	print(current_build.name, " поставлено на ", name)
-	$Sprite3D.visible = true
 	var inst = current_build.model.instantiate()
 	var rot = randi_range(0,3)
-	var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-1.5,0))
+	if current_build != load("uid://cm6r5ofrc0a8"):
+		$Charge_time.start()
+		$Sprite3D.visible = true
+		$Build_part.emitting = true
+		var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-1.5,0))
 	match rot:
 		0:
 			inst.rotation_degrees.y = 0
@@ -66,9 +80,12 @@ func displace():
 	has_worker = false
 	print("Работник убран с клетки ", name, " из-за сноса района")
 	$Time_to_res.stop()
+	$Charge_sprite.hide()
+	$Charge_time.stop()
 	
 	$Build_part.emitting = true
 	%BaseUI.demolition_state = false
+	$Res_progress.hide()
 	Global.add_to_integer_res_type(current_build.buy_cost_type, current_build.buy_cost)
 	%BaseUI.change_label(current_build.buy_cost_type, true)
 	has_building = false
@@ -94,7 +111,13 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 		wait_time = 0.5
 	$Time_to_res.wait_time = wait_time
 	$Time_to_res.start()
+	$SubViewport/TextureProgressBar.max_value = wait_time
+	$Res_progress.show()
 	$Sprite3D/Portair.texture = current_worker.icon
+	if current_worker.is_unique:
+		$Sprite3D/Portair.pixel_size = 0.00025
+	else:
+		$Sprite3D/Portair.pixel_size = 0.0015
 
 func disappoint():
 	has_worker = false
@@ -106,6 +129,7 @@ func disappoint():
 	_mouse_exit()
 	print("Работник убран с клетки ", name)
 	$Time_to_res.stop()
+	$Res_progress.hide()
 	$Sprite3D/Portair.texture = null
 
 func _mouse_enter():
@@ -113,34 +137,37 @@ func _mouse_enter():
 		var mat = $MeshInstance3D.get_active_material(0).duplicate()
 		if %BaseUI.building_state == true and %BaseUI.worker_state == false and %BaseUI.demolition_state == false:
 			if !has_building:
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(0.0, 1.164, 0.339, 0.561), 0.5)
+				change_cell_color(2,mat)
 			else:
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
+				change_cell_color(1,mat)
 		elif %BaseUI.building_state == false and %BaseUI.worker_state == true and %BaseUI.demolition_state == false:
 			if !has_building:
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
-			else:
+				change_cell_color(1,mat)
+			elif current_build != load("uid://cm6r5ofrc0a8"):
 				$Sprite3D/corner.visible = true
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(0.0, 1.164, 0.339, 0.561), 0.5)
+				change_cell_color(2,mat)
+			else:
+				change_cell_color(1,mat)
 		elif %BaseUI.building_state == false and %BaseUI.worker_state == false and %BaseUI.demolition_state == true:
 			if !has_building:
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
+				change_cell_color(1,mat)
 			else:
-				$Sprite3D/corner.visible = true
-				$MeshInstance3D.set_surface_override_material(0, mat)
-				var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-				twac.tween_property(mat, "albedo_color", Color(1.164, 1.164, 0.339, 0.561), 0.5)
+				change_cell_color(3,mat)
 
+func change_cell_color(ID: int, mat):
+	match ID:
+		1:
+			$MeshInstance3D.set_surface_override_material(0, mat)
+			var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+			twac.tween_property(mat, "albedo_color", Color(1.164, 0.0, 0.0, 0.561), 0.5)
+		2:
+			$MeshInstance3D.set_surface_override_material(0, mat)
+			var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+			twac.tween_property(mat, "albedo_color", Color(0.0, 1.164, 0.339, 0.561), 0.5)
+		3:
+			$MeshInstance3D.set_surface_override_material(0, mat)
+			var twac = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+			twac.tween_property(mat, "albedo_color", Color(1.164, 1.164, 0.339, 0.561), 0.5)
 
 func _mouse_exit():
 	var mat = $MeshInstance3D.get_active_material(0).duplicate()
@@ -166,14 +193,24 @@ func _on_time_to_res_timeout() -> void:
 	tws.tween_property($Sprite3D,"pixel_size",0.0065,0.3)
 	tws.tween_property($Sprite3D,"pixel_size",0.006,0.3)
 
+func charge_timeout() -> void:
+	print(self.name, " зарядился")
+	$Charge_sprite.show()
+	$SubViewport/TextureProgressBar.max_value = $Time_to_res.wait_time
+	is_charged = true
+
 func click_res():
+	$Charge_part.emitting = true
+	$Charge_sprite.hide()
+	is_charged = false
+	$Charge_time.start()
 	var rand = randi_range(0,100)
 	if rand <= %BaseUI.chance:
-		%BaseUI.chance = 0
+		%BaseUI.chance = 25
 		Global.add_to_integer_res_type(2, randi_range(1,2))
 		%BaseUI.change_label(2,true)
 	else: 
-		%BaseUI.chance += 5
+		%BaseUI.chance += 75
 	
 	%BaseUI.anim_click(get_viewport().get_mouse_position())
 	var added_number = randi_range(current_build.res_count_per_click.x,current_build.res_count_per_click.y)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Worker" format=3 uid="uid://x33hd15p6qyb"]
 
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="1_5slfl"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="1_5slfl"]
 [ext_resource type="Script" uid="uid://bduhpc67rk1k2" path="res://other/Scripts/worker.gd" id="2_wxj62"]
 
 [resource]

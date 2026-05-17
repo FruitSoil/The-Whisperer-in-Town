@@ -13,10 +13,11 @@ script = ExtResource("2_fw8jc")
 material_override = ExtResource("2_xlerp")
 
 [node name="Plane_012" parent="." index="1" unique_id=673369580]
-transform = Transform3D(0.9999926, 0.0038200284, 1.6697876e-10, 0, -4.3711385e-08, 1, 0.0038200284, -0.9999926, -4.3711072e-08, 0.42738277, 7.463374, -0.3172648)
+transform = Transform3D(0.9999999, 0, 0, 0, -4.3711385e-08, 1, 0, -0.9999999, -4.371139e-08, 0.42738277, 7.463374, -0.3172648)
 material_override = ExtResource("3_fw8jc")
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=241777397]
 autoplay = &"Plane_012|Action"
+speed_scale = 0.3
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

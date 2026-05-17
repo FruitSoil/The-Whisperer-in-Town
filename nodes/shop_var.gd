@@ -24,6 +24,7 @@ func update():
 		$BG/MC/VBC/Star_2.hide()
 		$BG/MC/VBC/Star_3.hide()
 		$Condition.show()
+		$Condition.text = res.unlock_condition_desc
 		return
 	if res:
 		$Condition.hide()

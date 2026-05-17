@@ -15,6 +15,11 @@ var store_scroll_max: float = -1450.0
 var quest_scroll_max: float = -350.0 
 
 func _ready() -> void:
+	$"../../PostProcess".show()
+	$"..".show()
+	
+	$Store_UI/Build_scroll_list.show()
+	$Store_UI/Zones_View.hide()
 	desc.mouse_entered.connect(desc_quest_enter)
 	desc.mouse_exited.connect(desc_quest_exited)
 	change_all_label(false)
@@ -38,6 +43,9 @@ func _input(event: InputEvent) -> void:
 			Global.add_to_integer_res_type(2,10)
 			change_label(2,true)
 		worker_state = false
+	if event.is_action_released("displace") and demolition_state:
+		get_tree().call_group("cell", "_mouse_exit")
+		demolition_state = false
 
 func _on_quest_pressed() -> void:
 	if $Quest_UI.visible == false:
@@ -166,6 +174,7 @@ func _on_buildings_pressed() -> void:
 	$Store_UI/Zones_View.visible = false
 
 func _on_zones_pressed() -> void:
+	$Store_UI/Zones_View/Zones/Zone_1.touch()
 	$Store_UI/Build_scroll_list.visible = false
 	$Store_UI/Zones_View.visible = true
 
@@ -178,9 +187,8 @@ func _on_zone_buy() -> void:
 			change_label(selected_zone.second_res_type, false)
 			print(selected_zone.name, " разблокирован!")
 			_on_buildings_pressed()
-			$Store_UI/Slider.value = 100
+			$Store_UI/Slider.value = 30
 			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
-			get_tree().call_group("zone_button", "check", selected_zone)
 			match selected_zone.number:
 				2:
 					Global.is_zone_2_open = true
@@ -212,6 +220,7 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl11".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl12".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl12".update()
+			get_tree().call_group("zone_button", "check", selected_zone)
 		else:
 			no_res()
 	else:

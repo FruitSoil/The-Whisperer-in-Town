@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_c4obe"]
 [ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="3_tmcfa"]
 
-
 [resource]
 script = ExtResource("2_c4obe")
 res_type = 3

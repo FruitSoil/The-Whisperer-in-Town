@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c73gowh837g0i"
-path="res://.godot/imported/character_cult_leader.png-cb0b59cc5442feff6bf03e92972c20d3.ctex"
+uid="uid://brnjualrrs582"
+path="res://.godot/imported/Administration.png-83185e1862d632b0349d0a7104c35bd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/portairs/character_cult_leader.png"
-dest_files=["res://.godot/imported/character_cult_leader.png-cb0b59cc5442feff6bf03e92972c20d3.ctex"]
+source_file="res://Images/portairs/Administration.png"
+dest_files=["res://.godot/imported/Administration.png-83185e1862d632b0349d0a7104c35bd5.ctex"]
 
 [params]
 

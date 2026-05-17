@@ -7,22 +7,25 @@ func _ready() -> void:
 	change_desc()
 
 func touch():
-	change_desc()
-	%BaseUI.selected_zone = res
-	$"../../Desc/Panel/TextureRect".texture = res.icon
-	$"../../Desc/Name".text = res.name
-	$"../../Desc/Desc".text = res.description
-	if res.bonus_res_count != 0:
-		$"../../Desc/HBC/Panel/Label".text = Global.get_res_name(res.bonus_res_type)
-		$"../../Desc/HBC/Panel/Res".texture = Global.get_res_icon(res.bonus_res_type)
-	else:
-		$"../../Desc/HBC/Panel/Label".text = " "
-		$"../../Desc/HBC/Panel/Res".texture = null
+	if check_zone_open_status_plus_one() or check_zone_open_status():
+		change_desc()
+		%BaseUI.selected_zone = res
+		$"../../Desc/Panel/TextureRect".texture = res.icon
+		$"../../Desc/Name".text = res.name
+		$"../../Desc/Desc".text = res.description
+		if res.bonus_res_count != 0:
+			$"../../Desc/HBC/Panel/Label".text = Global.get_res_name(res.bonus_res_type)
+			$"../../Desc/HBC/Panel/Res".texture = Global.get_res_icon(res.bonus_res_type)
+		else:
+			$"../../Desc/HBC/Panel/Label".text = " "
+			$"../../Desc/HBC/Panel/Res".texture = null
 
 func change_desc():
-	check_zone_open_status()
+	$"../../Desc/HBC/Buy".disabled = check_zone_open_status()
 	$Texture.texture = res.icon
 	text = "Зона " + str(res.number) + " - " + res.name
+	if check_zone_open_status_plus_one() or check_zone_open_status():
+		$"Condition".hide()
 	$"../../Desc/HBC/Buy/Res_label".text = str(res.first_res_count)
 	$"../../Desc/HBC/Buy/Res_icon".texture = Global.get_res_icon(res.first_res_type)
 	$"../../Desc/HBC/Buy/Res_label".value = res.first_res_count
@@ -44,16 +47,36 @@ func change_desc():
 		$"../../Desc/HBC/Buy/Res_label2".text = " "
 		$"../../Desc/HBC/Buy/Res_icon2".texture = null
 
-func check_zone_open_status():
+func check_zone_open_status() -> bool:
 	if Global.is_zone_1_open and res.number == 1:
-		$"../../Desc/HBC/Buy".disabled = true
+		return true
 	elif  Global.is_zone_2_open and res.number == 2:
-		$"../../Desc/HBC/Buy".disabled = true
-	elif  Global.is_zone_2_open and res.number == 2:
-		$"../../Desc/HBC/Buy".disabled = true
+		return true
+	elif  Global.is_zone_3_open and res.number == 3:
+		return true
+	elif  Global.is_zone_4_open and res.number == 4:
+		return true
+	elif  Global.is_zone_5_open and res.number == 5:
+		return true
 	else:
-		$"../../Desc/HBC/Buy".disabled = false
+		return false
+
+func check_zone_open_status_plus_one() -> bool:
+	if Global.is_zone_1_open and res.number == 2:
+		return true
+	elif  Global.is_zone_2_open and res.number == 3:
+		return true
+	elif  Global.is_zone_3_open and res.number == 4:
+		return true
+	elif  Global.is_zone_4_open and res.number == 5:
+		return true
+	elif  Global.is_zone_5_open and res.number == 6:
+		return true
+	else:
+		return false
 
 func check(resource: Zone):
 	if res == resource:
 		icon = load("res://Images/Worker_res_icon.png")
+	if check_zone_open_status_plus_one() or check_zone_open_status():
+		$"Condition".hide()

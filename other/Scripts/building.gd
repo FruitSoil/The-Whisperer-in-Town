@@ -17,5 +17,6 @@ class_name Building
 @export var buy_cost: int ##За сколько здание покупается
 @export var buy_cost_type: Global.res_types ##За какой тип ресурса здание покупается
 @export var name: String ## Название района в магазине
+@export_multiline var unlock_condition_desc: String ## Описание условия открытия зоны в текстовом виде
 @export_multiline var description: String ## Описание района в магазине
 @export var shop_icon: Texture2D ## Иконка в магазине
