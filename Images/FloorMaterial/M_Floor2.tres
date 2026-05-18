@@ -15,4 +15,4 @@ heightmap_deep_parallax = true
 heightmap_min_layers = 8
 heightmap_max_layers = 32
 heightmap_texture = ExtResource("2_mx72t")
-uv1_scale = Vector3(3.225, 3.225, 3.225)
+uv1_scale = Vector3(6.355, 6.355, 6.355)

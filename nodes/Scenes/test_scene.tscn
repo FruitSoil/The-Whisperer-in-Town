@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
 [ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="4_igchu"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="4_igchu"]
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_yi5b6"]
 [ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
@@ -555,8 +555,8 @@ shader = ExtResource("56_yiww8")
 shader_parameter/depth_threshold = 0.010000000475
 shader_parameter/reverse_depth_threshold = 1.0
 shader_parameter/normal_threshold = 0.5490000260775
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 0.0
+shader_parameter/darken_amount = 0.2999999932944
+shader_parameter/lighten_amount = 0.90999997965968
 shader_parameter/normal_edge_bias = Vector3(6.36, 1, 1)
 shader_parameter/light_direction = Vector3(-17.77, -45.235, 1)
 
@@ -650,6 +650,10 @@ orientation = 2
 material = ExtResource("49_rpk0c")
 size = Vector2(100, 100)
 
+[sub_resource type="PrismMesh" id="PrismMesh_6bc7i"]
+material = ExtResource("49_rpk0c")
+size = Vector3(34.2, 10.695, 15.21)
+
 [sub_resource type="Gradient" id="Gradient_rpk0c"]
 offsets = PackedFloat32Array(0.39784947, 0.65591395)
 colors = PackedColorArray(0.86898494, 0.8689849, 0.8689849, 1, 1, 1, 1, 1)
@@ -668,10 +672,6 @@ albedo_texture = SubResource("NoiseTexture2D_pem7d")
 uv1_scale = Vector3(0.3, 0.3, 0.3)
 uv1_triplanar = true
 uv1_world_triplanar = true
-
-[sub_resource type="PrismMesh" id="PrismMesh_6bc7i"]
-material = SubResource("StandardMaterial3D_nbuuu")
-size = Vector3(34.2, 10.695, 15.21)
 
 [sub_resource type="PrismMesh" id="PrismMesh_w47nb"]
 material = SubResource("StandardMaterial3D_nbuuu")
@@ -2942,8 +2942,8 @@ mesh = SubResource("PrismMesh_6bc7i")
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
 transform = Transform3D(0.20278737, 0.65395695, 0.7288468, 0, -0.7443116, 0.6678326, 0.9792229, -0.13542801, -0.15093695, 0, 14.49, 0)
 light_color = Color(1, 0.98039216, 0.95686275, 1)
-light_bake_mode = 1
 shadow_enabled = true
+shadow_normal_bias = 0.0
 sky_mode = 1
 
 [node name="Grid" type="Node3D" parent="." unique_id=451173554]
