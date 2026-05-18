@@ -80,6 +80,9 @@
 [ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="62_xdeo5"]
 [ext_resource type="Resource" uid="uid://4h6jpjw3ymbn" path="res://resources/workers/U_General.tres" id="65_h4qp7"]
 [ext_resource type="Resource" uid="uid://b468hhcbqb8k5" path="res://resources/workers/U_Traitor.tres" id="66_vxr4q"]
+[ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="74_e4pqg"]
+[ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="75_2l774"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="76_2l774"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeo5"]
 shader = ExtResource("11_yi5b6")
@@ -749,6 +752,7 @@ text = "All to 99999"
 icon = ExtResource("16_vehi4")
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
+visible = false
 script = ExtResource("12_opxjv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -2717,7 +2721,6 @@ metadata/_edit_lock_ = true
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
 layer = 5
-visible = false
 script = ExtResource("62_xdeo5")
 
 [node name="TextureRect" type="ColorRect" parent="Pause" unique_id=495866217]
@@ -2742,27 +2745,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 39
 
-[node name="Continue" type="Button" parent="Pause/VBC" unique_id=1613825456]
+[node name="Continue" type="TextureButton" parent="Pause/VBC" unique_id=322936952]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 48
-text = "Продолжить"
+texture_normal = ExtResource("74_e4pqg")
+texture_pressed = ExtResource("75_2l774")
+texture_hover = ExtResource("74_e4pqg")
+texture_disabled = ExtResource("74_e4pqg")
+texture_focused = ExtResource("74_e4pqg")
+stretch_mode = 0
 
-[node name="Settings" type="Button" parent="Pause/VBC" unique_id=1268179501]
+[node name="Settings" type="TextureButton" parent="Pause/VBC" unique_id=1564516406]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 48
-text = "Настройки"
+texture_normal = ExtResource("74_e4pqg")
+texture_pressed = ExtResource("75_2l774")
+texture_hover = ExtResource("74_e4pqg")
+texture_disabled = ExtResource("74_e4pqg")
+texture_focused = ExtResource("74_e4pqg")
+stretch_mode = 0
 
-[node name="Exit_to main" type="Button" parent="Pause/VBC" unique_id=803098841]
+[node name="Exit_to main" type="TextureButton" parent="Pause/VBC" unique_id=917006539]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_font_sizes/font_size = 48
 disabled = true
-text = "Выйти в меню"
+texture_normal = ExtResource("74_e4pqg")
+texture_pressed = ExtResource("75_2l774")
+texture_hover = ExtResource("74_e4pqg")
+texture_disabled = ExtResource("74_e4pqg")
+texture_focused = ExtResource("74_e4pqg")
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="Pause" unique_id=79810283]
 anchors_preset = 5
@@ -2787,7 +2802,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="Pause/Control" unique_id=161444745]
+[node name="Panel" type="NinePatchRect" parent="Pause/Control" unique_id=1610520756]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2800,6 +2815,8 @@ offset_right = 824.0
 offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("76_2l774")
+region_rect = Rect2(25.591156, 81.11824, 425.17474, 415.5116)
 
 [node name="Label" type="Label" parent="Pause/Control" unique_id=844853206]
 layout_mode = 1
