@@ -71,6 +71,7 @@
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
 [ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="56_ps3nt"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="56_yiww8"]
+[ext_resource type="Texture2D" uid="uid://berx66w5hcevc" path="res://Images/UI/characters_background.PNG" id="57_vxr4q"]
 [ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="58_bg06i"]
 [ext_resource type="Texture2D" uid="uid://brk7a3rn64jgw" path="res://Images/UI/ui4_button1_idle.png" id="59_8w520"]
@@ -100,34 +101,10 @@ shader_parameter/distort_intensity = 0.014000000665
 shader_parameter/noise_opacity = 0.07600000361
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.078000003705
-shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/aberration = 0.00500004773750006
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.2590000123025
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps3nt"]
-shader = ExtResource("56_ps3nt")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.4870000231325
-shader_parameter/scanlines_width = 0.1470000069825
-shader_parameter/grille_opacity = 0.1410000066975
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 3.0
-shader_parameter/roll_size = 65.190003096525
-shader_parameter/roll_variation = 2.24300010328262
-shader_parameter/distort_intensity = 0.086000004085
-shader_parameter/noise_opacity = 0.194000009215
-shader_parameter/noise_speed = 1.0
-shader_parameter/static_noise_intensity = 0.078000003705
-shader_parameter/aberration = 0.0050000477375000685
-shader_parameter/brightness = 1.5
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
@@ -155,6 +132,54 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vxr4q"]
+shader = ExtResource("56_ps3nt")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4870000231325
+shader_parameter/scanlines_width = 0.1470000069825
+shader_parameter/grille_opacity = 0.1410000066975
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 65.190003096525
+shader_parameter/roll_variation = 2.24300010328262
+shader_parameter/distort_intensity = 0.0090000004275
+shader_parameter/noise_opacity = 0.050000002375
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 0.00500004773750006
+shader_parameter/brightness = 1.5
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sp5h0"]
+shader = ExtResource("56_ps3nt")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4870000231325
+shader_parameter/scanlines_width = 0.1470000069825
+shader_parameter/grille_opacity = 0.1410000066975
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 65.190003096525
+shader_parameter/roll_variation = 2.24300010328262
+shader_parameter/distort_intensity = 0.0090000004275
+shader_parameter/noise_opacity = 0.050000002375
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 0.00500004773750006
+shader_parameter/brightness = 1.5
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="Animation" id="Animation_mlsg3"]
 resource_name = "Hide"
@@ -350,13 +375,6 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5yd0p"]
 gradient = SubResource("Gradient_k4jtg")
 width = 2
-
-[sub_resource type="Gradient" id="Gradient_vcfif"]
-offsets = PackedFloat32Array(0, 0.46397695, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0.078431375, 1, 0.021998512, 0.13805932, 0.07209382, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_pxd2t"]
-gradient = SubResource("Gradient_vcfif")
 
 [sub_resource type="Animation" id="Animation_m2kq4"]
 resource_name = "From"
@@ -731,7 +749,6 @@ text = "All to 99999"
 icon = ExtResource("16_vehi4")
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
-visible = false
 script = ExtResource("12_opxjv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -746,20 +763,20 @@ offset_bottom = 866.8114
 grow_horizontal = 0
 mouse_filter = 2
 
-[node name="BG" type="ColorRect" parent="Dialogue/Panel" unique_id=279437657]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 366.0
-offset_right = 545.0
-offset_bottom = 570.0
-color = Color(0, 0.047058824, 0, 1)
-
 [node name="BG2" type="ColorRect" parent="Dialogue/Panel" unique_id=55709613]
 layout_mode = 0
 offset_left = -24.0
 offset_top = 569.0
 offset_right = 495.0
 offset_bottom = 739.0
+color = Color(0, 0.047058824, 0, 1)
+
+[node name="BG3" type="ColorRect" parent="Dialogue/Panel" unique_id=717780163]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 367.0
+offset_right = 547.0
+offset_bottom = 569.0
 color = Color(0, 0.047058824, 0, 1)
 
 [node name="Fon" type="TextureRect" parent="Dialogue/Panel" unique_id=327405622]
@@ -810,27 +827,6 @@ anchor_bottom = 1.0
 offset_left = 2.0
 offset_right = -4.0
 offset_bottom = -43.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VHS2" type="ColorRect" parent="Dialogue/Panel" unique_id=1545775338]
-material = SubResource("ShaderMaterial_ps3nt")
-layout_mode = 0
-offset_left = -21.0
-offset_top = 371.0
-offset_right = 539.0
-offset_bottom = 561.0
-
-[node name="VHS" type="ColorRect" parent="Dialogue/Panel" unique_id=817321121]
-material = SubResource("ShaderMaterial_ps3nt")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43400002
-anchor_right = 0.43400002
-offset_left = -268.64423
-offset_top = 577.0
-offset_right = 249.35577
-offset_bottom = 724.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -885,6 +881,28 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_opxjv")
 text = "Уволен"
 icon = ExtResource("15_mlsg3")
 autowrap_mode = 3
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Dialogue/Panel" unique_id=2019011086]
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="Dialogue/Panel/BackBufferCopy" unique_id=817321121]
+material = SubResource("ShaderMaterial_vxr4q")
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_right = 0.43400002
+offset_left = -109.8
+offset_top = 577.0
+offset_right = 408.2
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VHS2" type="ColorRect" parent="Dialogue/Panel/BackBufferCopy" unique_id=1545775338]
+material = SubResource("ShaderMaterial_sp5h0")
+offset_left = -21.0
+offset_top = 371.0
+offset_right = 539.0
+offset_bottom = 561.0
 
 [node name="Frame" type="TextureRect" parent="Dialogue/Panel" unique_id=1153708242]
 layout_mode = 0
@@ -2119,13 +2137,53 @@ anchor_left = 1.3390001
 anchor_top = 0.523
 anchor_right = 1.3390001
 anchor_bottom = 0.523
-offset_left = -39.40901
-offset_top = -382.802
-offset_right = 1044.591
-offset_bottom = -337.802
-rotation = 1.5707964
-scale = Vector2(0.70590204, 2.557732)
-texture = SubResource("GradientTexture1D_pxd2t")
+offset_left = -183.40903
+offset_top = -401.802
+offset_right = 120.04558
+offset_bottom = 1022.3799
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("57_vxr4q")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/workers_panel" unique_id=654250700]
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="HUD/BaseUI/workers_panel/BackBufferCopy" unique_id=797029459]
+material = SubResource("ShaderMaterial_n00c2")
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_right = 0.43400002
+offset_left = -78.79988
+offset_top = 60.0
+offset_right = 46.199997
+offset_bottom = 725.7879
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VHS2" type="ColorRect" parent="HUD/BaseUI/workers_panel" unique_id=2000746311]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_right = 0.43400002
+offset_left = 5.145996
+offset_top = 719.0
+offset_right = 82.14612
+offset_bottom = 769.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VHS3" type="ColorRect" parent="HUD/BaseUI/workers_panel" unique_id=1791906296]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_right = 0.43400002
+offset_left = 12.145996
+offset_top = 15.0
+offset_right = 89.14612
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Default_worker" type="Button" parent="HUD/BaseUI/workers_panel" unique_id=1182929519 groups=["Work_panels"]]
 custom_minimum_size = Vector2(75, 75)
@@ -2136,9 +2194,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -90.0
-offset_top = -156.0
+offset_top = -150.0
 offset_right = -15.0
-offset_bottom = -81.0
+offset_bottom = -75.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4

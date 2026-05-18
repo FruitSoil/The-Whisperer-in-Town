@@ -58,11 +58,11 @@ func get_res_icon(res_type: int) -> Texture:
 		3:
 			return load("res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png")
 		4:
-			return load("res://Images/Resources_icons/heavycomponent_res_icon.png")
+			return load("res://Images/Resources_icons/actual/heavycomponent_res_icon.png")
 		5:
-			return load("res://Images/Resources_icons/imperial_res_icon.png")
+			return load("res://Images/Resources_icons/actual/imperial_res_icon.png")
 		6:
-			return load("res://Images/Resources_icons/cultistic_res_icon.png")
+			return load("res://Images/Resources_icons/actual/cultistic_res_icon.png")
 		_:
 			return load("res://Images/Resources_icons/no_res_icon.png")
 
