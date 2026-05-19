@@ -13,7 +13,7 @@ class_name Building
 @export var second_res_type: Global.res_types ## Дополнительный тип ресурса
 @export var second_res_count_per_timer: int ##Количество дополнительного ресурса за выработку по таймеру
 @export_category("В магазине")
-@export_range(1,3) var tier: int ##Тир здания от 1 до 3, определяет только кол-во звезд в магазине
+@export_range(1,5) var tier: int ##Тир здания от 1 до 3, определяет только кол-во звезд в магазине
 @export var buy_cost: int ##За сколько здание покупается
 @export var buy_cost_type: Global.res_types ##За какой тип ресурса здание покупается
 @export var name: String ## Название района в магазине

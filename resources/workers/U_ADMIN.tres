@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Worker" format=3 uid="uid://b12u8yfat1dal"]
+
+[ext_resource type="Texture2D" uid="uid://br8o3ohxar528" path="res://Images/Worker2_res_icon.png" id="1_57lb2"]
+[ext_resource type="Script" uid="uid://bduhpc67rk1k2" path="res://other/Scripts/worker.gd" id="2_m4hq7"]
+
+[resource]
+script = ExtResource("2_m4hq7")
+name = "Администрация"
+is_unique = true
+icon = ExtResource("1_57lb2")
+Description = "Администрация"
+res_timer_change = 120.0
+new_res_type = 2
+new_res_count = 30
+metadata/_custom_type_script = "uid://bduhpc67rk1k2"

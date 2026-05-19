@@ -8,8 +8,10 @@ extends Area3D
 var is_charged: bool = false
 
 func _ready() -> void:
+	$Charge_sprite/Charge_feedback.pixel_size = 0.0
 	$Charge_sprite.hide()
 	$Sprite3D.hide()
+	$Sprite3D/Sprite3D.hide()
 	$Res_progress.hide()
 	if has_building and current_build:
 		place(current_build)
@@ -40,7 +42,7 @@ func lines_update():
 		$grid/Line3.mesh.material.albedo_color = close_color
 		$grid/Line4.mesh.material.albedo_color = close_color
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $Time_to_res.time_left > 0:
 		$SubViewport/TextureProgressBar.value = $Time_to_res.wait_time - $Time_to_res.time_left
 	else:
@@ -51,7 +53,7 @@ func _process(delta: float) -> void:
 	else:
 		$SubViewport2/TextureProgressBar2.value = 0
 
-func _input_event(camera, event, click_position, click_normal, shape_idx):
+func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if check_zone_status() and event.is_action_pressed("place"):
 		if %BaseUI.building_state and has_building == false:
 			place()
@@ -82,6 +84,7 @@ func place(building: Building = %BaseUI.selected_build):
 	print(current_build.name, " поставлено на ", name)
 	var inst = current_build.model.instantiate()
 	var rot = randi_range(0,3)
+	Global.total_buildings.append(building) 
 	if current_build != load("uid://cm6r5ofrc0a8"):
 		$Charge_time.start()
 		$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
@@ -110,8 +113,11 @@ func displace():
 			%BaseUI.change_label(2, true)
 	get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
 	$Sprite3D/Portair.texture = null
+	Global.total_buildings.erase(current_build)
+	Global.total_workers.erase(current_worker)
 	current_worker = null
 	has_worker = false
+	
 	print("Работник убран с клетки ", name, " из-за сноса района")
 	$Time_to_res.stop()
 	$Charge_sprite.hide()
@@ -143,10 +149,12 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 	var wait_time = current_build.res_timer + current_worker.res_timer_change
 	if wait_time < 0.5:
 		wait_time = 0.5
+	Global.total_workers.append(current_worker)
 	$Time_to_res.wait_time = wait_time
 	$Time_to_res.start()
 	$SubViewport/TextureProgressBar.max_value = wait_time
 	$Res_progress.show()
+	$Sprite3D/Sprite3D.show()
 	$Sprite3D/Portair.texture = current_worker.icon
 	if current_worker.is_unique:
 		$Sprite3D/Portair.pixel_size = 0.00025
@@ -154,6 +162,7 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 		$Sprite3D/Portair.pixel_size = 0.0015
 
 func disappoint():
+	Global.total_workers.erase(current_worker)
 	has_worker = false
 	if current_worker.is_unique == false:
 		Global.add_to_integer_res_type(2, 10)
@@ -164,6 +173,7 @@ func disappoint():
 	print("Работник убран с клетки ", name)
 	$Time_to_res.stop()
 	$Res_progress.hide()
+	$Sprite3D/Sprite3D.hide()
 	$Sprite3D/Portair.texture = null
 
 func _mouse_enter():
@@ -231,11 +241,20 @@ func charge_timeout() -> void:
 	print(self.name, " зарядился")
 	$Charge_sprite/MoneyIcon.show()
 	is_charged = true
+	var size
+	if has_worker:
+		size = 0.0025
+	else:
+		size = 0.002
+	var twps = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", size, 0.6)
 
 func click_res():
+	var twps = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", 0.0, 0.6)
+	
 	$Charge_part.emitting = true
 	is_charged = false
-	
 	$Charge_time.wait_time = 15 + randf_range(-5,5)
 	$Charge_sprite/MoneyIcon.hide()
 	$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
@@ -250,7 +269,7 @@ func click_res():
 		Global.add_to_integer_res_type(2, 1)
 		%BaseUI.change_label(2,true)
 	
-	%BaseUI.anim_click(get_viewport().get_mouse_position())
+	%BaseUI.anim_click()
 	var added_number = randi_range(current_build.res_count_per_click.x,current_build.res_count_per_click.y)
 	Global.add_to_integer_res_type(current_build.res_type, added_number)
 	%BaseUI.change_label(current_build.res_type,true)

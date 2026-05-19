@@ -35,7 +35,7 @@ func _ready() -> void:
 	$"../PortairDrag".hide()
 	_on_exit_pressed()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if drag.visible:
 		drag.position = get_viewport().get_mouse_position() - drag.size/2
 
@@ -205,7 +205,7 @@ func anim_decr(label:Node):
 	tws.tween_property(label, "scale",Vector2(1,1), 1).from(Vector2(1.3,1.3))
 	tws.tween_property(label, "modulate",Color(1.0, 1.0, 1.0, 1.0), 1).from(Color(1.0, 0.0, 0.0, 1.0))
 
-func anim_click(position):
+func anim_click():
 		$"../click".set_position(position - $"../click".size / 2) 
 		var twm = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN).set_parallel(true)
 		twm.tween_property($"../click","modulate",Color(1.0, 1.0, 1.0, 0.0), 0.15).from(Color(1.0, 1.0, 1.0, 1.0))
@@ -233,6 +233,8 @@ func _on_zone_buy() -> void:
 			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
 			match selected_zone.number:
 				2:
+					# DEBUG
+					%QuestLogic.ql_set_quest(load("res://resources/Quests/WorkerPart1.tres"),Global.workers.WORKER)
 					Global.is_zone_2_open = true
 					twp.tween_property($"../../Walls/Zone_1/Wall3","position", $"../../Walls/Zone_1/Wall3".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl4".is_open = true
@@ -274,8 +276,8 @@ func no_res():
 	var twp = create_tween().set_trans(Tween.TRANS_ELASTIC)
 	var rnd = randf_range(-6,6)
 	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(108 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(108,0))
-	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(108,0), 0.5).set_ease(Tween.EASE_OUT)
+	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(133 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(133,0))
+	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(133,0), 0.5).set_ease(Tween.EASE_OUT)
 	twm.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))
 
 func slider_changed(value: float) -> void:

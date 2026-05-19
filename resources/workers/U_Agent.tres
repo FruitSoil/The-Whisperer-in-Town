@@ -11,6 +11,5 @@ icon = ExtResource("1_w2g73")
 Description = "Увеличивает время производства района на 1 сек., но увеличивает выработку районов, производящих ржавую жесть на 24."
 addit_res_count = 24
 res_timer_change = 1.0
-nickname = "Агент Т"
 narrative_description = "Агент правительства. Людям не по себе от её присутствия. Никто не хочет быть отправленым. Никто."
 metadata/_custom_type_script = "uid://bduhpc67rk1k2"

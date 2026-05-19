@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func update():
 	if is_open == false:
+		$Tier.text = "Тир ?"
 		$Name.text = "?????????"
 		$Description.text = "?????????????????? ???????????????"
 		$Image.texture = load("res://Images/LockIcon.png")
@@ -20,9 +21,6 @@ func update():
 		$buy/Res_icon.texture = load("res://Images/LockIcon.png")
 		$buy/Res_label2.text = "????"
 		$buy/Res_icon2.texture = load("res://Images/LockIcon.png")
-		$BG/MC/VBC/Star_1.hide()
-		$BG/MC/VBC/Star_2.hide()
-		$BG/MC/VBC/Star_3.hide()
 		$Condition.show()
 		$Condition.text = res.unlock_condition_desc
 		return
@@ -41,17 +39,15 @@ func update():
 		$buy/Res_icon2.texture = Global.get_res_icon(res.buy_cost_type)
 		match res.tier:
 			1:
-				$BG/MC/VBC/Star_1.show()
-				$BG/MC/VBC/Star_2.hide()
-				$BG/MC/VBC/Star_3.hide()
+				$Tier.text = "Тир |"
 			2:
-				$BG/MC/VBC/Star_1.show()
-				$BG/MC/VBC/Star_2.show()
-				$BG/MC/VBC/Star_3.hide()
+				$Tier.text = "Тир ||"
 			3:
-				$BG/MC/VBC/Star_1.show()
-				$BG/MC/VBC/Star_2.show()
-				$BG/MC/VBC/Star_3.show()
+				$Tier.text = "Тир |||"
+			4:
+				$Tier.text = "[img=24]res://Images/Resources_icons/actual/imperial_res_icon.png[/img]"
+			5:
+				$Tier.text = "[img=24]res://Images/Resources_icons/actual/cultistic_res_icon.png[/img]"
 
 func _on_buy_pressed() -> void:
 	if is_open:

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciba3bctmm5qp"
-path.s3tc="res://.godot/imported/agent.PNG-6249da9495956b728ad37ae29049536e.s3tc.ctex"
+path.s3tc="res://.godot/imported/Agent.PNG-165ce78bd4c452d2596847e05a90cf1d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/portairs/agent.PNG"
-dest_files=["res://.godot/imported/agent.PNG-6249da9495956b728ad37ae29049536e.s3tc.ctex"]
+source_file="res://Images/portairs/Agent.PNG"
+dest_files=["res://.godot/imported/Agent.PNG-165ce78bd4c452d2596847e05a90cf1d.s3tc.ctex"]
 
 [params]
 

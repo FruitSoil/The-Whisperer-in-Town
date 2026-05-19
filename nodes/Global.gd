@@ -1,8 +1,11 @@
 extends Node
 
+var total_buildings: Array[Building] = []
+var total_workers: Array[Worker] = []
+
 var rusted: int = 0
 var electrosnow: int = 0
-var money: int = 0
+var money: int = 9
 var highqualityelectrical: int = 0
 var heavycomponents: int = 0
 var imperial_might: int = 0
@@ -23,6 +26,16 @@ enum res_types {
 	imperial_might = 5, ##Ресурс империи, нужен для финального этапа игры, определяет концовку
 	cultist_might = 6, ##Ресурс культа, нужен для финального этапа игры, определяет концовку
 	}
+
+enum workers {
+	ADMIN = 0, ##Администрация
+	WORKER = 1,
+	SCIENTIST = 2,
+	AGENT = 4,
+	RADIOHOST = 3,
+	MILITARY = 5,
+	TRAITOR = 6
+}
 
 ##Добавить к инт переменной res_type значение add_value
 func add_to_integer_res_type(res_type: int, add_value: int):

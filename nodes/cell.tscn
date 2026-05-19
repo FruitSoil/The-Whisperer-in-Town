@@ -89,19 +89,21 @@ colors = PackedColorArray(0.37119645, 0.35650304, 0.29690287, 1, 0.99999976, 0.9
 viewport_path = NodePath("SubViewport2")
 
 [sub_resource type="Gradient" id="Gradient_nv4cr"]
-offsets = PackedFloat32Array(0.8181818, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.3705036, 0.4532374, 0.79856116, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.81862736, 1, 1, 1, 0.7916666, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_csgmv"]
 gradient = SubResource("Gradient_nv4cr")
+width = 48
+height = 48
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
+fill_to = Vector2(1, 0.517094)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nuhy"]
 transparency = 1
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("GradientTexture2D_csgmv")
+albedo_texture = ExtResource("5_1nuhy")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -114,8 +116,8 @@ size = Vector2(0.1, 0.1)
 orientation = 2
 
 [sub_resource type="Gradient" id="Gradient_mi0yh"]
-offsets = PackedFloat32Array(0, 0.9655914)
-colors = PackedColorArray(0, 1, 0, 1, 0.7806912, 1, 0.75936764, 1)
+offsets = PackedFloat32Array(0.9655914)
+colors = PackedColorArray(0.7806912, 1, 0.75936764, 1)
 
 [sub_resource type="Gradient" id="Gradient_csgmv"]
 offsets = PackedFloat32Array(0, 0.76221496, 0.7654723)
@@ -288,9 +290,21 @@ billboard = 1
 fixed_size = true
 texture = ExtResource("5_1nuhy")
 
+[node name="Charge_feedback" type="Sprite3D" parent="Charge_sprite" unique_id=674961800]
+transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, 0.026218891, -0.042595387, 0.026490077)
+layers = 2
+cast_shadow = 0
+gi_mode = 0
+modulate = Color(0.40494895, 0.7149827, 0.4194137, 1)
+pixel_size = 0.0025
+billboard = 1
+fixed_size = true
+texture = SubResource("GradientTexture2D_csgmv")
+
 [node name="Charge_part" type="CPUParticles3D" parent="." unique_id=1752209562]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3649762, 0, -1.1982299)
+transform = Transform3D(0.700735, 0, -0.7134217, 0, 1, 0, 0.7134217, 0, 0.700735, -1.8024135, 0.8674078, 1.6119677)
 emitting = false
+amount = 1
 lifetime = 1.25
 one_shot = true
 speed_scale = 1.2
@@ -298,20 +312,15 @@ explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.48
 mesh = SubResource("PlaneMesh_mi0yh")
-emission_shape = 6
-emission_ring_axis = Vector3(0, 10, 1)
-emission_ring_height = 1.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.0
-emission_ring_cone_angle = 90.0
 direction = Vector3(0, 1, 0)
-spread = 0.0
-gravity = Vector3(0, -40, 0)
-initial_velocity_min = 15.0
-initial_velocity_max = 15.0
+spread = 28.76
+flatness = 0.76
+gravity = Vector3(0, -20, 0)
+initial_velocity_min = 7.5
+initial_velocity_max = 10.0
 angle_min = -538.1
-scale_amount_min = 0.4
-scale_amount_max = 4.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hy5qt")
 color_ramp = SubResource("Gradient_ymfr8")
 color_initial_ramp = SubResource("Gradient_mi0yh")

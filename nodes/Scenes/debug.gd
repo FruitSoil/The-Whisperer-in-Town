@@ -18,6 +18,15 @@ func _input(event: InputEvent) -> void:
 			$".".hide()
 		else:
 			$".".show()
+			for i in Global.total_buildings:
+				print(i.name)
+			for i in Global.total_workers:
+				print(i.name)
+	if event.is_action_released("debug_quest_test"):
+		%worker.add_quest(load("res://resources/Quests/WorkerPart1.tres"))
+	if event.is_action_released("debug_quest_test2"):
+		%worker.quest_stage = 4
+		%worker.update_icon()
 
 func _pressed() -> void:
 	var add_count: int

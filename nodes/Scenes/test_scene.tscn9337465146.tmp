@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c2hucdshe8xtu"]
 
-[ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_1tw4p"]
 [ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="1_6bc7i"]
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
@@ -315,17 +314,6 @@ _data = {
 &"Show": SubResource("Animation_n00c2")
 }
 
-[sub_resource type="Gradient" id="Gradient_1tw4p"]
-offsets = PackedFloat32Array(0.80779946, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8b8i"]
-gradient = SubResource("Gradient_1tw4p")
-width = 1920
-height = 1080
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -400,8 +388,10 @@ load_path = "res://.godot/imported/ui4_button3_idle.png-6f48c31f2f941e2968aea641
 texture = SubResource("CompressedTexture2D_1tw4p")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3ibj"]
-bg_color = Color(0.15151802, 0.33445606, 0.15138566, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jt5n7"]
+texture = ExtResource("76_2l774")
+texture_margin_bottom = 177.0
+modulate_color = Color(3.5618727, 3.5618727, 3.5618727, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r8b8i"]
 shader = ExtResource("56_ps3nt")
@@ -432,17 +422,6 @@ shader_parameter/vignette_opacity = 0.2000000095
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb2hi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vcfif"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn2ht"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tw4p"]
 
@@ -903,10 +882,6 @@ material = SubResource("StandardMaterial3D_nbuuu")
 size = Vector3(100.200005, 30.300001, 1)
 
 [node name="Test_scene" type="Node3D" unique_id=913157555]
-
-[node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
-unique_name_in_owner = true
-script = ExtResource("1_1tw4p")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
@@ -1463,16 +1438,6 @@ libraries/ = SubResource("AnimationLibrary_n00c2")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 layer = 2
 
-[node name="TextureRect2" type="TextureRect" parent="HUD" unique_id=39522629]
-z_index = 500
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_r8b8i")
-
 [node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1521205097]
 visible = false
 modulate = Color(1, 1, 1, 0.30588236)
@@ -1611,7 +1576,7 @@ offset_top = 11.0
 offset_right = 592.0
 offset_bottom = 487.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_d3ibj")
+theme_override_styles/panel = SubResource("StyleBoxTexture_jt5n7")
 
 [node name="Exit" type="Button" parent="HUD/BaseUI/Panel" unique_id=2110033357]
 z_index = 300
@@ -1644,7 +1609,7 @@ anchor_left = 0.43400002
 anchor_right = 0.43400002
 offset_left = -222.53201
 offset_top = 51.0
-offset_right = 327.468
+offset_right = 331.468
 offset_bottom = 472.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1724,7 +1689,7 @@ custom_minimum_size = Vector2(580, 100)
 layout_mode = 2
 
 [node name="Slider" type="VSlider" parent="HUD/BaseUI/Quest_UI" unique_id=1593717675]
-z_index = 98
+z_index = 99
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -1778,9 +1743,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -666.0
+offset_left = -674.0
 offset_top = -478.0
-offset_right = -111.0
+offset_right = -122.0
 offset_bottom = -116.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -1792,38 +1757,37 @@ offset_left = 8.0
 offset_right = 548.0
 offset_bottom = 1808.0
 
-[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=24267011]
-custom_minimum_size = Vector2(0, 50)
+[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=635410058]
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=1422651638]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=8412378]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -218.5
 offset_top = -17.0
-offset_right = 259.0
+offset_right = 250.5
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
-theme_override_font_sizes/font_size = 18
-text = "Районы, производящие ржавую жесть"
+theme_override_font_sizes/font_size = 24
+text = "Районы, производящие Ржавую жесть"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=1924336613]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=242983093]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("2_3c4k5")
 
@@ -1842,38 +1806,37 @@ layout_mode = 2
 res = ExtResource("8_sbivs")
 is_open = true
 
-[node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892]
-custom_minimum_size = Vector2(0, 50)
+[node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1638908380]
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=674171681]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=309925630]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -218.5
 offset_top = -17.0
-offset_right = 259.0
+offset_right = 250.5
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
-theme_override_font_sizes/font_size = 18
-text = "Районы, производящие электроснег"
+theme_override_font_sizes/font_size = 24
+text = "Районы, производящие Энергоснег"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=1274899991]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=667979794]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("4_yi5b6")
 
@@ -1890,9 +1853,8 @@ layout_mode = 2
 res = ExtResource("15_56f6p")
 
 [node name="Panel3" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1032608040]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
 [node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel3" unique_id=1974004986]
 layout_mode = 1
@@ -1901,15 +1863,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -217.0
 offset_top = -17.0
 offset_right = 259.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
 theme_override_font_sizes/font_size = 18
 text = "Районы, производящие высококач. элетросхемы"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel3" unique_id=1230737858]
@@ -1917,10 +1879,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("5_xdeo5")
 
@@ -1936,38 +1898,37 @@ res = ExtResource("16_c16sm")
 layout_mode = 2
 res = ExtResource("17_f1g04")
 
-[node name="Panel4" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2130541618]
-custom_minimum_size = Vector2(0, 50)
+[node name="Panel4" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1903679954]
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=547216090]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=652965405]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -217.0
 offset_top = -17.0
 offset_right = 259.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
 theme_override_font_sizes/font_size = 18
-text = "Районы, производящие тяжёлые компоненты"
+text = "Районы, производящие тяжелые компоненты"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=1031719806]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=1544965711]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("45_u63fg")
 
@@ -1975,38 +1936,37 @@ texture = ExtResource("45_u63fg")
 layout_mode = 2
 res = ExtResource("19_ejh24")
 
-[node name="Panel5" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1624599196]
-custom_minimum_size = Vector2(0, 50)
+[node name="Panel5" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=95783261]
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=30546748]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=172292874]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -217.0
 offset_top = -17.0
 offset_right = 259.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
 theme_override_font_sizes/font_size = 18
-text = "Районы, производящие имперскую мощь"
+text = "Районы, производящие ИМПЕРСКУЮ МОЩЬ"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=2007520187]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=1359114464]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("47_i66y5")
 
@@ -2014,38 +1974,37 @@ texture = ExtResource("47_i66y5")
 layout_mode = 2
 res = ExtResource("21_stlvl")
 
-[node name="Panel6" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=634627135]
-custom_minimum_size = Vector2(0, 50)
+[node name="Panel6" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=937823089]
+custom_minimum_size = Vector2(540, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=52213753]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=1282561453]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.7273
+offset_left = -217.0
 offset_top = -17.0
 offset_right = 259.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
 theme_override_font_sizes/font_size = 18
-text = "Районы, производящие культистскую мощь"
+text = "Районы, производящие КУЛЬТИСТСКУЮ МОЩЬ"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=557717670]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=2099050370]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -28.5
-offset_right = 79.0
-offset_bottom = 28.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
 grow_vertical = 2
 texture = ExtResource("49_wo272")
 
@@ -2439,7 +2398,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_6tqxc")
 text = "Зоны"
 
 [node name="Slider" type="VSlider" parent="HUD/BaseUI/Store_UI" unique_id=388494478]
-z_index = 98
+z_index = 101
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -2749,16 +2708,15 @@ anchor_top = 0.5
 anchor_right = 1.3110001
 anchor_bottom = 0.5
 offset_left = -122.74101
-offset_top = 258.0
+offset_top = 242.0
 offset_right = -47.741013
-offset_bottom = 333.0
+offset_bottom = 317.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
 script = ExtResource("10_sbivs")
 res = ExtResource("11_3we6r")
-can_be_placed = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=700335767]
 layout_mode = 1
@@ -2843,7 +2801,7 @@ offset_bottom = 214.0
 [node name="VBC" type="VBoxContainer" parent="HUD/BaseUI/workers_panel/ScrollContainer" unique_id=1491514419]
 layout_direction = 2
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 14
 
 [node name="ADMIN" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=418178446 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -3029,67 +2987,6 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-size_flags_horizontal = 4
-mouse_default_cursor_shape = 2
-script = ExtResource("10_sbivs")
-res = ExtResource("17_6p561")
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=563010965]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_igchu")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1257512582]
-visible = false
-modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
-z_index = 5
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -26.00003
-offset_top = -21.0
-offset_right = 6.094307
-offset_bottom = 6.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("10_rpk0c")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1296138635]
-visible = false
-modulate = Color(0.7058824, 1, 0.72156864, 1)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -57.0
-offset_right = -56.0
-offset_bottom = -19.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1.3, 1.3)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
-expand_mode = 3
-stretch_mode = 5
-
 [node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3131,6 +3028,67 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=728335154]
+visible = false
+modulate = Color(0.7058824, 1, 0.72156864, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -57.0
+offset_right = -56.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_opxjv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+script = ExtResource("10_sbivs")
+res = ExtResource("17_6p561")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=563010965]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_igchu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1257512582]
+visible = false
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
+z_index = 5
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.00003
+offset_top = -21.0
+offset_right = 6.094307
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_rpk0c")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1296138635]
 visible = false
 modulate = Color(0.7058824, 1, 0.72156864, 1)
 layout_mode = 1
@@ -3290,7 +3248,6 @@ offset_bottom = 232.98785
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-metadata/_edit_lock_ = true
 
 [node name="VHS2" type="ColorRect" parent="HUD/BaseUI/workers_panel" unique_id=2000746311]
 layout_mode = 1

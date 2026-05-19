@@ -1,20 +1,64 @@
 [gd_scene format=3 uid="uid://bi6lo3ysdixn2"]
 
 [ext_resource type="Script" uid="uid://ce4xbmapjypjn" path="res://nodes/shop_var.gd" id="1_d4q41"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="1_dgv3n"]
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="2_dgv3n"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
 [ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://Images/Resources_icons/no_res_icon.png" id="3_kou8v"]
-[ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="4_d4q41"]
-[ext_resource type="Texture2D" uid="uid://d164dqcpqslcj" path="res://Images/Tier.png" id="4_nmk4s"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="6_dgv3n"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4q41"]
-bg_color = Color(0, 0, 0.101960786, 0.34117648)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgv3n"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="Gradient" id="Gradient_4tceg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmk4s"]
+bg_color = Color(0, 0.08235294, 0, 0)
+corner_detail = 1
+shadow_color = Color(0, 0.08235294, 0, 0.5254902)
+shadow_size = 4
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_muuik"]
-gradient = SubResource("Gradient_4tceg")
-width = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgv3n"]
+texture = ExtResource("1_dgv3n")
+region_rect = Rect2(102.656494, 440.32556, 364.5489, 105.23834)
+modulate_color = Color(0, 0, 0, 0.56078434)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l75qi"]
+texture = ExtResource("1_dgv3n")
+modulate_color = Color(1.3792288, 1.9754877, 1.341491, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muuik"]
+texture = ExtResource("1_dgv3n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4p40"]
+texture = ExtResource("1_dgv3n")
+modulate_color = Color(2.1352699, 3.045841, 2.0776389, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8wog"]
+texture = ExtResource("1_dgv3n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xjqp"]
+texture = ExtResource("1_dgv3n")
+modulate_color = Color(1.3792288, 1.9754877, 1.341491, 1)
+
+[sub_resource type="Gradient" id="Gradient_dgv3n"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nmk4s"]
+gradient = SubResource("Gradient_dgv3n")
+width = 128
+height = 128
+fill_from = Vector2(0.42735043, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xll3g"]
+texture = SubResource("GradientTexture2D_nmk4s")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4p40"]
 bg_color = Color(0, 0, 0, 1)
@@ -26,7 +70,27 @@ shadow_size = 10
 custom_minimum_size = Vector2(0, 120)
 offset_right = 527.0
 offset_bottom = 86.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgv3n")
 script = ExtResource("1_d4q41")
+
+[node name="TextureRect" type="Panel" parent="." unique_id=1561603479]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 485.0
+offset_bottom = 117.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmk4s")
+
+[node name="Name" type="Label" parent="." unique_id=829166831]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 3.0
+offset_right = 451.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.70644176, 0.9999998, 0.88461304, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_dgv3n")
+text = "Завод свега"
+vertical_alignment = 1
 
 [node name="buy" type="Button" parent="." unique_id=1404606173]
 custom_minimum_size = Vector2(75, 50)
@@ -39,6 +103,11 @@ offset_left = -97.0
 offset_right = 0.00024414063
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l75qi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_muuik")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r4p40")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h8wog")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3xjqp")
 text = "Купить"
 
 [node name="Res_label" type="Label" parent="buy" unique_id=1527654187]
@@ -83,21 +152,10 @@ texture = ExtResource("3_kou8v")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Name" type="Label" parent="." unique_id=829166831]
-layout_mode = 0
-offset_left = 167.0
-offset_right = 430.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color(0.70644176, 0.9999998, 0.88461304, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_d4q41")
-text = "Завод свега"
-vertical_alignment = 1
-
 [node name="Description" type="RichTextLabel" parent="." unique_id=1677228862]
 layout_mode = 0
 offset_left = 178.0
-offset_top = 28.0
+offset_top = 31.0
 offset_right = 430.0
 offset_bottom = 120.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -108,71 +166,42 @@ theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
 text = "Производит Свег, столы оставляют желать лучшего"
 
-[node name="BG" type="TextureRect" parent="." unique_id=655020423]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 52.0
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_muuik")
-
-[node name="MC" type="MarginContainer" parent="BG" unique_id=1527153916]
-layout_mode = 0
-offset_right = 52.0
-offset_bottom = 120.0
-theme_override_constants/margin_left = 1
-theme_override_constants/margin_top = 1
-theme_override_constants/margin_right = 1
-theme_override_constants/margin_bottom = 1
-
-[node name="VBC" type="VBoxContainer" parent="BG/MC" unique_id=1248939370]
-layout_mode = 2
-alignment = 1
-
-[node name="Star_1" type="TextureRect" parent="BG/MC/VBC" unique_id=712746076]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("4_nmk4s")
-expand_mode = 1
-
-[node name="Star_2" type="TextureRect" parent="BG/MC/VBC" unique_id=546845149]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("4_nmk4s")
-expand_mode = 1
-
-[node name="Star_3" type="TextureRect" parent="BG/MC/VBC" unique_id=1752300861]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("4_nmk4s")
-expand_mode = 1
-
 [node name="Image" type="TextureRect" parent="." unique_id=578768107]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 52.0
-offset_top = -60.0
+offset_top = -57.0
 offset_right = 167.0
-offset_bottom = 60.0
+offset_bottom = 57.0
 grow_vertical = 2
-texture = ExtResource("4_d4q41")
+texture = ExtResource("6_dgv3n")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Tier" type="RichTextLabel" parent="." unique_id=1278676645]
+layout_mode = 1
+offset_top = 3.0
+offset_right = 65.0
+offset_bottom = 29.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xll3g")
+bbcode_enabled = true
+text = "Tier |||"
+scroll_active = false
+
 [node name="Condition" type="Label" parent="." unique_id=2056687201]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 40.0
-offset_right = 422.0
-offset_bottom = 93.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.5
+offset_top = -2.5
+offset_right = 157.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4p40")
 text = "Разблокируется после открытия 2 зоны"
 horizontal_alignment = 1

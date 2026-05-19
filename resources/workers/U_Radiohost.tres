@@ -10,6 +10,5 @@ is_unique = true
 icon = ExtResource("1_m2uai")
 Description = "Увеличивает выработку районов, производящих ржавую жесть на 12"
 addit_res_count = 12
-nickname = "Радиоведущий"
 narrative_description = "Достаточно опытный радиоведущий, знает как работает старое обеспечение, это может помочь."
 metadata/_custom_type_script = "uid://bduhpc67rk1k2"

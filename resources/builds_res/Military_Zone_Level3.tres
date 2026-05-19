@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://667id5y5vk2q" path="res://Buildings/Military_zone.tscn" id="1_di7lq"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_lwt31"]
-[ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://Images/Resources_icons/no_res_icon.png" id="3_ogicl"]
+[ext_resource type="Texture2D" uid="uid://cn0xqpc7h8k8c" path="res://Images/Zones/Military_Zone_Concept.png" id="3_di7lq"]
 
 [resource]
 script = ExtResource("2_lwt31")
@@ -15,5 +15,5 @@ buy_cost = 240
 buy_cost_type = 4
 name = "Военный промысел"
 description = "Тяжёлые створы военного завода. Огромнейшие орудия целятся во всех потенциальных врагов. Гордость \"Великой Астурии\", военная мощь -  вырабатывает N Тяжёлых компонентов"
-shop_icon = ExtResource("3_ogicl")
+shop_icon = ExtResource("3_di7lq")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"
