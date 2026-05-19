@@ -182,17 +182,17 @@ load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5a
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wo272"]
 texture = SubResource("CompressedTexture2D_wo272")
-modulate_color = Color(0.72156864, 1, 0.7294118, 1)
+modulate_color = Color(0.55765235, 0.97623223, 0.55965835, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3obll"]
-load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
-texture = SubResource("CompressedTexture2D_3obll")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jt5n7"]
+texture = ExtResource("75_2l774")
+modulate_color = Color(0.64705884, 1, 0.6627451, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdenm"]
 texture = ExtResource("74_e4pqg")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3obll"]
+load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxe1l"]
 texture = SubResource("CompressedTexture2D_3obll")
@@ -201,9 +201,17 @@ modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_248fk"]
 texture = ExtResource("74_e4pqg")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
+texture = SubResource("CompressedTexture2D_3obll")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4h187"]
 texture = ExtResource("74_e4pqg")
-modulate_color = Color(1, 0.73333335, 0.78431374, 1)
+modulate_color = Color(0.89293563, 0.31022602, 0.2687656, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkiup"]
+texture = SubResource("CompressedTexture2D_3obll")
+modulate_color = Color(0.8692449, 0.5770965, 0.5160036, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vxr4q"]
 shader = ExtResource("56_ps3nt")
@@ -221,7 +229,7 @@ shader_parameter/distort_intensity = 0.0
 shader_parameter/noise_opacity = 0.050000002375
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 0.00500004773750006
+shader_parameter/aberration = 0.003000047642500059
 shader_parameter/brightness = 1.5
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.0
@@ -551,6 +559,16 @@ shader_parameter/warp_amount = 0.2590000123025
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="Gradient" id="Gradient_r8b8i"]
+offsets = PackedFloat32Array(0.5805471, 0.7568389)
+colors = PackedColorArray(1, 1, 1, 0.3647059, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3obll"]
+gradient = SubResource("Gradient_r8b8i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.517094)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3obll"]
 shader = ExtResource("56_ps3nt")
@@ -1228,6 +1246,7 @@ mouse_filter = 2
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("12_opxjv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -1339,7 +1358,7 @@ theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wo272")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ikw4g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jt5n7")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qdenm")
 theme_override_styles/focus = SubResource("StyleBoxTexture_yxe1l")
 text = "Рил треп щит мэн"
@@ -1367,7 +1386,7 @@ theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4h187")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ikw4g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xkiup")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_wo272")
 theme_override_styles/focus = SubResource("StyleBoxTexture_id8pd")
 text = "Уволен"
@@ -2808,6 +2827,23 @@ texture = ExtResource("2_273he")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker/Dialogue_status" unique_id=952016657]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
+
 [node name="Res_label" type="Label" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=156023240]
 layout_mode = 0
 offset_left = 34.0
@@ -2907,6 +2943,23 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN/Dialogue_status" unique_id=2011641568]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
+
 [node name="worker" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=990085711 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -2948,6 +3001,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=185875212]
+visible = false
 modulate = Color(0.7058824, 1, 0.72156864, 1)
 z_index = 200
 layout_mode = 1
@@ -2967,6 +3021,23 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker/Dialogue_status" unique_id=1971499751]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
 
 [node name="worker2" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=2104168252 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -3029,6 +3100,23 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2/Dialogue_status" unique_id=1007671832]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
+
 [node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3089,6 +3177,23 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4/Dialogue_status" unique_id=1948629668]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
 
 [node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -3151,6 +3256,23 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3/Dialogue_status" unique_id=326520736]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
+
 [node name="worker5" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1299633202 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3212,6 +3334,23 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5/Dialogue_status" unique_id=1771433967]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
+
 [node name="worker6" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1925406363 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3272,6 +3411,23 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6/Dialogue_status" unique_id=145363266]
+show_behind_parent = true
+z_index = -200
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3obll")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/workers_panel" unique_id=654250700]
 copy_mode = 2

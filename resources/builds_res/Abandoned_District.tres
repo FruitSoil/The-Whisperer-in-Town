@@ -8,7 +8,7 @@ script = ExtResource("2_wirxw")
 res_timer = 10000.0
 model = ExtResource("1_w21dm")
 buy_cost = 30
-name = "67 фимоз"
+name = "Руины"
 unlock_condition_desc = "Фимозленд ака Фимозляндия (Сорян не слышу, звука нет, я глухой кста)"
 description = "https://www.youtube.com/watch?v=36gNPjY6Mlg&t=882s "
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

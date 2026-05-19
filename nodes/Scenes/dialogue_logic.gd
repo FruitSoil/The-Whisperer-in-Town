@@ -24,13 +24,18 @@ func update_data():
 		$Panel/Fon/Portair.texture = res.icon
 		$Panel/Fon/Shadow.texture = res.icon
 		$Panel/Character_name.text = res.character_name
+		
 		print(worker_panel.quest_stage)
 		match worker_panel.quest_stage:
 			1:
 				type_text(res.text_greetings)
 				variant_yes.show()
-				variant_no.show()
 				variant_later.show()
+				
+				if res.is_mandatory:
+					variant_no.hide()
+				else:
+					variant_no.show()
 			2:
 				type_text(res.text_reject)
 				variant_yes.hide()
@@ -51,17 +56,15 @@ func update_data():
 				rich_text_label.visible_ratio = 1.0
 				twr.stop()
 				variant_yes.show()
-				variant_no.show()
+				if res.is_mandatory:
+					variant_no.hide()
+				else:
+					variant_no.show()
 				variant_later.show()
 		
 		$Panel/VBC/Variant_yes.text = res.answer_agree
 		$Panel/VBC/Variant_later.text = res.answer_wait
 		$Panel/VBC/Variant_no.text = res.answer_reject
-		
-		if res.is_mandatory or res.answer_reject == "":
-			$Panel/VBC/Variant_no.hide()
-		else:
-			$Panel/VBC/Variant_no.show()
 
 func _on_exit_button_pressed() -> void:
 	close_window()
@@ -74,7 +77,6 @@ func open_window(resource: Quest):
 	update_data()
 	rich_text_label.get_v_scroll_bar().value = 0
 	dialogue_animation.play("Show")
-	
 
 func close_window():
 	dialogue_animation.play("Hide")
@@ -95,6 +97,7 @@ func answer(ID: int):
 				worker_panel.quest_stage = 3
 				worker_panel.update_icon()
 			if worker_panel.quest_stage == 4:
+				Global.quest_done.append(res)
 				close_window()
 				worker_panel.quest_res = null
 				worker_panel.quest_stage = 0
@@ -104,8 +107,10 @@ func answer(ID: int):
 			worker_panel.quest_stage = 5
 			worker_panel.update_icon()
 		3:
+			Global.quest_skip.append(res)
 			close_window()
-			worker_panel.quest_stage = 2
+			worker_panel.quest_res = null
+			worker_panel.quest_stage = 0
 			worker_panel.update_icon()
 
 func _on_rich_text_label_gui_input(event: InputEvent) -> void:

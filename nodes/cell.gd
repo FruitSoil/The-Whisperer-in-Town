@@ -147,8 +147,8 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 	_mouse_exit()
 	print(current_worker.name," назначен на клетку ", name)
 	var wait_time = current_build.res_timer + current_worker.res_timer_change
-	if wait_time < 0.5:
-		wait_time = 0.5
+	if wait_time < 0.25:
+		wait_time = 0.25
 	Global.total_workers.append(current_worker)
 	$Time_to_res.wait_time = wait_time
 	$Time_to_res.start()

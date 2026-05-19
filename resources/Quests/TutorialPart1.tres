@@ -7,12 +7,16 @@
 [resource]
 script = ExtResource("3_a2p5u")
 icon = ExtResource("2_hmq2n")
+quest_name = "Туториал"
+is_mandatory = false
 character_name = "Администрация"
 text_greetings = "Туториал"
 answer_agree = "Понял, дальше сам
 "
-answer_wait = "Понял, дальше сам"
+answer_wait = "Понял, дальше сам, скоро вернусь"
 answer_reject = "Не понял, дальше сам в страданиях"
+text_progress = "F3 Чтобы закончить квест"
+text_finish = "Ура, получай гроши"
 reward_res_count = 1000
 sec_reward_res_type = 2
 sec_reward_res_count = 30

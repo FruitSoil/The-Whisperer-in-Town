@@ -3,6 +3,9 @@ extends Node
 var total_buildings: Array[Building] = []
 var total_workers: Array[Worker] = []
 
+var quest_done: Array[Quest]
+var quest_skip: Array[Quest]
+
 var rusted: int = 0
 var electrosnow: int = 0
 var money: int = 9

@@ -18,15 +18,23 @@ func _input(event: InputEvent) -> void:
 			$".".hide()
 		else:
 			$".".show()
+			print("ЗДАНИЯ")
 			for i in Global.total_buildings:
-				print(i.name)
+				print(" - ",i.name)
+			print("РАБОЧИЕ")
 			for i in Global.total_workers:
-				print(i.name)
+				print(" - ",i.name)
+			print("КВЕСТЫ ВЫПОЛНЕНЫЕ")
+			for i in Global.quest_done:
+				print(" - ",i.quest_name)
+			print("КВЕСТЫ СКИПНУТЫЕ")
+			for i in Global.quest_skip:
+				print(" - ",i.quest_name)
 	if event.is_action_released("debug_quest_test"):
-		%worker.add_quest(load("res://resources/Quests/WorkerPart1.tres"))
+		%ADMIN.add_quest(load("res://resources/Quests/TutorialPart1.tres"))
 	if event.is_action_released("debug_quest_test2"):
-		%worker.quest_stage = 4
-		%worker.update_icon()
+		%ADMIN.quest_stage = 4
+		%ADMIN.update_icon()
 
 func _pressed() -> void:
 	var add_count: int

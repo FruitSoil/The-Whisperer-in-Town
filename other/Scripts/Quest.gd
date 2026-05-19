@@ -7,6 +7,13 @@ class_name Quest
 @export var quest_name: String ##Название квеста
 @export var is_mandatory: bool = true ##Является ли квест обязательным?
 @export var character_name: String ##Как зовут персонажа
+
+##Когда игрок получает квест - игра проверяет какие квесты игрок уже прошёл. Если некоторые не были пройдены - квест не начинается
+@export_category("ЗАВИСИМОСТИ") 
+@export var done_quest_dependencies: Array[Quest] ##От какий ВЫПОЛНЕНЫХ квестов будет зависит то, что игрок получит этот квест
+@export var any_quest_dependencies: Array[Quest] ##От какий СКИПНУТЫХ ИЛИ ВЫПОЛНЕНЫХ квестов будет зависит то, что игрок получит этот квест
+
+@export_category("ЭТАПЫ КВЕСТОВ") 
 @export_category("Стадия 1. Приветствие")
 @export_multiline() var text_greetings: String 
 @export_multiline() var answer_agree: String 
