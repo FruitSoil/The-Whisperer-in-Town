@@ -146,7 +146,7 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n00c2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr6gg"]
 shader = ExtResource("56_ps3nt")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
@@ -154,15 +154,15 @@ shader_parameter/scanlines_width = 0.1470000069825
 shader_parameter/grille_opacity = 0.1410000066975
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
-shader_parameter/roll = false
-shader_parameter/roll_speed = 0.5
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
 shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 5.0
-shader_parameter/distort_intensity = 0.014000000665
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0090000004275
 shader_parameter/noise_opacity = 0.07600000361
 shader_parameter/noise_speed = 1.0
-shader_parameter/static_noise_intensity = 0.078000003705
-shader_parameter/aberration = 0.00500004773750006
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.0050000477375000685
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.17200000817
@@ -535,6 +535,30 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5yd0p"]
 gradient = SubResource("Gradient_k4jtg")
 width = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n00c2"]
+shader = ExtResource("56_ps3nt")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.1470000069825
+shader_parameter/grille_opacity = 0.1410000066975
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 0.5
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 5.0
+shader_parameter/distort_intensity = 0.014000000665
+shader_parameter/noise_opacity = 0.07600000361
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.078000003705
+shader_parameter/aberration = 0.00500004773750006
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.17200000817
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1tw4p"]
 shader = ExtResource("56_ps3nt")
@@ -1315,7 +1339,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="VHS" type="ColorRect" parent="Dialogue/Panel/Fon" unique_id=517371497]
-material = SubResource("ShaderMaterial_n00c2")
+material = SubResource("ShaderMaterial_rr6gg")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2518,6 +2542,7 @@ alignment = 1
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res3" unique_id=1394959874]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2532,6 +2557,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res3" unique_id=853807257]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2540,6 +2567,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res1" unique_id=335007000]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2554,6 +2582,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res1" unique_id=207398198]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2562,6 +2592,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res2" unique_id=1231804200]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2576,6 +2607,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res2" unique_id=155942403]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2584,6 +2617,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res4" unique_id=1883478541]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2598,6 +2632,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res4" unique_id=954107880]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2606,6 +2642,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res5" unique_id=574833164]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2620,6 +2657,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res5" unique_id=1136303719]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2628,6 +2667,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res6" unique_id=1092518357]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2642,6 +2682,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res6" unique_id=1168799679]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
@@ -2650,6 +2692,7 @@ text = "999999"
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
+size_flags_vertical = 5
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/res_panel/HBC/res7" unique_id=455937707]
 custom_minimum_size = Vector2(34.405, 34.405)
@@ -2664,6 +2707,8 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res7" unique_id=989969169]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
 text = "999999"
