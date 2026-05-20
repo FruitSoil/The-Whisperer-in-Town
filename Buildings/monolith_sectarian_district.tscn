@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b51fp6j2oegq0"]
+
+[ext_resource type="PackedScene" uid="uid://cgi3dp3fvmhpf" path="res://FBX/Monolith_Sectarian_District.fbx" id="1_50yua"]
+[ext_resource type="Material" uid="uid://chfnwt5e6oinj" path="res://FBX/M_Monolith_Sectarian_District.tres" id="2_k56nq"]
+
+[node name="Monolith_Sectarian_District" unique_id=1236247288 instance=ExtResource("1_50yua")]
+
+[node name="Plane_002" parent="." index="0" unique_id=85026307]
+material_override = ExtResource("2_k56nq")

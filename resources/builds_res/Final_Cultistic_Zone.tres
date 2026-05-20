@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Building" format=3 uid="uid://cu8m5y72r0kuv"]
 
-[ext_resource type="PackedScene" uid="uid://ci2pc635icqq7" path="res://Buildings/High_Technology_level_1.tscn" id="1_onf50"]
+[ext_resource type="PackedScene" uid="uid://b51fp6j2oegq0" path="res://Buildings/monolith_sectarian_district.tscn" id="1_w4d38"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3vkwe"]
 [ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://Images/Resources_icons/cultistic_res_icon.png" id="3_0n346"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_3vkwe")
 res_type = 6
 res_count_per_timer = 1
-model = ExtResource("1_onf50")
+model = ExtResource("1_w4d38")
 tier = 5
 buy_cost = 1440
 buy_cost_type = 4
