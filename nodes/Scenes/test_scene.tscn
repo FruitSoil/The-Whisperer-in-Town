@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
 [ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="4_igchu"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="4_igchu"]
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_yi5b6"]
 [ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
@@ -162,7 +162,7 @@ shader_parameter/distort_intensity = 0.0090000004275
 shader_parameter/noise_opacity = 0.07600000361
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/aberration = 0.00500004773750006
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.17200000817
@@ -229,7 +229,7 @@ shader_parameter/distort_intensity = 0.0
 shader_parameter/noise_opacity = 0.050000002375
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 0.003000047642500059
+shader_parameter/aberration = 0.00300004764250005
 shader_parameter/brightness = 1.5
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.0
