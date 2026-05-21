@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://b51fp6j2oegq0"]
+[gd_scene format=3 uid="uid://bchsxrt4dm13n"]
 
 [ext_resource type="PackedScene" uid="uid://cgi3dp3fvmhpf" path="res://FBX/Monolith_Sectarian_District.fbx" id="1_50yua"]
-[ext_resource type="Material" uid="uid://chfnwt5e6oinj" path="res://FBX/M_Monolith_Sectarian_District.tres" id="2_k56nq"]
+[ext_resource type="Material" uid="uid://bkogs5bjf0kv7" path="res://FBX/M_Monolith_Sectarian_District.tres" id="2_k56nq"]
 
 [node name="Monolith_Sectarian_District" unique_id=1236247288 instance=ExtResource("1_50yua")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane_002" parent="." index="0" unique_id=85026307]
+[node name="Plane_002" parent="." index="0" unique_id=804646851]
 material_override = ExtResource("2_k56nq")

@@ -1571,25 +1571,6 @@ mouse_filter = 2
 texture = ExtResource("4_as673")
 metadata/_edit_lock_ = true
 
-[node name="ramka2" type="TextureRect" parent="HUD/BaseUI" unique_id=1836725913]
-modulate = Color(0, 0, 0, 0.50980395)
-z_index = 99
-z_as_relative = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.001
-offset_left = 4.0
-offset_top = 1.9999999
-offset_right = 2180.0
-offset_bottom = 1224.9199
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.469, 0.469)
-mouse_filter = 2
-texture = ExtResource("4_as673")
-metadata/_edit_lock_ = true
-
 [node name="Demolition" type="Button" parent="HUD/BaseUI" unique_id=1504075912]
 z_index = 101
 layout_mode = 1
@@ -4163,7 +4144,6 @@ debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 [connection signal="pressed" from="Pause/Control/Button" to="Pause" method="_on_button_pressed"]
 [connection signal="gui_input" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_on_rich_text_label_gui_input"]
 [connection signal="pressed" from="Dialogue/Panel/Exit_button" to="Dialogue" method="_on_exit_button_pressed"]
-[connection signal="animation_finished" from="Dialogue/Dialogue_animation" to="Dialogue" method="_anim_finished"]
 [connection signal="pressed" from="HUD/BaseUI/Demolition" to="HUD/BaseUI" method="_on_demolition_toggled"]
 [connection signal="pressed" from="HUD/BaseUI/Quest" to="HUD/BaseUI" method="_on_quest_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store" to="HUD/BaseUI" method="_on_store_pressed"]

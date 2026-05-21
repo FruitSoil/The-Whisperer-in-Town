@@ -53,6 +53,7 @@ folder_colors={
 
 cell=""
 Work_panels=""
+lvl=""
 
 [gui]
 

@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://chfnwt5e6oinj"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkogs5bjf0kv7"]
 
 [ext_resource type="Texture2D" uid="uid://w76ctp100m5d" path="res://Images/UV/FinalZone/Monolith_Sectarian_District_Base_color.png" id="1_36omc"]
 [ext_resource type="Texture2D" uid="uid://tnxssw8g5w4x" path="res://Images/UV/FinalZone/Monolith_Sectarian_District_Emissive.png" id="2_y2c2f"]
@@ -7,6 +7,7 @@
 [resource]
 albedo_texture = ExtResource("1_36omc")
 emission_enabled = true
+emission_energy_multiplier = 10.95
 emission_texture = ExtResource("2_y2c2f")
 heightmap_enabled = true
 heightmap_scale = 0.0

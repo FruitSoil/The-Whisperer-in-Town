@@ -66,7 +66,7 @@ skew = Vector2(-0.085, 0)
 shadow_color = Color(0, 0, 0, 0.80784315)
 shadow_size = 10
 
-[node name="lvl" type="Panel" unique_id=2084390590]
+[node name="lvl" type="Panel" unique_id=2084390590 groups=["lvl"]]
 custom_minimum_size = Vector2(0, 120)
 offset_right = 527.0
 offset_bottom = 86.0

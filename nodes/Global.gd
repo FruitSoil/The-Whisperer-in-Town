@@ -2,6 +2,7 @@ extends Node
 
 var total_buildings: Array[Building] = []
 var total_workers: Array[Worker] = []
+var total_work_on_build: Array[WorkerOnBuilding] = []
 
 var quest_done: Array[Quest]
 var quest_skip: Array[Quest]

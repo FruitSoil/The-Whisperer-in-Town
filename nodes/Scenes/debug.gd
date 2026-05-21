@@ -18,12 +18,15 @@ func _input(event: InputEvent) -> void:
 			$".".hide()
 		else:
 			$".".show()
-			print("ЗДАНИЯ")
+			print("РАЙОН")
 			for i in Global.total_buildings:
 				print(" - ",i.name)
 			print("РАБОЧИЕ")
 			for i in Global.total_workers:
 				print(" - ",i.name)
+			print("КОМБИНАЦИИ РАБОЧИЙ-РАЙОН")
+			for i in Global.total_work_on_build:
+				print(" - ",i.worker.name, " в районе ", i.build.name)
 			print("КВЕСТЫ ВЫПОЛНЕНЫЕ")
 			for i in Global.quest_done:
 				print(" - ",i.quest_name)

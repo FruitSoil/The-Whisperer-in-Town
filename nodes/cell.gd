@@ -5,6 +5,7 @@ extends Area3D
 @export var current_build: Building
 @export var has_worker: bool = false
 @export var current_worker: Worker
+var current_combo: WorkerOnBuilding
 var is_charged: bool = false
 
 func _ready() -> void:
@@ -84,8 +85,8 @@ func place(building: Building = %BaseUI.selected_build):
 	print(current_build.name, " поставлено на ", name)
 	var inst = current_build.model.instantiate()
 	var rot = randi_range(0,3)
-	Global.total_buildings.append(building) 
 	if current_build != load("uid://cm6r5ofrc0a8"):
+		Global.total_buildings.append(building) 
 		$Charge_time.start()
 		$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
 		$Charge_sprite.show()
@@ -104,7 +105,7 @@ func place(building: Building = %BaseUI.selected_build):
 		3:
 			inst.rotation_degrees.y = 270
 	add_child(inst)
-	
+	%QuestLogic.check_for_all()
 
 func displace():
 	if has_worker:
@@ -115,6 +116,8 @@ func displace():
 	$Sprite3D/Portair.texture = null
 	Global.total_buildings.erase(current_build)
 	Global.total_workers.erase(current_worker)
+	Global.total_work_on_build.erase(current_combo)
+	current_combo = null
 	current_worker = null
 	has_worker = false
 	
@@ -135,6 +138,7 @@ func displace():
 	$Sprite3D.visible = false
 	var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	twap.tween_property(get_child(-1), "position", Vector3(0,-4,0), 0.5).from(Vector3(0,0,0))
+	%QuestLogic.check_for_all()
 	await get_tree().create_timer(0.5).timeout
 	get_child(-1).queue_free()
 
@@ -150,6 +154,10 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 	if wait_time < 0.25:
 		wait_time = 0.25
 	Global.total_workers.append(current_worker)
+	current_combo = WorkerOnBuilding.new()
+	current_combo.worker = work
+	current_combo.build = current_build
+	Global.total_work_on_build.append(current_combo)
 	$Time_to_res.wait_time = wait_time
 	$Time_to_res.start()
 	$SubViewport/TextureProgressBar.max_value = wait_time
@@ -160,9 +168,12 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 		$Sprite3D/Portair.pixel_size = 0.00025
 	else:
 		$Sprite3D/Portair.pixel_size = 0.0015
+	%QuestLogic.check_for_all()
 
 func disappoint():
 	Global.total_workers.erase(current_worker)
+	Global.total_work_on_build.erase(current_combo)
+	current_combo = null
 	has_worker = false
 	if current_worker.is_unique == false:
 		Global.add_to_integer_res_type(2, 10)
@@ -175,6 +186,7 @@ func disappoint():
 	$Res_progress.hide()
 	$Sprite3D/Sprite3D.hide()
 	$Sprite3D/Portair.texture = null
+	%QuestLogic.check_for_all()
 
 func _mouse_enter():
 	if check_zone_status():

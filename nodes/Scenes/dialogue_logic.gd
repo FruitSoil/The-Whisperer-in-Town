@@ -36,6 +36,10 @@ func update_data():
 					variant_no.hide()
 				else:
 					variant_no.show()
+				
+				if res.complete_condition == 0:
+					variant_later.hide()
+					variant_no.hide()
 			2:
 				type_text(res.text_reject)
 				variant_yes.hide()
@@ -96,9 +100,17 @@ func answer(ID: int):
 				close_window()
 				worker_panel.quest_stage = 3
 				worker_panel.update_icon()
+				if res.complete_condition == 0:
+					%QuestLogic.check_for_all()
 			if worker_panel.quest_stage == 4:
 				Global.quest_done.append(res)
 				close_window()
+				if res.reward_res_count >= 0:
+					Global.add_to_integer_res_type(res.reward_res_type, res.reward_res_count)
+				if res.sec_reward_res_count >= 0:
+					Global.add_to_integer_res_type(res.sec_reward_res_type, res.sec_reward_res_count)
+				if res.building_unlock_res:
+					get_tree().call_group("lvl","unlock",res.building_unlock_res)
 				worker_panel.quest_res = null
 				worker_panel.quest_stage = 0
 				worker_panel.update_icon()
@@ -117,3 +129,8 @@ func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("place"):
 		rich_text_label.visible_ratio = 1.0
 		twr.kill()
+
+
+func _anim_finished(anim_name: StringName) -> void:
+	if anim_name == "Hide":
+		%QuestLogic.check_for_all()

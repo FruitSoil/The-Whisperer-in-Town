@@ -46,3 +46,55 @@ func ql_set_quest(quest: Quest, worker_ID:Global.workers) -> void:
 			for i in quest.done_quest_dependencies:
 				print(" - ", i.quest_name)
 			print("ПОВТОРНЫЙ ВЫЗОВ ДРУГИМ УСЛОВИЕМ МОЖЕТ ВЫЗВАТЬ КВЕСТ ЕСЛИ В ТОТ МОМЕНТ ОСТАЛЬНЫЕ КВЕСТЫ БУДУТ ПРОЙДЕНЫ/ВЫПОЛНЕНЫ")
+
+func check_for_all():
+	var count: int = -1
+	for i in workers:
+		count += 1
+		if i.quest_res and i.quest_stage == 3:
+			check_quest_done_status(i.quest_res, count as Global.workers)
+			print("ПРОВЕРКА КВЕСТА НА ВЫПОЛНЕНОСТЬ У РАБОТНИКА ", count as Global.workers)
+
+func check_quest_done_status(quest: Quest, worker_ID:Global.workers):
+	match quest.complete_condition:
+		0:
+			quest_done(worker_ID)
+		1:
+			if Global.total_buildings.size() >= quest.int_value:
+				quest_done(worker_ID)
+		2:
+			var count: int = 0
+			for i in Global.total_buildings:
+				if i == quest.building_type:
+					count += 1
+			
+			if count >= quest.int_value:
+				quest_done(worker_ID)
+		3:
+			if Global.total_workers.size() >= quest.int_value:
+				quest_done(worker_ID)
+		4:
+			var count: int = 0
+			for i in Global.total_workers:
+				if i == quest.worker_type:
+					count += 1
+				if i.worker.resource_name == "Default" and quest.worker_type.resource_name == "Default":
+					count += 1
+			
+			if count >= quest.int_value:
+				quest_done(worker_ID)
+		5:
+			var count: int = 0
+			for i in Global.total_work_on_build:
+				if i.build == quest.building_type:
+					if i.worker == quest.worker_type:
+						count += 1
+					if i.worker.resource_name == "Default" and quest.worker_type.resource_name == "Default":
+						count += 1
+			
+			if count >= quest.int_value:
+				quest_done(worker_ID)
+
+func quest_done(worker_ID:Global.workers):
+	workers[worker_ID].quest_stage = 4
+	workers[worker_ID].update_icon()
