@@ -81,6 +81,7 @@
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="59_yiww8"]
 [ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="60_2x4qu"]
 [ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="62_xdeo5"]
+[ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="64_3obll"]
 [ext_resource type="Resource" uid="uid://4h6jpjw3ymbn" path="res://resources/workers/U_General.tres" id="65_h4qp7"]
 [ext_resource type="Resource" uid="uid://b468hhcbqb8k5" path="res://resources/workers/U_Traitor.tres" id="66_vxr4q"]
 [ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_wo272"]
@@ -325,7 +326,7 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_1tw4p"]
-offsets = PackedFloat32Array(0.80779946, 1)
+offsets = PackedFloat32Array(0.87841946, 0.96960485)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r8b8i"]
@@ -585,6 +586,25 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l243h"]
+texture = ExtResource("64_3obll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_va6r8"]
+texture = ExtResource("64_3obll")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1nbr8"]
+texture = ExtResource("64_3obll")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdnl2"]
+texture = ExtResource("64_3obll")
+modulate_color = Color(0.57058746, 0.62178, 0.52583206, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpxrb"]
+texture = ExtResource("64_3obll")
+modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
+
 [sub_resource type="Gradient" id="Gradient_r8b8i"]
 offsets = PackedFloat32Array(0.5805471, 0.7568389)
 colors = PackedColorArray(1, 1, 1, 0.3647059, 1, 1, 1, 0)
@@ -594,6 +614,12 @@ gradient = SubResource("Gradient_r8b8i")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.517094)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fxhv4"]
+texture = ExtResource("64_3obll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyat0"]
+texture = ExtResource("64_3obll")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3obll"]
 shader = ExtResource("56_ps3nt")
@@ -2832,31 +2858,43 @@ anchor_left = 1.3110001
 anchor_top = 0.5
 anchor_right = 1.3110001
 anchor_bottom = 0.5
-offset_left = -122.74101
-offset_top = 258.0
-offset_right = -47.741013
-offset_bottom = 333.0
+offset_left = -112.74101
+offset_top = 248.0
+offset_right = -37.741013
+offset_bottom = 323.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.96563864, 0.96563864)
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l243h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("11_3we6r")
 can_be_placed = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=700335767]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1103314090]
-z_index = 5
+z_index = 231
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
@@ -2864,10 +2902,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -39.000053
-offset_top = -90.0
-offset_right = 7.9999466
-offset_bottom = -55.0
+offset_left = -100.88965
+offset_top = -54.288334
+offset_right = -53.88965
+offset_bottom = -19.288334
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("43_0i35y")
@@ -2936,10 +2974,11 @@ anchor_left = -0.29500002
 anchor_top = 0.5
 anchor_right = -0.29500002
 anchor_bottom = 0.5
-offset_left = 46.645
-offset_top = -306.0
-offset_right = 121.645004
-offset_bottom = 214.0
+offset_left = 36.645
+offset_top = -294.0
+offset_right = 111.645004
+offset_bottom = 243.0
+scale = Vector2(0.96563864, 0.96563864)
 
 [node name="VBC" type="VBoxContainer" parent="HUD/BaseUI/workers_panel/ScrollContainer" unique_id=1491514419]
 layout_direction = 2
@@ -2952,18 +2991,28 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fxhv4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("67_wo272")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=829519852]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=535262741]
@@ -3032,18 +3081,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("14_m2kq4")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=580813894]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=683783744]
@@ -3112,18 +3172,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("15_vlsf6")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=310960703]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1270282114]
@@ -3191,18 +3262,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("17_6p561")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=563010965]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1257512582]
@@ -3270,18 +3352,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("16_7yne8")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=978603952]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=2101097825]
@@ -3349,18 +3442,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("65_h4qp7")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=7811691]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=1937976158]
@@ -3428,18 +3532,29 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("66_vxr4q")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=340807096]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("4_igchu")
-expand_mode = 3
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1317240521]
@@ -3689,7 +3804,7 @@ transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, -16.01
 mesh = SubResource("PrismMesh_6bc7i")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=404112539]
-transform = Transform3D(-0.26426026, 0, -0.96445143, 0, 1, 0, 0.96445143, 0, -0.26426026, 6.817871, -1.2294292, 33.675194)
+transform = Transform3D(-0.26426026, 0, -0.96445143, 0, 1, 0, 0.96445143, 0, -0.26426026, 5.55424, -1.2294292, 35.420692)
 mesh = SubResource("PrismMesh_3c4k5")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1402356133]

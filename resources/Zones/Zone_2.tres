@@ -12,6 +12,4 @@ icon = ExtResource("1_cf12v")
 first_res_count = 5760
 second_res_type = 1
 second_res_count = 720
-bonus_res_type = 1
-bonus_res_count = 5
 metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

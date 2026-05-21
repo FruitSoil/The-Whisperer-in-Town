@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="Quest" format=3 uid="uid://ow8b22jesj7b"]
 
-[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="1_hmq2n"]
 [ext_resource type="Texture2D" uid="uid://brnjualrrs582" path="res://Images/portairs/Administration.png" id="2_hmq2n"]
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="3_a2p5u"]
 
@@ -11,14 +10,9 @@ quest_name = "Туториал"
 is_mandatory = false
 character_name = "Администрация"
 text_greetings = "Туториал"
-answer_agree = "Понял, дальше сам
-"
+answer_agree = "Пройти туториал"
 answer_wait = "Понял, дальше сам, скоро вернусь"
 answer_reject = "Не понял, дальше сам в страданиях"
 text_progress = "F3 Чтобы закончить квест"
 text_finish = "Ура, получай гроши"
-reward_res_count = 1000
-sec_reward_res_type = 2
-sec_reward_res_count = 30
-building_unlock_res = ExtResource("1_hmq2n")
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

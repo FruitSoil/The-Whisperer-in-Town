@@ -105,10 +105,14 @@ func answer(ID: int):
 			if worker_panel.quest_stage == 4:
 				Global.quest_done.append(res)
 				close_window()
-				if res.reward_res_count >= 0:
+				if res.reward_res_count > 0:
+					print("1 НАГРАДА ПОЛУЧЕНА")
 					Global.add_to_integer_res_type(res.reward_res_type, res.reward_res_count)
-				if res.sec_reward_res_count >= 0:
+					%BaseUI.change_label(res.reward_res_type, true)
+				if res.sec_reward_res_count > 0:
+					print("2 НАГРАДА ПОЛУЧЕНА")
 					Global.add_to_integer_res_type(res.sec_reward_res_type, res.sec_reward_res_count)
+					%BaseUI.change_label(res.sec_reward_res_type, true)
 				if res.building_unlock_res:
 					get_tree().call_group("lvl","unlock",res.building_unlock_res)
 				worker_panel.quest_res = null

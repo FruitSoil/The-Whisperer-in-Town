@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="2_hy5qt"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_1nuhy"]
 [ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="5_1nuhy"]
+[ext_resource type="Texture2D" uid="uid://f66e8flvopyg" path="res://Images/Particles/particle_coin.png" id="5_mi0yh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
@@ -100,24 +101,27 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.517094)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nuhy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncfsq"]
 transparency = 1
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_1nuhy")
+albedo_texture = ExtResource("5_mi0yh")
+emission = Color(0.6540046, 0.39971632, 0.20020652, 1)
+emission_energy_multiplier = 1.86
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mi0yh"]
-material = SubResource("StandardMaterial3D_1nuhy")
+[sub_resource type="PlaneMesh" id="PlaneMesh_01x4c"]
+material = SubResource("StandardMaterial3D_ncfsq")
 size = Vector2(0.1, 0.1)
 orientation = 2
 
-[sub_resource type="Gradient" id="Gradient_mi0yh"]
-offsets = PackedFloat32Array(0.9655914)
-colors = PackedColorArray(0.7806912, 1, 0.75936764, 1)
+[sub_resource type="Curve" id="Curve_1nuhy"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_csgmv"]
 offsets = PackedFloat32Array(0, 0.76221496, 0.7654723)
@@ -304,26 +308,52 @@ texture = SubResource("GradientTexture2D_csgmv")
 [node name="Charge_part" type="CPUParticles3D" parent="." unique_id=1752209562]
 transform = Transform3D(0.700735, 0, -0.7134217, 0, 1, 0, 0.7134217, 0, 0.700735, -1.8024135, 0.8674078, 1.6119677)
 emitting = false
-amount = 1
-lifetime = 1.25
+amount = 4
 one_shot = true
 speed_scale = 1.2
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.48
-mesh = SubResource("PlaneMesh_mi0yh")
+mesh = SubResource("PlaneMesh_01x4c")
 direction = Vector3(0, 1, 0)
 spread = 28.76
 flatness = 0.76
 gravity = Vector3(0, -20, 0)
 initial_velocity_min = 7.5
 initial_velocity_max = 10.0
+angular_velocity_min = -371.87
+angular_velocity_max = 269.51
+angular_velocity_curve = SubResource("Curve_1nuhy")
 angle_min = -538.1
-scale_amount_min = 2.0
-scale_amount_max = 3.0
+scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_hy5qt")
 color_ramp = SubResource("Gradient_ymfr8")
-color_initial_ramp = SubResource("Gradient_mi0yh")
+hue_variation_min = -0.86
+
+[node name="Charge_part2" type="CPUParticles3D" parent="." unique_id=523434867]
+transform = Transform3D(0.700735, 0, -0.7134217, 0, 1, 0, 0.7134217, 0, 0.700735, -1.8024135, 0.8674078, 1.6119677)
+emitting = false
+amount = 4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.48
+mesh = SubResource("PlaneMesh_01x4c")
+direction = Vector3(0, 1, 0)
+spread = 28.76
+flatness = 0.76
+gravity = Vector3(0, -20, 0)
+initial_velocity_min = 7.5
+initial_velocity_max = 10.0
+angular_velocity_min = -371.87
+angular_velocity_max = 269.51
+angular_velocity_curve = SubResource("Curve_1nuhy")
+angle_min = -538.1
+scale_amount_max = 2.5
+scale_amount_curve = SubResource("Curve_hy5qt")
+color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+color_ramp = SubResource("Gradient_ymfr8")
 hue_variation_min = -0.86
 
 [node name="SubViewport2" type="SubViewport" parent="." unique_id=1080349027]

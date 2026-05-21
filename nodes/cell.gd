@@ -12,7 +12,6 @@ func _ready() -> void:
 	$Charge_sprite/Charge_feedback.pixel_size = 0.0
 	$Charge_sprite.hide()
 	$Sprite3D.hide()
-	$Sprite3D/Sprite3D.hide()
 	$Res_progress.hide()
 	if has_building and current_build:
 		place(current_build)
@@ -113,7 +112,6 @@ func displace():
 			Global.add_to_integer_res_type(2, 10)
 			%BaseUI.change_label(2, true)
 	get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
-	$Sprite3D/Portair.texture = null
 	Global.total_buildings.erase(current_build)
 	Global.total_workers.erase(current_worker)
 	Global.total_work_on_build.erase(current_combo)
@@ -162,7 +160,6 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 	$Time_to_res.start()
 	$SubViewport/TextureProgressBar.max_value = wait_time
 	$Res_progress.show()
-	$Sprite3D/Sprite3D.show()
 	$Sprite3D/Portair.texture = current_worker.icon
 	if current_worker.is_unique:
 		$Sprite3D/Portair.pixel_size = 0.00025
@@ -184,7 +181,6 @@ func disappoint():
 	print("Работник убран с клетки ", name)
 	$Time_to_res.stop()
 	$Res_progress.hide()
-	$Sprite3D/Sprite3D.hide()
 	$Sprite3D/Portair.texture = null
 	%QuestLogic.check_for_all()
 
@@ -273,11 +269,12 @@ func click_res():
 	$Charge_time.start()
 	var rand = randi_range(0,100)
 	if rand <= %BaseUI.chance:
-		%BaseUI.chance = 10
+		%BaseUI.chance = 0
 		Global.add_to_integer_res_type(2, 2)
 		%BaseUI.change_label(2,true)
+		$Charge_part2.emitting = true
 	else: 
-		%BaseUI.chance = 10
+		%BaseUI.chance += 4
 		Global.add_to_integer_res_type(2, 1)
 		%BaseUI.change_label(2,true)
 	

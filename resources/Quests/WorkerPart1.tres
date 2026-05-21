@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="Quest" format=3 uid="uid://c0a17d6j013vq"]
 
-[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="1_2c72l"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="1_c34hh"]
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_lk683"]
 [ext_resource type="Resource" uid="uid://ow8b22jesj7b" path="res://resources/Quests/TutorialPart1.tres" id="3_3ekmd"]
@@ -29,8 +28,4 @@ answer_agree = "Берусь за дело (Начать квест)
 answer_wait = "Вернусь к этому вопросу позже"
 text_progress = "Здравствуйте, напоминаю вам об указе. Вам нужно  построить шесть районов второго тира"
 text_finish = "Здравствуйте. Я видел отчёты. Всё идёт неплохо. Покойный Роберт Гийом явно на нашей стороне. Позвоните мне ещё раз чуть позже, у меня есть идея, как мы можем значительно ускорить ваше производство."
-reward_res_count = 1000
-sec_reward_res_type = 2
-sec_reward_res_count = 30
-building_unlock_res = ExtResource("1_2c72l")
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

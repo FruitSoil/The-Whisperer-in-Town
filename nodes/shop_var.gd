@@ -74,9 +74,8 @@ func desc_exit():
 func desc_enter():
 	description.add_theme_color_override("default_color",Color(0.528, 0.784, 0.775, 1.0))
 
-func unlock(res_zone:Zone):
-	print("sss")
-	if res == res_zone:
-		print(res_zone," unlocked!")
-		is_open = false
+func unlock(res_build:Building):
+	if res == res_build:
+		print(res_build.name," unlocked!")
+		is_open = true
 		update()
