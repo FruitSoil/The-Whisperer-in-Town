@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://1xk6cghmugrw"]
+
+[ext_resource type="Script" uid="uid://kaeipa8mx1ee" path="res://quest_panel.gd" id="1_xeupp"]
+[ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="2_8dyru"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="2_wrwnp"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="4_mvj2t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dyru"]
+bg_color = Color(0, 0.08235294, 0, 0)
+corner_detail = 1
+shadow_color = Color(0, 0.08235294, 0, 0.5254902)
+shadow_size = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvj2t"]
+texture = ExtResource("2_8dyru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_px76i"]
+texture = ExtResource("4_mvj2t")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_25pyv"]
+load_path = "res://.godot/imported/pause_screen.PNG-1a2aae36d708f9ab95663baca7823f69.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrcl8"]
+texture = SubResource("CompressedTexture2D_25pyv")
+modulate_color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnva0"]
+texture = ExtResource("4_mvj2t")
+modulate_color = Color(1.2742168, 1.2742168, 1.2742168, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoxd1"]
+texture = ExtResource("4_mvj2t")
+modulate_color = Color(0.59717613, 0.59717613, 0.5971761, 0.7490196)
+
+[node name="Quest_panel" type="Panel" unique_id=23721088]
+custom_minimum_size = Vector2(550, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dyru")
+script = ExtResource("1_xeupp")
+is_next_zone_quest = null
+
+[node name="Quest" type="HBoxContainer" parent="." unique_id=1892587566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Icon" type="Panel" parent="Quest" unique_id=1203541710]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_mvj2t")
+
+[node name="Portair" type="TextureRect" parent="Quest/Icon" unique_id=2131933699]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wrwnp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Quest" unique_id=489182380]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Quest_name" type="RichTextLabel" parent="Quest/VBoxContainer" unique_id=723122538]
+custom_minimum_size = Vector2(0, 18.025)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 0.7294118, 1)
+bbcode_enabled = true
+text = "O Дивные новые сливы, часть сиксевень"
+scroll_active = false
+vertical_alignment = 2
+
+[node name="Quest_desc" type="RichTextLabel" parent="Quest/VBoxContainer" unique_id=1771642685]
+custom_minimum_size = Vector2(0, 70.355)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.78431374, 1, 0.83137256, 1)
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+text = "Отправь 300 китайцев в закусочную 
+на беверрли филлс, 
+чтобы они принимали там долги и якудзу как они смогут"
+
+[node name="MC" type="MarginContainer" parent="Quest" unique_id=998863397]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="Quest/MC" unique_id=1448059225]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_px76i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nrcl8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nnva0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qoxd1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_px76i")
+text = "info"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://e8uu0uutwcmc"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_hn7a0"]
+[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="2_df4nt"]
+[ext_resource type="Resource" uid="uid://cde2mlv0kwlq8" path="res://resources/Quests/WorkerPart2.tres" id="3_on3y1"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="4_8yjxd"]
+
+[resource]
+script = ExtResource("1_hn7a0")
+icon = ExtResource("4_8yjxd")
+quest_name = "Эра электротехники, часть 1"
+character_name = "Говард Ист"
+worker = 2
+done_quest_dependencies = Array[ExtResource("1_hn7a0")]([ExtResource("3_on3y1")])
+complete_condition = 2
+int_value = 2
+building_type = ExtResource("2_df4nt")
+text_greetings = "Приветствую, я Говард Ист, научный сотрудник класса A. Ныне буду вас сопровождать как главный по науке и инновациям. Слышал, что вы уже вместе с мистером Сэдом смогли заложить приличную основу для дальнейшего прогресса в сфере электротехники. Это не может не радовать, предлагаю нам и впредь двигаться в таком же темпе. Наш научный комитет уже смог создать два чертежа районов, в которые имплементированы инновации в сфере электротехники - снегонаука. Как раз их вам и надо будет построить.
+
+Подытожим: первый указ - постройте два района I тира, кодовое название: \"\"Сборщик снежинок\"\", и два района II тира, кодовое название: \"\"Собиратель Метелей\"\". Как закончите со строительством, свяжитесь со мной вновь."
+answer_agree = "Хорошо, я начну исполнение (Начать квест)"
+answer_wait = "Вернусь к этому позже"
+text_progress = "Напоминаю об указе. Вам нужно построить два района I тира, кодовое название: \"\"Сборщик снежинок\"\", и два района II тира, кодовое название: \"\"Собиратель Метелей\"\". 
+По выполнению вновь обратитесь ко мне.	"
+text_finish = "До меня уже дошли отчёты о строительстве. Фиксирую удовлетворительный результат. Так держать.
+
+Помнится, в прошлый раз я вам не сообщил о проблеме с чертежами III тира Снегонауки. 
+Прошу меня простить, мы с нашим научным отделом испытываем некоторые трудности с расчётом архитектуры  и инфраструктуры этого района. Нам понадобится больше времени, чем мы на то закладывали, но уведомляю вас: результат труда с лихвой окупит все издержки."
+reward_res_type = 1
+reward_res_count = 750
+sec_reward_res_type = 2
+sec_reward_res_count = 30
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

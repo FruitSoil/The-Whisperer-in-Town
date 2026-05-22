@@ -6,6 +6,7 @@ var total_work_on_build: Array[WorkerOnBuilding] = []
 
 var quest_done: Array[Quest]
 var quest_skip: Array[Quest]
+var quest_in_progress: Array[Quest]
 
 var rusted: int = 0
 var electrosnow: int = 0
@@ -33,12 +34,12 @@ enum res_types {
 
 enum workers {
 	ADMIN = 0, ##Администрация
-	WORKER = 1,
-	SCIENTIST = 2,
-	AGENT = 4,
-	RADIOHOST = 3,
-	MILITARY = 5,
-	TRAITOR = 6
+	WORKER = 1, ##Сэд Клинтвуд
+	SCIENTIST = 2, ##Говард Ист
+	AGENT = 4, ##Кэтэрин Коллар
+	RADIOHOST = 3, ##Арт Белл
+	MILITARY = 5, ##Тони Вайсо
+	TRAITOR = 6 ##Джеймс Бэккет
 }
 
 ##Добавить к инт переменной res_type значение add_value

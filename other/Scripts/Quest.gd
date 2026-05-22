@@ -16,11 +16,15 @@ enum complete_type {
 @export var quest_name: String ##Название квеста
 @export var is_mandatory: bool = true ##Является ли квест обязательным?
 @export var character_name: String ##Как зовут персонажа
+@export var worker: Global.workers ##Чисто айди работника. Нужен только чтобы при вызове этого квеста при выполнении другого, другой квест понимал ID работника у которого квест нужно вызвать.
 
 ##Когда игрок получает квест - игра проверяет какие квесты игрок уже прошёл. Если некоторые не были пройдены - квест не начинается
 @export_category("ЗАВИСИМОСТИ") 
 @export var done_quest_dependencies: Array[Quest] ##От какий ВЫПОЛНЕНЫХ квестов будет зависит то, что игрок получит этот квест
 @export var any_quest_dependencies: Array[Quest] ##От какий СКИПНУТЫХ ИЛИ ВЫПОЛНЕНЫХ квестов будет зависит то, что игрок получит этот квест
+
+@export_category("ПОСЛЕДУЮЩИЕ КВЕСТЫ")
+@export var quest_after: Array[String] ##Путь к тому какие квесты будут вызыватся на проверку после выполнения или скипа квеста
 
 @export_category("ПЕРВОЕ УСЛОВИЕ ВЫПОЛНЕНИЯ")
 @export var complete_condition: complete_type ##Какое условие чтобы выполнить квест

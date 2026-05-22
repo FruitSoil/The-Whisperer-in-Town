@@ -7,6 +7,8 @@ const y_max = 20
 const y_min = 2
 @onready var camera: Camera3D = $Camera
 
+var smooth_dir = Vector3.ZERO
+
 func _physics_process(delta: float) -> void:
 	if get_viewport().gui_get_hovered_control() == null:
 		if Input.is_action_just_pressed("zoom-"):
@@ -18,12 +20,16 @@ func _physics_process(delta: float) -> void:
 	camera.size = lerpf(camera.size,y, 0.2)
 	
 	var input_dir = Input.get_vector("D", "A", "S", "W")
-	var direction = Vector3(input_dir.x, 0, input_dir.y)
+	var target_direction = Vector3(input_dir.x, 0, input_dir.y)
+	
 	if Input.is_action_pressed("Sprint"):
 		sprint = 1.5
 	else:
 		sprint = 1
-	if direction != Vector3.ZERO:
-		direction = direction.rotated(Vector3.UP, deg_to_rad(45)).normalized()
-		var dir = direction * (speed/10 * camera.size) * sprint * delta
-		move_and_collide(dir)
+		
+	if target_direction != Vector3.ZERO:
+		target_direction = target_direction.rotated(Vector3.UP, deg_to_rad(45)).normalized()
+	
+	smooth_dir = smooth_dir.lerp(target_direction, 20.0 * delta)
+	var dir = smooth_dir * (speed/10 * camera.size) * sprint * delta
+	move_and_collide(dir)

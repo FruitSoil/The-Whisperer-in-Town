@@ -102,9 +102,17 @@ func answer(ID: int):
 				worker_panel.update_icon()
 				if res.complete_condition == 0:
 					%QuestLogic.check_for_all()
+				else:
+					%BaseUI.add_quest(res,worker_panel)
 			if worker_panel.quest_stage == 4:
 				Global.quest_done.append(res)
+				%BaseUI.erase_quest(res)
 				close_window()
+				if res.quest_after:
+					for i in res.quest_after:
+						if i:
+							var path = load(i)
+							%QuestLogic.ql_wait_to_next(5,path,path.worker)
 				if res.reward_res_count > 0:
 					print("1 НАГРАДА ПОЛУЧЕНА")
 					Global.add_to_integer_res_type(res.reward_res_type, res.reward_res_count)
@@ -124,6 +132,11 @@ func answer(ID: int):
 			worker_panel.update_icon()
 		3:
 			Global.quest_skip.append(res)
+			if res.quest_after:
+					for i in res.quest_after:
+						if i:
+							var path = load(i)
+							%QuestLogic.ql_wait_to_next(5,path,path.worker)
 			close_window()
 			worker_panel.quest_res = null
 			worker_panel.quest_stage = 0

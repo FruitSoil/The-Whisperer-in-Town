@@ -51,7 +51,10 @@
 [ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="17_6p561"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="17_f1g04"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="17_tyf2g"]
+[ext_resource type="Texture2D" uid="uid://yjc8gsut50gx" path="res://Images/Resources_icons/heavycomponent_res_icon.png" id="19_6w1jj"]
 [ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="19_ejh24"]
+[ext_resource type="Texture2D" uid="uid://cqgut8phwy2yn" path="res://Images/Resources_icons/imperial_res_icon.png" id="20_7vd3e"]
+[ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://Images/Resources_icons/cultistic_res_icon.png" id="21_7aymr"]
 [ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="21_stlvl"]
 [ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="23_4a5cs"]
 [ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="24_7vd3e"]
@@ -282,7 +285,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(3.1383357, 0.933033),
 "update": 0,
-"values": [Vector2(1175, 215), Vector2(1983.43, 215)]
+"values": [Vector2(1177, 215), Vector2(1983.43, 215)]
 }
 
 [sub_resource type="Animation" id="Animation_ps3nt"]
@@ -313,7 +316,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.29730183, 1),
 "update": 0,
-"values": [Vector2(2000, 215.11), Vector2(1175, 215)]
+"values": [Vector2(2000, 215.11), Vector2(1177, 215)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n00c2"]
@@ -1012,13 +1015,13 @@ popup/item_3/text = "highquality electronic 1000"
 popup/item_3/icon = ExtResource("5_xdeo5")
 popup/item_3/id = 3
 popup/item_4/text = "Heavy Components 1000"
-popup/item_4/icon = ExtResource("45_u63fg")
+popup/item_4/icon = ExtResource("19_6w1jj")
 popup/item_4/id = 4
 popup/item_5/text = "Imperial Power 1"
-popup/item_5/icon = ExtResource("47_i66y5")
+popup/item_5/icon = ExtResource("20_7vd3e")
 popup/item_5/id = 5
 popup/item_6/text = "Cultistic Power 1"
-popup/item_6/icon = ExtResource("49_wo272")
+popup/item_6/icon = ExtResource("21_7aymr")
 popup/item_6/id = 6
 
 [node name="add" type="Button" parent="DEBUG" unique_id=182118553]
@@ -1305,7 +1308,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -743.0
 offset_top = 215.0
-offset_right = -176.99976
+offset_right = -176.99951
 offset_bottom = 866.8114
 grow_horizontal = 0
 mouse_filter = 2
@@ -1552,7 +1555,6 @@ texture = ExtResource("1_m2kq4")
 
 [node name="click" type="TextureRect" parent="HUD" unique_id=1873998123]
 self_modulate = Color(1, 1, 1, 0.60784316)
-z_index = 4096
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1780,11 +1782,18 @@ grow_vertical = 0
 layout_mode = 0
 offset_right = 550.0
 offset_bottom = 724.0
-theme_override_constants/separation = 8
 
 [node name="Quest_panel" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=23721088 instance=ExtResource("35_rr6gg")]
 layout_mode = 2
-is_next_zone_quest = true
+
+[node name="Quest_panel2" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=1432260638 instance=ExtResource("35_rr6gg")]
+layout_mode = 2
+
+[node name="Quest_panel3" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=939995338 instance=ExtResource("35_rr6gg")]
+layout_mode = 2
+
+[node name="Quest_panel4" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=927034176 instance=ExtResource("35_rr6gg")]
+layout_mode = 2
 
 [node name="Slider" type="VSlider" parent="HUD/BaseUI/Quest_UI" unique_id=1593717675]
 z_index = 98
@@ -1904,6 +1913,7 @@ is_open = true
 [node name="lvl3" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2104996517 instance=ExtResource("6_as673")]
 layout_mode = 2
 res = ExtResource("8_sbivs")
+is_open = true
 
 [node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892]
 custom_minimum_size = Vector2(0, 50)
@@ -2867,30 +2877,8 @@ texture = ExtResource("4_igchu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Appoint_status2" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1127995323]
-modulate = Color(0, 0, 0, 0.2901961)
-z_index = 100
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -47.039246
-offset_top = -92.60492
-offset_right = -0.039245605
-offset_bottom = -57.604916
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("43_0i35y")
-expand_mode = 3
-stretch_mode = 5
-
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1103314090]
-modulate = Color(0.61960787, 1, 0.68235296, 1)
-z_index = 100
+z_index = 231
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
@@ -2898,10 +2886,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -44.96814
-offset_top = -91.569336
-offset_right = 2.0318604
-offset_bottom = -56.569332
+offset_left = -100.88965
+offset_top = -54.288334
+offset_right = -53.88965
+offset_bottom = -19.288334
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("43_0i35y")
@@ -3013,7 +3001,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=535262741]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3021,13 +3009,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -36.164356
-offset_top = -78.10676
-offset_right = -4.070038
-offset_bottom = -51.10676
+offset_left = -19.00003
+offset_top = -26.0
+offset_right = 13.094307
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.18397942
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3104,7 +3092,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=683783744]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3112,13 +3100,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3195,7 +3183,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1270282114]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3203,13 +3191,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3237,6 +3225,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2/Dialogue_status" unique_id=1007671832]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3284,7 +3273,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1257512582]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3292,13 +3281,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3326,6 +3315,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4/Dialogue_status" unique_id=1948629668]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3373,7 +3363,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=2101097825]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3381,13 +3371,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3415,6 +3405,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3/Dialogue_status" unique_id=326520736]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3462,7 +3453,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=1937976158]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3470,13 +3461,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3504,6 +3495,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5/Dialogue_status" unique_id=1771433967]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3551,7 +3543,7 @@ stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1317240521]
 visible = false
-modulate = Color(1, 0.7093617, 0.5230317, 1)
+modulate = Color(1.5561339, 1.5561339, 1.5561339, 1)
 z_index = 5
 layout_mode = 1
 anchors_preset = 3
@@ -3559,13 +3551,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.71893
-offset_top = -78.10682
-offset_right = -5.624588
-offset_bottom = -51.10682
+offset_left = -20.554596
+offset_top = -26.0
+offset_right = 11.5397415
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1.265, 1.265)
+rotation = 0.16539842
 texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
@@ -3593,6 +3585,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6/Dialogue_status" unique_id=145363266]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3744,8 +3737,7 @@ mesh = SubResource("QuadMesh_71vvp")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera/Camera" unique_id=1566402554]
 transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
-amount = 1000
-amount_ratio = 0.25
+amount = 250
 lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_3c4k5")
@@ -3753,17 +3745,14 @@ draw_pass_1 = SubResource("PlaneMesh_6bc7i")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Camera/Camera" unique_id=1901199325]
 transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
-amount = 1000
-amount_ratio = 0.25
+amount = 250
 lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_3c4k5")
 draw_pass_1 = SubResource("PlaneMesh_3c4k5")
 
 [node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="." unique_id=1347226012]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7, 0, 27)
 strength = -0.5
-directionality = 0.46
 size = Vector3(212.40001, 87.8, 164.2)
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=2013059510]

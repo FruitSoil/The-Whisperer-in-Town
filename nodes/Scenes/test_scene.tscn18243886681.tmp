@@ -1904,6 +1904,7 @@ is_open = true
 [node name="lvl3" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2104996517 instance=ExtResource("6_as673")]
 layout_mode = 2
 res = ExtResource("8_sbivs")
+is_open = true
 
 [node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892]
 custom_minimum_size = Vector2(0, 50)
@@ -3237,6 +3238,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2/Dialogue_status" unique_id=1007671832]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3326,6 +3328,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4/Dialogue_status" unique_id=1948629668]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3415,6 +3418,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3/Dialogue_status" unique_id=326520736]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3504,6 +3508,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5/Dialogue_status" unique_id=1771433967]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3593,6 +3598,7 @@ stretch_mode = 5
 
 [node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6/Dialogue_status" unique_id=145363266]
 show_behind_parent = true
+z_index = -200
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

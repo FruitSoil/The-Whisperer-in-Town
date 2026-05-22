@@ -3,6 +3,8 @@ extends Control
 @onready var desc: RichTextLabel = $Store_UI/Zones_View/Desc/Desc
 @onready var drag: TextureRect = $"../PortairDrag"
 
+var quest_panel = preload("res://nodes/UI/quest_panel.tscn")
+
 var building_state: bool = false 
 var selected_build: Building = null
 var worker_state: bool = false 
@@ -206,7 +208,7 @@ func anim_decr(label:Node):
 	tws.tween_property(label, "modulate",Color(1.0, 1.0, 1.0, 1.0), 1).from(Color(1.0, 0.0, 0.0, 1.0))
 
 func anim_click():
-		$"../click".set_position(position - $"../click".size / 2) 
+		$"../click".set_position(get_global_mouse_position() - $"../click".size / 2) 
 		var twm = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN).set_parallel(true)
 		twm.tween_property($"../click","modulate",Color(1.0, 1.0, 1.0, 0.0), 0.15).from(Color(1.0, 1.0, 1.0, 1.0))
 		twm.tween_property($"../click","scale", Vector2(0.8,0.8), 0.2).from(Vector2(0.2,0.2))
@@ -233,8 +235,7 @@ func _on_zone_buy() -> void:
 			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
 			match selected_zone.number:
 				2:
-					# DEBUG
-					%QuestLogic.ql_set_quest(load("res://resources/Quests/WorkerPart1.tres"),Global.workers.WORKER)
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/ScientistPart1.tres"), Global.workers.SCIENTIST)
 					Global.is_zone_2_open = true
 					twp.tween_property($"../../Walls/Zone_1/Wall3","position", $"../../Walls/Zone_1/Wall3".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl4".is_open = true
@@ -283,7 +284,7 @@ func no_res():
 func slider_changed(value: float) -> void:
 	$"Store_UI/Build_scroll_list/VBС".position.y = store_scroll_max / 100 * value
 func slider_quest_changed(value: float) -> void:
-	$Quest_UI/Quest_scroll_list/VBoxContainer.position.y = quest_scroll_max / 100 * value
+	$"Quest_UI/Quest_scroll_list/VBС".position.y = quest_scroll_max / 100 * value
 
 func _on_store_gui_input(event: InputEvent) -> void:
 	slider_mouse(true, event)
@@ -312,3 +313,15 @@ func desc_quest_exited():
 	desc.add_theme_color_override("default_color",Color("b5d4b5"))
 func desc_quest_enter():
 	desc.add_theme_color_override("default_color",Color(1.0, 1.0, 1.0, 1.0))
+
+func add_quest(quest_res: Quest, panel: WorkerPanel):
+	var inst = quest_panel.instantiate()
+	inst.quest_res = quest_res
+	inst.worker = panel
+	$"Quest_UI/Quest_scroll_list/VBС".add_child(inst)
+
+func erase_quest(quest_res: Quest):
+	var children = $"Quest_UI/Quest_scroll_list/VBС".get_children()
+	for i in children:
+		if i.quest_res == quest_res:
+			i.kill_anim()

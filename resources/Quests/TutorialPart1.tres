@@ -6,13 +6,9 @@
 [resource]
 script = ExtResource("3_a2p5u")
 icon = ExtResource("2_hmq2n")
-quest_name = "Туториал"
-is_mandatory = false
-character_name = "Администрация"
-text_greetings = "Туториал"
+quest_name = "Знакомство, часть 1"
+character_name = "Алабуга политех"
+quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
+text_greetings = "Здравствуйте это алабуга политех"
 answer_agree = "Пройти туториал"
-answer_wait = "Понял, дальше сам, скоро вернусь"
-answer_reject = "Не понял, дальше сам в страданиях"
-text_progress = "F3 Чтобы закончить квест"
-text_finish = "Ура, получай гроши"
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
