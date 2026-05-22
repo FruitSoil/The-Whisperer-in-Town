@@ -14,6 +14,7 @@ tier = 3
 buy_cost = 240
 buy_cost_type = 4
 name = "Военный промысел"
+unlock_condition_desc = "Открыть зону 4"
 description = "Тяжёлые створы военного завода. Огромнейшие орудия целятся во всех потенциальных врагов. Гордость \"Великой Астурии\", военная мощь -  вырабатывает N Тяжёлых компонентов"
 shop_icon = ExtResource("3_di7lq")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

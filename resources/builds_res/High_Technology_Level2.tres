@@ -14,6 +14,7 @@ tier = 2
 buy_cost = 720
 buy_cost_type = 3
 name = "Бюрракратический отдел"
+unlock_condition_desc = "Открыть зону 3"
 description = "Над районом возвышается Тёмностальной офис. Структура и архитектура были улучшены, в связи с этим повышенны производительность, вместимость и уровень надзора. Это повод для гордости  - вырабатывает N Электросхем"
 shop_icon = ExtResource("3_tmcfa")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

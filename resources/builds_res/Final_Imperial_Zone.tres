@@ -13,6 +13,7 @@ tier = 4
 buy_cost = 1440
 buy_cost_type = 4
 name = "Астурская мощь"
+unlock_condition_desc = "Открыть зону 5"
 description = "В этот непростой момент нужно помочь Великой Астурской Империи разрушить последний обитель сектантов, вернуть порядок и праведность в Империю - нужно поставить N районов, чтобы произвести атаку на монолит "
 shop_icon = ExtResource("3_l45kp")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_h0mp0"]
 [ext_resource type="Texture2D" uid="uid://4d2rv4boe1hg" path="res://Images/Zones/High_Technology_Concept.PNG" id="3_eafn8"]
 
-
 [resource]
 script = ExtResource("2_h0mp0")
 res_type = 3
@@ -17,6 +16,7 @@ tier = 3
 buy_cost = 1440
 buy_cost_type = 3
 name = "Электросхемный квартал"
+unlock_condition_desc = "Открыть зону 3"
 description = "Апофеоз слова \"контроль\". Громадная цитадель пронзает небеса, под ней копошатся домики. TrES превзошла былые лимиты и помогла воссоздать обитель спокойствия и труда - вырабатывает N Электросхем + бонусом N Ржавой Жести"
 shop_icon = ExtResource("3_eafn8")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"
