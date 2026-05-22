@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bwkord7fl3i8i"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_7khax"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3hu8w"]
+[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="2_mt68i"]
+[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="2_v0u21"]
+[ext_resource type="Resource" uid="uid://cykgmxk0rt487" path="res://resources/Quests/WorkerPart3.tres" id="3_mt68i"]
+[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="5_3hu8w"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="5_s735l"]
+[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="6_a2srw"]
+
+[resource]
+script = ExtResource("1_7khax")
+icon = ExtResource("5_s735l")
+quest_name = "Эра электротехники, часть 2"
+character_name = "Говард Ист"
+worker = 2
+done_quest_dependencies = Array[ExtResource("1_7khax")]([ExtResource("3_mt68i")])
+complete_condition = 2
+int_value = 6
+building_type = Array[ExtResource("2_3hu8w")]([ExtResource("2_v0u21"), ExtResource("2_mt68i"), ExtResource("5_3hu8w")])
+text_greetings = "Приветствую, я к вам с хорошими вестями. Мы ощутимо продвинулись в работе над чертежами III тира. Мистер Сэд нам пособил. С помощью его некоторых идей мы смогли доработать и улучшить инфроструктуру района. Теперь мы близко, как никогда до этого. Но для завершения работы нам требуется больше данных и статистики. 
+
+В связи с этим вам нужно будет построить ещё четыре здания II тира, кодовое название \"\"Собиратель Метелей\"\". Как только вы закончите, мы сможем завершить производство чертежей и вам будет доступна самая иновационная, на данный момент, разработка в сфере электротехники."
+answer_agree = "Я займусь строительством."
+answer_wait = "Вернусь к этому позже"
+text_progress = "Напоминаю вам об указе. Вам нужно построить четыре района II тира, их кодовое \"Собиратель Метели\". Как районы будут построены, свяжитесь со мной вновь."
+text_finish = "Сообщаю вам воодушевляющие новости. Разработка чертежей III тира официально окончена. На руках мы имеем буквально совершенную технологию. В внутри районе наш коллектив смог наладить производство более сложных компонентов, не снижая общей эффективности выработки самого электричества. 
+
+Теперь вы смело можете построить III тир Снегонауки, кодовое название: \"\"Покоритель вьюг\"\"."
+building_unlock_res = ExtResource("6_a2srw")
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

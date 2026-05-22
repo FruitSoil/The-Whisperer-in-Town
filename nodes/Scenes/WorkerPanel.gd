@@ -1,7 +1,11 @@
 extends Button
 class_name WorkerPanel
 
+const CLOSE_ICON = preload("uid://br8o3ohxar528")
+
 @export var res: Worker 
+@export var is_open: bool = false
+var can_be_placed: bool = false
 var appointed: bool = false
 var icons_pool: Array[Texture] = [
 	preload("res://Images/portairs/Default/default_worker1.png"),
@@ -11,26 +15,26 @@ var icons_pool: Array[Texture] = [
 
 var quest_res: Quest
 var quest_stage: int = 0
-@export var can_be_placed: bool = false
+
 
 func _ready() -> void:
 	if res.is_unique == false:
 		$Res_icon.texture = Global.get_res_icon(2)
 	gui_input.connect(quest)
 	pressed.connect(touch)
-	$TextureRect.texture = res.icon
+	change_progress()
 	update_icon()
 
 func touch():
 	if appointed == false:
-		if res.is_unique:
+		if res.is_unique :
 			%BaseUI.switch_to_worker(res)
 		else:
 			if Global.money >= 10:
 				var given_res: Worker = res
 				given_res = res.duplicate()
 				res.icon = icons_pool[randi_range(0,2)]
-				$TextureRect.texture = res.icon
+				change_progress()
 				Global.add_to_integer_res_type(2, -10)
 				%BaseUI.switch_to_worker(given_res)
 			%BaseUI.change_label(2, false)
@@ -46,7 +50,23 @@ func change_work_icon(value: bool, given_res: Worker):
 			appointed = false
 			disabled = false
 
+func change_progress(value: bool = is_open):
+	is_open = value
+	if is_open or res.is_unique == false:
+		$TextureRect.texture = res.icon
+		if can_be_placed or res.is_unique == false:
+			disabled = false
+		else:
+			disabled = true
+		if res == load("res://resources/workers/U_ADMIN.tres"):
+			disabled = true
+	
+	if is_open == false:
+		$TextureRect.texture = CLOSE_ICON
+		disabled = true
+
 func update_icon():
+	change_progress()
 	match quest_stage:
 		1:
 			var twm = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -81,6 +101,7 @@ func update_icon():
 			twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
 			await get_tree().create_timer(0.6).timeout
 			$Dialogue_status.hide()
+	
 
 func icon_shake():
 	if quest_stage == 1 or quest_stage == 5:

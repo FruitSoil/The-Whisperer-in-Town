@@ -198,13 +198,6 @@ load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5a
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_248fk"]
-texture = ExtResource("74_e4pqg")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
-texture = SubResource("CompressedTexture2D_3obll")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4h187"]
 texture = ExtResource("74_e4pqg")
 modulate_color = Color(0.89293563, 0.31022602, 0.2687656, 1)
@@ -212,6 +205,13 @@ modulate_color = Color(0.89293563, 0.31022602, 0.2687656, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkiup"]
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(0.8692449, 0.5770965, 0.5160036, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_248fk"]
+texture = ExtResource("74_e4pqg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
+texture = SubResource("CompressedTexture2D_3obll")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vxr4q"]
 shader = ExtResource("56_ps3nt")
@@ -597,7 +597,7 @@ modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdnl2"]
 texture = ExtResource("64_3obll")
-modulate_color = Color(0.57058746, 0.62178, 0.52583206, 1)
+modulate_color = Color(0.24899, 0.25160608, 0.23274565, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpxrb"]
 texture = ExtResource("64_3obll")
@@ -1295,7 +1295,6 @@ mouse_filter = 2
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
-visible = false
 script = ExtResource("12_opxjv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -1413,20 +1412,6 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_yxe1l")
 text = "Рил треп щит мэн"
 autowrap_mode = 3
 
-[node name="Variant_later" type="Button" parent="Dialogue/Panel/VBC" unique_id=433782950]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
-theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_248fk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ikw4g")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_wo272")
-theme_override_styles/focus = SubResource("StyleBoxTexture_id8pd")
-text = "Че, не"
-autowrap_mode = 3
-
 [node name="Variant_no" type="Button" parent="Dialogue/Panel/VBC" unique_id=1325992162]
 layout_mode = 2
 size_flags_horizontal = 5
@@ -1439,6 +1424,20 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_xkiup")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_wo272")
 theme_override_styles/focus = SubResource("StyleBoxTexture_id8pd")
 text = "Уволен"
+autowrap_mode = 3
+
+[node name="Variant_later" type="Button" parent="Dialogue/Panel/VBC" unique_id=433782950]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_248fk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ikw4g")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wo272")
+theme_override_styles/focus = SubResource("StyleBoxTexture_id8pd")
+text = "Че, не"
 autowrap_mode = 3
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Dialogue/Panel" unique_id=2019011086]
@@ -1778,8 +1777,9 @@ grow_vertical = 0
 
 [node name="VBС" type="VBoxContainer" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list" unique_id=1855781799]
 layout_mode = 0
+offset_top = 40.0
 offset_right = 550.0
-offset_bottom = 724.0
+offset_bottom = 764.0
 theme_override_constants/separation = 8
 
 [node name="Quest_panel" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=23721088 instance=ExtResource("35_rr6gg")]
@@ -1804,6 +1804,7 @@ theme_override_icons/grabber_disabled = ExtResource("42_pem7d")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
+min_value = -12.0
 
 [node name="Store_UI" type="Control" parent="HUD/BaseUI" unique_id=626397403]
 visible = false
@@ -1844,7 +1845,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -666.0
 offset_top = -478.0
-offset_right = -111.0
+offset_right = -122.0
 offset_bottom = -116.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -2576,12 +2577,13 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res3" unique_id=853807257]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res1" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1849715890]
 custom_minimum_size = Vector2(85, 0)
@@ -2601,12 +2603,13 @@ texture = SubResource("GradientTexture1D_igchu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res1" unique_id=207398198]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res2" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=400229681]
 custom_minimum_size = Vector2(85, 0)
@@ -2626,12 +2629,13 @@ texture = SubResource("GradientTexture1D_5yd0p")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res2" unique_id=155942403]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res4" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=794772507]
 custom_minimum_size = Vector2(85, 0)
@@ -2651,12 +2655,13 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res4" unique_id=954107880]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res5" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=1410783975]
 custom_minimum_size = Vector2(85, 0)
@@ -2676,12 +2681,13 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res5" unique_id=1136303719]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res6" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=290253549]
 custom_minimum_size = Vector2(85, 0)
@@ -2701,15 +2707,15 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res6" unique_id=1168799679]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="res7" type="HBoxContainer" parent="HUD/BaseUI/res_panel/HBC" unique_id=136023260]
-custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 5
@@ -2726,12 +2732,13 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/BaseUI/res_panel/HBC/res7" unique_id=989969169]
+z_index = 1
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("44_71vvp")
 theme_override_font_sizes/font_size = 20
-text = "999999"
+text = "9999999"
 
 [node name="BG_days" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1767850085]
 layout_mode = 1
@@ -2848,7 +2855,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("11_3we6r")
-can_be_placed = true
+is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=700335767]
 show_behind_parent = true
@@ -2994,6 +3001,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("67_wo272")
+is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=829519852]
 show_behind_parent = true
@@ -3084,6 +3092,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("14_m2kq4")
+is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=580813894]
 show_behind_parent = true
@@ -3251,7 +3260,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
-[node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
+[node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
@@ -3265,7 +3274,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("17_6p561")
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=563010965]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=563010965]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -3282,7 +3291,7 @@ texture = ExtResource("4_igchu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1257512582]
+[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=1257512582]
 visible = false
 modulate = Color(1, 0.7093617, 0.5230317, 1)
 z_index = 5
@@ -3303,7 +3312,7 @@ texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1296138635]
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=1296138635]
 visible = false
 modulate = Color(0.7058824, 1, 0.72156864, 1)
 layout_mode = 1
@@ -3324,7 +3333,7 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4/Dialogue_status" unique_id=1948629668]
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3/Dialogue_status" unique_id=1948629668]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -3340,7 +3349,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
-[node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
+[node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
@@ -3354,7 +3363,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("10_sbivs")
 res = ExtResource("16_7yne8")
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=978603952]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=978603952]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -3371,7 +3380,7 @@ texture = ExtResource("4_igchu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=2101097825]
+[node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=2101097825]
 visible = false
 modulate = Color(1, 0.7093617, 0.5230317, 1)
 z_index = 5
@@ -3392,7 +3401,7 @@ texture = ExtResource("69_r8b8i")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=728335154]
+[node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=728335154]
 visible = false
 modulate = Color(0.7058824, 1, 0.72156864, 1)
 layout_mode = 1
@@ -3413,7 +3422,7 @@ texture = ExtResource("14_opxjv")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3/Dialogue_status" unique_id=326520736]
+[node name="Feedback" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4/Dialogue_status" unique_id=326520736]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8

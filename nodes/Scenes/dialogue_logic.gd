@@ -7,7 +7,7 @@ extends CanvasLayer
 @onready var rich_text_label: RichTextLabel = $"../Dialogue/Panel/MC/RichTextLabel"
 
 var character_delay: float = 0.018
-var twr 
+var twr = create_tween().set_trans(Tween.TRANS_LINEAR)
 
 var res: Quest
 var worker_panel: WorkerPanel
@@ -43,7 +43,7 @@ func update_data():
 			2:
 				type_text(res.text_reject)
 				variant_yes.hide()
-				variant_no.hide()
+				variant_no.show()
 				variant_later.hide()
 			3:
 				type_text(res.text_progress)
@@ -60,11 +60,15 @@ func update_data():
 				rich_text_label.visible_ratio = 1.0
 				twr.stop()
 				variant_yes.show()
+				variant_later.show()
 				if res.is_mandatory:
 					variant_no.hide()
 				else:
 					variant_no.show()
-				variant_later.show()
+				
+				if res.complete_condition == 0:
+					variant_later.hide()
+					variant_no.hide()
 		
 		$Panel/VBC/Variant_yes.text = res.answer_agree
 		$Panel/VBC/Variant_later.text = res.answer_wait
@@ -78,11 +82,13 @@ func _on_exit_button_pressed() -> void:
 
 func open_window(resource: Quest):
 	res = resource
-	update_data()
 	rich_text_label.get_v_scroll_bar().value = 0
 	dialogue_animation.play("Show")
+	update_data()
 
 func close_window():
+	rich_text_label.visible_ratio = 1.0
+	twr.kill()
 	dialogue_animation.play("Hide")
 
 func type_text(new_text: String) -> void:
@@ -99,11 +105,12 @@ func answer(ID: int):
 			if worker_panel.quest_stage == 1 or worker_panel.quest_stage == 5:
 				close_window()
 				worker_panel.quest_stage = 3
+				if res.open_after_accept:
+					worker_panel.can_be_placed = true
 				worker_panel.update_icon()
+				
 				if res.complete_condition == 0:
 					%QuestLogic.check_for_all()
-				else:
-					%BaseUI.add_quest(res,worker_panel)
 			if worker_panel.quest_stage == 4:
 				Global.quest_done.append(res)
 				%BaseUI.erase_quest(res)
@@ -112,7 +119,7 @@ func answer(ID: int):
 					for i in res.quest_after:
 						if i:
 							var path = load(i)
-							%QuestLogic.ql_wait_to_next(5,path,path.worker)
+							%QuestLogic.ql_wait_to_next(1,path,path.worker)
 				if res.reward_res_count > 0:
 					print("1 НАГРАДА ПОЛУЧЕНА")
 					Global.add_to_integer_res_type(res.reward_res_type, res.reward_res_count)
@@ -131,16 +138,26 @@ func answer(ID: int):
 			worker_panel.quest_stage = 5
 			worker_panel.update_icon()
 		3:
-			Global.quest_skip.append(res)
-			if res.quest_after:
-					for i in res.quest_after:
-						if i:
-							var path = load(i)
-							%QuestLogic.ql_wait_to_next(5,path,path.worker)
-			close_window()
-			worker_panel.quest_res = null
-			worker_panel.quest_stage = 0
-			worker_panel.update_icon()
+			if worker_panel.quest_stage != 2:
+				worker_panel.can_be_placed = false
+				type_text(res.text_reject) 
+				variant_yes.hide()
+				variant_no.show()
+				variant_later.hide()
+				worker_panel.quest_stage = 2
+				worker_panel.update_icon()
+			else:
+				%BaseUI.erase_quest(res)
+				Global.quest_skip.append(res)
+				if res.quest_after:
+						for i in res.quest_after:
+							if i:
+								var path = load(i)
+								%QuestLogic.ql_wait_to_next(4,path,path.worker)
+				close_window()
+				worker_panel.quest_res = null
+				worker_panel.quest_stage = 0
+				worker_panel.update_icon()
 
 func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("place"):

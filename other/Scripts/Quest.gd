@@ -29,8 +29,9 @@ enum complete_type {
 @export_category("ПЕРВОЕ УСЛОВИЕ ВЫПОЛНЕНИЯ")
 @export var complete_condition: complete_type ##Какое условие чтобы выполнить квест
 @export var int_value: int ##Применение зависит от типа выполнения. Смотри типы квестов
-@export var building_type: Building ##Тип района, применение зависит от типа выполнения. Смотри типы квестов
+@export var building_type: Array[Building] ##Тип района, применение зависит от типа выполнения. Смотри типы квестов
 @export var worker_type: Worker ##Тип работника, применение зависит от типа выполнения. Смотри типы квестов
+@export var open_after_accept: bool = false ##Откроется ли доступ к работнику при принятии квеста (Зачастую для 5 типа выполнения квестов)
 
 @export_category("ЭТАПЫ КВЕСТОВ") 
 @export_category("Стадия 1. Приветствие")

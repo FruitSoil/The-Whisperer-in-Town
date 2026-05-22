@@ -37,6 +37,7 @@ func ql_set_quest(quest: Quest, worker_ID:Global.workers) -> void:
 		
 		if done_coincidences == quest.done_quest_dependencies.size() and any_coincidences == quest.any_quest_dependencies.size():
 			workers[worker_ID].add_quest(quest)
+			%BaseUI.add_quest(quest,workers[worker_ID])
 		else:
 			# debug
 			print("ДЛЯ ВЫЗОВА КВЕСТА ",quest.quest_name," НЕ БЫЛИ ПРОЙДЕНЫ/ВЫПОЛНЕНЫ ВСЕ ОСТАЛЬНЫЕ КВЕСТЫ НИЖЕ")
@@ -66,8 +67,10 @@ func check_quest_done_status(quest: Quest, worker_ID:Global.workers):
 		2:
 			var count: int = 0
 			for i in Global.total_buildings:
-				if i == quest.building_type:
-					count += 1
+				for o in quest.building_type:
+					if o == i:
+						count += 1
+						break
 			
 			if count >= quest.int_value:
 				quest_done(worker_ID)
@@ -87,11 +90,14 @@ func check_quest_done_status(quest: Quest, worker_ID:Global.workers):
 		5:
 			var count: int = 0
 			for i in Global.total_work_on_build:
-				if i.build == quest.building_type:
-					if i.worker == quest.worker_type:
-						count += 1
-					if i.worker.resource_name == "Default" and quest.worker_type.resource_name == "Default":
-						count += 1
+				if i.build:
+					for o in quest.building_type:
+						if o == i.build:
+							if i.worker == quest.worker_type:
+								count += 1
+							if i.worker.resource_name == "Default" and quest.worker_type.resource_name == "Default":
+								count += 1
+							break
 			
 			if count >= quest.int_value:
 				quest_done(worker_ID)

@@ -1,14 +1,19 @@
 [gd_resource type="Resource" script_class="Quest" format=3 uid="uid://ow8b22jesj7b"]
 
 [ext_resource type="Texture2D" uid="uid://brnjualrrs582" path="res://Images/portairs/Administration.png" id="2_hmq2n"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_n04vo"]
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="3_a2p5u"]
 
 [resource]
 script = ExtResource("3_a2p5u")
 icon = ExtResource("2_hmq2n")
 quest_name = "Знакомство, часть 1"
-character_name = "Алабуга политех"
+is_mandatory = false
+character_name = "Администрация"
 quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
 text_greetings = "Здравствуйте это алабуга политех"
-answer_agree = "Пройти туториал"
+answer_agree = "Окей"
+answer_wait = "Подождите"
+answer_reject = "Сбросить трубку"
+text_reject = "*Вы слышите гудки на той стороне, после чего звонок заканчивается*"
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

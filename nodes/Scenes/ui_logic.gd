@@ -235,8 +235,14 @@ func _on_zone_buy() -> void:
 			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
 			match selected_zone.number:
 				2:
-					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/ScientistPart1.tres"), Global.workers.SCIENTIST)
 					Global.is_zone_2_open = true
+					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone2Quest.tres"))
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".next_zone = load("res://resources/Zones/Zone_3.tres")
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
+					%QuestLogic.workers[2].change_progress(true)
+					%QuestLogic.workers[3].change_progress(true)
+					
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/ScientistPart1.tres"), Global.workers.SCIENTIST)
 					twp.tween_property($"../../Walls/Zone_1/Wall3","position", $"../../Walls/Zone_1/Wall3".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl4".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl4".update()
@@ -246,6 +252,11 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl6".update()
 				3:
 					Global.is_zone_3_open = true
+					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone3Quest.tres"))
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".next_zone = load("res://resources/Zones/Zone_4.tres")
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
+					%QuestLogic.workers[4].change_progress(true)
+					
 					twp.tween_property($"../../Walls/Zone_2/Wall","position", $"../../Walls/Zone_2/Wall".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl7".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl7".update()
@@ -255,11 +266,20 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl9".update()
 				4:
 					Global.is_zone_4_open = true
+					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone4Quest.tres"))
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".next_zone = load("res://resources/Zones/Zone_5.tres")
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
+					%QuestLogic.workers[5].change_progress(true)
+					
 					twp.tween_property($"../../Walls/Zone_3/Wall2","position", $"../../Walls/Zone_3/Wall2".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl10".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl10".update()
 				5:
 					Global.is_zone_5_open = true
+					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone5Quest.tres"))
+					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".close()
+					%QuestLogic.workers[6].change_progress(true)
+					
 					twp.tween_property($"../../Walls/Zone_4/Wall","position", $"../../Walls/Zone_4/Wall".position + Vector3(0,-2,0), 5)
 					$"Store_UI/Build_scroll_list/VBС/lvl11".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl11".update()

@@ -134,8 +134,8 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_ncfsq"]
-offsets = PackedFloat32Array(0.76221496, 0.7675351)
-colors = PackedColorArray(0.10247413, 0.13806468, 0.09068299, 1, 0.75686276, 1, 0.7294118, 0)
+offsets = PackedFloat32Array(0.7507886, 0.7697161)
+colors = PackedColorArray(0.27260175, 0.18021512, 0.14065257, 1, 0.27450982, 0.18039216, 0.14117648, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_01x4c"]
 gradient = SubResource("Gradient_ncfsq")
@@ -288,7 +288,6 @@ transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.04410577, 0.03
 layers = 2
 cast_shadow = 0
 gi_mode = 0
-modulate = Color(0.455719, 0.9020164, 0.45502263, 1)
 pixel_size = 0.001
 billboard = 1
 fixed_size = true
@@ -299,7 +298,7 @@ transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, 0.026218891, -0.0
 layers = 2
 cast_shadow = 0
 gi_mode = 0
-modulate = Color(0.40494895, 0.7149827, 0.4194137, 1)
+modulate = Color(0.8, 0.6156863, 0.52156866, 1)
 pixel_size = 0.0025
 billboard = 1
 fixed_size = true
@@ -328,7 +327,6 @@ angle_min = -538.1
 scale_amount_max = 2.5
 scale_amount_curve = SubResource("Curve_hy5qt")
 color_ramp = SubResource("Gradient_ymfr8")
-hue_variation_min = -0.86
 
 [node name="Charge_part2" type="CPUParticles3D" parent="." unique_id=523434867]
 transform = Transform3D(0.700735, 0, -0.7134217, 0, 1, 0, 0.7134217, 0, 0.700735, -1.8024135, 0.8674078, 1.6119677)

@@ -3,7 +3,12 @@
 [ext_resource type="Script" uid="uid://kaeipa8mx1ee" path="res://quest_panel.gd" id="1_xeupp"]
 [ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="2_8dyru"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="2_wrwnp"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="3_nrcl8"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="4_mvj2t"]
+[ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_nnva0"]
+[ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="4_qoxd1"]
+[ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="5_qoxd1"]
+[ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="9_qoxd1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dyru"]
 bg_color = Color(0.07058824, 0.07450981, 0.06666667, 0.12941177)
@@ -44,7 +49,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7, 0)]
+"values": [Vector2(-600, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -143,20 +148,105 @@ offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8dyru")
 script = ExtResource("1_xeupp")
 
-[node name="Zone_quest" type="Control" parent="." unique_id=1297143782]
+[node name="Zone_label" type="Label" parent="." unique_id=1770723932]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 3.0
+offset_right = 274.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.5372549, 1, 0.7294118, 1)
+theme_override_font_sizes/font_size = 20
+text = "Зона 67 - Австраливая"
+
+[node name="Zone_quest" type="HBoxContainer" parent="." unique_id=2076784822]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Icon" type="Panel" parent="Zone_quest" unique_id=568459545]
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_mvj2t")
+
+[node name="Portair" type="TextureRect" parent="Zone_quest/Icon" unique_id=958948864]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nrcl8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MC2" type="MarginContainer" parent="Zone_quest" unique_id=532907310]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
+
+[node name="HBC" type="HBoxContainer" parent="Zone_quest/MC2" unique_id=1643496231]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Zone_quest/MC2/HBC" unique_id=1169800874]
+layout_mode = 2
+texture = ExtResource("4_nnva0")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Zone_quest/MC2/HBC" unique_id=844667634]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 1, 0.83137256, 1)
+text = "130000/13"
+script = ExtResource("4_qoxd1")
+
+[node name="Icon2" type="TextureRect" parent="Zone_quest/MC2/HBC" unique_id=427739766]
+layout_mode = 2
+texture = ExtResource("5_qoxd1")
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Zone_quest/MC2/HBC" unique_id=1085063341]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 1, 0.83137256, 1)
+text = "130000/13"
+script = ExtResource("4_qoxd1")
+
+[node name="MC" type="MarginContainer" parent="Zone_quest" unique_id=1258172613]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Zone_quest/MC" unique_id=1773723775]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5647059, 0.8745098, 0.59607846, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_px76i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nrcl8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nnva0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qoxd1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_px76i")
+text = "Купить"
 
 [node name="Quest" type="HBoxContainer" parent="." unique_id=1892587566]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
+offset_left = -600.0
+offset_right = -607.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
@@ -187,14 +277,15 @@ stretch_mode = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="Quest" unique_id=489182380]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.93
 
 [node name="Quest_name" type="RichTextLabel" parent="Quest/VBoxContainer" unique_id=723122538]
 custom_minimum_size = Vector2(0, 18.025)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(1, 1, 0.7294118, 1)
+theme_override_colors/default_color = Color(0.5372549, 1, 0.7294118, 1)
 bbcode_enabled = true
 text = "O Дивные новые сливы, часть сиксевенью"
 scroll_active = false
@@ -206,32 +297,46 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.78431374, 1, 0.83137256, 1)
-theme_override_font_sizes/normal_font_size = 14
-theme_override_font_sizes/bold_font_size = 14
-theme_override_font_sizes/bold_italics_font_size = 14
 theme_override_font_sizes/italics_font_size = 14
-theme_override_font_sizes/mono_font_size = 14
 bbcode_enabled = true
 text = "Отправь 300 китайцев в закусочную 
 на беверрли филлс, 
 чтобы они принимали там долги"
 
 [node name="MC" type="MarginContainer" parent="Quest" unique_id=998863397]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+size_flags_horizontal = 8
+size_flags_vertical = 4
 
 [node name="Button" type="Button" parent="Quest/MC" unique_id=1448059225]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.5647059, 0.8745098, 0.59607846, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_px76i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nrcl8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nnva0")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qoxd1")
 theme_override_styles/focus = SubResource("StyleBoxTexture_px76i")
-text = "info"
+
+[node name="Icon" type="TextureRect" parent="Quest/MC/Button" unique_id=393600022]
+modulate = Color(0.68760407, 0.9562213, 0.67395216, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_qoxd1")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=367085619]
 libraries/ = SubResource("AnimationLibrary_nrcl8")
+
+[node name="Timer" type="Timer" parent="." unique_id=1331877710]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

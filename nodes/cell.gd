@@ -168,21 +168,22 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 	%QuestLogic.check_for_all()
 
 func disappoint():
-	Global.total_workers.erase(current_worker)
-	Global.total_work_on_build.erase(current_combo)
-	current_combo = null
-	has_worker = false
-	if current_worker.is_unique == false:
-		Global.add_to_integer_res_type(2, 10)
-		%BaseUI.change_label(2, true)
-	get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
-	current_worker = null
-	_mouse_exit()
-	print("Работник убран с клетки ", name)
-	$Time_to_res.stop()
-	$Res_progress.hide()
-	$Sprite3D/Portair.texture = null
-	%QuestLogic.check_for_all()
+	if current_worker.is_unique != true:
+		Global.total_workers.erase(current_worker)
+		Global.total_work_on_build.erase(current_combo)
+		current_combo = null
+		has_worker = false
+		if current_worker.is_unique == false:
+			Global.add_to_integer_res_type(2, 10)
+			%BaseUI.change_label(2, true)
+		get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
+		current_worker = null
+		_mouse_exit()
+		print("Работник убран с клетки ", name)
+		$Time_to_res.stop()
+		$Res_progress.hide()
+		$Sprite3D/Portair.texture = null
+		%QuestLogic.check_for_all()
 
 func _mouse_enter():
 	if check_zone_status():

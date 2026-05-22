@@ -9,6 +9,5 @@ name = "Сэд Клинтвуд"
 is_unique = true
 icon = ExtResource("1_5slfl")
 Description = "Уменьшает время производства района на 1.5 сек."
-res_timer_change = -99.0
-nickname = "Обычный работник"
+res_timer_change = -3.0
 metadata/_custom_type_script = "uid://bduhpc67rk1k2"

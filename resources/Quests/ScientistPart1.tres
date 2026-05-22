@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_hn7a0"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="2_df4nt"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_on3y1"]
 [ext_resource type="Resource" uid="uid://cde2mlv0kwlq8" path="res://resources/Quests/WorkerPart2.tres" id="3_on3y1"]
 [ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="4_8yjxd"]
+[ext_resource type="Resource" uid="uid://cxmnjonuccf7t" path="res://resources/Quests/Zone_quest/Zone2Quest.tres" id="4_on3y1"]
+[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="4_uk130"]
 
 [resource]
 script = ExtResource("1_hn7a0")
@@ -11,10 +14,11 @@ icon = ExtResource("4_8yjxd")
 quest_name = "Эра электротехники, часть 1"
 character_name = "Говард Ист"
 worker = 2
-done_quest_dependencies = Array[ExtResource("1_hn7a0")]([ExtResource("3_on3y1")])
+done_quest_dependencies = Array[ExtResource("1_hn7a0")]([ExtResource("3_on3y1"), ExtResource("4_on3y1")])
+quest_after = Array[String](["res://resources/Quests/WorkerPart3.tres"])
 complete_condition = 2
-int_value = 2
-building_type = ExtResource("2_df4nt")
+int_value = 4
+building_type = Array[ExtResource("2_on3y1")]([ExtResource("2_df4nt"), ExtResource("4_uk130")])
 text_greetings = "Приветствую, я Говард Ист, научный сотрудник класса A. Ныне буду вас сопровождать как главный по науке и инновациям. Слышал, что вы уже вместе с мистером Сэдом смогли заложить приличную основу для дальнейшего прогресса в сфере электротехники. Это не может не радовать, предлагаю нам и впредь двигаться в таком же темпе. Наш научный комитет уже смог создать два чертежа районов, в которые имплементированы инновации в сфере электротехники - снегонаука. Как раз их вам и надо будет построить.
 
 Подытожим: первый указ - постройте два района I тира, кодовое название: \"\"Сборщик снежинок\"\", и два района II тира, кодовое название: \"\"Собиратель Метелей\"\". Как закончите со строительством, свяжитесь со мной вновь."

@@ -30,6 +30,6 @@ func _physics_process(delta: float) -> void:
 	if target_direction != Vector3.ZERO:
 		target_direction = target_direction.rotated(Vector3.UP, deg_to_rad(45)).normalized()
 	
-	smooth_dir = smooth_dir.lerp(target_direction, 20.0 * delta)
+	smooth_dir = smooth_dir.lerp(target_direction, 10.0 * delta)
 	var dir = smooth_dir * (speed/10 * camera.size) * sprint * delta
 	move_and_collide(dir)
