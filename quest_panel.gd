@@ -50,7 +50,7 @@ func update_quset_labels_color():
 	var in_progress: Color = Color(0.796, 0.72, 0.167, 1.0)
 	var not_accepted: Color = Color(0.746, 0.746, 0.746, 1.0)
 	var not_accepted2: Color = Color(0.569, 0.569, 0.569, 1.0)
-	var done: Color = Color(0.318, 0.715, 0.582, 1.0)
+	var done: Color = Color("89ffba")
 	if worker:
 		match worker.quest_stage:
 			1:

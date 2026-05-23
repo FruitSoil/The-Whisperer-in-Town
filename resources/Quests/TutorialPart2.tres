@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bavw24d4xeu5v"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_8ff4c"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_vowj0"]
+[ext_resource type="Texture2D" uid="uid://brnjualrrs582" path="res://Images/portairs/Administration.png" id="3_yfklq"]
+
+[resource]
+script = ExtResource("1_8ff4c")
+icon = ExtResource("3_yfklq")
+quest_name = "Знакомство, часть 2"
+is_mandatory = false
+character_name = "Администрация"
+quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
+text_greetings = "Туториал часть 2
+"
+answer_agree = "Продолжить"
+answer_wait = "Подождите"
+answer_reject = "Сбросить трубку"
+text_reject = "*Вы слышите гудки на той стороне, после чего звук исчезает*"
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

@@ -12,11 +12,12 @@ config_version=5
 
 config/name="TWiT"
 config/version="0.0.0.1"
-run/main_scene="res://nodes/Scenes/test_scene.tscn"
+run/main_scene="uid://cg5c1mvtux802"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/bg_color=Color(0.02745098, 0.06666667, 0.105882354, 1)
-boot_splash/stretch_mode=3
-boot_splash/image="uid://d2crydf1fo2s2"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://bkvfrlegahqaj"
 config/icon="uid://82pl60joceop"
 
 [autoload]

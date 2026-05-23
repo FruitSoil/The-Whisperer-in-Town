@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://cg5c1mvtux802"]
+
+[ext_resource type="Script" uid="uid://bk5ts2prpt2fw" path="res://nodes/Scenes/main_menu.gd" id="1_06vvd"]
+[ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="2_06vvd"]
+[ext_resource type="Texture2D" uid="uid://x22r6r4ibtlg" path="res://Images/UI/Tipo.png" id="2_rcvuc"]
+[ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="3_rcvuc"]
+[ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="4_1xjd1"]
+[ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="5_yjwdp"]
+[ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="6_bg4m6"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="7_vdg37"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4lre"]
+texture = ExtResource("2_06vvd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l05ls"]
+texture = ExtResource("3_rcvuc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6jt1"]
+texture = ExtResource("2_06vvd")
+modulate_color = Color(1.2363764, 1.2363764, 1.2363764, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kwkp"]
+texture = ExtResource("3_rcvuc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd3lo"]
+texture = ExtResource("3_rcvuc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dacnh"]
+texture = ExtResource("2_06vvd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25p2b"]
+texture = ExtResource("7_vdg37")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kntsg"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4sy0"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
+
+[sub_resource type="Animation" id="Animation_uhxkw"]
+resource_name = "Fade_in"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(0.32987702, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tykmn"]
+resource_name = "Fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3333333),
+"transitions": PackedFloat32Array(0.29730198, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f4f1g"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:modulate:g")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Color:modulate:b")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Color:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Color:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06vvd"]
+_data = {
+&"Fade_in": SubResource("Animation_uhxkw"),
+&"Fade_out": SubResource("Animation_tykmn"),
+&"RESET": SubResource("Animation_f4f1g")
+}
+
+[node name="Main_menu" type="Node2D" unique_id=1755182682]
+script = ExtResource("1_06vvd")
+
+[node name="Menu" type="CanvasLayer" parent="." unique_id=1210911966]
+process_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=43069725]
+modulate = Color(0.23746216, 0.24567518, 0.16883504, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rcvuc")
+
+[node name="VBC" type="VBoxContainer" parent="Menu" unique_id=1826416251]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -624.95593
+offset_right = 494.0
+offset_bottom = -201.04407
+grow_vertical = 0
+theme_override_constants/separation = 39
+
+[node name="Continue" type="Button" parent="Menu/VBC" unique_id=825612841]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
+theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
+theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
+text = "Начать игру"
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Continue" unique_id=1601501004]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -35.0
+offset_right = -30.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_1xjd1")
+
+[node name="Settings" type="Button" parent="Menu/VBC" unique_id=1767815144]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
+theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
+theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
+text = "Настройки"
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Settings" unique_id=1647695135]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -35.0
+offset_right = -30.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_yjwdp")
+
+[node name="Exit_to main" type="Button" parent="Menu/VBC" unique_id=1792925934]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
+theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
+theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
+text = "Выйти из
+игры"
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Exit_to main" unique_id=90288264]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -35.0
+offset_right = -30.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_bg4m6")
+
+[node name="Label" type="Label" parent="Menu" unique_id=650576535]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -867.0
+offset_top = 118.0
+offset_right = 436.0
+offset_bottom = 285.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.69085294, 0.8785781, 0.6736247, 1)
+theme_override_font_sizes/font_size = 128
+text = "The Whisperer in Town"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Menu" unique_id=2088698228]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Menu/Control" unique_id=526892959]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -445.0
+offset_right = 393.5
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Настройки"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Menu/Control" unique_id=219310537]
+z_index = 1
+layout_mode = 0
+offset_left = 1615.95
+offset_top = 79.0
+offset_right = 1785.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_25p2b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kntsg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b4sy0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_25p2b")
+theme_override_styles/focus = SubResource("StyleBoxTexture_25p2b")
+icon = ExtResource("6_bg4m6")
+icon_alignment = 1
+
+[node name="Panel" type="NinePatchRect" parent="Menu/Control" unique_id=1663129307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -824.0
+offset_top = -461.0
+offset_right = 824.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vdg37")
+patch_margin_left = 114
+patch_margin_top = 149
+patch_margin_right = 114
+patch_margin_bottom = 149
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1493132271]
+layer = 100
+
+[node name="Color" type="ColorRect" parent="Fade" unique_id=1662133600]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1622596282]
+libraries/ = SubResource("AnimationLibrary_06vvd")
+
+[connection signal="pressed" from="Menu/VBC/Continue" to="Menu" method="_on_continue_pressed"]
+[connection signal="pressed" from="Menu/VBC/Settings" to="Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/VBC/Exit_to main" to="Menu" method="_on_exit_to_main_pressed"]
+[connection signal="pressed" from="Menu/Control/Button" to="Menu" method="_on_button_pressed"]
+[connection signal="animation_finished" from="Fade/Fade" to="." method="_on_fade_anim"]

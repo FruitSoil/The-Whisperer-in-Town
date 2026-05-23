@@ -1,129 +1,218 @@
 [gd_scene format=3 uid="uid://c2hucdshe8xtu"]
 
-[ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_1tw4p"]
-[ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="1_6bc7i"]
-[ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="1_m2kq4"]
-[ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="1_yfilh"]
-[ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="2_3c4k5"]
-[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="2_273he"]
-[ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="2_wmpv0"]
-[ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="4_0n13w"]
-[ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="4_4tceg"]
-[ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="4_as673"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="4_igchu"]
-[ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_yi5b6"]
-[ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="5_n6sj7"]
-[ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="5_stlvl"]
-[ext_resource type="Texture2D" uid="uid://cucf1b2i6waim" path="res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png" id="5_xdeo5"]
-[ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="6_4a5cs"]
-[ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="6_as673"]
-[ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="6_wlw1d"]
-[ext_resource type="Texture2D" uid="uid://dnlwtnb54ban3" path="res://Images/UI/icons/IMG_20260512_194322_295.png" id="7_0i35y"]
-[ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://Images/UI/ui4_button3_idle.png" id="7_3s7qo"]
-[ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://resources/builds_res/District_Factories_Level2.tres" id="7_273he"]
-[ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://Images/UI/ui4_button3_pressed.png" id="8_0i35y"]
-[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="8_sbivs"]
-[ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://Images/UI/icons/IMG_20260512_194321_716.png" id="10_rpk0c"]
-[ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="10_sbivs"]
-[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="10_vlsf6"]
-[ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="11_3we6r"]
-[ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="11_7yne8"]
-[ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="11_22wmr"]
-[ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="11_yi5b6"]
-[ext_resource type="Script" uid="uid://0sqefgshus3v" path="res://nodes/Scenes/dialogue_logic.gd" id="12_opxjv"]
-[ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="12_owdam"]
-[ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://Images/Building_res_icon.png" id="13_273he"]
-[ext_resource type="Texture2D" uid="uid://drdg65lenvkgp" path="res://Images/UI/DialogueFrame.png" id="13_mlsg3"]
-[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="13_rwusp"]
-[ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="14_22wmr"]
-[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="14_hrruv"]
-[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="14_m2kq4"]
-[ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="14_opxjv"]
-[ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="15_1tw4p"]
-[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="15_56f6p"]
-[ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://resources/Zones/Zone_1.tres" id="15_vehi4"]
-[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="15_vlsf6"]
-[ext_resource type="Resource" uid="uid://6x0mbyqrhu7v" path="res://resources/workers/U_Radiohost.tres" id="16_7yne8"]
-[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="16_c16sm"]
-[ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="16_r8b8i"]
-[ext_resource type="Texture2D" uid="uid://bq4tc1eh0jj47" path="res://Images/Worker_res_icon.png" id="16_vehi4"]
-[ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="17_3obll"]
-[ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="17_6p561"]
-[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="17_f1g04"]
-[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="17_tyf2g"]
-[ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="19_ejh24"]
-[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="21_stlvl"]
-[ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="23_4a5cs"]
-[ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="24_7vd3e"]
-[ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="26_7aymr"]
-[ext_resource type="PackedScene" uid="uid://1xk6cghmugrw" path="res://nodes/UI/quest_panel.tscn" id="35_rr6gg"]
-[ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="40_pqm0w"]
-[ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="42_pem7d"]
-[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="43_0i35y"]
-[ext_resource type="Texture2D" uid="uid://edo12colapox" path="res://Images/UI/resources_background.PNG" id="43_vcfif"]
-[ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="44_71vvp"]
-[ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="44_pxd2t"]
-[ext_resource type="Texture2D" uid="uid://c521ge0mrkchw" path="res://Images/Resources_icons/actual/heavycomponent_res_icon.png" id="45_u63fg"]
-[ext_resource type="Texture2D" uid="uid://ba0uqsu2cwgm5" path="res://Images/Resources_icons/actual/imperial_res_icon.png" id="47_i66y5"]
-[ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="49_rpk0c"]
-[ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="49_wo272"]
-[ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="53_bg06i"]
-[ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="54_nbuuu"]
-[ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="54_yiww8"]
-[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="56_ps3nt"]
-[ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="56_yiww8"]
-[ext_resource type="Texture2D" uid="uid://berx66w5hcevc" path="res://Images/UI/characters_background.PNG" id="57_vxr4q"]
-[ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="58_71vvp"]
-[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="58_bg06i"]
-[ext_resource type="Texture2D" uid="uid://brk7a3rn64jgw" path="res://Images/UI/ui4_button1_idle.png" id="59_8w520"]
-[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="59_yiww8"]
-[ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="60_2x4qu"]
-[ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="62_xdeo5"]
-[ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="64_3obll"]
-[ext_resource type="Resource" uid="uid://4h6jpjw3ymbn" path="res://resources/workers/U_General.tres" id="65_h4qp7"]
-[ext_resource type="Resource" uid="uid://b468hhcbqb8k5" path="res://resources/workers/U_Traitor.tres" id="66_vxr4q"]
-[ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_wo272"]
-[ext_resource type="Texture2D" uid="uid://dwmkfixnaqyk3" path="res://Images/UI/icons/stamp.png" id="69_r8b8i"]
-[ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="74_e4pqg"]
-[ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="75_2l774"]
-[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="76_2l774"]
+[ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_vlx1q"]
+[ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="2_7ukgp"]
+[ext_resource type="Script" uid="uid://c62ur210wpk5h" path="res://nodes/Scenes/tutorial.gd" id="2_tbnlw"]
+[ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_tbnlw"]
+[ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="4_2ho68"]
+[ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="5_r6jij"]
+[ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="6_86tqs"]
+[ext_resource type="Texture2D" uid="uid://cucf1b2i6waim" path="res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png" id="7_exte1"]
+[ext_resource type="Texture2D" uid="uid://c521ge0mrkchw" path="res://Images/Resources_icons/actual/heavycomponent_res_icon.png" id="8_7forp"]
+[ext_resource type="Texture2D" uid="uid://ba0uqsu2cwgm5" path="res://Images/Resources_icons/actual/imperial_res_icon.png" id="9_w45vw"]
+[ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="10_hwrqn"]
+[ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="11_xegqy"]
+[ext_resource type="Texture2D" uid="uid://bq4tc1eh0jj47" path="res://Images/Worker_res_icon.png" id="12_5h554"]
+[ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="13_x1san"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="14_yssgo"]
+[ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="15_30cd8"]
+[ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="16_hn85b"]
+[ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="17_xxqh0"]
+[ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="18_sfvcy"]
+[ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="19_qcc36"]
+[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="20_tudpi"]
+[ext_resource type="Script" uid="uid://0sqefgshus3v" path="res://nodes/Scenes/dialogue_logic.gd" id="21_dweyv"]
+[ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="22_gub22"]
+[ext_resource type="Texture2D" uid="uid://drdg65lenvkgp" path="res://Images/UI/DialogueFrame.png" id="23_x1wuj"]
+[ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="24_tt4qn"]
+[ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="25_6ngqc"]
+[ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="26_nciey"]
+[ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="27_xde1d"]
+[ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://Images/UI/icons/IMG_20260512_194321_716.png" id="28_po80s"]
+[ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="29_77y48"]
+[ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="30_72u36"]
+[ext_resource type="Texture2D" uid="uid://dnlwtnb54ban3" path="res://Images/UI/icons/IMG_20260512_194322_295.png" id="31_q848m"]
+[ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://Images/UI/ui4_button3_idle.png" id="32_7n4c0"]
+[ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://Images/UI/ui4_button3_pressed.png" id="33_w4m4s"]
+[ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="34_kkiys"]
+[ext_resource type="PackedScene" uid="uid://1xk6cghmugrw" path="res://nodes/UI/quest_panel.tscn" id="35_b0c46"]
+[ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="36_iketc"]
+[ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="37_5e40a"]
+[ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="38_d5d3s"]
+[ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://resources/builds_res/District_Factories_Level2.tres" id="39_lvvw6"]
+[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="40_4wf2t"]
+[ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="41_0mfkc"]
+[ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="42_dg5mt"]
+[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="43_frhhc"]
+[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="44_8dus5"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="45_8e00r"]
+[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="46_pe6gr"]
+[ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="47_d440o"]
+[ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="48_m6mm7"]
+[ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="49_n85g4"]
+[ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="50_x8hrd"]
+[ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="51_hlnya"]
+[ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="52_w2vja"]
+[ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://Images/Building_res_icon.png" id="53_bv5cs"]
+[ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="54_725ke"]
+[ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="55_reqt0"]
+[ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="56_gg5ll"]
+[ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://resources/Zones/Zone_1.tres" id="57_kyo71"]
+[ext_resource type="Texture2D" uid="uid://edo12colapox" path="res://Images/UI/resources_background.PNG" id="58_ogdty"]
+[ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="59_pt2su"]
+[ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="60_amk7x"]
+[ext_resource type="Texture2D" uid="uid://berx66w5hcevc" path="res://Images/UI/characters_background.PNG" id="61_kyfdo"]
+[ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="62_nfnow"]
+[ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="63_myd6q"]
+[ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="64_akcfr"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="65_pr6gd"]
+[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="66_y0mkd"]
+[ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_211c7"]
+[ext_resource type="Texture2D" uid="uid://dwmkfixnaqyk3" path="res://Images/UI/icons/stamp.png" id="68_pphls"]
+[ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="69_snyfb"]
+[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="70_essfe"]
+[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="71_6ejo6"]
+[ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="72_dptud"]
+[ext_resource type="Resource" uid="uid://6x0mbyqrhu7v" path="res://resources/workers/U_Radiohost.tres" id="73_416c6"]
+[ext_resource type="Resource" uid="uid://4h6jpjw3ymbn" path="res://resources/workers/U_General.tres" id="74_tkp5h"]
+[ext_resource type="Resource" uid="uid://b468hhcbqb8k5" path="res://resources/workers/U_Traitor.tres" id="75_sr6vm"]
+[ext_resource type="Texture2D" uid="uid://brk7a3rn64jgw" path="res://Images/UI/ui4_button1_idle.png" id="76_ijkp0"]
+[ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="77_6kshd"]
+[ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="78_adhno"]
+[ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="79_kxjjv"]
+[ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="80_85x56"]
+[ext_resource type="Script" uid="uid://cnd3qqtiq6gy7" path="res://nodes/Scenes/tutorial_zone.gd" id="80_tbnlw"]
+[ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="81_702ju"]
+[ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="82_bppva"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="83_olxs2"]
+[ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="84_yr0fy"]
+[ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="85_wrv0s"]
+[ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="86_syr28"]
+[ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="87_xerpr"]
+
+[sub_resource type="Animation" id="Animation_uhxkw"]
+resource_name = "Fade_in"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(0.32987702, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tykmn"]
+resource_name = "Fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3333333),
+"transitions": PackedFloat32Array(0.29730198, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f4f1g"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:modulate:g")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Color:modulate:b")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Color:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Color:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlx1q"]
+_data = {
+&"Fade_in": SubResource("Animation_uhxkw"),
+&"Fade_out": SubResource("Animation_tykmn"),
+&"RESET": SubResource("Animation_f4f1g")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeo5"]
-shader = ExtResource("11_yi5b6")
+shader = ExtResource("3_tbnlw")
 shader_parameter/blur = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u63fg"]
-texture = ExtResource("75_2l774")
+texture = ExtResource("15_30cd8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i66y5"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlswu"]
-texture = ExtResource("75_2l774")
+texture = ExtResource("15_30cd8")
 modulate_color = Color(1.2363764, 1.2363764, 1.2363764, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1tw4p"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8b8i"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3obll"]
-texture = ExtResource("75_2l774")
+texture = ExtResource("15_30cd8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr6gg"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nn2ht"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3ibj"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u63fg"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.25
@@ -147,7 +236,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rr6gg"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.1470000069825
@@ -185,11 +274,11 @@ texture = SubResource("CompressedTexture2D_wo272")
 modulate_color = Color(0.55765235, 0.97623223, 0.55965835, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jt5n7"]
-texture = ExtResource("75_2l774")
+texture = ExtResource("15_30cd8")
 modulate_color = Color(0.64705884, 1, 0.6627451, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdenm"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3obll"]
 load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
@@ -199,7 +288,7 @@ texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4h187"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 modulate_color = Color(0.89293563, 0.31022602, 0.2687656, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkiup"]
@@ -207,14 +296,14 @@ texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(0.8692449, 0.5770965, 0.5160036, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_248fk"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vxr4q"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.4870000231325
 shader_parameter/scanlines_width = 0.1470000069825
@@ -238,7 +327,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sp5h0"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.4870000231325
 shader_parameter/scanlines_width = 0.1470000069825
@@ -383,10 +472,10 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
-texture = ExtResource("5_stlvl")
+texture = ExtResource("29_77y48")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqm0w"]
-texture = ExtResource("6_4a5cs")
+texture = ExtResource("30_72u36")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r8b8i"]
 load_path = "res://.godot/imported/ui4_button2_idle.png-ba6dfedf82820ff95c8e9dcd227535c9.ctex"
@@ -396,10 +485,10 @@ texture = SubResource("CompressedTexture2D_r8b8i")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pem7d"]
-texture = ExtResource("7_3s7qo")
+texture = ExtResource("32_7n4c0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbuuu"]
-texture = ExtResource("8_0i35y")
+texture = ExtResource("33_w4m4s")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1tw4p"]
 load_path = "res://.godot/imported/ui4_button3_idle.png-6f48c31f2f941e2968aea6417493a69f.ctex"
@@ -412,7 +501,7 @@ modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 bg_color = Color(0.15151802, 0.33445606, 0.15138566, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r8b8i"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.28800001368
@@ -471,18 +560,18 @@ gradient = SubResource("Gradient_3s7qo")
 width = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4qq1"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 modulate_color = Color(1.5720325, 1.5720325, 1.5720325, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1h74t"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0y1j"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 modulate_color = Color(1.7780933, 1.898, 1.7748737, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7655"]
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 modulate_color = Color(0.3647059, 0.67058825, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4tj1"]
@@ -508,17 +597,17 @@ shadow_color = Color(0, 0, 0, 0.80784315)
 shadow_size = 10
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tqxc"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rocjm"]
-texture = ExtResource("75_2l774")
+texture = ExtResource("15_30cd8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmfpd"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_we6hb"]
-texture = ExtResource("74_e4pqg")
+texture = ExtResource("16_hn85b")
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="Gradient" id="Gradient_igchu"]
@@ -537,7 +626,7 @@ gradient = SubResource("Gradient_k4jtg")
 width = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n00c2"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.1470000069825
@@ -561,7 +650,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1tw4p"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.1470000069825
@@ -585,22 +674,22 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l243h"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_va6r8"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1nbr8"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdnl2"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 modulate_color = Color(0.24899, 0.25160608, 0.23274565, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpxrb"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="Gradient" id="Gradient_r8b8i"]
@@ -614,13 +703,13 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.517094)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fxhv4"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyat0"]
-texture = ExtResource("64_3obll")
+texture = ExtResource("62_nfnow")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3obll"]
-shader = ExtResource("56_ps3nt")
+shader = ExtResource("20_tudpi")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.034000001615
@@ -644,10 +733,10 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edejt"]
-texture = ExtResource("59_8w520")
+texture = ExtResource("76_ijkp0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csr16"]
-texture = ExtResource("60_2x4qu")
+texture = ExtResource("77_6kshd")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_id8pd"]
 load_path = "res://.godot/imported/ui4_button1_idle.png-e99ce663eaeefa768822bc92ada1ec9d.ctex"
@@ -657,10 +746,10 @@ texture = SubResource("CompressedTexture2D_id8pd")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pkyj"]
-texture = ExtResource("59_8w520")
+texture = ExtResource("76_ijkp0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tsfm"]
-texture = ExtResource("59_8w520")
+texture = ExtResource("76_ijkp0")
 
 [sub_resource type="Animation" id="Animation_m2kq4"]
 resource_name = "From"
@@ -787,8 +876,23 @@ _data = {
 &"To": SubResource("Animation_7yne8")
 }
 
+[sub_resource type="Gradient" id="Gradient_7ukgp"]
+offsets = PackedFloat32Array(0.88785046, 0.92523366)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tbnlw"]
+gradient = SubResource("Gradient_7ukgp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ukgp"]
+bg_color = Color(0, 0.2901961, 0, 0)
+shadow_color = Color(1.3897754e-06, 0.32097825, 1.4439226e-07, 0.8509804)
+shadow_size = 7
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ha1fh"]
-shader = ExtResource("59_yiww8")
+shader = ExtResource("79_kxjjv")
 shader_parameter/pixel_size = 2.0000000475
 shader_parameter/color_levels = 20.0
 shader_parameter/blur_dir = Vector2(0, 0)
@@ -833,7 +937,7 @@ adjustment_contrast = 0.9
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yiww8"]
 render_priority = -1
-shader = ExtResource("56_yiww8")
+shader = ExtResource("82_bppva")
 shader_parameter/depth_threshold = 0.010000000475
 shader_parameter/reverse_depth_threshold = 1.0
 shader_parameter/normal_threshold = 0.5490000260775
@@ -916,7 +1020,7 @@ orientation = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bc7i"]
 transparency = 1
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("58_bg06i")
+albedo_texture = ExtResource("83_olxs2")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -929,11 +1033,11 @@ size = Vector2(0.1, 0.1)
 orientation = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6adnx"]
-material = ExtResource("49_rpk0c")
+material = ExtResource("84_yr0fy")
 size = Vector2(100, 100)
 
 [sub_resource type="PrismMesh" id="PrismMesh_6bc7i"]
-material = ExtResource("49_rpk0c")
+material = ExtResource("84_yr0fy")
 size = Vector3(34.2, 10.695, 15.21)
 
 [sub_resource type="Gradient" id="Gradient_rpk0c"]
@@ -973,12 +1077,28 @@ size = Vector3(100.200005, 30.300001, 1)
 
 [node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
 unique_name_in_owner = true
-script = ExtResource("1_1tw4p")
+script = ExtResource("1_vlx1q")
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1789273876]
+layer = 100
+visible = false
+
+[node name="Color" type="ColorRect" parent="Fade" unique_id=1740808786]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1192094416]
+libraries/ = SubResource("AnimationLibrary_vlx1q")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
 visible = false
-script = ExtResource("1_6bc7i")
+script = ExtResource("2_7ukgp")
 
 [node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
 material = SubResource("ShaderMaterial_xdeo5")
@@ -1000,25 +1120,25 @@ offset_bottom = 256.0
 selected = 0
 item_count = 7
 popup/item_0/text = "Rusted 1000"
-popup/item_0/icon = ExtResource("2_3c4k5")
+popup/item_0/icon = ExtResource("4_2ho68")
 popup/item_0/id = 0
 popup/item_1/text = "Electrosnow 1000"
-popup/item_1/icon = ExtResource("4_yi5b6")
+popup/item_1/icon = ExtResource("5_r6jij")
 popup/item_1/id = 1
 popup/item_2/text = "Money 10"
-popup/item_2/icon = ExtResource("2_wmpv0")
+popup/item_2/icon = ExtResource("6_86tqs")
 popup/item_2/id = 2
 popup/item_3/text = "highquality electronic 1000"
-popup/item_3/icon = ExtResource("5_xdeo5")
+popup/item_3/icon = ExtResource("7_exte1")
 popup/item_3/id = 3
 popup/item_4/text = "Heavy Components 1000"
-popup/item_4/icon = ExtResource("45_u63fg")
+popup/item_4/icon = ExtResource("8_7forp")
 popup/item_4/id = 4
 popup/item_5/text = "Imperial Power 1"
-popup/item_5/icon = ExtResource("47_i66y5")
+popup/item_5/icon = ExtResource("9_w45vw")
 popup/item_5/id = 5
 popup/item_6/text = "Cultistic Power 1"
-popup/item_6/icon = ExtResource("49_wo272")
+popup/item_6/icon = ExtResource("10_hwrqn")
 popup/item_6/id = 6
 
 [node name="add" type="Button" parent="DEBUG" unique_id=182118553]
@@ -1027,7 +1147,7 @@ offset_top = 149.0
 offset_right = 286.0
 offset_bottom = 186.0
 text = "Add selected res"
-icon = ExtResource("5_n6sj7")
+icon = ExtResource("11_xegqy")
 
 [node name="Full" type="Button" parent="DEBUG" unique_id=1232582986]
 offset_left = 299.0
@@ -1035,13 +1155,13 @@ offset_top = 135.0
 offset_right = 445.0
 offset_bottom = 184.0
 text = "All to 99999"
-icon = ExtResource("16_vehi4")
+icon = ExtResource("12_5h554")
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
 layer = 5
 visible = false
-script = ExtResource("62_xdeo5")
+script = ExtResource("13_x1san")
 
 [node name="TextureRect" type="ColorRect" parent="Pause" unique_id=495866217]
 material = SubResource("ShaderMaterial_xdeo5")
@@ -1063,7 +1183,7 @@ offset_right = 343.0
 offset_bottom = 382.6941
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 patch_margin_left = 114
 patch_margin_top = 149
 patch_margin_right = 114
@@ -1118,7 +1238,7 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("15_1tw4p")
+texture = ExtResource("17_xxqh0")
 
 [node name="Settings" type="Button" parent="Pause/VBC" unique_id=1580891146]
 layout_mode = 2
@@ -1153,7 +1273,7 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("16_r8b8i")
+texture = ExtResource("18_sfvcy")
 
 [node name="Exit_to main" type="Button" parent="Pause/VBC" unique_id=1321067021]
 layout_mode = 2
@@ -1173,7 +1293,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_tlswu")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1tw4p")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_r8b8i")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3obll")
-disabled = true
 text = "Выйти"
 
 [node name="TextureRect" type="TextureRect" parent="Pause/VBC/Exit_to main" unique_id=1919780471]
@@ -1190,7 +1309,7 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("17_3obll")
+texture = ExtResource("19_qcc36")
 
 [node name="Label" type="Label" parent="Pause" unique_id=79810283]
 anchors_preset = 5
@@ -1250,7 +1369,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_nn2ht")
 theme_override_styles/hover = SubResource("StyleBoxTexture_d3ibj")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rr6gg")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rr6gg")
-icon = ExtResource("17_3obll")
+icon = ExtResource("19_qcc36")
 icon_alignment = 1
 
 [node name="Panel" type="NinePatchRect" parent="Pause/Control" unique_id=1610520756]
@@ -1266,7 +1385,7 @@ offset_right = 824.0
 offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("76_2l774")
+texture = ExtResource("14_yssgo")
 patch_margin_left = 114
 patch_margin_top = 149
 patch_margin_right = 114
@@ -1295,7 +1414,7 @@ mouse_filter = 2
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
-script = ExtResource("12_opxjv")
+script = ExtResource("21_dweyv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
 layout_mode = 3
@@ -1333,7 +1452,7 @@ offset_left = 21.0
 offset_top = 87.0
 offset_right = 552.0
 offset_bottom = 362.0
-texture = ExtResource("10_vlsf6")
+texture = ExtResource("22_gub22")
 expand_mode = 1
 stretch_mode = 6
 
@@ -1480,7 +1599,7 @@ offset_bottom = 6392.4224
 scale = Vector2(0.13, 0.13)
 pivot_offset_ratio = Vector2(1, 0)
 mouse_filter = 2
-texture = ExtResource("13_mlsg3")
+texture = ExtResource("23_x1wuj")
 
 [node name="Quest_name" type="Label" parent="Dialogue/Panel" unique_id=9789844]
 layout_mode = 0
@@ -1539,6 +1658,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_r8b8i")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1521205097]
 visible = false
@@ -1547,7 +1667,7 @@ offset_left = -32.0
 offset_right = 1888.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("1_m2kq4")
+texture = ExtResource("24_tt4qn")
 
 [node name="click" type="TextureRect" parent="HUD" unique_id=1873998123]
 self_modulate = Color(1, 1, 1, 0.60784316)
@@ -1565,7 +1685,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("2_273he")
+texture = ExtResource("25_6ngqc")
 
 [node name="BaseUI" type="Control" parent="HUD" unique_id=505448598]
 unique_name_in_owner = true
@@ -1576,7 +1696,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("4_0n13w")
+script = ExtResource("26_nciey")
 metadata/_edit_lock_ = true
 
 [node name="ramka" type="TextureRect" parent="HUD/BaseUI" unique_id=1071139258]
@@ -1592,7 +1712,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.469, 0.469)
 mouse_filter = 2
-texture = ExtResource("4_as673")
+texture = ExtResource("27_xde1d")
 metadata/_edit_lock_ = true
 
 [node name="ramka2" type="TextureRect" parent="HUD/BaseUI" unique_id=1836725913]
@@ -1611,7 +1731,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.469, 0.469)
 mouse_filter = 2
-texture = ExtResource("4_as673")
+texture = ExtResource("27_xde1d")
 metadata/_edit_lock_ = true
 
 [node name="Demolition" type="Button" parent="HUD/BaseUI" unique_id=1504075912]
@@ -1634,7 +1754,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wb2hi")
 theme_override_styles/focus = SubResource("StyleBoxFlat_vcfif")
 text = "Build
 Demolition"
-icon = ExtResource("10_rpk0c")
+icon = ExtResource("28_po80s")
 alignment = 0
 
 [node name="Quest" type="Button" parent="HUD/BaseUI" unique_id=429896246]
@@ -1654,7 +1774,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_sok84")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rpk0c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rpk0c")
 text = "Квесты"
-icon = ExtResource("7_0i35y")
+icon = ExtResource("31_q848m")
 icon_alignment = 2
 
 [node name="Store" type="Button" parent="HUD/BaseUI" unique_id=1798564092]
@@ -1675,7 +1795,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pem7d")
 text = "Магазин"
-icon = ExtResource("10_rpk0c")
+icon = ExtResource("28_po80s")
 autowrap_trim_flags = 0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI" unique_id=1081556581]
@@ -1739,6 +1859,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1761,7 +1882,7 @@ grow_vertical = 0
 scale = Vector2(0.332, 0.352)
 pivot_offset_ratio = Vector2(0, 1)
 mouse_filter = 2
-texture = ExtResource("40_pqm0w")
+texture = ExtResource("34_kkiys")
 
 [node name="Quest_scroll_list" type="Control" parent="HUD/BaseUI/Quest_UI" unique_id=768326260]
 clip_contents = true
@@ -1782,7 +1903,7 @@ offset_right = 550.0
 offset_bottom = 764.0
 theme_override_constants/separation = 8
 
-[node name="Quest_panel" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=23721088 instance=ExtResource("35_rr6gg")]
+[node name="Quest_panel" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС" unique_id=23721088 instance=ExtResource("35_b0c46")]
 layout_mode = 2
 is_next_zone_quest = true
 
@@ -1798,16 +1919,15 @@ offset_bottom = 1377.231
 grow_vertical = 2
 rotation = 3.1415927
 scale = Vector2(0.28, 0.28)
-theme_override_icons/grabber = ExtResource("42_pem7d")
-theme_override_icons/grabber_highlight = ExtResource("42_pem7d")
-theme_override_icons/grabber_disabled = ExtResource("42_pem7d")
+theme_override_icons/grabber = ExtResource("36_iketc")
+theme_override_icons/grabber_highlight = ExtResource("36_iketc")
+theme_override_icons/grabber_disabled = ExtResource("36_iketc")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
 min_value = -12.0
 
 [node name="Store_UI" type="Control" parent="HUD/BaseUI" unique_id=626397403]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1832,7 +1952,7 @@ grow_vertical = 0
 scale = Vector2(0.332, 0.352)
 pivot_offset_ratio = Vector2(0, 1)
 mouse_filter = 2
-texture = ExtResource("40_pqm0w")
+texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
 clip_contents = true
@@ -1890,21 +2010,21 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("2_3c4k5")
+texture = ExtResource("4_2ho68")
 
-[node name="lvl" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2084390590 instance=ExtResource("6_as673")]
+[node name="lvl" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2084390590 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("6_wlw1d")
+res = ExtResource("38_d5d3s")
 is_open = true
 
-[node name="lvl2" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=729256663 instance=ExtResource("6_as673")]
+[node name="lvl2" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=729256663 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("7_273he")
+res = ExtResource("39_lvvw6")
 is_open = true
 
-[node name="lvl3" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2104996517 instance=ExtResource("6_as673")]
+[node name="lvl3" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2104996517 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("8_sbivs")
+res = ExtResource("40_4wf2t")
 
 [node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892]
 custom_minimum_size = Vector2(0, 50)
@@ -1939,19 +2059,19 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("4_yi5b6")
+texture = ExtResource("5_r6jij")
 
-[node name="lvl4" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1335261244 instance=ExtResource("6_as673")]
+[node name="lvl4" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1335261244 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("13_rwusp")
+res = ExtResource("41_0mfkc")
 
-[node name="lvl5" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=123688384 instance=ExtResource("6_as673")]
+[node name="lvl5" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=123688384 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("14_hrruv")
+res = ExtResource("42_dg5mt")
 
-[node name="lvl6" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2007268055 instance=ExtResource("6_as673")]
+[node name="lvl6" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2007268055 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("15_56f6p")
+res = ExtResource("43_frhhc")
 
 [node name="Panel3" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1032608040]
 custom_minimum_size = Vector2(0, 50)
@@ -1986,19 +2106,19 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("5_xdeo5")
+texture = ExtResource("7_exte1")
 
-[node name="lvl7" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1212943228 instance=ExtResource("6_as673")]
+[node name="lvl7" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1212943228 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("17_tyf2g")
+res = ExtResource("44_8dus5")
 
-[node name="lvl8" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=745296319 instance=ExtResource("6_as673")]
+[node name="lvl8" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=745296319 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("16_c16sm")
+res = ExtResource("45_8e00r")
 
-[node name="lvl9" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1401251104 instance=ExtResource("6_as673")]
+[node name="lvl9" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1401251104 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("17_f1g04")
+res = ExtResource("46_pe6gr")
 
 [node name="Panel4" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2130541618]
 custom_minimum_size = Vector2(0, 50)
@@ -2033,11 +2153,11 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("45_u63fg")
+texture = ExtResource("8_7forp")
 
-[node name="lvl10" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2099564223 instance=ExtResource("6_as673")]
+[node name="lvl10" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2099564223 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("19_ejh24")
+res = ExtResource("47_d440o")
 
 [node name="Panel5" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1624599196]
 custom_minimum_size = Vector2(0, 50)
@@ -2072,11 +2192,11 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("47_i66y5")
+texture = ExtResource("9_w45vw")
 
-[node name="lvl11" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1330198436 instance=ExtResource("6_as673")]
+[node name="lvl11" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1330198436 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("21_stlvl")
+res = ExtResource("48_m6mm7")
 
 [node name="Panel6" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=634627135]
 custom_minimum_size = Vector2(0, 50)
@@ -2111,11 +2231,11 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("49_wo272")
+texture = ExtResource("10_hwrqn")
 
-[node name="lvl12" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=632742349 instance=ExtResource("6_as673")]
+[node name="lvl12" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=632742349 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("23_4a5cs")
+res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
 visible = false
@@ -2150,7 +2270,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_vlsf6")
+texture = ExtResource("22_gub22")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2251,7 +2371,7 @@ theme_override_font_sizes/font_size = 16
 text = "9999999"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("11_22wmr")
+script = ExtResource("50_x8hrd")
 
 [node name="Res_icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1871172775]
 layout_mode = 0
@@ -2273,7 +2393,7 @@ theme_override_font_sizes/font_size = 16
 text = "9999999"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("11_22wmr")
+script = ExtResource("50_x8hrd")
 
 [node name="Res_icon2" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1159359026]
 layout_mode = 0
@@ -2299,8 +2419,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
 text = "Зона 3"
-script = ExtResource("11_7yne8")
-res = ExtResource("24_7vd3e")
+script = ExtResource("51_hlnya")
+res = ExtResource("52_w2vja")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=617297931]
 show_behind_parent = true
@@ -2310,7 +2430,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_273he")
+texture = ExtResource("53_bv5cs")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=1746457429]
@@ -2334,8 +2454,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
 text = "Зона 3"
-script = ExtResource("11_7yne8")
-res = ExtResource("26_7aymr")
+script = ExtResource("51_hlnya")
+res = ExtResource("54_725ke")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=1713579509]
 show_behind_parent = true
@@ -2345,7 +2465,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_273he")
+texture = ExtResource("53_bv5cs")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=2046004120]
@@ -2369,8 +2489,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
 text = "Зона 3"
-script = ExtResource("11_7yne8")
-res = ExtResource("12_owdam")
+script = ExtResource("51_hlnya")
+res = ExtResource("55_reqt0")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=833025531]
 show_behind_parent = true
@@ -2380,7 +2500,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_273he")
+texture = ExtResource("53_bv5cs")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=1207777928]
@@ -2403,8 +2523,8 @@ custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-script = ExtResource("11_7yne8")
-res = ExtResource("14_22wmr")
+script = ExtResource("51_hlnya")
+res = ExtResource("56_gg5ll")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=334025384]
 show_behind_parent = true
@@ -2414,7 +2534,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_273he")
+texture = ExtResource("53_bv5cs")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=1807949798]
@@ -2437,9 +2557,9 @@ custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-icon = ExtResource("16_vehi4")
-script = ExtResource("11_7yne8")
-res = ExtResource("15_vehi4")
+icon = ExtResource("12_5h554")
+script = ExtResource("51_hlnya")
+res = ExtResource("57_kyo71")
 
 [node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1562671029]
 show_behind_parent = true
@@ -2449,7 +2569,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_273he")
+texture = ExtResource("53_bv5cs")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1403694782]
@@ -2514,9 +2634,9 @@ offset_bottom = 1379.1118
 grow_vertical = 2
 rotation = 3.1415927
 scale = Vector2(0.28, 0.28)
-theme_override_icons/grabber = ExtResource("42_pem7d")
-theme_override_icons/grabber_highlight = ExtResource("42_pem7d")
-theme_override_icons/grabber_disabled = ExtResource("42_pem7d")
+theme_override_icons/grabber = ExtResource("36_iketc")
+theme_override_icons/grabber_highlight = ExtResource("36_iketc")
+theme_override_icons/grabber_disabled = ExtResource("36_iketc")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
@@ -2545,7 +2665,7 @@ offset_top = 12.626883
 offset_right = 710.7093
 offset_bottom = 60.780968
 scale = Vector2(0.689458, 1.4746488)
-texture = ExtResource("43_vcfif")
+texture = ExtResource("58_ogdty")
 
 [node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/res_panel" unique_id=540309098]
 layout_mode = 1
@@ -2581,7 +2701,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2607,7 +2727,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2633,7 +2753,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2659,7 +2779,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2685,7 +2805,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2711,7 +2831,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2736,7 +2856,7 @@ z_index = 1
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6784314, 1, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 20
 text = "9999999"
 
@@ -2751,7 +2871,7 @@ offset_right = 130.2146
 offset_bottom = 213.2468
 grow_horizontal = 2
 scale = Vector2(0.6146977, 0.8602525)
-texture = ExtResource("44_pxd2t")
+texture = ExtResource("60_amk7x")
 
 [node name="DaysLabel" type="Label" parent="HUD/BaseUI/res_panel" unique_id=398633716]
 layout_mode = 1
@@ -2829,7 +2949,7 @@ offset_top = -401.802
 offset_right = 69.40912
 offset_bottom = 1022.3799
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("57_vxr4q")
+texture = ExtResource("61_kyfdo")
 
 [node name="Default_worker" type="Button" parent="HUD/BaseUI/workers_panel" unique_id=1182929519 groups=["Work_panels"]]
 custom_minimum_size = Vector2(75, 75)
@@ -2853,8 +2973,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("11_3we6r")
+script = ExtResource("63_myd6q")
+res = ExtResource("64_akcfr")
 is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=700335767]
@@ -2870,7 +2990,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -2891,7 +3011,7 @@ offset_bottom = -57.604916
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("43_0i35y")
+texture = ExtResource("66_y0mkd")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2911,7 +3031,7 @@ offset_right = 2.0318604
 offset_bottom = -56.569332
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("43_0i35y")
+texture = ExtResource("66_y0mkd")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2929,7 +3049,7 @@ offset_right = -17.0
 offset_bottom = -65.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_273he")
+texture = ExtResource("25_6ngqc")
 expand_mode = 3
 stretch_mode = 5
 
@@ -2956,7 +3076,7 @@ offset_left = 34.0
 offset_top = -24.0
 offset_right = 71.0
 offset_bottom = 1.0
-theme_override_fonts/font = ExtResource("44_71vvp")
+theme_override_fonts/font = ExtResource("59_pt2su")
 theme_override_font_sizes/font_size = 24
 text = "10"
 
@@ -2999,8 +3119,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("67_wo272")
+script = ExtResource("63_myd6q")
+res = ExtResource("67_211c7")
 is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=829519852]
@@ -3015,7 +3135,7 @@ offset_right = -6.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3036,7 +3156,7 @@ offset_bottom = -51.10676
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3058,7 +3178,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3090,8 +3210,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("14_m2kq4")
+script = ExtResource("63_myd6q")
+res = ExtResource("70_essfe")
 is_open = true
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=580813894]
@@ -3107,7 +3227,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3128,7 +3248,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3150,7 +3270,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3182,8 +3302,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("15_vlsf6")
+script = ExtResource("63_myd6q")
+res = ExtResource("71_6ejo6")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=310960703]
 show_behind_parent = true
@@ -3198,7 +3318,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3219,7 +3339,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3240,7 +3360,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3271,8 +3391,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("17_6p561")
+script = ExtResource("63_myd6q")
+res = ExtResource("72_dptud")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=563010965]
 show_behind_parent = true
@@ -3287,7 +3407,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3308,7 +3428,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3329,7 +3449,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3360,8 +3480,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("16_7yne8")
+script = ExtResource("63_myd6q")
+res = ExtResource("73_416c6")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=978603952]
 show_behind_parent = true
@@ -3376,7 +3496,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3397,7 +3517,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3418,7 +3538,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3449,8 +3569,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("65_h4qp7")
+script = ExtResource("63_myd6q")
+res = ExtResource("74_tkp5h")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=7811691]
 show_behind_parent = true
@@ -3465,7 +3585,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3486,7 +3606,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3507,7 +3627,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3538,8 +3658,8 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
-script = ExtResource("10_sbivs")
-res = ExtResource("66_vxr4q")
+script = ExtResource("63_myd6q")
+res = ExtResource("75_sr6vm")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=340807096]
 show_behind_parent = true
@@ -3554,7 +3674,7 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
@@ -3575,7 +3695,7 @@ offset_bottom = -51.10682
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.265, 1.265)
-texture = ExtResource("69_r8b8i")
+texture = ExtResource("68_pphls")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3596,7 +3716,7 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("14_opxjv")
+texture = ExtResource("69_snyfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3685,7 +3805,7 @@ offset_left = 30.36874
 offset_top = 17.020536
 offset_right = 138.82864
 offset_bottom = 125.48046
-texture = ExtResource("16_r8b8i")
+texture = ExtResource("18_sfvcy")
 
 [node name="UI_animator" type="AnimationPlayer" parent="HUD" unique_id=735371404]
 libraries/ = SubResource("AnimationLibrary_6p561")
@@ -3698,7 +3818,7 @@ offset_right = -30.0
 offset_bottom = -42.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
-texture = ExtResource("4_igchu")
+texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 4
 
@@ -3710,7 +3830,100 @@ offset_left = -9.033333
 offset_top = -8.0
 offset_right = 88.03333
 offset_bottom = 88.0
-texture = ExtResource("53_bg06i")
+texture = ExtResource("78_adhno")
+
+[node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
+layer = 3
+script = ExtResource("2_tbnlw")
+
+[node name="Control" type="Control" parent="Tutorial" unique_id=506205110]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="1_slide" type="Control" parent="Tutorial/Control" unique_id=1902754606]
+modulate = Color(1, 1, 1, 0.7529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=1796307636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -128.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=863192485]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1792.0
+offset_top = 328.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=115742838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1792.0
+offset_bottom = -856.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=1226338776]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1896.0
+offset_top = 224.0
+offset_bottom = -752.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TouchZone" type="TextureRect" parent="Tutorial/Control/1_slide" unique_id=281685366]
+layout_mode = 0
+offset_left = 1792.0
+offset_top = 224.0
+offset_right = 1896.0
+offset_bottom = 328.0
+mouse_default_cursor_shape = 3
+texture = SubResource("GradientTexture2D_tbnlw")
+script = ExtResource("80_tbnlw")
+
+[node name="Label" type="Label" parent="Tutorial/Control/1_slide" unique_id=285590]
+layout_mode = 0
+offset_left = 1820.0
+offset_top = 200.0
+offset_right = 1874.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ПКМ"
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
 layer = -1
@@ -3724,7 +3937,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("54_yiww8")
+script = ExtResource("80_85x56")
 camera = NodePath("../../Camera/Camera")
 sensitivity = 10.0
 metadata/_edit_lock_ = true
@@ -3732,7 +3945,7 @@ metadata/_edit_lock_ = true
 [node name="Camera" type="RigidBody3D" parent="." unique_id=308092841]
 transform = Transform3D(-0.7071067, 0, -0.70710677, 0, 1, 0, 0.7071067, 0, -0.70710677, -5, 20, -5)
 gravity_scale = 0.0
-script = ExtResource("1_yfilh")
+script = ExtResource("81_702ju")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera" unique_id=234247809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 2.9802322e-08, 1, 0, 0, 0)
@@ -3838,129 +4051,129 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -18.39)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid" unique_id=763399822 instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid" unique_id=763399822 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 
-[node name="Cell2" parent="Grid" unique_id=1596936030 instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid" unique_id=1596936030 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 
-[node name="Cell3" parent="Grid" unique_id=1935726789 instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid" unique_id=1935726789 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 has_building = true
-current_build = ExtResource("54_nbuuu")
+current_build = ExtResource("86_syr28")
 
-[node name="Cell4" parent="Grid" unique_id=494276039 instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid" unique_id=494276039 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 
-[node name="Cell5" parent="Grid" unique_id=1404528750 instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid" unique_id=1404528750 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 has_building = true
-current_build = ExtResource("54_nbuuu")
+current_build = ExtResource("86_syr28")
 
-[node name="Cell6" parent="Grid" unique_id=1518727180 instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid" unique_id=1518727180 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 
-[node name="Cell7" parent="Grid" unique_id=1395101552 instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid" unique_id=1395101552 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 
-[node name="Cell8" parent="Grid" unique_id=232065880 instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid" unique_id=232065880 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 
-[node name="Cell9" parent="Grid" unique_id=1178797336 instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid" unique_id=1178797336 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 has_building = true
-current_build = ExtResource("54_nbuuu")
+current_build = ExtResource("86_syr28")
 
-[node name="Cell10" parent="Grid" unique_id=947708363 instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid" unique_id=947708363 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 has_building = true
-current_build = ExtResource("54_nbuuu")
+current_build = ExtResource("86_syr28")
 
-[node name="Cell11" parent="Grid" unique_id=981151440 instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid" unique_id=981151440 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 has_building = true
-current_build = ExtResource("54_nbuuu")
+current_build = ExtResource("86_syr28")
 
-[node name="Cell12" parent="Grid" unique_id=1113313182 instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid" unique_id=1113313182 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 
-[node name="Cell13" parent="Grid" unique_id=1780596471 instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid" unique_id=1780596471 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 
-[node name="Cell14" parent="Grid" unique_id=341425723 instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid" unique_id=341425723 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 
-[node name="Cell15" parent="Grid" unique_id=978627363 instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid" unique_id=978627363 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 
-[node name="Cell16" parent="Grid" unique_id=1710761494 instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid" unique_id=1710761494 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 
 [node name="Grid2" type="Node3D" parent="." unique_id=1482840738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.46, 0, -0.40999985)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid2" unique_id=1547950247 instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid2" unique_id=1547950247 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 zone = 2
 
-[node name="Cell2" parent="Grid2" unique_id=1033658119 instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid2" unique_id=1033658119 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 zone = 2
 
-[node name="Cell3" parent="Grid2" unique_id=1852605408 instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid2" unique_id=1852605408 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell4" parent="Grid2" unique_id=251225972 instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid2" unique_id=251225972 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell5" parent="Grid2" unique_id=889548328 instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid2" unique_id=889548328 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell6" parent="Grid2" unique_id=406917915 instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid2" unique_id=406917915 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell7" parent="Grid2" unique_id=1587934164 instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid2" unique_id=1587934164 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 zone = 2
 
-[node name="Cell8" parent="Grid2" unique_id=207814654 instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid2" unique_id=207814654 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 zone = 2
 
-[node name="Cell9" parent="Grid2" unique_id=1344611166 instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid2" unique_id=1344611166 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell10" parent="Grid2" unique_id=1366692966 instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid2" unique_id=1366692966 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 zone = 2
 
-[node name="Cell11" parent="Grid2" unique_id=1150566900 instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid2" unique_id=1150566900 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 zone = 2
 
-[node name="Cell12" parent="Grid2" unique_id=941778615 instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid2" unique_id=941778615 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 zone = 2
 
-[node name="Cell13" parent="Grid2" unique_id=1002099251 instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid2" unique_id=1002099251 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 zone = 2
 
-[node name="Cell14" parent="Grid2" unique_id=842100619 instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid2" unique_id=842100619 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 zone = 2
 
-[node name="Cell15" parent="Grid2" unique_id=1793316050 instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid2" unique_id=1793316050 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 zone = 2
 
-[node name="Cell16" parent="Grid2" unique_id=452830431 instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid2" unique_id=452830431 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 2
 
@@ -3968,67 +4181,67 @@ zone = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.040001, 0, -0.40999985)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid3" unique_id=964715096 instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid3" unique_id=964715096 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 zone = 3
 
-[node name="Cell2" parent="Grid3" unique_id=562415011 instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid3" unique_id=562415011 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 zone = 3
 
-[node name="Cell3" parent="Grid3" unique_id=369974978 instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid3" unique_id=369974978 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 zone = 3
 
-[node name="Cell4" parent="Grid3" unique_id=1427230509 instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid3" unique_id=1427230509 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 zone = 3
 
-[node name="Cell5" parent="Grid3" unique_id=1436562496 instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid3" unique_id=1436562496 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 3
 
-[node name="Cell6" parent="Grid3" unique_id=731291441 instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid3" unique_id=731291441 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 zone = 3
 
-[node name="Cell7" parent="Grid3" unique_id=1588297823 instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid3" unique_id=1588297823 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 zone = 3
 
-[node name="Cell8" parent="Grid3" unique_id=1149012687 instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid3" unique_id=1149012687 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 zone = 3
 
-[node name="Cell9" parent="Grid3" unique_id=1445482231 instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid3" unique_id=1445482231 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 zone = 3
 
-[node name="Cell10" parent="Grid3" unique_id=2105892287 instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid3" unique_id=2105892287 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 zone = 3
 
-[node name="Cell11" parent="Grid3" unique_id=1409723946 instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid3" unique_id=1409723946 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 zone = 3
 
-[node name="Cell12" parent="Grid3" unique_id=1734270130 instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid3" unique_id=1734270130 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 zone = 3
 
-[node name="Cell13" parent="Grid3" unique_id=2146096571 instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid3" unique_id=2146096571 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 zone = 3
 
-[node name="Cell14" parent="Grid3" unique_id=1099743478 instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid3" unique_id=1099743478 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 zone = 3
 
-[node name="Cell15" parent="Grid3" unique_id=638685586 instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid3" unique_id=638685586 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 zone = 3
 
-[node name="Cell16" parent="Grid3" unique_id=745983413 instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid3" unique_id=745983413 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 3
 
@@ -4036,67 +4249,67 @@ zone = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.040001, 0, 17.59)
 metadata/_edit_group_ = true
 
-[node name="Cell" parent="Grid4" unique_id=471799587 instance=ExtResource("4_4tceg")]
+[node name="Cell" parent="Grid4" unique_id=471799587 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 0)
 zone = 4
 
-[node name="Cell2" parent="Grid4" unique_id=909856618 instance=ExtResource("4_4tceg")]
+[node name="Cell2" parent="Grid4" unique_id=909856618 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 0)
 zone = 4
 
-[node name="Cell3" parent="Grid4" unique_id=2015559034 instance=ExtResource("4_4tceg")]
+[node name="Cell3" parent="Grid4" unique_id=2015559034 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -4.5)
 zone = 4
 
-[node name="Cell4" parent="Grid4" unique_id=1543251768 instance=ExtResource("4_4tceg")]
+[node name="Cell4" parent="Grid4" unique_id=1543251768 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, -4.5)
 zone = 4
 
-[node name="Cell5" parent="Grid4" unique_id=575643590 instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid4" unique_id=575643590 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 4
 
-[node name="Cell6" parent="Grid4" unique_id=1123210531 instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid4" unique_id=1123210531 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 zone = 4
 
-[node name="Cell7" parent="Grid4" unique_id=1744037515 instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid4" unique_id=1744037515 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 zone = 4
 
-[node name="Cell8" parent="Grid4" unique_id=486580992 instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid4" unique_id=486580992 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 zone = 4
 
-[node name="Cell9" parent="Grid4" unique_id=1300801454 instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid4" unique_id=1300801454 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 zone = 4
 
-[node name="Cell10" parent="Grid4" unique_id=1623846510 instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid4" unique_id=1623846510 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 zone = 4
 
-[node name="Cell11" parent="Grid4" unique_id=1412152619 instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid4" unique_id=1412152619 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 zone = 4
 
-[node name="Cell12" parent="Grid4" unique_id=501931514 instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid4" unique_id=501931514 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 zone = 4
 
-[node name="Cell13" parent="Grid4" unique_id=1169275526 instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid4" unique_id=1169275526 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 zone = 4
 
-[node name="Cell14" parent="Grid4" unique_id=562340398 instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid4" unique_id=562340398 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 zone = 4
 
-[node name="Cell15" parent="Grid4" unique_id=1382266992 instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid4" unique_id=1382266992 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 zone = 4
 
-[node name="Cell16" parent="Grid4" unique_id=263974003 instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid4" unique_id=263974003 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 4
 
@@ -4104,55 +4317,55 @@ zone = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.54, 0, 17.59)
 metadata/_edit_group_ = true
 
-[node name="Cell5" parent="Grid5" unique_id=1126394595 instance=ExtResource("4_4tceg")]
+[node name="Cell5" parent="Grid5" unique_id=1126394595 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, 4.5)
 zone = 5
 
-[node name="Cell6" parent="Grid5" unique_id=131664162 instance=ExtResource("4_4tceg")]
+[node name="Cell6" parent="Grid5" unique_id=131664162 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, 0.13032341, 4.5)
 zone = 5
 
-[node name="Cell7" parent="Grid5" unique_id=1551920816 instance=ExtResource("4_4tceg")]
+[node name="Cell7" parent="Grid5" unique_id=1551920816 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, 4.5)
 zone = 5
 
-[node name="Cell8" parent="Grid5" unique_id=1242235096 instance=ExtResource("4_4tceg")]
+[node name="Cell8" parent="Grid5" unique_id=1242235096 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9.685755e-08)
 zone = 5
 
-[node name="Cell9" parent="Grid5" unique_id=633287237 instance=ExtResource("4_4tceg")]
+[node name="Cell9" parent="Grid5" unique_id=633287237 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -4.5)
 zone = 5
 
-[node name="Cell10" parent="Grid5" unique_id=793175713 instance=ExtResource("4_4tceg")]
+[node name="Cell10" parent="Grid5" unique_id=793175713 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.13032341, -9)
 zone = 5
 
-[node name="Cell11" parent="Grid5" unique_id=1939865009 instance=ExtResource("4_4tceg")]
+[node name="Cell11" parent="Grid5" unique_id=1939865009 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.13032341, -9)
 zone = 5
 
-[node name="Cell12" parent="Grid5" unique_id=1525904532 instance=ExtResource("4_4tceg")]
+[node name="Cell12" parent="Grid5" unique_id=1525904532 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.13032341, -9)
 zone = 5
 
-[node name="Cell13" parent="Grid5" unique_id=1138572093 instance=ExtResource("4_4tceg")]
+[node name="Cell13" parent="Grid5" unique_id=1138572093 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -9)
 zone = 5
 
-[node name="Cell14" parent="Grid5" unique_id=391815693 instance=ExtResource("4_4tceg")]
+[node name="Cell14" parent="Grid5" unique_id=391815693 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, -4.5)
 zone = 5
 
-[node name="Cell15" parent="Grid5" unique_id=1717934108 instance=ExtResource("4_4tceg")]
+[node name="Cell15" parent="Grid5" unique_id=1717934108 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 0)
 zone = 5
 
-[node name="Cell16" parent="Grid5" unique_id=620340937 instance=ExtResource("4_4tceg")]
+[node name="Cell16" parent="Grid5" unique_id=620340937 instance=ExtResource("85_wrv0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 5
 
-[node name="Monolith" parent="Grid5" unique_id=1656646855 instance=ExtResource("58_71vvp")]
+[node name="Monolith" parent="Grid5" unique_id=1656646855 instance=ExtResource("87_xerpr")]
 transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0.706419, 0.11864605, -2.2798119)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1585884179]
@@ -4273,6 +4486,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.650001, 0)
 shape = SubResource("BoxShape3D_vlsf6")
 debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 
+[connection signal="animation_finished" from="Fade/Fade" to="Pause" method="_on_fade"]
 [connection signal="button_down" from="DEBUG/MenuButton" to="DEBUG" method="menu_button_button_down"]
 [connection signal="pressed" from="DEBUG/add" to="DEBUG" method="_pressed"]
 [connection signal="pressed" from="DEBUG/Full" to="DEBUG" method="_on_full_pressed"]

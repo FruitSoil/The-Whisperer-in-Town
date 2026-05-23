@@ -8,12 +8,11 @@
 script = ExtResource("3_a2p5u")
 icon = ExtResource("2_hmq2n")
 quest_name = "Знакомство, часть 1"
-is_mandatory = false
 character_name = "Администрация"
-quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
-text_greetings = "Здравствуйте это алабуга политех"
-answer_agree = "Окей"
+quest_after = Array[String](["res://resources/Quests/TutorialPart2.tres"])
+text_greetings = "Туториал часть 1"
+answer_agree = "Продолжить"
 answer_wait = "Подождите"
 answer_reject = "Сбросить трубку"
-text_reject = "*Вы слышите гудки на той стороне, после чего звонок заканчивается*"
+text_reject = "*Вы слышите гудки на той стороне, после чего звук исчезает*"
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
