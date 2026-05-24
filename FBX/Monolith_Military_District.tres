@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d3e8liy1u2vb5"]
+
+[ext_resource type="Texture2D" uid="uid://crlobniqf4wg4" path="res://Images/UV/FinalZone/Monolith_Military_District_Base_color.png" id="1_brr4n"]
+[ext_resource type="Texture2D" uid="uid://cnayag21a86ug" path="res://Images/UV/FinalZone/Monolith_Military_District_Emissive.png" id="2_0gw46"]
+
+[resource]
+albedo_texture = ExtResource("1_brr4n")
+emission_enabled = true
+emission_texture = ExtResource("2_0gw46")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ccsir7ev5yfu8"]
+
+[ext_resource type="PackedScene" uid="uid://cuiyqcjmger8p" path="res://Monolith_Military_District.fbx" id="1_lxt0f"]
+[ext_resource type="Material" uid="uid://d3e8liy1u2vb5" path="res://FBX/Monolith_Military_District.tres" id="2_lw4ly"]
+[ext_resource type="Script" uid="uid://e0g78gw1cgng" path="res://FBX/AlarmLightFlash.gd" id="3_k4yrd"]
+
+[node name="Monolith_Military_District" unique_id=198883387 instance=ExtResource("1_lxt0f")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="Plane" parent="." index="0" unique_id=2002797362]
+material_override = ExtResource("2_lw4ly")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=529764748]
+transform = Transform3D(0.9998031, 0.007802736, -0.018243818, -0.007799942, 0.9999696, 0.0002242803, 0.018245012, -8.1935425e-05, 0.9998336, -0.3261668, 1.0687673, -2.019113)
+light_color = Color(0.9529412, 0.10980392, 0.105882354, 1)
+omni_range = 0.437
+script = ExtResource("3_k4yrd")

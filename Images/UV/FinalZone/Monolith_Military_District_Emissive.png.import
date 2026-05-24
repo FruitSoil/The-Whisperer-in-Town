@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0b4hdsekp3qq"
-path.s3tc="res://.godot/imported/scientist.PNG-72f86e8dfac5bb7f1340c421eeb765f5.s3tc.ctex"
+uid="uid://cnayag21a86ug"
+path.s3tc="res://.godot/imported/Monolith_Military_District_Emissive.png-1df724d0468cc939f10c2a8bfd23aac7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/portairs/scientist.PNG"
-dest_files=["res://.godot/imported/scientist.PNG-72f86e8dfac5bb7f1340c421eeb765f5.s3tc.ctex"]
+source_file="res://Images/UV/FinalZone/Monolith_Military_District_Emissive.png"
+dest_files=["res://.godot/imported/Monolith_Military_District_Emissive.png-1df724d0468cc939f10c2a8bfd23aac7.s3tc.ctex"]
 
 [params]
 
