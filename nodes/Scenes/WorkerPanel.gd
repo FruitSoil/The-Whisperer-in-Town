@@ -127,5 +127,8 @@ func add_quest(qst: Quest):
 
 func quest(event: InputEvent):
 	if event.is_action_released("displace") and quest_res != null:
+		get_dialogue()
+
+func get_dialogue():
 		%Dialogue.worker_panel = self
 		%Dialogue.open_window(quest_res)

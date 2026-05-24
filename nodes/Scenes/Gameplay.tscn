@@ -79,9 +79,10 @@
 [ext_resource type="Texture2D" uid="uid://brk7a3rn64jgw" path="res://Images/UI/ui4_button1_idle.png" id="76_ijkp0"]
 [ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="77_6kshd"]
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="78_adhno"]
+[ext_resource type="Script" uid="uid://ck78qsxaksw4b" path="res://nodes/Scenes/arrow.gd" id="79_2ho68"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="79_kxjjv"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="80_85x56"]
-[ext_resource type="Script" uid="uid://cnd3qqtiq6gy7" path="res://nodes/Scenes/tutorial_zone.gd" id="80_tbnlw"]
+[ext_resource type="Shader" uid="uid://qrjppmkkny2j" path="res://other/Shaders/Transparent.gdshader" id="80_tbnlw"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="81_702ju"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="82_bppva"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="83_olxs2"]
@@ -876,20 +877,33 @@ _data = {
 &"To": SubResource("Animation_7yne8")
 }
 
-[sub_resource type="Gradient" id="Gradient_7ukgp"]
-offsets = PackedFloat32Array(0.88785046, 0.92523366)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ho68"]
+shader = ExtResource("80_tbnlw")
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tbnlw"]
-gradient = SubResource("Gradient_7ukgp")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6jij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ukgp"]
 bg_color = Color(0, 0.2901961, 0, 0)
 shadow_color = Color(1.3897754e-06, 0.32097825, 1.4439226e-07, 0.8509804)
 shadow_size = 7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbnlw"]
+shader = ExtResource("80_tbnlw")
+
+[sub_resource type="Gradient" id="Gradient_tbnlw"]
+offsets = PackedFloat32Array(0.70242214, 0.83391005)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ho68"]
+gradient = SubResource("Gradient_tbnlw")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.517094)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6jij"]
+texture = SubResource("GradientTexture2D_2ho68")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ha1fh"]
 shader = ExtResource("79_kxjjv")
@@ -3832,6 +3846,41 @@ offset_right = 88.03333
 offset_bottom = 88.0
 texture = ExtResource("78_adhno")
 
+[node name="Arrow" type="TextureRect" parent="HUD" unique_id=1862637758 node_paths=PackedStringArray("target")]
+visible = false
+offset_left = 224.0
+offset_top = 84.0
+offset_right = 294.0
+offset_bottom = 154.0
+rotation = 1.5707964
+texture = ExtResource("17_xxqh0")
+script = ExtResource("79_2ho68")
+target = NodePath("../../Grid/Cell4")
+
+[node name="Arrow2" type="TextureRect" parent="HUD" unique_id=2139665533 node_paths=PackedStringArray("target")]
+visible = false
+offset_left = 224.0
+offset_top = 84.0
+offset_right = 294.0
+offset_bottom = 154.0
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_xxqh0")
+script = ExtResource("79_2ho68")
+target = NodePath("../../Grid/Cell4")
+
+[node name="Arrow3" type="TextureRect" parent="HUD" unique_id=2063686966 node_paths=PackedStringArray("target")]
+visible = false
+offset_left = 224.0
+offset_top = 84.0
+offset_right = 294.0
+offset_bottom = 154.0
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_xxqh0")
+script = ExtResource("79_2ho68")
+target = NodePath("../../Grid/Cell4")
+
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
 script = ExtResource("2_tbnlw")
@@ -3847,83 +3896,191 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="1_slide" type="Control" parent="Tutorial/Control" unique_id=1902754606]
-modulate = Color(1, 1, 1, 0.7529412)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_lock_ = true
+[node name="CG" type="CanvasGroup" parent="Tutorial/Control" unique_id=1947426528]
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=1796307636]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -128.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="Slide_1" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1796307636]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
 
-[node name="ColorRect2" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=863192485]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1792.0
-offset_top = 328.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=115742838]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1792.0
-offset_bottom = -856.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Tutorial/Control/1_slide" unique_id=1226338776]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1896.0
-offset_top = 224.0
-offset_bottom = -752.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="TouchZone" type="TextureRect" parent="Tutorial/Control/1_slide" unique_id=281685366]
+[node name="Touch1" type="Button" parent="Tutorial/Control/CG/Slide_1" unique_id=605507108]
+material = SubResource("ShaderMaterial_2ho68")
 layout_mode = 0
-offset_left = 1792.0
+offset_left = 1784.0
 offset_top = 224.0
-offset_right = 1896.0
+offset_right = 1888.0
 offset_bottom = 328.0
-mouse_default_cursor_shape = 3
-texture = SubResource("GradientTexture2D_tbnlw")
-script = ExtResource("80_tbnlw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
+button_mask = 2
 
-[node name="Label" type="Label" parent="Tutorial/Control/1_slide" unique_id=285590]
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_1" unique_id=285590]
 layout_mode = 0
-offset_left = 1820.0
+offset_left = 1812.0
 offset_top = 200.0
-offset_right = 1874.0
+offset_right = 1866.0
 offset_bottom = 228.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ПКМ"
+
+[node name="Slide_2" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1519542231]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(1, 1, 1, 0)
+
+[node name="CR" type="ColorRect" parent="Tutorial/Control/CG/Slide_2" unique_id=1693671525]
+material = SubResource("ShaderMaterial_tbnlw")
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 604.0
+offset_right = 1684.0
+offset_bottom = 968.0
+
+[node name="CR2" type="ColorRect" parent="Tutorial/Control/CG/Slide_2" unique_id=532955633]
+material = SubResource("ShaderMaterial_tbnlw")
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 220.0
+offset_right = 1742.0
+offset_bottom = 784.0
+
+[node name="CR3" type="ColorRect" parent="Tutorial/Control/CG/Slide_2" unique_id=459008032]
+material = SubResource("ShaderMaterial_tbnlw")
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 516.0
+offset_right = 1276.0
+offset_bottom = 640.0
+rotation = 0.7853982
+
+[node name="CR4" type="ColorRect" parent="Tutorial/Control/CG/Slide_2" unique_id=1310055574]
+material = SubResource("ShaderMaterial_tbnlw")
+layout_mode = 0
+offset_left = 1688.0
+offset_top = 800.0
+offset_right = 1748.0
+offset_bottom = 956.1611
+rotation = 0.3925197
+
+[node name="CR5" type="ColorRect" parent="Tutorial/Control/CG/Slide_2" unique_id=2083494703]
+material = SubResource("ShaderMaterial_tbnlw")
+layout_mode = 0
+offset_left = 1682.0
+offset_top = 669.0
+offset_right = 1742.0
+offset_bottom = 825.1611
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_2" unique_id=1069642484]
+layout_mode = 0
+offset_left = 1392.0
+offset_top = 948.0
+offset_right = 1459.0
+offset_bottom = 976.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
+
+[node name="Touch1" type="Button" parent="Tutorial/Control/CG/Slide_2" unique_id=1409544851]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 1156.0
+offset_top = 792.0
+offset_right = 1668.0
+offset_bottom = 936.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
+
+[node name="Slide_3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1058855305]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
+
+[node name="Touch3" type="Button" parent="Tutorial/Control/CG/Slide_3" unique_id=889606100]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 344.0
+offset_top = 964.0
+offset_right = 732.0
+offset_bottom = 1092.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_3" unique_id=1230470576]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 947.0
+offset_right = 579.0
+offset_bottom = 975.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
+
+[node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
+
+[node name="Touch3" type="Button" parent="Tutorial/Control/CG/Slide_4" unique_id=731559349]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 530.46094
+offset_top = 629.0
+offset_right = 715.0703
+offset_bottom = 799.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_4" unique_id=1386179205]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 699.0
+offset_right = 770.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
+
+[node name="Slide_5" type="ColorRect" parent="Tutorial/Control/CG" unique_id=908285483]
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
+
+[node name="Touch5" type="Button" parent="Tutorial/Control/CG/Slide_5" unique_id=691237425]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 958.0
+offset_top = 967.0
+offset_right = 1226.0
+offset_bottom = 1093.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_5" unique_id=1163293132]
+layout_mode = 0
+offset_left = 1062.0
+offset_top = 942.0
+offset_right = 1120.0
+offset_bottom = 970.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
 layer = -1

@@ -85,6 +85,10 @@ func place(building: Building = %BaseUI.selected_build):
 	var inst = current_build.model.instantiate()
 	var rot = randi_range(0,3)
 	if current_build != load("uid://cm6r5ofrc0a8"):
+		if $"../../Tutorial".tutorial_stage == -1:
+			$"../../Tutorial".pressed(-1)
+			$"../../Tutorial".stage_change(-2)
+		
 		Global.total_buildings.append(building) 
 		$Charge_time.start()
 		$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
@@ -118,6 +122,12 @@ func displace():
 	current_combo = null
 	current_worker = null
 	has_worker = false
+	
+	if current_build == preload("res://resources/builds_res/Abandoned_District.tres"):
+		if $"../../Tutorial".builduing_displaced != 5:
+			$"../../Tutorial".builduing_displaced += 1
+		else:
+			$"../../Tutorial".pressed(5)
 	
 	print("Работник убран с клетки ", name, " из-за сноса района")
 	$Time_to_res.stop()
@@ -259,6 +269,10 @@ func charge_timeout() -> void:
 	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", size, 0.6)
 
 func click_res():
+	if $"../../Tutorial".tutorial_stage == -2:
+			$"../../Tutorial".pressed(-2)
+			$"../../Tutorial".stage_change(5)
+	
 	var twps = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", 0.0, 0.6)
 	

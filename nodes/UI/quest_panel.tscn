@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1xk6cghmugrw"]
 
-[ext_resource type="Script" uid="uid://kaeipa8mx1ee" path="res://quest_panel.gd" id="1_xeupp"]
+[ext_resource type="Script" uid="uid://kaeipa8mx1ee" path="res://nodes/UI/quest_panel.gd" id="1_xeupp"]
 [ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="2_8dyru"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="2_wrwnp"]
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="3_nrcl8"]
