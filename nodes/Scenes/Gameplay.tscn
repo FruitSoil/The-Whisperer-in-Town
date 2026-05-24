@@ -90,6 +90,9 @@
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="85_wrv0s"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="86_syr28"]
 [ext_resource type="PackedScene" uid="uid://c080abaxc8x5d" path="res://Buildings/monolith.tscn" id="87_xerpr"]
+[ext_resource type="PackedScene" uid="uid://bs8bfowvwbxjp" path="res://Buildings/terrain1/hill_1.tscn" id="88_exte1"]
+[ext_resource type="PackedScene" uid="uid://beftxo2do25ae" path="res://Buildings/terrain1/hill_2.tscn" id="89_7forp"]
+[ext_resource type="PackedScene" uid="uid://dkugkuulvh185" path="res://Buildings/terrain1/hill_3.tscn" id="90_w45vw"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -1072,10 +1075,6 @@ albedo_texture = SubResource("NoiseTexture2D_pem7d")
 uv1_scale = Vector3(0.3, 0.3, 0.3)
 uv1_triplanar = true
 uv1_world_triplanar = true
-
-[sub_resource type="PrismMesh" id="PrismMesh_w47nb"]
-material = SubResource("StandardMaterial3D_nbuuu")
-size = Vector3(34.2, 10.695, 28.365)
 
 [sub_resource type="PrismMesh" id="PrismMesh_3c4k5"]
 material = SubResource("StandardMaterial3D_nbuuu")
@@ -4153,22 +4152,6 @@ mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Node3D" type="Node3D" parent="Enviroment" unique_id=615693890]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1784388268]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 5.2000003, 0, -21.5)
-mesh = SubResource("PrismMesh_6bc7i")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1001968813]
-transform = Transform3D(0.258819, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.258819, -4.7999997, -0.4613266, -37.82965)
-mesh = SubResource("PrismMesh_6bc7i")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=754131091]
-transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, -34.399998, 0, -11.900001)
-mesh = SubResource("PrismMesh_6bc7i")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=42491836]
-transform = Transform3D(0.5, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.5, -29.200003, 0, -36.2)
-mesh = SubResource("PrismMesh_w47nb")
-
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=2114133108]
 transform = Transform3D(0.9975458, 0, 0.07001761, 0.009197286, 0.99133515, -0.13103437, -0.06941092, 0.13135675, 0.9889022, -34.1, -1.513977, 4.4000006)
 mesh = SubResource("PrismMesh_6bc7i")
@@ -4196,6 +4179,21 @@ mesh = SubResource("PrismMesh_6bc7i")
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Enviroment/Node3D" unique_id=1609361661]
 transform = Transform3D(-0.6155652, 0, 0.788086, 0, 1, 0, -0.788086, 0, -0.6155652, 33.287422, -1.170495, 29.713284)
 mesh = SubResource("PrismMesh_6bc7i")
+
+[node name="Hill_1" parent="Enviroment/Node3D" unique_id=366038351 instance=ExtResource("88_exte1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.5548253, -0.4459033, -21.309042)
+
+[node name="Hill_2" parent="Enviroment/Node3D" unique_id=188228213 instance=ExtResource("89_7forp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.8172946, -0.73459697, -38.535572)
+
+[node name="Hill_3" parent="Enviroment/Node3D" unique_id=1097430371 instance=ExtResource("90_w45vw")]
+transform = Transform3D(-3.1618176, 0, -2.4500837, 0, 4, 0, 2.4500837, 0, -3.1618176, -19.576015, 0, -41.323383)
+
+[node name="Hill_4" parent="Enviroment/Node3D" unique_id=1788319547 instance=ExtResource("88_exte1")]
+transform = Transform3D(1.0268968, 0, 2.8187733, 0, 3, 0, -2.8187733, 0, 1.0268968, -35.911663, 0, -10.313371)
+
+[node name="Hill_5" parent="Enviroment/Node3D" unique_id=1720168259 instance=ExtResource("89_7forp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -37.57517, 0, -29.392202)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1208465372]
 transform = Transform3D(0.20278737, 0.65395695, 0.7288468, 0, -0.7443116, 0.6678326, 0.9792229, -0.13542801, -0.15093695, 0, 14.49, 0)
@@ -4523,7 +4521,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.13032341, 4.5)
 zone = 5
 
 [node name="Monolith" parent="Grid5" unique_id=1656646855 instance=ExtResource("87_xerpr")]
-transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0.706419, 0.11864605, -2.2798119)
+transform = Transform3D(-4.0214477e-08, 0, 0.92, 0, 1, 0, -0.92, 0, -4.0214477e-08, 0.706419, 0.11864605, -2.2798119)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1585884179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, -18.5)

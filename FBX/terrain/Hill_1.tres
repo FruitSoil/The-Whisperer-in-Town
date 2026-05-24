@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgtefyp0fejt2"]
+
+[ext_resource type="Texture2D" uid="uid://dmv33u16i3g8w" path="res://Images/UV/Terrain/Hill_1_Base_color.png" id="1_7naea"]
+[ext_resource type="Texture2D" uid="uid://cylcncdeflvup" path="res://Images/UV/Terrain/Hill_1_Height.png" id="2_dam2c"]
+[ext_resource type="Texture2D" uid="uid://fsj4dkp58dfg" path="res://Images/UV/Terrain/Hill_1_Normal.png" id="3_g7mcx"]
+
+[resource]
+albedo_texture = ExtResource("1_7naea")
+normal_enabled = true
+normal_texture = ExtResource("3_g7mcx")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("2_dam2c")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkugkuulvh185"]
+
+[ext_resource type="PackedScene" uid="uid://cq4lh5hw7e7ca" path="res://FBX/terrain/Hill_3.fbx" id="1_7m7pp"]
+[ext_resource type="Material" uid="uid://d3meih6i4edm4" path="res://FBX/terrain/Hill_3.tres" id="2_p56kb"]
+
+[node name="Hill_3" unique_id=1097430371 instance=ExtResource("1_7m7pp")]
+
+[node name="холм 3" parent="." index="0" unique_id=1082774742]
+material_override = ExtResource("2_p56kb")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bs8bfowvwbxjp"]
+
+[ext_resource type="PackedScene" uid="uid://bffmfx40605nh" path="res://FBX/terrain/Hill_1.fbx" id="1_xvbdn"]
+[ext_resource type="Material" uid="uid://bgtefyp0fejt2" path="res://FBX/terrain/Hill_1.tres" id="2_5ncgr"]
+
+[node name="Hill_1" unique_id=366038351 instance=ExtResource("1_xvbdn")]
+
+[node name="Plane" parent="." index="0" unique_id=1027803915]
+material_override = ExtResource("2_5ncgr")
