@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://ccsir7ev5yfu8"]
 
-[ext_resource type="PackedScene" uid="uid://cuiyqcjmger8p" path="res://Monolith_Military_District.fbx" id="1_lxt0f"]
+[ext_resource type="PackedScene" uid="uid://cuiyqcjmger8p" path="res://FBX/Monolith_Military_District.fbx" id="1_lxt0f"]
 [ext_resource type="Material" uid="uid://d3e8liy1u2vb5" path="res://FBX/Monolith_Military_District.tres" id="2_lw4ly"]
-[ext_resource type="Script" uid="uid://e0g78gw1cgng" path="res://FBX/AlarmLightFlash.gd" id="3_k4yrd"]
+
+[sub_resource type="GDScript" id="GDScript_f51ar"]
+resource_name = "FlahingLight"
+script/source = "extends OmniLight3D
+func _process(_delta: float) -> void:
+	var time = Time.get_ticks_msec() / 1000.0
+	var wave = sin(time * 4.0) * 5.0
+	light_energy = clamp(wave,0, 999)
+"
 
 [node name="Monolith_Military_District" unique_id=198883387 instance=ExtResource("1_lxt0f")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
@@ -15,4 +23,4 @@ transform = Transform3D(1.1108924, 0.008669708, -0.020270912, -0.008666603, 1.11
 light_color = Color(0.9529412, 0.10980392, 0.105882354, 1)
 light_energy = 0.0
 omni_range = 1.25
-script = ExtResource("3_k4yrd")
+script = SubResource("GDScript_f51ar")

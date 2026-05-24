@@ -231,6 +231,7 @@ func _on_zone_buy() -> void:
 			change_label(selected_zone.second_res_type, false)
 			print(selected_zone.name, " разблокирован!")
 			_on_buildings_pressed()
+			$Store_UI/HBC/StrechController.press($Store_UI/HBC/Buildings)
 			match selected_zone.number:
 				2:
 					Global.is_zone_2_open = true

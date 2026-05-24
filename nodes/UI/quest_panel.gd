@@ -89,6 +89,7 @@ func press():
 				break
 		$"../../../../Store_UI/Build_scroll_list".visible = false
 		$"../../../../Store_UI/Zones_View".visible = true
+		$"../../../../Store_UI/HBC/StrechController".press($"../../../../Store_UI/HBC/Zones")
 	else:
 		$"../../../../../../Dialogue".worker_panel = worker
 		$"../../../../../../Dialogue".open_window(quest_res)

@@ -26,6 +26,7 @@ func change_desc():
 	text = "Зона " + str(res.number) + " - " + res.name
 	if check_zone_open_status_plus_one() or check_zone_open_status():
 		$"Condition".hide()
+		disabled = false
 	$"../../Desc/HBC/Buy/Res_label".text = str(res.first_res_count)
 	$"../../Desc/HBC/Buy/Res_icon".texture = Global.get_res_icon(res.first_res_type)
 	$"../../Desc/HBC/Buy/Res_label".value = res.first_res_count

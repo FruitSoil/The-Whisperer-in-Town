@@ -16,10 +16,17 @@ func _ready() -> void:
 
 
 func _on_mouse_hovered(is_hovered: bool):
-	set_tween()
-	tw.tween_property(control, "scale", scale_value if is_hovered else Vector2.ONE, time)
+	if set_tween():
+		tw.tween_property(control, "scale", scale_value if is_hovered else Vector2.ONE, time)
 
-func set_tween():
+func set_tween() -> bool:
+	if control is BaseButton:
+		if control.disabled:
+			return false
+		elif control.has_meta("buy"):
+			if control.get_parent().is_open == false:
+				return false
 	if tw:
 		tw.kill()
 	tw = create_tween().set_ease(ease).set_trans(trans).set_parallel(true)
+	return true

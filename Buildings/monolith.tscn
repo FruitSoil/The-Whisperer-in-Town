@@ -1,13 +1,28 @@
 [gd_scene format=3 uid="uid://c080abaxc8x5d"]
 
 [ext_resource type="PackedScene" uid="uid://di7x7sgbxlovx" path="res://FBX/Monolith.fbx" id="1_pdtgr"]
-[ext_resource type="Script" uid="uid://suopwtv35tmj" path="res://Buildings/monolith.gd" id="2_fw8jc"]
 [ext_resource type="Material" uid="uid://xjmugb2kge00" path="res://FBX/Monolith1.tres" id="2_xlerp"]
 [ext_resource type="Material" uid="uid://beb7bcggnabw2" path="res://FBX/Monolith2.tres" id="3_fw8jc"]
 
+[sub_resource type="GDScript" id="GDScript_pdtgr"]
+resource_name = "monolith"
+script/source = "extends Node3D
+
+func _ready() -> void:
+	play()
+
+func play():
+	if $AnimationPlayer.is_playing() == false:
+		$AnimationPlayer.play(\"Plane_012|Action\")
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	await get_tree().create_timer(6).timeout
+	play()
+"
+
 [node name="Monolith" unique_id=1656646855 instance=ExtResource("1_pdtgr")]
 transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0, 0, 0)
-script = ExtResource("2_fw8jc")
+script = SubResource("GDScript_pdtgr")
 
 [node name="Plane" parent="." index="0" unique_id=1575370518]
 material_override = ExtResource("2_xlerp")

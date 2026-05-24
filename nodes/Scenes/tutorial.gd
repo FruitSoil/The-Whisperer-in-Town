@@ -6,6 +6,9 @@ extends CanvasLayer
 @onready var touch_4: Button = $Control/CG/Slide_4/Touch3
 @onready var touch_5: Button = $Control/CG/Slide_5/Touch5
 @onready var touch_6: Button = $Control/CG/Slide_6/Touch5
+@onready var touch_7: Button = $Control/CG/Slide_7/Touch5
+@onready var touch_8: Button = $Control/CG/Slide_8/Touch5
+
 
 var arrows_ruin: Array
 
@@ -20,12 +23,16 @@ func _ready() -> void:
 	$Control/CG/Slide_4.hide()
 	$Control/CG/Slide_5.hide()
 	$Control/CG/Slide_6.hide()
+	$Control/CG/Slide_7.hide()
+	$Control/CG/Slide_8.hide()
 	touch_1.pressed.connect(pressed.bind(1))
 	touch_2.pressed.connect(pressed.bind(2))
 	touch_3.pressed.connect(pressed.bind(3))
 	touch_4.pressed.connect(pressed.bind(4))
 	touch_5.pressed.connect(pressed.bind(5))
 	touch_6.pressed.connect(pressed.bind(6))
+	touch_7.pressed.connect(pressed.bind(8))
+	touch_8.pressed.connect(pressed.bind(9))
 	stage_change(1)
 	await get_tree().create_timer(1).timeout
 	arrows_ruin = [$"../HUD/RuinArrow", $"../HUD/RuinArrow2", $"../HUD/RuinArrow3", $"../HUD/RuinArrow4", $"../HUD/RuinArrow5"]
@@ -70,6 +77,10 @@ func stage_change(stage: int = tutorial_stage):
 		7:
 			twmf($"../HUD/Arrow3",2)
 			$"../HUD/Arrow3".show()
+		8:
+			$Control/CG/Slide_7.show()
+		9:
+			$Control/CG/Slide_8.show()
 
 func twmf(node, time: float,to_black: bool = true):
 	if node is ColorRect:
@@ -140,3 +151,11 @@ func pressed(ID: int):
 			$Control/CG/Slide_6.hide()
 		7:
 			$"../HUD/Arrow3".hide()
+			tutorial_stage = 77
+		8:
+			$Control/CG/Slide_7.hide()
+			%BaseUI._on_quest_pressed()
+			stage_change(9)
+		9:
+			$Control/CG/Slide_8.hide()
+			$"../HUD/BaseUI/Quest_UI/Quest_scroll_list/VBС/Quest_panel".press()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bi6lo3ysdixn2"]
 
-[ext_resource type="Script" uid="uid://ce4xbmapjypjn" path="res://nodes/shop_var.gd" id="1_d4q41"]
+[ext_resource type="Script" uid="uid://ce4xbmapjypjn" path="res://nodes/UI/shop_var.gd" id="1_d4q41"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="1_dgv3n"]
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="2_dgv3n"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
@@ -111,6 +111,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_r4p40")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_h8wog")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3xjqp")
 text = "Купить"
+metadata/buy = true
 
 [node name="CompJuice" type="Node" parent="buy" unique_id=657433030]
 script = ExtResource("3_nmk4s")

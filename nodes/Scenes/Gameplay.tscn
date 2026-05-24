@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="62_nfnow"]
 [ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="63_myd6q"]
 [ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="64_akcfr"]
+[ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="65_hwrqn"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="65_pr6gd"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="66_y0mkd"]
 [ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_211c7"]
@@ -616,6 +617,34 @@ modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 texture = ExtResource("16_hn85b")
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
 
+[sub_resource type="GDScript" id="GDScript_hwrqn"]
+resource_name = "Strech_Tween"
+script/source = "extends Node
+
+@onready var build: Button = $\"../Buildings\"
+@onready var zones: Button = $\"../Zones\"
+
+func _ready() -> void:
+	build.pressed.connect(press.bind(build))
+	zones.pressed.connect(press.bind(zones))
+
+func press(node: Button):
+	var time: float = 0.3
+	var yellow = Color(\"fffc5eff\")
+	var twsr = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
+	if node == build:
+		twsr.tween_property(build, \"size_flags_stretch_ratio\", 1.5, time)
+		twsr.tween_property(build, \"self_modulate\", yellow, time)
+		twsr.tween_property(zones, \"size_flags_stretch_ratio\", 1, time)
+		twsr.tween_property(zones, \"self_modulate\", Color.WHITE, time)
+	else:
+		twsr.tween_property(build, \"size_flags_stretch_ratio\", 1, time)
+		twsr.tween_property(build, \"self_modulate\", Color.WHITE, time)
+		twsr.tween_property(zones, \"size_flags_stretch_ratio\", 1.5, time)
+		twsr.tween_property(zones, \"self_modulate\", yellow, time)
+		
+"
+
 [sub_resource type="Gradient" id="Gradient_igchu"]
 offsets = PackedFloat32Array(0.37988827, 0.82122904, 1)
 colors = PackedColorArray(1.6364455e-06, 0.7160926, 0.4147328, 1, 0.17447907, 0.51625013, 2.8878452e-07, 1, 0.33267987, 0.9100657, 3.85046e-07, 1)
@@ -1081,6 +1110,29 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 offsets = PackedFloat32Array(0.61877394, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwrqn"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_xegqy"]
+lightmap_size_hint = Vector2i(2, 2)
+material = SubResource("StandardMaterial3D_hwrqn")
+radius = 0.02
+height = 0.01
+radial_segments = 112
+
+[sub_resource type="Curve" id="Curve_hwrqn"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.02341137, 1), 0.0, 0.0, 0, 0, Vector2(0.9063546, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_xegqy"]
+_data = [Vector2(0, 0.5054348), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_5h554"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3344482, 2.0217392), 0.0, 0.0, 0, 0, Vector2(1, 0.04347849), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymfr8"]
 transparency = 1
 vertex_color_use_as_albedo = true
@@ -1212,7 +1264,6 @@ icon = ExtResource("12_5h554")
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
 layer = 5
-visible = false
 script = ExtResource("13_x1san")
 
 [node name="TextureRect" type="ColorRect" parent="Pause" unique_id=495866217]
@@ -1230,7 +1281,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -343.0
-offset_top = -350.6941
+offset_top = -306.0
 offset_right = 343.0
 offset_bottom = 382.6941
 grow_horizontal = 2
@@ -1243,7 +1294,7 @@ patch_margin_bottom = 149
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
 
-[node name="VBC" type="VBoxContainer" parent="Pause" unique_id=1062980811]
+[node name="VBC" type="VBoxContainer" parent="Pause" unique_id=1914576960]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1255,12 +1306,13 @@ offset_right = 203.0
 offset_bottom = 309.95593
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 39
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+alignment = 1
 
 [node name="Continue" type="Button" parent="Pause/VBC" unique_id=184900139]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
+size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
@@ -1292,10 +1344,13 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("17_xxqh0")
 
+[node name="CompJuice" type="Node" parent="Pause/VBC/Continue" unique_id=1624082581]
+script = ExtResource("65_hwrqn")
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Settings" type="Button" parent="Pause/VBC" unique_id=1580891146]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
+size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
@@ -1327,10 +1382,13 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("18_sfvcy")
 
+[node name="CompJuice" type="Node" parent="Pause/VBC/Settings" unique_id=1137333195]
+script = ExtResource("65_hwrqn")
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Exit_to main" type="Button" parent="Pause/VBC" unique_id=1321067021]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
@@ -1363,14 +1421,18 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("19_qcc36")
 
+[node name="CompJuice" type="Node" parent="Pause/VBC/Exit_to main" unique_id=1126046299]
+script = ExtResource("65_hwrqn")
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Label" type="Label" parent="Pause" unique_id=79810283]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -324.73682
-offset_top = 242.0
+offset_top = 266.0
 offset_right = 304.73682
-offset_bottom = 409.0
+offset_bottom = 433.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.43802017, 0.6193523, 0.3810408, 0.5019608)
 theme_override_font_sizes/font_size = 128
@@ -1405,6 +1467,7 @@ texture = SubResource("GradientTexture2D_r8b8i")
 metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="Pause" unique_id=135923403]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2055,6 +2118,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2338,7 +2402,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2392,13 +2455,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qwgbc")
 text = "Тут много снега и эмэмдемса"
 autowrap_mode = 2
 
-[node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=1549326206]
+[node name="HBC" type="Control" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=801120053]
 custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
-theme_override_constants/separation = 0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC" unique_id=1602760417]
-layout_mode = 2
+visible = false
+layout_mode = 0
+offset_right = 133.0
+offset_bottom = 95.0
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_r8b8i")
 
@@ -2451,7 +2516,10 @@ text = "Производство"
 horizontal_alignment = 1
 
 [node name="Buy" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC" unique_id=648191834]
-layout_mode = 2
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 95.0
+pivot_offset_ratio = Vector2(0.5, 1)
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_i4qq1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1h74t")
@@ -2463,10 +2531,10 @@ text = "
 
 [node name="Res_label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1664102521]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 13.0
-offset_right = 112.0
-offset_bottom = 36.0
+offset_left = 100.0
+offset_top = 14.0
+offset_right = 168.0
+offset_bottom = 37.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
 horizontal_alignment = 1
@@ -2475,20 +2543,20 @@ script = ExtResource("50_x8hrd")
 
 [node name="Res_icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1871172775]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 12.0
-offset_right = 55.0
-offset_bottom = 36.0
+offset_left = 87.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 37.0
 texture = SubResource("GradientTexture1D_igchu")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Res_label2" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1542952851]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 52.0
-offset_right = 112.0
-offset_bottom = 75.0
+offset_left = 100.0
+offset_top = 53.0
+offset_right = 168.0
+offset_bottom = 76.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
 horizontal_alignment = 1
@@ -2497,13 +2565,18 @@ script = ExtResource("50_x8hrd")
 
 [node name="Res_icon2" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1159359026]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 52.0
-offset_right = 55.0
-offset_bottom = 76.0
+offset_left = 87.0
+offset_top = 53.0
+offset_right = 111.0
+offset_bottom = 77.0
 texture = SubResource("GradientTexture1D_igchu")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1672351295]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.03, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Zones" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1445002185]
 layout_mode = 0
@@ -2548,6 +2621,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=781628252]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Zone_4" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1821832837 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
@@ -2582,6 +2660,11 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=341832612]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Zone_3" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1321977965 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
@@ -2618,6 +2701,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=490696305]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Zone_2" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1648467224 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
@@ -2651,6 +2739,11 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=638173416]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Zone_1" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=315991884 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
@@ -2687,6 +2780,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=368675691]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/Store_UI" unique_id=575475949]
 layout_mode = 1
 anchors_preset = -1
@@ -2701,8 +2799,10 @@ theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Buildings" type="Button" parent="HUD/BaseUI/Store_UI/HBC" unique_id=77504573]
+self_modulate = Color(1, 0.9882353, 0.36862746, 1)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_6tqxc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rocjm")
@@ -2710,6 +2810,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_kmfpd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqxc")
 theme_override_styles/focus = SubResource("StyleBoxTexture_6tqxc")
 text = "Районы"
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/HBC/Buildings" unique_id=1657704493]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Zones" type="Button" parent="HUD/BaseUI/Store_UI/HBC" unique_id=395839834]
 layout_mode = 2
@@ -2721,6 +2826,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_we6hb")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqxc")
 theme_override_styles/focus = SubResource("StyleBoxTexture_6tqxc")
 text = "Зоны"
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/HBC/Zones" unique_id=1851044167]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="StrechController" type="Node" parent="HUD/BaseUI/Store_UI/HBC" unique_id=2721363]
+script = SubResource("GDScript_hwrqn")
 
 [node name="Slider" type="VSlider" parent="HUD/BaseUI/Store_UI" unique_id=388494478]
 z_index = 98
@@ -3077,6 +3190,11 @@ script = ExtResource("63_myd6q")
 res = ExtResource("64_akcfr")
 is_open = true
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=939954574]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=185247137]
 show_behind_parent = true
 layout_mode = 1
@@ -3327,6 +3445,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=468907566]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="worker" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=990085711 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3433,6 +3556,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=711265685]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="worker2" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=2104168252 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3535,6 +3663,11 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1237321517]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -3639,6 +3772,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=731221203]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3741,6 +3879,11 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1662853955]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="worker5" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1299633202 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -3845,6 +3988,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
 
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=1141174757]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="worker6" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1925406363 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -3947,6 +4095,11 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_3obll")
+
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=2046271336]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.04, 1.04)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/workers_panel" unique_id=654250700]
 copy_mode = 2
@@ -4138,6 +4291,7 @@ metadata/ruin = false
 
 [node name="RuinArrow4" type="TextureRect" parent="HUD" unique_id=1986026892 node_paths=PackedStringArray("target") groups=["ruin_arrow"]]
 editor_description = "1"
+visible = false
 z_index = -2000
 offset_left = 115.0
 offset_top = -135.0
@@ -4189,6 +4343,7 @@ text = "ЛКМ"
 
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
+visible = false
 script = ExtResource("2_tbnlw")
 
 [node name="Control" type="Control" parent="Tutorial" unique_id=506205110]
@@ -4205,6 +4360,7 @@ metadata/_edit_lock_ = true
 [node name="CG" type="CanvasGroup" parent="Tutorial/Control" unique_id=1947426528]
 
 [node name="Slide_1" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1796307636]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -4303,6 +4459,7 @@ offset_bottom = 936.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
 
 [node name="Slide_3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1058855305]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -4421,6 +4578,66 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
+[node name="Slide_7" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1344666989]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
+
+[node name="Touch5" type="Button" parent="Tutorial/Control/CG/Slide_7" unique_id=1678399564]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 59.0
+offset_top = 967.0
+offset_right = 427.0
+offset_bottom = 1089.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_7" unique_id=1190154978]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 941.0
+offset_right = 259.0
+offset_bottom = 969.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
+
+[node name="Slide_8" type="ColorRect" parent="Tutorial/Control/CG" unique_id=299195224]
+visible = false
+offset_right = 2044.0
+offset_bottom = 1136.0
+color = Color(0, 0, 0, 0.654902)
+
+[node name="Touch5" type="Button" parent="Tutorial/Control/CG/Slide_8" unique_id=401065953]
+material = SubResource("ShaderMaterial_2ho68")
+layout_mode = 0
+offset_left = 550.0
+offset_top = 574.0
+offset_right = 707.1349
+offset_bottom = 726.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
+
+[node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_8" unique_id=2022872977]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 638.0
+offset_right = 754.0
+offset_bottom = 666.0
+theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
+text = "ЛКМ"
+
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
 layer = -1
 visible = false
@@ -4493,13 +4710,15 @@ mesh = SubResource("PlaneMesh_6adnx")
 [node name="Smoke" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1849737060]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 0.1, -1.5)
 layers = 4
+emitting = false
 amount = 200
 lifetime = 4.6
+preprocess = 4.6
 mesh = SubResource("PlaneMesh_hwrqn")
 emission_shape = 3
 emission_box_extents = Vector3(40, 0.15, 40)
-direction = Vector3(0, 0, 1)
-spread = 43.56
+direction = Vector3(-1, 0, -1)
+spread = 30.87
 flatness = 1.0
 gravity = Vector3(0, 0, 0)
 initial_velocity_max = 3.56
@@ -4512,6 +4731,35 @@ scale_amount_max = 100.0
 color = Color(1, 1, 1, 0.42352942)
 color_ramp = SubResource("Gradient_x1san")
 color_initial_ramp = SubResource("Gradient_yssgo")
+hue_variation_min = -0.86
+
+[node name="Clouds" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1828890602]
+transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 24.508427, -50)
+layers = 4
+amount = 200
+lifetime = 40.0
+preprocess = 40.0
+speed_scale = 0.1
+mesh = SubResource("SphereMesh_xegqy")
+emission_shape = 3
+emission_box_extents = Vector3(40, 0.15, 1)
+direction = Vector3(0, 0, 1)
+spread = 28.84
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 3.56
+initial_velocity_max = 6.0
+angular_velocity_max = 75.0
+angle_min = -90.0
+angle_max = -90.0
+scale_amount_min = 120.51
+scale_amount_max = 366.67
+scale_amount_curve = SubResource("Curve_hwrqn")
+split_scale = true
+scale_curve_x = SubResource("Curve_xegqy")
+scale_curve_y = null
+scale_curve_z = SubResource("Curve_5h554")
+color_ramp = SubResource("Gradient_x1san")
 hue_variation_min = -0.86
 
 [node name="StaticHills" type="Node3D" parent="Enviroment" unique_id=615693890]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cuiyqcjmger8p"
-path="res://.godot/imported/Monolith_Military_District.fbx-0d5e2eeac681925a3b05f1399f853bb9.scn"
+path="res://.godot/imported/Monolith_Military_District.fbx-02bad8d11ebeb6172be94a7b6d38de9b.scn"
 
 [deps]
 
-source_file="res://Monolith_Military_District.fbx"
-dest_files=["res://.godot/imported/Monolith_Military_District.fbx-0d5e2eeac681925a3b05f1399f853bb9.scn"]
+source_file="res://FBX/Monolith_Military_District.fbx"
+dest_files=["res://.godot/imported/Monolith_Military_District.fbx-02bad8d11ebeb6172be94a7b6d38de9b.scn"]
 
 [params]
 

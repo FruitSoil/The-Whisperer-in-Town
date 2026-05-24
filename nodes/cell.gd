@@ -90,6 +90,8 @@ func place(building: Building = %BaseUI.selected_build):
 			$"../../Tutorial".stage_change(-2)
 		
 		Global.total_buildings.append(building) 
+		if Global.total_buildings.size() >= 3 and $"../../Tutorial".tutorial_stage == 77:
+			$"../../Tutorial".stage_change(8)
 		$Charge_time.start()
 		$SubViewport2/TextureProgressBar2.max_value = $Charge_time.wait_time
 		$Charge_sprite.show()
@@ -124,7 +126,7 @@ func displace():
 	has_worker = false
 	
 	if current_build == preload("res://resources/builds_res/Abandoned_District.tres"):
-		if $"../../Tutorial".builduing_displaced != 3:
+		if $"../../Tutorial".builduing_displaced != 4:
 			$"../../Tutorial".builduing_displaced += 1
 			get_tree().call_group("ruin_arrow","check", self)
 			print("ruin displaced")
