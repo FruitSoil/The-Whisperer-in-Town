@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0b4hdsekp3qq"
-path.s3tc="res://.godot/imported/scientist.PNG-72f86e8dfac5bb7f1340c421eeb765f5.s3tc.ctex"
+uid="uid://dmv33u16i3g8w"
+path.s3tc="res://.godot/imported/Hill_1_Base_color.png-d7d668ed737b73dcba7ccd5166698306.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/portairs/scientist.PNG"
-dest_files=["res://.godot/imported/scientist.PNG-72f86e8dfac5bb7f1340c421eeb765f5.s3tc.ctex"]
+source_file="res://Images/UV/Terrain/Hill_1_Base_color.png"
+dest_files=["res://.godot/imported/Hill_1_Base_color.png-d7d668ed737b73dcba7ccd5166698306.s3tc.ctex"]
 
 [params]
 
