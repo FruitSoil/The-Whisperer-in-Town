@@ -124,8 +124,9 @@ func displace():
 	has_worker = false
 	
 	if current_build == preload("res://resources/builds_res/Abandoned_District.tres"):
-		if $"../../Tutorial".builduing_displaced != 4:
+		if $"../../Tutorial".builduing_displaced != 3:
 			$"../../Tutorial".builduing_displaced += 1
+			get_tree().call_group("ruin_arrow","check", self)
 			print("ruin displaced")
 		else:
 			$"../../Tutorial".stage_change(3)
@@ -273,7 +274,6 @@ func charge_timeout() -> void:
 func click_res():
 	if $"../../Tutorial".tutorial_stage == -2:
 			$"../../Tutorial".pressed(-2)
-			$"../../Tutorial".stage_change(5)
 	
 	var twps = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", 0.0, 0.6)

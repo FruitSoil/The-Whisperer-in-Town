@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends CharacterBody3D
 
 var speed = 7.0
 var sprint = 1
@@ -32,4 +32,5 @@ func _physics_process(delta: float) -> void:
 	
 	smooth_dir = smooth_dir.lerp(target_direction, 10.0 * delta)
 	var dir = smooth_dir * (speed/10 * camera.size) * sprint * delta
-	move_and_collide(dir)
+	velocity = dir * 40
+	move_and_slide()

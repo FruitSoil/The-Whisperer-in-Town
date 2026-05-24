@@ -1,6 +1,6 @@
 extends Control
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if visible:
 		%Popup.position.x = get_global_mouse_position().x + %Popup.size.x / 12
 		%Popup.position.y = get_global_mouse_position().y - %Popup.size.y / 12

@@ -173,5 +173,5 @@ func _dialogue_text_hover_start(meta: Variant) -> void:
 	if meta != null:
 		Popups.ShowPopup(str(meta))
 
-func _dialogue_text_hover_end(meta: Variant) -> void:
+func _dialogue_text_hover_end(_meta: Variant) -> void:
 	Popups.hidePopup()

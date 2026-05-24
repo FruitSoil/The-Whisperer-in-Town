@@ -231,8 +231,6 @@ func _on_zone_buy() -> void:
 			change_label(selected_zone.second_res_type, false)
 			print(selected_zone.name, " разблокирован!")
 			_on_buildings_pressed()
-			$Store_UI/Slider.value = 30
-			var twp = create_tween().set_trans(Tween.TRANS_LINEAR)
 			match selected_zone.number:
 				2:
 					Global.is_zone_2_open = true
@@ -243,7 +241,10 @@ func _on_zone_buy() -> void:
 					%QuestLogic.workers[3].change_progress(true)
 					
 					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/ScientistPart1.tres"), Global.workers.SCIENTIST)
-					twp.tween_property($"../../Walls/Zone_1/Wall3","position", $"../../Walls/Zone_1/Wall3".position + Vector3(0,-2,0), 5)
+					
+					$Store_UI/Slider.value = 30
+					$"../../Enviroment/DynamicHills/Zone_2".start_demolition()
+					
 					$"Store_UI/Build_scroll_list/VBС/lvl4".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl4".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl5".is_open = true
@@ -257,7 +258,10 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
 					%QuestLogic.workers[4].change_progress(true)
 					
-					twp.tween_property($"../../Walls/Zone_2/Wall","position", $"../../Walls/Zone_2/Wall".position + Vector3(0,-2,0), 5)
+					$"../../Enviroment/DynamicHills/Zone_3".start_demolition()
+					$"../../Borders/border_dynamic".queue_free()
+					$Store_UI/Slider.value = 60
+					
 					$"Store_UI/Build_scroll_list/VBС/lvl7".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl7".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl8".is_open = true
@@ -271,7 +275,11 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
 					%QuestLogic.workers[5].change_progress(true)
 					
-					twp.tween_property($"../../Walls/Zone_3/Wall2","position", $"../../Walls/Zone_3/Wall2".position + Vector3(0,-2,0), 5)
+					
+					$"../../Enviroment/DynamicHills/Zone_4".start_demolition()
+					$Store_UI/Slider.value = 75
+					$"../../Borders/border_dynamic2".queue_free()
+					
 					$"Store_UI/Build_scroll_list/VBС/lvl10".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl10".update()
 				5:
@@ -280,7 +288,11 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".close()
 					%QuestLogic.workers[6].change_progress(true)
 					
-					twp.tween_property($"../../Walls/Zone_4/Wall","position", $"../../Walls/Zone_4/Wall".position + Vector3(0,-2,0), 5)
+					$Store_UI/Slider.value = 100
+					$"../../Enviroment/DynamicHills/Monolith_parts".emitting = true
+					$"../../Grid5/Monolith".play()
+					$"../../Borders/border_dynamic3".queue_free()
+					
 					$"Store_UI/Build_scroll_list/VBС/lvl11".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl11".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl12".is_open = true
