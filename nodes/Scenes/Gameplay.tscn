@@ -82,6 +82,7 @@
 [ext_resource type="Script" uid="uid://ck78qsxaksw4b" path="res://nodes/Scenes/arrow.gd" id="79_2ho68"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="79_kxjjv"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="80_85x56"]
+[ext_resource type="Texture2D" uid="uid://42ylm08ipooj" path="res://Images/UI/Pause/icon_tutor.PNG" id="80_r6jij"]
 [ext_resource type="Shader" uid="uid://qrjppmkkny2j" path="res://other/Shaders/Transparent.gdshader" id="80_tbnlw"]
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="81_702ju"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="82_bppva"]
@@ -692,6 +693,14 @@ modulate_color = Color(0.24899, 0.25160608, 0.23274565, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpxrb"]
 texture = ExtResource("62_nfnow")
 modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="Gradient" id="Gradient_2ho68"]
+offsets = PackedFloat32Array(0.2897196, 0.95638627)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.38039216)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r6jij"]
+gradient = SubResource("Gradient_2ho68")
+fill_from = Vector2(1, 1)
 
 [sub_resource type="Gradient" id="Gradient_r8b8i"]
 offsets = PackedFloat32Array(0.5805471, 0.7568389)
@@ -1521,6 +1530,7 @@ theme_override_constants/margin_bottom = 5
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
+bbcode_enabled = true
 text = "Тут диалог должен быть, в зависимости от стадии принятия судьбы мифоза"
 
 [node name="VBC" type="VBoxContainer" parent="Dialogue/Panel" unique_id=1889069569]
@@ -1756,7 +1766,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -908.0
+offset_left = -891.0
 offset_top = -84.0
 offset_right = -743.0
 offset_bottom = -12.0
@@ -2991,6 +3001,20 @@ script = ExtResource("63_myd6q")
 res = ExtResource("64_akcfr")
 is_open = true
 
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=185247137]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5802
+offset_right = -6.0
+offset_bottom = -4.5803833
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
+
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=700335767]
 show_behind_parent = true
 layout_mode = 1
@@ -3137,6 +3161,20 @@ script = ExtResource("63_myd6q")
 res = ExtResource("67_211c7")
 is_open = true
 
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=1994027973]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
+
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=829519852]
 show_behind_parent = true
 layout_mode = 1
@@ -3227,6 +3265,20 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("70_essfe")
 is_open = true
+
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=302822605]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=580813894]
 show_behind_parent = true
@@ -3319,6 +3371,20 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("71_6ejo6")
 
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1240966388]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
+
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=310960703]
 show_behind_parent = true
 layout_mode = 1
@@ -3407,6 +3473,20 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("72_dptud")
+
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=579526361]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=563010965]
 show_behind_parent = true
@@ -3497,6 +3577,20 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("73_416c6")
 
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=1654582222]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
+
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=978603952]
 show_behind_parent = true
 layout_mode = 1
@@ -3586,6 +3680,20 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("74_tkp5h")
 
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=410253652]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.5803223
+offset_right = -6.0
+offset_bottom = -4.580261
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
+
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=7811691]
 show_behind_parent = true
 layout_mode = 1
@@ -3674,6 +3782,20 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
 script = ExtResource("63_myd6q")
 res = ExtResource("75_sr6vm")
+
+[node name="Color" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1099711008]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.580261
+offset_right = -6.0
+offset_bottom = -4.5803223
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_r6jij")
 
 [node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=340807096]
 show_behind_parent = true
@@ -3865,21 +3987,20 @@ offset_right = 294.0
 offset_bottom = 154.0
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell4")
 
 [node name="Arrow3" type="TextureRect" parent="HUD" unique_id=2063686966 node_paths=PackedStringArray("target")]
-visible = false
-offset_left = 224.0
-offset_top = 84.0
-offset_right = 294.0
-offset_bottom = 154.0
+offset_left = 115.0
+offset_top = -135.0
+offset_right = 185.0
+offset_bottom = -65.0
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_xxqh0")
 script = ExtResource("79_2ho68")
-target = NodePath("../../Grid/Cell4")
+target = NodePath("../../Grid/Cell5")
 
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
@@ -4652,6 +4773,8 @@ debug_color = Color(0.95462817, 3.85046e-07, 0.54996186, 0.41960785)
 [connection signal="pressed" from="Pause/VBC/Exit_to main" to="Pause" method="_on_exit_to_main_pressed"]
 [connection signal="pressed" from="Pause/Control/Button" to="Pause" method="_on_button_pressed"]
 [connection signal="gui_input" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_on_rich_text_label_gui_input"]
+[connection signal="meta_hover_ended" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_end"]
+[connection signal="meta_hover_started" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_start"]
 [connection signal="pressed" from="Dialogue/Panel/Exit_button" to="Dialogue" method="_on_exit_button_pressed"]
 [connection signal="animation_finished" from="Dialogue/Dialogue_animation" to="Dialogue" method="_anim_finished"]
 [connection signal="pressed" from="HUD/BaseUI/Demolition" to="HUD/BaseUI" method="_on_demolition_toggled"]

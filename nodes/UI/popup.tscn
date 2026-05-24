@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dyvfs7bhn3rtc"]
+
+[ext_resource type="Script" uid="uid://dfdh1qwi5vvvm" path="res://nodes/UI/popup.gd" id="1_muors"]
+[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="2_muors"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuq0l"]
+bg_color = Color(0.017124481, 0.06691303, 0.015221964, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muors"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cv71g"]
+shader = ExtResource("2_muors")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 0.77100003336262
+shader_parameter/distort_intensity = 0.0210000009975
+shader_parameter/noise_opacity = 0.15600000741
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.02000004845000003
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.26800001273
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.1730000082175
+
+[node name="popup" type="Control" unique_id=2068747168]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_muors")
+
+[node name="CL" type="CanvasLayer" parent="." unique_id=408078981]
+layer = 100
+
+[node name="Popup" type="PopupPanel" parent="CL" unique_id=1326926862]
+unique_name_in_owner = true
+disable_3d = true
+oversampling_override = 1.0
+mode = 1
+size = Vector2i(300, 300)
+visible = true
+min_size = Vector2i(300, 300)
+max_size = Vector2i(600, 600)
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuq0l")
+
+[node name="VBC" type="VBoxContainer" parent="CL/Popup" unique_id=1192841312]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 287.0
+offset_bottom = 287.0
+
+[node name="Name" type="RichTextLabel" parent="CL/Popup/VBC" unique_id=2052173135]
+custom_minimum_size = Vector2(0, 67.76)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_muors")
+bbcode_enabled = true
+text = "Империя"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="CL/Popup/VBC" unique_id=525515258]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "asdasd"
+
+[node name="ColorRect" type="ColorRect" parent="CL/Popup" unique_id=824688815]
+material = SubResource("ShaderMaterial_cv71g")
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 287.0
+offset_bottom = 287.0

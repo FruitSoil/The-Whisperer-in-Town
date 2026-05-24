@@ -124,10 +124,12 @@ func displace():
 	has_worker = false
 	
 	if current_build == preload("res://resources/builds_res/Abandoned_District.tres"):
-		if $"../../Tutorial".builduing_displaced != 5:
+		if $"../../Tutorial".builduing_displaced != 4:
 			$"../../Tutorial".builduing_displaced += 1
+			print("ruin displaced")
 		else:
-			$"../../Tutorial".pressed(5)
+			$"../../Tutorial".stage_change(3)
+			
 	
 	print("Работник убран с клетки ", name, " из-за сноса района")
 	$Time_to_res.stop()

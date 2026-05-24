@@ -168,3 +168,10 @@ func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 func _anim_finished(anim_name: StringName) -> void:
 	if anim_name == "Hide":
 		%QuestLogic.check_for_all()
+
+func _dialogue_text_hover_start(meta: Variant) -> void:
+	if meta != null:
+		Popups.ShowPopup(str(meta))
+
+func _dialogue_text_hover_end(meta: Variant) -> void:
+	Popups.hidePopup()

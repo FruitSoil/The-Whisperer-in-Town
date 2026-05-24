@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func stage_change(stage: int = tutorial_stage):
 	tutorial_stage = stage
+	print("tutorial stage: ", tutorial_stage)
 	match tutorial_stage:
 		1:
 			$Control/CG/Slide_1.show()
@@ -86,4 +87,3 @@ func pressed(ID: int):
 		5:
 			$Control/CG/Slide_5.hide()
 			$"../HUD/BaseUI/Demolition".emit_signal("pressed")
-			stage_change(3)

@@ -23,6 +23,7 @@ config/icon="uid://82pl60joceop"
 [autoload]
 
 Global="*uid://jkktsf4eysqw"
+Popups="*uid://dyvfs7bhn3rtc"
 
 [display]
 
