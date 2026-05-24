@@ -154,6 +154,9 @@ func displace():
 	get_child(-1).queue_free()
 
 func appoint(work: Worker = %BaseUI.selected_worker):
+	if $"../../Tutorial".tutorial_stage == 7:
+		$"../../Tutorial".pressed(7)
+	
 	%BaseUI.worker_state = false
 	has_worker = true
 	current_worker = work

@@ -185,7 +185,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeo5"]
 shader = ExtResource("3_tbnlw")
-shader_parameter/blur = 1.0
+shader_parameter/blur = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u63fg"]
 texture = ExtResource("15_30cd8")
@@ -206,17 +206,6 @@ texture = ExtResource("16_hn85b")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3obll"]
 texture = ExtResource("15_30cd8")
 
-[sub_resource type="Gradient" id="Gradient_1tw4p"]
-offsets = PackedFloat32Array(0.87841946, 0.96960485)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8b8i"]
-gradient = SubResource("Gradient_1tw4p")
-width = 1920
-height = 1080
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr6gg"]
 texture = ExtResource("14_yssgo")
 
@@ -230,7 +219,7 @@ modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u63fg"]
 shader = ExtResource("20_tudpi")
-shader_parameter/overlay = true
+shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.25
 shader_parameter/grille_opacity = 0.06800000323
@@ -428,6 +417,17 @@ _data = {
 &"RESET": SubResource("Animation_ps3nt"),
 &"Show": SubResource("Animation_n00c2")
 }
+
+[sub_resource type="Gradient" id="Gradient_1tw4p"]
+offsets = PackedFloat32Array(0.87841946, 0.96960485)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8b8i"]
+gradient = SubResource("Gradient_1tw4p")
+width = 1920
+height = 1080
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
@@ -1378,33 +1378,8 @@ text = "ПАУЗА"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ramka" type="TextureRect" parent="Pause" unique_id=434397228]
-z_index = 100
-z_as_relative = false
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.001
-offset_right = 2176.0
-offset_bottom = 1222.9199
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.469, 0.469)
-mouse_filter = 2
-texture = ExtResource("27_xde1d")
-metadata/_edit_lock_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="Pause" unique_id=2140972849]
-z_index = 500
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_r8b8i")
-metadata/_edit_lock_ = true
-
 [node name="Control" type="Control" parent="Pause" unique_id=135923403]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1412,28 +1387,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
-
-[node name="Panel2" type="NinePatchRect" parent="Pause/Control" unique_id=1020676468]
-modulate = Color(0, 0, 0, 0.56078434)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1198.4686
-offset_top = -529.0
-offset_right = 1198.4688
-offset_bottom = 646.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_yssgo")
-patch_margin_left = 114
-patch_margin_top = 149
-patch_margin_right = 114
-patch_margin_bottom = 149
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
 
 [node name="Label" type="Label" parent="Pause/Control" unique_id=844853206]
 z_index = 1
@@ -1444,9 +1397,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -393.5
-offset_top = -295.0
+offset_top = -445.0
 offset_right = 393.5
-offset_bottom = -185.0
+offset_bottom = -335.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
@@ -1458,10 +1411,10 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="Pause/Control" unique_id=1081046332]
 z_index = 1
 layout_mode = 0
-offset_left = 1498.0
-offset_top = 223.0
-offset_right = 1667.05
-offset_bottom = 384.0
+offset_left = 1615.95
+offset_top = 79.0
+offset_right = 1785.0
+offset_bottom = 240.0
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_rr6gg")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nn2ht")
@@ -1478,10 +1431,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = -317.0
-offset_right = 705.0
-offset_bottom = 397.0
+offset_left = -824.0
+offset_top = -461.0
+offset_right = 824.0
+offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_yssgo")
@@ -4076,7 +4029,7 @@ offset_top = 1.0
 offset_right = -71.0
 offset_bottom = 71.0
 rotation = 1.5707964
-scale = Vector2(0.51, 0.51)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell4")
@@ -4088,7 +4041,7 @@ offset_top = -13.0
 offset_right = 65.0
 offset_bottom = 15.0
 rotation = -1.5707964
-scale = Vector2(2.21, 2.21)
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
@@ -4303,6 +4256,7 @@ offset_bottom = 936.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
 
 [node name="Slide_3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1058855305]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -4332,7 +4286,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
-visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)

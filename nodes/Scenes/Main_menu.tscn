@@ -1,43 +1,14 @@
 [gd_scene format=3 uid="uid://cg5c1mvtux802"]
 
 [ext_resource type="Script" uid="uid://bk5ts2prpt2fw" path="res://nodes/Scenes/main_menu.gd" id="1_06vvd"]
-[ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="2_06vvd"]
-[ext_resource type="Texture2D" uid="uid://x22r6r4ibtlg" path="res://Images/UI/Tipo.png" id="2_rcvuc"]
-[ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="3_rcvuc"]
-[ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="4_1xjd1"]
-[ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="5_yjwdp"]
+[ext_resource type="Texture2D" uid="uid://hfm6khpcwabu" path="res://Images/UI/MainMenu/desktop_start_screen.png" id="2_uhqqh"]
+[ext_resource type="Texture2D" uid="uid://cgobhpsmi5cwd" path="res://Images/UI/MainMenu/desktop_start_screen_button1_idle.png" id="3_06vvd"]
+[ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="4_1xjd1"]
+[ext_resource type="Texture2D" uid="uid://dqsd7aedcyu20" path="res://Images/UI/MainMenu/desktop_start_screen_button3_idle.png" id="4_rcvuc"]
+[ext_resource type="Texture2D" uid="uid://c323inegnjsib" path="res://Images/UI/MainMenu/desktop_start_screen_button2_idle.png" id="5_1xjd1"]
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="6_bg4m6"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="7_vdg37"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4lre"]
-texture = ExtResource("2_06vvd")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l05ls"]
-texture = ExtResource("3_rcvuc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6jt1"]
-texture = ExtResource("2_06vvd")
-modulate_color = Color(1.2363764, 1.2363764, 1.2363764, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kwkp"]
-texture = ExtResource("3_rcvuc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd3lo"]
-texture = ExtResource("3_rcvuc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dacnh"]
-texture = ExtResource("2_06vvd")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25p2b"]
-texture = ExtResource("7_vdg37")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kntsg"]
-texture = ExtResource("7_vdg37")
-modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4sy0"]
-texture = ExtResource("7_vdg37")
-modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="8_06vvd"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -126,34 +97,200 @@ _data = {
 &"RESET": SubResource("Animation_f4f1g")
 }
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjwdp"]
+texture = ExtResource("3_06vvd")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg4m6"]
+load_path = "res://.godot/imported/desktop_start_screen_button1_pressed.png-f765de286dae9628b7f461ef7ec5b7a9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdg37"]
+texture = SubResource("CompressedTexture2D_bg4m6")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jykia"]
+load_path = "res://.godot/imported/desktop_start_screen_button1_idle.png-8d14d7a8df54438c65855146fa6d2645.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqhoy"]
+texture = SubResource("CompressedTexture2D_jykia")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0bso"]
+load_path = "res://.godot/imported/desktop_start_screen_button1_idle.png-8d14d7a8df54438c65855146fa6d2645.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4pqi"]
+texture = SubResource("CompressedTexture2D_l0bso")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi41n"]
+texture = SubResource("CompressedTexture2D_jykia")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb0cu"]
+texture = ExtResource("4_rcvuc")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a3hvd"]
+load_path = "res://.godot/imported/desktop_start_screen_button3_pressed.png-12b6ba059603b1f23a3223a6c0d4a9c5.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cxft"]
+texture = SubResource("CompressedTexture2D_a3hvd")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1oi8o"]
+load_path = "res://.godot/imported/desktop_start_screen_button3_idle.png-65b528cd77b31552cacc88418e80778d.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hvhj"]
+texture = SubResource("CompressedTexture2D_1oi8o")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72mix"]
+texture = SubResource("CompressedTexture2D_1oi8o")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsrtt"]
+texture = SubResource("CompressedTexture2D_1oi8o")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disl5"]
+texture = ExtResource("5_1xjd1")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hs0dn"]
+load_path = "res://.godot/imported/desktop_start_screen_button2_pressed.png-554c04eb7695a889bd98f6004ad316cf.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b3ki"]
+texture = SubResource("CompressedTexture2D_hs0dn")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpooi"]
+load_path = "res://.godot/imported/desktop_start_screen_button2_idle.png-d21faa4e083f3622bb2f14193cc09868.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scyf8"]
+texture = SubResource("CompressedTexture2D_cpooi")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayqwb"]
+texture = SubResource("CompressedTexture2D_cpooi")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnsvs"]
+texture = SubResource("CompressedTexture2D_cpooi")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="Gradient" id="Gradient_1xjd1"]
+offsets = PackedFloat32Array(0.9068826, 0.91700405)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yjwdp"]
+gradient = SubResource("Gradient_1xjd1")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg4m6"]
+texture = SubResource("GradientTexture2D_yjwdp")
+modulate_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_vdg37"]
+offsets = PackedFloat32Array(0.9068826, 0.91700405)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jykia"]
+gradient = SubResource("Gradient_vdg37")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0bso"]
+texture = SubResource("GradientTexture2D_jykia")
+modulate_color = Color(0.46666667, 0, 0, 0.5529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a3hvd"]
+texture = SubResource("GradientTexture2D_jykia")
+modulate_color = Color(0.99999994, 0.306, 0.17186546, 0.41568628)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1oi8o"]
+texture = SubResource("GradientTexture2D_jykia")
+modulate_color = Color(1, 1, 1, 0.6039216)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hs0dn"]
+texture = SubResource("GradientTexture2D_jykia")
+modulate_color = Color(1, 1, 1, 0.6039216)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25p2b"]
+texture = ExtResource("7_vdg37")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kntsg"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4sy0"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
+
+[sub_resource type="Gradient" id="Gradient_yjwdp"]
+offsets = PackedFloat32Array(0.03448276, 0.197318, 0.58237547, 0.98659)
+colors = PackedColorArray(1, 1, 1, 0.03317541, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_rcvuc"]
+offsets = PackedFloat32Array(0.6768061, 0.86882126)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xjd1"]
+gradient = SubResource("Gradient_rcvuc")
+width = 1920
+height = 1020
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_06vvd"]
+offsets = PackedFloat32Array(0.6692015, 0.98859316)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rcvuc"]
+gradient = SubResource("Gradient_06vvd")
+width = 1020
+height = 1020
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0.96941775, 1)
+
 [node name="Main_menu" type="Node2D" unique_id=1755182682]
 script = ExtResource("1_06vvd")
 
-[node name="Menu" type="CanvasLayer" parent="." unique_id=1210911966]
-process_mode = 3
+[node name="Fade" type="CanvasLayer" parent="." unique_id=1493132271]
+layer = 100
+visible = false
 
-[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=43069725]
-modulate = Color(0.23746216, 0.24567518, 0.16883504, 1)
+[node name="Color" type="ColorRect" parent="Fade" unique_id=1662133600]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rcvuc")
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
-[node name="VBC" type="VBoxContainer" parent="Menu" unique_id=1826416251]
-anchors_preset = 2
-anchor_top = 1.0
+[node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1622596282]
+libraries/ = SubResource("AnimationLibrary_06vvd")
+
+[node name="Menu" type="CanvasLayer" parent="." unique_id=1210911966]
+process_mode = 3
+
+[node name="BG" type="TextureRect" parent="Menu" unique_id=43069725]
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 88.0
-offset_top = -624.95593
-offset_right = 494.0
-offset_bottom = -201.04407
-grow_vertical = 0
-theme_override_constants/separation = 39
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uhqqh")
+expand_mode = 1
 
-[node name="Continue" type="Button" parent="Menu/VBC" unique_id=825612841]
-layout_mode = 2
+[node name="Continue" type="Button" parent="Menu" unique_id=825612841]
+offset_left = 841.0
+offset_top = 407.0
+offset_right = 1214.0
+offset_bottom = 503.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 5
 size_flags_vertical = 7
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
@@ -163,32 +300,23 @@ theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.
 theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
 theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
-theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
-text = "Начать игру"
+theme_override_styles/normal = SubResource("StyleBoxTexture_yjwdp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vdg37")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wqhoy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_d4pqi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vi41n")
 
-[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Continue" unique_id=1601501004]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -35.0
-offset_right = -30.0
-offset_bottom = 35.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="CompJuice" type="Node" parent="Menu/Continue" unique_id=1416181190]
+script = ExtResource("4_1xjd1")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Settings" type="Button" parent="Menu" unique_id=1767815144]
+offset_left = 1085.0
+offset_top = 363.0
+offset_right = 1214.0
+offset_bottom = 437.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("4_1xjd1")
-
-[node name="Settings" type="Button" parent="Menu/VBC" unique_id=1767815144]
-layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
@@ -198,32 +326,23 @@ theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.
 theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
 theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
-theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
-text = "Настройки"
+theme_override_styles/normal = SubResource("StyleBoxTexture_yb0cu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5cxft")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0hvhj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_72mix")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bsrtt")
 
-[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Settings" unique_id=1647695135]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -35.0
-offset_right = -30.0
-offset_bottom = 35.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="CompJuice" type="Node" parent="Menu/Settings" unique_id=1826580224]
+script = ExtResource("4_1xjd1")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Start" type="Button" parent="Menu" unique_id=1792925934]
+offset_left = 842.0
+offset_top = 323.0
+offset_right = 1212.0
+offset_bottom = 404.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("5_yjwdp")
-
-[node name="Exit_to main" type="Button" parent="Menu/VBC" unique_id=1792925934]
-layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -234,45 +353,27 @@ theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.
 theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
 theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_j4lre")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_l05ls")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r6jt1")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4kwkp")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_vd3lo")
-theme_override_styles/focus = SubResource("StyleBoxTexture_dacnh")
-text = "Выйти из
-игры"
+theme_override_styles/normal = SubResource("StyleBoxTexture_disl5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8b3ki")
+theme_override_styles/hover = SubResource("StyleBoxTexture_scyf8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ayqwb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jnsvs")
 
-[node name="TextureRect" type="TextureRect" parent="Menu/VBC/Exit_to main" unique_id=90288264]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -35.0
-offset_right = -30.0
-offset_bottom = 35.0
-grow_horizontal = 0
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("6_bg4m6")
+[node name="CompJuice" type="Node" parent="Menu/Start" unique_id=1141014959]
+script = ExtResource("4_1xjd1")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Label" type="Label" parent="Menu" unique_id=650576535]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -867.0
-offset_top = 118.0
-offset_right = 436.0
-offset_bottom = 285.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.69085294, 0.8785781, 0.6736247, 1)
-theme_override_font_sizes/font_size = 128
-text = "The Whisperer in Town"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Exit" type="Button" parent="Menu" unique_id=1808580198]
+offset_left = 1182.0
+offset_top = 787.0
+offset_right = 1239.0
+offset_bottom = 840.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bg4m6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l0bso")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a3hvd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1oi8o")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hs0dn")
 
 [node name="Control" type="Control" parent="Menu" unique_id=2088698228]
 visible = false
@@ -341,23 +442,97 @@ patch_margin_bottom = 149
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
 
-[node name="Fade" type="CanvasLayer" parent="." unique_id=1493132271]
-layer = 100
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Menu" unique_id=763649166]
+position = Vector2(952, 539)
+amount = 16
+texture = ExtResource("8_06vvd")
+lifetime = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(960, 540)
+direction = Vector2(0, 1)
+spread = 35.57
+gravity = Vector2(0, 5)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+color = Color(0.70980394, 1, 0.75686276, 0.13333334)
+color_ramp = SubResource("Gradient_yjwdp")
 
-[node name="Color" type="ColorRect" parent="Fade" unique_id=1662133600]
+[node name="Vignette" type="TextureRect" parent="Menu" unique_id=214097397]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture2D_1xjd1")
+expand_mode = 1
 
-[node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1622596282]
-libraries/ = SubResource("AnimationLibrary_06vvd")
+[node name="Vignette2" type="TextureRect" parent="Menu" unique_id=1924477865]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 21.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_rcvuc")
+expand_mode = 1
 
-[connection signal="pressed" from="Menu/VBC/Continue" to="Menu" method="_on_continue_pressed"]
-[connection signal="pressed" from="Menu/VBC/Settings" to="Menu" method="_on_settings_pressed"]
-[connection signal="pressed" from="Menu/VBC/Exit_to main" to="Menu" method="_on_exit_to_main_pressed"]
-[connection signal="pressed" from="Menu/Control/Button" to="Menu" method="_on_button_pressed"]
+[node name="Vignette3" type="TextureRect" parent="Menu" unique_id=1183786937]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -3.1415927
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_rcvuc")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Menu" unique_id=403854067]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -907.0
+offset_top = 19.0
+offset_right = 396.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 128
+text = "The Whisperer in Town"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Menu" unique_id=650576535]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -914.0
+offset_top = 24.0
+offset_right = 389.0
+offset_bottom = 191.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.69085294, 0.8785781, 0.6736247, 1)
+theme_override_font_sizes/font_size = 128
+text = "The Whisperer in Town"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="animation_finished" from="Fade/Fade" to="." method="_on_fade_anim"]
+[connection signal="pressed" from="Menu/Continue" to="Menu" method="_on_continue_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Start" to="Menu" method="_on_exit_to_main_pressed"]
+[connection signal="pressed" from="Menu/Control/Button" to="Menu" method="_on_button_pressed"]

@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="2_dgv3n"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
 [ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://Images/Resources_icons/no_res_icon.png" id="3_kou8v"]
+[ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="3_nmk4s"]
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="6_dgv3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgv3n"]
@@ -103,12 +104,18 @@ offset_left = -97.0
 offset_right = 0.00024414063
 grow_horizontal = 0
 grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_l75qi")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_muuik")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r4p40")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_h8wog")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3xjqp")
 text = "Купить"
+
+[node name="CompJuice" type="Node" parent="buy" unique_id=657433030]
+script = ExtResource("3_nmk4s")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Res_label" type="Label" parent="buy" unique_id=1527654187]
 layout_mode = 0

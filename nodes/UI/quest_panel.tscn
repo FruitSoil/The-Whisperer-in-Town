@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="4_nnva0"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="4_qoxd1"]
 [ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="5_qoxd1"]
+[ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="8_smgqm"]
 [ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="9_qoxd1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dyru"]
@@ -240,6 +241,11 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_qoxd1")
 theme_override_styles/focus = SubResource("StyleBoxTexture_px76i")
 text = "Купить"
 
+[node name="CompJuice" type="Node" parent="Zone_quest/MC/Button" unique_id=1677112173]
+script = ExtResource("8_smgqm")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Quest" type="HBoxContainer" parent="." unique_id=1892587566]
 layout_mode = 1
 anchors_preset = 15
@@ -331,6 +337,11 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_qoxd1")
+
+[node name="CompJuice" type="Node" parent="Quest/MC/Button" unique_id=711299709]
+script = ExtResource("8_smgqm")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=367085619]
 libraries/ = SubResource("AnimationLibrary_nrcl8")

@@ -3,11 +3,13 @@ extends Node2D
 const GAMEPLAY = preload("uid://c2hucdshe8xtu")
 const MAIN_MENU = preload("uid://cg5c1mvtux802")
 
-@onready var continue_: Button = $Menu/VBC/Continue
-@onready var settings: Button = $Menu/VBC/Settings
-@onready var exit_to_main: Button = $"Menu/VBC/Exit_to main"
+@onready var continue_: Button = $Menu/Continue
+@onready var start: Button = $Menu/Start
+@onready var settings: Button = $Menu/Settings
+@onready var exit_to_main: Button = $Menu/Exit
 
 func _ready() -> void:
+	$Fade.show()
 	continue_.pressed.connect(pressed.bind(1))
 	settings.pressed.connect(pressed.bind(2))
 	exit_to_main.pressed.connect(pressed.bind(3))

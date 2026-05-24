@@ -36,9 +36,10 @@ func stage_change(stage: int = tutorial_stage):
 	match tutorial_stage:
 		1:
 			$Control/CG/Slide_1.show()
-			twmf($Control/CG/Slide_1/Label,2)
+			twmf($Control/CG/Slide_1/Label,1)
 		2:
 			$Control/CG/Slide_2.show()
+			$Control/CG/Slide_2/Label.modulate = Color(1.0, 1.0, 1.0, 0.0)
 			await get_tree().create_timer(4).timeout
 			twmf($Control/CG/Slide_2/Label,2)
 			twmf($Control/CG/Slide_2,4)
@@ -47,22 +48,28 @@ func stage_change(stage: int = tutorial_stage):
 			for i in arrows_ruin:
 				i.hide()
 			twmf($Control/CG/Slide_3/Label,2)
+			twmf($Control/CG/Slide_3,1)
 		4:
 			$Control/CG/Slide_4.show()
 			twmf($Control/CG/Slide_4,2)
 			twmf($Control/CG/Slide_4/Label,2)
 		-1:
+			twmf($"../HUD/Arrow",2)
 			$"../HUD/Arrow".show()
 		-2:
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.8).timeout
+			twmf($"../HUD/Arrow2",0.6)
 			$"../HUD/Arrow2".show()
 		5:
 			$Control/CG/Slide_5.show()
-			
+			twmf($Control/CG/Slide_2/Label,1)
+			twmf($Control/CG/Slide_2,1)
 		6:
 			twmf($Control/CG/Slide_6,2)
 			$Control/CG/Slide_6.show()
-			
+		7:
+			twmf($"../HUD/Arrow3",2)
+			$"../HUD/Arrow3".show()
 
 func twmf(node, time: float,to_black: bool = true):
 	if node is ColorRect:
@@ -83,14 +90,12 @@ func twmf(node, time: float,to_black: bool = true):
 func pressed(ID: int):
 	match ID:
 		1:
-			stage_change(2)
-			
 			%ADMIN.get_dialogue()
-			$Control/CG/Slide_1.mouse_filter = 2
 			twmf($Control/CG/Slide_1,1,false)
 			twmf($Control/CG/Slide_1/Label,0.5,false)
 			await get_tree().create_timer(1).timeout
 			$Control/CG/Slide_1.hide()
+			stage_change(2)
 		2:
 			$Control/CG/Slide_2.hide()
 			stage_change(5)
@@ -127,4 +132,11 @@ func pressed(ID: int):
 			$Control/CG/Slide_5.hide()
 		6:
 			$"../HUD/BaseUI/workers_panel/Default_worker".emit_signal("pressed")
+			$Control/CG/Slide_6.mouse_filter = 2
+			stage_change(7)
+			twmf($Control/CG/Slide_6,1,false)
+			twmf($Control/CG/Slide_6/Label,0.5,false)
+			await get_tree().create_timer(1).timeout
 			$Control/CG/Slide_6.hide()
+		7:
+			$"../HUD/Arrow3".hide()

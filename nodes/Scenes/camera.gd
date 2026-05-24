@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed = 7.0
 var sprint = 1
-var y = 14.0
+var y = 20
 const y_max = 20
 const y_min = 2
 @onready var camera: Camera3D = $Camera
