@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bvrxvw2xcb0p"
+path="res://.godot/imported/Continue.png-cac97a8e02e9ee5ea6c09fd94c1f2849.res"
+
+[deps]
+
+source_file="res://Images/UI/MainMenu/BitMaps/Continue.png"
+dest_files=["res://.godot/imported/Continue.png-cac97a8e02e9ee5ea6c09fd94c1f2849.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

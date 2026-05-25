@@ -3,9 +3,9 @@ extends Node2D
 const GAMEPLAY = preload("uid://c2hucdshe8xtu")
 const MAIN_MENU = preload("uid://cg5c1mvtux802")
 
-@onready var continue_: Button = $Menu/Continue
-@onready var start: Button = $Menu/Start
-@onready var settings: Button = $Menu/Settings
+@onready var continue_: TextureButton = $Menu/Continue
+@onready var start: TextureButton = $Menu/Start
+@onready var settings: TextureButton = $Menu/Settings
 @onready var exit_to_main: Button = $Menu/Exit
 
 func _ready() -> void:

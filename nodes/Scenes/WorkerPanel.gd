@@ -37,6 +37,11 @@ func touch():
 				change_progress()
 				Global.add_to_integer_res_type(2, -10)
 				%BaseUI.switch_to_worker(given_res)
+			else:
+				%BaseUI.no_res(self, position, 3)
+				var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+				twm.tween_property($Res_label, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 3).from(Color(1.0, 0.0, 0.0, 1.0))
+			
 			%BaseUI.change_label(2, false)
 
 func change_work_icon(value: bool, given_res: Worker):

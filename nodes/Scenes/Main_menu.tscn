@@ -4,11 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://hfm6khpcwabu" path="res://Images/UI/MainMenu/desktop_start_screen.png" id="2_uhqqh"]
 [ext_resource type="Texture2D" uid="uid://cgobhpsmi5cwd" path="res://Images/UI/MainMenu/desktop_start_screen_button1_idle.png" id="3_06vvd"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="4_1xjd1"]
+[ext_resource type="Texture2D" uid="uid://bhphjycebrksu" path="res://Images/UI/MainMenu/desktop_start_screen_button1_pressed.png" id="4_l0bso"]
 [ext_resource type="Texture2D" uid="uid://dqsd7aedcyu20" path="res://Images/UI/MainMenu/desktop_start_screen_button3_idle.png" id="4_rcvuc"]
 [ext_resource type="Texture2D" uid="uid://c323inegnjsib" path="res://Images/UI/MainMenu/desktop_start_screen_button2_idle.png" id="5_1xjd1"]
+[ext_resource type="BitMap" uid="uid://bvrxvw2xcb0p" path="res://Images/UI/MainMenu/BitMaps/Continue.png" id="5_d4pqi"]
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="6_bg4m6"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="7_vdg37"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="8_06vvd"]
+[ext_resource type="Texture2D" uid="uid://j14wqb7r4vvs" path="res://Images/UI/MainMenu/desktop_start_screen_button3_pressed.png" id="8_vi41n"]
+[ext_resource type="BitMap" uid="uid://36qm6rvh8rd0" path="res://Images/UI/MainMenu/BitMaps/Settings.png" id="9_yb0cu"]
+[ext_resource type="Texture2D" uid="uid://gy7fa1g4hawa" path="res://Images/UI/MainMenu/desktop_start_screen_button2_pressed.png" id="11_a3hvd"]
+[ext_resource type="BitMap" uid="uid://c78q8k6gqiitx" path="res://Images/UI/MainMenu/BitMaps/NewGame.png" id="12_5cxft"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -96,81 +102,6 @@ _data = {
 &"Fade_out": SubResource("Animation_tykmn"),
 &"RESET": SubResource("Animation_f4f1g")
 }
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjwdp"]
-texture = ExtResource("3_06vvd")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg4m6"]
-load_path = "res://.godot/imported/desktop_start_screen_button1_pressed.png-f765de286dae9628b7f461ef7ec5b7a9.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdg37"]
-texture = SubResource("CompressedTexture2D_bg4m6")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jykia"]
-load_path = "res://.godot/imported/desktop_start_screen_button1_idle.png-8d14d7a8df54438c65855146fa6d2645.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqhoy"]
-texture = SubResource("CompressedTexture2D_jykia")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0bso"]
-load_path = "res://.godot/imported/desktop_start_screen_button1_idle.png-8d14d7a8df54438c65855146fa6d2645.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4pqi"]
-texture = SubResource("CompressedTexture2D_l0bso")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi41n"]
-texture = SubResource("CompressedTexture2D_jykia")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb0cu"]
-texture = ExtResource("4_rcvuc")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a3hvd"]
-load_path = "res://.godot/imported/desktop_start_screen_button3_pressed.png-12b6ba059603b1f23a3223a6c0d4a9c5.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cxft"]
-texture = SubResource("CompressedTexture2D_a3hvd")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1oi8o"]
-load_path = "res://.godot/imported/desktop_start_screen_button3_idle.png-65b528cd77b31552cacc88418e80778d.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hvhj"]
-texture = SubResource("CompressedTexture2D_1oi8o")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72mix"]
-texture = SubResource("CompressedTexture2D_1oi8o")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsrtt"]
-texture = SubResource("CompressedTexture2D_1oi8o")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disl5"]
-texture = ExtResource("5_1xjd1")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hs0dn"]
-load_path = "res://.godot/imported/desktop_start_screen_button2_pressed.png-554c04eb7695a889bd98f6004ad316cf.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b3ki"]
-texture = SubResource("CompressedTexture2D_hs0dn")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpooi"]
-load_path = "res://.godot/imported/desktop_start_screen_button2_idle.png-d21faa4e083f3622bb2f14193cc09868.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scyf8"]
-texture = SubResource("CompressedTexture2D_cpooi")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayqwb"]
-texture = SubResource("CompressedTexture2D_cpooi")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnsvs"]
-texture = SubResource("CompressedTexture2D_cpooi")
-modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="Gradient" id="Gradient_1xjd1"]
 offsets = PackedFloat32Array(0.9068826, 0.91700405)
@@ -285,83 +216,68 @@ grow_vertical = 2
 texture = ExtResource("2_uhqqh")
 expand_mode = 1
 
-[node name="Continue" type="Button" parent="Menu" unique_id=825612841]
-offset_left = 841.0
-offset_top = 407.0
-offset_right = 1214.0
-offset_bottom = 503.0
+[node name="Continue" type="TextureButton" parent="Menu" unique_id=926111792]
+offset_left = 629.0
+offset_top = 350.0
+offset_right = 1423.0
+offset_bottom = 553.0
+scale = Vector2(0.47, 0.47)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 5
-size_flags_vertical = 7
-theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
-theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
-theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_yjwdp")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vdg37")
-theme_override_styles/hover = SubResource("StyleBoxTexture_wqhoy")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_d4pqi")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vi41n")
+texture_normal = ExtResource("3_06vvd")
+texture_pressed = ExtResource("4_l0bso")
+texture_hover = ExtResource("3_06vvd")
+texture_disabled = ExtResource("4_l0bso")
+texture_focused = ExtResource("3_06vvd")
+texture_click_mask = ExtResource("5_d4pqi")
 
 [node name="CompJuice" type="Node" parent="Menu/Continue" unique_id=1416181190]
 script = ExtResource("4_1xjd1")
-scale_value = Vector2(1.05, 1.05)
+scale_value = Vector2(0.49, 0.49)
+init_scale = Vector2(0.47, 0.47)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Settings" type="Button" parent="Menu" unique_id=1767815144]
-offset_left = 1085.0
-offset_top = 363.0
-offset_right = 1214.0
-offset_bottom = 437.0
+[node name="Settings" type="TextureButton" parent="Menu" unique_id=615793851]
+offset_left = 1016.0
+offset_top = 325.0
+offset_right = 1285.0
+offset_bottom = 476.0
+scale = Vector2(0.47, 0.47)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
-theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
-theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_yb0cu")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_5cxft")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0hvhj")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_72mix")
-theme_override_styles/focus = SubResource("StyleBoxTexture_bsrtt")
+texture_normal = ExtResource("4_rcvuc")
+texture_pressed = ExtResource("8_vi41n")
+texture_hover = ExtResource("4_rcvuc")
+texture_disabled = ExtResource("8_vi41n")
+texture_focused = ExtResource("4_rcvuc")
+texture_click_mask = ExtResource("9_yb0cu")
 
 [node name="CompJuice" type="Node" parent="Menu/Settings" unique_id=1826580224]
 script = ExtResource("4_1xjd1")
-scale_value = Vector2(1.05, 1.05)
+scale_value = Vector2(0.49, 0.49)
+init_scale = Vector2(0.47, 0.47)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Start" type="Button" parent="Menu" unique_id=1792925934]
-offset_left = 842.0
-offset_top = 323.0
-offset_right = 1212.0
-offset_bottom = 404.0
+[node name="Start" type="TextureButton" parent="Menu" unique_id=1801748049]
+offset_left = 630.0
+offset_top = 279.0
+offset_right = 1423.0
+offset_bottom = 448.0
+scale = Vector2(0.47, 0.47)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 5
 size_flags_vertical = 7
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.54283357, 0.6151024, 0.49276835, 1)
-theme_override_colors/font_disabled_color = Color(0.0783137, 0.13762352, 0.050304092, 1)
-theme_override_colors/font_outline_color = Color(0.732402, 1, 0.7077555, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_disl5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8b3ki")
-theme_override_styles/hover = SubResource("StyleBoxTexture_scyf8")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_ayqwb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_jnsvs")
+texture_normal = ExtResource("5_1xjd1")
+texture_pressed = ExtResource("11_a3hvd")
+texture_hover = ExtResource("5_1xjd1")
+texture_disabled = ExtResource("11_a3hvd")
+texture_focused = ExtResource("5_1xjd1")
+texture_click_mask = ExtResource("12_5cxft")
 
 [node name="CompJuice" type="Node" parent="Menu/Start" unique_id=1141014959]
 script = ExtResource("4_1xjd1")
-scale_value = Vector2(1.05, 1.05)
+scale_value = Vector2(0.49, 0.49)
+init_scale = Vector2(0.47, 0.47)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Exit" type="Button" parent="Menu" unique_id=1808580198]
@@ -473,10 +389,10 @@ expand_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 16.0
-offset_right = 21.0
-offset_bottom = 16.0
+offset_left = 465.0
+offset_top = 159.0
+offset_right = 465.0
+offset_bottom = 159.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

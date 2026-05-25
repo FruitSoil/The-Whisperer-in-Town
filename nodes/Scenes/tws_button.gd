@@ -5,6 +5,7 @@ class_name CompJuice
 @export var ease_: Tween.EaseType = Tween.EASE_OUT
 @export var time: float = 0.07
 @export var scale_value: Vector2 = Vector2(1.1,1.1)
+@export var init_scale: Vector2 = Vector2(1,1)
 
 @onready var control: Control = get_parent()
 
@@ -17,7 +18,7 @@ func _ready() -> void:
 
 func _on_mouse_hovered(is_hovered: bool):
 	if set_tween():
-		tw.tween_property(control, "scale", scale_value if is_hovered else Vector2.ONE, time)
+		tw.tween_property(control, "scale", scale_value if is_hovered else init_scale, time)
 
 func set_tween() -> bool:
 	if control is BaseButton:

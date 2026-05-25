@@ -301,18 +301,20 @@ func _on_zone_buy() -> void:
 			get_tree().call_group("zone_button", "check", selected_zone)
 			get_tree().call_group("cell", "lines_update")
 		else:
-			no_res()
+			no_res($Store_UI/Zones_View/Desc/HBC/Buy,Vector2(0,0),6)
 	else:
-		no_res()
+		no_res($Store_UI/Zones_View/Desc/HBC/Buy,Vector2(0,0),6)
 
 
-func no_res():
+func no_res(node:Control, init_pos, streight: int):
 	var twp = create_tween().set_trans(Tween.TRANS_ELASTIC)
-	var rnd = randf_range(-6,6)
+	var rnd = randf_range(-streight*2,streight*2)
+	if absf(rnd) <= float(streight)/2:
+		rnd = rnd * 4
 	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(133 +rnd ,0+rnd), 0.2).set_ease(Tween.EASE_IN).from(Vector2(133,0))
-	twp.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "position", Vector2(133,0), 0.5).set_ease(Tween.EASE_OUT)
-	twm.tween_property($Store_UI/Zones_View/Desc/HBC/Buy, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))
+	twp.tween_property(node, "position", Vector2(init_pos.x + rnd, init_pos.y + rnd), 0.2).set_ease(Tween.EASE_IN).from(init_pos)
+	twp.tween_property(node, "position", init_pos, 0.5).set_ease(Tween.EASE_OUT)
+	twm.tween_property(node, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 0.7).from(Color(1.0, 0.0, 0.0, 1.0))
 
 func slider_changed(value: float) -> void:
 	$"Store_UI/Build_scroll_list/VBС".position.y = store_scroll_max / 100 * value
