@@ -2,7 +2,7 @@ extends Node
 class_name CompJuice
 
 @export var trans: Tween.TransitionType = Tween.TRANS_QUART
-@export var ease: Tween.EaseType = Tween.EASE_OUT
+@export var ease_: Tween.EaseType = Tween.EASE_OUT
 @export var time: float = 0.07
 @export var scale_value: Vector2 = Vector2(1.1,1.1)
 
@@ -28,5 +28,5 @@ func set_tween() -> bool:
 				return false
 	if tw:
 		tw.kill()
-	tw = create_tween().set_ease(ease).set_trans(trans).set_parallel(true)
+	tw = create_tween().set_ease(ease_).set_trans(trans).set_parallel(true)
 	return true

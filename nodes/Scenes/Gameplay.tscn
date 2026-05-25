@@ -1264,6 +1264,7 @@ icon = ExtResource("12_5h554")
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
 layer = 5
+visible = false
 script = ExtResource("13_x1san")
 
 [node name="TextureRect" type="ColorRect" parent="Pause" unique_id=495866217]
@@ -2750,7 +2751,7 @@ custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-icon = ExtResource("12_5h554")
+icon = ExtResource("28_po80s")
 script = ExtResource("51_hlnya")
 res = ExtResource("57_kyo71")
 
@@ -3086,21 +3087,15 @@ grow_horizontal = 2
 scale = Vector2(0.6146977, 0.8602525)
 texture = ExtResource("60_amk7x")
 
-[node name="DaysLabel" type="Label" parent="HUD/BaseUI/res_panel" unique_id=398633716]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43
-anchor_right = 0.43
-offset_left = -56.562256
-offset_top = 168.60461
-offset_right = 56.870667
-offset_bottom = 194.186
-scale = Vector2(1, 1.09)
-theme_override_colors/font_color = Color(0.6798636, 0.9999998, 0.7220444, 1)
-theme_override_font_sizes/font_size = 20
-text = "День 0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Imperial_icon" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1821471577]
+modulate = Color(1.129, 1.511, 1.084, 1)
+layout_mode = 0
+offset_left = 346.26868
+offset_top = 160.46512
+offset_right = 394.74133
+offset_bottom = 208.93777
+texture = ExtResource("9_w45vw")
+expand_mode = 1
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/res_panel" unique_id=1527240328]
 position = Vector2(611.43774, 470.5346)
@@ -4885,7 +4880,7 @@ transform = Transform3D(3.8042262, -0.11847187, -1.2303774, 0, 3.9815848, -0.383
 transform = Transform3D(3.8637033, 0, 1.0352762, 0, 4, 0, -1.0352762, 0, 3.8637033, -9.417295, -0.33459693, -51.435574)
 
 [node name="Hill_41" parent="Enviroment/StaticHills" unique_id=232426052 instance=ExtResource("89_7forp")]
-transform = Transform3D(-3.8205972, -0.039745506, -1.183833, -0.34269577, 3.8638673, 0.9762619, 1.133843, 1.0338994, -3.6939754, -25.017296, 2.6654031, -49.235577)
+transform = Transform3D(-3.8205972, -0.039745506, -1.183833, -0.34269577, 3.8638673, 0.9762619, 1.133843, 1.0338994, -3.6939754, -25.617296, 1.1654031, -49.535576)
 
 [node name="Hill_42" parent="Enviroment/StaticHills" unique_id=125939667 instance=ExtResource("90_w45vw")]
 transform = Transform3D(-2.828427, 0, -2.828427, 0, 4, 0, 2.828427, 0, -2.828427, -48.5, 4.3, -27.399998)
