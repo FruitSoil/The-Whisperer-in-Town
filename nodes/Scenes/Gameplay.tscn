@@ -4705,7 +4705,6 @@ mesh = SubResource("PlaneMesh_6adnx")
 [node name="Smoke" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1849737060]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 0.1, -1.5)
 layers = 4
-emitting = false
 amount = 200
 lifetime = 4.6
 preprocess = 4.6
