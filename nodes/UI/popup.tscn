@@ -55,9 +55,9 @@ unique_name_in_owner = true
 disable_3d = true
 oversampling_override = 1.0
 mode = 1
-size = Vector2i(300, 300)
+size = Vector2i(300, 150)
 visible = true
-min_size = Vector2i(300, 300)
+min_size = Vector2i(300, 150)
 max_size = Vector2i(600, 600)
 theme_override_styles/panel = SubResource("StyleBoxFlat_cuq0l")
 
@@ -65,7 +65,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cuq0l")
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 287.0
-offset_bottom = 287.0
+offset_bottom = 137.0
 
 [node name="Name" type="RichTextLabel" parent="CL/Popup/VBC" unique_id=2052173135]
 custom_minimum_size = Vector2(0, 67.76)
@@ -89,10 +89,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 bbcode_enabled = true
 text = "asdasd"
+fit_content = true
+scroll_active = false
 
 [node name="ColorRect" type="ColorRect" parent="CL/Popup" unique_id=824688815]
 material = SubResource("ShaderMaterial_cv71g")
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 287.0
-offset_bottom = 287.0
+offset_bottom = 137.0

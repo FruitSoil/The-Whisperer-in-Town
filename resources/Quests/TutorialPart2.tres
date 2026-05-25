@@ -11,11 +11,7 @@ quest_name = "Знакомство, часть 2"
 is_mandatory = false
 character_name = "Администрация"
 quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
-text_greetings = "Туториал часть 2[hint=\"{текст подсказки, отображаемый при наведении курсора}\"]{text}[/hint]
-[url=slivi]DSDDS[/url]
-[url=imper]Империя[/url]
-"
-answer_agree = "Продолжить"
+text_greetings = "[b][color={#FFFF5D}][url=impeasdasdrs]Тут текст с метатегом[/url][/color][/b]"
 answer_wait = "Подождите"
 answer_reject = "Сбросить трубку"
 text_reject = "*Вы слышите гудки на той стороне, после чего звук исчезает*"

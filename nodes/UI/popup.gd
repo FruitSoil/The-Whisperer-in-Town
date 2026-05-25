@@ -13,9 +13,23 @@ func hidePopup():
 func ShowPopup(meta:String):
 	%Popup.popup()
 	match meta:
-		"imper":
-			$CL/Popup/VBC/Name.text = "Империя"
-			$CL/Popup/VBC/Description.text = "Хепи берздей дэниэл"
-		"slivi":
-			$CL/Popup/VBC/Name.text = "ВЫВЫ"
-			$CL/Popup/VBC/Description.text = "выввы"
+		"EmpG":
+			$CL/Popup/VBC/Name.text = "Великая Астурская империя"
+			$CL/Popup/VBC/Description.text = "Ныне величайшая империя, что под своей опекой держит все материки мира."
+		"Boss":
+			$CL/Popup/VBC/Name.text = "Руководство"
+			$CL/Popup/VBC/Description.text = "Высшее руководство, состоящие из династийных чиновников. Они даровали вам эту должность."
+		"Robert":
+			$CL/Popup/VBC/Name.text = "Роберт Гийом"
+			$CL/Popup/VBC/Description.text = "Ныне покойный, основатель Великой Астурской империи, олицетворение закона и справедливости - Робер Гийом."
+		"Loyal":
+			$CL/Popup/VBC/Name.text = "Лояльность"
+			$CL/Popup/VBC/Description.text = "'Лояльность - это главное оружие в руках правителя' - Роберт Гийом."
+		"Must":
+			$CL/Popup/VBC/Name.text = "Указ"
+			$CL/Popup/VBC/Description.text = "Официальный и подписанный руководством указ. В какой-то степени можно считать это приказом."
+		"Should":
+			$CL/Popup/VBC/Name.text = "Просьба"
+			$CL/Popup/VBC/Description.text = "Не официальная и зачастую личная просьба. Исполнять её или нет, это вам решать."
+		_:
+			%Popup.hide()
