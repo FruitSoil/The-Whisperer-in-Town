@@ -25,6 +25,7 @@ func _ready() -> void:
 	$Control/CG/Slide_6.hide()
 	$Control/CG/Slide_7.hide()
 	$Control/CG/Slide_8.hide()
+	$Control/CG/Slide_free.hide()
 	touch_1.pressed.connect(pressed.bind(1))
 	touch_2.pressed.connect(pressed.bind(2))
 	touch_3.pressed.connect(pressed.bind(3))
@@ -54,6 +55,7 @@ func stage_change(stage: int = tutorial_stage):
 			$Control/CG/Slide_3.show()
 			for i in arrows_ruin:
 				i.hide()
+			$Control/CG/Slide_free.hide()
 			twmf($Control/CG/Slide_3/Label,2)
 			twmf($Control/CG/Slide_3,1)
 		4:
@@ -63,10 +65,13 @@ func stage_change(stage: int = tutorial_stage):
 		-1:
 			twmf($"../HUD/Arrow",2)
 			$"../HUD/Arrow".show()
+			get_tree().call_group("cell", "dis", true)
+			$Control/CG/Slide_free.show()
 		-2:
 			await get_tree().create_timer(1.8).timeout
 			twmf($"../HUD/Arrow2",0.6)
 			$"../HUD/Arrow2".show()
+			$Control/CG/Slide_free.show()
 		5:
 			$Control/CG/Slide_5.show()
 			twmf($Control/CG/Slide_2/Label,1)
@@ -77,6 +82,8 @@ func stage_change(stage: int = tutorial_stage):
 		7:
 			twmf($"../HUD/Arrow3",2)
 			$"../HUD/Arrow3".show()
+			$Control/CG/Slide_free.show()
+			get_tree().call_group("cell", "dis", false)
 		8:
 			$Control/CG/Slide_7.show()
 		9:
@@ -127,15 +134,17 @@ func pressed(ID: int):
 			$Control/CG/Slide_4.hide()
 		-1:
 			$"../HUD/Arrow".hide()
+			$Control/CG/Slide_free.hide()
 		-2:
 			$"../HUD/Arrow2".hide()
+			$Control/CG/Slide_free.hide()
 			stage_change(6)
 		5:
 			
 			$"../HUD/BaseUI/Demolition".emit_signal("pressed")
 			for i in arrows_ruin:
 				i.visible = true
-			
+			$Control/CG/Slide_free.show()
 			$Control/CG/Slide_5.mouse_filter = 2
 			twmf($Control/CG/Slide_5,1,false)
 			twmf($Control/CG/Slide_5/Label,0.5,false)
@@ -151,6 +160,7 @@ func pressed(ID: int):
 			$Control/CG/Slide_6.hide()
 		7:
 			$"../HUD/Arrow3".hide()
+			$Control/CG/Slide_free.hide()
 			tutorial_stage = 77
 		8:
 			$Control/CG/Slide_7.hide()

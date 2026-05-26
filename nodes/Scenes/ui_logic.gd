@@ -43,11 +43,13 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("displace") and building_state:
-		get_tree().call_group("cell","toggle_lines", false)
-		get_tree().call_group("cell", "_mouse_exit")
-		building_state = false
-		Global.add_to_integer_res_type(selected_build.buy_cost_type,selected_build.buy_cost)
-		change_all_label(true)
+		##Если мы не в туториале
+		if $"../../Tutorial".tutorial_stage > 7:
+			get_tree().call_group("cell","toggle_lines", false)
+			get_tree().call_group("cell", "_mouse_exit")
+			building_state = false
+			Global.add_to_integer_res_type(selected_build.buy_cost_type,selected_build.buy_cost)
+			change_all_label(true)
 	if event.is_action_released("displace") and worker_state:
 		drag.hide()
 		get_tree().call_group("cell","toggle_lines", false)

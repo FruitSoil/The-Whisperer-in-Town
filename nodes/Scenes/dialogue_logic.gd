@@ -6,9 +6,6 @@ extends CanvasLayer
 @onready var dialogue_animation: AnimationPlayer = $Dialogue_animation
 @onready var rich_text_label: RichTextLabel = $"../Dialogue/Panel/MC/RichTextLabel"
 
-var character_delay: float = 0.018
-var twr = create_tween().set_trans(Tween.TRANS_LINEAR)
-
 var res: Quest
 var worker_panel: WorkerPanel
 
@@ -91,14 +88,6 @@ func close_window():
 	twr.kill()
 	dialogue_animation.play("Hide")
 
-func type_text(new_text: String) -> void:
-	rich_text_label.text = new_text
-	rich_text_label.visible_ratio = 0.0
-	await get_tree().process_frame
-	var total_duration = rich_text_label.get_parsed_text().length() * character_delay
-	twr = create_tween().set_trans(Tween.TRANS_LINEAR)
-	twr.tween_property(rich_text_label, "visible_ratio", 1.0, total_duration)
-
 func answer(ID: int):
 	match ID:
 		1:
@@ -159,11 +148,24 @@ func answer(ID: int):
 				worker_panel.quest_stage = 0
 				worker_panel.update_icon()
 
+var character_delay: float = 0.018
+var twr = create_tween().set_trans(Tween.TRANS_LINEAR)
+
 func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("place"):
+		if twr and twr.is_valid():
+			twr.kill()
 		rich_text_label.visible_ratio = 1.0
-		twr.kill()
 
+func type_text(new_text: String) -> void:
+	if twr and twr.is_valid():
+		twr.kill()
+	rich_text_label.text = new_text
+	rich_text_label.visible_ratio = 0.0
+	await get_tree().process_frame
+	var total_duration = rich_text_label.get_parsed_text().length() * character_delay
+	twr = create_tween().set_trans(Tween.TRANS_LINEAR)
+	twr.tween_property(rich_text_label, "visible_ratio", 1.0, total_duration)
 
 func _anim_finished(anim_name: StringName) -> void:
 	if anim_name == "Hide":

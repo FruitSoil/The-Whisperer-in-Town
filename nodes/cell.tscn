@@ -171,6 +171,7 @@ viewport_path = NodePath("SubViewport")
 
 [node name="Cell" type="Area3D" unique_id=763399822 groups=["cell"]]
 script = ExtResource("1_51tdh")
+metadata/do_not_disable_on_tutor = false
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1025038257 groups=["cell"]]
 shape = SubResource("BoxShape3D_e4sgp")

@@ -24,7 +24,10 @@ func _ready() -> void:
 
 func toggle_lines(is_show: bool):
 	if is_show:
-		$grid.show()
+		if $Collision.disabled == false:
+			$grid.show()
+		else:
+			$grid.hide()
 	else:
 		$grid.hide()
 
@@ -318,3 +321,8 @@ func check_zone_status() ->bool:
 		return true
 	else:
 		return false
+
+func dis(value: bool) -> void:
+	if has_meta("do_not_disable_on_tutor") and get_meta("do_not_disable_on_tutor") == true:
+		return
+	$Collision.disabled = value

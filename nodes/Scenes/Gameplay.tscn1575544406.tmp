@@ -947,22 +947,6 @@ shader = ExtResource("80_tbnlw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6jij"]
 
-[sub_resource type="GDScript" id="GDScript_xegqy"]
-resource_name = "TutorSlider"
-script/source = "extends Control
-
-@onready var rich_text_label: RichTextLabel = $\"../../../../../Dialogue/Panel/MC/RichTextLabel\"
-var scroll_line: int
-
-func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_released(\"zoom+\"):
-		scroll_line = clamp(scroll_line-1, 0,rich_text_label.get_line_count())
-		rich_text_label.scroll_to_line(scroll_line)
-	if event.is_action_released(\"zoom-\"):
-		scroll_line = clamp(scroll_line+1, 0,rich_text_label.get_line_count())
-		rich_text_label.scroll_to_line(scroll_line)
-"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ha1fh"]
 shader = ExtResource("79_kxjjv")
 shader_parameter/pixel_size = 2.0000000475
@@ -2135,6 +2119,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2418,7 +2403,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -4401,6 +4385,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ПКМ"
 
 [node name="Slide_2" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1519542231]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(1, 1, 1, 0)
@@ -4466,14 +4451,6 @@ offset_top = 792.0
 offset_right = 1668.0
 offset_bottom = 936.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
-
-[node name="SliderTutor" type="Control" parent="Tutorial/Control/CG/Slide_2" unique_id=201882325]
-anchors_preset = 0
-offset_left = 1157.0
-offset_top = 588.0
-offset_right = 1717.0
-offset_bottom = 778.0
-script = SubResource("GDScript_xegqy")
 
 [node name="Slide_3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1058855305]
 visible = false
@@ -4656,7 +4633,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
 [node name="Slide_free" type="Control" parent="Tutorial/Control/CG" unique_id=2140237884]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -5571,4 +5547,3 @@ debug_color = Color(1, 0, 0.5764706, 1)
 [connection signal="value_changed" from="HUD/BaseUI/Store_UI/Slider" to="HUD/BaseUI" method="slider_changed"]
 [connection signal="pressed" from="HUD/BaseUI/Button" to="Pause" method="_on_button_base_ui_pressed"]
 [connection signal="animation_finished" from="HUD/UI_animator" to="HUD/BaseUI" method="anim_finish"]
-[connection signal="gui_input" from="Tutorial/Control/CG/Slide_2/SliderTutor" to="Tutorial/Control/CG/Slide_2/SliderTutor" method="_on_gui_input"]
