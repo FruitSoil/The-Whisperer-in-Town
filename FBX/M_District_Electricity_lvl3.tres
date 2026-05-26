@@ -1,14 +1,20 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpyfxaegrxefc"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dfjxq4qwrgyds"]
 
-[ext_resource type="Texture2D" uid="uid://cya0jjd2n8f37" path="res://Images/UV/Electricity/District_Electricity_Level3_Base_color.png" id="1_3p35o"]
-[ext_resource type="Texture2D" uid="uid://cqr8i8u08jg82" path="res://Images/UV/Electricity/District_Electricity_Level3_Emissive.png" id="2_prc8v"]
-[ext_resource type="Texture2D" uid="uid://b2tl5ju3yis8d" path="res://Images/UV/Electricity/District_Electricity_Level3_Height.png" id="3_mo0ld"]
+[ext_resource type="Texture2D" uid="uid://d20agrn1kjeg5" path="res://Images/UV/Electricity/District_Electricity_Level3_Emissive.png" id="1_mcnvx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1op1"]
+load_path = "res://.godot/imported/District_Electricity_Level3_Base_color.png-f5a70819e2f0383301b24d78351e700a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg3hv"]
+load_path = "res://.godot/imported/District_Electricity_Level3_Height.png-92734702f319abac769d09c3c31978e5.s3tc.ctex"
 
 [resource]
-albedo_texture = ExtResource("1_3p35o")
+albedo_texture = SubResource("CompressedTexture2D_u1op1")
 emission_enabled = true
-emission_energy_multiplier = 10.0
-emission_texture = ExtResource("2_prc8v")
+emission_texture = ExtResource("1_mcnvx")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_bg3hv")
+ao_texture_channel = 4
 heightmap_enabled = true
 heightmap_scale = 0.0
-heightmap_texture = ExtResource("3_mo0ld")
+heightmap_texture = SubResource("CompressedTexture2D_bg3hv")

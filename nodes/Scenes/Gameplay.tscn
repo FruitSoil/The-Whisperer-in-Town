@@ -430,6 +430,17 @@ _data = {
 &"Show": SubResource("Animation_n00c2")
 }
 
+[sub_resource type="Gradient" id="Gradient_30cd8"]
+offsets = PackedFloat32Array(0.8158845, 0.8736462, 0.9241877)
+colors = PackedColorArray(1, 1, 1, 0, 0.9709343, 1, 1, 0.13241062, 0.89411765, 1, 1, 0.48235294)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hn85b"]
+gradient = SubResource("Gradient_30cd8")
+width = 1920
+height = 1080
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -1828,6 +1839,17 @@ libraries/ = SubResource("AnimationLibrary_n00c2")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=588208318]
 layer = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HUD" unique_id=784585157]
+z_index = -500
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_hn85b")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="HUD" unique_id=39522629]
 z_index = 500

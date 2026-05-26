@@ -34,7 +34,7 @@ point_count = 3
 [node name="District_Electricity_Level1" unique_id=1544394034 instance=ExtResource("1_op4hg")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane" parent="." index="0" unique_id=1765589518]
+[node name="Plane" parent="." index="0" unique_id=1305025257]
 material_override = ExtResource("2_epwqr")
 
 [node name="Light2" type="OmniLight3D" parent="." index="1" unique_id=201655070]
@@ -76,7 +76,7 @@ omni_range = 2.527
 omni_shadow_mode = 0
 
 [node name="Build_part" type="CPUParticles3D" parent="." index="4" unique_id=1443274203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9528335, 0.4376336, -0.98967296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0015305, 0.4376336, -0.97019434)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
@@ -93,13 +93,14 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_kquhj")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 3.0
+scale_amount_min = 2.0
+scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_qto0l")
 color = Color(0.41598046, 0.4159804, 0.41598052, 1)
 color_ramp = SubResource("Gradient_epwqr")
 
 [node name="Build_part2" type="CPUParticles3D" parent="." index="5" unique_id=1775736486]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06394446, 0.4376336, -0.10078402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11264147, 0.4376336, -0.08130529)
 amount = 32
 lifetime = 3.0
 speed_scale = 0.2
@@ -116,7 +117,8 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_kquhj")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 3.0
+scale_amount_min = 2.0
+scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_qto0l")
 color = Color(0.41598046, 0.4159804, 0.41598052, 1)
 color_ramp = SubResource("Gradient_epwqr")
