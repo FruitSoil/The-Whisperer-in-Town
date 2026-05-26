@@ -66,7 +66,7 @@
 [ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="63_myd6q"]
 [ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="64_akcfr"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="65_hwrqn"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="65_pr6gd"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="65_pr6gd"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="66_y0mkd"]
 [ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_211c7"]
 [ext_resource type="Texture2D" uid="uid://dwmkfixnaqyk3" path="res://Images/UI/icons/stamp.png" id="68_pphls"]
@@ -4376,7 +4376,6 @@ text = "ЛКМ"
 
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
-visible = false
 script = ExtResource("2_tbnlw")
 
 [node name="Control" type="Control" parent="Tutorial" unique_id=506205110]

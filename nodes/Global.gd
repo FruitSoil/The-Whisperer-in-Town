@@ -1,6 +1,6 @@
 extends Node
 
-const DEFAULT_WORKER_COST: int = 67
+const DEFAULT_WORKER_COST: int = 7
 
 var total_buildings: Array[Building] = []
 var total_workers: Array[Worker] = []
@@ -12,7 +12,7 @@ var quest_in_progress: Array[Quest]
 
 var rusted: int = 0
 var electrosnow: int = 0
-var money: int = 9
+var money: int = 6
 var highqualityelectrical: int = 0
 var heavycomponents: int = 0
 var imperial_might: int = 0

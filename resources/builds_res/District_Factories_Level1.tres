@@ -6,12 +6,12 @@
 
 [resource]
 script = ExtResource("2_a6uvc")
-res_count_per_timer = 12
+res_count_per_timer = 22
 res_count_per_click = Vector2i(4, 4)
 model = ExtResource("1_smcd0")
 tier = 1
-buy_cost = 120
 name = "Заводские общежития"
+buy_cost = 120
 description = "Занесённые снегом общежития, меж них стоит величественный старый завод - вырабатывает N Ржавой Жести."
 shop_icon = ExtResource("3_smcd0")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

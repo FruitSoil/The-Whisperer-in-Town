@@ -7,13 +7,14 @@
 [resource]
 script = ExtResource("2_vp4ek")
 res_type = 1
-res_count_per_timer = 12
+res_count_per_timer = 22
 res_count_per_click = Vector2i(4, 4)
 model = ExtResource("1_ns54k")
 tier = 1
+name = "Сборщик снежинок"
 buy_cost = 120
 buy_cost_type = 1
-name = "Сборщик снежинок"
+s_buy_cost = 1000
 unlock_condition_desc = "Открыть зону 2"
 description = "Новая и передовая технология, созданная \"О.Ф.\", по выработке электричества, люди из домов-контейнеров теперь смогут жить в тепле и при свете ламп - вырабатывает N Электроснега"
 shop_icon = ExtResource("3_vp4ek")
