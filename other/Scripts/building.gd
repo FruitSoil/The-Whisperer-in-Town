@@ -14,9 +14,15 @@ class_name Building
 @export var second_res_count_per_timer: int ##Количество дополнительного ресурса за выработку по таймеру
 @export_category("В магазине")
 @export_range(1,5) var tier: int ##Тир здания от 1 до 3, определяет только кол-во звезд в магазине
+
+@export var name: String ## Название района в магазине
+
 @export var buy_cost: int ##За сколько здание покупается
 @export var buy_cost_type: Global.res_types ##За какой тип ресурса здание покупается
-@export var name: String ## Название района в магазине
+
+@export var s_buy_cost: int ##Второй ценник кол-во
+@export var s_buy_cost_type: Global.res_types ##Тип ресурса второго ценника
+
 @export_multiline var unlock_condition_desc: String ## Описание условия открытия зоны в текстовом виде
 @export_multiline var description: String ## Описание района в магазине
 @export var shop_icon: Texture2D ## Иконка в магазине

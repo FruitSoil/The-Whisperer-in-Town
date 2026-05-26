@@ -121,9 +121,9 @@ metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 [node name="Res_label" type="Label" parent="buy" unique_id=1527654187]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 6.0
+offset_top = 30.0
 offset_right = 80.0
-offset_bottom = 29.0
+offset_bottom = 53.0
 theme_override_fonts/font = ExtResource("2_dgv3n")
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -132,9 +132,9 @@ script = ExtResource("2_kou8v")
 [node name="Res_icon" type="TextureRect" parent="buy" unique_id=1304948122]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 6.0
+offset_top = 30.0
 offset_right = 42.0
-offset_bottom = 30.0
+offset_bottom = 54.0
 texture = ExtResource("3_kou8v")
 expand_mode = 1
 stretch_mode = 5
@@ -142,9 +142,9 @@ stretch_mode = 5
 [node name="Res_label2" type="Label" parent="buy" unique_id=1428352720]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 28.0
+offset_top = 12.0
 offset_right = 80.0
-offset_bottom = 51.0
+offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("2_dgv3n")
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -153,9 +153,9 @@ script = ExtResource("2_kou8v")
 [node name="Res_icon2" type="TextureRect" parent="buy" unique_id=1480082578]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 28.0
+offset_top = 12.0
 offset_right = 42.0
-offset_bottom = 52.0
+offset_bottom = 36.0
 texture = ExtResource("3_kou8v")
 expand_mode = 1
 stretch_mode = 5

@@ -33,10 +33,14 @@ func update():
 		$buy/Res_label.value = res.buy_cost
 		$buy/Res_label.resource = res.buy_cost_type
 		$buy/Res_icon.texture = Global.get_res_icon(res.buy_cost_type)
-		$buy/Res_label2.text = str(res.buy_cost)
-		$buy/Res_label2.value = res.buy_cost
-		$buy/Res_label2.resource = res.buy_cost_type
-		$buy/Res_icon2.texture = Global.get_res_icon(res.buy_cost_type)
+		if res.s_buy_cost > 0:
+			$buy/Res_label2.text = str(res.s_buy_cost)
+			$buy/Res_label2.value = res.s_buy_cost
+			$buy/Res_label2.resource = res.s_buy_cost_type
+			$buy/Res_icon2.texture = Global.get_res_icon(res.s_buy_cost_type)
+		else:
+			$buy/Res_label2.text = ""
+			$buy/Res_icon2.texture = null
 		match res.tier:
 			1:
 				$Tier.text = "Тир |"
@@ -52,11 +56,14 @@ func update():
 func _on_buy_pressed() -> void:
 	if is_open:
 		if Global.get_res_value(res.buy_cost_type) >= res.buy_cost:
-			Global.add_to_integer_res_type(res.buy_cost_type, -res.buy_cost)
-			%BaseUI.switch_to_build(res)
+			if Global.get_res_value(res.s_buy_cost_type) >= res.s_buy_cost:
+				Global.add_to_integer_res_type(res.buy_cost_type, -res.buy_cost)
+				Global.add_to_integer_res_type(res.s_buy_cost_type, -res.s_buy_cost)
+				%BaseUI.switch_to_build(res)
+				%BaseUI.change_label(res.buy_cost_type,false)
+				%BaseUI.change_label(res.s_buy_cost_type,false)
 		else:
 			no_res()
-		%BaseUI.change_label(res.buy_cost_type,false)
 	else:
 		no_res()
 
