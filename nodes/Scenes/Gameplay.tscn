@@ -4423,6 +4423,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ПКМ"
 
 [node name="Slide_2" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1519542231]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(1, 1, 1, 0)
@@ -4677,8 +4678,15 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
-[node name="Slide_free" type="Control" parent="Tutorial/Control/CG" unique_id=2140237884]
+[node name="Slide_free3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=2135046791]
 visible = false
+offset_left = 619.0
+offset_top = 847.0
+offset_right = 1304.0
+offset_bottom = 1198.0
+color = Color(1, 1, 1, 0)
+
+[node name="Slide_free" type="Control" parent="Tutorial/Control/CG" unique_id=2140237884]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

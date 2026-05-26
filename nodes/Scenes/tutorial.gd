@@ -55,6 +55,7 @@ func stage_change(stage: int = tutorial_stage):
 			$Control/CG/Slide_3.show()
 			for i in arrows_ruin:
 				i.hide()
+			$Control/CG/Slide_free3.show()
 			$Control/CG/Slide_free.hide()
 			twmf($Control/CG/Slide_3/Label,2)
 			twmf($Control/CG/Slide_3,1)
@@ -111,6 +112,7 @@ func pressed(ID: int):
 			%ADMIN.get_dialogue()
 			twmf($Control/CG/Slide_1,1,false)
 			twmf($Control/CG/Slide_1/Label,0.5,false)
+			$Control/CG/Slide_1/Touch1.hide()
 			await get_tree().create_timer(1).timeout
 			$Control/CG/Slide_1.hide()
 			stage_change(2)
@@ -130,6 +132,7 @@ func pressed(ID: int):
 			$Control/CG/Slide_4.mouse_filter = 2
 			twmf($Control/CG/Slide_4,0.5,false)
 			twmf($Control/CG/Slide_4/Label,0.5,false)
+			$Control/CG/Slide_4/Touch3.hide()
 			await get_tree().create_timer(0.5).timeout
 			$Control/CG/Slide_4.hide()
 		-1:
@@ -148,7 +151,9 @@ func pressed(ID: int):
 			$Control/CG/Slide_5.mouse_filter = 2
 			twmf($Control/CG/Slide_5,1,false)
 			twmf($Control/CG/Slide_5/Label,0.5,false)
+			$Control/CG/Slide_5/Touch5.hide()
 			await get_tree().create_timer(1).timeout
+			
 			$Control/CG/Slide_5.hide()
 		6:
 			$"../HUD/BaseUI/workers_panel/Default_worker".emit_signal("pressed")
