@@ -66,7 +66,7 @@
 [ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="63_myd6q"]
 [ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="64_akcfr"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="65_hwrqn"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="65_pr6gd"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="65_pr6gd"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="66_y0mkd"]
 [ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_211c7"]
 [ext_resource type="Texture2D" uid="uid://dwmkfixnaqyk3" path="res://Images/UI/icons/stamp.png" id="68_pphls"]
@@ -1131,7 +1131,7 @@ size = Vector2(0.1, 0.1)
 
 [sub_resource type="Gradient" id="Gradient_x1san"]
 offsets = PackedFloat32Array(0, 0.48084292, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.8666667, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_yssgo"]
 offsets = PackedFloat32Array(0.61877394, 1)
@@ -4752,7 +4752,7 @@ mesh = SubResource("QuadMesh_71vvp")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera/Camera" unique_id=1566402554]
 transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
-amount = 1000
+amount = 200
 amount_ratio = 0.25
 lifetime = 2.0
 preprocess = 2.0
@@ -4761,7 +4761,7 @@ draw_pass_1 = SubResource("PlaneMesh_6bc7i")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Camera/Camera" unique_id=1901199325]
 transform = Transform3D(-0.7071068, 0, 0.7071068, 0.5213338, 0.6755902, 0.5213338, -0.47771445, 0.7372773, -0.47771445, 2.1920319, 1.6161346, -1.4809151)
-amount = 1000
+amount = 200
 amount_ratio = 0.25
 lifetime = 2.0
 preprocess = 2.0
@@ -4781,7 +4781,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6413479, 0.081207275, -0.3
 mesh = SubResource("PlaneMesh_6adnx")
 
 [node name="Smoke" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1849737060]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 0.1, -1.5)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 1.7766033, -1.5)
 layers = 4
 amount = 200
 lifetime = 4.6

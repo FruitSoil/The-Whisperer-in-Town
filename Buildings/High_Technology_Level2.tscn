@@ -6,5 +6,5 @@
 [node name="High_Technology_Level2" unique_id=1737985389 instance=ExtResource("1_o43hk")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="UKFDPLFYBT" parent="." index="0" unique_id=1935922738]
+[node name="UKFDPLFYBT" parent="." index="0" unique_id=656438662]
 material_override = ExtResource("2_f6n1s")

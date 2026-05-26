@@ -86,7 +86,7 @@ func place(building: Building = %BaseUI.selected_build):
 	_mouse_exit()
 	print(current_build.name, " поставлено на ", name)
 	var inst = current_build.model.instantiate()
-	var rot = randi_range(0,3)
+	
 	if current_build != load("uid://cm6r5ofrc0a8"):
 		if $"../../Tutorial".tutorial_stage == -1:
 			$"../../Tutorial".pressed(-1)
@@ -103,15 +103,8 @@ func place(building: Building = %BaseUI.selected_build):
 		$Build_part.emitting = true
 		var twap = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		twap.tween_property(inst, "position", Vector3(0,0,0), 0.5).from(Vector3(0,-2,0))
-	match rot:
-		0:
-			inst.rotation_degrees.y = 0
-		1:
-			inst.rotation_degrees.y = 90
-		2:
-			inst.rotation_degrees.y = 180
-		3:
-			inst.rotation_degrees.y = 270
+	
+	inst.rotation_degrees.y = randi_range(0,3) * 90
 	add_child(inst)
 	%QuestLogic.check_for_all()
 

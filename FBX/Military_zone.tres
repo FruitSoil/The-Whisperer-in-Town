@@ -9,7 +9,7 @@
 albedo_texture = ExtResource("1_0hiaa")
 metallic_texture = ExtResource("4_kjup0")
 emission_enabled = true
-emission_energy_multiplier = 10.0
+emission_energy_multiplier = 5.0
 emission_texture = ExtResource("2_fdfyt")
 heightmap_enabled = true
 heightmap_scale = 1.0
