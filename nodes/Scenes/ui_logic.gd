@@ -244,7 +244,7 @@ func _on_zone_buy() -> void:
 					%QuestLogic.workers[2].change_progress(true)
 					%QuestLogic.workers[3].change_progress(true)
 					
-					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/ScientistPart1.tres"), Global.workers.SCIENTIST)
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/Scientist/EE1.tres"), Global.workers.SCIENTIST)
 					
 					$Store_UI/Slider.value = 30
 					$"../../Enviroment/DynamicHills/Zone_2".start_demolition()

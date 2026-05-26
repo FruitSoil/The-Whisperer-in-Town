@@ -1,18 +1,14 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dfjxq4qwrgyds"]
 
-[ext_resource type="Texture2D" uid="uid://d20agrn1kjeg5" path="res://Images/UV/Electricity/District_Electricity_Level3_Emissive.png" id="1_mcnvx"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1op1"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg3hv"]
+[ext_resource type="Texture2D" uid="uid://b86l4m5lx1n3a" path="res://Images/UV/Electricity/District_Electricity_Level3_Base_color.png" id="1_3p35o"]
+[ext_resource type="Texture2D" uid="uid://bmxealx1bna4u" path="res://Images/UV/Electricity/District_Electricity_Level3_Emissive.png" id="1_mcnvx"]
+[ext_resource type="Texture2D" uid="uid://xwuomnkmegj6" path="res://Images/UV/Electricity/District_Electricity_Leve3_Height.png" id="3_prc8v"]
 
 [resource]
-albedo_texture = SubResource("CompressedTexture2D_u1op1")
+albedo_texture = ExtResource("1_3p35o")
 emission_enabled = true
+emission_energy_multiplier = 3.23
 emission_texture = ExtResource("1_mcnvx")
-ao_enabled = true
-ao_texture = SubResource("CompressedTexture2D_bg3hv")
-ao_texture_channel = 4
 heightmap_enabled = true
 heightmap_scale = 0.0
-heightmap_texture = SubResource("CompressedTexture2D_bg3hv")
+heightmap_texture = ExtResource("3_prc8v")
