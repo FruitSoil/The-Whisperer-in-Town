@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2crydf1fo2s2"
-path.s3tc="res://.godot/imported/worker.PNG-e6be1790e826011b6ad2758c085e144b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Worker.PNG-794443ca72c73a72a0fbd28e555a09e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/portairs/worker.PNG"
-dest_files=["res://.godot/imported/worker.PNG-e6be1790e826011b6ad2758c085e144b.s3tc.ctex"]
+source_file="res://Images/portairs/Worker.PNG"
+dest_files=["res://.godot/imported/Worker.PNG-794443ca72c73a72a0fbd28e555a09e2.s3tc.ctex"]
 
 [params]
 

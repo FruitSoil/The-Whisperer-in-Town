@@ -35,6 +35,7 @@ func _ready() -> void:
 	desc.mouse_exited.connect(desc_quest_exited)
 	change_all_label(false)
 	$"../PortairDrag".hide()
+	$workers_panel/Default_worker/Res_label.text = str(Global.DEFAULT_WORKER_COST)
 	_on_exit_pressed()
 
 func _process(_delta: float) -> void:
@@ -55,7 +56,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		if selected_worker.resource_name == "Default":
-			Global.add_to_integer_res_type(2,10)
+			Global.add_to_integer_res_type(2,Global.DEFAULT_WORKER_COST)
 			change_label(2,true)
 		worker_state = false
 	if event.is_action_released("displace") and demolition_state:

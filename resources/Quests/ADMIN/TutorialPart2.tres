@@ -10,7 +10,7 @@ icon = ExtResource("3_yfklq")
 quest_name = "Знакомство, часть 2"
 is_mandatory = false
 character_name = "Администрация"
-quest_after = Array[String](["res://resources/Quests/WorkerPart1.tres"])
+quest_after = Array[String](["res://resources/Quests/Worker/ODNM1.tres"])
 text_greetings = "[b][color={#FFFF5D}][url=impeasdasdrs]Тут текст с метатегом[/url][/color][/b]"
 answer_wait = "Подождите"
 answer_reject = "Сбросить трубку"

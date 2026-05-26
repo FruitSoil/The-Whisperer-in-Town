@@ -1,5 +1,7 @@
 extends Node
 
+const DEFAULT_WORKER_COST: int = 67
+
 var total_buildings: Array[Building] = []
 var total_workers: Array[Worker] = []
 var total_work_on_build: Array[WorkerOnBuilding] = []

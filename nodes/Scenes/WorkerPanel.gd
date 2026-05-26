@@ -30,12 +30,12 @@ func touch():
 		if res.is_unique :
 			%BaseUI.switch_to_worker(res)
 		else:
-			if Global.money >= 10:
+			if Global.money >= Global.DEFAULT_WORKER_COST:
 				var given_res: Worker = res
 				given_res = res.duplicate()
 				res.icon = icons_pool[randi_range(0,2)]
 				change_progress()
-				Global.add_to_integer_res_type(2, -10)
+				Global.add_to_integer_res_type(2, -Global.DEFAULT_WORKER_COST)
 				%BaseUI.switch_to_worker(given_res)
 			else:
 				%BaseUI.no_res(self, position, 3)

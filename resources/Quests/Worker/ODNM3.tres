@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_q4puu"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_jppsa"]
-[ext_resource type="Resource" uid="uid://e8uu0uutwcmc" path="res://resources/Quests/ScientistPart1.tres" id="2_lo4wd"]
+[ext_resource type="Resource" uid="uid://e8uu0uutwcmc" path="res://resources/Quests/Scientist/EE1.tres" id="2_lo4wd"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="2_wm6vu"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="3_0cl70"]
 [ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="4_obgvk"]
@@ -16,7 +16,7 @@ quest_name = "Научный интерес"
 character_name = "Сэд Клинтвуд"
 worker = 1
 done_quest_dependencies = Array[ExtResource("1_q4puu")]([ExtResource("2_lo4wd")])
-quest_after = Array[String](["res://resources/Quests/ScientistPart2.tres"])
+quest_after = Array[String](["res://resources/Quests/Scientist/EE2.tres"])
 complete_condition = 5
 int_value = 1
 building_type = Array[ExtResource("2_jppsa")]([ExtResource("3_0cl70"), ExtResource("4_x5ouc"), ExtResource("5_0spkp")])

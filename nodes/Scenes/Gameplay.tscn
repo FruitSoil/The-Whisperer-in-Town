@@ -4376,6 +4376,7 @@ text = "ЛКМ"
 
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
+visible = false
 script = ExtResource("2_tbnlw")
 
 [node name="Control" type="Control" parent="Tutorial" unique_id=506205110]

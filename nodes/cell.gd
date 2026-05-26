@@ -118,7 +118,7 @@ func place(building: Building = %BaseUI.selected_build):
 func displace():
 	if has_worker:
 		if current_worker.is_unique == false:
-			Global.add_to_integer_res_type(2, 10)
+			Global.add_to_integer_res_type(2, Global.DEFAULT_WORKER_COST)
 			%BaseUI.change_label(2, true)
 	get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
 	Global.total_buildings.erase(current_build)
@@ -141,6 +141,7 @@ func displace():
 	$Time_to_res.stop()
 	$Charge_sprite.hide()
 	$Charge_time.stop()
+	$Sprite3D/Portair.texture = null
 	
 	$Build_part.emitting = true
 	%BaseUI.demolition_state = false
@@ -195,7 +196,7 @@ func disappoint():
 		current_combo = null
 		has_worker = false
 		if current_worker.is_unique == false:
-			Global.add_to_integer_res_type(2, 10)
+			Global.add_to_integer_res_type(2, Global.DEFAULT_WORKER_COST)
 			%BaseUI.change_label(2, true)
 		get_tree().call_group("Work_panels", "change_work_icon", false, current_worker)
 		current_worker = null

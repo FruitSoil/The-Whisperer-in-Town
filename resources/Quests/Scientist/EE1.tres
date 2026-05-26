@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_hn7a0"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="2_df4nt"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_on3y1"]
-[ext_resource type="Resource" uid="uid://cde2mlv0kwlq8" path="res://resources/Quests/WorkerPart2.tres" id="3_on3y1"]
+[ext_resource type="Resource" uid="uid://cde2mlv0kwlq8" path="res://resources/Quests/Worker/ODNM2.tres" id="3_on3y1"]
 [ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="4_8yjxd"]
 [ext_resource type="Resource" uid="uid://cxmnjonuccf7t" path="res://resources/Quests/Zone_quest/Zone2Quest.tres" id="4_on3y1"]
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="4_uk130"]
@@ -15,7 +15,7 @@ quest_name = "Эра электротехники, часть 1"
 character_name = "Говард Ист"
 worker = 2
 done_quest_dependencies = Array[ExtResource("1_hn7a0")]([ExtResource("3_on3y1"), ExtResource("4_on3y1")])
-quest_after = Array[String](["res://resources/Quests/WorkerPart3.tres"])
+quest_after = Array[String](["res://resources/Quests/Worker/ODNM3.tres"])
 complete_condition = 2
 int_value = 4
 building_type = Array[ExtResource("2_on3y1")]([ExtResource("2_df4nt"), ExtResource("4_uk130")])

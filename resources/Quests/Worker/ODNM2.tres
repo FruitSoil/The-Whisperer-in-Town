@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cde2mlv0kwlq8"]
 
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_e42nx"]
-[ext_resource type="Resource" uid="uid://c0a17d6j013vq" path="res://resources/Quests/WorkerPart1.tres" id="2_e42nx"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_dd7vo"]
+[ext_resource type="Resource" uid="uid://c0a17d6j013vq" path="res://resources/Quests/Worker/ODNM1.tres" id="2_e42nx"]
 [ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="2_of308"]
 [ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="3_ldhyl"]
 
@@ -12,7 +13,7 @@ quest_name = "О дивный новый мир, часть 2"
 character_name = "Сэд Клинтвуд"
 worker = 1
 done_quest_dependencies = Array[ExtResource("1_e42nx")]([ExtResource("2_e42nx")])
-quest_after = Array[String](["res://resources/Quests/ScientistPart1.tres"])
+quest_after = Array[String](["res://resources/Quests/Scientist/EE1.tres"])
 complete_condition = 3
 int_value = 9
 text_greetings = "Здравствуйте. Я тут перебирал старые документы, и это натолкнуло меня на некоторые мысли. Я знаю, каким образом мы сможем добиться значительного скачка в производстве и, плюсом к этому, внедрить недавние инновации в сфере электроэнергетики. Всё это мы с вами будем реализовывать в новом III тире районов.

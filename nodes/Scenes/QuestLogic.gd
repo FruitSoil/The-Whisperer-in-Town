@@ -3,7 +3,7 @@ extends Node
 @onready var workers: Array[WorkerPanel] = [%ADMIN,%worker,%worker2,%worker3,%worker4,%worker5,%worker6]
 
 func _ready() -> void:
-	var tutor = load("res://resources/Quests/TutorialPart1.tres")
+	var tutor = load("res://resources/Quests/ADMIN/TutorialPart1.tres")
 	ql_wait_to_next(1, tutor, Global.workers.ADMIN)
 
 ##Добавить квест типа new_quest персонажу worker через wait_time секунд

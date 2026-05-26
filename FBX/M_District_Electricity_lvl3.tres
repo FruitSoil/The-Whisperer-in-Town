@@ -3,10 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://d20agrn1kjeg5" path="res://Images/UV/Electricity/District_Electricity_Level3_Emissive.png" id="1_mcnvx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1op1"]
-load_path = "res://.godot/imported/District_Electricity_Level3_Base_color.png-f5a70819e2f0383301b24d78351e700a.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bg3hv"]
-load_path = "res://.godot/imported/District_Electricity_Level3_Height.png-92734702f319abac769d09c3c31978e5.s3tc.ctex"
 
 [resource]
 albedo_texture = SubResource("CompressedTexture2D_u1op1")
