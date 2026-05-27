@@ -166,6 +166,7 @@ func pressed(ID: int):
 		7:
 			$"../HUD/Arrow3".hide()
 			$Control/CG/Slide_free.hide()
+			$Control/CG/Slide_free3.hide()
 			tutorial_stage = 77
 		8:
 			$Control/CG/Slide_7.hide()

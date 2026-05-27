@@ -76,12 +76,12 @@ func update_icon():
 		1:
 			var twm = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 			var tws = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-			twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5).from(Color(1.0, 1.0, 1.0, 0.0))
+			twm.tween_property($Dialogue_status,"modulate", Color(0.529, 1.0, 1.0, 1.0), 0.5).from(Color(1.0, 1.0, 1.0, 0.0))
 			tws.tween_property($Dialogue_status,"scale", Vector2(2.5,2.5), 1.75).from(Vector2(1.3,1.3))
 			tws.tween_property($Dialogue_status,"scale", Vector2(1.3,1.3), 0.75)
-			twm.tween_property($Dialogue_status,"modulate", Color(2.313, 2.313, 2.313, 1.0), 1.25)
-			twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
-			$Dialogue_status.texture = load("res://Images/UI/icons/IMG_20260512_194321_862.png")
+			twm.tween_property($Dialogue_status,"modulate", Color(0.529, 1.0, 1.0, 1.0), 1.25)
+			twm.tween_property($Dialogue_status,"modulate", Color(0.753, 1.0, 1.0, 1.0), 0.5)
+			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
 			await get_tree().create_timer(6).timeout
 			icon_shake()
@@ -90,17 +90,17 @@ func update_icon():
 		2:
 			$Dialogue_status.hide()
 		3:
-			$Dialogue_status.texture = load("res://Images/UI/icons/IMG_20260512_194322_026.png")
+			$Dialogue_status.texture = load("res://Images/UI/icons/colored/no_new_dialogue.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color(1.0, 1.0, 0.647, 1.0)
 		4:
-			$Dialogue_status.texture = load("res://Images/UI/icons/IMG_20260512_194322_323.png")
+			$Dialogue_status.texture = load("res://Images/UI/icons/colored/task_complete.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color("b4ffb8")
 		5:
-			$Dialogue_status.texture = load("res://Images/UI/icons/IMG_20260512_194321_862.png")
+			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
-			$Dialogue_status.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$Dialogue_status.modulate = Color(0.753, 1.0, 1.0, 1.0)
 		0:
 			var twm = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 			twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
@@ -114,7 +114,7 @@ func icon_shake():
 		var tws = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 		var twm = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 		twm.tween_property($Dialogue_status,"modulate", Color(1.0, 0.378, 0.31, 1.0), 1.25).from(Color(1.0, 1.0, 1.0, 1.0))
-		twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 1.0), 0.25)
+		twm.tween_property($Dialogue_status,"modulate", Color(0.753, 1.0, 1.0, 1.0), 0.25)
 		tws.tween_property($Dialogue_status,"scale", Vector2(2,2), 0.75).from(Vector2(1.3,1.3))
 		twr.tween_property($Dialogue_status, "rotation_degrees", -20,0.15)
 		twr.tween_property($Dialogue_status, "rotation_degrees", 20,0.15)

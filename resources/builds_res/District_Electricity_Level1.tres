@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Building" format=3 uid="uid://c0sdnng1cbdlb"]
 
-[ext_resource type="PackedScene" uid="uid://dugwfaeuq7stv" path="res://Buildings/district_electricity_level_1.tscn" id="1_ns54k"]
+[ext_resource type="PackedScene" uid="uid://dugwfaeuq7stv" path="res://Buildings/district_electricity_level_1.tscn" id="1_7a3da"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_vp4ek"]
 [ext_resource type="Texture2D" uid="uid://ssxtsld20kep" path="res://Images/Zones/District_Electricity_Concept.PNG" id="3_vp4ek"]
 
@@ -9,7 +9,7 @@ script = ExtResource("2_vp4ek")
 res_type = 1
 res_count_per_timer = 22
 res_count_per_click = Vector2i(4, 4)
-model = ExtResource("1_ns54k")
+model = ExtResource("1_7a3da")
 tier = 1
 name = "Сборщик снежинок"
 buy_cost = 120

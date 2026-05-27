@@ -48,8 +48,8 @@ omni_range = 3.696
 
 [node name="Build_part2" type="CPUParticles3D" parent="." index="2" unique_id=210236467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7230288, 0.38588604, 1.2940824)
-amount = 32
-lifetime = 3.0
+amount = 16
+lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_glasl")
 emission_shape = 3
@@ -64,7 +64,18 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_ejydi")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 2.5
+scale_amount_min = 3.0
+scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_lkjmx")
 color = Color(0.5370113, 0.5370113, 0.5370112, 1)
 color_ramp = SubResource("Gradient_guby4")
+
+[node name="Light3" type="OmniLight3D" parent="." index="3" unique_id=348816503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7289772, 0.53801394, 1.273075)
+light_color = Color(1, 0.52156866, 0.14117648, 1)
+light_energy = 1.404
+light_volumetric_fog_energy = 5.118
+shadow_bias = 0.026
+shadow_blur = 0.632
+omni_range = 0.5
+omni_shadow_mode = 0

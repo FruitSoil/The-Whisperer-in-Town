@@ -1,20 +1,14 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ba2obenou4wnj"]
 
-[ext_resource type="Texture2D" uid="uid://ctavid06eglid" path="res://Images/UV/Electricity/District_Electricity_Level1_Base_color.png" id="1_7twnt"]
-[ext_resource type="Texture2D" uid="uid://dhkkh2n174dqn" path="res://Images/UV/Electricity/District_Electricity_Level1_Emissive.png" id="2_k30q8"]
-[ext_resource type="Texture2D" uid="uid://dln0nc7tfumtk" path="res://Images/UV/Electricity/District_Electricity_Level1_Height.png" id="3_33hjn"]
+[ext_resource type="Texture2D" uid="uid://cdc3p71is3ny3" path="res://Images/UV/Electricity/Electriciti_lvl1_Base_color.png" id="1_7twnt"]
+[ext_resource type="Texture2D" uid="uid://cak2vb2mqom5q" path="res://Images/UV/Electricity/Electriciti_lvl1_Emissive.png" id="2_k30q8"]
+[ext_resource type="Texture2D" uid="uid://b7toaxyo61yq3" path="res://Images/UV/Electricity/Electriciti_lvl1_Height.png" id="3_33hjn"]
 
 [resource]
 albedo_texture = ExtResource("1_7twnt")
 emission_enabled = true
-emission_energy_multiplier = 10.0
+emission_energy_multiplier = 7.0
 emission_texture = ExtResource("2_k30q8")
-normal_enabled = true
-normal_texture = ExtResource("3_33hjn")
 heightmap_enabled = true
 heightmap_scale = 0.0
 heightmap_texture = ExtResource("3_33hjn")
-uv1_offset = Vector3(4.92, 3.955, 0)
-uv1_triplanar_sharpness = 1.0933974
-grow_amount = -16.0
-stencil_color = Color(0.44705883, 0.5803922, 0, 1)

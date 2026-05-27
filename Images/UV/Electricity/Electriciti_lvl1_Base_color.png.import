@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctavid06eglid"
-path.s3tc="res://.godot/imported/District_Electricity_Level1_Base_color.png-fedc8dd6ac7ff1f16f9f33b1ec81d89d.s3tc.ctex"
+uid="uid://cdc3p71is3ny3"
+path.s3tc="res://.godot/imported/Electriciti_lvl1_Base_color.png-c2fb9b7c74c111247c0b68ba15774194.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/UV/Electricity/District_Electricity_Level1_Base_color.png"
-dest_files=["res://.godot/imported/District_Electricity_Level1_Base_color.png-fedc8dd6ac7ff1f16f9f33b1ec81d89d.s3tc.ctex"]
+source_file="res://Images/UV/Electricity/Electriciti_lvl1_Base_color.png"
+dest_files=["res://.godot/imported/Electriciti_lvl1_Base_color.png-c2fb9b7c74c111247c0b68ba15774194.s3tc.ctex"]
 
 [params]
 

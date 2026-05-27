@@ -214,6 +214,7 @@ gi_mode = 0
 pixel_size = 0.006
 billboard = 1
 fixed_size = true
+render_priority = 2
 texture = ExtResource("2_hy5qt")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sprite3D" unique_id=556721993]
@@ -225,6 +226,7 @@ modulate = Color(0, 0, 0, 1)
 pixel_size = 0.005
 billboard = 1
 fixed_size = true
+render_priority = 2
 texture = ExtResource("2_hy5qt")
 
 [node name="Portair" type="Sprite3D" parent="Sprite3D" unique_id=1336147538]
@@ -235,6 +237,7 @@ gi_mode = 0
 pixel_size = 0.00025
 billboard = 1
 fixed_size = true
+render_priority = 2
 
 [node name="corner" type="Sprite3D" parent="Sprite3D" unique_id=845167765]
 transform = Transform3D(0.77066904, -0.58136547, 0.2609275, 0.6273204, 0.62020445, -0.47097588, 0.111981064, 0.52665085, 0.84267515, -0.15187168, 0.057945967, -0.3596673)
@@ -245,6 +248,7 @@ modulate = Color(0.99217445, 1, 0.6756697, 1)
 pixel_size = 0.006
 billboard = 1
 fixed_size = true
+render_priority = 2
 texture = ExtResource("2_hy5qt")
 
 [node name="Build_part" type="CPUParticles3D" parent="." unique_id=319671702]
@@ -279,12 +283,13 @@ hue_variation_min = -0.86
 
 [node name="Charge_sprite" type="Sprite3D" parent="." unique_id=1913938917]
 transform = Transform3D(1, -6.7055225e-08, -7.450581e-09, 5.2154064e-08, 0.9999999, -3.2782555e-07, 0, 3.2782555e-07, 1.0000001, -3.027, 2.321, 0.187)
-layers = 2
+layers = 4
 cast_shadow = 0
 gi_mode = 0
 pixel_size = 0.00125
 billboard = 1
 fixed_size = true
+render_priority = 3
 texture = SubResource("ViewportTexture_1nuhy")
 
 [node name="MoneyIcon" type="Sprite3D" parent="Charge_sprite" unique_id=1461922140]
@@ -295,6 +300,7 @@ gi_mode = 0
 pixel_size = 0.001
 billboard = 1
 fixed_size = true
+render_priority = 3
 texture = ExtResource("5_1nuhy")
 
 [node name="Charge_feedback" type="Sprite3D" parent="Charge_sprite" unique_id=674961800]
@@ -306,6 +312,7 @@ modulate = Color(0.8, 0.6156863, 0.52156866, 1)
 pixel_size = 0.0025
 billboard = 1
 fixed_size = true
+render_priority = 3
 texture = SubResource("GradientTexture2D_csgmv")
 
 [node name="Charge_part" type="CPUParticles3D" parent="." unique_id=1752209562]
@@ -393,6 +400,7 @@ gi_mode = 0
 pixel_size = 0.0015
 billboard = 1
 fixed_size = true
+render_priority = 3
 texture = SubResource("ViewportTexture_ymfr8")
 
 [connection signal="timeout" from="Time_to_res" to="." method="_on_time_to_res_timeout"]

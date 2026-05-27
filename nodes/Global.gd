@@ -70,19 +70,19 @@ func add_to_integer_res_type(res_type: int, add_value: int):
 func get_res_icon(res_type: int) -> Texture:
 	match res_type:
 		0:
-			return load("res://Images/Resources_icons/actual/Rusted_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_rusty_tin.png")
 		1:
-			return load("res://Images/Resources_icons/actual/Electrosnow_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_electrosnow.png")
 		2:
-			return load("res://Images/Resources_icons/actual/money_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_money.png")
 		3:
-			return load("res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_wiring_diagram.png")
 		4:
-			return load("res://Images/Resources_icons/actual/heavycomponent_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_the_power_of_the_military.png")
 		5:
-			return load("res://Images/Resources_icons/actual/imperial_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_the_power_of_the_empire.png")
 		6:
-			return load("res://Images/Resources_icons/actual/cultistic_res_icon.png")
+			return load("res://Images/Resources_icons/Colored/icon_the_power_of_the_ancients.png")
 		_:
 			return load("res://Images/Resources_icons/no_res_icon.png")
 

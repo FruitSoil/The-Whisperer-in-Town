@@ -31,10 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://Images/UI/icons/IMG_20260512_194321_716.png" id="28_po80s"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="29_77y48"]
 [ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="30_72u36"]
-[ext_resource type="Texture2D" uid="uid://dnlwtnb54ban3" path="res://Images/UI/icons/IMG_20260512_194322_295.png" id="31_q848m"]
 [ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://Images/UI/ui4_button3_idle.png" id="32_7n4c0"]
+[ext_resource type="Texture2D" uid="uid://cv46tb5yc642e" path="res://Images/UI/icons/colored/tasks.png" id="32_xegqy"]
 [ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://Images/UI/ui4_button3_pressed.png" id="33_w4m4s"]
 [ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="34_kkiys"]
+[ext_resource type="Texture2D" uid="uid://b3k4oxb2d4c4g" path="res://Images/UI/icons/colored/shop.png" id="35_5h554"]
 [ext_resource type="PackedScene" uid="uid://1xk6cghmugrw" path="res://nodes/UI/quest_panel.tscn" id="35_b0c46"]
 [ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="36_iketc"]
 [ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="37_5e40a"]
@@ -70,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="66_y0mkd"]
 [ext_resource type="Resource" uid="uid://b12u8yfat1dal" path="res://resources/workers/U_ADMIN.tres" id="67_211c7"]
 [ext_resource type="Texture2D" uid="uid://dwmkfixnaqyk3" path="res://Images/UI/icons/stamp.png" id="68_pphls"]
+[ext_resource type="Texture2D" uid="uid://dkb86l6s7x11g" path="res://Images/UI/icons/colored/icon_npc.png" id="69_5h554"]
 [ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="69_snyfb"]
 [ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="70_essfe"]
 [ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="71_6ejo6"]
@@ -1134,7 +1136,6 @@ offsets = PackedFloat32Array(0, 0.48084292, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.8666667, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_yssgo"]
-offsets = PackedFloat32Array(0.61877394, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwrqn"]
@@ -1976,7 +1977,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_sok84")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rpk0c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rpk0c")
 text = "Квесты"
-icon = ExtResource("31_q848m")
+icon = ExtResource("32_xegqy")
 icon_alignment = 2
 
 [node name="Store" type="Button" parent="HUD/BaseUI" unique_id=1798564092]
@@ -1997,7 +1998,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pem7d")
 text = "Магазин"
-icon = ExtResource("28_po80s")
+icon = ExtResource("35_5h554")
 autowrap_trim_flags = 0
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI" unique_id=1081556581]
@@ -2157,6 +2158,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2440,7 +2442,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3259,7 +3260,7 @@ texture = ExtResource("65_pr6gd")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Appoint_status2" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1127995323]
+[node name="Appoint_status_ahdow" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1127995323]
 modulate = Color(0, 0, 0, 0.2901961)
 z_index = 100
 texture_filter = 1
@@ -3281,7 +3282,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1103314090]
-modulate = Color(0.61960787, 1, 0.68235296, 1)
+modulate = Color(0.8931533, 0.798297, 0.7249399, 1)
 z_index = 100
 texture_filter = 1
 layout_mode = 1
@@ -3296,7 +3297,7 @@ offset_right = 2.0318604
 offset_bottom = -56.569332
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("66_y0mkd")
+texture = ExtResource("69_5h554")
 expand_mode = 3
 stretch_mode = 5
 
@@ -3470,9 +3471,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3581,9 +3582,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3689,9 +3690,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3797,9 +3798,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3905,9 +3906,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4013,9 +4014,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4072,7 +4073,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1317240521]
-visible = false
 modulate = Color(1, 0.7093617, 0.5230317, 1)
 z_index = 5
 layout_mode = 1
@@ -4121,9 +4121,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -28.016846
 offset_top = -32.0
-offset_right = 32.0
+offset_right = 35.983154
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4687,6 +4687,7 @@ offset_bottom = 1198.0
 color = Color(1, 1, 1, 0)
 
 [node name="Slide_free" type="Control" parent="Tutorial/Control/CG" unique_id=2140237884]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -4783,7 +4784,7 @@ mesh = SubResource("PlaneMesh_6adnx")
 [node name="Smoke" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1849737060]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 1.7766033, -1.5)
 layers = 4
-amount = 200
+amount = 100
 lifetime = 4.6
 preprocess = 4.6
 mesh = SubResource("PlaneMesh_hwrqn")
@@ -4793,7 +4794,7 @@ direction = Vector3(-1, 0, -1)
 spread = 30.87
 flatness = 1.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_max = 3.56
+initial_velocity_max = 2.0
 angular_velocity_max = 75.0
 tangential_accel_min = -4.27
 tangential_accel_max = 9.96
@@ -4803,7 +4804,6 @@ scale_amount_max = 100.0
 color = Color(1, 1, 1, 0.42352942)
 color_ramp = SubResource("Gradient_x1san")
 color_initial_ramp = SubResource("Gradient_yssgo")
-hue_variation_min = -0.86
 
 [node name="Clouds" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1828890602]
 transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 24.508427, -50)

@@ -36,7 +36,7 @@ colors = PackedColorArray(0.029045643, 0.029045643, 0.029045643, 1, 1, 1, 1, 1)
 [node name="District_Electricity_Level2" unique_id=1714084196 instance=ExtResource("1_qh7fn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane" parent="." index="0" unique_id=644820156]
+[node name="Plane" parent="." index="0" unique_id=1471231999]
 material_override = ExtResource("2_p0yfm")
 
 [node name="Light5" type="OmniLight3D" parent="." index="1" unique_id=1423642294]
@@ -90,7 +90,7 @@ omni_shadow_mode = 0
 [node name="Build_part2" type="CPUParticles3D" parent="." index="5" unique_id=1117688546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0476952, 0.4376336, -0.0059225154)
 amount = 32
-lifetime = 3.0
+lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
@@ -113,7 +113,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 [node name="Build_part3" type="CPUParticles3D" parent="." index="6" unique_id=1441532355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04769497, 0.4376336, -1.1170337)
 amount = 32
-lifetime = 3.0
+lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
@@ -136,7 +136,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 [node name="Build_part4" type="CPUParticles3D" parent="." index="7" unique_id=1760295314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06341609, 0.4376336, 1.1051886)
 amount = 32
-lifetime = 3.0
+lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
@@ -159,7 +159,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 [node name="Build_part5" type="CPUParticles3D" parent="." index="8" unique_id=460242368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0634162, 0.4376336, -0.0059225154)
 amount = 32
-lifetime = 3.0
+lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
 emission_shape = 3
