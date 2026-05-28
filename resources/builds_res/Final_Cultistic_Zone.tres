@@ -7,12 +7,13 @@
 [resource]
 script = ExtResource("2_3vkwe")
 res_type = 6
-res_count_per_timer = 1
+res_count_per_timer = 5
+res_timer = 3.0
 model = ExtResource("1_w4d38")
 tier = 5
-buy_cost = 1440
-buy_cost_type = 4
 name = "Нъхорфаадская сила"
+buy_cost = 1000
+buy_cost_type = 4
 unlock_condition_desc = "Открыть зону 5"
 description = "Время тает у нас на руках, прошлые порядки должны сгинуть в огне новшеств и открытий. Ну же, помоги нам свергнуть прошлый мировой порядок, вызволить из заточения истинного бога \"Нъхорфаада\" - нужно поставить N районов, чтобы сотворить ритуал Нового Порядка."
 shop_icon = ExtResource("3_0n346")
