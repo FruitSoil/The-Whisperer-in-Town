@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bnasb7mu2rmd2"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_etlt5"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_d0yba"]
+[ext_resource type="Resource" uid="uid://fcc6bky83qk1" path="res://resources/Quests/Scientist/EE3.tres" id="2_etlt5"]
+[ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="4_etlt5"]
+[ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://resources/builds_res/District_Factories_Level2.tres" id="5_d0yba"]
+[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="6_63vx2"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="7_d7n73"]
+[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="8_it1oq"]
+
+[resource]
+script = ExtResource("1_etlt5")
+icon = ExtResource("7_d7n73")
+quest_name = "Гнетущая болезнь, часть 1"
+is_mandatory = false
+character_name = "Сэд Клинтвуд"
+worker = 1
+any_quest_dependencies = Array[ExtResource("1_etlt5")]([ExtResource("2_etlt5")])
+quest_after = Array[String](["res://resources/Quests/Agent/EV1.tres", "res://resources/Quests/Scientist/RD1.tres", "res://resources/Quests/Worker/OD2.tres", "res://resources/Quests/Agent/EV3.tres"])
+reject_other_quest_skip = Array[String](["res://resources/Quests/Worker/OD2.tres", "res://resources/Quests/Worker/OD3.tres"])
+complete_condition = 5
+int_value = 1
+building_type = Array[ExtResource("2_d0yba")]([ExtResource("4_etlt5"), ExtResource("5_d0yba"), ExtResource("6_63vx2")])
+worker_type = ExtResource("8_it1oq")
+open_after_accept = true
+text_greetings = "Здравствуйте, я к вам с просьбой. В последнее время мне не здоровится, в связи с этим моя продуктивность значительно упала. Я же хочу попросить вас, чтобы вы [b][color={#FFFF5D}][url=Throw]отправили[/url][/color][/b] меня обратно в [b][color={#FF59CA}]районы \"\"старых заводов\"\"[/color][/b]. В какой-то степени я даже соскучился по тем кирпичным стенам, да и не так ветренно там, по сравнению со Снегонаукой. 
+
+Когда вы меня передислоцируете, как только смогу я вернусь к своим обязанностям."
+answer_agree = "Я готов отправить тебя обратно в район старых заводов. "
+answer_wait = "Вернусь к этому позже."
+answer_reject = "Я не буду этого делать"
+text_reject = "Принимаю вас отказ. Простите, что принёс лишние неудобства."
+text_progress = "Ожидаю свою [b][color={#FFFF5D}][url=Throw]отправку[/url][/color][/b] в один из [b][color={#FF59CA}]районов \"Старых заводов\"[/color][/b]. Не терпиться вновь увидеть их."
+text_finish = "Благодарю вас, за то что позволили эту глупость. Я всеми силами постараюсь вернуться в нужное русло, как можно быстрее. Не беспокойтесь, много времени это не займёт."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

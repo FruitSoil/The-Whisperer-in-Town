@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://d610ci6b4qx7"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_gs363"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_txvo2"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="7_jknwn"]
+
+[resource]
+script = ExtResource("1_gs363")
+icon = ExtResource("7_jknwn")
+quest_name = "Начало конца"
+character_name = "Говард Ист"
+worker = 2
+complete_condition = 6
+int_value = 5
+text_greetings = "Мы на пороге его - необъяснимого. Трепет гогочет, у меня аж мурашки идут по коже. 
+
+Время наконец принять решение. [b]Откройте[/b] [b][color={#FF59CA}]зону \"\"Монолита\"\"[/color][/b]. Пора поставить точку."
+answer_agree = "Да, время пришло."
+answer_wait = "..."
+text_progress = "[b]Откройте[/b] [b][color={#FF59CA}]зону \"Монолита\"[/color][/b]."
+text_finish = "Время затаило дыхание, стрелки пойдут вновь после конца. Удачи."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

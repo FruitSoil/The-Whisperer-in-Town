@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bdkjdx3u8i44s"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_sbfla"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_ognjr"]
+[ext_resource type="Texture2D" uid="uid://c73gowh837g0i" path="res://Images/portairs/Cult_leader.png" id="3_ognjr"]
+
+[resource]
+script = ExtResource("1_sbfla")
+icon = ExtResource("3_ognjr")
+quest_name = "Шёпот по тьме"
+character_name = "Джеймс Беккет"
+worker = 6
+text_greetings = "Приветствую тебя. Я Джеймс Беккет, тотб кто аккуратно вёл тебя к этому моменту. Ныне признанный мёртвым, я стою перед тобой.
+
+Монолит близко, твой звёздный час пробил. Весь путь, что ты прошёл, вёл тебя именно к этому моменту. 
+
+[b]Тебе нужно принять решение: [/b]
+Если ты поддерживаешь жестокую, закостенелую [b][color={#FFFF5D}][url=EmpG]Империю[/url][/color][/b], то смело строй [b][color={#FFFF5D}][url=EmPower]\"\"Астурскую мощь\"\"[/url][/color][/b].
+Если ты поддерживаешь тошнотворный, пугающий [b][color={#FFFF5D}][url=Cuelt]Культ[/url][/color][/b], то с такой же смелостью строй [b][color={#FFFF5D}][url=CuPower]\"\"Нъхорфаадскую силу\"\"[/url][/color][/b].
+
+Время закончить этот спектакль. Я же с упоением буду смотреть за твоим падением."
+answer_agree = "Начать финальный Акт"
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

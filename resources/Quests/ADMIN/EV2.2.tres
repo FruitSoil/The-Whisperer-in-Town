@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://b5qdl6plgdx2l"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_h1vs6"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_73uty"]
+[ext_resource type="Texture2D" uid="uid://brnjualrrs582" path="res://Images/portairs/Administration.png" id="3_73uty"]
+
+[resource]
+script = ExtResource("1_h1vs6")
+icon = ExtResource("3_73uty")
+quest_name = "Препятствование взору"
+text_greetings = "Нам поступила информация, что вы самолично [shake rate=20.0 level=5 connected=1][b]отказали Кэтерин Коллар[/b][/shake] в проведении проверки. 
+Я могу понять ваши опасения, но поверьте мне на слово, не стоит мешать ей. Она из тех людей, на которых даже мы повлиять не можем. Впредь будьте осторожнее, если вам дорога ваша жизнь."
+answer_agree = "(Дальше)"
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

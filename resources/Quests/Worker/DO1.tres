@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://b3t8ndl8pny37"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_yyjcp"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_4vso2"]
+[ext_resource type="Resource" uid="uid://dfg2byn7g183c" path="res://resources/Quests/Agent/TR1.tres" id="3_i17gx"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="8_7du74"]
+
+[resource]
+script = ExtResource("1_yyjcp")
+icon = ExtResource("8_7du74")
+quest_name = "Тьма над бездною"
+is_mandatory = false
+character_name = "Сэд Клинтвуд"
+worker = 1
+done_quest_dependencies = Array[ExtResource("1_yyjcp")]([ExtResource("3_i17gx")])
+text_greetings = "Ты, грёбаный кусок дерьма, ты предпочёл это, помощи нам! Чёртова подстилка [b][color=#FFFF5D][url=EmpG]Империи[/url][/color][/b], империи безнадёжных ублюдков. 
+Грёбаный чинуша, что решил, будто именно он решает судьбу человечества. 
+
+[b][color=#CE0000]Мы обречены, ты обречён! [/color][/b]
+
+Я обречён. Я уже знаю, что со мной будет.  Они оставят меня живым как свидетеля. Но это не милость. 
+Они лишат меня всего лишнего, я буду лишь переносной машиной без воли, без ног и рук. И всё ЭТО - твоя вина! ТВОЯ ВИНА.
+
+[b][color=#CE0000]Ты убил его, УБИЛ, ТЕПЕРЬ ЕГО НЕТ.[/color][/b]
+Ты бросил меня на смерть, оставил, пряча свои глаза.
+
+Искупление было так близко, а теперь один из светочей пал. 
+Я ненавижу тебя, я презираю тебя всей душой!
+
+Но.... у тебя будет последний шанс, ты сможешь сделать финальный выбор. Хоть его и меня уже не будет, но ты сможешь дать человечеству шанс на развитие! На разрушение оков и инстинктов! Прошу. Это моя последняя просьба.
+
+[shake rate=20.0 level=5 connected=1][b]Прощай, больше мы не увидимся.[/b][/shake]"
+answer_agree = "(Дальше)"
+answer_reject = "Вынужден отказать."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

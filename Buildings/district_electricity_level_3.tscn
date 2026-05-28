@@ -39,14 +39,7 @@ colors = PackedColorArray(0.029045643, 0.029045643, 0.029045643, 1, 1, 1, 1, 1)
 transform = Transform3D(0.9, 0, 0, 0, -3.934025e-08, 0.9, 0, -0.9, -3.934025e-08, 0, 0, 0)
 material_override = ExtResource("2_1qret")
 
-[node name="Light2" type="OmniLight3D" parent="." index="1" unique_id=1628463548]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09725194, 2.9701636, -0.6483238)
-light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 7.897
-shadow_enabled = true
-omni_range = 3.696
-
-[node name="Build_part2" type="CPUParticles3D" parent="." index="2" unique_id=210236467]
+[node name="Build_part2" type="CPUParticles3D" parent="." index="1" unique_id=210236467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7230288, 0.38588604, 1.2940824)
 amount = 16
 lifetime = 1.5
@@ -70,12 +63,16 @@ scale_amount_curve = SubResource("Curve_lkjmx")
 color = Color(0.5370113, 0.5370113, 0.5370112, 1)
 color_ramp = SubResource("Gradient_guby4")
 
+[node name="Light2" type="OmniLight3D" parent="." index="2" unique_id=1628463548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09725194, 2.9701636, -0.6483238)
+light_color = Color(1, 0.52156866, 0.14117648, 1)
+light_energy = 7.897
+shadow_enabled = true
+omni_range = 3.696
+
 [node name="Light3" type="OmniLight3D" parent="." index="3" unique_id=348816503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7289772, 0.53801394, 1.273075)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 1.404
-light_volumetric_fog_energy = 5.118
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 0.5
-omni_shadow_mode = 0
+omni_range = 0.3

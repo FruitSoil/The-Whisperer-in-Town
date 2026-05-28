@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cr44o6eo2njb1"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_b1gpl"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_rym0a"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="3_rym0a"]
+
+[resource]
+script = ExtResource("1_b1gpl")
+icon = ExtResource("3_rym0a")
+quest_name = "ВЕРДИКТ"
+character_name = "Арт Белл"
+worker = 3
+complete_condition = 1
+int_value = 1
+text_greetings = "[shake rate=20.0 level=5 connected=1][b]ПРОСВЕЩЕНИЕ, ВОТ ЧТО ПО-НАСТОЯЩЕМУ ВАЖНО![/b][/shake]
+Люди всегда прятались за конструкциями из лжи, но теперь всё иначе. Ты же и сам ощущаешь этот ветер перемен? Так не дай нам пасть! 
+
+За нами, вгрызаясь, охотится [b][color={#FFFF5D}][url=TrES]Имперская псина[/url][/color][/b], садистка и убийца. Рассвет что служит нам надеждой, для неё лишь пустой звук. 
+[shake rate=20.0 level=5 connected=1][b]ЛЖЕИМПЕРИЯ, ЧТО СТОИТ НА ГОРЕ ТРУПОВ, ДОЛЖНА ПАСТЬ![/b][/shake] [b]Блуждающий рассвет[/b] грядёт! Он спасёт человечество, даст шанс на эволюцию. Мы сможем победить голод, бедность, пороки. ОН сделает нас великими, мы станем подобны ему.
+
+[b][color={#FFFF5D}][url=TrES]Имперская псина[/url][/color][/b], хоть и умна, но не лишена бед людских. Мы подготовили для неё удобную наживку, что погубит её навсегда. Позволь человечеству вновь воссиять!"
+answer_agree = "Я не буду ей ничего говорить (Выбрать сторону Арта)"
+answer_wait = "Я сообщу ей о засаде (Выбрать сторону Кэтерин)"
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

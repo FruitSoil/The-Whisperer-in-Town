@@ -3,6 +3,7 @@ extends Control
 @onready var desc: RichTextLabel = $Store_UI/Zones_View/Desc/Desc
 @onready var drag: TextureRect = $"../PortairDrag"
 
+
 var quest_panel = preload("res://nodes/UI/quest_panel.tscn")
 
 var building_state: bool = false 
@@ -242,10 +243,11 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".next_zone = load("res://resources/Zones/Zone_3.tres")
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
 					%QuestLogic.workers[2].change_progress(true)
-					%QuestLogic.workers[3].change_progress(true)
+					%QuestLogic.workers[4].change_progress(true)
 					
 					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/Scientist/EE1.tres"), Global.workers.SCIENTIST)
 					
+					%QuestLogic.check_for_all()
 					$Store_UI/Slider.value = 30
 					$"../../Enviroment/DynamicHills/Zone_2".start_demolition()
 					
@@ -260,8 +262,11 @@ func _on_zone_buy() -> void:
 					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone3Quest.tres"))
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".next_zone = load("res://resources/Zones/Zone_4.tres")
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
-					%QuestLogic.workers[4].change_progress(true)
+					%QuestLogic.workers[3].change_progress(true)
 					
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/Radio/R1.tres"), Global.workers.RADIOHOST)
+					
+					%QuestLogic.check_for_all()
 					$"../../Enviroment/DynamicHills/Zone_3".start_demolition()
 					$"../../Borders/border_dynamic".queue_free()
 					$Store_UI/Slider.value = 60
@@ -279,7 +284,9 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".update_info()
 					%QuestLogic.workers[5].change_progress(true)
 					
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/Military/OP1.tres"), Global.workers.MILITARY)
 					
+					%QuestLogic.check_for_all()
 					$"../../Enviroment/DynamicHills/Zone_4".start_demolition()
 					$Store_UI/Slider.value = 75
 					$"../../Borders/border_dynamic2".queue_free()
@@ -292,6 +299,9 @@ func _on_zone_buy() -> void:
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".close()
 					%QuestLogic.workers[6].change_progress(true)
 					
+					%QuestLogic.ql_wait_to_next(3, load("res://resources/Quests/Cultist/END.tres"), Global.workers.TRAITOR)
+					
+					%QuestLogic.check_for_all()
 					$Store_UI/Slider.value = 100
 					$"../../Enviroment/DynamicHills/Monolith_parts".emitting = true
 					$"../../Grid5/Monolith".play()

@@ -172,6 +172,7 @@ theme_override_font_sizes/bold_font_size = 14
 theme_override_font_sizes/bold_italics_font_size = 14
 theme_override_font_sizes/italics_font_size = 14
 theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
 text = "Производит Свег, столы оставляют желать лучшего"
 
 [node name="Image" type="TextureRect" parent="." unique_id=578768107]

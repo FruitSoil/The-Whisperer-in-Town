@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://jadruy0p1cod"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_grood"]
+[ext_resource type="Resource" uid="uid://d1r1m7orckgcw" path="res://resources/Quests/Agent/IE.tres" id="2_ck3xc"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_vpbym"]
+[ext_resource type="Resource" uid="uid://c32wh30igtdrh" path="res://resources/Quests/Worker/OD3.tres" id="3_arbcb"]
+[ext_resource type="Resource" uid="uid://fcc6bky83qk1" path="res://resources/Quests/Scientist/EE3.tres" id="4_nsymk"]
+[ext_resource type="Resource" uid="uid://cvlryc4aheqya" path="res://resources/Quests/Scientist/RD2.tres" id="5_q7h6t"]
+[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="7_ck3xc"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_nsymk"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="8_arbcb"]
+[ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="8_q7h6t"]
+[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="9_nsymk"]
+[ext_resource type="Resource" uid="uid://nqt27xgplbot" path="res://resources/Quests/Radio/R2.tres" id="10_wlt3d"]
+
+[resource]
+script = ExtResource("1_grood")
+icon = ExtResource("7_nsymk")
+quest_name = "Взор ястреба, часть 3"
+character_name = "Кэтерин Коллар"
+worker = 4
+done_quest_dependencies = Array[ExtResource("1_grood")]([ExtResource("10_wlt3d")])
+any_quest_dependencies = Array[ExtResource("1_grood")]([ExtResource("2_ck3xc"), ExtResource("3_arbcb"), ExtResource("4_nsymk"), ExtResource("5_q7h6t")])
+quest_after = Array[String](["res://resources/Quests/Radio/V.tres"])
+complete_condition = 5
+int_value = 1
+building_type = Array[ExtResource("2_vpbym")]([ExtResource("7_ck3xc"), ExtResource("8_arbcb"), ExtResource("9_nsymk")])
+worker_type = ExtResource("8_q7h6t")
+open_after_accept = true
+text_greetings = "Здравствуйте, начну сразу с дела. 
+
+Внутренняя разведка выявила опасные настроения в [b]районах \"\"Высоких Технологий\"\"[/b].  Ситуация стремительно близится к критической. Агенты из разных мест сообщают о маргинализации населения, неприемлемом поведении и [b]язычестве[/b]. 
+
+Необходимо срочное вмешательство! 
+
+Благо, мы обнаружили источник опасных настроений - им служит [b]Арт Белл[/b] и его ближайшие подчинённые. Знаю, что ранее он работал на вас, но теперь время принять меры.
+
+[b][color={#FFFF5D}][url=Throw]Отправьте[/url][/color][/b] меня в один из [b][color={#FF59CA}]районов \"\"Высоких Технологий\"\"[/color][/b] и мы подавим восстание. В столь критический час, можете считать это [b][color={#FFFF5D}][url=Must]приказом[/url][/color][/b]."
+answer_agree = "Я без промедлений отправлю ваc"
+answer_wait = "Вернусь к этому вопросу как можно быстрее."
+text_progress = "Наш спец. отряд готов выполнить свой долг и защитить ваш город. Мы ожидаем [b][color={#FFFF5D}][url=Throw]отправки[/url][/color][/b] в один из [b][color={#FF59CA}]районов \"Высоких Технологий\"[/color][/b]."
+text_finish = "Наш успешно отряд прибыл в город. Приступаем в реализации нашего плана."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

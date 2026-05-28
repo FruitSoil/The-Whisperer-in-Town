@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://fcc6bky83qk1"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_x0sok"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_qd861"]
+[ext_resource type="Resource" uid="uid://bwkord7fl3i8i" path="res://resources/Quests/Scientist/EE2.tres" id="4_yebip"]
+[ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="6_bs0gt"]
+[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="6_x123j"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="8_if0k0"]
+
+[resource]
+script = ExtResource("1_x0sok")
+icon = ExtResource("8_if0k0")
+quest_name = "Эра электротехники, часть 3"
+is_mandatory = false
+character_name = "Говард Ист"
+worker = 2
+done_quest_dependencies = Array[ExtResource("1_x0sok")]([ExtResource("4_yebip")])
+quest_after = Array[String](["res://resources/Quests/Worker/OD.tres", "res://resources/Quests/Scientist/RD1.tres", "res://resources/Quests/Agent/EV3.tres"])
+complete_condition = 5
+int_value = 1
+building_type = Array[ExtResource("2_qd861")]([ExtResource("6_bs0gt")])
+worker_type = ExtResource("6_x123j")
+open_after_accept = true
+text_greetings = "\"Приветствую. Я пришёл к вам с неоднозначной просьбой. Честно признаться, то, о чём я буду вам рассказывать, у меня самого вызывает сомнения. Но всё же проверить стоило бы. Так вот, к чему я. 
+На днях я стал получать странные рапорты от младших научных сотрудников. В них они жалуются на головную боль, скверное настроение и \"\"ирреальные сны\"\". Им как раз-таки, в своих отчётах они уделяют больше всего времени . Во снах они якобы путешествуют по руинам древних городов, описывая их как лишённые логики лабиринты, в которых \"\"будто законы физики вовсе не действуют\"\". В своих отчётах всё это они связывают с новым [b]районом[/b] [b][color={#FFFF5D}][url=Z2D3]\"\"Покоритель Вьюг\"\"[/url][/color][/b], который мы недавно спроектировали. Якобы по ночам ветер [b]\"\"поёт там свои песни на инородных нам языках\"\"[/b]. 
+
+Больше всего меня заинтересовала именно схожесть показаний. Но лично я всё это связываю с сильными переработками и стрессом, ведь мы только недавно закончили работу над комплексным и сложным проектом. Но даже так, я бы хотел отправиться туда лично, чтобы лично увидеть свою правоту. [b][color={#FFFF5D}][url=Throw]Отправьте[/url][/color][/b] меня в [b]район[/b] [b][color={#FF59CA}]III[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"\"Снегонауки\"\"[/color][/b]. [b][color={#FFFF5D}][url=Should]Прошу вас[/url][/color][/b] не [b]неофициально[/b]. Вы в полном праве отказать мне.\""
+answer_agree = "Хорошо Говард, я отправлю тебя."
+answer_wait = "Вернусь к этому позже."
+answer_reject = "Я отказываюсь."
+text_reject = "Понимаю ваши сомнения в этой авантюре. Благодарю, что уделили мне время. Я же вернусь к своей работе."
+text_progress = "Напоминаю вам о моей просьбе. [b][color={#FFFF5D}][url=Throw]Отправьте[/url][/color][/b] меня в [b]район[/b] [b][color={#FF59CA}]III[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Снегонауки\"[/color][/b]. Я хочу лично разобраться в этой ситуацим."
+text_finish = "Приветствую. Всё же моя теория оказалась верной. Научные сотрудники просто сильно измотаны из-за недавней работы. Лично мной было проверено всё, что описывалось в рапортах. Ничего из этого не дало своих плодов. Единственное, что я могу выделить - это странные сны. Полного подтверждения я не получил, но однажды во время пребывания там, мне снился отдалённо похожий. Но по многим параметрам он не сходился с описанными снами, так что тут имеет место инкубация сновидений или же ещё какой-то феномен из когнитивных искажений. В общем, отчитываюсь вам, что всё в порядке и не выходит за рамки нормы. Благодарю вас за то, что позволили лично в этом всё разобраться. "
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

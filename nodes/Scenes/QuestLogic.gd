@@ -1,6 +1,7 @@
 extends Node
 
-@onready var workers: Array[WorkerPanel] = [%ADMIN,%worker,%worker2,%worker3,%worker4,%worker5,%worker6]
+@onready var workers: Array[WorkerPanel] = [%ADMIN,%worker,%worker2,%worker4,%worker3,%worker5,%worker6]
+@onready var base_ui: Control = %BaseUI
 
 func _ready() -> void:
 	var tutor = load("res://resources/Quests/ADMIN/TutorialPart1.tres")
@@ -16,8 +17,8 @@ func ql_set_quest(quest: Quest, worker_ID:Global.workers) -> void:
 	if workers[worker_ID]:
 		
 		if workers[worker_ID].quest_res:
+			push_warning(workers[worker_ID].res.name, " УЖЕ ИМЕЕТ ЗАПУЩЕННЫЙ КВЕСТ ",workers[worker_ID].quest_res.quest_name ," - КВЕСТ",quest.quest_name , " НЕ БУДЕТ ВЫЗВАН ")
 			print(workers[worker_ID].res.name, " УЖЕ ИМЕЕТ ЗАПУЩЕННЫЙ КВЕСТ ",workers[worker_ID].quest_res.quest_name ,", ПРОВЕРЬ ПРАВИЛЬНУЮ ПОСЛЕДОВАТЕЛЬНОСТИ КВЕСТОВ")
-			breakpoint
 		
 		var done_coincidences := 0
 		var any_coincidences := 0
@@ -40,6 +41,7 @@ func ql_set_quest(quest: Quest, worker_ID:Global.workers) -> void:
 			%BaseUI.add_quest(quest,workers[worker_ID])
 		else:
 			# debug
+			print(" ")
 			print("ДЛЯ ВЫЗОВА КВЕСТА ",quest.quest_name," НЕ БЫЛИ ПРОЙДЕНЫ/ВЫПОЛНЕНЫ ВСЕ ОСТАЛЬНЫЕ КВЕСТЫ НИЖЕ")
 			print("НЕОБЯЗАТЕЛЬНЫЕ:")
 			for i in quest.any_quest_dependencies:
@@ -101,6 +103,20 @@ func check_quest_done_status(quest: Quest, worker_ID:Global.workers):
 			
 			if count >= quest.int_value:
 				quest_done(worker_ID)
+		6:
+			match quest.int_value:
+				2:
+					if Global.is_zone_2_open:
+						quest_done(worker_ID)
+				3:
+					if Global.is_zone_3_open:
+						quest_done(worker_ID)
+				4:
+					if Global.is_zone_4_open:
+						quest_done(worker_ID)
+				5:
+					if Global.is_zone_5_open:
+						quest_done(worker_ID)
 
 func quest_done(worker_ID:Global.workers):
 	workers[worker_ID].quest_stage = 4

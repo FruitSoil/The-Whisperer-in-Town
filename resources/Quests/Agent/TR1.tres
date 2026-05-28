@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dfg2byn7g183c"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_d5mil"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_dtq4s"]
+[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="3_3tybw"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="3_dtq4s"]
+[ext_resource type="Resource" uid="uid://cr44o6eo2njb1" path="res://resources/Quests/Radio/V.tres" id="4_om6mn"]
+
+[resource]
+script = ExtResource("1_d5mil")
+icon = ExtResource("3_dtq4s")
+quest_name = "Сколько стоит тайна?"
+character_name = "Кэтерин Коллар"
+worker = 4
+done_quest_dependencies = Array[ExtResource("1_d5mil")]([ExtResource("4_om6mn")])
+quest_after = Array[String](["res://resources/Quests/Worker/DO1.tres"])
+text_greetings = "Рада вас снова слышать. Вы приняли [b]однозначно хорошее решение, благодаря вам наш отряд ещё жив. [/b]
+Лидер восстания [b]Арт Белл[/b] был убит во время перестрелки. Все его сообщники либо мертвы, либо под стражей и наблюдением.
+
+С вашей помощью мы смогли подавить восстание против [b][color={#FFFF5D}][url=EmpG]Империи[/url][/color][/b]. 
+
+Культ же был разоблачён. Со смертью его лидера, [b]Арт Белла[/b], мелкие культисты спрятались кто куда и вряд ли в ближайшее время они что-то выкинут.  Мы же будем их активно искать и  улучшать нашу систему видеонаблюдения. Подобные потрясения больше не произойдут.
+
+Во время нашего первого знакомства, я рассказала вам не всё. Теперь же я убеждена что вы должны знать правду.
+
+Я [b][color={#FFFF5D}][url=TrES]агент TrES,[/url][/color][/b], я была взрощена ими. Мы являемся слаженной полицией порядка. В отличие от чиновников, мы не никогда не склонимся против [b][color={#FFFF5D}][url=EmpG]Империи[/url][/color][/b]и всегда будем следовать кодексу, оставленному нам лично [b][color={#FFFF5D}][url=Robert]Робертом Гийомом[/url][/color][/b]. Я ценю вашу помощь нам.
+
+До этих беспорядков я, совместно с нашими учёными, создавала новый тип [b]района[/b], который вам понадобится в достижении вашей [b]главной цели[/b]. Имя ему [b][color={#FFFF5D}][url=Z3D3]\"\"Электросхемный квартал\"\"[/url][/color][/b]. Это [b]III тир \"\"Высоких Технологий\"\"[/b]. Он позволит одновременно с основным ресурсом производить  и щепотку оружия."
+answer_agree = "(Дальше)"
+building_unlock_res = ExtResource("3_3tybw")
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

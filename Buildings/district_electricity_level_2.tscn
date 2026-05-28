@@ -42,54 +42,34 @@ material_override = ExtResource("2_p0yfm")
 [node name="Light5" type="OmniLight3D" parent="." index="1" unique_id=1423642294]
 transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0.008363062, 0.5034972, -1.0594348)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 0.647
-light_volumetric_fog_energy = 5.118
-light_size = 0.125
-shadow_enabled = true
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.506
-omni_shadow_mode = 0
+omni_range = 0.3
 
 [node name="Light6" type="OmniLight3D" parent="." index="2" unique_id=1699337121]
 transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, -1.1027482, 0.5034972, -0.05943471)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 0.647
-light_volumetric_fog_energy = 5.118
-light_size = 0.125
-shadow_enabled = true
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.506
-omni_shadow_mode = 0
+omni_range = 0.3
 
 [node name="Light7" type="OmniLight3D" parent="." index="3" unique_id=1951237041]
 transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 1.0083631, 0.6146083, -0.05943471)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 0.647
-light_volumetric_fog_energy = 5.118
-light_size = 0.125
-shadow_enabled = true
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.506
-omni_shadow_mode = 0
+omni_range = 0.3
 
 [node name="Light8" type="OmniLight3D" parent="." index="4" unique_id=1804601637]
 transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, -0.10274808, 0.6146083, 0.94056547)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 0.647
-light_volumetric_fog_energy = 5.118
-light_size = 0.125
-shadow_enabled = true
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.506
-omni_shadow_mode = 0
+omni_range = 0.3
 
 [node name="Build_part2" type="CPUParticles3D" parent="." index="5" unique_id=1117688546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0476952, 0.4376336, -0.0059225154)
-amount = 32
+amount = 16
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
@@ -112,7 +92,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part3" type="CPUParticles3D" parent="." index="6" unique_id=1441532355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04769497, 0.4376336, -1.1170337)
-amount = 32
+amount = 16
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
@@ -135,7 +115,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part4" type="CPUParticles3D" parent="." index="7" unique_id=1760295314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06341609, 0.4376336, 1.1051886)
-amount = 32
+amount = 16
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")
@@ -158,7 +138,7 @@ color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part5" type="CPUParticles3D" parent="." index="8" unique_id=460242368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0634162, 0.4376336, -0.0059225154)
-amount = 32
+amount = 16
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_d6y37")

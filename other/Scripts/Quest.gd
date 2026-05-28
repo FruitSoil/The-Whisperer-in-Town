@@ -8,7 +8,8 @@ enum complete_type {
 	PLACE_BUILD_TYPE = 2, ##Поставить int_value районов ОПРЕДЕЛЁННОГО типа building_type
 	APPOINT_WORKER_ANY = 3, ##Назначить int_value любых работников
 	APPOINT_WORKER_TYPE = 4, ##Назначить int_value ОПРЕДЕЛЁННЫХ работников типа worker_type в любые районы
-	APPOINT_SPECIAL = 5 ##Назначить ОПРЕДЕЛЁННОГО работника типа worker_type в ОПРЕДЕЛЁННЫЙ район типа building_type
+	APPOINT_SPECIAL = 5, ##Назначить ОПРЕДЕЛЁННОГО работника типа worker_type в ОПРЕДЕЛЁННЫЙ район типа building_type
+	ZONE_OPEN = 6, ##Открыть зону с номером int value
 }
 
 @export_category("ДИАЛОГ")
@@ -25,6 +26,9 @@ enum complete_type {
 
 @export_category("ПОСЛЕДУЮЩИЕ КВЕСТЫ")
 @export var quest_after: Array[String] ##Путь к тому какие квесты будут вызыватся на проверку после выполнения или скипа квеста
+
+@export_category("ДОП. СКИПНУТЫЕ КВЕСТЫ ПРИ ОТКАЗЕ")
+@export var reject_other_quest_skip: Array[String] ##Пути к квестам, которые будут устанавливатся как скипнутые в момент, когда игрок скипнет этот квест(Сначала отменчаются квесты здесь, потом запускается следующие квесты из quest_after)
 
 @export_category("ПЕРВОЕ УСЛОВИЕ ВЫПОЛНЕНИЯ")
 @export var complete_condition: complete_type ##Какое условие чтобы выполнить квест

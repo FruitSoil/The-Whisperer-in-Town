@@ -40,36 +40,20 @@ material_override = ExtResource("2_epwqr")
 [node name="Light2" type="OmniLight3D" parent="." index="1" unique_id=1707838827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8798401, 0.53801394, -0.89886147)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 1.404
-light_volumetric_fog_energy = 5.118
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.299
-omni_shadow_mode = 0
+omni_range = 0.4
 
 [node name="Light3" type="OmniLight3D" parent="." index="2" unique_id=100136176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006369531, 0.53801394, -0.021440253)
 light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 1.404
-light_volumetric_fog_energy = 5.118
 shadow_bias = 0.026
 shadow_blur = 0.632
-omni_range = 1.299
-omni_shadow_mode = 0
+omni_range = 0.4
 
-[node name="Light4" type="OmniLight3D" parent="." index="3" unique_id=907682219]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8979378, 1.6255997, 1.3233609)
-light_color = Color(1, 0.52156866, 0.14117648, 1)
-light_energy = 1.404
-light_volumetric_fog_energy = 5.118
-shadow_bias = 0.026
-shadow_blur = 0.632
-omni_range = 2.527
-omni_shadow_mode = 0
-
-[node name="Build_part" type="CPUParticles3D" parent="." index="4" unique_id=2128866628]
+[node name="Build_part" type="CPUParticles3D" parent="." index="3" unique_id=2128866628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0015305, 0.4376336, -0.97019434)
-amount = 32
+amount = 24
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_3c4l2")
@@ -91,9 +75,9 @@ scale_amount_curve = SubResource("Curve_nlsa8")
 color = Color(0.41598046, 0.4159804, 0.41598052, 1)
 color_ramp = SubResource("Gradient_nies7")
 
-[node name="Build_part2" type="CPUParticles3D" parent="." index="5" unique_id=752994332]
+[node name="Build_part2" type="CPUParticles3D" parent="." index="4" unique_id=752994332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11264147, 0.4376336, -0.08130529)
-amount = 32
+amount = 24
 lifetime = 1.5
 speed_scale = 0.2
 mesh = SubResource("PlaneMesh_3c4l2")

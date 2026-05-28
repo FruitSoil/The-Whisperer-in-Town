@@ -4,7 +4,11 @@ extends CanvasLayer
 @onready var variant_later: Button = $Panel/VBC/Variant_later
 @onready var variant_no: Button = $Panel/VBC/Variant_no
 @onready var dialogue_animation: AnimationPlayer = $Dialogue_animation
-@onready var rich_text_label: RichTextLabel = $"../Dialogue/Panel/MC/RichTextLabel"
+@onready var rich_text_label: RichTextLabel = $Panel/MC/RichTextLabel
+
+const ADMIN_EV2_2 = preload("uid://b5qdl6plgdx2l")
+const EV_2 = preload("uid://p72rumrqgqhh")
+const V = preload("uid://cr44o6eo2njb1")
 
 var res: Quest
 var worker_panel: WorkerPanel
@@ -92,6 +96,20 @@ func answer(ID: int):
 	match ID:
 		1:
 			if worker_panel.quest_stage == 1 or worker_panel.quest_stage == 5:
+				if res == ADMIN_EV2_2:
+					close_window()
+					%worker3.quest_res = EV_2
+					%worker3.quest_stage = 3
+					%worker3.disabled = false
+					%worker3.update_icon()
+				elif res == V:
+					verdict_logic(true)
+					close_window()
+					worker_panel.quest_res = null
+					worker_panel.quest_stage = 0
+					worker_panel.update_icon()
+					return
+				
 				close_window()
 				worker_panel.quest_stage = 3
 				if res.open_after_accept:
@@ -123,6 +141,13 @@ func answer(ID: int):
 				worker_panel.quest_stage = 0
 				worker_panel.update_icon()
 		2:
+			if res == V:
+				verdict_logic(false)
+				close_window()
+				worker_panel.quest_res = null
+				worker_panel.quest_stage = 0
+				worker_panel.update_icon()
+				return
 			close_window()
 			worker_panel.quest_stage = 5
 			worker_panel.update_icon()
@@ -135,9 +160,21 @@ func answer(ID: int):
 				variant_later.hide()
 				worker_panel.quest_stage = 2
 				worker_panel.update_icon()
+				
 			else:
 				%BaseUI.erase_quest(res)
 				Global.quest_skip.append(res)
+				for i in res.reject_other_quest_skip:
+					if i:
+						var path = load(i)
+						Global.quest_skip.append(path)
+				if res == EV_2:
+					%QuestLogic.ql_wait_to_next(2,ADMIN_EV2_2,ADMIN_EV2_2.worker)
+					close_window()
+					worker_panel.quest_res = null
+					worker_panel.quest_stage = 0
+					worker_panel.update_icon()
+					return
 				if res.quest_after:
 						for i in res.quest_after:
 							if i:
@@ -177,3 +214,18 @@ func _dialogue_text_hover_start(meta: Variant) -> void:
 
 func _dialogue_text_hover_end(_meta: Variant) -> void:
 	Popups.hidePopup()
+
+
+func verdict_logic(is_art_bell: bool):
+	var art = preload("res://resources/Quests/Radio/TR2.tres")
+	var keterin = preload("res://resources/Quests/Agent/TR1.tres")
+	var verdict_quest = preload("res://resources/Quests/Radio/V.tres")
+	
+	Global.quest_done.append(verdict_quest)
+	%BaseUI.erase_quest(verdict_quest)
+	if is_art_bell:
+		print("art selected")
+		%QuestLogic.ql_wait_to_next(4,art,art.worker)
+	else:
+		print("keterin selected")
+		%QuestLogic.ql_wait_to_next(4,keterin,keterin.worker)

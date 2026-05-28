@@ -1684,23 +1684,6 @@ offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MC" type="MarginContainer" parent="Dialogue/Panel" unique_id=812259215]
-layout_mode = 0
-offset_left = -27.0
-offset_top = 377.0
-offset_right = 549.0
-offset_bottom = 558.0
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
-bbcode_enabled = true
-text = "Тут диалог должен быть, в зависимости от стадии принятия судьбы мифоза"
-
 [node name="VBC" type="VBoxContainer" parent="Dialogue/Panel" unique_id=1889069569]
 layout_mode = 1
 offset_left = -4.106201
@@ -1776,6 +1759,28 @@ offset_right = 542.0
 offset_bottom = 561.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="MC" type="MarginContainer" parent="Dialogue/Panel" unique_id=812259215]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 377.0
+offset_right = 549.0
+offset_bottom = 558.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "Тут диалог должен быть, в зависимости от стадии принятия судьбы мифоза"
 
 [node name="Frame" type="TextureRect" parent="Dialogue/Panel" unique_id=1153708242]
 layout_mode = 1
@@ -4784,9 +4789,10 @@ mesh = SubResource("PlaneMesh_6adnx")
 [node name="Smoke" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1849737060]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.7, 1.7766033, -1.5)
 layers = 4
-amount = 100
+amount = 200
 lifetime = 4.6
 preprocess = 4.6
+explosiveness = 0.26
 mesh = SubResource("PlaneMesh_hwrqn")
 emission_shape = 3
 emission_box_extents = Vector3(40, 0.15, 40)

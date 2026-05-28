@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cvlryc4aheqya"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_w8u54"]
+[ext_resource type="Resource" uid="uid://bnasb7mu2rmd2" path="res://resources/Quests/Worker/OD.tres" id="2_txoi0"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="3_pbtht"]
+[ext_resource type="Resource" uid="uid://c3y1ky16pmnaw" path="res://resources/Quests/Worker/OD2.tres" id="3_w8u54"]
+[ext_resource type="Resource" uid="uid://c32wh30igtdrh" path="res://resources/Quests/Worker/OD3.tres" id="4_txoi0"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="5_5nbak"]
+[ext_resource type="Resource" uid="uid://nqt27xgplbot" path="res://resources/Quests/Radio/R2.tres" id="7_b8wpc"]
+[ext_resource type="Resource" uid="uid://coo8renixmc3a" path="res://resources/Quests/Scientist/RD1.tres" id="8_w8u54"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="9_xttjf"]
+[ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="10_gyblr"]
+
+[resource]
+script = ExtResource("1_w8u54")
+icon = ExtResource("9_xttjf")
+quest_name = "Настоящий детектив, часть 2"
+is_mandatory = false
+character_name = "Говард Ист"
+worker = 2
+done_quest_dependencies = Array[ExtResource("1_w8u54")]([ExtResource("7_b8wpc"), ExtResource("8_w8u54")])
+any_quest_dependencies = Array[ExtResource("1_w8u54")]([ExtResource("2_txoi0"), ExtResource("3_w8u54"), ExtResource("4_txoi0")])
+quest_after = Array[String](["res://resources/Quests/Agent/EV3.tres"])
+complete_condition = 2
+int_value = 3
+building_type = Array[ExtResource("3_pbtht")]([ExtResource("5_5nbak")])
+worker_type = ExtResource("10_gyblr")
+text_greetings = "Приветствую, моё расследование продолжается. Чем больше информации я нахожу, тем более ужасающей становится картина. Подпольные ритуалы, жертвы и безумие, а ведь это далеко не всё!
+
+С уверенностью могу сказать, что это культ некого \"\"рассвета\"\". В настоящее время я пытаюсь выяснить их мотивы, что они вкладывают в слово \"\"рассвет\"\". 
+Пока что безуспешно. Но у меня есть идея, как можно ненадолго отвлечь их. [b]Постройте[/b]  [b][color={#FF59CA}]семь[/color][/b] [b]района[/b] [b][color={#FF59CA}]II[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"\"Высоких Технологий\"\"[/color][/b]. Это выиграет мне время, и я смогу незаметно добраться до истины."
+answer_agree = "Я сделаю это"
+answer_wait = "Вернусь к этому вопросу позже."
+answer_reject = "Отказано."
+text_reject = "Вы, сделали что? Я... в прочем не важно. Дальше я продолжу сам."
+text_progress = "Жду когда вы отвлечёте их, [b]построите[/b] [b][color={#FF59CA}]три[/color][/b] [b]района[/b] [b][color={#FF59CA}]II[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Высоких Технологий\"[/color][/b]"
+text_finish = "Я смог раскопать правду, пробравшись к ним в логово. 
+Сотни заметок и дневников я прочитал,  даже не знаю с чего начать. 
+
+Я опишу вам лишь общую картину, вы не готовы к всей истине сразу. Поверьте тому, чей рассудок ныне плавает.
+
+Культ [b]\"\"Рассвета\"\"[/b] покланяется [b]\"\"древнему\"\"[/b], не с нашего слоя эфира - [b]Нъхорфаад[/b] его называют. Но это лишь условное обозначение, попытка передать клокочущие, бурлящие звуки во что-то читаемое.  
+
+Также имя ему: [b]\"\"блуждающий рассвет\"\"[/b]. По писаниям, с его приходом человечеству настанет конец. Это создание располагается в своём закрытом логове где-то далеко за познаваемым, мы лишь пешки в его замыслах. Величие и эволюция человечества, по подобию [b]Нъхорфаада[/b] и его фантазий. 
+Образ человека исказится, этого и хотят культисты! Называя это просвещением, но они не понимают, что это реально значит. Они верят его сладкому голосу, что подобен вьюге.
+
+У меня мало времени. Прошу, не позвольте фантасмогории рассвета заполнить наш мир. Я же спрячусь, за последнее время я привлёк слишком много внимания. Надеюсь, мы сможем связаться вновь."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

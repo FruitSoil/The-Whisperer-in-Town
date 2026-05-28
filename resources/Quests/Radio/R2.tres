@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://nqt27xgplbot"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_whm88"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_5wd75"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="3_5wd75"]
+[ext_resource type="Resource" uid="uid://ibxv3hbp2rxa" path="res://resources/Quests/Radio/R1.tres" id="4_5tvvj"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="4_mdsew"]
+
+[resource]
+script = ExtResource("1_whm88")
+icon = ExtResource("4_mdsew")
+quest_name = "Радиовечер, часть 2"
+character_name = "Арт Белл"
+worker = 3
+done_quest_dependencies = Array[ExtResource("1_whm88")]([ExtResource("4_5tvvj")])
+quest_after = Array[String](["res://resources/Quests/Worker/OD2.tres", "res://resources/Quests/Scientist/RD1.tres", "res://resources/Quests/Agent/EV3.tres"])
+complete_condition = 2
+int_value = 4
+building_type = Array[ExtResource("2_5wd75")]([ExtResource("3_5wd75")])
+text_greetings = "Добрый вечер! В эфире наш с вами не непроизведённый план по модернизации вашего города. Для вас буду вещать я - [b]Арт Белл[/b]. 
+
+Подводя итоги первого [b]строительства[/b], нельзя не отметить феноменальные результаты! Так что предлагаю [b]построить[/b] ещё [b][color={#FFFF5D}][url=impeasdasdrs]четыре[/url][/color][/b] [b]района[/b], в этот раз [b][color={#FFFF5D}][url=impeasdasdrs]II[/url][/color][/b] [b]тира[/b] [b][color={#FFFF5D}][url=impeasdasdrs]\"\"Высоких Технологий\"\"[/url][/color][/b]! Но это ещё не всё!
+
+Когда-то давно радио уничтожило расстояние и соединило невидимой, но крепкой связью все корабли и города Земли! [b]Назначьте[/b] [b][color={#FF59CA}]шесть[/color][/b] [b]руководителей[/b] в новые [b]районы[/b] [b][color={#FF59CA}]\"\"Высоких Технологий\"\"[/color][/b]! Пусть радиовещание распустит свои блаженные нити и коснётся сердец людей. Дадим им шанс слицезреть новый [b]рассвет[/b]!"
+answer_agree = "Хорошо я займусь этим."
+answer_wait = "Вернусь к этому вопросу позже."
+text_progress = "Ожидаю момента, когда смогу гордо сказать: \"львиная доля нашего плана выполнена успешно\". Вам нужно [b]построить[/b] [b][color={#FF59CA}]четыре[/color][/b] [b]района[/b], в этот раз [b][color={#FF59CA}]II[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Высоких Технологий\"[/color][/b] и [b]назначить[/b] [b][color={#FF59CA}]шесть[/color][/b] [b]руководителей[/b] в [b]районы[/b] [b][color={#FF59CA}]\"Высоких Технологий\"[/color][/b]"
+text_finish = "Эфир пополнился активными слушателями! с тобой мы постигаем новые грани вещания!
+
+Хмм, я думаю, у тебя уже появился вопрос: в чём же такая особенность [b][color=#FFFF5D][url=Radio]радио[/url][/color][/b]?
+Что ж, если проще, то [b][color=#FFFF5D][url=Radio]радио[/url][/color][/b] - это путь к цветению души, к [b]просветлению[/b] и [b]просвещению[/b]. Это одновременно и символ, и ключ. 
+
+[b][color=#FFFF5D][url=AgeOf]В нынешнюю эпоху[/url][/color][/b] люди позабыли о нём, оно  затерялось во множестве файлов и папок. Но я помогу тебе возродить [b]рассвет[/b]. Мы сможем стать лучшими версиями себя. 
+
+Подумайте обо всём этом на досуге."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://c32wh30igtdrh"]
+
+[ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_vmh7n"]
+[ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_phxe8"]
+[ext_resource type="Resource" uid="uid://coo8renixmc3a" path="res://resources/Quests/Scientist/RD1.tres" id="2_vmh7n"]
+[ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="3_etgkr"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="4_abn5u"]
+[ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="5_uvsd7"]
+[ext_resource type="Resource" uid="uid://c3y1ky16pmnaw" path="res://resources/Quests/Worker/OD2.tres" id="7_phxe8"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="8_a5euh"]
+[ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="9_qdft1"]
+
+[resource]
+script = ExtResource("1_vmh7n")
+icon = ExtResource("8_a5euh")
+quest_name = "Гнетущая болезнь, часть 3"
+is_mandatory = false
+character_name = "Сэд Клинтвуд"
+worker = 1
+done_quest_dependencies = Array[ExtResource("1_vmh7n")]([ExtResource("7_phxe8")])
+any_quest_dependencies = Array[ExtResource("1_vmh7n")]([ExtResource("2_vmh7n")])
+quest_after = Array[String](["res://resources/Quests/Scientist/RD2.tres", "res://resources/Quests/Agent/EV3.tres"])
+complete_condition = 5
+int_value = 1
+building_type = Array[ExtResource("2_phxe8")]([ExtResource("3_etgkr"), ExtResource("4_abn5u"), ExtResource("5_uvsd7")])
+worker_type = ExtResource("9_qdft1")
+open_after_accept = true
+text_greetings = "Здравствуйте! Я к вам с хорошими новостями, на днях мне выпал шанс поболтать с самим [b]Артом Беллом[/b]! Наш диалог сложно описать словами, я многое переомыслил.  Вы пока не понимаете, но мы на пороге нового [b]рассвета[/b] человечества! 
+
+Он грядёт сюда, и с ним мы обретём новую форму существования. Я прошу вас о маленькой услуге, помогите нам расширить нити влияния! назначьте ещё [b][color={#FF59CA}]четырех[/color][/b] [b]работников[/b] на [b]районы[/b] [b][color={#FF59CA}]\"\"Высоких Технологий\"\"[/color][/b], пусть радиовечер  будет вечным."
+answer_agree = "Я сделаю это."
+answer_wait = "Вернусь к этому вопросу позже."
+answer_reject = "Я отказываюсь"
+text_reject = "Вы мешаете нам в такой момент? Замедляете нам просвещение людей, вы буквально уничтожаете мечты из-за своей гордости. Ведь так? 
+
+Но ладно, вы и впрямь многое для нас сделали. В иной раз вы сможете нам помочь, в тот момент когда это будет нужно."
+text_progress = "Я с нетерпением жду момента - расширения нашего радиовлияния."
+text_finish = "Благодарю вас за помощь. Вы вносите незаменимый вклад в наше дело. В ближайшем будущем, именно вы станете тем, кто сможет принести [b]рассвет[/b] в наш умирающий мир. Человечество, с первобытных времён, не могло эволюционировать дальше. Пока неотёсанные динозавры превращались в изящных птиц, мы лишь лицезрели это. Теперь всё же будет иначе."
+metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
