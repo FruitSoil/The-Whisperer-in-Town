@@ -54,8 +54,10 @@
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="50_x8hrd"]
 [ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="51_hlnya"]
 [ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="52_w2vja"]
-[ext_resource type="Texture2D" uid="uid://byvaeufkmfb6h" path="res://Images/Building_res_icon.png" id="53_bv5cs"]
+[ext_resource type="Texture2D" uid="uid://jy2drlgqa5ra" path="res://Images/Resources_icons/Colored/icon_money.png" id="53_yssgo"]
+[ext_resource type="Texture2D" uid="uid://cee7aon6hogg8" path="res://Images/UI/icons/icon_lock.PNG" id="54_30cd8"]
 [ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="54_725ke"]
+[ext_resource type="Texture2D" uid="uid://h6klp05fav1x" path="res://Images/UI/icons/icon_check.PNG" id="55_5h554"]
 [ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="55_reqt0"]
 [ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="56_gg5ll"]
 [ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://resources/Zones/Zone_1.tres" id="57_kyo71"]
@@ -2163,6 +2165,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2446,7 +2449,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2576,45 +2578,45 @@ text = "
 
 [node name="Res_label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1664102521]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 14.0
-offset_right = 168.0
-offset_bottom = 37.0
+offset_left = 125.0
+offset_top = 17.0
+offset_right = 193.0
+offset_bottom = 40.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
-horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("50_x8hrd")
 
 [node name="Res_icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1871172775]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 13.0
-offset_right = 111.0
-offset_bottom = 37.0
-texture = SubResource("GradientTexture1D_igchu")
+offset_left = 83.0
+offset_top = 9.0
+offset_right = 107.0
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("53_yssgo")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Res_label2" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1542952851]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 53.0
-offset_right = 168.0
-offset_bottom = 76.0
+offset_left = 125.0
+offset_top = 56.0
+offset_right = 193.0
+offset_bottom = 79.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
-horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("50_x8hrd")
 
 [node name="Res_icon2" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1159359026]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 53.0
-offset_right = 111.0
-offset_bottom = 77.0
-texture = SubResource("GradientTexture1D_igchu")
+offset_left = 83.0
+offset_top = 49.0
+offset_right = 107.0
+offset_bottom = 73.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("54_30cd8")
 expand_mode = 1
 stretch_mode = 5
 
@@ -2648,7 +2650,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("53_bv5cs")
+texture = ExtResource("55_5h554")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=1746457429]
@@ -2688,7 +2690,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("53_bv5cs")
+texture = ExtResource("55_5h554")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=2046004120]
@@ -2728,7 +2730,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("53_bv5cs")
+texture = ExtResource("55_5h554")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=1207777928]
@@ -2767,7 +2769,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("53_bv5cs")
+texture = ExtResource("55_5h554")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=1807949798]
@@ -2795,7 +2797,7 @@ custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-icon = ExtResource("28_po80s")
+icon = ExtResource("55_5h554")
 script = ExtResource("51_hlnya")
 res = ExtResource("57_kyo71")
 
@@ -2807,7 +2809,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("53_bv5cs")
+texture = ExtResource("55_5h554")
 expand_mode = 3
 
 [node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1403694782]

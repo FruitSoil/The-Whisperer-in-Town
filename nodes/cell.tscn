@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_1nuhy"]
 [ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="5_1nuhy"]
 [ext_resource type="Texture2D" uid="uid://f66e8flvopyg" path="res://Images/Particles/particle_coin.png" id="5_mi0yh"]
+[ext_resource type="Texture2D" uid="uid://lpi6h7qdo760" path="res://Images/UI/ProgressBars/progress_bar_off.PNG" id="6_28afk"]
+[ext_resource type="Texture2D" uid="uid://cp85bvsewavo7" path="res://Images/UI/ProgressBars/progress_bar_on.PNG" id="7_ncfsq"]
+[ext_resource type="Texture2D" uid="uid://dfvakvstfxhc3" path="res://Images/UI/ProgressBars/progress_bar_empty.PNG" id="8_01x4c"]
+[ext_resource type="Texture2D" uid="uid://cqcnwt1awb1gx" path="res://Images/UI/ProgressBars/progress_bar_full.PNG" id="9_nn10w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
@@ -126,46 +130,6 @@ _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_csgmv"]
-offsets = PackedFloat32Array(0, 0.76221496, 0.7654723)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_28afk"]
-gradient = SubResource("Gradient_csgmv")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_ncfsq"]
-offsets = PackedFloat32Array(0.7507886, 0.7697161)
-colors = PackedColorArray(0.27260175, 0.18021512, 0.14065257, 1, 0.27450982, 0.18039216, 0.14117648, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_01x4c"]
-gradient = SubResource("Gradient_ncfsq")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_28afk"]
-offsets = PackedFloat32Array(0.54485774, 0.54923415, 0.9059081, 0.9153094)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ncfsq"]
-gradient = SubResource("Gradient_28afk")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_6bc7i"]
-offsets = PackedFloat32Array(0.54485774, 0.54923415, 0.9059081, 0.91247267)
-colors = PackedColorArray(0.41568628, 0.42352942, 0.4, 0, 0.7058824, 0.7176471, 0.69411767, 1, 0.707521, 0.7166433, 0.6926691, 1, 0.41568628, 0.42352942, 0.4, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1nuhy"]
-gradient = SubResource("Gradient_6bc7i")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_ymfr8"]
 viewport_path = NodePath("SubViewport")
 
@@ -286,14 +250,14 @@ transform = Transform3D(1, -6.7055225e-08, -7.450581e-09, 5.2154064e-08, 0.99999
 layers = 4
 cast_shadow = 0
 gi_mode = 0
-pixel_size = 0.00125
+pixel_size = 0.0015
 billboard = 1
 fixed_size = true
 render_priority = 3
 texture = SubResource("ViewportTexture_1nuhy")
 
 [node name="MoneyIcon" type="Sprite3D" parent="Charge_sprite" unique_id=1461922140]
-transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.04410577, 0.039098978, -0.030696258)
+transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.0050189495, 0.039098978, -0.042201385)
 layers = 2
 cast_shadow = 0
 gi_mode = 0
@@ -371,13 +335,14 @@ size = Vector2i(64, 64)
 render_target_update_mode = 4
 
 [node name="TextureProgressBar2" type="TextureProgressBar" parent="SubViewport2" unique_id=1315104023]
+modulate = Color(0.66656864, 0.6665687, 0.6665685, 1)
 offset_right = 64.0
 offset_bottom = 64.0
 max_value = 2.0
 step = 0.001
 fill_mode = 4
-texture_under = SubResource("GradientTexture2D_28afk")
-texture_progress = SubResource("GradientTexture2D_01x4c")
+texture_under = ExtResource("6_28afk")
+texture_progress = ExtResource("7_ncfsq")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1544035627]
 transparent_bg = true
@@ -389,8 +354,8 @@ offset_right = 64.0
 offset_bottom = 64.0
 step = 0.001
 fill_mode = 4
-texture_under = SubResource("GradientTexture2D_ncfsq")
-texture_progress = SubResource("GradientTexture2D_1nuhy")
+texture_under = ExtResource("8_01x4c")
+texture_progress = ExtResource("9_nn10w")
 
 [node name="Res_progress" type="Sprite3D" parent="." unique_id=1122095657]
 transform = Transform3D(1, -6.7055225e-08, -7.450581e-09, 5.2154064e-08, 0.9999999, -3.2782555e-07, 0, 3.2782555e-07, 1.0000001, -3.0269866, 2.3214989, 0.18738842)

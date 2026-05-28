@@ -1,18 +1,13 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dt06t43dmljfk"]
 
-[ext_resource type="Texture2D" uid="uid://ciwg53nyps1m0" path="res://Images/FloorMaterial/Material.001_Base_color.png" id="1_0fm56"]
-[ext_resource type="Texture2D" uid="uid://cbbj8apm5kk6u" path="res://Images/FloorMaterial/Material.001_Height.png" id="2_mx72t"]
-[ext_resource type="Texture2D" uid="uid://cl7ghbb3u7dtj" path="res://Images/FloorMaterial/Material.001_Normal_OpenGL.png" id="3_ufj48"]
+[ext_resource type="Texture2D" uid="uid://crve4j6ij3vwu" path="res://Images/FloorMaterial/Base_texture_Base_color.png" id="1_0fm56"]
+[ext_resource type="Texture2D" uid="uid://chh8m2tstmuf2" path="res://Images/FloorMaterial/Base_texture_Normal.png" id="3_mx72t"]
 
 [resource]
 albedo_texture = ExtResource("1_0fm56")
 normal_enabled = true
-normal_scale = 0.3
-normal_texture = ExtResource("3_ufj48")
+normal_texture = ExtResource("3_mx72t")
 heightmap_enabled = true
-heightmap_scale = 4.0
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("2_mx72t")
-uv1_scale = Vector3(6.355, 6.355, 6.355)
+heightmap_scale = 0.0
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(0.321, 0.6, 0)

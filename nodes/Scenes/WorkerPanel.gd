@@ -1,7 +1,7 @@
 extends Button
 class_name WorkerPanel
 
-const CLOSE_ICON = preload("uid://br8o3ohxar528")
+const CLOSE_ICON = preload("uid://57g2gc2d38rv")
 
 @export var res: Worker 
 @export var is_open: bool = false

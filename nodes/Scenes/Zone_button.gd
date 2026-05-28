@@ -78,6 +78,6 @@ func check_zone_open_status_plus_one() -> bool:
 
 func check(resource: Zone):
 	if res == resource:
-		icon = load("res://Images/UI/icons/IMG_20260512_194321_716.png")
+		icon = load("res://Images/UI/icons/icon_check.PNG")
 	if check_zone_open_status_plus_one() or check_zone_open_status():
 		$"Condition".hide()

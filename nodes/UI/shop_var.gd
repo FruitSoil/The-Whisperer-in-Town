@@ -16,11 +16,11 @@ func update():
 		$Tier.text = "Тир ?"
 		$Name.text = "?????????"
 		$Description.text = "?????????????????? ???????????????"
-		$Image.texture = load("res://Images/LockIcon.png")
+		$Image.texture = load("res://Images/UI/icons/icon_lock.PNG")
 		$buy/Res_label.text = "????"
-		$buy/Res_icon.texture = load("res://Images/LockIcon.png")
+		$buy/Res_icon.texture = load("res://Images/UI/icons/icon_lock.PNG")
 		$buy/Res_label2.text = "????"
-		$buy/Res_icon2.texture = load("res://Images/LockIcon.png")
+		$buy/Res_icon2.texture = load("res://Images/UI/icons/icon_lock.PNG")
 		$Condition.show()
 		$Condition.text = res.unlock_condition_desc
 		return

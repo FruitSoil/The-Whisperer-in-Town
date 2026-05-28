@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="1_dgv3n"]
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="2_dgv3n"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
-[ext_resource type="Texture2D" uid="uid://rh78c8y4dpar" path="res://Images/Resources_icons/no_res_icon.png" id="3_kou8v"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="3_nmk4s"]
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="6_dgv3n"]
+[ext_resource type="Texture2D" uid="uid://cee7aon6hogg8" path="res://Images/UI/icons/icon_lock.PNG" id="6_l75qi"]
+[ext_resource type="Texture2D" uid="uid://jy2drlgqa5ra" path="res://Images/Resources_icons/Colored/icon_money.png" id="7_muuik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgv3n"]
 content_margin_left = 0.0
@@ -110,7 +111,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_muuik")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r4p40")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_h8wog")
 theme_override_styles/focus = SubResource("StyleBoxTexture_3xjqp")
-text = "Купить"
 metadata/buy = true
 
 [node name="CompJuice" type="Node" parent="buy" unique_id=657433030]
@@ -121,9 +121,9 @@ metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 [node name="Res_label" type="Label" parent="buy" unique_id=1527654187]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 30.0
+offset_top = 59.0
 offset_right = 80.0
-offset_bottom = 53.0
+offset_bottom = 82.0
 theme_override_fonts/font = ExtResource("2_dgv3n")
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -132,19 +132,19 @@ script = ExtResource("2_kou8v")
 [node name="Res_icon" type="TextureRect" parent="buy" unique_id=1304948122]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 30.0
+offset_top = 59.0
 offset_right = 42.0
-offset_bottom = 54.0
-texture = ExtResource("3_kou8v")
+offset_bottom = 83.0
+texture = ExtResource("6_l75qi")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Res_label2" type="Label" parent="buy" unique_id=1428352720]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 12.0
+offset_top = 31.0
 offset_right = 80.0
-offset_bottom = 35.0
+offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("2_dgv3n")
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -153,10 +153,10 @@ script = ExtResource("2_kou8v")
 [node name="Res_icon2" type="TextureRect" parent="buy" unique_id=1480082578]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 12.0
+offset_top = 31.0
 offset_right = 42.0
-offset_bottom = 36.0
-texture = ExtResource("3_kou8v")
+offset_bottom = 55.0
+texture = ExtResource("7_muuik")
 expand_mode = 1
 stretch_mode = 5
 
