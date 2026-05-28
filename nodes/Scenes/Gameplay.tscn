@@ -2163,7 +2163,6 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
-visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2447,6 +2446,7 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

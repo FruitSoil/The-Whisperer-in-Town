@@ -255,8 +255,6 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl4".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl5".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl5".update()
-					$"Store_UI/Build_scroll_list/VBС/lvl6".is_open = true
-					$"Store_UI/Build_scroll_list/VBС/lvl6".update()
 				3:
 					Global.is_zone_3_open = true
 					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone3Quest.tres"))
@@ -275,8 +273,6 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl7".update()
 					$"Store_UI/Build_scroll_list/VBС/lvl8".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl8".update()
-					$"Store_UI/Build_scroll_list/VBС/lvl9".is_open = true
-					$"Store_UI/Build_scroll_list/VBС/lvl9".update()
 				4:
 					Global.is_zone_4_open = true
 					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone4Quest.tres"))
