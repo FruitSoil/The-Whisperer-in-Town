@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="4_abn5u"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="5_uvsd7"]
 [ext_resource type="Resource" uid="uid://c3y1ky16pmnaw" path="res://resources/Quests/Worker/OD2.tres" id="7_phxe8"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="8_a5euh"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="8_a5euh"]
 [ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="9_qdft1"]
 
 [resource]
@@ -27,7 +27,7 @@ worker_type = ExtResource("9_qdft1")
 open_after_accept = true
 text_greetings = "Здравствуйте! Я к вам с хорошими новостями, на днях мне выпал шанс поболтать с самим [b]Артом Беллом[/b]! Наш диалог сложно описать словами, я многое переомыслил.  Вы пока не понимаете, но мы на пороге нового [b]рассвета[/b] человечества! 
 
-Он грядёт сюда, и с ним мы обретём новую форму существования. Я прошу вас о маленькой услуге, помогите нам расширить нити влияния! назначьте ещё [b][color={#FF59CA}]четырех[/color][/b] [b]работников[/b] на [b]районы[/b] [b][color={#FF59CA}]\"\"Высоких Технологий\"\"[/color][/b], пусть радиовечер  будет вечным."
+Он грядёт сюда, и с ним мы обретём новую форму существования. Я прошу вас о маленькой услуге, помогите нам расширить нити влияния! назначьте ещё [b][color=#FF59CA]четырех[/color][/b] [b]работников[/b] на [b]районы[/b] [b][color=#FF59CA]\"Высоких Технологий\"[/color][/b], пусть радиовечер  будет вечным."
 answer_agree = "Я сделаю это."
 answer_wait = "Вернусь к этому вопросу позже."
 answer_reject = "Я отказываюсь"
