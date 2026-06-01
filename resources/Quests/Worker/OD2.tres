@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="5_30j85"]
 [ext_resource type="Resource" uid="uid://nqt27xgplbot" path="res://resources/Quests/Radio/R2.tres" id="6_d7o8w"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="6_m2tlg"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="7_3ug0b"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="7_3ug0b"]
 [ext_resource type="Resource" uid="uid://bnasb7mu2rmd2" path="res://resources/Quests/Worker/OD.tres" id="7_30j85"]
 [ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="8_fe5il"]
 
@@ -30,6 +30,6 @@ answer_agree = "Хорошо я отправлю тебя"
 answer_wait = "Вернусь к этому вопросу позже."
 answer_reject = "Вынужден отказать."
 text_reject = "Вы разрушаете мне сердце. Что в моих словах было не так, чем помешает моё прибывания там! Это бы пошло вам на пользу.... ладно, я услышал ваш приказ. Я возращаюсь к привычному роду деятельности."
-text_progress = "Жду свою [b][color={#FFFF5D}][url=Throw]отправку[/url][/color][/b] в один из [b][color={#FF59CA}]районов \"Высоких Технологий\"[/color][/b]"
+text_progress = "Жду свою [b][color=#FFFF5D][url=Throw]отправку[/url][/color][/b] в один из [b][color=#FF59CA]районов \"Высоких Технологий\"[/color][/b]"
 text_finish = "Уведомляю, что отправка увенчалась успехом! Я уже немного освоился в новом [b]районе[/b], в скором времене буду беседовать с [b]Артом Беллом[/b]. Держу вас в курсе."
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
