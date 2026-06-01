@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TWiT"
-config/version="0.0.0.1"
+config/version="0.1"
 run/main_scene="uid://cg5c1mvtux802"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -136,5 +136,4 @@ Pause={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-anti_aliasing/quality/screen_space_aa=2
-2d/snap/snap_2d_transforms_to_pixel=true
+anti_aliasing/quality/screen_space_aa=1

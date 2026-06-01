@@ -174,8 +174,6 @@ theme_override_icons/tick = ExtResource("4_dtv7d")
 theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
-min_value = -80.0
-max_value = 15.0
 
 [node name="Ambient" type="HBoxContainer" parent="Sounds/VBC/VBC" unique_id=20257851]
 layout_mode = 2
@@ -202,8 +200,6 @@ theme_override_icons/tick = ExtResource("4_dtv7d")
 theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
-min_value = -80.0
-max_value = 15.0
 
 [node name="VBC2" type="VBoxContainer" parent="Sounds/VBC" unique_id=1524526189]
 layout_mode = 2
@@ -234,8 +230,6 @@ theme_override_icons/tick = ExtResource("4_dtv7d")
 theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
-min_value = -80.0
-max_value = 15.0
 
 [node name="SFX" type="HBoxContainer" parent="Sounds/VBC/VBC2" unique_id=624368986]
 layout_mode = 2
@@ -252,6 +246,17 @@ theme_override_font_sizes/font_size = 48
 text = "100"
 horizontal_alignment = 2
 
+[node name="Label" type="Label" parent="Sounds/VBC/VBC2/SFX/Percent" unique_id=1639873929]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Квесты"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SFXSlider" type="HSlider" parent="Sounds/VBC/VBC2" unique_id=853062739]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -262,5 +267,3 @@ theme_override_icons/tick = ExtResource("4_dtv7d")
 theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
-min_value = -80.0
-max_value = 15.0

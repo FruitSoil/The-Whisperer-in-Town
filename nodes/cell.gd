@@ -88,8 +88,6 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 		get_tree().call_group("cell","toggle_lines", false)
 
 func place(building: Building = %BaseUI.selected_build):
-	build_sound.stream = random_place_sounds.pick_random()
-	build_sound.play()
 	%BaseUI.building_state = false
 	$"../../HUD/BaseUI/StateFeedback".tween_hide_anim()
 	has_building = true
@@ -100,6 +98,9 @@ func place(building: Building = %BaseUI.selected_build):
 	var inst = current_build.model.instantiate()
 	
 	if current_build != load("uid://cm6r5ofrc0a8"):
+		build_sound.stream = random_place_sounds.pick_random()
+		build_sound.play()
+		
 		if $"../../Tutorial".tutorial_stage == -1:
 			$"../../Tutorial".pressed(-1)
 			$"../../Tutorial".stage_change(-2)

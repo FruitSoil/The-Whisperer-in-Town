@@ -1,35 +1,41 @@
 extends CanvasLayer
 
 @onready var exit: Button = $Exit
-@onready var master_percent: Label = $Sounds/Master/Master/Percent
-@onready var percents: Array[Label]
+
+@onready var percents: Array[Label] = [
+	$Sounds/Master/Master/Percent,
+	$Sounds/VBC/VBC2/UI/Percent,
+	$Sounds/VBC/VBC2/SFX/Percent,
+	$Sounds/VBC/VBC/Music/Percent,
+	$Sounds/VBC/VBC/Ambient/Percent,
+]
+
 @onready var sliders: Array[HSlider] = [
 	$Sounds/Master/MasterSlider,
-	
+	$Sounds/VBC/VBC2/UISlider,
+	$Sounds/VBC/VBC2/SFXSlider,
+	$Sounds/VBC/VBC/MusicSlider,
+	$Sounds/VBC/VBC/AmbientSlider,
 ]
 
 func _ready() -> void:
 	for i in range(sliders.size()):
 		var bus_db_value = AudioServer.get_bus_volume_db(i)
 		sliders[i].value = bus_db_value
-		sliders[i].value_changed.connect(change_volume.bind(i))
 		
-		if i == 0:
-			update_percent_label(bus_db_value)
+		sliders[i].value_changed.connect(change_volume.bind(i))
+		update_percent_label(bus_db_value, i)
 	
 	exit.pressed.connect(_on_button_pressed)
 	hide()
 
 func change_volume(value: float, bus_id: int) -> void:
 	AudioServer.set_bus_volume_db(bus_id, value)
-	
-	if bus_id == 0:
-		update_percent_label(value)
+	update_percent_label(value, bus_id)
 
-func update_percent_label(db_value: float) -> void:
-	var linear_val = db_to_linear(db_value)
-	var percentage = round(linear_val * 100)
-	master_percent.text = str(percentage)
+func update_percent_label(db_value: float, bus_id: int) -> void:
+	var percentage = round(remap(db_value, -80.0, 15.0, 0.0, 100.0))
+	percents[bus_id].text = str(percentage)
 
 func _on_button_pressed() -> void:
 	hide()

@@ -47,26 +47,33 @@
 [ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="40_4wf2t"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="41_0mfkc"]
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="42_dg5mt"]
+[ext_resource type="Script" uid="uid://bqvon6icsq4hw" path="res://nodes/UI/res_panel.gd" id="42_sfvcy"]
+[ext_resource type="Texture2D" uid="uid://crm2y3vhc4dxf" path="res://Images/Resources_icons/Colored/icon_rusty_tin.png" id="43_dweyv"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="43_frhhc"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="44_8dus5"]
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="45_8e00r"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="46_pe6gr"]
 [ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="47_d440o"]
+[ext_resource type="Texture2D" uid="uid://b4p46enx2buoa" path="res://Images/Resources_icons/Colored/icon_electrosnow.png" id="48_gub22"]
 [ext_resource type="Resource" uid="uid://c753qi6g58b5y" path="res://resources/builds_res/Final_Imperial_Zone.tres" id="48_m6mm7"]
 [ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="49_n85g4"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="50_x8hrd"]
 [ext_resource type="Script" uid="uid://oqqdr1wfy3nw" path="res://nodes/Scenes/Zone_button.gd" id="51_hlnya"]
 [ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="52_w2vja"]
+[ext_resource type="Texture2D" uid="uid://c5wc8af2rqx86" path="res://Images/Resources_icons/Colored/icon_wiring_diagram.png" id="52_x1wuj"]
 [ext_resource type="Texture2D" uid="uid://jy2drlgqa5ra" path="res://Images/Resources_icons/Colored/icon_money.png" id="53_yssgo"]
 [ext_resource type="Texture2D" uid="uid://cee7aon6hogg8" path="res://Images/UI/icons/icon_lock.PNG" id="54_30cd8"]
 [ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="54_725ke"]
 [ext_resource type="Texture2D" uid="uid://h6klp05fav1x" path="res://Images/UI/icons/icon_check.PNG" id="55_5h554"]
 [ext_resource type="Resource" uid="uid://bw18vnnfqwbut" path="res://resources/Zones/Zone_3.tres" id="55_reqt0"]
 [ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="56_gg5ll"]
+[ext_resource type="Texture2D" uid="uid://c7kqh2b0bpdsa" path="res://Images/Resources_icons/Colored/icon_the_power_of_the_military.png" id="56_tt4qn"]
 [ext_resource type="Resource" uid="uid://cbuw5ql3k2x6k" path="res://resources/Zones/Zone_1.tres" id="57_kyo71"]
+[ext_resource type="Texture2D" uid="uid://djos7r1nlbt5a" path="res://Images/Resources_icons/Colored/icon_the_power_of_the_empire.png" id="58_6ngqc"]
 [ext_resource type="Texture2D" uid="uid://edo12colapox" path="res://Images/UI/resources_background.PNG" id="58_ogdty"]
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="59_pt2su"]
 [ext_resource type="Texture2D" uid="uid://cevynlr1ejqmk" path="res://Images/UI/days_background.PNG" id="60_amk7x"]
+[ext_resource type="Texture2D" uid="uid://b8447o73af4e8" path="res://Images/Resources_icons/Colored/icon_the_power_of_the_ancients.png" id="60_nciey"]
 [ext_resource type="Texture2D" uid="uid://berx66w5hcevc" path="res://Images/UI/characters_background.PNG" id="61_kyfdo"]
 [ext_resource type="Texture2D" uid="uid://byvqowcrccajq" path="res://Images/UI/frame_characters.png" id="62_nfnow"]
 [ext_resource type="Script" uid="uid://d1ld83ovhrv0e" path="res://nodes/Scenes/WorkerPanel.gd" id="63_myd6q"]
@@ -554,6 +561,13 @@ load_path = "res://.godot/imported/ui4_button2_idle.png-ba6dfedf82820ff95c8e9dcd
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sok84"]
 texture = SubResource("CompressedTexture2D_r8b8i")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxqh0"]
+font_size = 30
+font_color = Color(0.6431037, 0.746056, 0.73452204, 1)
+shadow_size = 2
+shadow_color = Color(0.14132348, 0.24757528, 0.22206074, 1)
+shadow_offset = Vector2(-1.18, -1.18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pem7d"]
 texture = ExtResource("32_7n4c0")
@@ -2284,9 +2298,21 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pqm0w")
 theme_override_styles/hover = SubResource("StyleBoxTexture_sok84")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_rpk0c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rpk0c")
-text = "Квесты"
 icon = ExtResource("32_xegqy")
 icon_alignment = 2
+
+[node name="Label" type="Label" parent="HUD/BaseUI/Quest" unique_id=1049083831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Квесты"
+label_settings = SubResource("LabelSettings_xxqh0")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Store" type="Button" parent="HUD/BaseUI" unique_id=1798564092]
 z_index = 99
@@ -2305,9 +2331,21 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_mux3h")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_pem7d")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pem7d")
-text = "Магазин"
 icon = ExtResource("35_5h554")
 autowrap_trim_flags = 0
+
+[node name="Label" type="Label" parent="HUD/BaseUI/Store" unique_id=1696984018]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Магазин"
+label_settings = SubResource("LabelSettings_xxqh0")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="HUD/BaseUI" unique_id=1081556581]
 self_modulate = Color(1, 1, 1, 0)
@@ -2370,6 +2408,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2439,7 +2478,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif"
 min_value = -12.0
 
 [node name="Store_UI" type="Control" parent="HUD/BaseUI" unique_id=626397403]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2467,7 +2505,6 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
-visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2490,12 +2527,14 @@ offset_left = 8.0
 offset_right = 548.0
 offset_bottom = 1808.0
 
-[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=24267011]
+[node name="ResPanel" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=24267011 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 1
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=1422651638]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel" unique_id=1422651638]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2513,7 +2552,7 @@ theme_override_font_sizes/font_size = 18
 text = "Районы, производящие ржавую жесть"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel" unique_id=1924336613]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel" unique_id=1924336613]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2523,7 +2562,7 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("4_2ho68")
+texture = ExtResource("43_dweyv")
 
 [node name="lvl" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2084390590 instance=ExtResource("37_5e40a")]
 layout_mode = 2
@@ -2539,12 +2578,14 @@ is_open = true
 layout_mode = 2
 res = ExtResource("40_4wf2t")
 
-[node name="Panel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892]
+[node name="ResPanel2" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1950893892 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 2
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=674171681]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel2" unique_id=674171681]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2562,7 +2603,7 @@ theme_override_font_sizes/font_size = 18
 text = "Районы, производящие электроснег"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel2" unique_id=1274899991]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel2" unique_id=1274899991]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2572,7 +2613,7 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("5_r6jij")
+texture = ExtResource("48_gub22")
 
 [node name="lvl4" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1335261244 instance=ExtResource("37_5e40a")]
 layout_mode = 2
@@ -2586,12 +2627,14 @@ res = ExtResource("42_dg5mt")
 layout_mode = 2
 res = ExtResource("43_frhhc")
 
-[node name="Panel3" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1032608040]
+[node name="ResPanel3" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1032608040 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 3
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel3" unique_id=1974004986]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel3" unique_id=1974004986]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2609,7 +2652,7 @@ theme_override_font_sizes/font_size = 18
 text = "Районы, производящие высококач. элетросхемы"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel3" unique_id=1230737858]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel3" unique_id=1230737858]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2619,7 +2662,7 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("7_exte1")
+texture = ExtResource("52_x1wuj")
 
 [node name="lvl7" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1212943228 instance=ExtResource("37_5e40a")]
 layout_mode = 2
@@ -2633,12 +2676,14 @@ res = ExtResource("45_8e00r")
 layout_mode = 2
 res = ExtResource("46_pe6gr")
 
-[node name="Panel4" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2130541618]
+[node name="ResPanel4" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2130541618 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 4
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=547216090]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel4" unique_id=547216090]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2653,10 +2698,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.817909, 0.9999997, 0.8310219, 1)
 theme_override_font_sizes/font_size = 18
-text = "Районы, производящие тяжёлые компоненты"
+text = "Районы, производящие арсенал"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel4" unique_id=1031719806]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel4" unique_id=1031719806]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2666,18 +2711,20 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("8_7forp")
+texture = ExtResource("56_tt4qn")
 
 [node name="lvl10" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=2099564223 instance=ExtResource("37_5e40a")]
 layout_mode = 2
 res = ExtResource("47_d440o")
 
-[node name="Panel5" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1624599196]
+[node name="ResPanel5" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1624599196 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 5
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=30546748]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel5" unique_id=30546748]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2695,7 +2742,7 @@ theme_override_font_sizes/font_size = 18
 text = "Районы, производящие имперскую мощь"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel5" unique_id=2007520187]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel5" unique_id=2007520187]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2705,18 +2752,20 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("9_w45vw")
+texture = ExtResource("58_6ngqc")
 
 [node name="lvl11" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1330198436 instance=ExtResource("37_5e40a")]
 layout_mode = 2
 res = ExtResource("48_m6mm7")
 
-[node name="Panel6" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=634627135]
+[node name="ResPanel6" type="Panel" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=634627135 groups=["resource_panels"]]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nn2ht")
+script = ExtResource("42_sfvcy")
+ID = 5
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=52213753]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel6" unique_id=52213753]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2734,7 +2783,7 @@ theme_override_font_sizes/font_size = 18
 text = "Районы, производящие культистскую мощь"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/Panel6" unique_id=557717670]
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС/ResPanel6" unique_id=557717670]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -2744,13 +2793,14 @@ offset_top = -28.5
 offset_right = 79.0
 offset_bottom = 28.5
 grow_vertical = 2
-texture = ExtResource("10_hwrqn")
+texture = ExtResource("60_nciey")
 
 [node name="lvl12" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=632742349 instance=ExtResource("37_5e40a")]
 layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -4979,7 +5029,6 @@ metadata/_edit_lock_ = true
 [node name="CG" type="CanvasGroup" parent="Tutorial/Control" unique_id=1947426528]
 
 [node name="Slide_1" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1796307636]
-visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -5001,13 +5050,14 @@ button_mask = 2
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_1" unique_id=285590]
 layout_mode = 0
 offset_left = 1812.0
-offset_top = 200.0
+offset_top = 202.0
 offset_right = 1866.0
-offset_bottom = 228.0
+offset_bottom = 226.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ПКМ"
+horizontal_alignment = 1
 
 [node name="Slide_2" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1519542231]
 visible = false

@@ -21,11 +21,11 @@ func update():
 		$buy/Res_icon.texture = load("res://Images/UI/icons/icon_lock.PNG")
 		$buy/Res_label2.text = "????"
 		$buy/Res_icon2.texture = load("res://Images/UI/icons/icon_lock.PNG")
-		$Condition.show()
-		$Condition.text = res.unlock_condition_desc
+		condition.show()
+		condition.text = res.unlock_condition_desc
 		return
 	if res:
-		$Condition.hide()
+		condition.hide()
 		$Name.text = res.name
 		$Description.text = res.description
 		$Image.texture = res.shop_icon

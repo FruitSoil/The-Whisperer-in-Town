@@ -325,6 +325,7 @@ func _on_zone_buy() -> void:
 					$"Store_UI/Build_scroll_list/VBС/lvl12".update()
 			get_tree().call_group("zone_button", "check", selected_zone)
 			get_tree().call_group("cell", "lines_update")
+			get_tree().call_group("resource_panels", "update")
 		else:
 			no_res($"Store_UI/Zones_View/МС/Desc/HBC/Buy",$"Store_UI/Zones_View/МС/Desc/HBC/Buy".position,6)
 	else:
