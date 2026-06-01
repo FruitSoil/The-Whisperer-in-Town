@@ -63,7 +63,7 @@ lvl=""
 
 [gui]
 
-theme/custom_font="uid://b3ivgio20en0k"
+theme/custom_font="uid://ibjt7v66jnmk"
 
 [input]
 
@@ -136,4 +136,5 @@ Pause={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/screen_space_aa=2
+2d/snap/snap_2d_transforms_to_pixel=true

@@ -2,34 +2,34 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b3ivgio20en0k"
-path="res://.godot/imported/Kreadon-Demi.ttf-91d49688989148c69618c1c5b2a88fe4.fontdata"
+uid="uid://ibjt7v66jnmk"
+path="res://.godot/imported/SuboleyaRegular.ttf-49be29b0e434afeb65b68c2d9213977f.fontdata"
 
 [deps]
 
-source_file="res://other/Fonts/Kreadon-Demi.ttf"
-dest_files=["res://.godot/imported/Kreadon-Demi.ttf-91d49688989148c69618c1c5b2a88fe4.fontdata"]
+source_file="res://other/Fonts/SuboleyaRegular.ttf"
+dest_files=["res://.godot/imported/SuboleyaRegular.ttf-49be29b0e434afeb65b68c2d9213977f.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=2
+antialiasing=1
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
-msdf_pixel_range=8
-msdf_size=48
+msdf_pixel_range=100
+msdf_size=150
 allow_system_fallback=true
 force_autohinter=true
 modulate_color_glyphs=true
-hinting=1
-subpixel_positioning=1
+hinting=2
+subpixel_positioning=0
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
 Compress=null
-compress=true
+compress=false
 preload=[{
 "chars": [],
 "glyphs": [],
