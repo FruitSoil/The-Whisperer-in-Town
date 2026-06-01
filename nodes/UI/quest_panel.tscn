@@ -14,7 +14,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dyru"]
 bg_color = Color(0.07058824, 0.07450981, 0.06666667, 0.12941177)
 corner_detail = 1
-shadow_color = Color(0, 0.08235294, 0, 0.5254902)
+shadow_color = Color(0, 0.04511971, 0, 0.5254902)
 shadow_size = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvj2t"]
@@ -143,8 +143,8 @@ _data = {
 }
 
 [node name="Quest_panel" type="Panel" unique_id=23721088]
-custom_minimum_size = Vector2(550, 100)
-offset_right = 550.0
+custom_minimum_size = Vector2(525, 100)
+offset_right = 525.0
 offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8dyru")
 script = ExtResource("1_xeupp")

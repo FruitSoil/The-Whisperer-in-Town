@@ -2,8 +2,29 @@ extends CanvasLayer
 
 @onready var menu_button: OptionButton = $MenuButton
 
+@onready var speed_0_5: Button = $speed0_5
+@onready var speed_1: Button = $speed1
+@onready var speed_2: Button = $speed2
+@onready var speed_5: Button = $speed5
+
 func _ready() -> void:
+	speed_0_5.pressed.connect(speed_change.bind(0))
+	speed_1.pressed.connect(speed_change.bind(1))
+	speed_2.pressed.connect(speed_change.bind(2))
+	speed_5.pressed.connect(speed_change.bind(3))
+	
 	$".".hide()
+
+func speed_change(speed: int):
+	match speed:
+		0:
+			Engine.time_scale = 0.5
+		1:
+			Engine.time_scale = 1.0
+		2:
+			Engine.time_scale = 2.0
+		3:
+			Engine.time_scale = 5.0
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("debug_R"):
@@ -33,11 +54,6 @@ func _input(event: InputEvent) -> void:
 			print("КВЕСТЫ СКИПНУТЫЕ")
 			for i in Global.quest_skip:
 				print(" - ",i.quest_name)
-	if event.is_action_released("debug_quest_test"):
-		%ADMIN.add_quest(load("res://resources/Quests/TutorialPart1.tres"))
-	if event.is_action_released("debug_quest_test2"):
-		%ADMIN.quest_stage = 4
-		%ADMIN.update_icon()
 
 func _pressed() -> void:
 	var add_count: int

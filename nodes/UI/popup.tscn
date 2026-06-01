@@ -55,26 +55,27 @@ unique_name_in_owner = true
 disable_3d = true
 oversampling_override = 1.0
 mode = 1
-size = Vector2i(300, 150)
+size = Vector2i(307, 150)
 visible = true
-min_size = Vector2i(300, 150)
+min_size = Vector2i(307, 150)
 max_size = Vector2i(600, 600)
 theme_override_styles/panel = SubResource("StyleBoxFlat_cuq0l")
 
 [node name="VBC" type="VBoxContainer" parent="CL/Popup" unique_id=1192841312]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 287.0
+offset_right = 294.0
 offset_bottom = 137.0
 
 [node name="Name" type="RichTextLabel" parent="CL/Popup/VBC" unique_id=2052173135]
 custom_minimum_size = Vector2(0, 67.76)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
+theme_override_colors/default_color = Color(0.60784316, 1, 0.6431373, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_muors")
 bbcode_enabled = true
 text = "Империя"
@@ -82,7 +83,15 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="CL/Popup/VBC" unique_id=525515258]
+[node name="MC" type="MarginContainer" parent="CL/Popup/VBC" unique_id=1440024218]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Description" type="RichTextLabel" parent="CL/Popup/VBC/MC" unique_id=525515258]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -96,5 +105,5 @@ scroll_active = false
 material = SubResource("ShaderMaterial_cv71g")
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 287.0
+offset_right = 294.0
 offset_bottom = 137.0

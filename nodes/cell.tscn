@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bqldqhhqm7mmu" path="res://nodes/cell.gd" id="1_51tdh"]
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="2_hy5qt"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_1nuhy"]
-[ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="5_1nuhy"]
+[ext_resource type="Texture2D" uid="uid://jy2drlgqa5ra" path="res://Images/Resources_icons/Colored/icon_money.png" id="4_28afk"]
 [ext_resource type="Texture2D" uid="uid://f66e8flvopyg" path="res://Images/Particles/particle_coin.png" id="5_mi0yh"]
 [ext_resource type="Texture2D" uid="uid://lpi6h7qdo760" path="res://Images/UI/ProgressBars/progress_bar_off.PNG" id="6_28afk"]
 [ext_resource type="Texture2D" uid="uid://cp85bvsewavo7" path="res://Images/UI/ProgressBars/progress_bar_on.PNG" id="7_ncfsq"]
@@ -257,7 +257,7 @@ render_priority = 3
 texture = SubResource("ViewportTexture_1nuhy")
 
 [node name="MoneyIcon" type="Sprite3D" parent="Charge_sprite" unique_id=1461922140]
-transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.0050189495, 0.039098978, -0.042201385)
+transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, -0.028519869, 0.046446323, -0.03002821)
 layers = 2
 cast_shadow = 0
 gi_mode = 0
@@ -265,14 +265,14 @@ pixel_size = 0.001
 billboard = 1
 fixed_size = true
 render_priority = 3
-texture = ExtResource("5_1nuhy")
+texture = ExtResource("4_28afk")
 
 [node name="Charge_feedback" type="Sprite3D" parent="Charge_sprite" unique_id=674961800]
-transform = Transform3D(1, 2.4424976e-15, 0, 0, 1, 0, 0, 0, 1, 0.026218891, -0.042595387, 0.026490077)
+transform = Transform3D(0.15500352, 3.6793347e-07, 0.9879139, -2.7979343e-07, 1, -3.2853518e-07, -0.9879139, -2.2548787e-07, 0.15500352, 0.05677247, -0.07828283, 0.048891142)
 layers = 2
 cast_shadow = 0
 gi_mode = 0
-modulate = Color(0.8, 0.6156863, 0.52156866, 1)
+modulate = Color(0.8206097, 0.621967, 0.38113332, 1)
 pixel_size = 0.0025
 billboard = 1
 fixed_size = true

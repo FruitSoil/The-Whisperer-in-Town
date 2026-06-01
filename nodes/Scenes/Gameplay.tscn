@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c2hucdshe8xtu"]
 
+[ext_resource type="AudioStream" uid="uid://cr0sc1y7ph20w" path="res://Audio/Music/S_Ambience_for_Gameplay.mp3" id="1_hn85b"]
 [ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_vlx1q"]
 [ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="2_7ukgp"]
 [ext_resource type="Script" uid="uid://c62ur210wpk5h" path="res://nodes/Scenes/tutorial.gd" id="2_tbnlw"]
@@ -28,9 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://db25jfcvs7ogp" path="res://Images/circle.png" id="25_6ngqc"]
 [ext_resource type="Script" uid="uid://b46qdrej201nl" path="res://nodes/Scenes/ui_logic.gd" id="26_nciey"]
 [ext_resource type="Texture2D" uid="uid://baqiuhje7vftf" path="res://Images/UI/ui4.png" id="27_xde1d"]
-[ext_resource type="Texture2D" uid="uid://dsquyuvyh2s06" path="res://Images/UI/icons/IMG_20260512_194321_716.png" id="28_po80s"]
+[ext_resource type="Texture2D" uid="uid://cw3fukqb28ml5" path="res://Images/UI/ui2_button4_idle.png" id="29_30cd8"]
 [ext_resource type="Texture2D" uid="uid://cvkbeelywgc7f" path="res://Images/UI/ui4_button2_idle.png" id="29_77y48"]
 [ext_resource type="Texture2D" uid="uid://c8bb6sti8yav5" path="res://Images/UI/ui4_button2_pressed.png" id="30_72u36"]
+[ext_resource type="Texture2D" uid="uid://deq8t34b7gsi4" path="res://Images/UI/ui2_button4_pressed.png" id="30_hn85b"]
 [ext_resource type="Texture2D" uid="uid://uhj1p0f2ruy7" path="res://Images/UI/ui4_button3_idle.png" id="32_7n4c0"]
 [ext_resource type="Texture2D" uid="uid://cv46tb5yc642e" path="res://Images/UI/icons/colored/tasks.png" id="32_xegqy"]
 [ext_resource type="Texture2D" uid="uid://cfeuinprdmf3q" path="res://Images/UI/ui4_button3_pressed.png" id="33_w4m4s"]
@@ -192,6 +194,18 @@ _data = {
 shader = ExtResource("3_tbnlw")
 shader_parameter/blur = 1.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxqh0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.37788853, 0.29821014, 0.38322958, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u63fg"]
 texture = ExtResource("15_30cd8")
 
@@ -285,6 +299,10 @@ shader_parameter/vignette_opacity = 1.0
 load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id8pd"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = SubResource("CompressedTexture2D_i66y5")
 modulate_color = Color(1, 1, 1, 0.5411765)
 
@@ -292,20 +310,36 @@ modulate_color = Color(1, 1, 1, 0.5411765)
 load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wo272"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = SubResource("CompressedTexture2D_wo272")
 modulate_color = Color(0.55765235, 0.97623223, 0.55965835, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jt5n7"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = ExtResource("15_30cd8")
 modulate_color = Color(0.64705884, 1, 0.6627451, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdenm"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = ExtResource("16_hn85b")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3obll"]
 load_path = "res://.godot/imported/pause_screen_button.PNG-a98a050526798b0383d5af82016d21c1.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxe1l"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
@@ -314,6 +348,10 @@ texture = ExtResource("16_hn85b")
 modulate_color = Color(0.89293563, 0.31022602, 0.2687656, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkiup"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(0.8692449, 0.5770965, 0.5160036, 1)
 
@@ -321,6 +359,10 @@ modulate_color = Color(0.8692449, 0.5770965, 0.5160036, 1)
 texture = ExtResource("16_hn85b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikw4g"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = SubResource("CompressedTexture2D_3obll")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
@@ -371,6 +413,9 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5450000258875
+
+[sub_resource type="FontVariation" id="FontVariation_30cd8"]
+variation_embolden = 0.3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8b8i"]
 
@@ -445,53 +490,67 @@ height = 1080
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pem7d"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="Gradient" id="Gradient_hn85b"]
+offsets = PackedFloat32Array(0.08754209, 0.5858586, 1)
+colors = PackedColorArray(1, 1, 1, 0.7607843, 1, 1, 1, 0.23862237, 1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbuuu"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.09457057, 0.011652785, 0.011672433, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xxqh0"]
+gradient = SubResource("Gradient_hn85b")
+fill_from = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb2hi"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="GDScript" id="GDScript_hn85b"]
+resource_name = "state_feedback"
+script/source = "extends TextureRect
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfif"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.35686275, 0.101960786, 0.101960786, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+
+@export_color_no_alpha var build_color := Color(0.067, 0.112, 0.299, 1.0)
+@export_color_no_alpha var build_color_label := Color(0.036, 0.063, 0.187, 1.0)
+@export_color_no_alpha var worker_color := Color(0.18, 0.395, 0.132, 1.0)
+@export_color_no_alpha var worker_color_label := Color(0.08, 0.203, 0.053, 1.0)
+@export_color_no_alpha var demolition_color := Color(0.247, 0.0, 0.0, 1.0)
+@export_color_no_alpha var demolition_color_label := Color(0.212, 0.014, 0.024, 1.0)
+
+func change_state(state:int, is_show: bool):
+	if is_show:
+		match state:
+			1:
+				$Label.text = \"Режим строительства (ПКМ)\"
+				self_modulate = build_color
+				$Label.self_modulate = build_color_label
+				tween_show_anim()
+			2:
+				$Label.text = \"Режим назначения (ПКМ)\"
+				self_modulate = worker_color
+				$Label.self_modulate = worker_color_label
+				tween_show_anim()
+			3:
+				$Label.text = \"Режим сноса (ПКМ)\"
+				self_modulate = demolition_color
+				$Label.self_modulate = demolition_color_label
+				tween_show_anim()
+
+func tween_show_anim():
+	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	twm.tween_property(self, \"modulate\",Color(1.0, 1.0, 1.0, 1.0), 0.3)
+
+func tween_hide_anim():
+	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	twm.tween_property(self, \"modulate\",Color(1.0, 1.0, 1.0, 0.0), 0.3)
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxqh0"]
+texture = ExtResource("29_30cd8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfvcy"]
+texture = ExtResource("30_hn85b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcc36"]
+texture = ExtResource("29_30cd8")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tudpi"]
+texture = ExtResource("29_30cd8")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk0c"]
 texture = ExtResource("29_77y48")
@@ -565,11 +624,275 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tw4p"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tw4p"]
-bg_color = Color(0, 0, 0, 0.47058824)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30cd8"]
+bg_color = Color(0, 0, 0, 0)
+shadow_color = Color(0.02725124, 0.05617959, 0.014342922, 1)
+shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwgbc"]
-bg_color = Color(0, 0.047058824, 0.039215688, 0.23529412)
+[sub_resource type="Shader" id="Shader_30cd8"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/VHS-and-CRT-monitor-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result to godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+//*** IMPORTANT! ***/ 
+// - If you are using this shader to affect the node it is applied to set 'overlay' to false (unchecked in the instepctor).
+// - If you are using this shader as an overlay, and want the shader to affect the nodes below in the Scene hierarchy,
+//   set 'overlay' to true (checked in the inspector).
+// On Mac there is potentially a bug causing this to not work properly. If that is the case and you want to use the shader as an overlay
+// change all \"overlay ? SCREEN_TEXTURE : TEXTURE\" to only \"SCREEN_TEXTURE\" on lines 129-140, and \"vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);\"
+// to \"vec2 uv = warp(SCREEN_UV);\" on line 98.
+uniform bool overlay = false;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float scanlines_width : hint_range(0.0, 0.5) = 0.25;
+uniform float grille_opacity : hint_range(0.0, 1.0) = 0.3;
+uniform vec2 resolution = vec2(640.0, 480.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
+
+uniform bool pixelate = true; // Fill each square (\"pixel\") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
+
+uniform bool roll = true;
+uniform float roll_speed = 8.0; // Positive values are down, negative are up
+uniform float roll_size : hint_range(0.0, 100.0) = 15.0;
+uniform float roll_variation : hint_range(0.1, 5.0) = 1.8; // This valie is not an exact science. You have to play around with the value to find a look you like. How this works is explained in the code below.
+uniform float distort_intensity : hint_range(0.0, 0.2) = 0.05; // The distortion created by the rolling effect.
+
+uniform float noise_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float noise_speed = 5.0; // There is a movement in the noise pattern that can be hard to see first. This sets the speed of that movement.
+
+uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.06;
+
+uniform float aberration : hint_range(-1.0, 1.0) = 0.03; // Chromatic aberration, a distortion on each color channel.
+uniform float brightness = 1.4; // When adding scanline gaps and grille the image can get very dark. Brightness tries to compensate for that.
+uniform bool discolor = true; // Add a discolor effect simulating a VHS
+
+uniform float warp_amount :hint_range(0.0, 5.0) = 1.0; // Warp the texture edges simulating the curved glass of a CRT monitor or old TV.
+uniform bool clip_warp = false;
+
+uniform float vignette_intensity = 0.4; // Size of the vignette, how far towards the middle it should go.
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
+
+// Used by the noise functin to generate a pseudo random value between 0.0 and 1.0
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+// Generate a Perlin noise used by the distortion effects
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+// Takes in the UV and warps the edges, creating the spherized effect
+vec2 warp(vec2 uv){
+	vec2 delta = uv - 0.5;
+	float delta2 = dot(delta.xy, delta.xy);
+	float delta4 = delta2 * delta2;
+	float delta_offset = delta4 * warp_amount;
+	
+	return uv + delta * delta_offset;
+}
+
+// Adds a black border to hide stretched pixel created by the warp effect
+float border (vec2 uv){
+	float radius = min(warp_amount, 0.08);
+	radius = max(min(min(abs(radius * 2.0), abs(1.0)), abs(1.0)), 1e-5);
+	vec2 abs_uv = abs(uv * 2.0 - 1.0) - vec2(1.0, 1.0) + radius;
+	float dist = length(max(vec2(0.0), abs_uv)) / radius;
+	float square = smoothstep(0.96, 1.0, dist);
+	return clamp(1.0 - square, 0.0, 1.0);
+}
+
+// Adds a vignette shadow to the edges of the image
+float vignette(vec2 uv){
+	uv *= 1.0 - uv.xy;
+	float vignette = uv.x * uv.y * 15.0;
+	return pow(vignette, vignette_intensity * vignette_opacity);
+}
+
+void fragment()
+{
+	vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV); // Warp the uv. uv will be used in most cases instead of UV to keep the warping
+	vec2 text_uv = uv;
+	vec2 roll_uv = vec2(0.0);
+	float time = roll ? TIME : 0.0;
+	
+
+	// Pixelate the texture based on the given resolution.
+	if (pixelate)
+	{
+		text_uv = ceil(uv * resolution) / resolution;
+	}
+	
+	// Create the rolling effect. We need roll_line a bit later to make the noise effect.
+	// That is why this runs if roll is true OR noise_opacity is over 0.
+	float roll_line = 0.0;
+	if (roll || noise_opacity > 0.0)
+	{
+		// Create the areas/lines where the texture will be distorted.
+		roll_line = smoothstep(0.3, 0.9, sin(uv.y * roll_size - (time * roll_speed) ) );
+		// Create more lines of a different size and apply to the first set of lines. This creates a bit of variation.
+		roll_line *= roll_line * smoothstep(0.3, 0.9, sin(uv.y * roll_size * roll_variation - (time * roll_speed * roll_variation) ) );
+		// Distort the UV where where the lines are
+		roll_uv = vec2(( roll_line * distort_intensity * (1.-UV.x)), 0.0);
+	}
+	
+	vec4 text;
+	if (roll)
+	{
+		// If roll is true distort the texture with roll_uv. The texture is split up into RGB to 
+		// make some chromatic aberration. We apply the aberration to the red and green channels accorging to the aberration parameter
+		// and intensify it a bit in the roll distortion.
+		text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
+		text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1 ).g;
+		text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
+		text.a = 1.0;
+	}
+	else
+	{
+		// If roll is false only apply the aberration without any distorion. The aberration values are very small so the .1 is only 
+		// to make the slider in the Inspector less sensitive.
+		text.r = texture(SCREEN_TEXTURE, text_uv + vec2(aberration, 0.0) * .1).r;
+		text.g = texture(SCREEN_TEXTURE, text_uv - vec2(aberration, 0.0) * .1).g;
+		text.b = texture(SCREEN_TEXTURE, text_uv).b;
+		text.a = 1.0;
+	}
+	
+	float r = text.r;
+	float g = text.g;
+	float b = text.b;
+	
+	uv = warp(UV);
+	
+	// CRT monitors don't have pixels but groups of red, green and blue dots or lines, called grille. We isolate the texture's color channels 
+	// and divide it up in 3 offsetted lines to show the red, green and blue colors next to each other, with a small black gap between.
+	if (grille_opacity > 0.0){
+		
+		float g_r = smoothstep(0.85, 0.95, abs(sin(uv.x * (resolution.x * 3.14159265))));
+		r = mix(r, r * g_r, grille_opacity);
+		
+		float g_g = smoothstep(0.85, 0.95, abs(sin(1.05 + uv.x * (resolution.x * 3.14159265))));
+		g = mix(g, g * g_g, grille_opacity);
+		
+		float b_b = smoothstep(0.85, 0.95, abs(sin(2.1 + uv.x * (resolution.x * 3.14159265))));
+		b = mix(b, b * b_b, grille_opacity);
+		
+	}
+	
+	// Apply the grille to the texture's color channels and apply Brightness. Since the grille and the scanlines (below) make the image very dark you
+	// can compensate by increasing the brightness.
+	text.r = clamp(r * brightness, 0.0, 1.0);
+	text.g = clamp(g * brightness, 0.0, 1.0);
+	text.b = clamp(b * brightness, 0.0, 1.0);
+	
+	// Scanlines are the horizontal lines that make up the image on a CRT monitor. 
+	// Here we are actual setting the black gap between each line, which I guess is not the right definition of the word, but you get the idea  
+	float scanlines = 0.5;
+	if (scanlines_opacity > 0.0)
+	{
+		// Same technique as above, create lines with sine and applying it to the texture. Smoothstep to allow setting the line size.
+		scanlines = smoothstep(scanlines_width, scanlines_width + 0.5, abs(sin(uv.y * (resolution.y * 3.14159265))));
+		text.rgb = mix(text.rgb, text.rgb * vec3(scanlines), scanlines_opacity);
+	}
+	
+	// Apply the banded noise.
+	if (noise_opacity > 0.0)
+	{
+		// Generate a noise pattern that is very stretched horizontally, and animate it with noise_speed
+		float noise = smoothstep(0.4, 0.5, noise(uv * vec2(2.0, 200.0) + vec2(10.0, (TIME * (noise_speed))) ) );
+		
+		// We use roll_line (set above) to define how big the noise should be vertically (multiplying cuts off all black parts).
+		// We also add in some basic noise with random() to break up the noise pattern above. The noise is sized according to 
+		// the resolution value set in the inspector. If you don't like this look you can 
+		// change \"ceil(uv * resolution) / resolution\" to only \"uv\" to make it less pixelated. Or multiply resolution with som value
+		// greater than 1.0 to make them smaller.
+		roll_line *= noise * scanlines * clamp(random((ceil(uv * resolution) / resolution) + vec2(TIME * 0.8, 0.0)).x + 0.8, 0.0, 1.0);
+		// Add it to the texture based on noise_opacity
+		text.rgb = clamp(mix(text.rgb, text.rgb + roll_line, noise_opacity), vec3(0.0), vec3(1.0));
+	}
+	
+	// Apply static noise by generating it over the whole screen in the same way as above
+	if (static_noise_intensity > 0.0)
+	{
+		text.rgb += clamp(random((ceil(uv * resolution) / resolution) + fract(TIME)).x, 0.0, 1.0) * static_noise_intensity;
+	}
+	
+	// Apply a black border to hide imperfections caused by the warping.
+	// Also apply the vignette
+	text.rgb *= border(uv);
+	text.rgb *= vignette(uv);
+	// Hides the black border and make that area transparent. Good if you want to add the the texture on top an image of a TV or monitor.
+	if (clip_warp)
+	{
+		text.a = border(uv);
+	}
+	
+	// Apply discoloration to get a VHS look (lower saturation and higher contrast)
+	// You can play with the values below or expose them in the Inspector.
+	float saturation = 0.5;
+	float contrast = 1.2;
+	if (discolor)
+	{
+		// Saturation
+		vec3 greyscale = vec3(text.r + text.g + text.b) / 3.;
+		text.rgb = mix(text.rgb, greyscale, saturation);
+		
+		// Contrast
+		float midpoint = pow(0.5, 2.2);
+		text.rgb = (text.rgb - vec3(midpoint)) * contrast + midpoint;
+	}
+	
+	COLOR = text;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hn85b"]
+shader = SubResource("Shader_30cd8")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.2910000138225
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 11.154000529815
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0190000009025
+shader_parameter/noise_opacity = 0.12400000589
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00800004787999997
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.72400003439
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tw4p"]
+bg_color = Color(0, 0, 0, 0)
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn85b"]
+bg_color = Color(0, 0, 0, 0)
+shadow_color = Color(0, 0, 0, 0.2901961)
+shadow_size = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8b8i"]
 bg_color = Color(0, 0, 0, 0.48235294)
@@ -594,7 +917,7 @@ modulate_color = Color(1.7780933, 1.898, 1.7748737, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7655"]
 texture = ExtResource("14_yssgo")
-modulate_color = Color(0.3647059, 0.67058825, 0, 0)
+modulate_color = Color(0.4489643, 0.46348095, 0.40261096, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4tj1"]
 content_margin_left = 4.0
@@ -616,7 +939,7 @@ corner_detail = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg06i"]
 bg_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.80784315)
-shadow_size = 10
+shadow_size = 6
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tqxc"]
 texture = ExtResource("16_hn85b")
@@ -1209,6 +1532,16 @@ size = Vector3(100.200005, 30.300001, 1)
 
 [node name="Test_scene" type="Node3D" unique_id=913157555]
 
+[node name="Audio" type="Node" parent="." unique_id=711092475]
+unique_name_in_owner = true
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=2030753904]
+process_mode = 3
+stream = ExtResource("1_hn85b")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
 [node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
 unique_name_in_owner = true
 script = ExtResource("1_vlx1q")
@@ -1231,7 +1564,6 @@ libraries/ = SubResource("AnimationLibrary_vlx1q")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
-visible = false
 script = ExtResource("2_7ukgp")
 
 [node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
@@ -1290,6 +1622,35 @@ offset_right = 445.0
 offset_bottom = 184.0
 text = "All to 99999"
 icon = ExtResource("12_5h554")
+
+[node name="speed0_5" type="Button" parent="DEBUG" unique_id=705285867]
+offset_left = 121.0
+offset_top = 263.0
+offset_right = 284.0
+offset_bottom = 290.0
+text = "0.5 speed"
+
+[node name="speed1" type="Button" parent="DEBUG" unique_id=625777880]
+offset_left = 289.0
+offset_top = 263.0
+offset_right = 452.0
+offset_bottom = 290.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xxqh0")
+text = "1.0 speed"
+
+[node name="speed2" type="Button" parent="DEBUG" unique_id=1818153177]
+offset_left = 121.0
+offset_top = 295.0
+offset_right = 284.0
+offset_bottom = 322.0
+text = "2.0 speed"
+
+[node name="speed5" type="Button" parent="DEBUG" unique_id=370657564]
+offset_left = 289.0
+offset_top = 295.0
+offset_right = 452.0
+offset_bottom = 322.0
+text = "5.0 speed"
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
@@ -1607,6 +1968,7 @@ mouse_filter = 2
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("21_dweyv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -1687,6 +2049,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBC" type="VBoxContainer" parent="Dialogue/Panel" unique_id=1889069569]
+clip_contents = true
 layout_mode = 1
 offset_left = -4.106201
 offset_top = 587.43085
@@ -1695,25 +2058,23 @@ offset_bottom = 714.56915
 theme_override_constants/separation = 7
 
 [node name="Variant_yes" type="Button" parent="Dialogue/Panel/VBC" unique_id=1379833529]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
 theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wo272")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jt5n7")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qdenm")
 theme_override_styles/focus = SubResource("StyleBoxTexture_yxe1l")
-text = "Рил треп щит мэн"
+text = "Нэ ну это подписон"
 autowrap_mode = 3
 
 [node name="Variant_no" type="Button" parent="Dialogue/Panel/VBC" unique_id=1325992162]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
 theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4h187")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xkiup")
@@ -1723,11 +2084,10 @@ text = "Уволен"
 autowrap_mode = 3
 
 [node name="Variant_later" type="Button" parent="Dialogue/Panel/VBC" unique_id=433782950]
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 7
 theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_248fk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ikw4g")
@@ -1776,11 +2136,12 @@ theme_override_constants/margin_bottom = 5
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
-theme_override_font_sizes/bold_italics_font_size = 20
-theme_override_font_sizes/italics_font_size = 20
-theme_override_font_sizes/mono_font_size = 20
+theme_override_fonts/bold_font = SubResource("FontVariation_30cd8")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
 bbcode_enabled = true
 text = "Тут диалог должен быть, в зависимости от стадии принятия судьбы мифоза"
 
@@ -1944,6 +2305,29 @@ mouse_filter = 2
 texture = ExtResource("27_xde1d")
 metadata/_edit_lock_ = true
 
+[node name="StateFeedback" type="TextureRect" parent="HUD/BaseUI" unique_id=787533503]
+layout_mode = 0
+offset_left = 1203.0
+offset_top = 980.0
+offset_right = 1886.0
+offset_bottom = 1044.0
+texture = SubResource("GradientTexture2D_xxqh0")
+script = SubResource("GDScript_hn85b")
+
+[node name="Label" type="Label" parent="HUD/BaseUI/StateFeedback" unique_id=758454000]
+modulate = Color(1, 0.68235296, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Режим сноса (ПКМ)"
+vertical_alignment = 1
+
 [node name="Demolition" type="Button" parent="HUD/BaseUI" unique_id=1504075912]
 z_index = 101
 layout_mode = 1
@@ -1952,20 +2336,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -891.0
-offset_top = -84.0
-offset_right = -743.0
-offset_bottom = -12.0
+offset_left = -691.0
+offset_top = -103.0
+offset_right = -543.0
+offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_pem7d")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nbuuu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wb2hi")
-theme_override_styles/focus = SubResource("StyleBoxFlat_vcfif")
-text = "Build
-Demolition"
-icon = ExtResource("28_po80s")
-alignment = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xxqh0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sfvcy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qcc36")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tudpi")
+text = "
+"
+
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Demolition" unique_id=1198223936]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 49.0
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 53.0
+texture = ExtResource("35_5h554")
+expand_mode = 1
 
 [node name="Quest" type="Button" parent="HUD/BaseUI" unique_id=429896246]
 z_index = 99
@@ -2069,7 +2461,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2108,8 +2499,9 @@ grow_vertical = 0
 
 [node name="VBС" type="VBoxContainer" parent="HUD/BaseUI/Quest_UI/Quest_scroll_list" unique_id=1855781799]
 layout_mode = 0
+offset_left = 12.5
 offset_top = 40.0
-offset_right = 550.0
+offset_right = 537.5
 offset_bottom = 764.0
 theme_override_constants/separation = 8
 
@@ -2138,6 +2530,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif"
 min_value = -12.0
 
 [node name="Store_UI" type="Control" parent="HUD/BaseUI" unique_id=626397403]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2460,53 +2853,102 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="Desc" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=528954669]
+[node name="МС" type="MarginContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1863047555]
 layout_mode = 0
-offset_left = 370.0
-offset_top = 605.0
-offset_right = 636.0
+offset_left = 369.0
+offset_top = 607.0
+offset_right = 630.0
 offset_bottom = 963.0
-theme_override_constants/separation = 0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
 
-[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=930143145]
-custom_minimum_size = Vector2(0, 118.415)
+[node name="Desc" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View/МС" unique_id=528954669]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc" unique_id=930143145]
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1tw4p")
 
-[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/Panel" unique_id=1588070731]
+[node name="BG" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/Panel" unique_id=1989703878]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -73.999985
+offset_right = 94.5
+offset_bottom = 63.000015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_30cd8")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/Panel" unique_id=1588070731]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 3.0
+offset_right = -26.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_gub22")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Name" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=1289817272]
-custom_minimum_size = Vector2(0.15, 0)
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/Panel" unique_id=1495912980]
+scale = Vector2(0.45, 0.3)
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/Panel/BackBuffer" unique_id=1850842742]
+material = SubResource("ShaderMaterial_hn85b")
+anchors_preset = -1
+anchor_left = 0.5388892
+anchor_top = 0.48333314
+anchor_right = 1.8977777
+anchor_bottom = 2.121667
+offset_left = -38.88893
+offset_top = -100.0
+offset_right = 107.11107
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc" unique_id=1289817272]
+custom_minimum_size = Vector2(180.205, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_1tw4p")
 text = "Санкт Питербург"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Desc" type="RichTextLabel" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=997859585]
-custom_minimum_size = Vector2(0, 115)
+[node name="Desc" type="RichTextLabel" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc" unique_id=997859585]
+custom_minimum_size = Vector2(236.53, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.70980394, 0.83137256, 0.70980394, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qwgbc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn85b")
 text = "Тут много снега и эмэмдемса"
 autowrap_mode = 2
 
-[node name="HBC" type="Control" parent="HUD/BaseUI/Store_UI/Zones_View/Desc" unique_id=801120053]
-custom_minimum_size = Vector2(0, 95)
+[node name="HBC" type="Control" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc" unique_id=801120053]
+custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC" unique_id=1602760417]
+[node name="Panel" type="Panel" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC" unique_id=1602760417]
 visible = false
 layout_mode = 0
 offset_right = 133.0
@@ -2514,7 +2956,7 @@ offset_bottom = 95.0
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_r8b8i")
 
-[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Panel" unique_id=1369582626]
+[node name="Label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Panel" unique_id=1369582626]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -2528,7 +2970,7 @@ text = "Ржавая жесть"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Res" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Panel" unique_id=1431333033]
+[node name="Res" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Panel" unique_id=1431333033]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2545,7 +2987,7 @@ texture = SubResource("GradientTexture1D_igchu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="+" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Panel" unique_id=125208878]
+[node name="+" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Panel" unique_id=125208878]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2562,10 +3004,18 @@ theme_override_font_sizes/font_size = 12
 text = "Производство"
 horizontal_alignment = 1
 
-[node name="Buy" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC" unique_id=648191834]
-layout_mode = 0
-offset_right = 266.0
-offset_bottom = 95.0
+[node name="Buy" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC" unique_id=648191834]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -83.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 1)
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_i4qq1")
@@ -2576,73 +3026,81 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_s7655")
 text = "
 "
 
-[node name="Res_label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1664102521]
+[node name="Res_label" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=1664102521]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 17.0
-offset_right = 193.0
-offset_bottom = 40.0
+offset_left = 109.0
+offset_top = 11.0
+offset_right = 177.0
+offset_bottom = 34.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
 vertical_alignment = 1
 script = ExtResource("50_x8hrd")
 
-[node name="Res_icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1871172775]
+[node name="Res_icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=1871172775]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 9.0
-offset_right = 107.0
-offset_bottom = 33.0
+offset_left = 67.0
+offset_top = 3.0
+offset_right = 91.0
+offset_bottom = 27.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("53_yssgo")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Res_label2" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1542952851]
+[node name="Res_label2" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=1542952851]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 56.0
-offset_right = 193.0
-offset_bottom = 79.0
+offset_left = 109.0
+offset_top = 50.0
+offset_right = 177.0
+offset_bottom = 73.0
 theme_override_font_sizes/font_size = 16
 text = "9999999"
 vertical_alignment = 1
 script = ExtResource("50_x8hrd")
 
-[node name="Res_icon2" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1159359026]
+[node name="Res_icon2" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=1159359026]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 49.0
-offset_right = 107.0
-offset_bottom = 73.0
+offset_left = 67.0
+offset_top = 43.0
+offset_right = 91.0
+offset_bottom = 67.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("54_30cd8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" unique_id=1672351295]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=1672351295]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.03, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Zones" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1445002185]
+[node name="MC" type="MarginContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1662780049]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 605.0
-offset_right = 368.0
-offset_bottom = 964.0
+offset_left = 87.0
+offset_top = 602.0
+offset_right = 369.0
+offset_bottom = 963.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 12
+
+[node name="Zones" type="VBoxContainer" parent="HUD/BaseUI/Store_UI/Zones_View/MC" unique_id=1445002185]
+layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 2
 
-[node name="Zone_5" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1313090396 groups=["zone_button"]]
+[node name="Zone_5" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones" unique_id=1313090396 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-text = "Зона 3"
+alignment = 2
 script = ExtResource("51_hlnya")
 res = ExtResource("52_w2vja")
 
-[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=617297931]
+[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=617297931]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -2653,7 +3111,22 @@ grow_vertical = 2
 texture = ExtResource("55_5h554")
 expand_mode = 3
 
-[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=1746457429]
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=1664414568]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5/BackBuffer" unique_id=2086334557]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 70.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=1746457429]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2668,21 +3141,48 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_5" unique_id=781628252]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=781628252]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Zone_4" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1821832837 groups=["zone_button"]]
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=1260228795]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -29.0
+offset_right = 80.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("55_5h554")
+stretch_mode = 5
+
+[node name="ZoneName" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_5" unique_id=388893129]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Зона 1 - Старые Заводы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone_4" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones" unique_id=1821832837 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-text = "Зона 3"
+alignment = 2
 script = ExtResource("51_hlnya")
 res = ExtResource("54_725ke")
 
-[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=1713579509]
+[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=1713579509]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -2693,7 +3193,22 @@ grow_vertical = 2
 texture = ExtResource("55_5h554")
 expand_mode = 3
 
-[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=2046004120]
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=397032322]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4/BackBuffer" unique_id=1583152984]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 70.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=2046004120]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2708,21 +3223,48 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_4" unique_id=341832612]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=341832612]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Zone_3" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1321977965 groups=["zone_button"]]
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=390447046]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -29.0
+offset_right = 80.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("55_5h554")
+stretch_mode = 5
+
+[node name="ZoneName" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_4" unique_id=1977717661]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Зона 1 - Старые Заводы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone_3" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones" unique_id=1321977965 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-text = "Зона 3"
+alignment = 2
 script = ExtResource("51_hlnya")
 res = ExtResource("55_reqt0")
 
-[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=833025531]
+[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=833025531]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -2733,7 +3275,22 @@ grow_vertical = 2
 texture = ExtResource("55_5h554")
 expand_mode = 3
 
-[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=1207777928]
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=1080545688]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3/BackBuffer" unique_id=1578581001]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 70.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=1207777928]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2748,20 +3305,49 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_3" unique_id=490696305]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=490696305]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Zone_2" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=1648467224 groups=["zone_button"]]
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=1212608775]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -29.0
+offset_right = 80.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("55_5h554")
+stretch_mode = 5
+
+[node name="ZoneName" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_3" unique_id=133750285]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "Зона 1 - Старые Заводы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone_2" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones" unique_id=1648467224 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
+alignment = 2
 script = ExtResource("51_hlnya")
 res = ExtResource("56_gg5ll")
 
-[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=334025384]
+[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=334025384]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -2772,7 +3358,22 @@ grow_vertical = 2
 texture = ExtResource("55_5h554")
 expand_mode = 3
 
-[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=1807949798]
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=372341279]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2/BackBuffer" unique_id=1865293888]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 70.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=1807949798]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2787,21 +3388,48 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_2" unique_id=638173416]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=638173416]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
-[node name="Zone_1" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/Zones" unique_id=315991884 groups=["zone_button"]]
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=760407824]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -29.0
+offset_right = 80.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("55_5h554")
+stretch_mode = 5
+
+[node name="ZoneName" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_2" unique_id=503876274]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Зона 1 - Старые Заводы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone_1" type="Button" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones" unique_id=315991884 groups=["zone_button"]]
 custom_minimum_size = Vector2(0, 53)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/hover = SubResource("StyleBoxFlat_e4tj1")
-icon = ExtResource("55_5h554")
+alignment = 2
 script = ExtResource("51_hlnya")
 res = ExtResource("57_kyo71")
 
-[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1562671029]
+[node name="Texture" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=1562671029]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -2812,7 +3440,22 @@ grow_vertical = 2
 texture = ExtResource("55_5h554")
 expand_mode = 3
 
-[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=1403694782]
+[node name="BackBuffer" type="BackBufferCopy" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=1567261736]
+copy_mode = 2
+
+[node name="Blur" type="ColorRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1/BackBuffer" unique_id=623080270]
+material = SubResource("ShaderMaterial_xdeo5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 70.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Condition" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=1403694782]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2827,10 +3470,37 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bg06i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/Zones/Zone_1" unique_id=368675691]
+[node name="CompJuice" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=368675691]
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Icon" type="TextureRect" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=75855786]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -29.0
+offset_right = 72.0
+offset_bottom = 29.0
+grow_vertical = 2
+texture = ExtResource("55_5h554")
+stretch_mode = 5
+
+[node name="ZoneName" type="Label" parent="HUD/BaseUI/Store_UI/Zones_View/MC/Zones/Zone_1" unique_id=1786011229]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Зона 1 - Старые Заводы"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBC" type="HBoxContainer" parent="HUD/BaseUI/Store_UI" unique_id=575475949]
 layout_mode = 1
@@ -3054,7 +3724,7 @@ custom_minimum_size = Vector2(34.405, 34.405)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-tooltip_text = "Тяжелые компоненты
+tooltip_text = "Арсенал
 Нужны для постройки районов"
 mouse_default_cursor_shape = 16
 texture = SubResource("GradientTexture1D_13ugf")
@@ -4080,6 +4750,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Appoint_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1317240521]
+visible = false
 modulate = Color(1, 0.7093617, 0.5230317, 1)
 z_index = 5
 layout_mode = 1
@@ -4217,10 +4888,10 @@ libraries/ = SubResource("AnimationLibrary_6p561")
 
 [node name="PortairDrag" type="TextureRect" parent="HUD" unique_id=208095606]
 z_index = 200
-offset_left = -105.0
-offset_top = -117.0
-offset_right = -30.0
-offset_bottom = -42.0
+offset_left = -120.0
+offset_top = -34.0
+offset_right = -45.0
+offset_bottom = 41.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("65_pr6gd")
@@ -4245,7 +4916,7 @@ offset_top = 1.0
 offset_right = -71.0
 offset_bottom = 71.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell4")
 
@@ -4296,7 +4967,7 @@ offset_top = -135.0
 offset_right = 185.0
 offset_bottom = -65.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell3")
 metadata/ruin = false
@@ -4310,7 +4981,7 @@ offset_top = -135.0
 offset_right = 185.0
 offset_bottom = -65.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell5")
 metadata/ruin = false
@@ -4324,7 +4995,7 @@ offset_top = -135.0
 offset_right = 185.0
 offset_bottom = -65.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell9")
 metadata/ruin = false
@@ -4338,7 +5009,7 @@ offset_top = -135.0
 offset_right = 185.0
 offset_bottom = -65.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell10")
 metadata/ruin = false
@@ -4352,7 +5023,7 @@ offset_top = -135.0
 offset_right = 185.0
 offset_bottom = -65.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell11")
 metadata/ruin = false
@@ -4365,7 +5036,7 @@ offset_top = 1.0
 offset_right = -71.0
 offset_bottom = 71.0
 rotation = 1.5707964
-texture = ExtResource("17_xxqh0")
+texture = ExtResource("80_r6jij")
 script = ExtResource("79_2ho68")
 target = NodePath("../../Grid/Cell4")
 
@@ -4536,7 +5207,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
-visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -4574,10 +5244,10 @@ color = Color(0, 0, 0, 0.654902)
 [node name="Touch5" type="Button" parent="Tutorial/Control/CG/Slide_5" unique_id=691237425]
 material = SubResource("ShaderMaterial_2ho68")
 layout_mode = 0
-offset_left = 958.0
-offset_top = 967.0
-offset_right = 1226.0
-offset_bottom = 1093.0
+offset_left = 1207.0
+offset_top = 955.0
+offset_right = 1393.0
+offset_bottom = 1043.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
@@ -4586,10 +5256,10 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_5" unique_id=1163293132]
 layout_mode = 0
-offset_left = 1062.0
-offset_top = 942.0
-offset_right = 1120.0
-offset_bottom = 970.0
+offset_left = 1270.0
+offset_top = 932.0
+offset_right = 1328.0
+offset_bottom = 960.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
@@ -4688,9 +5358,9 @@ text = "ЛКМ"
 [node name="Slide_free3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=2135046791]
 visible = false
 offset_left = 619.0
-offset_top = 847.0
-offset_right = 1304.0
-offset_bottom = 1198.0
+offset_top = 966.0
+offset_right = 1386.0
+offset_bottom = 1103.0
 color = Color(1, 1, 1, 0)
 
 [node name="Slide_free" type="Control" parent="Tutorial/Control/CG" unique_id=2140237884]
@@ -4717,7 +5387,7 @@ layout_mode = 0
 offset_left = 1780.0
 offset_top = 204.0
 offset_right = 2465.0
-offset_bottom = 902.0
+offset_bottom = 773.0
 color = Color(1, 1, 1, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1830257095]
@@ -5603,7 +6273,7 @@ debug_color = Color(1, 0, 0.5764706, 1)
 [connection signal="gui_input" from="HUD/BaseUI/Quest_UI/Quest_scroll_list" to="HUD/BaseUI" method="_on_quest_gui_input"]
 [connection signal="value_changed" from="HUD/BaseUI/Quest_UI/Slider" to="HUD/BaseUI" method="slider_quest_changed"]
 [connection signal="gui_input" from="HUD/BaseUI/Store_UI/Build_scroll_list" to="HUD/BaseUI" method="_on_store_gui_input"]
-[connection signal="pressed" from="HUD/BaseUI/Store_UI/Zones_View/Desc/HBC/Buy" to="HUD/BaseUI" method="_on_zone_buy"]
+[connection signal="pressed" from="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" to="HUD/BaseUI" method="_on_zone_buy"]
 [connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Buildings" to="HUD/BaseUI" method="_on_buildings_pressed"]
 [connection signal="pressed" from="HUD/BaseUI/Store_UI/HBC/Zones" to="HUD/BaseUI" method="_on_zones_pressed"]
 [connection signal="value_changed" from="HUD/BaseUI/Store_UI/Slider" to="HUD/BaseUI" method="slider_changed"]

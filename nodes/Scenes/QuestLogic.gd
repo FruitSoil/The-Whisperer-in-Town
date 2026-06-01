@@ -17,7 +17,7 @@ func ql_set_quest(quest: Quest, worker_ID:Global.workers) -> void:
 	if workers[worker_ID]:
 		
 		if workers[worker_ID].quest_res:
-			push_warning(workers[worker_ID].res.name, " УЖЕ ИМЕЕТ ЗАПУЩЕННЫЙ КВЕСТ ",workers[worker_ID].quest_res.quest_name ," - КВЕСТ",quest.quest_name , " НЕ БУДЕТ ВЫЗВАН ")
+			push_warning(workers[worker_ID].res.name, " УЖЕ ИМЕЕТ ЗАПУЩЕННЫЙ КВЕСТ ",workers[worker_ID].quest_res.quest_name ," - КВЕСТ ",quest.quest_name , " НЕ БУДЕТ ВЫЗВАН ")
 			print(workers[worker_ID].res.name, " УЖЕ ИМЕЕТ ЗАПУЩЕННЫЙ КВЕСТ ",workers[worker_ID].quest_res.quest_name ,", ПРОВЕРЬ ПРАВИЛЬНУЮ ПОСЛЕДОВАТЕЛЬНОСТИ КВЕСТОВ")
 		
 		var done_coincidences := 0

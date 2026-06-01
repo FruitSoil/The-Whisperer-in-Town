@@ -14,6 +14,8 @@ var res: Quest
 var worker_panel: WorkerPanel
 
 func _ready() -> void:
+	rich_text_label.meta_clicked.connect(show_popup)
+	rich_text_label.meta_hover_ended.connect(hide_popup)
 	variant_yes.pressed.connect(answer.bind(1))
 	variant_later.pressed.connect(answer.bind(2))
 	variant_no.pressed.connect(answer.bind(3))
@@ -208,11 +210,11 @@ func _anim_finished(anim_name: StringName) -> void:
 	if anim_name == "Hide":
 		%QuestLogic.check_for_all()
 
-func _dialogue_text_hover_start(meta: Variant) -> void:
+func show_popup(meta: Variant) -> void:
 	if meta != null:
 		Popups.ShowPopup(str(meta))
 
-func _dialogue_text_hover_end(_meta: Variant) -> void:
+func hide_popup(_meta: Variant) -> void:
 	Popups.hidePopup()
 
 

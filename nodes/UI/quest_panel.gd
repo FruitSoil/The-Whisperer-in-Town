@@ -82,7 +82,7 @@ func press():
 	if is_next_zone_quest:
 		$"../../../../Store_UI".visible = true
 		$"../../..".visible = false
-		var zones = $"../../../../Store_UI/Zones_View/Zones".get_children()
+		var zones = $"../../../../Store_UI/Zones_View/MC/Zones".get_children()
 		for i in zones:
 			if i.res == next_zone:
 				i.touch()

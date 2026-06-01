@@ -1,16 +1,28 @@
 extends Control
 
-@onready var desc: RichTextLabel = $Store_UI/Zones_View/Desc/Desc
+@onready var desc: RichTextLabel = $"Store_UI/Zones_View/МС/Desc/Desc"
 @onready var drag: TextureRect = $"../PortairDrag"
 
 
 var quest_panel = preload("res://nodes/UI/quest_panel.tscn")
 
-var building_state: bool = false 
+var building_state: bool = false:
+	set(value):
+		building_state = value
+		$StateFeedback.change_state(1,value)
+
 var selected_build: Building = null
-var worker_state: bool = false 
+var worker_state: bool = false:
+	set(value):
+		worker_state = value
+		$StateFeedback.change_state(2,value)
+
 var selected_worker: Worker = null
-var demolition_state: bool = false
+var demolition_state: bool = false:
+	set(value):
+		demolition_state = value
+		$StateFeedback.change_state(3,value)
+
 var chance: int = 0
 var selected_zone: Zone
 
@@ -41,7 +53,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if drag.visible:
-		drag.position = get_viewport().get_mouse_position() - drag.size/2
+		drag.position = lerp(drag.position ,get_viewport().get_mouse_position() - drag.size/2, 0.25)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("displace") and building_state:
@@ -52,6 +64,7 @@ func _input(event: InputEvent) -> void:
 			building_state = false
 			Global.add_to_integer_res_type(selected_build.buy_cost_type,selected_build.buy_cost)
 			change_all_label(true)
+			$StateFeedback.tween_hide_anim()
 	if event.is_action_released("displace") and worker_state:
 		drag.hide()
 		get_tree().call_group("cell","toggle_lines", false)
@@ -60,10 +73,12 @@ func _input(event: InputEvent) -> void:
 			Global.add_to_integer_res_type(2,Global.DEFAULT_WORKER_COST)
 			change_label(2,true)
 		worker_state = false
+		$StateFeedback.tween_hide_anim()
 	if event.is_action_released("displace") and demolition_state:
 		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		demolition_state = false
+		$StateFeedback.tween_hide_anim()
 
 func _on_quest_pressed() -> void:
 	if $Quest_UI.visible == false:
@@ -104,6 +119,7 @@ func switch_to_build(selected: Building):
 func switch_to_worker(selected: Worker):
 	get_tree().call_group("cell","toggle_lines", true)
 	drag.show()
+	drag.position = get_viewport().get_mouse_position()
 	drag.texture = selected.icon
 	selected_worker = selected
 	_on_exit_pressed()
@@ -222,7 +238,7 @@ func _on_buildings_pressed() -> void:
 	$Store_UI/Zones_View.visible = false
 
 func _on_zones_pressed() -> void:
-	$Store_UI/Zones_View/Zones/Zone_1.touch()
+	$Store_UI/Zones_View/MC/Zones/Zone_1.touch()
 	$Store_UI/Build_scroll_list.visible = false
 	$Store_UI/Zones_View.visible = true
 
@@ -310,9 +326,9 @@ func _on_zone_buy() -> void:
 			get_tree().call_group("zone_button", "check", selected_zone)
 			get_tree().call_group("cell", "lines_update")
 		else:
-			no_res($Store_UI/Zones_View/Desc/HBC/Buy,Vector2(0,0),6)
+			no_res($"Store_UI/Zones_View/МС/Desc/HBC/Buy",$"Store_UI/Zones_View/МС/Desc/HBC/Buy".position,6)
 	else:
-		no_res($Store_UI/Zones_View/Desc/HBC/Buy,Vector2(0,0),6)
+		no_res($"Store_UI/Zones_View/МС/Desc/HBC/Buy",$"Store_UI/Zones_View/МС/Desc/HBC/Buy".position,6)
 
 
 func no_res(node:Control, init_pos, streight: int):

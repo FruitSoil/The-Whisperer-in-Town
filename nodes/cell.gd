@@ -64,6 +64,7 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 		elif %BaseUI.worker_state and has_building and has_worker == false and  current_build != load("uid://cm6r5ofrc0a8"):
 			appoint()
 			$"../../HUD/PortairDrag".hide()
+			$"../../HUD/PortairDrag".position = Vector2(1810.0,781.0)
 			get_tree().call_group("cell","toggle_lines", false)
 		elif %BaseUI.demolition_state and has_building:
 			displace()
@@ -80,6 +81,7 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 
 func place(building: Building = %BaseUI.selected_build):
 	%BaseUI.building_state = false
+	$"../../HUD/BaseUI/StateFeedback".tween_hide_anim()
 	has_building = true
 	current_build = building
 	%BaseUI.selected_build = null
@@ -127,6 +129,8 @@ func displace():
 			get_tree().call_group("ruin_arrow","check", self)
 			print("ruin displaced")
 		else:
+			%BaseUI.demolition_state = false
+			$"../../HUD/BaseUI/StateFeedback".tween_hide_anim()
 			$"../../Tutorial".stage_change(3)
 			
 	
@@ -137,7 +141,6 @@ func displace():
 	$Sprite3D/Portair.texture = null
 	
 	$Build_part.emitting = true
-	%BaseUI.demolition_state = false
 	$Res_progress.hide()
 	Global.add_to_integer_res_type(current_build.buy_cost_type, current_build.buy_cost)
 	%BaseUI.change_label(current_build.buy_cost_type, true)
@@ -157,6 +160,7 @@ func appoint(work: Worker = %BaseUI.selected_worker):
 		$"../../Tutorial".pressed(7)
 	
 	%BaseUI.worker_state = false
+	$"../../HUD/BaseUI/StateFeedback".tween_hide_anim()
 	has_worker = true
 	current_worker = work
 	get_tree().call_group("Work_panels", "change_work_icon", true, current_worker)
