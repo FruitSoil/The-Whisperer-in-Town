@@ -7,6 +7,7 @@
 [resource]
 albedo_texture = ExtResource("1_r7onx")
 emission_enabled = true
+emission_energy_multiplier = 7.0
 emission_texture = ExtResource("2_3xeqw")
 heightmap_enabled = true
 heightmap_scale = 0.0

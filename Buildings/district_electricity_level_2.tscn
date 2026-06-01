@@ -36,7 +36,7 @@ colors = PackedColorArray(0.029045643, 0.029045643, 0.029045643, 1, 1, 1, 1, 1)
 [node name="District_Electricity_Level2" unique_id=1714084196 instance=ExtResource("1_qh7fn")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="Plane" parent="." index="0" unique_id=1471231999]
+[node name="Plane" parent="." index="0" unique_id=2011032817]
 material_override = ExtResource("2_p0yfm")
 
 [node name="Light5" type="OmniLight3D" parent="." index="1" unique_id=1423642294]
@@ -85,13 +85,14 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 2.5
+scale_amount_min = 0.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_w2muw")
-color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color = Color(0.796243, 0.796243, 0.796243, 1)
 color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part3" type="CPUParticles3D" parent="." index="6" unique_id=1441532355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04769497, 0.4376336, -1.1170337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042748623, 0.45268548, -1.074345)
 amount = 16
 lifetime = 1.5
 speed_scale = 0.2
@@ -108,13 +109,14 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 2.5
+scale_amount_min = 0.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_w2muw")
-color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color = Color(0.796243, 0.796243, 0.796243, 1)
 color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part4" type="CPUParticles3D" parent="." index="7" unique_id=1760295314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06341609, 0.4376336, 1.1051886)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007922745, 0.4376336, 1.1051886)
 amount = 16
 lifetime = 1.5
 speed_scale = 0.2
@@ -131,9 +133,10 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 2.5
+scale_amount_min = 0.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_w2muw")
-color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color = Color(0.796243, 0.796243, 0.796243, 1)
 color_ramp = SubResource("Gradient_p0yfm")
 
 [node name="Build_part5" type="CPUParticles3D" parent="." index="8" unique_id=460242368]
@@ -154,7 +157,8 @@ damping_max = 1.0
 damping_curve = SubResource("Curve_d6y37")
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_max = 2.5
+scale_amount_min = 0.0
+scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_w2muw")
-color = Color(0.5370113, 0.5370113, 0.5370112, 1)
+color = Color(0.796243, 0.796243, 0.796243, 1)
 color_ramp = SubResource("Gradient_p0yfm")
