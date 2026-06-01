@@ -115,6 +115,7 @@ metadata/buy = true
 [node name="CompJuice" type="Node" parent="buy" unique_id=657433030]
 script = ExtResource("3_nmk4s")
 scale_value = Vector2(1.05, 1.05)
+small_scale_value = Vector2(1.015, 1.015)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Res_label" type="Label" parent="buy" unique_id=1527654187]
