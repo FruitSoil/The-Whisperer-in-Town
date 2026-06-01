@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_vlx1q"]
 [ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="2_7ukgp"]
 [ext_resource type="Script" uid="uid://c62ur210wpk5h" path="res://nodes/Scenes/tutorial.gd" id="2_tbnlw"]
+[ext_resource type="AudioStream" uid="uid://76ewrc2rby4w" path="res://Audio/UI/S_CameraWheelScroll.mp3" id="2_xxqh0"]
 [ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_tbnlw"]
 [ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="4_2ho68"]
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="5_r6jij"]
@@ -235,17 +236,6 @@ width = 1920
 height = 1080
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr6gg"]
-texture = ExtResource("14_yssgo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nn2ht"]
-texture = ExtResource("14_yssgo")
-modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3ibj"]
-texture = ExtResource("14_yssgo")
-modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u63fg"]
 shader = ExtResource("20_tudpi")
@@ -1061,10 +1051,6 @@ modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 texture = ExtResource("62_nfnow")
 modulate_color = Color(0.24899, 0.25160608, 0.23274565, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpxrb"]
-texture = ExtResource("62_nfnow")
-modulate_color = Color(1.353256, 1.353256, 1.353256, 1)
-
 [sub_resource type="Gradient" id="Gradient_2ho68"]
 offsets = PackedFloat32Array(0.2897196, 0.95638627)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.38039216)
@@ -1542,6 +1528,18 @@ volume_db = -10.0
 autoplay = true
 bus = &"Music"
 
+[node name="CameraZoom" type="AudioStreamPlayer" parent="Audio" unique_id=813371747]
+process_mode = 3
+stream = ExtResource("2_xxqh0")
+volume_db = -10.0
+pitch_scale = 0.8
+max_polyphony = 10
+bus = &"UI"
+
+[node name="OffsetTime" type="Timer" parent="Audio/CameraZoom" unique_id=1866913270]
+wait_time = 0.06
+autostart = true
+
 [node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
 unique_name_in_owner = true
 script = ExtResource("1_vlx1q")
@@ -1857,95 +1855,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_r8b8i")
 metadata/_edit_lock_ = true
-
-[node name="Control" type="Control" parent="Pause" unique_id=135923403]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
-
-[node name="Panel2" type="NinePatchRect" parent="Pause/Control" unique_id=1020676468]
-modulate = Color(0, 0, 0, 0.56078434)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1198.4686
-offset_top = -529.0
-offset_right = 1198.4688
-offset_bottom = 646.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_yssgo")
-patch_margin_left = 114
-patch_margin_top = 149
-patch_margin_right = 114
-patch_margin_bottom = 149
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
-
-[node name="Label" type="Label" parent="Pause/Control" unique_id=844853206]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -393.5
-offset_top = -295.0
-offset_right = 393.5
-offset_bottom = -185.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
-theme_override_font_sizes/font_size = 84
-text = "Настройки"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="Pause/Control" unique_id=1081046332]
-z_index = 1
-layout_mode = 0
-offset_left = 1498.0
-offset_top = 223.0
-offset_right = 1667.05
-offset_bottom = 384.0
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_rr6gg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nn2ht")
-theme_override_styles/hover = SubResource("StyleBoxTexture_d3ibj")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_rr6gg")
-theme_override_styles/focus = SubResource("StyleBoxTexture_rr6gg")
-icon = ExtResource("19_qcc36")
-icon_alignment = 1
-
-[node name="Panel" type="NinePatchRect" parent="Pause/Control" unique_id=1610520756]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = -317.0
-offset_right = 705.0
-offset_bottom = 397.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_yssgo")
-patch_margin_left = 114
-patch_margin_top = 149
-patch_margin_right = 114
-patch_margin_bottom = 149
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Pause" unique_id=51302566]
 z_index = 2
@@ -3896,7 +3805,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_l243h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("64_akcfr")
 is_open = true
@@ -4061,7 +3970,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fxhv4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("67_211c7")
 is_open = true
@@ -4171,7 +4080,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("70_essfe")
 is_open = true
@@ -4282,7 +4191,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("71_6ejo6")
 
@@ -4390,7 +4299,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("72_dptud")
 
@@ -4498,7 +4407,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("73_416c6")
 
@@ -4606,7 +4515,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("74_tkp5h")
 
@@ -4714,7 +4623,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fyat0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_va6r8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_1nbr8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_cdnl2")
-theme_override_styles/focus = SubResource("StyleBoxTexture_vpxrb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cdnl2")
 script = ExtResource("63_myd6q")
 res = ExtResource("75_sr6vm")
 
@@ -5207,6 +5116,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -5445,6 +5355,9 @@ lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_3c4k5")
 draw_pass_1 = SubResource("PlaneMesh_3c4k5")
+
+[node name="AudioListener" type="AudioListener3D" parent="Camera/Camera" unique_id=1795217925]
+current = true
 
 [node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="." unique_id=1347226012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7, 0, 27)
@@ -6260,7 +6173,6 @@ debug_color = Color(1, 0, 0.5764706, 1)
 [connection signal="pressed" from="Pause/VBC/Continue" to="Pause" method="_on_continue_pressed"]
 [connection signal="pressed" from="Pause/VBC/Settings" to="Pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="Pause/VBC/Exit_to main" to="Pause" method="_on_exit_to_main_pressed"]
-[connection signal="pressed" from="Pause/Control/Button" to="Pause" method="_on_button_pressed"]
 [connection signal="gui_input" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_on_rich_text_label_gui_input"]
 [connection signal="meta_hover_ended" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_end"]
 [connection signal="meta_hover_started" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_start"]

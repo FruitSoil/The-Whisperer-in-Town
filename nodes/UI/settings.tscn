@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://drb36teaho5w8"]
+
+[ext_resource type="Script" uid="uid://db2nrvmgu32x0" path="res://nodes/UI/settings.gd" id="1_ddll0"]
+[ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="2_p8sls"]
+[ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="3_dtv7d"]
+[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="4_dtv7d"]
+[ext_resource type="Texture2D" uid="uid://dkb86l6s7x11g" path="res://Images/UI/icons/colored/icon_npc.png" id="5_irbvc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irbvc"]
+texture = ExtResource("2_p8sls")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o6kg"]
+texture = ExtResource("2_p8sls")
+modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pafaa"]
+texture = ExtResource("2_p8sls")
+modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0o6kg"]
+load_path = "res://.godot/imported/IMG_20260512_194428_341.png-89de321b4c26f24048b97275843daddd.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pafaa"]
+color = Color(7.294817e-08, 0.056732133, 0, 0.6784314)
+thickness = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qyith"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03xf7"]
+
+[node name="Settings" type="CanvasLayer" unique_id=773059752]
+process_mode = 3
+layer = 5000
+script = ExtResource("1_ddll0")
+
+[node name="ColorBG" type="ColorRect" parent="." unique_id=114026695]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.56078434)
+
+[node name="Label" type="Label" parent="." unique_id=1337869919]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -295.0
+offset_right = 393.5
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Настройки"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="." unique_id=447319336]
+z_index = 1
+offset_left = 1522.0
+offset_top = 199.0
+offset_right = 1691.05
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_irbvc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0o6kg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pafaa")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_irbvc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_irbvc")
+icon = ExtResource("3_dtv7d")
+icon_alignment = 1
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=1129397847]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -766.0
+offset_top = -317.0
+offset_right = 705.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p8sls")
+patch_margin_left = 114
+patch_margin_top = 149
+patch_margin_right = 114
+patch_margin_bottom = 149
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="Sounds" type="VBoxContainer" parent="." unique_id=721720649]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -657.5
+offset_top = -158.0
+offset_right = 657.5
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="VBoxContainer" parent="Sounds" unique_id=617538946]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Master" type="HBoxContainer" parent="Sounds/Master" unique_id=657751432]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sounds/Master/Master" unique_id=1124363426]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Общая громкость"
+
+[node name="Percent" type="Label" parent="Sounds/Master/Master" unique_id=1827128598]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 48
+text = "100"
+horizontal_alignment = 2
+
+[node name="MasterSlider" type="HSlider" parent="Sounds/Master" unique_id=1576753082]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_dtv7d")
+theme_override_icons/grabber_highlight = ExtResource("5_irbvc")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_0o6kg")
+theme_override_icons/tick = ExtResource("4_dtv7d")
+theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
+min_value = -80.0
+max_value = 15.0
+
+[node name="VBC" type="HBoxContainer" parent="Sounds" unique_id=221922708]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="VBC" type="VBoxContainer" parent="Sounds/VBC" unique_id=2027588262]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Music" type="HBoxContainer" parent="Sounds/VBC/VBC" unique_id=2032128122]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sounds/VBC/VBC/Music" unique_id=1808702632]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Музыка"
+
+[node name="Percent" type="Label" parent="Sounds/VBC/VBC/Music" unique_id=1256588829]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 48
+text = "100"
+horizontal_alignment = 2
+
+[node name="MusicSlider" type="HSlider" parent="Sounds/VBC/VBC" unique_id=1333874466]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_dtv7d")
+theme_override_icons/grabber_highlight = ExtResource("5_irbvc")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_0o6kg")
+theme_override_icons/tick = ExtResource("4_dtv7d")
+theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
+
+[node name="Ambient" type="HBoxContainer" parent="Sounds/VBC/VBC" unique_id=20257851]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sounds/VBC/VBC/Ambient" unique_id=2118894131]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Эмбиент"
+
+[node name="Percent" type="Label" parent="Sounds/VBC/VBC/Ambient" unique_id=1893026975]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 48
+text = "100"
+horizontal_alignment = 2
+
+[node name="AmbientSlider" type="HSlider" parent="Sounds/VBC/VBC" unique_id=1434695418]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_dtv7d")
+theme_override_icons/grabber_highlight = ExtResource("5_irbvc")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_0o6kg")
+theme_override_icons/tick = ExtResource("4_dtv7d")
+theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
+
+[node name="VBC2" type="VBoxContainer" parent="Sounds/VBC" unique_id=1524526189]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UI" type="HBoxContainer" parent="Sounds/VBC/VBC2" unique_id=608623401]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sounds/VBC/VBC2/UI" unique_id=1748765552]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Интерфейс"
+
+[node name="Percent" type="Label" parent="Sounds/VBC/VBC2/UI" unique_id=1614441931]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 48
+text = "100"
+horizontal_alignment = 2
+
+[node name="UISlider" type="HSlider" parent="Sounds/VBC/VBC2" unique_id=77219265]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_dtv7d")
+theme_override_icons/grabber_highlight = ExtResource("5_irbvc")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_0o6kg")
+theme_override_icons/tick = ExtResource("4_dtv7d")
+theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
+
+[node name="SFX" type="HBoxContainer" parent="Sounds/VBC/VBC2" unique_id=624368986]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sounds/VBC/VBC2/SFX" unique_id=1841517184]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Звук. эффекты"
+
+[node name="Percent" type="Label" parent="Sounds/VBC/VBC2/SFX" unique_id=382825662]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 48
+text = "100"
+horizontal_alignment = 2
+
+[node name="SFXSlider" type="HSlider" parent="Sounds/VBC/VBC2" unique_id=853062739]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_dtv7d")
+theme_override_icons/grabber_highlight = ExtResource("5_irbvc")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_0o6kg")
+theme_override_icons/tick = ExtResource("4_dtv7d")
+theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")

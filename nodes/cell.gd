@@ -8,6 +8,14 @@ extends Area3D
 var current_combo: WorkerOnBuilding
 var is_charged: bool = false
 
+var random_place_sounds: Array = [
+	preload("uid://g8a31bxrxtur"),
+	preload("uid://dw7di3cyfltxx"),
+	preload("uid://ci6lvejhdbam6"),
+]
+
+@onready var build_sound: AudioStreamPlayer3D = $Audio/Build_sound
+
 func _ready() -> void:
 	$Charge_sprite/Charge_feedback.pixel_size = 0.0
 	$Charge_sprite.hide()
@@ -80,6 +88,8 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 		get_tree().call_group("cell","toggle_lines", false)
 
 func place(building: Building = %BaseUI.selected_build):
+	build_sound.stream = random_place_sounds.pick_random()
+	build_sound.play()
 	%BaseUI.building_state = false
 	$"../../HUD/BaseUI/StateFeedback".tween_hide_anim()
 	has_building = true

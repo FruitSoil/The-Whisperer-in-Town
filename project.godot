@@ -27,6 +27,7 @@ buses/default_bus_layout="uid://cnmaqee64akaf"
 
 Global="*uid://jkktsf4eysqw"
 Popups="*uid://dyvfs7bhn3rtc"
+Settings="*uid://drb36teaho5w8"
 
 [display]
 

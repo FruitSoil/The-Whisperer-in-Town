@@ -29,7 +29,7 @@ func pressed(ID: int ):
 		1:
 			$Fade/Fade.play("Fade_out")
 		2:
-			pass
+			Settings.show()
 		3:
 			get_tree().quit()
 

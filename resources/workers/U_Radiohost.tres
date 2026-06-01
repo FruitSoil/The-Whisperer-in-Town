@@ -8,5 +8,4 @@ script = ExtResource("2_1ct0v")
 name = "Арт Белл"
 is_unique = true
 icon = ExtResource("1_m2uai")
-Description = "Увеличивает выработку районов, производящих ржавую жесть на 12"
 metadata/_custom_type_script = "uid://bduhpc67rk1k2"

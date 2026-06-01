@@ -2,7 +2,6 @@ extends CanvasLayer
 
 func _ready() -> void:
 	$"../Fade".show()
-	$Control.hide()
 	$".".hide()
 	get_tree().paused = false
 	await get_tree().create_timer(1).timeout
@@ -22,14 +21,11 @@ func _on_continue_pressed() -> void:
 	get_tree().paused = false
 
 func _on_settings_pressed() -> void:
-	$Control.show()
+	Settings.show()
 
 func _on_exit_to_main_pressed() -> void:
 	$"../Fade/Fade".play("Fade_out")
 	get_tree().paused = false
-
-func _on_button_pressed() -> void:
-	$Control.hide()
 
 func _on_button_base_ui_pressed() -> void:
 	$".".show()

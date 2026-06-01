@@ -62,6 +62,8 @@ func _on_buy_pressed() -> void:
 				%BaseUI.switch_to_build(res)
 				%BaseUI.change_label(res.buy_cost_type,false)
 				%BaseUI.change_label(res.s_buy_cost_type,false)
+			else:
+				no_res()
 		else:
 			no_res()
 	else:

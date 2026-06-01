@@ -6,17 +6,36 @@ var y = 20
 const y_max = 20
 const y_min = 2
 @onready var camera: Camera3D = $Camera
+@onready var camera_zoom: AudioStreamPlayer = $"../Audio/CameraZoom"
+@onready var offset_time: Timer = $"../Audio/CameraZoom/OffsetTime"
 
 var smooth_dir = Vector3.ZERO
+var can_sound: bool = true
+
+func _ready() -> void:
+	offset_time.timeout.connect(timeout)
+
+func timeout():
+	can_sound = true
 
 func _physics_process(delta: float) -> void:
 	if get_viewport().gui_get_hovered_control() == null:
 		if Input.is_action_just_pressed("zoom-"):
 			if y < y_max:
 				y += 0.5
+				if can_sound:
+					can_sound = false
+					offset_time.start()
+					camera_zoom.pitch_scale = 1.0
+					camera_zoom.play()
 		if Input.is_action_just_pressed("zoom+"):
 			if y > y_min:
 				y -= 0.5
+				if can_sound:
+					can_sound = false
+					offset_time.start()
+					camera_zoom.pitch_scale = 0.8
+					camera_zoom.play()
 	camera.size = lerpf(camera.size,y, 0.2)
 	
 	var input_dir = Input.get_vector("D", "A", "S", "W")

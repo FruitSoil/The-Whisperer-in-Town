@@ -8,5 +8,4 @@ script = ExtResource("2_p2fvp")
 name = "Говард Ист"
 is_unique = true
 icon = ExtResource("1_188rh")
-Description = "Район дополнительно производит 2 единицы Электроснега"
 metadata/_custom_type_script = "uid://bduhpc67rk1k2"
