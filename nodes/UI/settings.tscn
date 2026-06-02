@@ -28,6 +28,16 @@ thickness = 24
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03xf7"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtv7d"]
+texture = ExtResource("4_dtv7d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyith"]
+texture = ExtResource("5_irbvc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03xf7"]
+texture = ExtResource("4_dtv7d")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
 [node name="Settings" type="CanvasLayer" unique_id=773059752]
 process_mode = 3
 layer = 5000
@@ -139,7 +149,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
 min_value = -80.0
-max_value = 15.0
+max_value = 10.0
 
 [node name="VBC" type="HBoxContainer" parent="Sounds" unique_id=221922708]
 layout_mode = 2
@@ -175,7 +185,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
 min_value = -80.0
-max_value = 15.0
+max_value = 10.0
 
 [node name="Ambient" type="HBoxContainer" parent="Sounds/VBC/VBC" unique_id=20257851]
 layout_mode = 2
@@ -203,7 +213,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
 min_value = -80.0
-max_value = 15.0
+max_value = 10.0
 
 [node name="VBC2" type="VBoxContainer" parent="Sounds/VBC" unique_id=1524526189]
 layout_mode = 2
@@ -235,7 +245,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
 min_value = -80.0
-max_value = 15.0
+max_value = 10.0
 
 [node name="SFX" type="HBoxContainer" parent="Sounds/VBC/VBC2" unique_id=624368986]
 layout_mode = 2
@@ -263,4 +273,25 @@ theme_override_styles/slider = SubResource("StyleBoxLine_pafaa")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qyith")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_03xf7")
 min_value = -80.0
-max_value = 15.0
+max_value = 10.0
+
+[node name="Default" type="HBoxContainer" parent="." unique_id=1580984811]
+offset_left = 260.0
+offset_top = 278.0
+offset_right = 599.0
+offset_bottom = 333.0
+theme_override_constants/separation = 24
+
+[node name="Reset" type="Button" parent="Default" unique_id=1125082258]
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtv7d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qyith")
+theme_override_styles/hover = SubResource("StyleBoxTexture_03xf7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dtv7d")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dtv7d")
+
+[node name="Label" type="Label" parent="Default" unique_id=1760216366]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "По умолчанию"

@@ -60,3 +60,7 @@ enum complete_type {
 @export var sec_reward_res_type: Global.res_types ## Второй тип ресурса который игрок получит за выполнение квеста
 @export var sec_reward_res_count: int ## Количество второго ресурса который игрок получит за выполнение квеста
 @export var building_unlock_res: Building ## Какое здание разблокируется в магазине за выполнение квеста 
+
+@export var zone_res: Zone ##Зона которая изменит бонус (если у зоны уже есть бонус - он перезапишется)
+@export var zone_bonus_resource_type: Global.res_types ##Какой ресурс будет получать бонус на выроботку
+@export var zone_bonus_resource_count: int ##Количество бонуса к ресурсу на выработку в этой зоне

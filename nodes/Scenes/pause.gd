@@ -12,6 +12,7 @@ func _input(event: InputEvent) -> void:
 		if $".".visible:
 			$".".hide()
 			get_tree().paused = false
+			Settings.hide()
 		else:
 			$".".show()
 			get_tree().paused = true
@@ -19,6 +20,7 @@ func _input(event: InputEvent) -> void:
 func _on_continue_pressed() -> void:
 	$".".hide()
 	get_tree().paused = false
+	Settings.hide()
 
 func _on_settings_pressed() -> void:
 	Settings.show()
@@ -33,4 +35,9 @@ func _on_button_base_ui_pressed() -> void:
 
 func _on_fade(anim_name: StringName) -> void:
 	if anim_name == "Fade_out":
-		get_tree().change_scene_to_file("res://nodes/Scenes/Main_menu.tscn")
+		if Global.is_current_ending_imper == true:
+			get_tree().change_scene_to_file("res://nodes/Scenes/endings.tscn")
+		elif Global.is_current_ending_imper == false:
+			get_tree().change_scene_to_file("res://nodes/Scenes/endings.tscn")
+		else:
+			get_tree().change_scene_to_file("res://nodes/Scenes/Main_menu.tscn")
