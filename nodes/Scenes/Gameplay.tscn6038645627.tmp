@@ -1000,6 +1000,8 @@ fill_from = Vector2(0.5, 0.5)
 resource_name = "IconPanelLogic"
 script/source = "extends Control
 
+const ENDINGS = preload(\"uid://ngvd6tgp7x8x\")
+
 @onready var start_imper_icon: TextureRect = $StartImperIcon
 @onready var imperial_icon: TextureRect = $Imperial_icon
 @onready var cultistic_icon: TextureRect = $Cultistic_icon
@@ -1035,10 +1037,14 @@ func check_ending():
 	if imperial_progress.value >= 100:
 		Global.is_current_ending_imper = true
 		$\"../../../Fade/Fade\".play(\"Fade_out\")
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_packed(ENDINGS)
 
 	if cultistic_progress.value >= 100:
 		Global.is_current_ending_imper = false
 		$\"../../../Fade/Fade\".play(\"Fade_out\")
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_packed(ENDINGS)
 "
 
 [sub_resource type="Gradient" id="Gradient_igchu"]

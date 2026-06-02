@@ -12,7 +12,6 @@ quest_name = "На войне"
 character_name = "Кэтерин Коллар"
 worker = 4
 done_quest_dependencies = Array[ExtResource("1_bp7vv")]([ExtResource("4_5mv75")])
-quest_after = Array[String](["res://resources/Quests/Worker/DO1.tres"])
 complete_condition = 6
 int_value = 4
 text_greetings = "Приветствую. Мы всё ближе и ближе к вашей конечной цели. Остаётся лишь подготовить нужные объёмы оружия и снарядов. Перед долгожданным концом этой [b]экспедиции[/b]. 

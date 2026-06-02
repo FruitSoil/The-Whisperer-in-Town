@@ -150,6 +150,11 @@ func answer(ID: int):
 					%BaseUI.change_label(res.sec_reward_res_type, true)
 				if res.building_unlock_res:
 					get_tree().call_group("lvl","unlock",res.building_unlock_res)
+				if res.zone_res:
+					var zone = res.zone_res
+					zone.bonus_res_type = res.zone_bonus_resource_type
+					zone.bonus_res_count  = res.zone_bonus_resource_count
+					print(zone.name, " установлен бонус на ресурс ", Global.get_res_name(zone.bonus_res_type), " на ",zone.bonus_res_count  ," за каждую выроботку района с этим ресурсом")
 				worker_panel.quest_res = null
 				worker_panel.quest_stage = 0
 				worker_panel.update_icon()
@@ -229,7 +234,6 @@ func show_popup(meta: Variant) -> void:
 
 func hide_popup(_meta: Variant) -> void:
 	Popups.hidePopup()
-
 
 func verdict_logic(is_art_bell: bool):
 	var art = preload("res://resources/Quests/Radio/TR2.tres")

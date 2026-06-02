@@ -60,13 +60,13 @@ func _pressed() -> void:
 	if menu_button.selected == 2:
 		add_count = 10
 	elif menu_button.selected == 5 or menu_button.selected == 6:
-		add_count = 1
+		add_count = 10
 	else:
 		add_count = 1000
 	Global.add_to_integer_res_type(menu_button.selected, add_count)
 	%BaseUI.change_label(menu_button.selected,true)
 
 func _on_full_pressed() -> void:
-	for i in 7:
+	for i in 5:
 		Global.add_to_integer_res_type(i, 99999)
 	%BaseUI.change_all_label(true)

@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://ngvd6tgp7x8x"]
+
+[ext_resource type="Script" uid="uid://cw3whlur5umjj" path="res://nodes/Scenes/endings.gd" id="1_j65i4"]
+[ext_resource type="Texture2D" uid="uid://bbsvr1444kqjg" path="res://Images/Endings/Ending_Cult.PNG" id="1_y14wx"]
+[ext_resource type="Texture2D" uid="uid://dswf4g30560q1" path="res://Images/Endings/Ending_Empire.PNG" id="2_j65i4"]
+[ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_getm1"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_getm1"]
+
+[sub_resource type="Animation" id="Animation_m578b"]
+resource_name = "new_animation"
+length = 0.78
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(0.43527555, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_getm1"]
+resource_name = "Fade_out"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 5.8),
+"transitions": PackedFloat32Array(3.4822013, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"label_start"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0nqod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m578b"]
+_data = {
+&"Fade_in": SubResource("Animation_m578b"),
+&"Fade_out": SubResource("Animation_getm1"),
+&"RESET": SubResource("Animation_0nqod")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0nqod"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_m578b"]
+offsets = PackedFloat32Array(0.044692736, 0.21787709, 0.83798885, 0.9776536)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_getm1"]
+colors = PackedColorArray(1, 1, 1, 0.14509805, 1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0nqod"]
+shader = ExtResource("3_getm1")
+shader_parameter/blur = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m578b"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 0.7294118)
+shadow_size = 17
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j65i4"]
+
+[node name="Endings" type="Node2D" unique_id=391644759]
+script = ExtResource("1_j65i4")
+imperial_ending_text = "Хорошая работа, Олег!
+Ждите премию, мммммм завтра
+"
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=496327753]
+layer = 100
+
+[node name="Color" type="ColorRect" parent="Fade" unique_id=504189430]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1250290144]
+libraries/ = SubResource("AnimationLibrary_m578b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1554421812]
+
+[node name="Cultistic" type="TextureRect" parent="CanvasLayer" unique_id=196761044]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y14wx")
+
+[node name="Imperial" type="TextureRect" parent="CanvasLayer" unique_id=1126131829]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j65i4")
+
+[node name="Start" type="Node" parent="CanvasLayer" unique_id=1848160789]
+
+[node name="S" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=232949293]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(225, 87)
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S2" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=747881598]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(633, 113.00001)
+rotation = 0.14513953
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S3" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=2126137466]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(982.00006, 176.00002)
+rotation = 0.25673586
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S4" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=1643834084]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(1342.9999, 300.99997)
+rotation = 0.4402001
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S5" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=1931283036]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(1666, 475.00003)
+rotation = 0.55905944
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S6" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=77566705]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(1975.9998, 718.9999)
+rotation = 0.6615074
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S7" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=2124461312]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(1321, -52)
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="S8" type="CPUParticles2D" parent="CanvasLayer/Start" unique_id=1962580543]
+top_level = true
+material = SubResource("CanvasItemMaterial_0nqod")
+position = Vector2(1715, 178)
+amount = 10
+texture = ExtResource("4_getm1")
+lifetime = 7.5
+emission_shape = 3
+emission_rect_extents = Vector2(245.81, 200)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_m578b")
+color_initial_ramp = SubResource("Gradient_getm1")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1142013112]
+material = SubResource("ShaderMaterial_0nqod")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 790.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="Panel" parent="CanvasLayer" unique_id=1608259657]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 790.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m578b")
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer" unique_id=1540412759]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -899.0
+offset_top = -274.0
+offset_right = 899.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 52
+theme_override_font_sizes/bold_font_size = 52
+theme_override_font_sizes/bold_italics_font_size = 52
+theme_override_font_sizes/italics_font_size = 52
+theme_override_font_sizes/mono_font_size = 52
+bbcode_enabled = true
+text = "ТУТ БУДЕТ ТЕКСТ КОНЦОВКИ, ТЫ ТАКОЙ ТИПО ЧИТАЕШЬ, ЖЕСТЬ КАПЕЦ ПОНИМАЕШЬ ЧТО ПОИГРАЛ НЕ ЗРЯ И ЖЕСТКО СТАВИШЬ НАМ 5 ЗВЕЗД НА ИТЧЕ И ПРОСИШЬ СТИМ ВЕРСИЮ, ПОСЛЕ ЧЕГО КОГДА МЫ ЕЁ ПУБЛИКУЕМ - ПОКУПАЕШЬ"
+
+[node name="ToMenuButton" type="Button" parent="CanvasLayer" unique_id=2120175324]
+offset_left = 1624.0
+offset_top = 996.0
+offset_right = 1906.0
+offset_bottom = 1079.0
+theme_override_colors/font_pressed_color = Color(0.20253429, 0.29126725, 0.18276355, 1)
+theme_override_colors/font_hover_color = Color(0.7137255, 1, 0.7137255, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j65i4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j65i4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j65i4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j65i4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j65i4")
+text = "В МЕНЮ > > >"
