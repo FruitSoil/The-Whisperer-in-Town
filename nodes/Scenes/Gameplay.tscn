@@ -411,6 +411,9 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5450000258875
 
+[sub_resource type="FontVariation" id="FontVariation_tt4qn"]
+spacing_space = 6
+
 [sub_resource type="FontVariation" id="FontVariation_30cd8"]
 variation_embolden = 0.5
 
@@ -2367,6 +2370,7 @@ theme_override_constants/margin_bottom = 5
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_tt4qn")
 theme_override_fonts/bold_font = SubResource("FontVariation_30cd8")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
