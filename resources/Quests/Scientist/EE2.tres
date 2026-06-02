@@ -16,7 +16,7 @@ worker = 2
 done_quest_dependencies = Array[ExtResource("1_7khax")]([ExtResource("3_mt68i")])
 quest_after = Array[String](["res://resources/Quests/Scientist/EE3.tres"])
 complete_condition = 2
-int_value = 6
+int_value = 10
 building_type = Array[ExtResource("2_3hu8w")]([ExtResource("2_mt68i")])
 text_greetings = "Приветствую, я к вам с хорошими вестями. Мы ощутимо продвинулись в работе над чертежами [b]III тира[/b]. Мистер [b]Сэд[/b] нам пособил. С помощью его некоторых идей мы смогли доработать и улучшить инфроструктуру района. Теперь мы близко, как никогда до этого. Но для завершения работы нам требуется больше данных и статистики. 
 
