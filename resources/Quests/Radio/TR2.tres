@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_3xues"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_l1skj"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="3_emkec"]
-[ext_resource type="Resource" uid="uid://cr44o6eo2njb1" path="res://resources/Quests/Radio/V.tres" id="4_ss47a"]
 [ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="5_w37t5"]
 
 [resource]
@@ -12,7 +11,6 @@ icon = ExtResource("5_w37t5")
 quest_name = "Сколько стоит правда?"
 character_name = "Арт Белл"
 worker = 3
-done_quest_dependencies = Array[ExtResource("1_3xues")]([ExtResource("4_ss47a")])
 quest_after = Array[String](["res://resources/Quests/Worker/DO2.tres"])
 text_greetings = "АХХААХХАХ, [b]ИМПЕРКА[/b] ПОПАЛА В НАШИ СЕТИ И НЕ СМОГЛА ИЗБЕЖАТЬ СВОЕГО КОНЦА
 

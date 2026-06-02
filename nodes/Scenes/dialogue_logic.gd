@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var res_panel: Control = $"../HUD/BaseUI/res_panel"
+
 @onready var variant_yes: Button = $Panel/VBC/Variant_yes
 @onready var variant_later: Button = $Panel/VBC/Variant_later
 @onready var variant_no: Button = $Panel/VBC/Variant_no
@@ -9,6 +11,7 @@ extends CanvasLayer
 const ADMIN_EV2_2 = preload("uid://b5qdl6plgdx2l")
 const EV_2 = preload("uid://p72rumrqgqhh")
 const V = preload("uid://cr44o6eo2njb1")
+const END = preload("uid://bdkjdx3u8i44s")
 
 var res: Quest
 var worker_panel: WorkerPanel
@@ -27,6 +30,10 @@ func update_data():
 		$Panel/Fon/Portair.texture = res.icon
 		$Panel/Fon/Shadow.texture = res.icon
 		$Panel/Character_name.text = res.character_name
+		
+		variant_yes.text = res.answer_agree
+		variant_later.text = res.answer_wait
+		variant_no.text = res.answer_reject
 		
 		print(worker_panel.quest_stage)
 		match worker_panel.quest_stage:
@@ -56,6 +63,7 @@ func update_data():
 			4:
 				type_text(res.text_finish)
 				variant_yes.show()
+				variant_yes.text = "(Закончить квест)"
 				variant_no.hide()
 				variant_later.hide()
 			5:
@@ -72,10 +80,6 @@ func update_data():
 				if res.complete_condition == 0:
 					variant_later.hide()
 					variant_no.hide()
-		
-		$Panel/VBC/Variant_yes.text = res.answer_agree
-		$Panel/VBC/Variant_later.text = res.answer_wait
-		$Panel/VBC/Variant_no.text = res.answer_reject
 
 func _on_exit_button_pressed() -> void:
 	close_window()
@@ -102,10 +106,17 @@ func answer(ID: int):
 					close_window()
 					%worker3.quest_res = EV_2
 					%worker3.quest_stage = 3
-					%worker3.disabled = false
 					%worker3.update_icon()
+					%worker3.can_be_placed = true
 				elif res == V:
 					verdict_logic(true)
+					close_window()
+					worker_panel.quest_res = null
+					worker_panel.quest_stage = 0
+					worker_panel.update_icon()
+					return
+				elif res == END:
+					res_panel.final_stage_show()
 					close_window()
 					worker_panel.quest_res = null
 					worker_panel.quest_stage = 0
@@ -159,6 +170,7 @@ func answer(ID: int):
 				type_text(res.text_reject) 
 				variant_yes.hide()
 				variant_no.show()
+				variant_no.text = "(Продолжить)"
 				variant_later.hide()
 				worker_panel.quest_stage = 2
 				worker_panel.update_icon()
@@ -166,6 +178,7 @@ func answer(ID: int):
 			else:
 				%BaseUI.erase_quest(res)
 				Global.quest_skip.append(res)
+				variant_no.text = "(Продолжить)"
 				for i in res.reject_other_quest_skip:
 					if i:
 						var path = load(i)
@@ -225,6 +238,7 @@ func verdict_logic(is_art_bell: bool):
 	
 	Global.quest_done.append(verdict_quest)
 	%BaseUI.erase_quest(verdict_quest)
+	res_panel.verdict_change_side(is_art_bell)
 	if is_art_bell:
 		print("art selected")
 		%QuestLogic.ql_wait_to_next(4,art,art.worker)

@@ -13,6 +13,7 @@ is_mandatory = false
 character_name = "Сэд Клинтвуд"
 worker = 1
 done_quest_dependencies = Array[ExtResource("1_yyjcp")]([ExtResource("3_i17gx")])
+quest_after = Array[String](["res://resources/Quests/Agent/WAR1.tres"])
 text_greetings = "Ты, грёбаный кусок дерьма, ты предпочёл это, помощи нам! Чёртова подстилка [b][color=#FFFF5D][url=EmpG]Империи[/url][/color][/b], империи безнадёжных ублюдков. 
 Грёбаный чинуша, что решил, будто именно он решает судьбу человечества. 
 

@@ -1,5 +1,7 @@
 extends Node
 
+signal change_ending_progress
+
 const DEFAULT_WORKER_COST: int = 7
 
 var total_buildings: Array[Building] = []
@@ -15,8 +17,14 @@ var electrosnow: int = 0
 var money: int = 6
 var highqualityelectrical: int = 0
 var heavycomponents: int = 0
-var imperial_might: int = 0
-var cultist_might: int = 0
+var imperial_might: int = 0:
+	set(value):
+		imperial_might = value
+		change_ending_progress.emit()
+var cultist_might: int = 0:
+	set(value):
+		cultist_might = value
+		change_ending_progress.emit()
 
 var is_zone_1_open:bool = true
 var is_zone_2_open:bool = false

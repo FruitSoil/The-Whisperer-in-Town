@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccsir7ev5yfu8" path="res://Buildings/monolith_military_district.tscn" id="1_5yaep"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_7u6gr"]
-[ext_resource type="Texture2D" uid="uid://cqgut8phwy2yn" path="res://Images/Resources_icons/imperial_res_icon.png" id="3_l45kp"]
+[ext_resource type="Texture2D" uid="uid://b05xbn7vqdtft" path="res://Images/Zones/Monolith_Military_District_Concept.png" id="3_5yaep"]
 
 [resource]
 script = ExtResource("2_7u6gr")
@@ -16,5 +16,5 @@ buy_cost = 1000
 buy_cost_type = 4
 unlock_condition_desc = "Открыть зону 5"
 description = "В этот непростой момент нужно помочь Великой Астурской Империи разрушить последний обитель сектантов, вернуть порядок и праведность в Империю - нужно поставить N районов, чтобы произвести атаку на монолит "
-shop_icon = ExtResource("3_l45kp")
+shop_icon = ExtResource("3_5yaep")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

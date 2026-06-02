@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bchsxrt4dm13n" path="res://Buildings/monolith_sectarian_district.tscn" id="1_w4d38"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3vkwe"]
-[ext_resource type="Texture2D" uid="uid://c3b8ako5keqo2" path="res://Images/Resources_icons/cultistic_res_icon.png" id="3_0n346"]
+[ext_resource type="Texture2D" uid="uid://b05xbn7vqdtft" path="res://Images/Zones/Monolith_Military_District_Concept.png" id="3_w4d38"]
 
 [resource]
 script = ExtResource("2_3vkwe")
@@ -16,5 +16,5 @@ buy_cost = 1000
 buy_cost_type = 4
 unlock_condition_desc = "Открыть зону 5"
 description = "Время тает у нас на руках, прошлые порядки должны сгинуть в огне новшеств и открытий. Ну же, помоги нам свергнуть прошлый мировой порядок, вызволить из заточения истинного бога \"Нъхорфаада\" - нужно поставить N районов, чтобы сотворить ритуал Нового Порядка."
-shop_icon = ExtResource("3_0n346")
+shop_icon = ExtResource("3_w4d38")
 metadata/_custom_type_script = "uid://drmedwnjvcpqm"

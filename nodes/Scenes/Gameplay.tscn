@@ -987,6 +987,48 @@ func press(node: Button):
 		
 "
 
+[sub_resource type="GDScript" id="GDScript_tt4qn"]
+resource_name = "IconPanelLogic"
+script/source = "extends Control
+
+@onready var start_imper_icon: TextureRect = $StartImperIcon
+@onready var imperial_icon: TextureRect = $Imperial_icon
+@onready var cultistic_icon: TextureRect = $Cultistic_icon
+
+@onready var final_mode: Control = $Final_mode
+@onready var panel_middle_thing: ColorRect = $PanelMiddleThing
+
+@onready var imperial_progress: ProgressBar = $Final_mode/ImperialProgress
+@onready var cultistic_progress: ProgressBar = $Final_mode/CultisticProgress
+
+func _ready() -> void:
+	Global.change_ending_progress.connect(update_progress)
+
+func verdict_change_side(is_art: bool):
+	start_imper_icon.hide()
+	if is_art:
+		cultistic_icon.show()
+	else:
+		imperial_icon.show()
+
+func final_stage_show():
+	imperial_icon.hide()
+	cultistic_icon.hide()
+	panel_middle_thing.show()
+	final_mode.show()
+
+func update_progress():
+	imperial_progress.value = Global.imperial_might
+	cultistic_progress.value = Global.cultist_might
+	check_ending()
+
+func check_ending():
+	if imperial_progress.value >= 100:
+		pass
+	if cultistic_progress.value >= 100:
+		pass
+"
+
 [sub_resource type="Gradient" id="Gradient_igchu"]
 offsets = PackedFloat32Array(0.37988827, 0.82122904, 1)
 colors = PackedColorArray(1.6364455e-06, 0.7160926, 0.4147328, 1, 0.17447907, 0.51625013, 2.8878452e-07, 1, 0.33267987, 0.9100657, 3.85046e-07, 1)
@@ -1001,6 +1043,29 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5yd0p"]
 gradient = SubResource("Gradient_k4jtg")
 width = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tt4qn"]
+
+[sub_resource type="Gradient" id="Gradient_tt4qn"]
+colors = PackedColorArray(0.6313726, 0.4509804, 0.38039216, 0, 0.6313726, 0.4509804, 0.38039216, 0.80784315)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6ngqc"]
+gradient = SubResource("Gradient_tt4qn")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nciey"]
+texture = SubResource("GradientTexture2D_6ngqc")
+
+[sub_resource type="Gradient" id="Gradient_xde1d"]
+colors = PackedColorArray(0.36078432, 1, 0.85490197, 0, 0.46332526, 0.9999997, 0.72599083, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_po80s"]
+gradient = SubResource("Gradient_xde1d")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77y48"]
+texture = SubResource("GradientTexture2D_po80s")
+modulate_color = Color(1, 1, 1, 0.56078434)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n00c2"]
 shader = ExtResource("20_tudpi")
@@ -1026,19 +1091,250 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
 
+[sub_resource type="Shader" id="Shader_tt4qn"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/VHS-and-CRT-monitor-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result to godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+//*** IMPORTANT! ***/ 
+// - If you are using this shader to affect the node it is applied to set 'overlay' to false (unchecked in the instepctor).
+// - If you are using this shader as an overlay, and want the shader to affect the nodes below in the Scene hierarchy,
+//   set 'overlay' to true (checked in the inspector).
+// On Mac there is potentially a bug causing this to not work properly. If that is the case and you want to use the shader as an overlay
+// change all \"overlay ? SCREEN_TEXTURE : TEXTURE\" to only \"SCREEN_TEXTURE\" on lines 129-140, and \"vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV);\"
+// to \"vec2 uv = warp(SCREEN_UV);\" on line 98.
+uniform bool overlay = false;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float scanlines_width : hint_range(0.0, 0.5) = 0.25;
+uniform float grille_opacity : hint_range(0.0, 1.0) = 0.3;
+uniform vec2 resolution = vec2(640.0, 480.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
+
+uniform bool pixelate = true; // Fill each square (\"pixel\") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
+
+uniform bool roll = true;
+uniform float roll_speed = 8.0; // Positive values are down, negative are up
+uniform float roll_size : hint_range(0.0, 100.0) = 15.0;
+uniform float roll_variation : hint_range(0.1, 5.0) = 1.8; // This valie is not an exact science. You have to play around with the value to find a look you like. How this works is explained in the code below.
+uniform float distort_intensity : hint_range(0.0, 0.2) = 0.05; // The distortion created by the rolling effect.
+
+uniform float noise_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float noise_speed = 5.0; // There is a movement in the noise pattern that can be hard to see first. This sets the speed of that movement.
+
+uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.06;
+
+uniform float aberration : hint_range(-1.0, 1.0) = 0.03; // Chromatic aberration, a distortion on each color channel.
+uniform float brightness = 1.4; // When adding scanline gaps and grille the image can get very dark. Brightness tries to compensate for that.
+uniform bool discolor = true; // Add a discolor effect simulating a VHS
+
+uniform float warp_amount :hint_range(0.0, 5.0) = 1.0; // Warp the texture edges simulating the curved glass of a CRT monitor or old TV.
+uniform bool clip_warp = false;
+
+uniform float vignette_intensity = 0.4; // Size of the vignette, how far towards the middle it should go.
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.5;
+
+// Used by the noise functin to generate a pseudo random value between 0.0 and 1.0
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+// Generate a Perlin noise used by the distortion effects
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+// Takes in the UV and warps the edges, creating the spherized effect
+vec2 warp(vec2 uv){
+	vec2 delta = uv - 0.5;
+	float delta2 = dot(delta.xy, delta.xy);
+	float delta4 = delta2 * delta2;
+	float delta_offset = delta4 * warp_amount;
+	
+	return uv + delta * delta_offset;
+}
+
+// Adds a black border to hide stretched pixel created by the warp effect
+float border (vec2 uv){
+	float radius = min(warp_amount, 0.08);
+	radius = max(min(min(abs(radius * 2.0), abs(1.0)), abs(1.0)), 1e-5);
+	vec2 abs_uv = abs(uv * 2.0 - 1.0) - vec2(1.0, 1.0) + radius;
+	float dist = length(max(vec2(0.0), abs_uv)) / radius;
+	float square = smoothstep(0.96, 1.0, dist);
+	return clamp(1.0 - square, 0.0, 1.0);
+}
+
+// Adds a vignette shadow to the edges of the image
+float vignette(vec2 uv){
+	uv *= 1.0 - uv.xy;
+	float vignette = uv.x * uv.y * 15.0;
+	return pow(vignette, vignette_intensity * vignette_opacity);
+}
+
+void fragment()
+{
+	vec2 uv = overlay ? warp(SCREEN_UV) : warp(UV); // Warp the uv. uv will be used in most cases instead of UV to keep the warping
+	vec2 text_uv = uv;
+	vec2 roll_uv = vec2(0.0);
+	float time = roll ? TIME : 0.0;
+	
+
+	// Pixelate the texture based on the given resolution.
+	if (pixelate)
+	{
+		text_uv = ceil(uv * resolution) / resolution;
+	}
+	
+	// Create the rolling effect. We need roll_line a bit later to make the noise effect.
+	// That is why this runs if roll is true OR noise_opacity is over 0.
+	float roll_line = 0.0;
+	if (roll || noise_opacity > 0.0)
+	{
+		// Create the areas/lines where the texture will be distorted.
+		roll_line = smoothstep(0.3, 0.9, sin(uv.y * roll_size - (time * roll_speed) ) );
+		// Create more lines of a different size and apply to the first set of lines. This creates a bit of variation.
+		roll_line *= roll_line * smoothstep(0.3, 0.9, sin(uv.y * roll_size * roll_variation - (time * roll_speed * roll_variation) ) );
+		// Distort the UV where where the lines are
+		roll_uv = vec2(( roll_line * distort_intensity * (1.-UV.x)), 0.0);
+	}
+	
+	vec4 text;
+	if (roll)
+	{
+		// If roll is true distort the texture with roll_uv. The texture is split up into RGB to 
+		// make some chromatic aberration. We apply the aberration to the red and green channels accorging to the aberration parameter
+		// and intensify it a bit in the roll distortion.
+		text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
+		text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1 ).g;
+		text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
+		text.a = 1.0;
+	}
+	else
+	{
+		// If roll is false only apply the aberration without any distorion. The aberration values are very small so the .1 is only 
+		// to make the slider in the Inspector less sensitive.
+		text.r = texture(SCREEN_TEXTURE, text_uv + vec2(aberration, 0.0) * .1).r;
+		text.g = texture(SCREEN_TEXTURE, text_uv - vec2(aberration, 0.0) * .1).g;
+		text.b = texture(SCREEN_TEXTURE, text_uv).b;
+		text.a = 1.0;
+	}
+	
+	float r = text.r;
+	float g = text.g;
+	float b = text.b;
+	
+	uv = warp(UV);
+	
+	// CRT monitors don't have pixels but groups of red, green and blue dots or lines, called grille. We isolate the texture's color channels 
+	// and divide it up in 3 offsetted lines to show the red, green and blue colors next to each other, with a small black gap between.
+	if (grille_opacity > 0.0){
+		
+		float g_r = smoothstep(0.85, 0.95, abs(sin(uv.x * (resolution.x * 3.14159265))));
+		r = mix(r, r * g_r, grille_opacity);
+		
+		float g_g = smoothstep(0.85, 0.95, abs(sin(1.05 + uv.x * (resolution.x * 3.14159265))));
+		g = mix(g, g * g_g, grille_opacity);
+		
+		float b_b = smoothstep(0.85, 0.95, abs(sin(2.1 + uv.x * (resolution.x * 3.14159265))));
+		b = mix(b, b * b_b, grille_opacity);
+		
+	}
+	
+	// Apply the grille to the texture's color channels and apply Brightness. Since the grille and the scanlines (below) make the image very dark you
+	// can compensate by increasing the brightness.
+	text.r = clamp(r * brightness, 0.0, 1.0);
+	text.g = clamp(g * brightness, 0.0, 1.0);
+	text.b = clamp(b * brightness, 0.0, 1.0);
+	
+	// Scanlines are the horizontal lines that make up the image on a CRT monitor. 
+	// Here we are actual setting the black gap between each line, which I guess is not the right definition of the word, but you get the idea  
+	float scanlines = 0.5;
+	if (scanlines_opacity > 0.0)
+	{
+		// Same technique as above, create lines with sine and applying it to the texture. Smoothstep to allow setting the line size.
+		scanlines = smoothstep(scanlines_width, scanlines_width + 0.5, abs(sin(uv.y * (resolution.y * 3.14159265))));
+		text.rgb = mix(text.rgb, text.rgb * vec3(scanlines), scanlines_opacity);
+	}
+	
+	// Apply the banded noise.
+	if (noise_opacity > 0.0)
+	{
+		// Generate a noise pattern that is very stretched horizontally, and animate it with noise_speed
+		float noise = smoothstep(0.4, 0.5, noise(uv * vec2(2.0, 200.0) + vec2(10.0, (TIME * (noise_speed))) ) );
+		
+		// We use roll_line (set above) to define how big the noise should be vertically (multiplying cuts off all black parts).
+		// We also add in some basic noise with random() to break up the noise pattern above. The noise is sized according to 
+		// the resolution value set in the inspector. If you don't like this look you can 
+		// change \"ceil(uv * resolution) / resolution\" to only \"uv\" to make it less pixelated. Or multiply resolution with som value
+		// greater than 1.0 to make them smaller.
+		roll_line *= noise * scanlines * clamp(random((ceil(uv * resolution) / resolution) + vec2(TIME * 0.8, 0.0)).x + 0.8, 0.0, 1.0);
+		// Add it to the texture based on noise_opacity
+		text.rgb = clamp(mix(text.rgb, text.rgb + roll_line, noise_opacity), vec3(0.0), vec3(1.0));
+	}
+	
+	// Apply static noise by generating it over the whole screen in the same way as above
+	if (static_noise_intensity > 0.0)
+	{
+		text.rgb += clamp(random((ceil(uv * resolution) / resolution) + fract(TIME)).x, 0.0, 1.0) * static_noise_intensity;
+	}
+	
+	// Apply a black border to hide imperfections caused by the warping.
+	// Also apply the vignette
+	text.rgb *= border(uv);
+	text.rgb *= vignette(uv);
+	// Hides the black border and make that area transparent. Good if you want to add the the texture on top an image of a TV or monitor.
+	if (clip_warp)
+	{
+		text.a = border(uv);
+	}
+	
+	// Apply discoloration to get a VHS look (lower saturation and higher contrast)
+	// You can play with the values below or expose them in the Inspector.
+	float saturation = 0.5;
+	float contrast = 1.2;
+	if (discolor)
+	{
+		// Saturation
+		vec3 greyscale = vec3(text.r + text.g + text.b) / 3.;
+		text.rgb = mix(text.rgb, greyscale, saturation);
+		
+		// Contrast
+		float midpoint = pow(0.5, 2.2);
+		text.rgb = (text.rgb - vec3(midpoint)) * contrast + midpoint;
+	}
+	
+	COLOR = text;
+}"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1tw4p"]
-shader = ExtResource("20_tudpi")
+shader = SubResource("Shader_tt4qn")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.1470000069825
 shader_parameter/grille_opacity = 0.1410000066975
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
-shader_parameter/roll = false
-shader_parameter/roll_speed = 0.5
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
 shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 5.0
-shader_parameter/distort_intensity = 0.014000000665
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
 shader_parameter/noise_opacity = 0.07600000361
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.078000003705
@@ -1576,6 +1872,7 @@ libraries/ = SubResource("AnimationLibrary_vlx1q")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
+visible = false
 script = ExtResource("2_7ukgp")
 
 [node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
@@ -1891,7 +2188,6 @@ mouse_filter = 2
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
-visible = false
 script = ExtResource("21_dweyv")
 
 [node name="Panel" type="Control" parent="Dialogue" unique_id=622115335]
@@ -2087,9 +2383,9 @@ texture = ExtResource("23_x1wuj")
 [node name="Quest_name" type="Label" parent="Dialogue/Panel" unique_id=9789844]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 58.0
+offset_top = 26.0
 offset_right = 482.0
-offset_bottom = 88.0
+offset_bottom = 79.0
 theme_override_colors/font_color = Color(0.69455916, 0.86985093, 0.6873295, 1)
 theme_override_colors/font_shadow_color = Color(0.10393793, 0.12445598, 0.114203624, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -2098,7 +2394,7 @@ theme_override_constants/shadow_offset_y = -2
 theme_override_font_sizes/font_size = 18
 text = "Война интерфейса редактора, часть 777"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Character_name" type="Label" parent="Dialogue/Panel" unique_id=1421999180]
 layout_mode = 0
@@ -2111,6 +2407,7 @@ theme_override_colors/font_shadow_color = Color(0.10393793, 0.12445598, 0.114203
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = -2
+theme_override_font_sizes/font_size = 24
 text = "Мармок личной персоной типо реально мармок брат"
 horizontal_alignment = 1
 
@@ -2505,6 +2802,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -2800,7 +3098,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3111,11 +3408,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
+offset_left = 12.0
 offset_top = -29.0
-offset_right = 80.0
-offset_bottom = 29.0
+offset_right = 69.99998
+offset_bottom = 29.000008
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("55_5h554")
 stretch_mode = 5
 
@@ -3193,11 +3492,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
+offset_left = 12.0
 offset_top = -29.0
-offset_right = 80.0
-offset_bottom = 29.0
+offset_right = 69.99998
+offset_bottom = 29.000008
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("55_5h554")
 stretch_mode = 5
 
@@ -3275,11 +3576,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
+offset_left = 12.0
 offset_top = -29.0
-offset_right = 80.0
-offset_bottom = 29.0
+offset_right = 69.99998
+offset_bottom = 29.000008
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("55_5h554")
 stretch_mode = 5
 
@@ -3358,11 +3661,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 22.0
+offset_left = 12.0
 offset_top = -29.0
-offset_right = 80.0
-offset_bottom = 29.0
+offset_right = 69.99998
+offset_bottom = 29.000008
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("55_5h554")
 stretch_mode = 5
 
@@ -3440,11 +3745,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 14.0
+offset_left = 12.0
 offset_top = -29.0
-offset_right = 72.0
-offset_bottom = 29.0
+offset_right = 69.99998
+offset_bottom = 29.000008
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("55_5h554")
 stretch_mode = 5
 
@@ -3541,6 +3848,7 @@ offset_right = 487.13953
 offset_bottom = 71.023254
 grow_horizontal = 2
 scale = Vector2(1.005, 0.86)
+script = SubResource("GDScript_tt4qn")
 
 [node name="BG" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=855751978]
 layout_mode = 1
@@ -3762,7 +4070,57 @@ grow_horizontal = 2
 scale = Vector2(0.6146977, 0.8602525)
 texture = ExtResource("60_amk7x")
 
-[node name="Imperial_icon" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1821471577]
+[node name="Final_mode" type="Control" parent="HUD/BaseUI/res_panel" unique_id=1706233741]
+visible = false
+anchors_preset = 0
+offset_left = 311.4428
+offset_top = 156.97675
+offset_right = 427.86078
+offset_bottom = 206.97673
+
+[node name="ImperialProgress" type="ProgressBar" parent="HUD/BaseUI/res_panel/Final_mode" unique_id=1626506642]
+layout_mode = 0
+offset_left = 0.9950266
+offset_top = 2.3255768
+offset_right = 56.7164
+offset_bottom = 46.511627
+theme_override_styles/background = SubResource("StyleBoxEmpty_tt4qn")
+theme_override_styles/fill = SubResource("StyleBoxTexture_nciey")
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="CultisticProgress" type="ProgressBar" parent="HUD/BaseUI/res_panel/Final_mode" unique_id=557636544]
+layout_mode = 0
+offset_left = 61.691563
+offset_top = 2.3255882
+offset_right = 115.42288
+offset_bottom = 46.51164
+theme_override_styles/background = SubResource("StyleBoxEmpty_tt4qn")
+theme_override_styles/fill = SubResource("StyleBoxTexture_77y48")
+step = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Imperial_icon" type="TextureRect" parent="HUD/BaseUI/res_panel/Final_mode" unique_id=1429087198]
+layout_mode = 0
+offset_left = 8.955198
+offset_top = 5.813958
+offset_right = 51.45764
+offset_bottom = 48.3164
+texture = ExtResource("58_6ngqc")
+expand_mode = 1
+
+[node name="Cultistic" type="TextureRect" parent="HUD/BaseUI/res_panel/Final_mode" unique_id=2101855058]
+layout_mode = 0
+offset_left = 69.65176
+offset_top = 5.813954
+offset_right = 108.17446
+offset_bottom = 44.33666
+texture = ExtResource("60_nciey")
+expand_mode = 1
+
+[node name="StartImperIcon" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1656411366]
 modulate = Color(1.129, 1.511, 1.084, 1)
 layout_mode = 0
 offset_left = 346.26868
@@ -3770,6 +4128,26 @@ offset_top = 160.46512
 offset_right = 394.74133
 offset_bottom = 208.93777
 texture = ExtResource("9_w45vw")
+expand_mode = 1
+
+[node name="Imperial_icon" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1821471577]
+visible = false
+layout_mode = 0
+offset_left = 346.26868
+offset_top = 160.46512
+offset_right = 394.74133
+offset_bottom = 208.93777
+texture = ExtResource("58_6ngqc")
+expand_mode = 1
+
+[node name="Cultistic_icon" type="TextureRect" parent="HUD/BaseUI/res_panel" unique_id=1629972833]
+visible = false
+layout_mode = 0
+offset_left = 347.97522
+offset_top = 159.84613
+offset_right = 393.0348
+offset_bottom = 204.9057
+texture = ExtResource("60_nciey")
 expand_mode = 1
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/res_panel" unique_id=1527240328]
@@ -3806,6 +4184,16 @@ offset_bottom = 206.97673
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
+
+[node name="PanelMiddleThing" type="ColorRect" parent="HUD/BaseUI/res_panel" unique_id=1715275679]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = 366.16913
+offset_top = 151.16278
+offset_right = 374.12927
+offset_bottom = 215.11627
+color = Color(0.41960785, 0.5411765, 0.5176471, 1)
 
 [node name="workers_panel" type="Control" parent="HUD/BaseUI" unique_id=2111873349]
 layout_mode = 1
@@ -3938,7 +4326,6 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Dialogue_status" type="TextureRect" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=574253512]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -5013,6 +5400,7 @@ text = "ЛКМ"
 
 [node name="Tutorial" type="CanvasLayer" parent="." unique_id=1217019448]
 layer = 3
+visible = false
 script = ExtResource("2_tbnlw")
 
 [node name="Control" type="Control" parent="Tutorial" unique_id=506205110]
@@ -5029,6 +5417,7 @@ metadata/_edit_lock_ = true
 [node name="CG" type="CanvasGroup" parent="Tutorial/Control" unique_id=1947426528]
 
 [node name="Slide_1" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1796307636]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -5049,9 +5438,9 @@ button_mask = 2
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_1" unique_id=285590]
 layout_mode = 0
-offset_left = 1812.0
+offset_left = 1817.0
 offset_top = 202.0
-offset_right = 1866.0
+offset_right = 1861.0
 offset_bottom = 226.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
@@ -5109,14 +5498,15 @@ offset_bottom = 825.1611
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_2" unique_id=1069642484]
 layout_mode = 0
-offset_left = 1392.0
+offset_left = 1402.0
 offset_top = 948.0
-offset_right = 1459.0
+offset_right = 1449.0
 offset_bottom = 976.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Touch1" type="Button" parent="Tutorial/Control/CG/Slide_2" unique_id=1409544851]
 material = SubResource("ShaderMaterial_2ho68")
@@ -5156,14 +5546,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_3" unique_id=1230470576]
 layout_mode = 0
-offset_left = 512.0
+offset_left = 522.0
 offset_top = 947.0
-offset_right = 579.0
+offset_right = 569.0
 offset_bottom = 975.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
 visible = false
@@ -5186,14 +5577,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_4" unique_id=1386179205]
 layout_mode = 0
-offset_left = 703.0
+offset_left = 714.0
 offset_top = 699.0
-offset_right = 770.0
+offset_right = 759.0
 offset_bottom = 727.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_5" type="ColorRect" parent="Tutorial/Control/CG" unique_id=908285483]
 visible = false
@@ -5216,14 +5608,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_5" unique_id=1163293132]
 layout_mode = 0
-offset_left = 1270.0
+offset_left = 1275.0
 offset_top = 932.0
-offset_right = 1328.0
+offset_right = 1323.0
 offset_bottom = 960.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_6" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1758863711]
 visible = false
@@ -5246,14 +5639,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_6" unique_id=1385541661]
 layout_mode = 0
-offset_left = 1804.0
+offset_left = 1809.0
 offset_top = 879.0
-offset_right = 1862.0
+offset_right = 1857.0
 offset_bottom = 907.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_7" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1344666989]
 visible = false
@@ -5276,14 +5670,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_7" unique_id=1190154978]
 layout_mode = 0
-offset_left = 201.0
+offset_left = 208.0
 offset_top = 941.0
-offset_right = 259.0
+offset_right = 252.0
 offset_bottom = 969.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_8" type="ColorRect" parent="Tutorial/Control/CG" unique_id=299195224]
 visible = false
@@ -5306,14 +5701,15 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_8" unique_id=2022872977]
 layout_mode = 0
-offset_left = 696.0
+offset_left = 702.0
 offset_top = 638.0
-offset_right = 754.0
+offset_right = 748.0
 offset_bottom = 666.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
+horizontal_alignment = 1
 
 [node name="Slide_free3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=2135046791]
 visible = false

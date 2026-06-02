@@ -38,6 +38,9 @@ modulate_color = Color(1.2742168, 1.2742168, 1.2742168, 1)
 texture = ExtResource("4_mvj2t")
 modulate_color = Color(0.59717613, 0.59717613, 0.5971761, 0.7490196)
 
+[sub_resource type="FontVariation" id="FontVariation_smgqm"]
+variation_embolden = 0.5
+
 [sub_resource type="Animation" id="Animation_mvj2t"]
 length = 0.001
 tracks/0/type = "value"
@@ -308,6 +311,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.78431374, 1, 0.83137256, 1)
+theme_override_fonts/bold_font = SubResource("FontVariation_smgqm")
 theme_override_font_sizes/italics_font_size = 14
 bbcode_enabled = true
 text = "Отправь 300 китайцев в закусочную 

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_dtq4s"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="3_3tybw"]
 [ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="3_dtq4s"]
-[ext_resource type="Resource" uid="uid://cr44o6eo2njb1" path="res://resources/Quests/Radio/V.tres" id="4_om6mn"]
 
 [resource]
 script = ExtResource("1_d5mil")
@@ -12,7 +11,6 @@ icon = ExtResource("3_dtq4s")
 quest_name = "Сколько стоит тайна?"
 character_name = "Кэтерин Коллар"
 worker = 4
-done_quest_dependencies = Array[ExtResource("1_d5mil")]([ExtResource("4_om6mn")])
 quest_after = Array[String](["res://resources/Quests/Worker/DO1.tres"])
 text_greetings = "Рада вас снова слышать. Вы приняли [b]однозначно хорошее решение, благодаря вам наш отряд ещё жив. [/b]
 Лидер восстания [b]Арт Белл[/b] был убит во время перестрелки. Все его сообщники либо мертвы, либо под стражей и наблюдением.

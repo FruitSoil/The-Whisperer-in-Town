@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_sbfla"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_ognjr"]
+[ext_resource type="Resource" uid="uid://cu8m5y72r0kuv" path="res://resources/builds_res/Final_Cultistic_Zone.tres" id="3_7y21w"]
 [ext_resource type="Texture2D" uid="uid://c73gowh837g0i" path="res://Images/portairs/Cult_leader.png" id="3_ognjr"]
 
 [resource]
@@ -20,4 +21,5 @@ text_greetings = "Приветствую тебя. Я Джеймс Беккет,
 
 Время закончить этот спектакль. Я же с упоением буду смотреть за твоим падением."
 answer_agree = "Начать финальный Акт"
+building_unlock_res = ExtResource("3_7y21w")
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

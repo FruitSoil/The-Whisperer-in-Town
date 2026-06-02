@@ -92,11 +92,11 @@ func update_icon():
 		3:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/no_new_dialogue.png")
 			$Dialogue_status.show()
-			$Dialogue_status.modulate = Color(1.0, 1.0, 0.647, 1.0)
+			$Dialogue_status/Feedback.modulate = Color(0.843, 0.364, 0.242, 1.0)
 		4:
-			$Dialogue_status.texture = load("res://Images/UI/icons/colored/task_complete.png")
+			$Dialogue_status.texture = load("res://Images/UI/icons/colored/task_complete_2.png")
 			$Dialogue_status.show()
-			$Dialogue_status.modulate = Color("b4ffb8")
+			$Dialogue_status/Feedback.modulate = Color("427f4fff")
 		5:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
