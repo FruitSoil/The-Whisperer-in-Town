@@ -237,6 +237,7 @@ size_flags_vertical = 4
 [node name="Button" type="Button" parent="Zone_quest/MC" unique_id=1773723775]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5647059, 0.8745098, 0.59607846, 1)
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxTexture_px76i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nrcl8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nnva0")

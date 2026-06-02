@@ -2,7 +2,7 @@ extends Control
 
 @onready var desc: RichTextLabel = $"Store_UI/Zones_View/МС/Desc/Desc"
 @onready var drag: TextureRect = $"../PortairDrag"
-
+@onready var blink_rect: TextureRect = $Blink_rect
 
 var quest_panel = preload("res://nodes/UI/quest_panel.tscn")
 
@@ -42,6 +42,8 @@ func _ready() -> void:
 	$"../../PostProcess".show()
 	$"..".show()
 	
+	blink_rect.modulate = Color(0.0, 0.0, 0.0, 0.0)
+	
 	$Store_UI/Build_scroll_list.show()
 	$Store_UI/Zones_View.hide()
 	desc.mouse_entered.connect(desc_quest_enter)
@@ -80,11 +82,18 @@ func _input(event: InputEvent) -> void:
 		demolition_state = false
 		$StateFeedback.tween_hide_anim()
 
+func blink_animation():
+	var twm = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
+	twm.tween_property(blink_rect, "modulate", Color(0.0, 0.0, 0.0, 0.0), 0.1).from(Color(0.011, 0.033, 0.008, 0.831))
+
 func _on_quest_pressed() -> void:
 	if $Quest_UI.visible == false:
 		$Quest_UI.visible = true
 		if $Store_UI.visible == false:
+			blink_rect.modulate = Color(0.0, 0.0, 0.0, 0.0)
 			$"../UI_animator".play("From")
+		else:
+			blink_animation()
 		$Store_UI.visible = false
 		$Panel.visible = true
 	else:
@@ -94,7 +103,10 @@ func _on_store_pressed() -> void:
 	if $Store_UI.visible == false:
 		$Store_UI.visible = true
 		if $Quest_UI.visible == false:
+			blink_rect.modulate = Color(0.0, 0.0, 0.0, 0.0)
 			$"../UI_animator".play("From")
+		else:
+			blink_animation()
 		$Quest_UI.visible = false
 		$Panel.visible = true
 	else:
@@ -102,6 +114,7 @@ func _on_store_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	$"../UI_animator".play("To")
+	blink_rect.modulate = Color(0.0, 0.0, 0.0, 0.0)
 
 func anim_finish(anim_name: StringName) -> void:
 	if anim_name == "To":
@@ -234,10 +247,12 @@ func anim_click():
 		twm.tween_property($"../click","scale", Vector2(0.8,0.8), 0.2).from(Vector2(0.2,0.2))
 
 func _on_buildings_pressed() -> void:
+	blink_animation()
 	$Store_UI/Build_scroll_list.visible = true
 	$Store_UI/Zones_View.visible = false
 
 func _on_zones_pressed() -> void:
+	blink_animation()
 	$Store_UI/Zones_View/MC/Zones/Zone_1.touch()
 	$Store_UI/Build_scroll_list.visible = false
 	$Store_UI/Zones_View.visible = true

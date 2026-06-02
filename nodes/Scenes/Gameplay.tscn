@@ -412,7 +412,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5450000258875
 
 [sub_resource type="FontVariation" id="FontVariation_30cd8"]
-variation_embolden = 0.3
+variation_embolden = 0.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8b8i"]
 
@@ -986,6 +986,15 @@ func press(node: Button):
 		twsr.tween_property(zones, \"self_modulate\", yellow, time)
 		
 "
+
+[sub_resource type="Gradient" id="Gradient_6ngqc"]
+offsets = PackedFloat32Array(0.11878453, 0.839779)
+colors = PackedColorArray(1, 1, 1, 0.3647059, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nciey"]
+gradient = SubResource("Gradient_6ngqc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="GDScript" id="GDScript_tt4qn"]
 resource_name = "IconPanelLogic"
@@ -2705,7 +2714,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3836,6 +3844,15 @@ theme_override_icons/grabber_disabled = ExtResource("36_iketc")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_nbuuu")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_wb2hi")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vcfif")
+
+[node name="Blink_rect" type="TextureRect" parent="HUD/BaseUI" unique_id=906539559]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 555.0
+offset_right = 672.0
+offset_bottom = 967.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_nciey")
 
 [node name="res_panel" type="Control" parent="HUD/BaseUI" unique_id=1458037563]
 layout_mode = 1
