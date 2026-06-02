@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_it6hi"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="3_noiqf"]
 [ext_resource type="Resource" uid="uid://dg6qo056q5p6r" path="res://resources/Quests/Zone_quest/Zone3Quest.tres" id="4_g30w8"]
-[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="4_xi0fm"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/radio_host.PNG" id="4_xi0fm"]
 
 [resource]
 script = ExtResource("1_w2fv2")
@@ -17,11 +17,13 @@ quest_after = Array[String](["res://resources/Quests/Radio/R2.tres"])
 complete_condition = 2
 int_value = 3
 building_type = Array[ExtResource("2_it6hi")]([ExtResource("3_noiqf")])
-text_greetings = "Вечер добрый! На связи Арт Белл, последний радиоведущий Северного континента. С этих пор я буду работать на вас и помогать вам с новой отраслью - \"Высокими технологиями\"! Ты даже представить не можешь, каких высот возможно достичь с их помощью, хах. Предлагаю начать нашу с вами работу. Для начала [b]постройте[/b] [b][color={#FF59CA}]три[/color][/b] [b]района[/b] [b][color={#FF59CA}]I[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Высоких Технологий\"[/color][/b]. Для блаженного старта самое то!"
+text_greetings = "Вечер добрый! На связи Арт Белл, последний радиоведущий Северного континента. С этих пор я буду работать на вас и помогать вам с новой отраслью - [b]\"Высокими технологиями\"[/b]! Ты даже представить не можешь, каких высот возможно достичь с их помощью, хах. Предлагаю начать нашу с вами работу. Для начала [b]постройте[/b] [b][color=#FF59CA]шесть[/color][/b] [b]районов[/b] [b][color=#FF59CA]I[/color][/b] [b]тира[/b] [b][color=#FF59CA]\"Высоких Технологий\"[/color][/b]. Для блаженного старта самое то!"
 answer_agree = "Я построю"
 answer_wait = "Вернусь к этому вопросу позже."
-text_progress = "Жду от тебя приятных вестей! Напоминаю,  каких: нужно [b]построить[/b] [b][color={#FF59CA}]три[/color][/b] [b]района[/b] [b][color={#FF59CA}]I[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Высоких Технологий\".[/color][/b]"
+text_progress = "Жду от тебя приятных вестей! Напоминаю,  каких: нужно [b]построить[/b] [b][color=#FF59CA]шесть[/color][/b] [b]районов[/b] [b][color=#FF59CA]I[/color][/b] [b]тира[/b] [b][color=#FF59CA]\"Высоких Технологий\".[/color][/b]"
 text_finish = "Рад вас снова слышать! До меня дошла информация о вашей маленькой победе! Что ж, не может не радовать. 
 
 Я же смог за это время наладить бесперебойное радиовещание. Люди вновь услышат песнь радиочистот. Очевидно тех, которые вам угодны."
+reward_res_type = 3
+reward_res_count = 1000
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

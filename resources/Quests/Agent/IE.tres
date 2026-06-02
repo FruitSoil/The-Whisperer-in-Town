@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_k5fr1"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_avrjj"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="3_26cks"]
-[ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="3_rfx2l"]
 [ext_resource type="Resource" uid="uid://c00vevr88iiqs" path="res://resources/Quests/Agent/EV1.tres" id="6_m8mar"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_2tqw4"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_2tqw4"]
 
 [resource]
 script = ExtResource("1_k5fr1")
@@ -17,17 +16,17 @@ worker = 4
 done_quest_dependencies = Array[ExtResource("1_k5fr1")]([ExtResource("6_m8mar")])
 quest_after = Array[String](["res://resources/Quests/Agent/EV3.tres"])
 complete_condition = 2
-int_value = 10
-building_type = Array[ExtResource("2_avrjj")]([ExtResource("3_rfx2l"), ExtResource("3_26cks")])
-text_greetings = "Приветствую. План, о котором я вам говорила ранее,  готов. В основном он базируется на перестройке логики поставок и оптимизации часов работы. 
+int_value = 5
+building_type = Array[ExtResource("2_avrjj")]([ExtResource("3_26cks")])
+text_greetings = "Приветствую. План, о котором я вам говорила ранее, готов. В основном он базируется на перестройке логики поставок и оптимизации часов работы. 
 
-Большинство пунктов оттуда я уже реализовала, от вас прошу лишь [b]построить[/b] [b][color={#FF59CA}]пять[/color][/b] [b]районов[/b] [b][color={#FF59CA}]III[/color][/b][b]тира[/b] [b][color={#FF59CA}]\"\"Старых заводов\"\"[/color][/b] и [b][color={#FF59CA}]пять[/color][/b] [b]районов[/b] [b][color={#FF59CA}]III[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"\"Снегонауки\"\"[/color][/b]. Тем самым мы внесём нужную модернизацию. После, со всей реорганизацией, эффективность всего города повысится в разы."
+Большинство пунктов оттуда я уже реализовала, от вас прошу лишь [b]построить[/b] [b][color=#FF59CA]в сумме восемь[/color][/b] [b]районов[/b] [b][color=#FF59CA]III[/color][/b] [b]тира[/b] [b][color=#FF59CA]\"Снегонауки\"[/color][/b]. Тем самым мы внесём нужную модернизацию. После, со всей реорганизацией, эффективность всего города повысится в разы."
 answer_agree = "Я построю."
 answer_wait = "Вернусь к этому вопросу позже."
 answer_reject = "Я не буду строить."
 text_reject = "Я не совсем понимаю причину вашего отказа. Часть моего плана уже исполнена, и без её второй части, вы просто не увидите результат. Но в любом случае, вы принимаете решения."
-text_progress = "Жду пока вы [b]построите[/b] [b][color={#FF59CA}]пять[/color][/b] [b]районов[/b] [b][color={#FF59CA}]III[/color][/b][b]тира[/b] [b][color={#FF59CA}]\"Старых заводов\"[/color][/b] и [b][color={#FF59CA}]пять[/color][/b] [b]районов[/b] [b][color={#FF59CA}]III[/color][/b] [b]тира[/b] [b][color={#FF59CA}]\"Снегонауки\"[/color][/b]. "
-text_finish = "Поздравляю с повышением эффективности вашего города.
+text_progress = "Жду пока вы [b]построите[/b] [b][color=#FF59CA]в сумме восемь[/color][/b] [b]районов[/b] [b][color=#FF59CA]III[/color][/b] [b]тира[/b] [b][color=#FF59CA]\"Снегонауки\"[/color][/b]. "
+text_finish = "Поздравляю с повышением [b]эффективности вашего города[/b].
 
 Также, хоть я и не упоминала об этом в прошлом отчёте, жизнь обычных граждан стала более стабильной и приятной. Я переработала систему часов и рабочих смен так, чтобы создать зацикленный круг. В связи с этим количество часов отдыха выросло,  и это явно пойдёт на пользу."
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

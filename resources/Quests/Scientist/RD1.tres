@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="5_kx7lr"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="6_omjbk"]
 [ext_resource type="Resource" uid="uid://nqt27xgplbot" path="res://resources/Quests/Radio/R2.tres" id="7_7hetg"]
-[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="7_omjbk"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="7_omjbk"]
 [ext_resource type="Resource" uid="uid://fcc6bky83qk1" path="res://resources/Quests/Scientist/EE3.tres" id="8_ccw7g"]
 [ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="10_l8uav"]
 
@@ -28,14 +28,14 @@ int_value = 1
 building_type = Array[ExtResource("2_i574j")]([ExtResource("4_ii8xw"), ExtResource("5_kx7lr"), ExtResource("6_omjbk")])
 worker_type = ExtResource("10_l8uav")
 open_after_accept = true
-text_greetings = "Приветствую.  До меня дошли известия о странном [b]\"\"радиовещании\"\"[/b] из [b]районов \"\"Высоких Технологий\"\"[/b]. Лично я убеждён, что оно как-то связано с [b]инцидентами[/b] в [b]III[/b] тире - [b]\"\"Снегонауки\"\"[/b], хотя бы косвенно. Думаю так, потому что вновь стал получать те же раппорты о странных снах, переменах в настроении и о [b]нечеловеческих песнях[/b], теперь якобы исходящих из выключенного [b]радио[/b] в глубокой ночи.
+text_greetings = "Приветствую.  До меня дошли известия о странном [b]\"радиовещании\"[/b] из [b]районов \"Высоких Технологий\"[/b]. Лично я убеждён, что оно как-то связано с [b]инцидентами[/b] в [b]III[/b] тире - [b]\"Снегонауки\"[/b], хотя бы косвенно. Думаю так, потому что вновь стал получать те же раппорты о странных снах, переменах в настроении и о [b]нечеловеческих песнях[/b], теперь якобы исходящих из выключенного [b]радио[/b] в глубокой ночи.
 
-Я прошу вас [b][color={#FFFF5D}][url=Should]разрешить[/url][/color][/b] и [b][color={#FFFF5D}][url=Throw]отправить[/url][/color][/b] меня в любой из [b][color={#FF59CA}]районов \"\"Высоких Технологий\"\"[/color][/b], чтобы расследовать это дело. У меня есть смутное мнение, что это нечто [b]большее[/b], чем простая случайность или неисправность оборудования. За этим явно стоят люди, не один и не два. "
+Я прошу вас [b][color=#FFFF5D][url=Should]разрешить[/url][/color][/b] и [b][color=#FFFF5D][url=Throw]отправить[/url][/color][/b] меня в любой из [b][color=#FF59CA]районов \"Высоких Технологий\"[/color][/b], чтобы расследовать это дело. У меня есть смутное мнение, что это нечто [b]большее[/b], чем простая случайность или неисправность оборудования. За этим явно стоят люди, не один и не два. "
 answer_agree = "Я разрешаю начать расследования, я отправлю тебя в нужное место."
 answer_wait = "Вернусь к этому вопросу позже."
 answer_reject = "Я отказываюсь."
 text_reject = "Принимаю ваш скептицизм, не буду мешать."
-text_progress = "Жду [b][color={#FFFF5D}][url=Throw]отправки[/url][/color][/b] меня в любой из в [b][color={#FF59CA}]районов \"Высоких технологий\"[/color][/b], там я начну своё расследование. "
+text_progress = "Жду [b][color=#FFFF5D][url=Throw]отправки[/url][/color][/b] меня в любой из в [b][color=#FF59CA]районов \"Высоких технологий\"[/color][/b], там я начну своё расследование. "
 text_finish = "Приветствую. Уведомляю вас о том, что я передислоцировался в нужный [b]район[/b] и уже начал своё расследование. С первого взгляда тяжело что-то сказать, исходя из рапортов и документов - радиостанция в полном порядке и не должна никак сбоить. Но тут явно нужно копать глубже. Мне также довелось беседовать с [b]Артом Беллом[/b]. Я могу описать его как довольно харизматичного и скрытного человека. Очень тяжело выбить из него хотя бы дольку информации.
 
 Пожалуй, на этом пока всё, я продолжу своё расследование. 

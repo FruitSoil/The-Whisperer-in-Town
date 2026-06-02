@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="4_x4ms4"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="5_f6wug"]
 [ext_resource type="Resource" uid="uid://c00vevr88iiqs" path="res://resources/Quests/Agent/EV1.tres" id="6_a6rvy"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_1e7bn"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_1e7bn"]
 [ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="8_8y5qa"]
 
 [resource]
@@ -23,15 +23,17 @@ int_value = 1
 building_type = Array[ExtResource("3_f6wug")]([ExtResource("3_a6rvy"), ExtResource("4_x4ms4"), ExtResource("5_f6wug")])
 worker_type = ExtResource("8_8y5qa")
 open_after_accept = true
-text_greetings = "Приветствую вас вновь. Недавно проверка первой части вашего города была окончена, время перейти ко второй. Подобного хаоса и беспорядка я в ней не ожидаю, но никогда точно не знаешь, где может спрятаться враг [b][color={#FFFF5D}][url=EmpG]Великой Астурской Империи[/url][/color][/b]. [b][color={#FFFF5D}][url=Throw]Отправьте[/url][/color][/b] меня в один из [b][color={#FF59CA}]районов \"Электронауки\"[/color][/b]."
-answer_agree = "Я отправлю вас в район \"\"Снегонауки\"\"."
+text_greetings = "Приветствую вас вновь. Недавно проверка первой части вашего города была окончена, время перейти ко второй. Подобного хаоса и беспорядка я в ней не ожидаю, но никогда точно не знаешь, где может спрятаться враг [b][color=#FFFF5D][url=EmpG]Великой Астурской Империи[/url][/color][/b]. [b][color=#FFFF5D][url=Throw]Отправьте[/url][/color][/b] меня в один из [b][color=#FF59CA]районов \"Электронауки\"[/color][/b]."
+answer_agree = "Я отправлю вас в район \"Снегонауки\"."
 answer_wait = "Вернусь к этому вопросу позже."
 answer_reject = "Я отказываюсь это делать."
-text_reject = "\"Верно, вы вправе мне отказать, но ваши мотивы мне до конца не ясны.
+text_reject = "Верно, вы вправе мне отказать, но ваши мотивы мне до конца не ясны.
 
-До скорых встреч.\""
+До скорых встреч."
 text_progress = "Ожидаю отправку в один из районов \"Снегонауки\"."
-text_finish = "\"Приветствую. Я к вам с отчётами по проверке [b]районов \"\"Снегонауки\"\"[/b]. Как я и думала, сильных нарушений порядка не будет. Лишь немногие рабочие попали под [b]выговоры[/b] и [b]штрафы[/b], но выше минимальных они не были. В этих районах работает достойный [b][color={#FFFF5D}][url=Science]научный коллектив[/url][/color][/b], их дисциплина и сноровка вызывают уважение. Касательно проверки - на этом всё. 
+text_finish = "Приветствую. Я к вам с отчётами по проверке [b]районов \"Снегонауки\"[/b]. Как я и думала, сильных нарушений порядка не будет. Лишь немногие рабочие попали под [b]выговоры[/b] и [b]штрафы[/b], но выше минимальных они не были. В этих районах работает достойный [b][color=#FFFF5D][url=Science]научный коллектив[/url][/color][/b], их дисциплина и сноровка вызывают уважение. Касательно проверки - на этом всё. 
 
-Сейчас я буду составлять планы, основываясь на статистике и данных со всех [b]районов[/b]. С их помощью вы сможете поднять эффективность и общую дисциплину вашего города. На этом я с вами временно прощаюсь. До встречи.\""
+Сейчас я буду составлять планы, основываясь на статистике и данных со всех [b]районов[/b]. С их помощью вы сможете поднять эффективность и общую дисциплину вашего города. На этом я с вами временно прощаюсь. До встречи."
+reward_res_type = 2
+reward_res_count = 5
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

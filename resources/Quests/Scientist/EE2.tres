@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3hu8w"]
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="2_mt68i"]
 [ext_resource type="Resource" uid="uid://cykgmxk0rt487" path="res://resources/Quests/Worker/SI.tres" id="3_mt68i"]
-[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="5_s735l"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="5_s735l"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="6_a2srw"]
 
 [resource]
@@ -16,16 +16,16 @@ worker = 2
 done_quest_dependencies = Array[ExtResource("1_7khax")]([ExtResource("3_mt68i")])
 quest_after = Array[String](["res://resources/Quests/Scientist/EE3.tres"])
 complete_condition = 2
-int_value = 4
+int_value = 6
 building_type = Array[ExtResource("2_3hu8w")]([ExtResource("2_mt68i")])
-text_greetings = "\"Приветствую, я к вам с хорошими вестями. Мы ощутимо продвинулись в работе над чертежами [b]III тира[/b]. Мистер [b]Сэд[/b] нам пособил. С помощью его некоторых идей мы смогли доработать и улучшить инфроструктуру района. Теперь мы близко, как никогда до этого. Но для завершения работы нам требуется больше данных и статистики. 
+text_greetings = "Приветствую, я к вам с хорошими вестями. Мы ощутимо продвинулись в работе над чертежами [b]III тира[/b]. Мистер [b]Сэд[/b] нам пособил. С помощью его некоторых идей мы смогли доработать и улучшить инфроструктуру района. Теперь мы близко, как никогда до этого. Но для завершения работы нам требуется больше данных и статистики. 
 
-В связи с этим вам нужно будет [b]построить[/b] ещё [b][color={#FF59CA}]четыре[/color][/b] [b]здания[/b] [b][color={#FF59CA}]II[/color][/b] [b]тира[/b], кодовое название [b][color={#FFFF5D}][url=Z2D2]\"\"Собиратель Метелей\"\"[/url][/color][/b]. Как только вы закончите, мы сможем завершить производство чертежей и вам будет доступна самая иновационная, на данный момент, разработка в сфере [b]электротехники[/b].\""
+В связи с этим вам нужно будет [b]построить[/b] ещё [b][color=#FF59CA]шесть[/color][/b] [b]здания[/b] [b][color=#FF59CA]II[/color][/b] [b]тира[/b], кодовое название [b][color=#FFFF5D][url=Z2D2]\"Собиратель Метелей\"[/url][/color][/b]. Как только вы закончите, мы сможем завершить производство чертежей и вам будет доступна самая иновационная, на данный момент, разработка в сфере [b]электротехники[/b]."
 answer_agree = "Я займусь строительством."
 answer_wait = "Вернусь к этому позже"
-text_progress = "Напоминаю вам об [b][color={#FFFF5D}][url=Must]указе[/url][/color][/b]. Вам нужно построить [b][color={#FF59CA}]четыре[/color][/b] [b]района[/b] [b][color={#FF59CA}]II[/color][/b] [b]тира[/b], их кодовое [b][color={#FFFF5D}][url=Z2D2]\"Собиратель Метели\"[/url][/color][/b]. Как [b]районы[/b] будут построены, свяжитесь со мной вновь."
-text_finish = "\"Сообщаю вам воодушевляющие новости. Разработка чертежей [b]III тира[/b] официально окончена. На руках мы имеем буквально совершенную технологию. В внутри районе наш коллектив смог наладить производство более [b]сложных компонентов[/b], не снижая общей эффективности выработки самого электричества. 
+text_progress = "Напоминаю вам об [b][color=#FFFF5D][url=Must]указе[/url][/color][/b]. Вам нужно построить [b][color=#FF59CA]шесть[/color][/b] [b]районов[/b] [b][color=#FF59CA]II[/color][/b] [b]тира[/b], их кодовое [b][color=#FFFF5D][url=Z2D2]\"Собиратель Метели\"[/url][/color][/b]. Как [b]районы[/b] будут построены, свяжитесь со мной вновь."
+text_finish = "Сообщаю вам воодушевляющие новости. Разработка чертежей [b]III тира[/b] официально окончена. На руках мы имеем буквально совершенную технологию. В внутри районе наш коллектив смог наладить производство более [b]сложных компонентов[/b], не снижая общей эффективности выработки самого электричества. 
 
-Теперь вы смело можете построить [b]III тир[/b] [b][color={#FFFF5D}][url=SnowSc]Снегонауки[/url][/color][/b], кодовое название: [b]III тир[/b] [b][color={#FFFF5D}][url=Z2D3]\"\"Покоритель вьюг\"\"[/url][/color][/b].\""
+Теперь вы смело можете построить [b]III тир[/b] [b][color=#FFFF5D][url=SnowSc]Снегонауки[/url][/color][/b], кодовое название: [b]III тир[/b] [b][color=#FFFF5D][url=Z2D3]\"Покоритель вьюг\"[/url][/color][/b]."
 building_unlock_res = ExtResource("6_a2srw")
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

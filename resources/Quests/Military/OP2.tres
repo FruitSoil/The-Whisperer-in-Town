@@ -15,12 +15,12 @@ quest_after = Array[String](["res://resources/Quests/Scientist/END-1.tres"])
 complete_condition = 2
 int_value = 8
 building_type = Array[ExtResource("2_iblpl")]([ExtResource("3_wo0a7")])
-text_greetings = "Приём, это сержант-майор Вайс. [b][color={#FFFF5D}][url=Код NStart]Код #4335[/url][/color][/b], проблем и издержек не предвидится.
+text_greetings = "Приём, это сержант-майор Вайс. [b][color=#FFFF5D][url=Код NStart]Код #4335[/url][/color][/b], проблем и издержек не предвидится.
 
-Нужно ещё больше расширить производство, [b]постройте[/b] ещё [b][color={#FF59CA}]8[/color][/b] [b]района[/b] [b][color={#FF59CA}]\"\"Военной Мощи\"\"[/color][/b]. (8 в сумме)"
+Нужно ещё больше расширить производство, [b]постройте[/b] ещё [b][color=#FF59CA]8[/color][/b] [b]района[/b] [b][color=#FF59CA]\"Военной Мощи\"[/color][/b]. (8 в сумме)"
 answer_agree = "Приём. Я построю"
 answer_wait = "Приём. Вернусь к этому вопросу позже."
-text_progress = "Приём. [b][color={#FFFF5D}][url=ZStart]Код #4335 - префикс \"\"Старт 2.0\"\"[/url][/color][/b]
-Ожидаю от вас [b]постройки[/b] ещё [b][color={#FF59CA}]четырёх[/color][/b] [b]районов[/b] [b][color={#FF59CA}]\"\"Военной Мощи\"\"[/color][/b]."
-text_finish = "Приём. Заводы налажены и готовы к бесперебойному производству всего необходимого для реализации плана [b][color={#FFFF5D}][url=Destroy]#Штормовой-Прилив8[/url][/color][/b]."
+text_progress = "Приём. [b][color=#FFFF5D][url=ZStart]Код #4335 - префикс \"Старт 2.0\"[/url][/color][/b]
+Ожидаю от вас [b]постройки[/b] ещё [b][color=#FF59CA]четырёх[/color][/b] [b]районов[/b] [b][color=#FF59CA]\"Военной Мощи\"[/color][/b]."
+text_finish = "Приём. Заводы налажены и готовы к бесперебойному производству всего необходимого для реализации плана [b][color=#FFFF5D][url=Destroy]#Штормовой-Прилив8[/url][/color][/b]."
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

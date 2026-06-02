@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_3xues"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_l1skj"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="3_emkec"]
-[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="5_w37t5"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/radio_host.PNG" id="5_w37t5"]
 
 [resource]
 script = ExtResource("1_3xues")
@@ -20,7 +20,7 @@ text_greetings = "АХХААХХАХ, [b]ИМПЕРКА[/b] ПОПАЛА В НА
 
 Также спешу сообщить о том, что мы значительно преуспеваем в обмане неверующих. Сэд сейчас активно подделывает отчёты TrES, они не скоро заметят подмену. Он же нашёл кое-что интересное в документах Кэтерин - чертежи нового района. 
 
-Нам он очень пригодится. Ну же, теперь ты можешь строить [b][color={#FFFF5D}][url=Z3D3]\"\"Электросхемный квартал\"\"[/url][/color][/b] [b]III[/b] и совершенный [b]тир  \"\"Высоких Технологий\"\"[/b], он же позволит создавать оружия. Пока наша паства не имеет доступа к полномасштабным заводам, это своего рода её лучшее искуплением своих грехов."
+Нам он очень пригодится. Ну же, теперь ты можешь строить [b][color=#FFFF5D][url=Z3D3]\"Электросхемный квартал\"[/url][/color][/b] [b]III[/b] и совершенный [b]тир  \"Высоких Технологий\"[/b], он же позволит создавать оружия. Пока наша паства не имеет доступа к полномасштабным заводам, это своего рода её лучшее искуплением своих грехов."
 answer_agree = "(Дальше)"
 building_unlock_res = ExtResource("3_emkec")
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

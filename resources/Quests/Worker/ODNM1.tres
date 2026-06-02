@@ -30,6 +30,7 @@ answer_agree = "Берусь за дело (Начать квест)"
 answer_wait = "Вернусь к этому вопросу позже"
 text_progress = "Здравствуйте, напоминаю вам об переданном мной [b][color=#FFFF5D][url=Must]указе[/url][/color][/b]. Вам нужно [b]построить[/b] [b][color=#FF59CA]шесть[/color][/b] [b]районов[/b] [b][color=#FF59CA]II[/color][/b] [b]тира[/b]"
 text_finish = "Здравствуйте. Я видел отчёты. Всё идёт неплохо. Покойный [b][color=#FFFF5D][url=Robert]Роберт Гийом[/url][/color][/b] явно на нашей стороне. Позвоните мне ещё раз чуть позже, у меня есть идея, как мы можем значительно ускорить ваше производство."
+reward_res_type = 2
+reward_res_count = 7
 sec_reward_res_type = 2
-sec_reward_res_count = 20
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

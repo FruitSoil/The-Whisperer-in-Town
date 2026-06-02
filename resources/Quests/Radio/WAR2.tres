@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_hp0rd"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_dethu"]
-[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="3_gvnhc"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/radio_host.PNG" id="3_gvnhc"]
 
 [resource]
 script = ExtResource("1_hp0rd")
@@ -16,9 +16,11 @@ text_greetings = "Добрый вечер! Вскоре [b]рассвет[/b] н
 
 Но пока [b]Нъхорфаад[/b] не взошёл в наш бренный мир, о скрытности нам не стоит забывать. Мы с [b]Сэдом[/b] всё ещё активно делаем вид, что мы имперские псы. ИМ не к чему знать всю правду до начала нашего [b]рассвета[/b]!
 
-[b]Откройте[/b] [b][color={#FF59CA}]IV[/color][/b] [b]зону[/b] [b][color={#FF59CA}]\"\"Военная мощь\"\"[/color][/b]. Символ отторжения и [b]лжеимперии[/b]. Но её оружие пригодится нашей пастве в предстоящей борьбе за истину."
+[b]Откройте[/b] [b][color=#FF59CA]IV[/color][/b] [b]зону[/b] [b][color=#FF59CA]\"Военная мощь\"[/color][/b]. Символ отторжения и [b]лжеимперии[/b]. Но её оружие пригодится нашей пастве в предстоящей борьбе за истину."
 answer_agree = "Я сделаю это."
 answer_wait = "Вернусь к этому вопросу позже."
-text_progress = "Наша паства ждёт твой триумф, [b]открой[/b] [b][color={#FF59CA}]IV[/color][/b] [b]зону[/b] [b][color={#FF59CA}]\"Военная мощь\"[/color][/b]"
+text_progress = "Наша паства ждёт твой триумф, [b]открой[/b] [b][color=#FF59CA]IV[/color][/b] [b]зону[/b] [b][color=#FF59CA]\"Военная мощь\"[/color][/b]"
 text_finish = "Час настал, ОН близко!"
+reward_res_type = 4
+reward_res_count = 200
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

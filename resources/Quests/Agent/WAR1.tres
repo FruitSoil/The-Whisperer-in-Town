@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4xn2kpvnsmr8" path="res://other/Scripts/Quest.gd" id="1_bp7vv"]
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_4cwpa"]
 [ext_resource type="Resource" uid="uid://cr44o6eo2njb1" path="res://resources/Quests/Radio/V.tres" id="4_5mv75"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="5_avg8v"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="5_avg8v"]
 
 [resource]
 script = ExtResource("1_bp7vv")
@@ -17,9 +17,11 @@ complete_condition = 6
 int_value = 4
 text_greetings = "Приветствую. Мы всё ближе и ближе к вашей конечной цели. Остаётся лишь подготовить нужные объёмы оружия и снарядов. Перед долгожданным концом этой [b]экспедиции[/b]. 
 
-Откройте [b][color={#FF59CA}]четвёртую[/color][/b] [b]зону [/b] - [b][color={#FF59CA}]\"\"Военная мощь\"\"[/color][/b]. С помощью тамошних заводов мы сможем наладить неплохое производство всего необходимого. Его хватит, чтобы исполнить вашу [b]миссию[/b]."
+Откройте [b][color=#FF59CA]четвёртую[/color][/b] [b]зону [/b] - [b][color=#FF59CA]\"Военная мощь\"[/color][/b]. С помощью тамошних заводов мы сможем наладить неплохое производство всего необходимого. Его хватит, чтобы исполнить вашу [b]миссию[/b]."
 answer_agree = "Будет исполнено."
 answer_wait = "Вернусь к этому вопросу позже."
-text_progress = "Жду [b]открытия[/b] [b][color={#FF59CA}]IV[/color][/b] [b]зоны[/b] [b][color={#FF59CA}]\"Военной мощи\"[/color][/b]. Мы близки к концу."
+text_progress = "Жду [b]открытия[/b] [b][color=#FF59CA]IV[/color][/b] [b]зоны[/b] [b][color=#FF59CA]\"Военной мощи\"[/color][/b]. Мы близки к концу."
 text_finish = "Нам остаётся лишь последний рывок."
+reward_res_type = 4
+reward_res_count = 200
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
