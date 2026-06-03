@@ -28,6 +28,9 @@ func _ready() -> void:
 	update_icon()
 
 func touch():
+	if %BaseUI.building_state:
+		return
+	
 	if appointed == false:
 		if res.is_unique :
 			%BaseUI.switch_to_worker(res)
@@ -45,6 +48,9 @@ func touch():
 				twm.tween_property($Res_label, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 3).from(Color(1.0, 0.0, 0.0, 1.0))
 			
 			%BaseUI.change_label(2, false)
+	else:
+		found_unique_on_building(res)
+		touch()
 
 func change_work_icon(value: bool, given_res: Worker):
 	if given_res == res and res.is_unique:
@@ -96,10 +102,12 @@ func update_icon():
 		3:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/no_new_dialogue.png")
 			$Dialogue_status.show()
+			$Dialogue_status.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			$Dialogue_status/Feedback.modulate = Color(0.843, 0.364, 0.242, 1.0)
 		4:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/task_complete_2.png")
 			$Dialogue_status.show()
+			$Dialogue_status.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			$Dialogue_status/Feedback.modulate = Color("427f4fff")
 		5:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
@@ -141,3 +149,11 @@ func quest(event: InputEvent):
 func get_dialogue():
 		%Dialogue.worker_panel = self
 		%Dialogue.open_window(quest_res)
+
+func found_unique_on_building(worker: Worker = res):
+	if !worker.is_unique:
+		return ##Если обычный работник выбран как ресурс то удалятся ВСЕ обычные работники
+	
+	for i in Global.total_work_on_build:
+		if i.worker == worker:
+			get_tree().call_group("cell", "distance_disappoint", worker)

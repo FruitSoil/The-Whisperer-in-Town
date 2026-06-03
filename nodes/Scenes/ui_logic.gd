@@ -395,17 +395,16 @@ func slider_mouse(is_store: bool, event: InputEvent):
 		slider.value -= speed
 
 func _on_demolition_toggled() -> void:
-	if worker_state and building_state:
+	if worker_state or building_state:
 		return
 	
 	if demolition_state:
 		demolition_state = false
-		$StateFeedback.change_state(2,false)
+		$StateFeedback.tween_hide_anim()
 	else:
 		demolition_state = true
+	
 	get_tree().call_group("cell","toggle_lines", true)
-	building_state = false
-	worker_state = false
 
 func desc_quest_exited():
 	desc.add_theme_color_override("default_color",Color("b5d4b5"))
@@ -423,3 +422,9 @@ func erase_quest(quest_res: Quest):
 	for i in children:
 		if i.quest_res == quest_res:
 			i.kill_anim()
+
+func change_quest(quest_res: Quest):
+	var children = $"Quest_UI/Quest_scroll_list/VBС".get_children()
+	for i in children:
+		if i.quest_res == quest_res:
+			i.quest_desc.text = quest_res.text_progress

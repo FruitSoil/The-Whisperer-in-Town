@@ -49,9 +49,9 @@ func update():
 			3:
 				$Tier.text = "Тир |||"
 			4:
-				$Tier.text = "[img=24]res://Images/Resources_icons/actual/imperial_res_icon.png[/img]"
+				$Tier.text = "[img=36]res://Images/Resources_icons/actual/imperial_res_icon.png[/img]"
 			5:
-				$Tier.text = "[img=24]res://Images/Resources_icons/actual/cultistic_res_icon.png[/img]"
+				$Tier.text = "[img=30]res://Images/Resources_icons/actual/cultistic_res_icon.png[/img]"
 
 func _on_buy_pressed() -> void:
 	if is_open:

@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cdptpmtj4u2bi" path="res://Audio/UI/S_MainMenu_Button_Hovered.wav" id="17_yb0cu"]
 [ext_resource type="AudioStream" uid="uid://bfs40byrardyq" path="res://Audio/UI/S_PC_ButtonHowered.mp3" id="19_5cxft"]
 [ext_resource type="AudioStream" uid="uid://drnll0ges53x7" path="res://Audio/Ambient/S_OfficeAmbience.mp3" id="19_a3hvd"]
+[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="22_1oi8o"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -308,6 +309,41 @@ modulate_color = Color(1, 1, 1, 0.6039216)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hs0dn"]
 texture = SubResource("GradientTexture2D_jykia")
 modulate_color = Color(1, 1, 1, 0.6039216)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cxft"]
+texture = ExtResource("7_vdg37")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hvhj"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(0.60932976, 0.60933024, 0.60932994, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72mix"]
+texture = ExtResource("7_vdg37")
+modulate_color = Color(1.1755697, 1.1755697, 1.1755697, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hvhj"]
+shader = ExtResource("22_1oi8o")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.06800000323
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 46.4050022042375
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.002000000095
+shader_parameter/noise_opacity = 0.0410000019475
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.030000001425
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
 
 [node name="Main_menu" type="Node2D" unique_id=1755182682]
 script = ExtResource("1_06vvd")
@@ -665,8 +701,131 @@ volume_db = -80.0
 autoplay = true
 bus = &"SFX"
 
+[node name="Authors" type="CanvasLayer" parent="." unique_id=968075119]
+layer = 3
+
+[node name="ColorBG" type="ColorRect" parent="Authors" unique_id=1246924011]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.56078434)
+
+[node name="Title" type="Label" parent="Authors" unique_id=1705854718]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -295.0
+offset_right = 393.5
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Авторы"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="Authors" unique_id=1729536616]
+z_index = 1
+offset_left = 1522.0
+offset_top = 199.0
+offset_right = 1691.05
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_5cxft")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0hvhj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_72mix")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5cxft")
+theme_override_styles/focus = SubResource("StyleBoxTexture_5cxft")
+icon = ExtResource("6_bg4m6")
+icon_alignment = 1
+
+[node name="Panel" type="NinePatchRect" parent="Authors" unique_id=1354801840]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -766.0
+offset_top = -317.0
+offset_right = 705.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vdg37")
+patch_margin_left = 114
+patch_margin_top = 149
+patch_margin_right = 114
+patch_margin_bottom = 149
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="HBC" type="HBoxContainer" parent="Authors" unique_id=1486317802]
+offset_left = 255.0
+offset_top = 372.0
+offset_right = 1625.0
+offset_bottom = 456.0
+theme_override_constants/separation = 245
+alignment = 1
+
+[node name="tit" type="Label" parent="Authors/HBC" unique_id=1677219769]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Арт"
+vertical_alignment = 1
+
+[node name="tit2" type="Label" parent="Authors/HBC" unique_id=1579867410]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Гд"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tit3" type="Label" parent="Authors/HBC" unique_id=1091160497]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
+theme_override_font_sizes/font_size = 84
+text = "Разработка"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Authors" unique_id=235096755]
+z_index = 2
+position = Vector2(-314, 25)
+copy_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Authors" unique_id=1587902632]
+z_index = 2
+material = SubResource("ShaderMaterial_0hvhj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -27.0
+offset_right = 23.0
+offset_bottom = 26.561157
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="animation_finished" from="Fade/Fade" to="." method="_on_fade_anim"]
 [connection signal="pressed" from="Menu/Control/Button" to="Menu" method="_on_button_pressed"]
 [connection signal="pressed" from="Menu/Continue" to="Menu" method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu/Settings" to="Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/Start" to="Menu" method="_on_exit_to_main_pressed"]
+[connection signal="pressed" from="Authors/Exit" to="." method="_on_exit_pressed"]

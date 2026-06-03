@@ -343,3 +343,7 @@ func dis(value: bool) -> void:
 	if has_meta("do_not_disable_on_tutor") and get_meta("do_not_disable_on_tutor") == true:
 		return
 	$Collision.disabled = value
+
+func distance_disappoint(worker: Worker):
+	if worker == current_worker:
+		disappoint()

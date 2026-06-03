@@ -104,9 +104,12 @@ func answer(ID: int):
 			if worker_panel.quest_stage == 1 or worker_panel.quest_stage == 5:
 				if res == ADMIN_EV2_2:
 					close_window()
+					await get_tree().create_timer(0.1).timeout
 					%worker3.quest_res = EV_2
 					%worker3.quest_stage = 3
 					%worker3.can_be_placed = true
+					%BaseUI.add_quest(EV_2,%worker3)
+					await get_tree().create_timer(0.1).timeout
 					%worker3.update_icon()
 				elif res == V:
 					verdict_logic(true)
@@ -121,6 +124,7 @@ func answer(ID: int):
 					worker_panel.quest_res = null
 					worker_panel.quest_stage = 0
 					worker_panel.update_icon()
+					%BaseUI.change_quest(res)
 					return
 				
 				close_window()
@@ -244,11 +248,13 @@ func verdict_logic(is_art_bell: bool):
 	res_panel.verdict_change_side(is_art_bell)
 	if is_art_bell:
 		print("art selected")
+		%worker3.found_unique_on_building()
 		%worker3.is_open = false
 		%worker3.update_icon()
 		%QuestLogic.ql_wait_to_next(4,art,art.worker)
 	else:
 		print("keterin selected")
+		%worker4.found_unique_on_building()
 		%worker4.is_open = false
 		%worker4.update_icon()
 		%QuestLogic.ql_wait_to_next(4,keterin,keterin.worker)

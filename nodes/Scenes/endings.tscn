@@ -345,16 +345,16 @@ anchor_bottom = 1.0
 offset_left = -899.0
 offset_top = -274.0
 offset_right = 899.0
-offset_bottom = -47.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/normal_font_size = 52
-theme_override_font_sizes/bold_font_size = 52
-theme_override_font_sizes/bold_italics_font_size = 52
-theme_override_font_sizes/italics_font_size = 52
-theme_override_font_sizes/mono_font_size = 52
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
 bbcode_enabled = true
-text = "ТУТ БУДЕТ ТЕКСТ КОНЦОВКИ, ТЫ ТАКОЙ ТИПО ЧИТАЕШЬ, ЖЕСТЬ КАПЕЦ ПОНИМАЕШЬ ЧТО ПОИГРАЛ НЕ ЗРЯ И ЖЕСТКО СТАВИШЬ НАМ 5 ЗВЕЗД НА ИТЧЕ И ПРОСИШЬ СТИМ ВЕРСИЮ, ПОСЛЕ ЧЕГО КОГДА МЫ ЕЁ ПУБЛИКУЕМ - ПОКУПАЕШЬ"
+text = "ТУТ БУДЕТ ТЕКСТ КОНЦОВКИ, ТЫ ТАКОЙ ТИПО ЧИТАЕШЬ, ЖЕСТЬ КАПЕЦ ПОНИМАЕШЬ ЧТО ПОИГРАЛ НЕ ЗРЯ И ЖЕСТКО СТАВИШЬ НАМ 5 ЗВЕЗД НА ИТЧЕ И ПРОСИШЬ СТИМ ВЕРСИЮ, ПОСЛЕ ЧЕГО КОГДА МЫ ЕЁ ПУБЛИКУЕМ - ПОКУПАЕШЬ, йоу"
 
 [node name="ToMenuButton" type="Button" parent="CanvasLayer" unique_id=2120175324]
 offset_left = 1624.0

@@ -129,4 +129,3 @@ func ShowPopup(meta:String):
 		"CuPower":
 			tag_name.text = "Культистская Мощь"
 			description.text = "Мощь почитания Великого Нъхорфаада."
-			%Popup.hide()

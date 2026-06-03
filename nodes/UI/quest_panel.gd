@@ -3,6 +3,7 @@ class_name  QuestPanel
 
 @onready var button: Button = $Quest/MC/Button
 @onready var button_zone: Button = $Zone_quest/MC/Button
+@onready var quest_desc: RichTextLabel = $Quest/VBoxContainer/Quest_desc
 
 @export_category("zone_quest")
 @export var is_next_zone_quest: bool = false
