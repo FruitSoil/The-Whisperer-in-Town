@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cdptpmtj4u2bi" path="res://Audio/UI/S_MainMenu_Button_Hovered.wav" id="17_yb0cu"]
 [ext_resource type="AudioStream" uid="uid://bfs40byrardyq" path="res://Audio/UI/S_PC_ButtonHowered.mp3" id="19_5cxft"]
 [ext_resource type="AudioStream" uid="uid://drnll0ges53x7" path="res://Audio/Ambient/S_OfficeAmbience.mp3" id="19_a3hvd"]
+[ext_resource type="AudioStream" uid="uid://bolwixm45ybc3" path="res://Audio/UI/S_PanelButton_Click.ogg" id="20_0hvhj"]
 [ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="22_1oi8o"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
@@ -675,32 +676,6 @@ text = "The Whisperer in Town"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_hovered" type="AudioStreamPlayer" parent="." unique_id=1592374955]
-stream = ExtResource("17_yb0cu")
-volume_db = -15.0
-pitch_scale = 0.8
-max_polyphony = 3
-bus = &"UI"
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=423295432]
-stream = ExtResource("17_d4pqi")
-volume_db = -80.0
-autoplay = true
-bus = &"Music"
-
-[node name="PC_hovered" type="AudioStreamPlayer" parent="." unique_id=139830163]
-stream = ExtResource("19_5cxft")
-volume_db = -10.0
-pitch_scale = 0.9
-max_polyphony = 3
-bus = &"UI"
-
-[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=1964715724]
-stream = ExtResource("19_a3hvd")
-volume_db = -80.0
-autoplay = true
-bus = &"SFX"
-
 [node name="Authors" type="CanvasLayer" parent="." unique_id=968075119]
 layer = 3
 
@@ -822,6 +797,38 @@ offset_bottom = 26.561157
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Button_hovered" type="AudioStreamPlayer" parent="." unique_id=1592374955]
+stream = ExtResource("17_yb0cu")
+volume_db = -15.0
+pitch_scale = 0.8
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Button_click" type="AudioStreamPlayer" parent="." unique_id=669134164]
+stream = ExtResource("20_0hvhj")
+volume_db = -15.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=423295432]
+stream = ExtResource("17_d4pqi")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+
+[node name="PC_hovered" type="AudioStreamPlayer" parent="." unique_id=139830163]
+stream = ExtResource("19_5cxft")
+volume_db = -20.0
+pitch_scale = 0.9
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=1964715724]
+stream = ExtResource("19_a3hvd")
+volume_db = -80.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="animation_finished" from="Fade/Fade" to="." method="_on_fade_anim"]
 [connection signal="pressed" from="Menu/Control/Button" to="Menu" method="_on_button_pressed"]

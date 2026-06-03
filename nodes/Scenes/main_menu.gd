@@ -26,6 +26,7 @@ func _ready() -> void:
 	$Fade/Fade.play("Fade_in")
 
 func pressed(ID: int ):
+	$Button_click.play()
 	match ID:
 		1:
 			$Fade/Fade.play("Fade_out")

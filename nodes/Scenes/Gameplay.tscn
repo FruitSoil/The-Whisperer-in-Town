@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://c62ur210wpk5h" path="res://nodes/Scenes/tutorial.gd" id="2_tbnlw"]
 [ext_resource type="AudioStream" uid="uid://76ewrc2rby4w" path="res://Audio/UI/S_CameraWheelScroll.mp3" id="2_xxqh0"]
 [ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_tbnlw"]
+[ext_resource type="AudioStream" uid="uid://c75sfhgy5ld3e" path="res://Audio/Ambient/S_MountainAmbience.mp3" id="3_xde1d"]
 [ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="4_2ho68"]
+[ext_resource type="AudioStream" uid="uid://on4chhtbqguu" path="res://Audio/UI/S_DialogeOpen.mp3" id="4_po80s"]
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="5_r6jij"]
 [ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="6_86tqs"]
 [ext_resource type="Texture2D" uid="uid://cucf1b2i6waim" path="res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png" id="7_exte1"]
@@ -102,6 +104,7 @@
 [ext_resource type="Script" uid="uid://c4wewpn2m5pyp" path="res://nodes/Scenes/camera.gd" id="81_702ju"]
 [ext_resource type="Shader" uid="uid://b6hlxwqqwcj0u" path="res://other/Shaders/Outline.gdshader" id="82_bppva"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="83_olxs2"]
+[ext_resource type="AudioStream" uid="uid://cgk46rsdptwsc" path="res://Audio/UI/S_RingPhone.mp3" id="84_po80s"]
 [ext_resource type="Material" uid="uid://dt06t43dmljfk" path="res://Images/FloorMaterial/M_Floor2.tres" id="84_yr0fy"]
 [ext_resource type="PackedScene" uid="uid://bxmntp2n5arku" path="res://nodes/cell.tscn" id="85_wrv0s"]
 [ext_resource type="Resource" uid="uid://cm6r5ofrc0a8" path="res://resources/builds_res/Abandoned_District.tres" id="86_syr28"]
@@ -110,6 +113,7 @@
 [ext_resource type="PackedScene" uid="uid://beftxo2do25ae" path="res://Buildings/terrain1/hill_2.tscn" id="89_7forp"]
 [ext_resource type="PackedScene" uid="uid://dkugkuulvh185" path="res://Buildings/terrain1/hill_3.tscn" id="90_w45vw"]
 [ext_resource type="Script" uid="uid://b1et007hiphlj" path="res://nodes/Scenes/hill_demolition.gd" id="92_w45vw"]
+[ext_resource type="AudioStream" uid="uid://7n7j2ilbjk45" path="res://Audio/UI/S_OpenMagazineQuests.mp3" id="95_77y48"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -417,6 +421,33 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1175, 215), Vector2(1983.43, 215)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Audio/Dialogue_open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.084,
+"stream": ExtResource("4_po80s")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Audio/Dialogue_open:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
 
 [sub_resource type="Animation" id="Animation_ps3nt"]
 length = 0.001
@@ -431,6 +462,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1177, 215)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Audio/Dialogue_open:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_n00c2"]
@@ -447,6 +490,33 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.29730183, 1),
 "update": 0,
 "values": [Vector2(2000, 215.11), Vector2(1175, 215)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Audio/Dialogue_open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.084,
+"stream": ExtResource("4_po80s")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Audio/Dialogue_open:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n00c2"]
@@ -1461,6 +1531,33 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 748), Vector2(0, -2)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Audio/Menus_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.1461,
+"stream": ExtResource("95_77y48")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Audio/Menus_open:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_vlsf6"]
 length = 0.001
@@ -1500,10 +1597,22 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, -2)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Audio/Menus_open:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_7yne8"]
 resource_name = "To"
-length = 0.21
+length = 0.43
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1539,6 +1648,33 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1.8025005, 0.15932015),
 "update": 0,
 "values": [Vector2(0, -2), Vector2(0, 748)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Audio/Menus_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.1257,
+"start_offset": 0.1461,
+"stream": ExtResource("95_77y48")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Audio/Menus_open:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6p561"]
@@ -1860,6 +1996,22 @@ bus = &"UI"
 [node name="OffsetTime" type="Timer" parent="Audio/CameraZoom" unique_id=1866913270]
 wait_time = 0.06
 autostart = true
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Audio" unique_id=945917017]
+stream = ExtResource("3_xde1d")
+volume_db = -22.0
+autoplay = true
+bus = &"Ambient"
+
+[node name="Menus_open" type="AudioStreamPlayer" parent="Audio" unique_id=128996810]
+process_mode = 3
+volume_db = -8.0
+bus = &"UI"
+
+[node name="Dialogue_open" type="AudioStreamPlayer" parent="Audio" unique_id=333916644]
+process_mode = 3
+volume_db = -6.0
+bus = &"UI"
 
 [node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
 unique_name_in_owner = true
@@ -2196,7 +2348,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -743.0
 offset_top = 215.0
-offset_right = -176.99976
+offset_right = -176.99988
 offset_bottom = 866.8114
 grow_horizontal = 0
 mouse_filter = 2
@@ -4390,6 +4542,13 @@ texture = SubResource("GradientTexture1D_13ugf")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/Default_worker" unique_id=1099121352]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
+
 [node name="ScrollContainer" type="VBoxContainer" parent="HUD/BaseUI/workers_panel" unique_id=1065811094]
 layout_direction = 3
 layout_mode = 1
@@ -4519,6 +4678,13 @@ script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=280219950]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
+
 [node name="worker" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=990085711 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -4630,6 +4796,13 @@ script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=384490965]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
+
 [node name="worker2" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=2104168252 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -4737,6 +4910,13 @@ texture = SubResource("GradientTexture2D_3obll")
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1452380036]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
 
 [node name="worker3" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=70447005 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -4846,6 +5026,13 @@ script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=279967806]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
+
 [node name="worker4" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=177018280 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -4953,6 +5140,13 @@ texture = SubResource("GradientTexture2D_3obll")
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=953538341]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
 
 [node name="worker5" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1299633202 groups=["Work_panels"]]
 unique_name_in_owner = true
@@ -5062,6 +5256,13 @@ script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=37431763]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
+
 [node name="worker6" type="Button" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC" unique_id=1925406363 groups=["Work_panels"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
@@ -5169,6 +5370,13 @@ texture = SubResource("GradientTexture2D_3obll")
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1105287335]
+process_mode = 3
+stream = ExtResource("84_po80s")
+volume_db = -12.0
+pitch_scale = 0.88
+bus = &"UI"
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD/BaseUI/workers_panel" unique_id=654250700]
 copy_mode = 2
@@ -5892,7 +6100,7 @@ color_ramp = SubResource("Gradient_x1san")
 color_initial_ramp = SubResource("Gradient_yssgo")
 
 [node name="Clouds" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1828890602]
-transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 24.508427, -50)
+transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 29.588749, -50)
 layers = 4
 amount = 200
 lifetime = 40.0
@@ -5900,7 +6108,7 @@ preprocess = 40.0
 speed_scale = 0.1
 mesh = SubResource("SphereMesh_xegqy")
 emission_shape = 3
-emission_box_extents = Vector3(40, 0.15, 1)
+emission_box_extents = Vector3(40, 10, 1)
 direction = Vector3(0, 0, 1)
 spread = 28.84
 flatness = 1.0

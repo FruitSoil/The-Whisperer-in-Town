@@ -18,6 +18,8 @@ var icons_pool: Array[Texture] = [
 var quest_res: Quest
 var quest_stage: int = 0
 
+@onready var ring: AudioStreamPlayer = $Ring
+
 
 func _ready() -> void:
 	if res.is_unique == false:
@@ -93,32 +95,40 @@ func update_icon():
 			twm.tween_property($Dialogue_status,"modulate", Color(0.753, 1.0, 1.0, 1.0), 0.5)
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
+			play_ring_ring()
 			await get_tree().create_timer(6).timeout
 			icon_shake()
 			await get_tree().create_timer(10).timeout
 			icon_shake()
 		2:
 			$Dialogue_status.hide()
+			ring.stop()
 		3:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/no_new_dialogue.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			$Dialogue_status/Feedback.modulate = Color(0.843, 0.364, 0.242, 1.0)
+			ring.stop()
 		4:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/task_complete_2.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			$Dialogue_status/Feedback.modulate = Color("427f4fff")
+			ring.stop()
 		5:
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color(0.753, 1.0, 1.0, 1.0)
+			ring.stop()
 		0:
 			var twm = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 			twm.tween_property($Dialogue_status,"modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
 			await get_tree().create_timer(0.6).timeout
 			$Dialogue_status.hide()
-	
+
+func play_ring_ring():
+	if !ring.playing:
+		ring.play()
 
 func icon_shake():
 	if quest_stage == 1 or quest_stage == 5:
@@ -145,6 +155,7 @@ func add_quest(qst: Quest):
 func quest(event: InputEvent):
 	if event.is_action_released("displace") and quest_res != null:
 		get_dialogue()
+		ring.stop()
 
 func get_dialogue():
 		%Dialogue.worker_panel = self
