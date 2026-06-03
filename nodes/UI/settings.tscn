@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="3_dtv7d"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="4_dtv7d"]
 [ext_resource type="Texture2D" uid="uid://dkb86l6s7x11g" path="res://Images/UI/icons/colored/icon_npc.png" id="5_irbvc"]
+[ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="6_irbvc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irbvc"]
 texture = ExtResource("2_p8sls")
@@ -37,6 +38,30 @@ texture = ExtResource("5_irbvc")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03xf7"]
 texture = ExtResource("4_dtv7d")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o6kg"]
+shader = ExtResource("6_irbvc")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.06800000323
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 46.4050022042375
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.002000000095
+shader_parameter/noise_opacity = 0.0410000019475
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.030000001425
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
 
 [node name="Settings" type="CanvasLayer" unique_id=773059752]
 process_mode = 3
@@ -295,3 +320,22 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_dtv7d")
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "По умолчанию"
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1931889787]
+z_index = 2
+position = Vector2(-314, 25)
+copy_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1866775175]
+z_index = 2
+material = SubResource("ShaderMaterial_0o6kg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -27.0
+offset_right = 23.0
+offset_bottom = 26.561157
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

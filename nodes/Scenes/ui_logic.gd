@@ -10,18 +10,27 @@ var building_state: bool = false:
 	set(value):
 		building_state = value
 		$StateFeedback.change_state(1,value)
+		if value:
+			worker_state = false
+			demolition_state = false
 
 var selected_build: Building = null
 var worker_state: bool = false:
 	set(value):
 		worker_state = value
 		$StateFeedback.change_state(2,value)
+		if value:
+			building_state = false
+			demolition_state = false
 
 var selected_worker: Worker = null
 var demolition_state: bool = false:
 	set(value):
 		demolition_state = value
 		$StateFeedback.change_state(3,value)
+		if value:
+			building_state = false
+			worker_state = false
 
 var chance: int = 0
 var selected_zone: Zone
@@ -87,6 +96,9 @@ func blink_animation():
 	twm.tween_property(blink_rect, "modulate", Color(0.0, 0.0, 0.0, 0.0), 0.1).from(Color(0.011, 0.033, 0.008, 0.831))
 
 func _on_quest_pressed() -> void:
+	if worker_state or demolition_state or building_state:
+		return
+	
 	if $Quest_UI.visible == false:
 		$Quest_UI.visible = true
 		if $Store_UI.visible == false:
@@ -100,6 +112,9 @@ func _on_quest_pressed() -> void:
 		_on_exit_pressed()
 
 func _on_store_pressed() -> void:
+	if worker_state or demolition_state or building_state:
+		return
+	
 	if $Store_UI.visible == false:
 		$Store_UI.visible = true
 		if $Quest_UI.visible == false:
@@ -380,8 +395,15 @@ func slider_mouse(is_store: bool, event: InputEvent):
 		slider.value -= speed
 
 func _on_demolition_toggled() -> void:
+	if worker_state and building_state:
+		return
+	
+	if demolition_state:
+		demolition_state = false
+		$StateFeedback.change_state(2,false)
+	else:
+		demolition_state = true
 	get_tree().call_group("cell","toggle_lines", true)
-	demolition_state = true
 	building_state = false
 	worker_state = false
 
