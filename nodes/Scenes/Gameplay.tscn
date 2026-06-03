@@ -1038,10 +1038,12 @@ func update_progress():
 func check_ending():
 	if imperial_progress.value >= 100:
 		Global.is_current_ending_imper = true
+		Global.is_ending = true
 		$\"../../../Fade/Fade\".play(\"Fade_out\")
 
 	if cultistic_progress.value >= 100:
 		Global.is_current_ending_imper = false
+		Global.is_ending = true
 		$\"../../../Fade/Fade\".play(\"Fade_out\")
 "
 
@@ -1595,8 +1597,6 @@ texture = SubResource("GradientTexture2D_2ho68")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbnlw"]
 shader = ExtResource("80_tbnlw")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6jij"]
-
 [sub_resource type="GDScript" id="GDScript_xegqy"]
 resource_name = "TutorSlider"
 script/source = "extends Control
@@ -1612,6 +1612,24 @@ func _on_gui_input(event: InputEvent) -> void:
 		scroll_line = clamp(scroll_line+1, 0,rich_text_label.get_line_count())
 		rich_text_label.scroll_to_line(scroll_line)
 "
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt4qn"]
+texture = ExtResource("14_yssgo")
+modulate_color = Color(1.3792288, 1.9754877, 1.341491, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ngqc"]
+texture = ExtResource("14_yssgo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xde1d"]
+texture = ExtResource("14_yssgo")
+modulate_color = Color(2.1352699, 3.045841, 2.0776389, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_po80s"]
+texture = ExtResource("14_yssgo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72u36"]
+texture = ExtResource("14_yssgo")
+modulate_color = Color(1.3792288, 1.9754877, 1.341491, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ha1fh"]
 shader = ExtResource("79_kxjjv")
@@ -2827,7 +2845,6 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
-visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -3122,6 +3139,7 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -5533,24 +5551,15 @@ offset_bottom = 825.1611
 
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_2" unique_id=1069642484]
 layout_mode = 0
-offset_left = 1402.0
-offset_top = 948.0
-offset_right = 1449.0
-offset_bottom = 976.0
+offset_left = 1394.0
+offset_top = 852.0
+offset_right = 1441.0
+offset_bottom = 880.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 horizontal_alignment = 1
-
-[node name="Touch1" type="Button" parent="Tutorial/Control/CG/Slide_2" unique_id=1409544851]
-material = SubResource("ShaderMaterial_2ho68")
-layout_mode = 0
-offset_left = 1156.0
-offset_top = 792.0
-offset_right = 1668.0
-offset_bottom = 936.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_r6jij")
 
 [node name="SliderTutor" type="Control" parent="Tutorial/Control/CG/Slide_2" unique_id=201882325]
 anchors_preset = 0
@@ -5559,6 +5568,23 @@ offset_top = 588.0
 offset_right = 1717.0
 offset_bottom = 778.0
 script = SubResource("GDScript_xegqy")
+
+[node name="Touch1" type="Button" parent="Tutorial/Control/CG/Slide_2" unique_id=1611153478]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 802.0
+offset_right = 1657.0
+offset_bottom = 844.0
+theme_override_colors/font_color = Color(0.8784314, 1, 0.88235295, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_id8pd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wo272")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jt5n7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qdenm")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yxe1l")
+text = "Продолжить"
+autowrap_mode = 3
 
 [node name="Slide_3" type="ColorRect" parent="Tutorial/Control/CG" unique_id=1058855305]
 visible = false
@@ -5592,35 +5618,65 @@ text = "ЛКМ"
 horizontal_alignment = 1
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
-visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
 
-[node name="Touch3" type="Button" parent="Tutorial/Control/CG/Slide_4" unique_id=731559349]
-material = SubResource("ShaderMaterial_2ho68")
-layout_mode = 0
-offset_left = 530.46094
-offset_top = 629.0
-offset_right = 715.0703
-offset_bottom = 799.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_r6jij")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_r6jij")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r6jij")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_r6jij")
-theme_override_styles/focus = SubResource("StyleBoxTexture_r6jij")
-
 [node name="Label" type="Label" parent="Tutorial/Control/CG/Slide_4" unique_id=1386179205]
 layout_mode = 0
-offset_left = 714.0
+offset_left = 682.0
 offset_top = 699.0
-offset_right = 759.0
+offset_right = 727.0
 offset_bottom = 727.0
 theme_override_colors/font_color = Color(0.675532, 0.99999994, 0.6671842, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ukgp")
 text = "ЛКМ"
 horizontal_alignment = 1
+
+[node name="Touch3" type="Button" parent="Tutorial/Control/CG/Slide_4" unique_id=1690877585]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 573.0
+offset_top = 654.0
+offset_right = 666.0
+offset_bottom = 774.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_tt4qn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6ngqc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xde1d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_po80s")
+theme_override_styles/focus = SubResource("StyleBoxTexture_72u36")
+
+[node name="CompJuice" type="Node" parent="Tutorial/Control/CG/Slide_4/Touch3" unique_id=380070515]
+script = ExtResource("65_hwrqn")
+scale_value = Vector2(1.05, 1.05)
+small_scale_value = Vector2(1.015, 1.015)
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Res_label" type="Label" parent="Tutorial/Control/CG/Slide_4/Touch3" unique_id=1541825637]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 59.0
+offset_right = 80.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("59_pt2su")
+theme_override_font_sizes/font_size = 20
+text = "120"
+
+[node name="Res_icon" type="TextureRect" parent="Tutorial/Control/CG/Slide_4/Touch3" unique_id=1019640763]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 59.0
+offset_right = 42.0
+offset_bottom = 83.0
+mouse_filter = 2
+texture = ExtResource("43_dweyv")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Slide_5" type="ColorRect" parent="Tutorial/Control/CG" unique_id=908285483]
 visible = false

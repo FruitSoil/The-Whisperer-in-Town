@@ -32,7 +32,8 @@ var is_zone_3_open:bool = false
 var is_zone_4_open:bool = false
 var is_zone_5_open:bool = false
 
-var is_current_ending_imper: bool = false
+var is_ending: bool = false
+var is_current_ending_imper: bool 
 
 enum res_types {
 	rusted = 0, ##Ржавая жесть, ресурс первой зоны. Получается со зданий. Нужен для постройки районов
