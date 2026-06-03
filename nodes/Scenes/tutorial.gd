@@ -61,8 +61,11 @@ func stage_change(stage: int = tutorial_stage):
 			twmf($Control/CG/Slide_3,1)
 		4:
 			$Control/CG/Slide_4.show()
+			$Control/CG/Slide_4/Touch3.hide()
 			twmf($Control/CG/Slide_4,2)
 			twmf($Control/CG/Slide_4/Label,2)
+			await get_tree().create_timer(0.57).timeout
+			$Control/CG/Slide_4/Touch3.show()
 		-1:
 			twmf($"../HUD/Arrow",2)
 			$"../HUD/Arrow".show()
@@ -161,7 +164,7 @@ func pressed(ID: int):
 			stage_change(7)
 			twmf($Control/CG/Slide_6,1,false)
 			twmf($Control/CG/Slide_6/Label,0.5,false)
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(0.7).timeout
 			$Control/CG/Slide_6.hide()
 		7:
 			$"../HUD/Arrow3".hide()
