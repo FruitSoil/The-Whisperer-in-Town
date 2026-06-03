@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_lwt31")
 res_type = 4
-res_count_per_timer = 10
+res_count_per_timer = 4
 res_count_per_click = Vector2i(16, 16)
 res_timer = 3.0
 model = ExtResource("1_di7lq")

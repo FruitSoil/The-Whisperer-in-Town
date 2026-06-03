@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_avrjj"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="3_26cks"]
 [ext_resource type="Resource" uid="uid://c00vevr88iiqs" path="res://resources/Quests/Agent/EV1.tres" id="6_m8mar"]
+[ext_resource type="Resource" uid="uid://cvcjepeb83vim" path="res://resources/Zones/Zone_2.tres" id="6_rfx2l"]
 [ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_2tqw4"]
 
 [resource]
@@ -29,4 +30,7 @@ text_progress = "Жду пока вы [b]построите[/b] [b][color=#FF59C
 text_finish = "Поздравляю с повышением [b]эффективности вашего города[/b].
 
 Также, хоть я и не упоминала об этом в прошлом отчёте, жизнь обычных граждан стала более стабильной и приятной. Я переработала систему часов и рабочих смен так, чтобы создать зацикленный круг. В связи с этим количество часов отдыха выросло,  и это явно пойдёт на пользу."
+zone_res = ExtResource("6_rfx2l")
+zone_bonus_resource_type = 1
+zone_bonus_resource_count = 15
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

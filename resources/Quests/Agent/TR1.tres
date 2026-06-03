@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_dtq4s"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="3_3tybw"]
 [ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="3_dtq4s"]
+[ext_resource type="Resource" uid="uid://c0vqv32f6jgr5" path="res://resources/Zones/Zone_5.tres" id="5_3tybw"]
 
 [resource]
 script = ExtResource("1_d5mil")
@@ -26,4 +27,7 @@ text_greetings = "Рада вас снова слышать. Вы приняли
 До этих беспорядков я, совместно с нашими учёными, создавала новый тип [b]района[/b], который вам понадобится в достижении вашей [b]главной цели[/b]. Имя ему [b][color=#FFFF5D][url=Z3D3]\"Электросхемный квартал\"[/url][/color][/b]. Это [b]III тир \"Высоких Технологий\"[/b]. Он позволит одновременно с основным ресурсом производить  и щепотку оружия."
 answer_agree = "(Дальше)"
 building_unlock_res = ExtResource("3_3tybw")
+zone_res = ExtResource("5_3tybw")
+zone_bonus_resource_type = 5
+zone_bonus_resource_count = 1
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

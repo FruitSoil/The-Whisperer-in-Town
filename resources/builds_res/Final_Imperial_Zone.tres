@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_7u6gr")
 res_type = 5
-res_count_per_timer = 5
+res_count_per_timer = 3
 res_timer = 3.0
 model = ExtResource("1_5yaep")
 tier = 4

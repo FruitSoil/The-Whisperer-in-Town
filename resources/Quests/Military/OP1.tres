@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_sw2y8"]
 [ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="3_nxjy4"]
 [ext_resource type="Texture2D" uid="uid://le6xrsuvujhs" path="res://Images/portairs/Soldier.png" id="4_cpvhm"]
+[ext_resource type="Resource" uid="uid://cjdimaecst2p7" path="res://resources/Zones/Zone_4.tres" id="5_cpvhm"]
 
 [resource]
 script = ExtResource("1_vapg6")
@@ -25,4 +26,7 @@ answer_wait = "Приём. Вернусь к этому вопросу позж�
 text_progress = "Приём. [b][color=#FFFF5D][url=NStart]Код #4335[/url][/color][/b]. 
 Ожидаю от вас [b]постройки[/b] [b][color=#FF59CA]четырёх[/color][/b] [b]районов[/b] [b][color=#FF59CA]\"Военной Мощи\"[/color][/b]."
 text_finish = "Приём. [b][color=#FFFF5D][url=Start]Код #4335 - префикс \"старт\"[/url][/color][/b]. Я зафиксировал ваше строительство и приступаю к производству оружия и снарядов. По мере развития я с вами ещё свяжусь."
+zone_res = ExtResource("5_cpvhm")
+zone_bonus_resource_type = 4
+zone_bonus_resource_count = 10
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"

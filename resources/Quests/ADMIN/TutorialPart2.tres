@@ -24,4 +24,6 @@ text_greetings = "Теперь же я предлагаю перейти к це
 answer_wait = "Подождите"
 answer_reject = "Сбросить трубку"
 text_reject = "*Вы слышите гудки на той стороне, после чего звук исчезает*"
+reward_res_type = 2
+reward_res_count = 12
 metadata/_custom_type_script = "uid://4xn2kpvnsmr8"
