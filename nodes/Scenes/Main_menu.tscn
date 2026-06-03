@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bk5ts2prpt2fw" path="res://nodes/Scenes/main_menu.gd" id="1_06vvd"]
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="2_l0bso"]
 [ext_resource type="Texture2D" uid="uid://hfm6khpcwabu" path="res://Images/UI/MainMenu/desktop_start_screen.png" id="2_uhqqh"]
-[ext_resource type="Texture2D" uid="uid://cgobhpsmi5cwd" path="res://Images/UI/MainMenu/desktop_start_screen_button1_idle.png" id="3_06vvd"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="4_1xjd1"]
-[ext_resource type="Texture2D" uid="uid://bhphjycebrksu" path="res://Images/UI/MainMenu/desktop_start_screen_button1_pressed.png" id="4_l0bso"]
 [ext_resource type="Texture2D" uid="uid://dqsd7aedcyu20" path="res://Images/UI/MainMenu/desktop_start_screen_button3_idle.png" id="4_rcvuc"]
 [ext_resource type="Texture2D" uid="uid://c323inegnjsib" path="res://Images/UI/MainMenu/desktop_start_screen_button2_idle.png" id="5_1xjd1"]
 [ext_resource type="BitMap" uid="uid://bvrxvw2xcb0p" path="res://Images/UI/MainMenu/BitMaps/Continue.png" id="5_d4pqi"]
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="6_bg4m6"]
+[ext_resource type="Texture2D" uid="uid://df1omv2gvpqqs" path="res://Images/UI/MainMenu/desktop_authors_screen_button1_idle.png" id="7_a3hvd"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="7_vdg37"]
+[ext_resource type="Texture2D" uid="uid://w2scdsy3rmud" path="res://Images/UI/MainMenu/desktop_authors_screen_button1_pressed.png" id="8_5cxft"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="8_06vvd"]
 [ext_resource type="Texture2D" uid="uid://j14wqb7r4vvs" path="res://Images/UI/MainMenu/desktop_start_screen_button3_pressed.png" id="8_vi41n"]
 [ext_resource type="BitMap" uid="uid://36qm6rvh8rd0" path="res://Images/UI/MainMenu/BitMaps/Settings.png" id="9_yb0cu"]
@@ -302,6 +302,7 @@ script = ExtResource("1_06vvd")
 
 [node name="Fade" type="CanvasLayer" parent="." unique_id=1493132271]
 layer = 100
+visible = false
 
 [node name="Color" type="ColorRect" parent="Fade" unique_id=1662133600]
 anchors_preset = 15
@@ -479,11 +480,11 @@ offset_right = 1423.0
 offset_bottom = 553.0
 scale = Vector2(0.47, 0.47)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_06vvd")
-texture_pressed = ExtResource("4_l0bso")
-texture_hover = ExtResource("3_06vvd")
-texture_disabled = ExtResource("4_l0bso")
-texture_focused = ExtResource("3_06vvd")
+texture_normal = ExtResource("7_a3hvd")
+texture_pressed = ExtResource("8_5cxft")
+texture_hover = ExtResource("7_a3hvd")
+texture_disabled = ExtResource("8_5cxft")
+texture_focused = ExtResource("7_a3hvd")
 texture_click_mask = ExtResource("5_d4pqi")
 
 [node name="CompJuice" type="Node" parent="Menu/Continue" unique_id=1416181190]

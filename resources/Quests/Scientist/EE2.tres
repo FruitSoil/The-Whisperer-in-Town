@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_3hu8w"]
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="2_mt68i"]
 [ext_resource type="Resource" uid="uid://cykgmxk0rt487" path="res://resources/Quests/Worker/SI.tres" id="3_mt68i"]
-[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="5_s735l"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="5_s735l"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="6_a2srw"]
 
 [resource]

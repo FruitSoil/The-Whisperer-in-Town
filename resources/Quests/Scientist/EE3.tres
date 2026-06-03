@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bwkord7fl3i8i" path="res://resources/Quests/Scientist/EE2.tres" id="4_yebip"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="6_bs0gt"]
 [ext_resource type="Resource" uid="uid://bnv74ywoxcmfu" path="res://resources/workers/U_Scientist.tres" id="6_x123j"]
-[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="8_if0k0"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="8_if0k0"]
 
 [resource]
 script = ExtResource("1_x0sok")

@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="4_cxbxp"]
 [ext_resource type="Resource" uid="uid://c1s2uvn4rirqr" path="res://resources/builds_res/District_Factories_Level2.tres" id="5_xjjjk"]
 [ext_resource type="Resource" uid="uid://cyux8obrlxor8" path="res://resources/builds_res/District_Factories_Level3.tres" id="6_ec1q3"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_xh20i"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_xh20i"]
 [ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="8_r1k3i"]
 
 [resource]

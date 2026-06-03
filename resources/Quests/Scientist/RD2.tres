@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="5_5nbak"]
 [ext_resource type="Resource" uid="uid://nqt27xgplbot" path="res://resources/Quests/Radio/R2.tres" id="7_b8wpc"]
 [ext_resource type="Resource" uid="uid://coo8renixmc3a" path="res://resources/Quests/Scientist/RD1.tres" id="8_w8u54"]
-[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/scientist.PNG" id="9_xttjf"]
+[ext_resource type="Texture2D" uid="uid://c0b4hdsekp3qq" path="res://Images/portairs/Scientist.PNG" id="9_xttjf"]
 
 [resource]
 script = ExtResource("1_w8u54")

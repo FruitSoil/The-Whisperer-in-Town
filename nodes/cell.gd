@@ -260,16 +260,25 @@ func _mouse_exit():
 		$MeshInstance3D.set_surface_override_material(0, mat)
 
 func _on_time_to_res_timeout() -> void:
-	Global.add_to_integer_res_type(current_build.res_type, current_build.res_count_per_timer)
+	var zone_res = Global.get_zone(zone)
+	
+	if zone_res.bonus_res_type == current_build.res_type:
+		Global.add_to_integer_res_type(current_build.res_type, current_build.res_count_per_timer + zone_res.bonus_res_count)
+	else:
+		Global.add_to_integer_res_type(current_build.res_type, current_build.res_count_per_timer)
+
 	if current_build.second_res_count_per_timer != 0:
 		Global.add_to_integer_res_type(current_build.second_res_type, current_build.second_res_count_per_timer)
 		%BaseUI.change_label(current_build.second_res_type,true)
+
 	if current_worker.addit_res_count != 0:
 		if current_build.res_type == current_worker.addit_res_type:
 			Global.add_to_integer_res_type(current_worker.addit_res_type, current_worker.addit_res_count)
+
 	if current_worker.new_res_count != 0:
 		Global.add_to_integer_res_type(current_worker.new_res_type, current_worker.new_res_count)
 		%BaseUI.change_label(current_worker.new_res_type,true)
+
 	%BaseUI.change_label(current_build.res_type,true)
 	var tws = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	tws.tween_property($Sprite3D,"pixel_size",0.0065,0.3)

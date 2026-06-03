@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw3whlur5umjj" path="res://nodes/Scenes/endings.gd" id="1_j65i4"]
 [ext_resource type="Texture2D" uid="uid://bbsvr1444kqjg" path="res://Images/Endings/Ending_Cult.PNG" id="1_y14wx"]
+[ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="2_0nqod"]
 [ext_resource type="Texture2D" uid="uid://dswf4g30560q1" path="res://Images/Endings/Ending_Empire.PNG" id="2_j65i4"]
 [ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_getm1"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="4_getm1"]
@@ -20,6 +21,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.43527555, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadIcon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_getm1"]
@@ -51,6 +64,18 @@ tracks/1/keys = {
 "method": &"label_start"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadIcon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0nqod"]
 length = 0.001
@@ -64,7 +89,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadIcon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m578b"]
@@ -111,7 +148,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="LoadIcon" type="TextureRect" parent="Fade" unique_id=203070827]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 4
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.75
+offset_top = -30.75
+offset_right = 30.75
+offset_bottom = 30.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0nqod")
 
 [node name="Fade" type="AnimationPlayer" parent="Fade" unique_id=1250290144]
 libraries/ = SubResource("AnimationLibrary_m578b")

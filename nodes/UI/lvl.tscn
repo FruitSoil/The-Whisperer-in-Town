@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="1_dgv3n"]
 [ext_resource type="FontFile" uid="uid://hylwom3w08c3" path="res://other/Fonts/AireExterior.ttf" id="2_dgv3n"]
 [ext_resource type="Script" uid="uid://c3mfwcdbfrmth" path="res://nodes/Scenes/Pricer.gd" id="2_kou8v"]
+[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="2_muuik"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="3_nmk4s"]
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="6_dgv3n"]
 [ext_resource type="Texture2D" uid="uid://cee7aon6hogg8" path="res://Images/UI/icons/icon_lock.PNG" id="6_l75qi"]
@@ -74,6 +75,7 @@ offset_right = 527.0
 offset_bottom = 86.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dgv3n")
 script = ExtResource("1_d4q41")
+res = ExtResource("2_muuik")
 
 [node name="TextureRect" type="Panel" parent="." unique_id=1561603479]
 layout_mode = 0
@@ -135,6 +137,7 @@ offset_left = 18.0
 offset_top = 59.0
 offset_right = 42.0
 offset_bottom = 83.0
+mouse_filter = 2
 texture = ExtResource("6_l75qi")
 expand_mode = 1
 stretch_mode = 5

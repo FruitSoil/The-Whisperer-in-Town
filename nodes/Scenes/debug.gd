@@ -70,3 +70,13 @@ func _on_full_pressed() -> void:
 	for i in 5:
 		Global.add_to_integer_res_type(i, 99999)
 	%BaseUI.change_all_label(true)
+
+func _on_clear_pressed() -> void:
+	Global.rusted = 0
+	Global.electrosnow = 0
+	Global.money = 0
+	Global.highqualityelectrical = 0
+	Global.heavycomponents = 0
+	Global.cultist_might = 0
+	Global.imperial_might = 0
+	%BaseUI.change_all_label(true)

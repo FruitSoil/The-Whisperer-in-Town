@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="4_x4ms4"]
 [ext_resource type="Resource" uid="uid://c0sdnng1cbdlb" path="res://resources/builds_res/District_Electricity_Level1.tres" id="5_f6wug"]
 [ext_resource type="Resource" uid="uid://c00vevr88iiqs" path="res://resources/Quests/Agent/EV1.tres" id="6_a6rvy"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_1e7bn"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_1e7bn"]
 [ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="8_8y5qa"]
 
 [resource]

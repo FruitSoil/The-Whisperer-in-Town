@@ -106,8 +106,8 @@ func answer(ID: int):
 					close_window()
 					%worker3.quest_res = EV_2
 					%worker3.quest_stage = 3
-					%worker3.update_icon()
 					%worker3.can_be_placed = true
+					%worker3.update_icon()
 				elif res == V:
 					verdict_logic(true)
 					close_window()
@@ -171,7 +171,6 @@ func answer(ID: int):
 			worker_panel.update_icon()
 		3:
 			if worker_panel.quest_stage != 2:
-				worker_panel.can_be_placed = false
 				type_text(res.text_reject) 
 				variant_yes.hide()
 				variant_no.show()
@@ -245,7 +244,11 @@ func verdict_logic(is_art_bell: bool):
 	res_panel.verdict_change_side(is_art_bell)
 	if is_art_bell:
 		print("art selected")
+		%worker3.is_open = false
+		%worker3.update_icon()
 		%QuestLogic.ql_wait_to_next(4,art,art.worker)
 	else:
 		print("keterin selected")
+		%worker4.is_open = false
+		%worker4.update_icon()
 		%QuestLogic.ql_wait_to_next(4,keterin,keterin.worker)

@@ -119,5 +119,6 @@ func check_quest_done_status(quest: Quest, worker_ID:Global.workers):
 						quest_done(worker_ID)
 
 func quest_done(worker_ID:Global.workers):
+	workers[worker_ID].can_be_placed = false
 	workers[worker_ID].quest_stage = 4
 	workers[worker_ID].update_icon()

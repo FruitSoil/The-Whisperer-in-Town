@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b26m0ocmac582" path="res://resources/builds_res/District_Electricity_Level2.tres" id="4_crksa"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="5_oyeee"]
 [ext_resource type="Resource" uid="uid://e8uu0uutwcmc" path="res://resources/Quests/Scientist/EE1.tres" id="6_085ep"]
-[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/worker.PNG" id="7_68voy"]
+[ext_resource type="Texture2D" uid="uid://d2crydf1fo2s2" path="res://Images/portairs/Worker.PNG" id="7_68voy"]
 [ext_resource type="Resource" uid="uid://x33hd15p6qyb" path="res://resources/workers/U_worker.tres" id="8_ksxhw"]
 
 [resource]

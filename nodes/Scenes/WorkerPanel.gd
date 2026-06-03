@@ -3,6 +3,8 @@ class_name WorkerPanel
 
 const CLOSE_ICON = preload("uid://57g2gc2d38rv")
 
+const ADMIN = preload("res://resources/workers/U_ADMIN.tres")
+
 @export var res: Worker 
 @export var is_open: bool = false
 var can_be_placed: bool = false
@@ -56,17 +58,19 @@ func change_work_icon(value: bool, given_res: Worker):
 			disabled = false
 
 func change_progress(value: bool = is_open):
-	is_open = value
-	if is_open or res.is_unique == false:
+	if !res.is_unique:
 		$TextureRect.texture = res.icon
-		if can_be_placed or res.is_unique == false:
-			disabled = false
-		else:
-			disabled = true
-		if res == load("res://resources/workers/U_ADMIN.tres"):
-			disabled = true
+		return
 	
-	if is_open == false:
+	is_open = value
+	if is_open:
+		$TextureRect.texture = res.icon
+		if res == ADMIN or !can_be_placed:
+			disabled = true
+		else:
+			disabled = false
+	
+	if !is_open:
 		$TextureRect.texture = CLOSE_ICON
 		disabled = true
 

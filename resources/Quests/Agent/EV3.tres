@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://fcc6bky83qk1" path="res://resources/Quests/Scientist/EE3.tres" id="4_nsymk"]
 [ext_resource type="Resource" uid="uid://cvlryc4aheqya" path="res://resources/Quests/Scientist/RD2.tres" id="5_q7h6t"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="7_ck3xc"]
-[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/agent.PNG" id="7_nsymk"]
+[ext_resource type="Texture2D" uid="uid://ciba3bctmm5qp" path="res://Images/portairs/Agent.PNG" id="7_nsymk"]
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="8_arbcb"]
 [ext_resource type="Resource" uid="uid://c35g6oey2kwej" path="res://resources/workers/U_Agent.tres" id="8_q7h6t"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="9_nsymk"]

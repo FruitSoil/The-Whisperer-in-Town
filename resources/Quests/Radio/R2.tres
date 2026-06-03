@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="3_2fih0"]
 [ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="3_5wd75"]
 [ext_resource type="Resource" uid="uid://ibxv3hbp2rxa" path="res://resources/Quests/Radio/R1.tres" id="4_5tvvj"]
-[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/radio_host.PNG" id="4_mdsew"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="4_mdsew"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="5_43mfh"]
 [ext_resource type="Resource" uid="uid://carclodqgs38r" path="res://resources/workers/Default_worker.tres" id="8_nxt3c"]
 

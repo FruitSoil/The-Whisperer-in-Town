@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="13_x1san"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="14_yssgo"]
 [ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="15_30cd8"]
+[ext_resource type="Texture2D" uid="uid://cp2ol8eun0nxp" path="res://Images/LockIcon.png" id="15_tt4qn"]
 [ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="16_hn85b"]
 [ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="17_xxqh0"]
 [ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="18_sfvcy"]
@@ -51,7 +52,6 @@
 [ext_resource type="Texture2D" uid="uid://crm2y3vhc4dxf" path="res://Images/Resources_icons/Colored/icon_rusty_tin.png" id="43_dweyv"]
 [ext_resource type="Resource" uid="uid://cnbddl4hiqj3x" path="res://resources/builds_res/District_Electricity_Level3.tres" id="43_frhhc"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="44_8dus5"]
-[ext_resource type="Resource" uid="uid://d8g5ar8m6y02" path="res://resources/builds_res/High_Technology_Level2.tres" id="45_8e00r"]
 [ext_resource type="Resource" uid="uid://b27jhrcdtysjl" path="res://resources/builds_res/High_Technology_Level3.tres" id="46_pe6gr"]
 [ext_resource type="Resource" uid="uid://ddb7dxrpeibl6" path="res://resources/builds_res/Military_Zone_Level3.tres" id="47_d440o"]
 [ext_resource type="Texture2D" uid="uid://b4p46enx2buoa" path="res://Images/Resources_icons/Colored/icon_electrosnow.png" id="48_gub22"]
@@ -416,6 +416,7 @@ spacing_space = 6
 
 [sub_resource type="FontVariation" id="FontVariation_30cd8"]
 variation_embolden = 0.5
+spacing_space = 7
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8b8i"]
 
@@ -1887,7 +1888,6 @@ libraries/ = SubResource("AnimationLibrary_vlx1q")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
-visible = false
 script = ExtResource("2_7ukgp")
 
 [node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
@@ -1905,7 +1905,7 @@ color = Color(0, 0, 0, 1)
 [node name="MenuButton" type="OptionButton" parent="DEBUG" unique_id=200167587]
 offset_left = 122.0
 offset_top = 191.0
-offset_right = 494.0
+offset_right = 453.0
 offset_bottom = 256.0
 selected = 0
 item_count = 7
@@ -1946,6 +1946,14 @@ offset_right = 445.0
 offset_bottom = 184.0
 text = "All to 99999"
 icon = ExtResource("12_5h554")
+
+[node name="Clear" type="Button" parent="DEBUG" unique_id=719389753]
+offset_left = 297.0
+offset_top = 83.0
+offset_right = 442.0
+offset_bottom = 124.0
+text = "All to ZERO"
+icon = ExtResource("15_tt4qn")
 
 [node name="speed0_5" type="Button" parent="DEBUG" unique_id=705285867]
 offset_left = 121.0
@@ -2985,7 +2993,6 @@ res = ExtResource("44_8dus5")
 
 [node name="lvl8" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=745296319 instance=ExtResource("37_5e40a")]
 layout_mode = 2
-res = ExtResource("45_8e00r")
 
 [node name="lvl9" parent="HUD/BaseUI/Store_UI/Build_scroll_list/VBС" unique_id=1401251104 instance=ExtResource("37_5e40a")]
 layout_mode = 2
@@ -6644,6 +6651,7 @@ debug_color = Color(1, 0, 0.5764706, 1)
 [connection signal="button_down" from="DEBUG/MenuButton" to="DEBUG" method="menu_button_button_down"]
 [connection signal="pressed" from="DEBUG/add" to="DEBUG" method="_pressed"]
 [connection signal="pressed" from="DEBUG/Full" to="DEBUG" method="_on_full_pressed"]
+[connection signal="pressed" from="DEBUG/Clear" to="DEBUG" method="_on_clear_pressed"]
 [connection signal="pressed" from="Pause/VBC/Continue" to="Pause" method="_on_continue_pressed"]
 [connection signal="pressed" from="Pause/VBC/Settings" to="Pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="Pause/VBC/Exit_to main" to="Pause" method="_on_exit_to_main_pressed"]

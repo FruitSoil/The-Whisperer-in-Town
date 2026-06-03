@@ -133,3 +133,18 @@ func get_res_value(res_type: int) -> int:
 			return cultist_might
 		_:
 			return 0
+
+func get_zone(ID: int) -> Zone:
+	match ID:
+		1:
+			return load("res://resources/Zones/Zone_1.tres")
+		2:
+			return load("res://resources/Zones/Zone_2.tres")
+		3:
+			return load("res://resources/Zones/Zone_3.tres")
+		4:
+			return load("res://resources/Zones/Zone_4.tres")
+		5:
+			return load("res://resources/Zones/Zone_5.tres")
+		_:
+			return null

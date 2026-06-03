@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drmedwnjvcpqm" path="res://other/Scripts/building.gd" id="2_it6hi"]
 [ext_resource type="Resource" uid="uid://3tvaqcrk8ghg" path="res://resources/builds_res/High_Technology_Level1.tres" id="3_noiqf"]
 [ext_resource type="Resource" uid="uid://dg6qo056q5p6r" path="res://resources/Quests/Zone_quest/Zone3Quest.tres" id="4_g30w8"]
-[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/radio_host.PNG" id="4_xi0fm"]
+[ext_resource type="Texture2D" uid="uid://82pl60joceop" path="res://Images/portairs/Radio_host.PNG" id="4_xi0fm"]
 
 [resource]
 script = ExtResource("1_w2fv2")
