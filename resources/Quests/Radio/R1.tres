@@ -15,7 +15,7 @@ worker = 3
 done_quest_dependencies = Array[ExtResource("1_w2fv2")]([ExtResource("4_g30w8")])
 quest_after = Array[String](["res://resources/Quests/Radio/R2.tres"])
 complete_condition = 2
-int_value = 3
+int_value = 6
 building_type = Array[ExtResource("2_it6hi")]([ExtResource("3_noiqf")])
 text_greetings = "Вечер добрый! На связи Арт Белл, последний радиоведущий Северного континента. С этих пор я буду работать на вас и помогать вам с новой отраслью - [b]\"Высокими технологиями\"[/b]! Ты даже представить не можешь, каких высот возможно достичь с их помощью, хах. Предлагаю начать нашу с вами работу. Для начала [b]постройте[/b] [b][color=#FF59CA]шесть[/color][/b] [b]районов[/b] [b][color=#FF59CA]I[/color][/b] [b]тира[/b] [b][color=#FF59CA]\"Высоких Технологий\"[/color][/b]. Для блаженного старта самое то!"
 answer_agree = "Я построю"

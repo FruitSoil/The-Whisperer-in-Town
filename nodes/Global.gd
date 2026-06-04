@@ -149,3 +149,29 @@ func get_zone(ID: int) -> Zone:
 			return load("res://resources/Zones/Zone_5.tres")
 		_:
 			return null
+
+func zero():
+	total_buildings.clear()
+	total_workers.clear()
+	total_work_on_build.clear()
+	
+	quest_done.clear()
+	quest_skip.clear()
+	quest_in_progress.clear()
+	
+	is_zone_1_open = false
+	is_zone_2_open = false
+	is_zone_3_open = false
+	is_zone_4_open = false
+	is_zone_5_open = false
+	
+	rusted= 0
+	electrosnow = 0
+	money= 0
+	highqualityelectrical = 0
+	heavycomponents= 0
+	imperial_might = 0
+	cultist_might = 0
+	
+	is_current_ending_imper = true
+	is_ending = false

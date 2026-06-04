@@ -14,6 +14,7 @@ const ADMIN_EV2_2 = preload("uid://b5qdl6plgdx2l")
 const EV_2 = preload("uid://p72rumrqgqhh")
 const V = preload("uid://cr44o6eo2njb1")
 const END = preload("uid://bdkjdx3u8i44s")
+const DO_1 = preload("uid://b3t8ndl8pny37")
 
 var res: Quest
 var worker_panel: WorkerPanel
@@ -203,6 +204,12 @@ func answer(ID: int):
 					worker_panel.quest_stage = 0
 					worker_panel.update_icon()
 					return
+				if res == DO_1:
+					jerma()
+					close_window()
+					worker_panel.quest_res = null
+					worker_panel.quest_stage = 0
+					worker_panel.update_icon()
 				if res.quest_after:
 						for i in res.quest_after:
 							if i:
@@ -269,6 +276,11 @@ func verdict_logic(is_art_bell: bool):
 		%worker4.is_open = false
 		%worker4.update_icon()
 		%QuestLogic.ql_wait_to_next(4,keterin,keterin.worker)
+
+func jerma():
+	%worker.found_unique_on_building()
+	%worker.is_open = false
+	%worker.update_icon()
 
 var pitch = 0.9
 

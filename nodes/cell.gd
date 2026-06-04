@@ -31,6 +31,11 @@ var random_money_sounds: Array = [
 	preload("uid://cbu8layq5anbt"),
 ]
 
+var fire_worker: Array = [
+	preload("uid://c8qf4sig2is8a"),
+	preload("uid://cx1bskovxrt31"),
+]
+
 @onready var build_sound: AudioStreamPlayer3D = $Audio/Build_sound
 
 func _ready() -> void:
@@ -108,6 +113,8 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 			%BaseUI.jigle()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
+		$Audio/WorkerFire.stream = fire_worker.pick_random()
+		$Audio/WorkerFire.play()
 		get_tree().call_group("cell","toggle_lines", false)
 
 func place(building: Building = %BaseUI.selected_build):

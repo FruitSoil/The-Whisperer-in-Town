@@ -16,7 +16,7 @@ worker = 2
 done_quest_dependencies = Array[ExtResource("1_hn7a0")]([ExtResource("3_on3y1"), ExtResource("4_on3y1")])
 quest_after = Array[String](["res://resources/Quests/Worker/SI.tres"])
 complete_condition = 2
-int_value = 2
+int_value = 4
 building_type = Array[ExtResource("2_on3y1")]([ExtResource("4_uk130")])
 text_greetings = "Приветствую, я [b]Говард Ист[/b], научный сотрудник [b][color=#FFFF5D][url=Alpha]класса A[/url][/color][/b]. Ныне буду вас сопровождать как главный по [b]науке[/b] и инновациям. Слышал, что вы уже вместе с мистером [b]Сэдом[/b] смогли заложить приличную основу для дальнейшего прогресса в сфере [b]электротехники[/b]. Это не может не радовать, предлагаю нам и впредь двигаться в таком же темпе. Наш научный комитет уже смог создать два чертежа районов, в которые имплементированы инновации в сфере [b]электротехники[/b] - [b][color=#FFFF5D][url=SnowSc]снегонаука[/url][/color][/b]. Как раз их вам и надо будет построить.
 

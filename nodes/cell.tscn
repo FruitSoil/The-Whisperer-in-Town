@@ -406,5 +406,11 @@ stream = ExtResource("14_ia1yp")
 volume_db = -22.0
 bus = &"UI"
 
+[node name="WorkerFire" type="AudioStreamPlayer" parent="Audio" unique_id=1115248168]
+process_mode = 3
+stream = ExtResource("13_4a5kp")
+volume_db = -10.0
+bus = &"UI"
+
 [connection signal="timeout" from="Time_to_res" to="." method="_on_time_to_res_timeout"]
 [connection signal="timeout" from="Charge_time" to="." method="charge_timeout"]

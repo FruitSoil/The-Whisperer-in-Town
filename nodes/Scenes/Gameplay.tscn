@@ -2612,10 +2612,9 @@ metadata/_edit_lock_ = true
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Pause" unique_id=148090719]
 disable_3d = true
 oversampling_override = 1.0
-title = "Точно выйти?"
+title = ""
 initial_position = 1
 size = Vector2i(693, 323)
-borderless = true
 theme = SubResource("Theme_n85g4")
 ok_button_text = "Выйти"
 cancel_button_text = "Отмена"

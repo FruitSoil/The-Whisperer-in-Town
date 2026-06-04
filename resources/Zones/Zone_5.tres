@@ -11,6 +11,4 @@ description = "Финальная цель всей вашей миссии по
 icon = ExtResource("1_rt8et")
 first_res_type = 4
 first_res_count = 5000
-second_res_type = 1
-second_res_count = 1
 metadata/_custom_type_script = "uid://bdeyfvnnqhwy5"

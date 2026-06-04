@@ -9,6 +9,8 @@ const MAIN_MENU = preload("uid://cg5c1mvtux802")
 @onready var exit_to_main: Button = $Menu/Exit
 
 func _ready() -> void:
+	Global.zero()
+	
 	$Fade.show()
 	$Authors.hide()
 	continue_.pressed.connect(pressed.bind(4))
