@@ -159,7 +159,7 @@ func zero():
 	quest_skip.clear()
 	quest_in_progress.clear()
 	
-	is_zone_1_open = false
+	is_zone_1_open = true
 	is_zone_2_open = false
 	is_zone_3_open = false
 	is_zone_4_open = false
@@ -167,7 +167,7 @@ func zero():
 	
 	rusted= 0
 	electrosnow = 0
-	money= 0
+	money= 6
 	highqualityelectrical = 0
 	heavycomponents= 0
 	imperial_might = 0

@@ -246,6 +246,7 @@ func disappoint():
 
 func _mouse_enter():
 	if check_zone_status():
+		print("IN")
 		var mat = $MeshInstance3D.get_active_material(0).duplicate()
 		if %BaseUI.building_state == true and %BaseUI.worker_state == false and %BaseUI.demolition_state == false:
 			if !has_building:
@@ -282,6 +283,7 @@ func change_cell_color(ID: int, mat):
 			twac.tween_property(mat, "albedo_color", Color(1.164, 1.164, 0.339, 0.561), 0.5)
 
 func _mouse_exit():
+	print("OUT")
 	var mat = $MeshInstance3D.get_active_material(0).duplicate()
 	if mat:
 		$Sprite3D/corner.visible = false
@@ -359,15 +361,15 @@ func click_res():
 	%BaseUI.change_label(current_build.res_type,true)
 
 func check_zone_status() ->bool:
-	if zone == 1 and Global.is_zone_1_open == true:
+	if zone == 1 and Global.is_zone_1_open:
 		return true
-	elif zone == 2 and Global.is_zone_2_open == true:
+	elif zone == 2 and Global.is_zone_2_open:
 		return true
-	elif zone == 3 and Global.is_zone_3_open == true: 
+	elif zone == 3 and Global.is_zone_3_open: 
 		return true
-	elif zone == 4 and Global.is_zone_4_open == true: 
+	elif zone == 4 and Global.is_zone_4_open: 
 		return true
-	elif zone == 5 and Global.is_zone_5_open == true:
+	elif zone == 5 and Global.is_zone_5_open:
 		return true
 	else:
 		return false
