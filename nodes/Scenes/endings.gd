@@ -7,6 +7,7 @@ extends Node2D
 @onready var cultistic: TextureRect = $CanvasLayer/Cultistic
 @onready var imperial: TextureRect = $CanvasLayer/Imperial
 @onready var to_menu_button: Button = $CanvasLayer/ToMenuButton
+@onready var sound_timer: Timer = $Voice/Timer
 
 var character_delay = 0.04
 
@@ -31,9 +32,12 @@ func label_start():
 func description_tween(new_text: String):
 	description.text = new_text
 	description.visible_ratio = 0.0
+	sound_timer.start()
 	var total_duration = description.get_parsed_text().length() * character_delay
 	var twr = create_tween().set_trans(Tween.TRANS_LINEAR)
 	twr.tween_property(description, "visible_ratio", 1.0, total_duration)
+	await get_tree().create_timer(total_duration).timeout
+	sound_timer.stop()
 	await get_tree().create_timer(total_duration + 2).timeout
 	to_menu_button.show()
 	to_menu_button.modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -44,3 +48,8 @@ func to_menu():
 	$Fade/Fade.play("Fade_in")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://nodes/Scenes/Main_menu.tscn")
+
+func _on_timer_timeout() -> void:
+	$Voice.play()
+	
+	sound_timer.start(randf_range(0.03,0.1))

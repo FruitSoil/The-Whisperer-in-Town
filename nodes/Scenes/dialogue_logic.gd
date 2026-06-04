@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var dialogue_animation: AnimationPlayer = $Dialogue_animation
 @onready var rich_text_label: RichTextLabel = $Panel/MC/RichTextLabel
 
+@onready var sound_timer: Timer = $"../Audio/Voice/Timer"
+
 const ADMIN_EV2_2 = preload("uid://b5qdl6plgdx2l")
 const EV_2 = preload("uid://p72rumrqgqhh")
 const V = preload("uid://cr44o6eo2njb1")
@@ -96,6 +98,7 @@ func open_window(resource: Quest):
 func close_window():
 	rich_text_label.visible_ratio = 1.0
 	twr.kill()
+	sound_timer.stop()
 	dialogue_animation.play("Hide")
 
 func answer(ID: int):
@@ -135,6 +138,8 @@ func answer(ID: int):
 				
 				if res.complete_condition == 0:
 					%QuestLogic.check_for_all()
+				else:
+					$"../Audio/QuestAccept".play()
 			if worker_panel.quest_stage == 4:
 				Global.quest_done.append(res)
 				%BaseUI.erase_quest(res)
@@ -216,16 +221,22 @@ func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 		if twr and twr.is_valid():
 			twr.kill()
 		rich_text_label.visible_ratio = 1.0
+		sound_timer.stop()
 
 func type_text(new_text: String) -> void:
 	if twr and twr.is_valid():
 		twr.kill()
 	rich_text_label.text = new_text
 	rich_text_label.visible_ratio = 0.0
+	sound_timer.start()
 	await get_tree().process_frame
 	var total_duration = rich_text_label.get_parsed_text().length() * character_delay
 	twr = create_tween().set_trans(Tween.TRANS_LINEAR)
 	twr.tween_property(rich_text_label, "visible_ratio", 1.0, total_duration)
+	await get_tree().create_timer(total_duration).timeout
+	sound_timer.stop()
+
+
 
 func _anim_finished(anim_name: StringName) -> void:
 	if anim_name == "Hide":
@@ -258,3 +269,13 @@ func verdict_logic(is_art_bell: bool):
 		%worker4.is_open = false
 		%worker4.update_icon()
 		%QuestLogic.ql_wait_to_next(4,keterin,keterin.worker)
+
+var pitch = 0.9
+
+func _on_timer_timeout() -> void:
+	var rand = randf_range(-0.04,0.04)
+	pitch = clampf(pitch + rand, 0.8,1.0)
+	$"../Audio/Voice".pitch_scale = pitch
+	$"../Audio/Voice".play()
+	
+	sound_timer.start(randf_range(0.03,0.1))

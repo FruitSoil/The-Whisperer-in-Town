@@ -1,32 +1,49 @@
 [gd_scene format=3 uid="uid://c2hucdshe8xtu"]
 
+[ext_resource type="Script" uid="uid://c3yoy8jvabddy" path="res://nodes/Scenes/audio_manager.gd" id="1_7n4c0"]
 [ext_resource type="AudioStream" uid="uid://cr0sc1y7ph20w" path="res://Audio/Music/S_Ambience_for_Gameplay.mp3" id="1_hn85b"]
 [ext_resource type="Script" uid="uid://xku5xbx8nkrm" path="res://nodes/Scenes/QuestLogic.gd" id="1_vlx1q"]
 [ext_resource type="Script" uid="uid://8unf2p5vmngp" path="res://nodes/Scenes/debug.gd" id="2_7ukgp"]
 [ext_resource type="Script" uid="uid://c62ur210wpk5h" path="res://nodes/Scenes/tutorial.gd" id="2_tbnlw"]
 [ext_resource type="AudioStream" uid="uid://76ewrc2rby4w" path="res://Audio/UI/S_CameraWheelScroll.mp3" id="2_xxqh0"]
+[ext_resource type="AudioStream" uid="uid://c4deodwa080jp" path="res://Audio/Music/S_Monolit_Zone.mp3" id="3_8dus5"]
 [ext_resource type="Shader" uid="uid://dlo1wunx5ykxu" path="res://other/Shaders/ScreenBlur.gdshader" id="3_tbnlw"]
 [ext_resource type="AudioStream" uid="uid://c75sfhgy5ld3e" path="res://Audio/Ambient/S_MountainAmbience.mp3" id="3_xde1d"]
 [ext_resource type="Texture2D" uid="uid://b87os2kvh7wqi" path="res://Images/Resources_icons/actual/Rusted_res_icon.png" id="4_2ho68"]
 [ext_resource type="AudioStream" uid="uid://on4chhtbqguu" path="res://Audio/UI/S_DialogeOpen.mp3" id="4_po80s"]
+[ext_resource type="AudioStream" uid="uid://dxxj3dhsnh1jo" path="res://Audio/UI/S_Metal_ButtonHowered.mp3" id="4_q848m"]
+[ext_resource type="AudioStream" uid="uid://d1i3yw5i5hlv1" path="res://Audio/UI/S_Metal_ButtonPressed.mp3" id="5_7n4c0"]
 [ext_resource type="Texture2D" uid="uid://jpga2ikoe6a" path="res://Images/Resources_icons/actual/Electrosnow_res_icon.png" id="5_r6jij"]
 [ext_resource type="Texture2D" uid="uid://cy66iye7go8bw" path="res://Images/Resources_icons/actual/money_res_icon.png" id="6_86tqs"]
+[ext_resource type="AudioStream" uid="uid://bm6nylwm4ttqi" path="res://Audio/UI/S_Metal_ButtonRealised.mp3" id="6_w4m4s"]
 [ext_resource type="Texture2D" uid="uid://cucf1b2i6waim" path="res://Images/Resources_icons/actual/highqualityelectronic_res_icon.png" id="7_exte1"]
 [ext_resource type="Texture2D" uid="uid://c521ge0mrkchw" path="res://Images/Resources_icons/actual/heavycomponent_res_icon.png" id="8_7forp"]
+[ext_resource type="AudioStream" uid="uid://cjbrt2c2nc004" path="res://Audio/UI/S_StateCancel_Pitchlower_.mp3" id="8_iketc"]
+[ext_resource type="AudioStream" uid="uid://cjhdyydtmerro" path="res://Audio/UI/S_CancelWorker.mp3" id="9_5e40a"]
 [ext_resource type="Texture2D" uid="uid://ba0uqsu2cwgm5" path="res://Images/Resources_icons/actual/imperial_res_icon.png" id="9_w45vw"]
+[ext_resource type="AudioStream" uid="uid://s8xfvcgx456n" path="res://Audio/UI/S_TutorialTaskDone.mp3" id="10_5e40a"]
 [ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="10_hwrqn"]
+[ext_resource type="AudioStream" uid="uid://b7o21scoethr2" path="res://Audio/UI/S_Glitch.mp3" id="11_d5d3s"]
 [ext_resource type="Texture2D" uid="uid://da0hliwyv3ps2" path="res://Images/Resources_icons/Zone_res_icon.png" id="11_xegqy"]
+[ext_resource type="AudioStream" uid="uid://er0fhfaomwwu" path="res://Audio/UI/S_PanelButton_Hovered.mp3" id="12_4wf2t"]
 [ext_resource type="Texture2D" uid="uid://bq4tc1eh0jj47" path="res://Images/Worker_res_icon.png" id="12_5h554"]
+[ext_resource type="AudioStream" uid="uid://bolwixm45ybc3" path="res://Audio/UI/S_PanelButton_Click.ogg" id="13_0mfkc"]
 [ext_resource type="Script" uid="uid://bs5hgnn3cbf5u" path="res://nodes/Scenes/pause.gd" id="13_x1san"]
+[ext_resource type="AudioStream" uid="uid://cp55j3vujmapk" path="res://Audio/UI/S_PanelButton_DontHaverRes.mp3" id="14_0mfkc"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="14_yssgo"]
 [ext_resource type="Texture2D" uid="uid://scn3l3gnk321" path="res://Images/UI/Pause/pause_screen_buttonoff.PNG" id="15_30cd8"]
 [ext_resource type="Texture2D" uid="uid://cp2ol8eun0nxp" path="res://Images/LockIcon.png" id="15_tt4qn"]
+[ext_resource type="AudioStream" uid="uid://cca0bqwsdj0uv" path="res://Audio/Music/S_MonolitOpen.mp3" id="16_8e00r"]
 [ext_resource type="Texture2D" uid="uid://cbhwruy1rxr77" path="res://Images/UI/Pause/pause_screen_button.PNG" id="16_hn85b"]
 [ext_resource type="Texture2D" uid="uid://4myls644eius" path="res://Images/UI/Pause/icon_continue_on.PNG" id="17_xxqh0"]
+[ext_resource type="AudioStream" uid="uid://cfms6shrydcwi" path="res://Audio/UI/S_PanelZone_Buy.mp3" id="18_8e00r"]
 [ext_resource type="Texture2D" uid="uid://so85sg6ne8j" path="res://Images/UI/Pause/icon_settings_on.PNG" id="18_sfvcy"]
+[ext_resource type="AudioStream" uid="uid://coggk6a0a6jp3" path="res://Audio/UI/S_QuestDone.mp3" id="19_d440o"]
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="19_qcc36"]
+[ext_resource type="AudioStream" uid="uid://bmsxjb7b4gto1" path="res://Audio/UI/S_startQuest.mp3" id="20_m6mm7"]
 [ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="20_tudpi"]
 [ext_resource type="Script" uid="uid://0sqefgshus3v" path="res://nodes/Scenes/dialogue_logic.gd" id="21_dweyv"]
+[ext_resource type="AudioStream" uid="uid://di4vyjx5hh6xt" path="res://Audio/S_VoiceTag (1).mp3" id="21_n85g4"]
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="22_gub22"]
 [ext_resource type="Texture2D" uid="uid://drdg65lenvkgp" path="res://Images/UI/DialogueFrame.png" id="23_x1wuj"]
 [ext_resource type="Texture2D" uid="uid://cq2op0xdw5wqw" path="res://other/Макет-магазин-зоны.png" id="24_tt4qn"]
@@ -43,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://bpe5yyhqaf8kd" path="res://Images/UI/WindowFrame.png" id="34_kkiys"]
 [ext_resource type="Texture2D" uid="uid://b3k4oxb2d4c4g" path="res://Images/UI/icons/colored/shop.png" id="35_5h554"]
 [ext_resource type="PackedScene" uid="uid://1xk6cghmugrw" path="res://nodes/UI/quest_panel.tscn" id="35_b0c46"]
+[ext_resource type="AudioStream" uid="uid://baib26syx2o0h" path="res://Audio/UI/S_DialogeClose.mp3" id="36_d5d3s"]
 [ext_resource type="Texture2D" uid="uid://cc5mpaf7nu1jb" path="res://Images/UI/WindowSlider.png" id="36_iketc"]
 [ext_resource type="PackedScene" uid="uid://bi6lo3ysdixn2" path="res://nodes/UI/lvl.tscn" id="37_5e40a"]
 [ext_resource type="Resource" uid="uid://dmike738d07w7" path="res://resources/builds_res/District_Factories_Level1.tres" id="38_d5d3s"]
@@ -97,6 +115,7 @@
 [ext_resource type="Texture2D" uid="uid://cqa5aoicevy2y" path="res://Images/UI/ui4_button1_pressed.png" id="77_6kshd"]
 [ext_resource type="Texture2D" uid="uid://cpcv6mhyomic3" path="res://Images/UI/Background_Character.png" id="78_adhno"]
 [ext_resource type="Script" uid="uid://ck78qsxaksw4b" path="res://nodes/Scenes/arrow.gd" id="79_2ho68"]
+[ext_resource type="AudioStream" uid="uid://6h0sajbugq4q" path="res://Audio/UI/S_Panel_ZoneDenain.mp3" id="79_dg5mt"]
 [ext_resource type="Shader" uid="uid://twfw1loh4314" path="res://other/Shaders/pixelization.gdshader" id="79_kxjjv"]
 [ext_resource type="Script" uid="uid://bfkowl3pd3fwu" path="res://nodes/Scenes/get_data.gd" id="80_85x56"]
 [ext_resource type="Texture2D" uid="uid://42ylm08ipooj" path="res://Images/UI/Pause/icon_tutor.PNG" id="80_r6jij"]
@@ -114,6 +133,8 @@
 [ext_resource type="PackedScene" uid="uid://dkugkuulvh185" path="res://Buildings/terrain1/hill_3.tscn" id="90_w45vw"]
 [ext_resource type="Script" uid="uid://b1et007hiphlj" path="res://nodes/Scenes/hill_demolition.gd" id="92_w45vw"]
 [ext_resource type="AudioStream" uid="uid://7n7j2ilbjk45" path="res://Audio/UI/S_OpenMagazineQuests.mp3" id="95_77y48"]
+[ext_resource type="AudioStream" uid="uid://cvvg646rvalt4" path="res://Audio/UI/S_CloseMagazineQuests.mp3" id="104_lvvw6"]
+[ext_resource type="AudioStream" uid="uid://mc84l250hhqj" path="res://Audio/SFX/S_MontainDestroy_short.mp3" id="129_pe6gr"]
 
 [sub_resource type="Animation" id="Animation_uhxkw"]
 resource_name = "Fade_in"
@@ -247,6 +268,13 @@ width = 1920
 height = 1080
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Theme" id="Theme_n85g4"]
+AcceptDialog/font_sizes/title_font_size = 64
+Button/font_sizes/font_size = 48
+Label/font_sizes/font_size = 32
+TooltipLabel/constants/paragraph_spacing = 3
+TooltipLabel/font_sizes/font_size = 32
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rr6gg"]
 shader = ExtResource("20_tudpi")
@@ -391,6 +419,35 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5450000258875
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n85g4"]
+bg_color = Color(0.42971876, 0.66894644, 0.44159076, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hrd"]
+bg_color = Color(0.6686425, 0.8897641, 0.6730212, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlnya"]
+bg_color = Color(0.20046821, 0.3843203, 0.18093404, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_w2vja"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_n85g4")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_x8hrd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_hlnya")
+
 [sub_resource type="FontVariation" id="FontVariation_tt4qn"]
 spacing_space = 6
 
@@ -431,7 +488,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.084,
-"stream": ExtResource("4_po80s")
+"stream": ExtResource("36_d5d3s")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -446,7 +503,19 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.9]
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Audio/Dialogue_open:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-18.0]
 }
 
 [sub_resource type="Animation" id="Animation_ps3nt"]
@@ -474,6 +543,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Audio/Dialogue_open:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.0]
 }
 
 [sub_resource type="Animation" id="Animation_n00c2"]
@@ -517,6 +598,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Audio/Dialogue_open:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n00c2"]
@@ -1558,6 +1651,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%Audio/Menus_open:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-8.0]
+}
 
 [sub_resource type="Animation" id="Animation_vlsf6"]
 length = 0.001
@@ -1609,6 +1714,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Audio/Menus_open:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-8.0]
+}
 
 [sub_resource type="Animation" id="Animation_7yne8"]
 resource_name = "To"
@@ -1657,9 +1774,9 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "clips": [{
-"end_offset": 0.1257,
-"start_offset": 0.1461,
-"stream": ExtResource("95_77y48")
+"end_offset": 0.0,
+"start_offset": 0.1141,
+"stream": ExtResource("104_lvvw6")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -1674,7 +1791,19 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.9]
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%Audio/Menus_open:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-16.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6p561"]
@@ -1977,12 +2106,19 @@ size = Vector3(100.200005, 30.300001, 1)
 
 [node name="Audio" type="Node" parent="." unique_id=711092475]
 unique_name_in_owner = true
+script = ExtResource("1_7n4c0")
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=2030753904]
 process_mode = 3
 stream = ExtResource("1_hn85b")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
+
+[node name="MusicMonolith" type="AudioStreamPlayer" parent="Audio" unique_id=723030770]
+process_mode = 3
+stream = ExtResource("3_8dus5")
+volume_db = -13.0
 bus = &"Music"
 
 [node name="CameraZoom" type="AudioStreamPlayer" parent="Audio" unique_id=813371747]
@@ -1999,7 +2135,7 @@ autostart = true
 
 [node name="Ambient" type="AudioStreamPlayer" parent="Audio" unique_id=945917017]
 stream = ExtResource("3_xde1d")
-volume_db = -22.0
+volume_db = -20.0
 autoplay = true
 bus = &"Ambient"
 
@@ -2012,6 +2148,120 @@ bus = &"UI"
 process_mode = 3
 volume_db = -6.0
 bus = &"UI"
+
+[node name="Metal_click_hover" type="AudioStreamPlayer" parent="Audio" unique_id=475570815]
+process_mode = 3
+stream = ExtResource("4_q848m")
+volume_db = -20.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Metal_click_pressed" type="AudioStreamPlayer" parent="Audio" unique_id=1636724976]
+process_mode = 3
+stream = ExtResource("5_7n4c0")
+volume_db = -12.0
+bus = &"UI"
+
+[node name="Metal_click_released" type="AudioStreamPlayer" parent="Audio" unique_id=1115913559]
+process_mode = 3
+stream = ExtResource("6_w4m4s")
+volume_db = -8.0
+bus = &"UI"
+
+[node name="BuildDemolitionStateBroke" type="AudioStreamPlayer" parent="Audio" unique_id=575418218]
+process_mode = 3
+stream = ExtResource("8_iketc")
+volume_db = -10.0
+pitch_scale = 0.88
+bus = &"UI"
+
+[node name="WorkerStateBroke" type="AudioStreamPlayer" parent="Audio" unique_id=1650761885]
+process_mode = 3
+stream = ExtResource("9_5e40a")
+volume_db = -10.0
+bus = &"UI"
+
+[node name="TutorilaSound" type="AudioStreamPlayer" parent="Audio" unique_id=1918011402]
+process_mode = 3
+stream = ExtResource("10_5e40a")
+volume_db = -16.0
+max_polyphony = 2
+bus = &"UI"
+
+[node name="Blink" type="AudioStreamPlayer" parent="Audio" unique_id=1584657888]
+process_mode = 3
+stream = ExtResource("11_d5d3s")
+volume_db = -12.0
+pitch_scale = 2.93
+bus = &"UI"
+
+[node name="Digital_click_hover" type="AudioStreamPlayer" parent="Audio" unique_id=334176923]
+process_mode = 3
+stream = ExtResource("12_4wf2t")
+volume_db = -4.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_click_pressed" type="AudioStreamPlayer" parent="Audio" unique_id=1730285762]
+process_mode = 3
+stream = ExtResource("13_0mfkc")
+volume_db = -22.0
+bus = &"UI"
+
+[node name="Digital_no_res" type="AudioStreamPlayer" parent="Audio" unique_id=607247940]
+process_mode = 3
+stream = ExtResource("14_0mfkc")
+volume_db = -24.0
+bus = &"UI"
+
+[node name="MonolithOpen" type="AudioStreamPlayer" parent="Audio" unique_id=1603745442]
+process_mode = 3
+stream = ExtResource("16_8e00r")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Digital_zone_click" type="AudioStreamPlayer" parent="Audio" unique_id=154251268]
+process_mode = 3
+stream = ExtResource("79_dg5mt")
+volume_db = -24.0
+pitch_scale = 2.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_zone_open" type="AudioStreamPlayer" parent="Audio" unique_id=2052851866]
+process_mode = 3
+stream = ExtResource("18_8e00r")
+volume_db = -24.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="QuestDone" type="AudioStreamPlayer" parent="Audio" unique_id=1858820497]
+process_mode = 3
+stream = ExtResource("19_d440o")
+volume_db = -12.0
+bus = &"UI"
+
+[node name="QuestAccept" type="AudioStreamPlayer" parent="Audio" unique_id=753832516]
+process_mode = 3
+stream = ExtResource("20_m6mm7")
+volume_db = -32.0
+bus = &"UI"
+
+[node name="QuestConditionDone" type="AudioStreamPlayer" parent="Audio" unique_id=1999826790]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("20_m6mm7")
+volume_db = -32.0
+bus = &"UI"
+
+[node name="Voice" type="AudioStreamPlayer" parent="Audio" unique_id=714126938]
+stream = ExtResource("21_n85g4")
+volume_db = -20.0
+pitch_scale = 0.8
+bus = &"UI"
+
+[node name="Timer" type="Timer" parent="Audio/Voice" unique_id=235145363]
+wait_time = 0.06
 
 [node name="QuestLogic" type="Node" parent="." unique_id=1270950353]
 unique_name_in_owner = true
@@ -2035,6 +2285,7 @@ libraries/ = SubResource("AnimationLibrary_vlx1q")
 
 [node name="DEBUG" type="CanvasLayer" parent="." unique_id=403751199]
 layer = 3
+visible = false
 script = ExtResource("2_7ukgp")
 
 [node name="TextureRect" type="ColorRect" parent="DEBUG" unique_id=1903518222]
@@ -2042,18 +2293,18 @@ material = SubResource("ShaderMaterial_xdeo5")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1839.0
-offset_top = 44.0
-offset_right = -1366.0
-offset_bottom = 493.0
+offset_left = -1727.0
+offset_top = 25.0
+offset_right = -1356.0
+offset_bottom = 454.0
 grow_horizontal = 0
 color = Color(0, 0, 0, 1)
 
 [node name="MenuButton" type="OptionButton" parent="DEBUG" unique_id=200167587]
-offset_left = 122.0
-offset_top = 191.0
-offset_right = 453.0
-offset_bottom = 256.0
+offset_left = 206.61023
+offset_top = 192.0
+offset_right = 537.6102
+offset_bottom = 257.0
 selected = 0
 item_count = 7
 popup/item_0/text = "Rusted 1000"
@@ -2079,57 +2330,67 @@ popup/item_6/icon = ExtResource("10_hwrqn")
 popup/item_6/id = 6
 
 [node name="add" type="Button" parent="DEBUG" unique_id=182118553]
-offset_left = 123.0
-offset_top = 149.0
-offset_right = 286.0
-offset_bottom = 186.0
+offset_left = 207.61023
+offset_top = 150.0
+offset_right = 370.61023
+offset_bottom = 187.0
 text = "Add selected res"
 icon = ExtResource("11_xegqy")
 
 [node name="Full" type="Button" parent="DEBUG" unique_id=1232582986]
-offset_left = 299.0
-offset_top = 135.0
-offset_right = 445.0
-offset_bottom = 184.0
+offset_left = 383.61023
+offset_top = 136.0
+offset_right = 529.6102
+offset_bottom = 185.0
 text = "All to 99999"
 icon = ExtResource("12_5h554")
 
 [node name="Clear" type="Button" parent="DEBUG" unique_id=719389753]
-offset_left = 297.0
-offset_top = 83.0
-offset_right = 442.0
-offset_bottom = 124.0
+offset_left = 381.61023
+offset_top = 84.0
+offset_right = 526.6102
+offset_bottom = 125.0
 text = "All to ZERO"
 icon = ExtResource("15_tt4qn")
 
 [node name="speed0_5" type="Button" parent="DEBUG" unique_id=705285867]
-offset_left = 121.0
-offset_top = 263.0
-offset_right = 284.0
-offset_bottom = 290.0
+offset_left = 205.61023
+offset_top = 264.0
+offset_right = 368.61023
+offset_bottom = 291.0
 text = "0.5 speed"
 
 [node name="speed1" type="Button" parent="DEBUG" unique_id=625777880]
-offset_left = 289.0
-offset_top = 263.0
-offset_right = 452.0
-offset_bottom = 290.0
+offset_left = 373.61023
+offset_top = 264.0
+offset_right = 536.6102
+offset_bottom = 291.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_xxqh0")
 text = "1.0 speed"
 
 [node name="speed2" type="Button" parent="DEBUG" unique_id=1818153177]
-offset_left = 121.0
-offset_top = 295.0
-offset_right = 284.0
-offset_bottom = 322.0
+offset_left = 205.61023
+offset_top = 296.0
+offset_right = 368.61023
+offset_bottom = 323.0
 text = "2.0 speed"
 
 [node name="speed5" type="Button" parent="DEBUG" unique_id=370657564]
-offset_left = 289.0
-offset_top = 295.0
-offset_right = 452.0
-offset_bottom = 322.0
+offset_left = 373.61023
+offset_top = 296.0
+offset_right = 536.6102
+offset_bottom = 323.0
 text = "5.0 speed"
+
+[node name="Label" type="Label" parent="DEBUG" unique_id=1141207815]
+offset_left = 196.0
+offset_top = 20.0
+offset_right = 539.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 64
+text = "DEBUG(F1)"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Pause" type="CanvasLayer" parent="." unique_id=1923206441]
 process_mode = 3
@@ -2165,7 +2426,8 @@ patch_margin_bottom = 149
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
 
-[node name="VBC" type="VBoxContainer" parent="Pause" unique_id=1914576960]
+[node name="VBC" type="Control" parent="Pause" unique_id=644957288]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2177,12 +2439,14 @@ offset_right = 203.0
 offset_bottom = 309.95593
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 4
-theme_override_constants/separation = 24
-alignment = 1
 
 [node name="Continue" type="Button" parent="Pause/VBC" unique_id=184900139]
-layout_mode = 2
+layout_mode = 0
+offset_right = 406.0
+offset_bottom = 125.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
@@ -2220,7 +2484,11 @@ script = ExtResource("65_hwrqn")
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Settings" type="Button" parent="Pause/VBC" unique_id=1580891146]
-layout_mode = 2
+layout_mode = 0
+offset_top = 149.0
+offset_right = 406.0
+offset_bottom = 274.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
 theme_override_colors/font_pressed_color = Color(0.732402, 1, 0.7077555, 1)
@@ -2258,7 +2526,11 @@ script = ExtResource("65_hwrqn")
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Exit_to main" type="Button" parent="Pause/VBC" unique_id=1321067021]
-layout_mode = 2
+layout_mode = 0
+offset_top = 298.0
+offset_right = 406.0
+offset_bottom = 423.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_focus_color = Color(0.732402, 1, 0.7077555, 1)
@@ -2337,6 +2609,30 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_r8b8i")
 metadata/_edit_lock_ = true
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Pause" unique_id=148090719]
+disable_3d = true
+oversampling_override = 1.0
+title = "Точно выйти?"
+initial_position = 1
+size = Vector2i(693, 323)
+borderless = true
+theme = SubResource("Theme_n85g4")
+ok_button_text = "Выйти"
+cancel_button_text = "Отмена"
+
+[node name="Label" type="RichTextLabel" parent="Pause/ConfirmationDialog" unique_id=682747951]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 685.0
+offset_bottom = 249.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[font_size=64]Точно выйти?[/font_size]
+Если вы выйдите из игры, прогресс будет утерян. 
+Вы уверены, что хотите выйти?[img=256x256]res://Images/Daniel/47db048abc0c7b6a.png[/img]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=1969783227]
 unique_name_in_owner = true
 script = ExtResource("21_dweyv")
@@ -2348,7 +2644,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -743.0
 offset_top = 215.0
-offset_right = -176.99988
+offset_right = -177.00024
 offset_bottom = 866.8114
 grow_horizontal = 0
 mouse_filter = 2
@@ -2505,6 +2801,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/Panel/MC" unique_id=1596770078]
 layout_mode = 2
+theme = SubResource("Theme_w2vja")
 theme_override_colors/default_color = Color(0.87931144, 0.99999994, 0.8807612, 1)
 theme_override_fonts/normal_font = SubResource("FontVariation_tt4qn")
 theme_override_fonts/bold_font = SubResource("FontVariation_30cd8")
@@ -2857,7 +3154,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Quest_UI" type="Control" parent="HUD/BaseUI" unique_id=1816287627]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2955,6 +3251,7 @@ mouse_filter = 2
 texture = ExtResource("34_kkiys")
 
 [node name="Build_scroll_list" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1949844413]
+visible = false
 clip_contents = true
 layout_direction = 3
 layout_mode = 1
@@ -3249,7 +3546,6 @@ layout_mode = 2
 res = ExtResource("49_n85g4")
 
 [node name="Zones_View" type="Control" parent="HUD/BaseUI/Store_UI" unique_id=1207550421]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3347,9 +3643,11 @@ custom_minimum_size = Vector2(236.53, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = SubResource("Theme_w2vja")
 theme_override_colors/default_color = Color(0.70980394, 0.83137256, 0.70980394, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_hn85b")
-text = "Тут много снега и эмэмдемса"
+text = "Тут много снега и эмэмдемса
+Тут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемсаТут много снега и эмэмдемса"
 autowrap_mode = 2
 
 [node name="HBC" type="Control" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc" unique_id=801120053]
@@ -3482,6 +3780,25 @@ stretch_mode = 5
 script = ExtResource("65_hwrqn")
 scale_value = Vector2(1.03, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
+[node name="Audio" type="Node" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy" unique_id=606926056]
+
+[node name="Digital_click_hover" type="AudioStreamPlayer" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy/Audio" unique_id=1542677565]
+process_mode = 3
+stream = ExtResource("12_4wf2t")
+volume_db = -4.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_click_pressed" type="AudioStreamPlayer" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy/Audio" unique_id=148247998]
+process_mode = 3
+stream = ExtResource("13_0mfkc")
+volume_db = -22.0
+bus = &"UI"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HUD/BaseUI/Store_UI/Zones_View/МС/Desc/HBC/Buy/Audio" unique_id=1280726612]
+stream = ExtResource("79_dg5mt")
+volume_db = -15.0
 
 [node name="MC" type="MarginContainer" parent="HUD/BaseUI/Store_UI/Zones_View" unique_id=1662780049]
 layout_mode = 0
@@ -4679,7 +4996,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/ADMIN" unique_id=280219950]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -4797,7 +5114,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker" unique_id=384490965]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -4912,7 +5229,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker2" unique_id=1452380036]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -5027,7 +5344,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker3" unique_id=279967806]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -5142,7 +5459,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker4" unique_id=953538341]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -5257,7 +5574,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker5" unique_id=37431763]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -5372,7 +5689,7 @@ scale_value = Vector2(1.04, 1.04)
 metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Ring" type="AudioStreamPlayer" parent="HUD/BaseUI/workers_panel/ScrollContainer/VBC/worker6" unique_id=1105287335]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("84_po80s")
 volume_db = -12.0
 pitch_scale = 0.88
@@ -5784,6 +6101,7 @@ text = "ЛКМ"
 horizontal_alignment = 1
 
 [node name="Slide_4" type="ColorRect" parent="Tutorial/Control/CG" unique_id=464465937]
+visible = false
 offset_right = 2044.0
 offset_bottom = 1136.0
 color = Color(0, 0, 0, 0.654902)
@@ -6100,7 +6418,7 @@ color_ramp = SubResource("Gradient_x1san")
 color_initial_ramp = SubResource("Gradient_yssgo")
 
 [node name="Clouds" type="CPUParticles3D" parent="Enviroment/FloorPlane" unique_id=1828890602]
-transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 29.588749, -50)
+transform = Transform3D(0.9659259, 0, 0.2588189, 0, 1, 0, -0.2588189, 0, 0.9659259, 9.100002, 31.924778, -50)
 layers = 4
 amount = 200
 lifetime = 40.0
@@ -6108,7 +6426,7 @@ preprocess = 40.0
 speed_scale = 0.1
 mesh = SubResource("SphereMesh_xegqy")
 emission_shape = 3
-emission_box_extents = Vector3(40, 10, 1)
+emission_box_extents = Vector3(40, 0, 1)
 direction = Vector3(0, 0, 1)
 spread = 28.84
 flatness = 1.0
@@ -6321,6 +6639,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.900001, -0.3, -3.4)
 [node name="Hill_8" parent="Enviroment/DynamicHills/Zone_2" unique_id=826020963 instance=ExtResource("89_7forp")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -19.4, -0.3, -1.8000001)
 
+[node name="DemolitionSound" type="AudioStreamPlayer3D" parent="Enviroment/DynamicHills/Zone_2" unique_id=1725002558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.395371, 1.3821507, 6.175255)
+stream = ExtResource("129_pe6gr")
+volume_db = -9.0
+unit_size = 19.77
+max_db = -10.2
+pitch_scale = 1.52
+
 [node name="Zone_3" type="Node3D" parent="Enviroment/DynamicHills" unique_id=1096980691]
 transform = Transform3D(-0.08715577, 0, 0.9961947, 0, 1, 0, -0.9961947, 0, -0.08715577, 7.2999997, 0, -22.4)
 script = ExtResource("92_w45vw")
@@ -6370,6 +6696,14 @@ transform = Transform3D(-0.17431153, 0, -1.9923894, 0, 2, 0, 1.9923894, 0, -0.17
 [node name="Hill_7" parent="Enviroment/DynamicHills/Zone_3" unique_id=423496508 instance=ExtResource("88_exte1")]
 transform = Transform3D(0.3882286, 0, 1.4488891, 0, 1.5, 0, -1.4488891, 0, 0.3882286, -28.928366, 0, -11.264137)
 
+[node name="DemolitionSound" type="AudioStreamPlayer3D" parent="Enviroment/DynamicHills/Zone_3" unique_id=1005385248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.395371, 1.3821507, 6.175255)
+stream = ExtResource("129_pe6gr")
+volume_db = -9.0
+unit_size = 19.77
+max_db = -10.2
+pitch_scale = 1.52
+
 [node name="Zone_4" type="Node3D" parent="Enviroment/DynamicHills" unique_id=1072785611]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9999998, 0, -2.9999995)
 script = ExtResource("92_w45vw")
@@ -6418,6 +6752,14 @@ transform = Transform3D(-1.7320508, 0, 1.0000002, 0, 2, 0, -1.0000002, 0, -1.732
 
 [node name="Hill_7" parent="Enviroment/DynamicHills/Zone_4" unique_id=1753131567 instance=ExtResource("88_exte1")]
 transform = Transform3D(-0.74921304, 0, -1.8543681, 0, 3.0000005, 0, 1.8543681, 0, -0.74921304, -12.506725, -0.39999986, 16.244814)
+
+[node name="DemolitionSound" type="AudioStreamPlayer3D" parent="Enviroment/DynamicHills/Zone_4" unique_id=1149888294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.395371, 1.3821507, 6.175255)
+stream = ExtResource("129_pe6gr")
+volume_db = -9.0
+unit_size = 19.77
+max_db = -10.2
+pitch_scale = 1.52
 
 [node name="Monolith_parts" type="CPUParticles3D" parent="Enviroment/DynamicHills" unique_id=711514915]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.2, -0.099999785, 15.3)
@@ -6869,6 +7211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.650001, 0)
 shape = SubResource("BoxShape3D_vlsf6")
 debug_color = Color(1, 0, 0.5764706, 1)
 
+[connection signal="timeout" from="Audio/Voice/Timer" to="Dialogue" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Fade/Fade" to="Pause" method="_on_fade"]
 [connection signal="button_down" from="DEBUG/MenuButton" to="DEBUG" method="menu_button_button_down"]
 [connection signal="pressed" from="DEBUG/add" to="DEBUG" method="_pressed"]
@@ -6877,6 +7220,8 @@ debug_color = Color(1, 0, 0.5764706, 1)
 [connection signal="pressed" from="Pause/VBC/Continue" to="Pause" method="_on_continue_pressed"]
 [connection signal="pressed" from="Pause/VBC/Settings" to="Pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="Pause/VBC/Exit_to main" to="Pause" method="_on_exit_to_main_pressed"]
+[connection signal="canceled" from="Pause/ConfirmationDialog" to="Pause" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="Pause/ConfirmationDialog" to="Pause" method="_on_confirmation_dialog_confirmed"]
 [connection signal="gui_input" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_on_rich_text_label_gui_input"]
 [connection signal="meta_hover_ended" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_end"]
 [connection signal="meta_hover_started" from="Dialogue/Panel/MC/RichTextLabel" to="Dialogue" method="_dialogue_text_hover_start"]

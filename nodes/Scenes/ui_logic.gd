@@ -70,6 +70,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("displace") and building_state:
 		##Если мы не в туториале
 		if $"../../Tutorial".tutorial_stage > 7:
+			%Audio.state_broke()
 			get_tree().call_group("cell","toggle_lines", false)
 			get_tree().call_group("cell", "_mouse_exit")
 			building_state = false
@@ -77,6 +78,7 @@ func _input(event: InputEvent) -> void:
 			change_all_label(true)
 			$StateFeedback.tween_hide_anim()
 	if event.is_action_released("displace") and worker_state:
+		%Audio.work_broke()
 		drag.hide()
 		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
@@ -86,12 +88,14 @@ func _input(event: InputEvent) -> void:
 		worker_state = false
 		$StateFeedback.tween_hide_anim()
 	if event.is_action_released("displace") and demolition_state:
+		%Audio.state_broke()
 		get_tree().call_group("cell","toggle_lines", false)
 		get_tree().call_group("cell", "_mouse_exit")
 		demolition_state = false
 		$StateFeedback.tween_hide_anim()
 
 func blink_animation():
+	%Audio.blink()
 	var twm = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
 	twm.tween_property(blink_rect, "modulate", Color(0.0, 0.0, 0.0, 0.0), 0.1).from(Color(0.011, 0.033, 0.008, 0.831))
 
@@ -282,6 +286,7 @@ func _on_zone_buy() -> void:
 			print(selected_zone.name, " разблокирован!")
 			_on_buildings_pressed()
 			$Store_UI/HBC/StrechController.press($Store_UI/HBC/Buildings)
+			$"../../Audio/Digital_zone_open".play()
 			match selected_zone.number:
 				2:
 					Global.is_zone_2_open = true
@@ -296,6 +301,7 @@ func _on_zone_buy() -> void:
 					%QuestLogic.check_for_all()
 					$Store_UI/Slider.value = 30
 					$"../../Enviroment/DynamicHills/Zone_2".start_demolition()
+					$"../../Enviroment/DynamicHills/Zone_2/DemolitionSound".play()
 					
 					$"Store_UI/Build_scroll_list/VBС/lvl4".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl4".update()
@@ -312,6 +318,7 @@ func _on_zone_buy() -> void:
 					
 					%QuestLogic.check_for_all()
 					$"../../Enviroment/DynamicHills/Zone_3".start_demolition()
+					$"../../Enviroment/DynamicHills/Zone_3/DemolitionSound".play()
 					$"../../Borders/border_dynamic".queue_free()
 					$Store_UI/Slider.value = 60
 					
@@ -330,12 +337,16 @@ func _on_zone_buy() -> void:
 					
 					%QuestLogic.check_for_all()
 					$"../../Enviroment/DynamicHills/Zone_4".start_demolition()
+					$"../../Enviroment/DynamicHills/Zone_4/DemolitionSound".play()
 					$Store_UI/Slider.value = 75
 					$"../../Borders/border_dynamic2".queue_free()
 					
 					$"Store_UI/Build_scroll_list/VBС/lvl10".is_open = true
 					$"Store_UI/Build_scroll_list/VBС/lvl10".update()
 				5:
+					$"../../Audio/MonolithOpen".play()
+					$"../../Audio/Music".stop()
+					$"../../Audio/MusicMonolith".play()
 					Global.is_zone_5_open = true
 					Global.quest_done.append(load("res://resources/Quests/Zone_quest/Zone5Quest.tres"))
 					$"Quest_UI/Quest_scroll_list/VBС/Quest_panel".close()
@@ -363,6 +374,7 @@ func _on_zone_buy() -> void:
 
 
 func no_res(node:Control, init_pos, streight: int):
+	$"../../Audio/Digital_no_res".play()
 	var twp = create_tween().set_trans(Tween.TRANS_ELASTIC)
 	var rnd = randf_range(-streight*2,streight*2)
 	if absf(rnd) <= float(streight)/2:

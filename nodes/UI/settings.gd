@@ -20,10 +20,16 @@ extends CanvasLayer
 ]
 
 func _ready() -> void:
+	exit.mouse_entered.connect(sound_hovered)
+	reset.mouse_entered.connect(sound_hovered)
+	exit.pressed.connect(sound_pressed)
+	reset.pressed.connect(sound_pressed)
+	
 	for i in range(sliders.size()):
 		var bus_db_value = AudioServer.get_bus_volume_db(i)
 		sliders[i].value = bus_db_value
 		
+		sliders[i].drag_started.connect(sound_pressed)
 		sliders[i].value_changed.connect(change_volume.bind(i))
 		update_percent_label(bus_db_value, i)
 	
@@ -48,3 +54,9 @@ func update_percent_label(db_value: float, bus_id: int) -> void:
 
 func _on_button_pressed() -> void:
 	hide()
+
+func sound_hovered():
+	$Audio/Digital_click_hover.play()
+
+func sound_pressed():
+	$Audio/Digital_click_pressed.play()

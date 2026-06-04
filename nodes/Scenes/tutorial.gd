@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var touch_7: Button = $Control/CG/Slide_7/Touch5
 @onready var touch_8: Button = $Control/CG/Slide_8/Touch5
 
+const TUTORIAL_PART_2 = preload("uid://bavw24d4xeu5v")
 
 var arrows_ruin: Array
 
@@ -110,6 +111,7 @@ func twmf(node, time: float,to_black: bool = true):
 			twm.tween_property(node, "modulate", Color(1.0, 1.0, 1.0, 0.0), time).from(Color(1.0, 1.0, 1.0, 1.0))
 
 func pressed(ID: int):
+	%Audio.tutor()
 	match ID:
 		1:
 			%ADMIN.get_dialogue()
@@ -171,6 +173,8 @@ func pressed(ID: int):
 			$Control/CG/Slide_free.hide()
 			$Control/CG/Slide_free3.hide()
 			tutorial_stage = 77
+			
+			%ADMIN.add_quest(TUTORIAL_PART_2)
 		8:
 			$Control/CG/Slide_7.hide()
 			%BaseUI._on_quest_pressed()

@@ -14,6 +14,23 @@ var random_place_sounds: Array = [
 	preload("uid://ci6lvejhdbam6"),
 ]
 
+var random_snos_sounds: Array = [
+	preload("uid://dgb1hxoe4x37q"),
+	preload("uid://c7iudwk3673df"),
+	preload("uid://sp5t73b84o58"),
+]
+
+var random_drop_work_sounds: Array = [
+	preload("uid://uq83inspe5n8"),
+	preload("uid://c2ttid0pbhtov"),
+]
+
+var random_money_sounds: Array = [
+	preload("uid://c7inkjqhafklo"),
+	preload("uid://q6o4sebq331x"),
+	preload("uid://cbu8layq5anbt"),
+]
+
 @onready var build_sound: AudioStreamPlayer3D = $Audio/Build_sound
 
 func _ready() -> void:
@@ -70,11 +87,15 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 			place()
 			get_tree().call_group("cell","toggle_lines", false)
 		elif %BaseUI.worker_state and has_building and has_worker == false and  current_build != load("uid://cm6r5ofrc0a8"):
+			$Audio/WorkerDrop.stream = random_drop_work_sounds.pick_random()
+			$Audio/WorkerDrop.play()
 			appoint()
 			$"../../HUD/PortairDrag".hide()
 			$"../../HUD/PortairDrag".position = Vector2(1810.0,781.0)
 			get_tree().call_group("cell","toggle_lines", false)
 		elif %BaseUI.demolition_state and has_building:
+			$Audio/BrokeSound.stream = random_snos_sounds.pick_random()
+			$Audio/BrokeSound.play()
 			displace()
 			get_tree().call_group("cell","toggle_lines", false)
 		elif has_building and is_charged:
@@ -82,6 +103,8 @@ func _input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 			if $"../../HUD/PortairDrag".visible:
 				%BaseUI.jigle()
 		else:
+			if %BaseUI.building_state or %BaseUI.demolition_state or %BaseUI.worker_state:
+				$Audio/WrongCell.play()
 			%BaseUI.jigle()
 	elif event.is_action_pressed("displace") and has_building and has_worker:
 		disappoint()
@@ -297,6 +320,9 @@ func charge_timeout() -> void:
 	twps.tween_property($Charge_sprite/Charge_feedback, "pixel_size", size, 0.6)
 
 func click_res():
+	$Audio/Money.stream = random_money_sounds.pick_random()
+	$Audio/Money.play()
+	
 	if $"../../Tutorial".tutorial_stage == -2:
 			$"../../Tutorial".pressed(-2)
 	

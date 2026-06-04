@@ -4,11 +4,13 @@ extends Panel
 @export var is_open: bool = false
 @onready var condition: Label = $Condition
 @onready var description: RichTextLabel = $Description
+@onready var buy: Button = $buy
 
 func _ready() -> void:
 	description.mouse_entered.connect(desc_enter)
 	description.mouse_exited.connect(desc_exit)
-	$buy.pressed.connect(_on_buy_pressed)
+	buy.pressed.connect(_on_buy_pressed)
+	buy.mouse_entered.connect(sound_hover)
 	update()
 
 func update():
@@ -57,6 +59,7 @@ func _on_buy_pressed() -> void:
 	if is_open:
 		if Global.get_res_value(res.buy_cost_type) >= res.buy_cost:
 			if Global.get_res_value(res.s_buy_cost_type) >= res.s_buy_cost:
+				$Audio/Digital_click_pressed.play()
 				Global.add_to_integer_res_type(res.buy_cost_type, -res.buy_cost)
 				Global.add_to_integer_res_type(res.s_buy_cost_type, -res.s_buy_cost)
 				%BaseUI.switch_to_build(res)
@@ -70,6 +73,7 @@ func _on_buy_pressed() -> void:
 		no_res()
 
 func no_res():
+	$Audio/Digital_no_res.play()
 	var twp = create_tween().set_trans(Tween.TRANS_ELASTIC)
 	var rnd = randf_range(-6,6)
 	var twm = create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
@@ -88,3 +92,6 @@ func unlock(res_build:Building):
 		print(res_build.name," unlocked!")
 		is_open = true
 		update()
+
+func sound_hover():
+	$Audio/Digital_click_hover.play()

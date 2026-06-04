@@ -15,6 +15,8 @@ class_name  QuestPanel
 func _ready() -> void:
 	button_zone.pressed.connect(press)
 	button.pressed.connect(press)
+	button_zone.mouse_entered.connect(sound_hover)
+	button.mouse_entered.connect(sound_hover)
 	update_info()
 	$Animator.play("add")
 
@@ -80,6 +82,7 @@ func update_quset_labels_color():
 						$Quest/VBoxContainer/Quest_desc.text = quest_res.character_name + " ждет вашего ответа"
 
 func press():
+	$Audio/Digital_click_pressed.play()
 	if is_next_zone_quest:
 		$"../../../../Store_UI".visible = true
 		$"../../..".visible = false
@@ -107,3 +110,6 @@ func close():
 	$Quest.hide()
 	$Zone_quest.hide()
 	$Zone_label.hide()
+
+func sound_hover():
+	$Audio/Digital_click_hover.play()

@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dp24xaod6mlaq" path="res://Images/Zones/District_Factories_Concept.PNG" id="6_dgv3n"]
 [ext_resource type="Texture2D" uid="uid://cee7aon6hogg8" path="res://Images/UI/icons/icon_lock.PNG" id="6_l75qi"]
 [ext_resource type="Texture2D" uid="uid://jy2drlgqa5ra" path="res://Images/Resources_icons/Colored/icon_money.png" id="7_muuik"]
+[ext_resource type="AudioStream" uid="uid://er0fhfaomwwu" path="res://Audio/UI/S_PanelButton_Hovered.mp3" id="10_3xjqp"]
+[ext_resource type="AudioStream" uid="uid://bolwixm45ybc3" path="res://Audio/UI/S_PanelButton_Click.ogg" id="11_xll3g"]
+[ext_resource type="AudioStream" uid="uid://cp55j3vujmapk" path="res://Audio/UI/S_PanelButton_DontHaverRes.mp3" id="12_ctbbd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgv3n"]
 content_margin_left = 0.0
@@ -50,6 +53,35 @@ texture = ExtResource("1_dgv3n")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xjqp"]
 texture = ExtResource("1_dgv3n")
 modulate_color = Color(1.3792288, 1.9754877, 1.341491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n85g4"]
+bg_color = Color(0.42971876, 0.66894644, 0.44159076, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hrd"]
+bg_color = Color(0.6686425, 0.8897641, 0.6730212, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlnya"]
+bg_color = Color(0.20046821, 0.3843203, 0.18093404, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_3xjqp"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_n85g4")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_x8hrd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_hlnya")
 
 [sub_resource type="Gradient" id="Gradient_dgv3n"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -169,6 +201,7 @@ offset_left = 178.0
 offset_top = 31.0
 offset_right = 430.0
 offset_bottom = 120.0
+theme = SubResource("Theme_3xjqp")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
@@ -224,3 +257,24 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_r4p40")
 text = "Разблокируется после открытия 2 зоны"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Audio" type="Node" parent="." unique_id=1739598134]
+
+[node name="Digital_click_hover" type="AudioStreamPlayer" parent="Audio" unique_id=1019818515]
+process_mode = 3
+stream = ExtResource("10_3xjqp")
+volume_db = -4.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_click_pressed" type="AudioStreamPlayer" parent="Audio" unique_id=1597122545]
+process_mode = 3
+stream = ExtResource("11_xll3g")
+volume_db = -22.0
+bus = &"UI"
+
+[node name="Digital_no_res" type="AudioStreamPlayer" parent="Audio" unique_id=1927824811]
+process_mode = 3
+stream = ExtResource("12_ctbbd")
+volume_db = -18.0
+bus = &"UI"

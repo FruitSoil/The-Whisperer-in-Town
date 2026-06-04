@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbu8layq5anbt"
+path="res://.godot/imported/S_MoneyTake_ver3 .mp3-f1312666a4ee1e6b08b1aac2bc9b58f4.mp3str"
+
+[deps]
+
+source_file="res://Audio/UI/S_MoneyTake_ver3 .mp3"
+dest_files=["res://.godot/imported/S_MoneyTake_ver3 .mp3-f1312666a4ee1e6b08b1aac2bc9b58f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

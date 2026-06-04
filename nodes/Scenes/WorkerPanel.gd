@@ -116,6 +116,7 @@ func update_icon():
 			$Dialogue_status/Feedback.modulate = Color("427f4fff")
 			ring.stop()
 		5:
+			%QuestConditionDone.play()
 			$Dialogue_status.texture = load("res://Images/UI/icons/colored/new_dialogue.png")
 			$Dialogue_status.show()
 			$Dialogue_status.modulate = Color(0.753, 1.0, 1.0, 1.0)

@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dfvakvstfxhc3" path="res://Images/UI/ProgressBars/progress_bar_empty.PNG" id="8_01x4c"]
 [ext_resource type="Texture2D" uid="uid://cqcnwt1awb1gx" path="res://Images/UI/ProgressBars/progress_bar_full.PNG" id="9_nn10w"]
 [ext_resource type="AudioStream" uid="uid://g8a31bxrxtur" path="res://Audio/SFX/S_Build_District_ver1.mp3" id="10_ncfsq"]
+[ext_resource type="AudioStream" uid="uid://p2y1fd0ms41s" path="res://Audio/UI/S_NotThisCell.mp3" id="11_nn10w"]
+[ext_resource type="AudioStream" uid="uid://dgb1hxoe4x37q" path="res://Audio/SFX/S_SnosBuildingVer1.mp3" id="12_4a5kp"]
+[ext_resource type="AudioStream" uid="uid://uq83inspe5n8" path="res://Audio/UI/S_Workers_DropOnBuilding_Var1.mp3" id="13_4a5kp"]
+[ext_resource type="AudioStream" uid="uid://c7inkjqhafklo" path="res://Audio/UI/S_MoneyTake_ver1 .mp3" id="14_ia1yp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4sgp"]
 size = Vector3(4.5, 0.1, 4.5)
@@ -374,8 +378,33 @@ texture = SubResource("ViewportTexture_ymfr8")
 [node name="Build_sound" type="AudioStreamPlayer3D" parent="Audio" unique_id=1392222858]
 stream = ExtResource("10_ncfsq")
 attenuation_model = 3
-volume_db = -2.0
+volume_db = -5.0
 bus = &"SFX"
+
+[node name="WrongCell" type="AudioStreamPlayer" parent="Audio" unique_id=1251085679]
+process_mode = 3
+stream = ExtResource("11_nn10w")
+volume_db = -17.0
+max_polyphony = 2
+bus = &"UI"
+
+[node name="BrokeSound" type="AudioStreamPlayer3D" parent="Audio" unique_id=368984314]
+stream = ExtResource("12_4a5kp")
+attenuation_model = 3
+volume_db = -13.0
+bus = &"SFX"
+
+[node name="WorkerDrop" type="AudioStreamPlayer" parent="Audio" unique_id=539512553]
+process_mode = 3
+stream = ExtResource("13_4a5kp")
+volume_db = -10.0
+bus = &"UI"
+
+[node name="Money" type="AudioStreamPlayer" parent="Audio" unique_id=860154023]
+process_mode = 3
+stream = ExtResource("14_ia1yp")
+volume_db = -22.0
+bus = &"UI"
 
 [connection signal="timeout" from="Time_to_res" to="." method="_on_time_to_res_timeout"]
 [connection signal="timeout" from="Charge_time" to="." method="charge_timeout"]

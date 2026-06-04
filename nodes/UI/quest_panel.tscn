@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://d1s0axyxnno4y" path="res://Images/Resources_icons/actual/cultistic_res_icon.png" id="5_qoxd1"]
 [ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="8_smgqm"]
 [ext_resource type="Texture2D" uid="uid://b3vxixcy6468h" path="res://Images/UI/icons/IMG_20260512_194321_862.png" id="9_qoxd1"]
+[ext_resource type="AudioStream" uid="uid://er0fhfaomwwu" path="res://Audio/UI/S_PanelButton_Hovered.mp3" id="11_et562"]
+[ext_resource type="AudioStream" uid="uid://bolwixm45ybc3" path="res://Audio/UI/S_PanelButton_Click.ogg" id="12_e002g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dyru"]
 bg_color = Color(0.07058824, 0.07450981, 0.06666667, 0.12941177)
@@ -37,6 +39,35 @@ modulate_color = Color(1.2742168, 1.2742168, 1.2742168, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoxd1"]
 texture = ExtResource("4_mvj2t")
 modulate_color = Color(0.59717613, 0.59717613, 0.5971761, 0.7490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n85g4"]
+bg_color = Color(0.42971876, 0.66894644, 0.44159076, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hrd"]
+bg_color = Color(0.6686425, 0.8897641, 0.6730212, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlnya"]
+bg_color = Color(0.20046821, 0.3843203, 0.18093404, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_s40vi"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_n85g4")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_x8hrd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_hlnya")
 
 [sub_resource type="FontVariation" id="FontVariation_smgqm"]
 variation_embolden = 0.5
@@ -311,6 +342,7 @@ custom_minimum_size = Vector2(0, 70.355)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource("Theme_s40vi")
 theme_override_colors/default_color = Color(0.78431374, 1, 0.83137256, 1)
 theme_override_fonts/bold_font = SubResource("FontVariation_smgqm")
 theme_override_font_sizes/italics_font_size = 14
@@ -359,5 +391,20 @@ libraries/ = SubResource("AnimationLibrary_nrcl8")
 [node name="Timer" type="Timer" parent="." unique_id=1331877710]
 wait_time = 0.1
 autostart = true
+
+[node name="Audio" type="Node" parent="." unique_id=1014408858]
+
+[node name="Digital_click_hover" type="AudioStreamPlayer" parent="Audio" unique_id=248104661]
+process_mode = 3
+stream = ExtResource("11_et562")
+volume_db = -4.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_click_pressed" type="AudioStreamPlayer" parent="Audio" unique_id=1700587442]
+process_mode = 3
+stream = ExtResource("12_e002g")
+volume_db = -22.0
+bus = &"UI"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

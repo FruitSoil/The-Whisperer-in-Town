@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bkvfrlegahqaj" path="res://Images/UI/icons/IMG_20260512_194428_341.png" id="4_dtv7d"]
 [ext_resource type="Texture2D" uid="uid://dkb86l6s7x11g" path="res://Images/UI/icons/colored/icon_npc.png" id="5_irbvc"]
 [ext_resource type="Shader" uid="uid://bb7vawy5k5t7g" path="res://other/Shaders/VHS.gdshader" id="6_irbvc"]
+[ext_resource type="Script" uid="uid://bxlc2llf0x6gu" path="res://nodes/Scenes/tws_button.gd" id="6_qyith"]
+[ext_resource type="AudioStream" uid="uid://er0fhfaomwwu" path="res://Audio/UI/S_PanelButton_Hovered.mp3" id="7_pafaa"]
+[ext_resource type="AudioStream" uid="uid://bolwixm45ybc3" path="res://Audio/UI/S_PanelButton_Click.ogg" id="8_qyith"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irbvc"]
 texture = ExtResource("2_p8sls")
@@ -101,6 +104,7 @@ offset_left = 1522.0
 offset_top = 199.0
 offset_right = 1691.05
 offset_bottom = 360.0
+pivot_offset_ratio = Vector2(0, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_irbvc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0o6kg")
@@ -109,6 +113,10 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_irbvc")
 theme_override_styles/focus = SubResource("StyleBoxTexture_irbvc")
 icon = ExtResource("3_dtv7d")
 icon_alignment = 1
+
+[node name="CompJuice" type="Node" parent="Exit" unique_id=453578141]
+script = ExtResource("6_qyith")
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
 
 [node name="Panel" type="NinePatchRect" parent="." unique_id=1129397847]
 anchors_preset = 8
@@ -316,6 +324,13 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_03xf7")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_dtv7d")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dtv7d")
 
+[node name="CompJuice" type="Node" parent="Default/Reset" unique_id=1651110128]
+script = ExtResource("6_qyith")
+trans = 11
+ease_ = 2
+time = 0.1
+metadata/_custom_type_script = "uid://bxlc2llf0x6gu"
+
 [node name="Label" type="Label" parent="Default" unique_id=1760216366]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -339,3 +354,18 @@ offset_bottom = 26.561157
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Audio" type="Node" parent="." unique_id=1326348440]
+
+[node name="Digital_click_hover" type="AudioStreamPlayer" parent="Audio" unique_id=1656615823]
+process_mode = 3
+stream = ExtResource("7_pafaa")
+volume_db = -4.0
+max_polyphony = 3
+bus = &"UI"
+
+[node name="Digital_click_pressed" type="AudioStreamPlayer" parent="Audio" unique_id=1828398623]
+process_mode = 3
+stream = ExtResource("8_qyith")
+volume_db = -22.0
+bus = &"UI"

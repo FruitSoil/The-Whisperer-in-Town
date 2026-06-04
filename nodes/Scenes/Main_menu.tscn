@@ -61,7 +61,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-80.0, -10.0]
+"values": [-80.0, -15.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -101,7 +101,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.36666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-10.0, -80.0]
+"values": [-15.0, -80.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -223,7 +223,7 @@ offsets = PackedFloat32Array(0.03448276, 0.197318, 0.58237547, 0.98659)
 colors = PackedColorArray(1, 1, 1, 0.03317541, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_rcvuc"]
-offsets = PackedFloat32Array(0.6768061, 0.86882126)
+offsets = PackedFloat32Array(0.764268, 0.9503722)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1xjd1"]
@@ -231,7 +231,7 @@ gradient = SubResource("Gradient_rcvuc")
 width = 1920
 height = 1020
 fill = 1
-fill_from = Vector2(0.5, 0.5)
+fill_from = Vector2(0.5108173, 0.53846157)
 fill_to = Vector2(1, 1)
 
 [sub_resource type="Gradient" id="Gradient_06vvd"]
@@ -345,6 +345,38 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_0hvhj"]
+variation_embolden = 0.67
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n85g4"]
+bg_color = Color(0.42971876, 0.66894644, 0.44159076, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8hrd"]
+bg_color = Color(0.6686425, 0.8897641, 0.6730212, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlnya"]
+bg_color = Color(0.20046821, 0.3843203, 0.18093404, 1)
+border_color = Color(0, 0.22745098, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_0hvhj"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_n85g4")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_x8hrd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_hlnya")
 
 [node name="Main_menu" type="Node2D" unique_id=1755182682]
 script = ExtResource("1_06vvd")
@@ -496,6 +528,16 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_rcvuc")
 expand_mode = 1
 
+[node name="Vignette4" type="TextureRect" parent="Menu" unique_id=1059089737]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_1xjd1")
+expand_mode = 1
+
 [node name="Vignette3" type="TextureRect" parent="Menu" unique_id=1183786937]
 anchors_preset = 15
 anchor_right = 1.0
@@ -614,7 +656,6 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_1oi8o")
 theme_override_styles/focus = SubResource("StyleBoxTexture_hs0dn")
 
 [node name="Shadow" type="TextureRect" parent="Menu" unique_id=1630419282]
-visible = false
 modulate = Color(0, 0, 0, 0.49411765)
 anchors_preset = 8
 anchor_left = 0.5
@@ -630,21 +671,19 @@ grow_vertical = 2
 texture = ExtResource("17_5cxft")
 
 [node name="Title" type="TextureRect" parent="Menu" unique_id=612145324]
-visible = false
-anchors_preset = 8
+modulate = Color(0.6584629, 0.9470721, 0.63365835, 1)
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -680.5
-offset_top = -509.0
+offset_top = 40.0
 offset_right = 680.5
-offset_bottom = -355.0
+offset_bottom = 194.0
 grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("17_5cxft")
 
 [node name="Label2" type="Label" parent="Menu" unique_id=2040605510]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -662,6 +701,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu" unique_id=758976346]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -678,6 +718,7 @@ vertical_alignment = 1
 
 [node name="Authors" type="CanvasLayer" parent="." unique_id=968075119]
 layer = 3
+visible = false
 
 [node name="ColorBG" type="ColorRect" parent="Authors" unique_id=1246924011]
 visible = false
@@ -695,24 +736,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -393.5
-offset_top = -295.0
-offset_right = 393.5
-offset_bottom = -185.0
+offset_left = -429.0
+offset_top = -355.0
+offset_right = 358.0
+offset_bottom = -245.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
-theme_override_font_sizes/font_size = 84
+theme_override_colors/font_color = Color(0.43726838, 0.7505631, 0.6147196, 1)
+theme_override_font_sizes/font_size = 128
 text = "Авторы"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Exit" type="Button" parent="Authors" unique_id=1729536616]
 z_index = 1
-offset_left = 1522.0
-offset_top = 199.0
-offset_right = 1691.05
-offset_bottom = 360.0
+offset_left = 1614.0
+offset_top = 158.0
+offset_right = 1783.05
+offset_bottom = 319.0
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_5cxft")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0hvhj")
@@ -728,10 +769,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = -317.0
-offset_right = 705.0
-offset_bottom = 397.0
+offset_left = -880.0
+offset_top = -357.0
+offset_right = 819.0
+offset_bottom = 505.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_vdg37")
@@ -741,43 +782,6 @@ patch_margin_right = 114
 patch_margin_bottom = 149
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
-
-[node name="HBC" type="HBoxContainer" parent="Authors" unique_id=1486317802]
-offset_left = 255.0
-offset_top = 372.0
-offset_right = 1625.0
-offset_bottom = 456.0
-theme_override_constants/separation = 245
-alignment = 1
-
-[node name="tit" type="Label" parent="Authors/HBC" unique_id=1677219769]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
-theme_override_font_sizes/font_size = 84
-text = "Арт"
-vertical_alignment = 1
-
-[node name="tit2" type="Label" parent="Authors/HBC" unique_id=1579867410]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
-theme_override_font_sizes/font_size = 84
-text = "Гд"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="tit3" type="Label" parent="Authors/HBC" unique_id=1091160497]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.49019608, 1, 0.47843137, 1)
-theme_override_font_sizes/font_size = 84
-text = "Разработка"
-horizontal_alignment = 2
-vertical_alignment = 1
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Authors" unique_id=235096755]
 z_index = 2
@@ -797,6 +801,106 @@ offset_bottom = 26.561157
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Authors" unique_id=558200958]
+offset_left = 156.0
+offset_top = 291.0
+offset_right = 1686.0
+offset_bottom = 1023.0
+theme_override_constants/separation = 12
+
+[node name="HBC" type="HBoxContainer" parent="Authors/VBoxContainer" unique_id=1486317802]
+layout_mode = 2
+theme_override_constants/separation = 612
+alignment = 1
+
+[node name="Text" type="Label" parent="Authors/VBoxContainer/HBC" unique_id=1677219769]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45213896, 0.9976005, 0.6060429, 1)
+theme_override_font_sizes/font_size = 84
+text = "Арт"
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Authors/VBoxContainer/HBC" unique_id=1579867410]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45213896, 0.9976005, 0.6060429, 1)
+theme_override_font_sizes/font_size = 84
+text = "Гд"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBC2" type="HBoxContainer" parent="Authors/VBoxContainer" unique_id=664043643]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="Authors/VBoxContainer/HBC2" unique_id=298465294]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 13
+size_flags_stretch_ratio = 2.13
+theme_override_colors/default_color = Color(0.63529414, 0.91764706, 0.5764706, 1)
+theme_override_fonts/bold_font = SubResource("FontVariation_0hvhj")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "3D: 
+[b]Яра Рахманова[/b] - отвечала за весь арт стайл и самые сложные модельки
+[b]Иоши Гусева[/b] - делала некоторые 3д модельки
+
+2D:
+[b]Александра Каюкова[/b] - делал персонажей, некоторые иконки и концепты арты + концовки
+[b]Коля Калита[/b] - делал некоторые иконки и всё голографическое наполнение
+[b]Юлия Крыловская[/b] - делала рамку и все металлические элементы"
+
+[node name="Text2" type="RichTextLabel" parent="Authors/VBoxContainer/HBC2" unique_id=2129287102]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 13
+size_flags_stretch_ratio = 2.13
+theme_override_colors/default_color = Color(0.63529414, 0.91764706, 0.5764706, 1)
+theme_override_fonts/bold_font = SubResource("FontVariation_0hvhj")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "[b]Тимофей Добычин[/b] - лид проекта, геймдизайнер и нарративщик
+[b]Максим Свиридов[/b] - геймдизайнер(крутой), разработчик"
+
+[node name="Text" type="RichTextLabel" parent="Authors/VBoxContainer" unique_id=695489813]
+z_index = 1
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 13
+size_flags_stretch_ratio = 2.13
+theme = SubResource("Theme_0hvhj")
+theme_override_colors/default_color = Color(0.63529414, 0.91764706, 0.5764706, 1)
+theme_override_fonts/bold_font = SubResource("FontVariation_0hvhj")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "Отдельное спасибо:
+[b]Егору Гольскому-Диасу[/b] за менторство и помощь
+[b]Крайку[/b] за помощь в геймдизайне
+[b]Артёму Климанову[/b] за помощь во время кризиса и создании 2 зона 3 тир района.
+[b]Саша Сеник[/b] и [b]Агния Байгозина[/b] за реализацию игры на Unreal Engine 5 
+
+Ещё одно отдельное спасибо всем кто помогал и тестировал нашу игру!
+"
 
 [node name="Button_hovered" type="AudioStreamPlayer" parent="." unique_id=1592374955]
 stream = ExtResource("17_yb0cu")
