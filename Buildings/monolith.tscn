@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://di7x7sgbxlovx" path="res://FBX/Monolith.fbx" id="1_pdtgr"]
 [ext_resource type="Material" uid="uid://xjmugb2kge00" path="res://FBX/Monolith1.tres" id="2_xlerp"]
 [ext_resource type="Material" uid="uid://beb7bcggnabw2" path="res://FBX/Monolith2.tres" id="3_fw8jc"]
+[ext_resource type="PackedScene" uid="uid://cta365248mk4q" path="res://FBX/stones.tscn" id="4_xlerp"]
+[ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="5_fw8jc"]
 
 [sub_resource type="GDScript" id="GDScript_pdtgr"]
 resource_name = "monolith"
@@ -20,19 +22,84 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	play()
 "
 
+[sub_resource type="GDScript" id="GDScript_xlerp"]
+resource_name = "stone_sinous"
+script/source = "extends Node3D
+
+@export var amplitude: float = 0.2  # Максимальная высота движения вверх и вниз
+@export var speed: float = 1.0  # Скорость движения (частота)
+
+var time_passed: float = 1.0
+var initial_y: float = 1.215
+
+func _ready() -> void:
+	initial_y = global_position.y
+
+func _process(delta: float) -> void:
+	time_passed += delta * speed
+	global_position.y = initial_y + sin(time_passed) * amplitude
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmk0o"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_fw8jc")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_55viu"]
+material = SubResource("StandardMaterial3D_mmk0o")
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_v07c8"]
+offsets = PackedFloat32Array(0.023972603, 0.15753424, 0.82191783, 0.9726027)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_cjrtr"]
+offsets = PackedFloat32Array(0.45547944, 0.510274, 0.5856164, 0.64041096, 1)
+colors = PackedColorArray(0.043039158, 0.04303915, 0.04303915, 1, 1, 0.50980395, 0.47843137, 1, 1, 0.49019608, 0.46666667, 1, 0.05014538, 0.050145373, 0.050145373, 1, 0.17272761, 0.17272761, 0.17272761, 1)
+
 [node name="Monolith" unique_id=1656646855 instance=ExtResource("1_pdtgr")]
 transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 0.92, 0, 0, 0)
 script = SubResource("GDScript_pdtgr")
 
-[node name="Plane" parent="." index="0" unique_id=1575370518]
+[node name="Plane" parent="." index="0" unique_id=1598341825]
 material_override = ExtResource("2_xlerp")
 
-[node name="Plane_012" parent="." index="1" unique_id=673369580]
-transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, 0, 7.0000005, 0)
+[node name="Plane_012" parent="." index="1" unique_id=1804065856]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 6.2929883, 0)
+visible = false
 material_override = ExtResource("3_fw8jc")
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=241777397]
+[node name="AnimationPlayer" parent="." index="2" unique_id=94699224]
 autoplay = &"Plane_012|Action"
 speed_scale = 0.3
+
+[node name="Stones" parent="." index="3" unique_id=273566635 instance=ExtResource("4_xlerp")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.4371923, 0.97430515, 0.3052499)
+script = SubResource("GDScript_xlerp")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="4" unique_id=286601359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4731679, 0)
+amount = 100
+speed_scale = 0.1
+mesh = SubResource("PlaneMesh_55viu")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 50.455, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 4.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 10, 0)
+tangential_accel_min = 1.0
+tangential_accel_max = 10.0
+angle_min = -42.0
+angle_max = 344.1
+scale_amount_max = 4.0
+color = Color(1, 1, 1, 0.69411767)
+color_ramp = SubResource("Gradient_v07c8")
+color_initial_ramp = SubResource("Gradient_cjrtr")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

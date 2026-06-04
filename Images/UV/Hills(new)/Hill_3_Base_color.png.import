@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwmkfixnaqyk3"
-path.s3tc="res://.godot/imported/stamp.png-2cdd6cac60e419dd4d69aafeb8bb5120.s3tc.ctex"
+uid="uid://241g185i5v0m"
+path.s3tc="res://.godot/imported/Hill_3_Base_color.png-94318156dd650e3f730d3d05af134bf7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/UI/icons/stamp.png"
-dest_files=["res://.godot/imported/stamp.png-2cdd6cac60e419dd4d69aafeb8bb5120.s3tc.ctex"]
+source_file="res://Images/UV/Hills(new)/Hill_3_Base_color.png"
+dest_files=["res://.godot/imported/Hill_3_Base_color.png-94318156dd650e3f730d3d05af134bf7.s3tc.ctex"]
 
 [params]
 

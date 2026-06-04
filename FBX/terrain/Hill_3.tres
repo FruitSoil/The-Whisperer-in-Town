@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d3meih6i4edm4"]
 
-[ext_resource type="Texture2D" uid="uid://dh385dsr7iuot" path="res://Images/UV/Terrain/Hill_3_Base_color.png" id="1_j8twg"]
-[ext_resource type="Texture2D" uid="uid://bvyow1etqbc88" path="res://Images/UV/Terrain/Hill_3_Height.png" id="2_d2ong"]
-[ext_resource type="Texture2D" uid="uid://cr417w1xu0lyh" path="res://Images/UV/Terrain/Hill_3_Normal.png" id="3_wbb85"]
+[ext_resource type="Texture2D" uid="uid://241g185i5v0m" path="res://Images/UV/Hills(new)/Hill_3_Base_color.png" id="1_j8twg"]
+[ext_resource type="Texture2D" uid="uid://buu4lu1sgf3no" path="res://Images/UV/Hills(new)/Hill_3_Height.png" id="2_d2ong"]
+[ext_resource type="Texture2D" uid="uid://hfuiir2os3oc" path="res://Images/UV/Hills(new)/Hill_3_Normal.png" id="3_wbb85"]
 
 [resource]
 albedo_texture = ExtResource("1_j8twg")

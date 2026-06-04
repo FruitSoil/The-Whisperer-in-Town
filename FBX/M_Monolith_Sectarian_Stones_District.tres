@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blqxao2wox8ne"]
+
+[ext_resource type="Texture2D" uid="uid://dc60a3besa4wf" path="res://Images/UV/Monolit/Stones_Base_color.png" id="1_cyqy3"]
+
+[resource]
+albedo_texture = ExtResource("1_cyqy3")

@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://c323inegnjsib" path="res://Images/UI/MainMenu/desktop_start_screen_button2_idle.png" id="5_1xjd1"]
 [ext_resource type="BitMap" uid="uid://bvrxvw2xcb0p" path="res://Images/UI/MainMenu/BitMaps/Continue.png" id="5_d4pqi"]
 [ext_resource type="Texture2D" uid="uid://cc7tt2wepy0ei" path="res://Images/UI/Pause/icon_continue_off.PNG" id="6_bg4m6"]
-[ext_resource type="Texture2D" uid="uid://df1omv2gvpqqs" path="res://Images/UI/MainMenu/desktop_authors_screen_button1_idle.png" id="7_a3hvd"]
+[ext_resource type="Texture2D" uid="uid://cwm4oqrjidd2i" path="res://Images/UI/MainMenu/desktop_start_screen_button4_idle.png" id="7_0hvhj"]
 [ext_resource type="Texture2D" uid="uid://dxy0t2ycnynep" path="res://Images/UI/Pause/pause_screen.PNG" id="7_vdg37"]
-[ext_resource type="Texture2D" uid="uid://w2scdsy3rmud" path="res://Images/UI/MainMenu/desktop_authors_screen_button1_pressed.png" id="8_5cxft"]
 [ext_resource type="Texture2D" uid="uid://di4va0f7f8162" path="res://Images/Particles/smoke3.png" id="8_06vvd"]
+[ext_resource type="Texture2D" uid="uid://dxm0oea1jb8n4" path="res://Images/UI/MainMenu/desktop_start_screen_button4_pressed.png" id="8_72mix"]
 [ext_resource type="Texture2D" uid="uid://j14wqb7r4vvs" path="res://Images/UI/MainMenu/desktop_start_screen_button3_pressed.png" id="8_vi41n"]
 [ext_resource type="BitMap" uid="uid://36qm6rvh8rd0" path="res://Images/UI/MainMenu/BitMaps/Settings.png" id="9_yb0cu"]
 [ext_resource type="Texture2D" uid="uid://gy7fa1g4hawa" path="res://Images/UI/MainMenu/desktop_start_screen_button2_pressed.png" id="11_a3hvd"]
@@ -587,11 +587,11 @@ offset_right = 1423.0
 offset_bottom = 553.0
 scale = Vector2(0.47, 0.47)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture_normal = ExtResource("7_a3hvd")
-texture_pressed = ExtResource("8_5cxft")
-texture_hover = ExtResource("7_a3hvd")
-texture_disabled = ExtResource("8_5cxft")
-texture_focused = ExtResource("7_a3hvd")
+texture_normal = ExtResource("7_0hvhj")
+texture_pressed = ExtResource("8_72mix")
+texture_hover = ExtResource("7_0hvhj")
+texture_disabled = ExtResource("8_72mix")
+texture_focused = ExtResource("7_0hvhj")
 texture_click_mask = ExtResource("5_d4pqi")
 
 [node name="CompJuice" type="Node" parent="Menu/Continue" unique_id=1416181190]
