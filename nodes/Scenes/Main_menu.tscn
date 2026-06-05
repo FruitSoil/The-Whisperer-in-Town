@@ -656,6 +656,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_1oi8o")
 theme_override_styles/focus = SubResource("StyleBoxTexture_hs0dn")
 
 [node name="Shadow" type="TextureRect" parent="Menu" unique_id=1630419282]
+visible = false
 modulate = Color(0, 0, 0, 0.49411765)
 anchors_preset = 8
 anchor_left = 0.5
@@ -671,6 +672,7 @@ grow_vertical = 2
 texture = ExtResource("17_5cxft")
 
 [node name="Title" type="TextureRect" parent="Menu" unique_id=612145324]
+visible = false
 modulate = Color(0.6584629, 0.9470721, 0.63365835, 1)
 anchors_preset = 5
 anchor_left = 0.5
@@ -683,7 +685,6 @@ grow_horizontal = 2
 texture = ExtResource("17_5cxft")
 
 [node name="Label2" type="Label" parent="Menu" unique_id=2040605510]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -701,13 +702,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Menu" unique_id=758976346]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -688.0
+offset_left = -651.5
 offset_top = 8.0
-offset_right = 615.0
+offset_right = 651.5
 offset_bottom = 175.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.69085294, 0.8785781, 0.6736247, 1)
